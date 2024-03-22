@@ -27,8 +27,10 @@
     </a>               
 </p>
 
-The svg element is a container that defines a new coordinate system and viewport. It is used as the outermost element of
-SVG documents, but it can also be used to embed an SVG fragment inside an SVG or HTML document.
+The svg element is a container that defines a new coordinate system and viewport.
+
+It is used as the outermost element of SVG documents, but it can also be used to embed an SVG fragment inside an SVG or
+HTML document.
 
 
 ```php
