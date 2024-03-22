@@ -13,6 +13,7 @@
     "require": {
         "php": "^8.1",
         "ext-dom": "*",
+        "ext-libxml": "*",
         "enshrined/svg-sanitize": "^0.18",
         "php-forge/awesome-widget": "^0.1",
         "ui-awesome/html-attribute": "^0.1",
