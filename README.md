@@ -2,7 +2,7 @@
     <a href="https://github.com/ui-awesome/html-svg" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/121752654?s=200&v=4" height="100px">
     </a>
-    <h1 align="center">UI Awesome HTML SVG tag for PHP.</h1>
+    <h1 align="center">UI Awesome HTML SVG Tag for PHP.</h1>
     <br>
 </p>
 
