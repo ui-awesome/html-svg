@@ -17,9 +17,9 @@ use UIAwesome\Html\{
     Attribute\HasWidth,
     Concern\HasAttributes,
     Concern\HasContent,
+    Core\HTMLBuilder,
     Interop\RenderInterface
 };
-use UIAwesome\Html\Helper\HTMLBuilder;
 
 use function file_get_contents;
 
