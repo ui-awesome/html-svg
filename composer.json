@@ -9,7 +9,6 @@
         "library",
         "php"
     ],
-    "minimum-stability": "dev",
     "license": "BSD-3-Clause",
     "require": {
         "php": "^8.1",
@@ -18,7 +17,7 @@
         "enshrined/svg-sanitize": "^0.22",
         "ui-awesome/html-attribute": "^0.4",
         "ui-awesome/html-core": "^0.4",
-        "ui-awesome/html-helper": "dev-main as 0.5"
+        "ui-awesome/html-helper": "^0.6"
     },
     "require-dev": {
         "infection/infection": "^0.27|^0.32",
