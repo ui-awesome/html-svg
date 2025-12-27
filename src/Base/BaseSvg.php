@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Svg\Base;
 use DOMDocument;
 use DOMElement;
 use enshrined\svgSanitize\Sanitizer;
+use Exception;
 use InvalidArgumentException;
 use RuntimeException;
 use Stringable;
@@ -457,7 +458,11 @@ abstract class BaseSvg extends BaseBlock implements Stringable
             );
         }
 
-        $cleanedSvg = $sanitizer->sanitize($fileSvg);
+        try {
+            $cleanedSvg = $sanitizer->sanitize($fileSvg);
+        } catch (Exception) {
+            return null;
+        }
 
         if ($cleanedSvg === false || $cleanedSvg === '') {
             throw new RuntimeException(

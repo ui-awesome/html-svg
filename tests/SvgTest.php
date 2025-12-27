@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Graphic\Tests;
+namespace UIAwesome\Html\Svg\Tests;
 
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
@@ -297,6 +297,28 @@ final class SvgTest extends TestCase
             HTML,
             Svg::tag()->content('value')->draggable(Draggable::TRUE)->render(),
             "Failed asserting that element renders correctly with 'draggable' attribute using enum.",
+        );
+    }
+
+    public function testRenderWithEmptySvgFileAndTitle(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Appended Title</title></svg>
+            HTML,
+            Svg::tag()
+                ->filePath(__DIR__ . '/Support/Stub/empty.svg')
+                ->title('Appended Title')
+                ->render(),
+            "Failed asserting that element renders correctly with empty SVG file and 'title' attribute.",
+        );
+    }
+
+    public function testRenderWithFileContainingXmlButNoSvgTag(): void
+    {
+        self::assertEmpty(
+            Svg::tag()->filePath(__DIR__ . '/Support/Stub/no-svg-tag.svg')->render(),
+            'Failed asserting that render returns empty string when SVG tag is missing.',
         );
     }
 
