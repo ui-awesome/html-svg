@@ -22,6 +22,64 @@
     </a>
 </p>
 
+<p align="center">
+    <strong>A robust, fluent, and immutable PHP library for generating and manipulating SVG elements.</strong><br>
+    <em>Secure file loading, accessibility-first design, and standards-compliant rendering.</em>
+</p>
+
+## Features
+
+<picture>
+    <source media="(min-width: 768px)" srcset="./docs/svgs/features.svg">
+    <img src="./docs/svgs/features-mobile.svg" alt="Feature Overview" style="width: 100%;">
+</picture>
+
+### Installation
+
+```bash
+composer require --dev yii2-extensions/svg:^0.3
+```
+
+### Quick start
+
+#### Basic usage
+
+```php
+use UIAwesome\Html\Svg\Svg;
+
+// create a simple SVG with path
+echo Svg::tag()
+    ->viewBox('0 0 100 100')
+    ->content('<path d="..." />')
+    ->render();
+```
+
+#### Loading from file (Secure)
+
+```php
+use UIAwesome\Html\Svg\Svg;
+
+// load, sanitize, and inject an external SVG file
+echo Svg::tag()
+    ->filePath('/path/to/icon.svg')
+    ->fill('currentColor')
+    ->class('icon-lg')
+    ->render();
+```
+
+#### Accessibility handling
+
+```php
+use UIAwesome\Html\Svg\Svg;
+
+// automatically injects <title> tag for screen readers
+echo Svg::tag()
+    // Becomes <title>User Profile</title>
+    ->title('User Profile')
+    ->content('<path d="..." />')
+    ->render();
+```
+
 ## Documentation
 
 For detailed configuration options and advanced usage.
