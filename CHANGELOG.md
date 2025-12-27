@@ -1,4 +1,4 @@
-# Change Log
+# ChangeLog
 
 ## 0.3.0 Under development
 
