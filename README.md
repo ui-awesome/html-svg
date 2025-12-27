@@ -5,7 +5,7 @@
         <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome_light.png">
         <img src="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome_dark.png" alt="UI Awesome" width="150px">
     </picture>
-    <h1 align="center">Html core</h1>
+    <h1 align="center">Html SVG</h1>
     <br>
 </p>
 <!-- markdownlint-enable MD041 -->
