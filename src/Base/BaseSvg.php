@@ -141,7 +141,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      * Creates a new instance with the specified opacity value, supporting explicit assignment according to the HTML
      * specification for SVG attributes.
      *
-     * @param string|float|null $value Opacity value (for example, '0.0–1.0').
+     * @param float|string|null $value Opacity value (for example, '0.0–1.0').
      *
      * @return static New instance with the updated `opacity` attribute.
      *
@@ -251,7 +251,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      * Creates a new instance with the specified stroke width, supporting explicit assignment according to the HTML
      * specification for SVG attributes.
      *
-     * @param string|int|null $value Stroke width value.
+     * @param int|string|null $value Stroke width value.
      *
      * @return static New instance with the updated `stroke-width` attribute.
      *
@@ -475,7 +475,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * @throws RuntimeException if SVG file loading or sanitization fails.
      *
-     * @return string|false Rendered SVG markup, or `false` on failure.
+     * @return false|string Rendered SVG markup, or `false` on failure.
      */
     private function renderSvg(): false|string
     {
