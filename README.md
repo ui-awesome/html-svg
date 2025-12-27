@@ -37,7 +37,7 @@
 ### Installation
 
 ```bash
-composer require --dev yii2-extensions/svg:^0.3
+composer require ui-awesome/html-svg:^0.3
 ```
 
 ### Quick start
@@ -49,8 +49,8 @@ use UIAwesome\Html\Svg\Svg;
 
 // create a simple SVG with path
 echo Svg::tag()
-    ->viewBox('0 0 100 100')
     ->content('<path d="..." />')
+    ->viewBox('0 0 100 100')
     ->render();
 ```
 
@@ -61,9 +61,9 @@ use UIAwesome\Html\Svg\Svg;
 
 // load, sanitize, and inject an external SVG file
 echo Svg::tag()
+    ->class('icon-lg')
     ->filePath('/path/to/icon.svg')
     ->fill('currentColor')
-    ->class('icon-lg')
     ->render();
 ```
 
@@ -74,9 +74,9 @@ use UIAwesome\Html\Svg\Svg;
 
 // automatically injects <title> tag for screen readers
 echo Svg::tag()
+    ->content('<path d="..." />')
     // Becomes <title>User Profile</title>
     ->title('User Profile')
-    ->content('<path d="..." />')
     ->render();
 ```
 
