@@ -40,8 +40,8 @@ use function is_string;
  * - Supports extensibility for custom SVG element implementations.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
- * @see BaseBlock for the base block-level implementation.
- * @see SvgProperty for supported SVG attributes.
+ * {@see BaseBlock} for the base block-level implementation.
+ * {@see SvgProperty} for supported SVG attributes.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -106,6 +106,11 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * This ensures 'title' is never rendered as a standard SVG attribute, without modifying the internal state of the
      * object.
+     *
+     * Usage example:
+     * ```php
+     * $svg->getAttributes();
+     * ```
      */
     public function getAttributes(): array
     {
@@ -123,6 +128,11 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      * element and prepends it to the content, ensuring proper accessibility for manually constructed SVGs.
      *
      * @return string Combined content string with the title injected.
+     *
+     * Usage example:
+     * ```php
+     * $svg->getContent();
+     * ```
      */
     public function getContent(): string
     {
@@ -472,7 +482,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
 
         $svg->loadXML($cleanedSvg, LIBXML_NOBLANKS);
 
-        return $svg->getElementsByTagName($this->getTag()->value)->item(0);
+        return $svg->getElementsByTagName((string) $this->getTag()->value)->item(0);
     }
 
     /**
