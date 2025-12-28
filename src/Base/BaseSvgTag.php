@@ -67,7 +67,7 @@ abstract class BaseSvgTag extends BaseTag
      * ```php
      * public function getTag(): BlockInterface
      * {
-     *     return SvgBlock::SVG;
+     *     return SvgBlock::DEFS;
      * }
      * ```
      */
@@ -126,7 +126,6 @@ abstract class BaseSvgTag extends BaseTag
      * Usage example:
      * ```php
      * $block->runBegin();
-     * // Output: <svg ...attributes...>
      * ```
      */
     protected function runBegin(): string
