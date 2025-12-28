@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg;
 
-use UIAwesome\Html\Core\Tag\Block;
+use UIAwesome\Html\Core\Tag\BlockInterface;
+use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
  * SVG `<svg>` element implementation for scalable vector graphics containers.
@@ -25,7 +26,6 @@ use UIAwesome\Html\Core\Tag\Block;
  * coordinate system and viewport for SVG graphics. It is used as the outermost element of SVG documents, or to embed
  * SVG fragments within HTML or SVG documents.
  * {@see BaseSvg} for the base implementation.
- * {@see Block} for valid block-level tags.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -35,10 +35,12 @@ final class Svg extends Base\BaseSvg
     /**
      * Returns the tag enumeration for the `<svg>` element.
      *
-     * @return Block Tag enumeration instance for `<svg>`.
+     * @return BlockInterface Tag enumeration instance for `<svg>`.
+     *
+     * {@see SvgBlock} for valid SVG block-level tags.
      */
-    protected function getTag(): Block
+    protected function getTag(): BlockInterface
     {
-        return Block::SVG;
+        return SvgBlock::SVG;
     }
 }
