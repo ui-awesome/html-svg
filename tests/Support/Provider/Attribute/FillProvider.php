@@ -7,9 +7,8 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 /**
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasFillTest} class.
  *
- * Supplies comprehensive test data for validating the handling of the global HTML `fill` attribute in tag rendering,
- * ensuring standards-compliant assignment, override behavior, and value propagation according to the HTML
- * specification.
+ * Supplies comprehensive test data for validating the handling of the SVG `fill` attribute in tag rendering, ensuring
+ * standards-compliant assignment, override behavior, and value propagation according to the SVG specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `fill` attribute, supporting
  * both explicit string and `null` for attribute removal, to maintain consistent output across different rendering
@@ -19,7 +18,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * execution and debugging sessions.
  *
  * Key features.
- * - Ensures correct propagation, override, and removal of the `fill` attribute in HTML element rendering.
+ * - Ensures correct propagation, override, and removal of the `fill` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
  * - Validation of empty string, `null`, and standard string for the `fill` attribute.
  *
@@ -29,10 +28,10 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 final class FillProvider
 {
     /**
-     * Provides test cases for HTML `fill` attribute rendering scenarios.
+     * Provides test cases for SVG `fill` attribute rendering scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `fill` attribute,
-     * including empty string, `null`, and standard string.
+     * Supplies test data for validating assignment, override, and removal of the SVG `fill` attribute, including empty
+     * string, `null`, and standard string.
      *
      * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
      * message for clear identification.
@@ -84,10 +83,10 @@ final class FillProvider
     }
 
     /**
-     * Provides test cases for HTML `fill` attribute scenarios.
+     * Provides test cases for SVG `fill` attribute scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `fill` attribute,
-     * including empty string, `null`, and standard string.
+     * Supplies test data for validating assignment, override, and removal of the SVG `fill` attribute, including empty
+     * string, `null`, and standard string.
      *
      * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
      * clear identification.
