@@ -126,7 +126,7 @@ abstract class BaseSvgTag extends BaseTag
      * Usage example:
      * ```php
      * $block->runBegin();
-     * // Output: <div class="example-class" id="example-id">
+     * // Output: <svg ...attributes...>
      * ```
      */
     protected function runBegin(): string
