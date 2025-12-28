@@ -15,6 +15,7 @@ use UIAwesome\Html\Attribute\Media\{HasHeight, HasWidth};
 use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Core\Html;
 use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Svg\Attribute\HasFill;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
 
@@ -48,6 +49,7 @@ use function is_string;
  */
 abstract class BaseSvg extends BaseBlock implements Stringable
 {
+    use HasFill;
     use HasHeight;
     use HasWidth;
 
@@ -77,28 +79,6 @@ abstract class BaseSvg extends BaseBlock implements Stringable
         $new->filePath = $value;
 
         return $new;
-    }
-
-    /**
-     * Sets the `fill` attribute for the SVG element.
-     *
-     * Creates a new instance with the specified fill value, supporting explicit assignment according to the HTML
-     * specification for SVG attributes.
-     *
-     * @param string|null $value Fill color or pattern.
-     *
-     * @return static New instance with the updated `fill` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/painting.html#FillProperty
-     *
-     * Usage example:
-     * ```php
-     * Svg::tag()->fill('red');
-     * ```
-     */
-    public function fill(string|null $value): static
-    {
-        return $this->addAttribute(SvgProperty::FILL, $value);
     }
 
     /**
