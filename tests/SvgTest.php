@@ -8,20 +8,37 @@ use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use UIAwesome\Html\Core\Factory\SimpleFactory;
-use UIAwesome\Html\Core\Values\Aria;
-use UIAwesome\Html\Core\Values\ContentEditable;
-use UIAwesome\Html\Core\Values\DataProperty;
-use UIAwesome\Html\Core\Values\Direction;
-use UIAwesome\Html\Core\Values\Draggable;
-use UIAwesome\Html\Core\Values\Language;
-use UIAwesome\Html\Core\Values\Role;
-use UIAwesome\Html\Core\Values\Translate;
+use UIAwesome\Html\Core\Values\{Aria, ContentEditable, DataProperty, Direction, Draggable, Language, Role, Translate};
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Svg;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultThemeProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\{DefaultProvider, DefaultThemeProvider};
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 
+/**
+ * Test suite for {@see Svg} element functionality and behavior.
+ *
+ * Validates the management and rendering of the HTML `<svg>` element according to the SVG and HTML Living Standard
+ * specifications.
+ *
+ * Ensures correct handling, immutability, and validation of the `Svg` tag rendering, supporting all global HTML and SVG
+ * attributes, content, and provider-based configuration.
+ *
+ * Test coverage:
+ * - Accurate rendering of the `<svg>` element with inline content or external files via `filePath()` method.
+ * - Correct application of global HTML attributes and SVG-specific attributes like `viewBox`, `fill`, and `transform`.
+ * - Error handling for invalid file paths, missing content, or malformed SVG files.
+ * - Immutability of the API, ensuring that setting attributes returns a new instance.
+ * - Integration with configuration providers and global factory defaults.
+ * - Nested rendering structure using `begin()` and `end()` methods.
+ * - Precedence of user-defined attributes over global defaults and provider settings.
+ *
+ * {@see Svg} for element implementation details.
+ * {@see SimpleFactory} for default configuration management.
+ * {@see TestSupport} for assertion utilities.
+ *
+ * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ */
 final class SvgTest extends TestCase
 {
     use TestSupport;
