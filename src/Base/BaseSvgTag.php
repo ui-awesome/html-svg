@@ -65,9 +65,9 @@ abstract class BaseSvgTag extends BaseTag
      *
      * Usage example:
      * ```php
-     * public function getTag(): Block|Lists|Root|Table
+     * public function getTag(): BlockInterface
      * {
-     *     return Block::DIV;
+     *     return SvgBlock::SVG;
      * }
      * ```
      */
