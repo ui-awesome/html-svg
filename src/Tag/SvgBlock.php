@@ -26,6 +26,13 @@ use UIAwesome\Html\Core\Tag\BlockInterface;
 enum SvgBlock: string implements BlockInterface
 {
     /**
+     * `<defs>` - Container for elements not rendered directly.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
+     */
+    case DEFS = 'defs';
+
+    /**
      * `<svg>` - The root container for SVG graphics.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
