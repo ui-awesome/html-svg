@@ -1,0 +1,72 @@
+<svg fill="none" viewBox="0 0 1200 340" width="100%" height="340" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                .container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 20px;
+                    padding: 20px;
+                }
+                .alert-box {
+                    border-left: 4px solid #1f883d;
+                    padding: 12px;
+                    margin-bottom: 16px;
+                    border-radius: 6px;
+                    background: rgba(31, 136, 61, 0.1);
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+                .alert-title {
+                    margin: 0 0 8px 0;
+                    font-weight: 600;
+                }
+                .alert-content {
+                    margin: 0;
+                    line-height: 1.5;
+                }
+
+                /* Light mode */
+                    @media (prefers-color-scheme: light) {
+                    .alert-title { color: #000000; }
+                    .alert-content { color: #333333; }
+                    .alert-box { background: rgba(31, 136, 61, 0.1); }
+                }
+
+                /* Dark mode */
+                @media (prefers-color-scheme: dark) {
+                    .alert-title { color: #ffffff; }
+                    .alert-content { color: #ffffff; }
+                    .alert-box { background: rgba(31, 136, 61, 0.2); }
+                }
+            </style>
+            <div class="container">
+                <div class="alert-box">
+                    <p class="alert-title"><strong>Accessibility First</strong></p>
+                    <p class="alert-content">Auto <code>&lt;title&gt;</code> injection • ARIA support • Screen reader optimization</p>
+                </div>
+                <div class="alert-box">
+                    <p class="alert-title"><strong>Attribute Management</strong></p>
+                    <p class="alert-content">Global attributes • SVG-specific properties • Validation &amp; normalization</p>
+                </div>
+                <div class="alert-box">
+                    <p class="alert-title"><strong>Fluent Interface</strong></p>
+                    <p class="alert-content">Method chaining • Type-safe setters • Clean &amp; expressive syntax</p>
+                </div>
+                <div class="alert-box">
+                    <p class="alert-title"><strong>Immutable Design</strong></p>
+                    <p class="alert-content">State protection • Side-effect free rendering • Predictable behavior</p>
+                </div>
+                <div class="alert-box">
+                    <p class="alert-title"><strong>Secure File Loading</strong></p>
+                    <p class="alert-content">DOM sanitization • External file injection • Safe XML parsing</p>
+                </div>
+                <div class="alert-box">
+                    <p class="alert-title"><strong>Standards Compliant</strong></p>
+                    <p class="alert-content">HTML5 compatible • SVG 1.1/2.0 support • Valid XML output</p>
+                </div>
+            </div>
+        </div>
+    </foreignObject>
+</svg>

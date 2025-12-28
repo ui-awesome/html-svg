@@ -1,177 +1,112 @@
+<!-- markdownlint-disable MD041 -->
 <p align="center">
-    <a href="https://github.com/ui-awesome/html-svg" target="_blank">
-        <img src="https://avatars.githubusercontent.com/u/121752654?s=200&v=4" height="100px">
-    </a>
-    <h1 align="center">UI Awesome HTML SVG Tag for PHP.</h1>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome_dark.png">
+        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome_light.png">
+        <img src="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome_dark.png" alt="UI Awesome" width="150px">
+    </picture>
+    <h1 align="center">Html SVG</h1>
     <br>
 </p>
+<!-- markdownlint-enable MD041 -->
 
 <p align="center">
     <a href="https://github.com/ui-awesome/html-svg/actions/workflows/build.yml" target="_blank">
-        <img src="https://github.com/ui-awesome/html-svg/actions/workflows/build.yml/badge.svg" alt="PHPUnit">
-    </a>
-    <a href="https://codecov.io/gh/ui-awesome/html-svg" target="_blank">
-        <img src="https://codecov.io/gh/ui-awesome/html-svg/branch/main/graph/badge.svg?token=MF0XUGVLYC" alt="Codecov">
+        <img src="https://img.shields.io/github/actions/workflow/status/ui-awesome/html-svg/build.yml?style=for-the-badge&label=PHPUnit&logo=github" alt="PHPUnit">
     </a>
     <a href="https://dashboard.stryker-mutator.io/reports/github.com/ui-awesome/html-svg/main" target="_blank">
-        <img src="https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fui-awesome%2Fhtml-svg%2Fmain" alt="Infection">
+        <img src="https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fui-awesome%2Fhtml-svg%2Fmain" alt="Mutation Testing">
     </a>
     <a href="https://github.com/ui-awesome/html-svg/actions/workflows/static.yml" target="_blank">
-        <img src="https://github.com/ui-awesome/html-svg/actions/workflows/static.yml/badge.svg" alt="Psalm">
+        <img src="https://img.shields.io/github/actions/workflow/status/ui-awesome/html-svg/static.yml?style=for-the-badge&label=PHPStan&logo=github" alt="PHPStan">
     </a>
-    <a href="https://shepherd.dev/github/ui-awesome/html-svg" target="_blank">
-        <img src="https://shepherd.dev/github/ui-awesome/html-svg/coverage.svg" alt="Psalm Coverage">
-    </a>
-    <a href="https://github.styleci.io/repos/776094320?branch=main">
-        <img src="https://github.styleci.io/repos/776094320/shield?branch=main" alt="Style ci">
-    </a>               
 </p>
 
-The svg element is a container that defines a new coordinate system and viewport.
+<p align="center">
+    <strong>A robust, fluent, and immutable PHP library for generating and manipulating SVG elements.</strong><br>
+    <em>Secure file loading, accessibility-first design, and standards-compliant rendering.</em>
+</p>
 
-It is used as the outermost element of SVG documents, but it can also be used to embed an SVG fragment inside an SVG or
-HTML document.
+## Features
 
+<picture>
+    <source media="(min-width: 768px)" srcset="./docs/svgs/features.svg">
+    <img src="./docs/svgs/features-mobile.svg" alt="Feature Overview" style="width: 100%;">
+</picture>
+
+### Installation
+
+```bash
+composer require ui-awesome/html-svg:^0.3
+```
+
+### Quick start
+
+The SVG element is a container that defines a new coordinate system and viewport.
+
+It is used as the outermost element of SVG documents, but it can also be used to embed an SVG fragment inside an SVG or HTML document.
+
+#### Basic usage
 
 ```php
-use UIAwesome\Html\Graphic\Svg;
+use UIAwesome\Html\Svg\Svg;
 
-echo Svg::widget()
-    ->class('hidden')
-    ->filePath(__DIR__ . '/svg/moon.svg')
+// create a simple SVG with path
+echo Svg::tag()
+    ->content('<path d="..." />')
+    ->viewBox('0 0 100 100')
+    ->render();
+```
+
+#### Loading from file (Secure)
+
+```php
+use UIAwesome\Html\Svg\Svg;
+
+// load, sanitize, and inject an external SVG file
+echo Svg::tag()
+    ->class('icon-lg')
+    ->filePath('/path/to/icon.svg')
     ->fill('currentColor')
-    ->height(32)
-    ->id('theme-toggle-dark-icon')
-    ->width(32);
+    ->render();
 ```
 
-## Installation
-
-The preferred way to install this extension is through [composer](https://getcomposer.org/download/).
-
-Either run
-
-```shell
-composer require --prefer-dist "ui-awesome/html-svg":"^0.1"
-```
-
-or add
-
-```json
-"ui-awesome/html-svg": "^0.1"
-```
-
-to the require section of your `composer.json` file. 
-
-## Usage
-
-Instantiate the `Svg` class using `Svg::widget()`.
+#### Accessibility handling
 
 ```php
-$svg = Svg::widget();
+use UIAwesome\Html\Svg\Svg;
+
+// automatically injects <title> tag for screen readers
+echo Svg::tag()
+    ->content('<path d="..." />')
+    // Becomes <title>User Profile</title>
+    ->title('User Profile')
+    ->render();
 ```
 
-### Setting Attributes
+## Documentation
 
-Use the provided methods to set specific attributes for the a element.
+For detailed configuration options and advanced usage.
 
-```php
-// setting class attribute
-$svg->class('container');
-```
+- [Testing Guide](docs/testing.md)
 
-Or, use the `attributes` method to set multiple attributes at once.
+## Package information
 
-```php
-$svg->attributes(['class' => 'container', 'style' => 'background-color: #eee;']);
-```
+[![PHP](https://img.shields.io/badge/%3E%3D8.1-777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/releases/8.1/en.php)
+[![Latest Stable Version](https://img.shields.io/packagist/v/ui-awesome/html-svg.svg?style=for-the-badge&logo=packagist&logoColor=white&label=Stable)](https://packagist.org/packages/ui-awesome/html-svg)
+[![Total Downloads](https://img.shields.io/packagist/dt/ui-awesome/html-svg.svg?style=for-the-badge&logo=composer&logoColor=white&label=Downloads)](https://packagist.org/packages/ui-awesome/html-svg)
 
-### Adding Content
+## Quality code
 
-If you want to include content within the `svg` tag, use the `content` method.
-
-```php
-$svg->content('MyContent');
-```
-
-### Rendering
-
-Generate the `HTML` output using the `render` method, for simple instantiation. 
-
-```php
-$html = $svg->render();
-```
-
-Or, use the magic `__toString` method.
-
-```php
-$html = (string) $svg;
-```
-
-### Common Use Cases
-
-Below are examples of common use cases:
-
-```php
-// adding multiple attributes
-$svg->class('external')->content('MyContent');
-
-// setting the file path for the `HTML` output
-$svg->filePath('/path/to/file')->render();
-```
-
-Explore additional methods for setting various attributes such as `fill`, `heigth`, `lang`, `name`, `style`, `title`,
-`viewbox`, `width`, `xmlns`, etc.
-
-### Attributes
-
-Refer to the [Attribute Tests](https://github.com/ui-awesome/svg/blob/main/tests/AttributeTest.php) for comprehensive
-examples.
-
-The following methods are available for setting attributes:
-
-| Method            | Description                                                                                      |
-| ----------------- | ------------------------------------------------------------------------------------------------ |
-| `attributes()`    | Set multiple `attributes` at once.                                                               |
-| `class()`         | Set the `class` attribute.                                                                       |
-| `content()`       | Set the `content` within the `svg` element.                                                      |
-| `fill()`          | Set the `fill` attribute.                                                                        |
-| `height()`        | Set the `height` attribute.                                                                      |
-| `id()`            | Set the `id` attribute.                                                                          |
-| `lang()`          | Set the `lang` attribute.                                                                        |
-| `name()`          | Set the `name` attribute.                                                                        |
-| `stroke()`        | Set the `stroke` attribute.                                                                      |
-| `style()`         | Set the `style` attribute.                                                                       |
-| `title()`         | Set the `title` attribute.                                                                       |
-| `viewBox()`       | Set the `viewBox` attribute.                                                                     |
-| `width()`         | Set the `width` attribute.                                                                       |
-| `xmlns()`         | Set the `xmlns` attribute.                                                                       |
-
-## Custom methods
-
-Refer to the [Custom Methods Tests](https://github.com/ui-awesome/svg/blob/main/tests/CustomMethodTest.php) for 
-comprehensive examples.
-
-The following methods are available for customizing the `HTML` output:
-
-| Method      | Description                                                                                            |
-| ----------- | ------------------------------------------------------------------------------------------------------ |
-| `filePath()`| Set the file path for the `HTML` output.                                                               |
-| `render()`  | Generates the `HTML` output.                                                                           |
-| `widget()`  | Instantiates the `Svg::class`.      
-
-## Testing
-
-[Check the documentation testing](docs/testing.md) to learn about testing.
-
-## Support versions
-
-[![PHP81](https://img.shields.io/badge/PHP-%3E%3D8.1-787CB5)](https://www.php.net/releases/8.1/en.php)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
+[![Codecov](https://img.shields.io/codecov/c/github/ui-awesome/html-svg.svg?style=for-the-badge&logo=codecov&logoColor=white&label=Coverage)](https://codecov.io/github/ui-awesome/html-svg)
+[![PHPStan Level Max](https://img.shields.io/badge/PHPStan-Level%20Max-4F5D95.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ui-awesome/html-svg/actions/workflows/static.yml)
+[![Super-Linter](https://img.shields.io/github/actions/workflow/status/ui-awesome/html-svg/linter.yml?style=for-the-badge&label=Super-Linter&logo=github)](https://github.com/ui-awesome/html-svg/actions/workflows/linter.yml)
+[![StyleCI](https://img.shields.io/badge/StyleCI-Passed-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/776094320?branch=main)
 
 ## Our social networks
 
-[![Twitter](https://img.shields.io/badge/twitter-follow-1DA1F2?logo=twitter&logoColor=1DA1F2&labelColor=555555?style=flat)](https://twitter.com/Terabytesoftw)
+[![Follow on X](https://img.shields.io/badge/-Follow%20on%20X-1DA1F2.svg?style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/Terabytesoftw)
+
+## License
+
+[![License](https://img.shields.io/badge/License-BSD--3--Clause-brightgreen.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=555555)](LICENSE)
