@@ -36,6 +36,7 @@ enum StrokeLineJoin: string
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
      */
     case BEVEL = 'bevel';
+
     /**
      * `miter` - Stroke is extended to a sharp point.
      *
