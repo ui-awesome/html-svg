@@ -12,8 +12,8 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `stroke-dasharray` attribute,
- * supporting explicit int, string and `null` for attribute removal, to maintain consistent output across different
- * rendering configurations.
+ * supporting explicit int, float, string and `null` for attribute removal, to maintain consistent output across
+ * different rendering configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
  * execution and debugging sessions.
@@ -21,7 +21,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Key features.
  * - Ensures correct propagation, override, and removal of the `stroke-dasharray` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of empty string, int, `null`, and standard string for the `stroke-dasharray` attribute.
+ * - Validation of empty string, int, float, `null`, and standard string for the `stroke-dasharray` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -32,14 +32,14 @@ final class StrokeDashArrayProvider
      * Provides test cases for SVG `stroke-dasharray` attribute rendering scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the SVG `stroke-dasharray` attribute,
-     * including empty string, int, `null`, and standard string.
+     * including empty string, float, int, `null`, and standard string.
      *
      * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
      * message for clear identification.
      *
      * @return array Test data for `stroke-dasharray` attribute rendering scenarios.
      *
-     * @phpstan-return array<string, array{int|string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], string, string}>
      */
     public static function renderAttribute(): array
     {
@@ -54,6 +54,12 @@ final class StrokeDashArrayProvider
                 3,
                 [],
                 ' stroke-dasharray="3"',
+                'Should return the attribute value after setting it.',
+            ],
+            'float' => [
+                3.5,
+                [],
+                ' stroke-dasharray="3.5"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -87,14 +93,14 @@ final class StrokeDashArrayProvider
      * Provides test cases for SVG `stroke-dasharray` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the SVG `stroke-dasharray` attribute,
-     * including empty string, int, `null`, and standard string.
+     * including empty string, float, int, `null`, and standard string.
      *
      * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
      * clear identification.
      *
      * @return array Test data for `stroke-dasharray` attribute scenarios.
      *
-     * @phpstan-return array<string, array{int|string|null, mixed[], int|string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string}>
      */
     public static function values(): array
     {
@@ -109,6 +115,12 @@ final class StrokeDashArrayProvider
                 3,
                 [],
                 3,
+                'Should return the attribute value after setting it.',
+            ],
+            'float' => [
+                3.5,
+                [],
+                3.5,
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
