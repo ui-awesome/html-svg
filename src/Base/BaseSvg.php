@@ -15,7 +15,7 @@ use UIAwesome\Html\Attribute\Media\{HasHeight, HasWidth};
 use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Core\Html;
 use UIAwesome\Html\Helper\{Attributes, Enum};
-use UIAwesome\Html\Svg\Attribute\{HasFill, HasStroke, HasStrokeLineCap, HasStrokeLineJoin};
+use UIAwesome\Html\Svg\Attribute\{HasFill, HasStroke, HasStrokeLineCap, HasStrokeLineJoin, HasStrokeWidth};
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
 
@@ -23,7 +23,7 @@ use function file_get_contents;
 use function is_string;
 
 /**
- * Base class for constructing `<svg>` elements according to the SVG specification.
+ * Base class for constructing `<svg>` elements according to the SVG 2 specification.
  *
  * Provides a standards-compliant, extensible foundation for SVG container rendering, supporting SVG attributes, content
  * management, and attribute immutability.
@@ -34,7 +34,7 @@ use function is_string;
  * Key features:
  * - Automatically extracts the `title` attribute and renders it as a `<title>` tag (first child), ensuring
  *   compatibility with screen readers.
- * - Enforces standards-compliant handling of the `<svg>` element as defined by the SVG specification.
+ * - Enforces standards-compliant handling of the `<svg>` element as defined by the SVG 2 specification.
  * - Immutable API for attribute and content assignment.
  * - Implements the core logic for SVG container construction and file-based SVG injection.
  * - Integrates SVG attribute management.
@@ -54,6 +54,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     use HasStroke;
     use HasStrokeLineCap;
     use HasStrokeLineJoin;
+    use HasStrokeWidth;
     use HasWidth;
 
     /**
@@ -171,28 +172,6 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     public function preserveAspectRatio(string|null $value): static
     {
         return $this->addAttribute(SvgProperty::PRESERVE_ASPECT_RATIO, $value);
-    }
-
-    /**
-     * Sets the `stroke-width` attribute for the SVG element.
-     *
-     * Creates a new instance with the specified stroke width, supporting explicit assignment according to the HTML
-     * specification for SVG attributes.
-     *
-     * @param int|string|null $value Stroke width value.
-     *
-     * @return static New instance with the updated `stroke-width` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/painting.html#StrokeWidthProperty
-     *
-     * Usage example:
-     * ```php
-     * Svg::tag()->strokeWidth(2);
-     * ```
-     */
-    public function strokeWidth(string|int|null $value): static
-    {
-        return $this->addAttribute(SvgProperty::STROKE_WIDTH, (string) $value);
     }
 
     /**
