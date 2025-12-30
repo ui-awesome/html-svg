@@ -35,14 +35,14 @@ final class StrokeLineCapProvider
      * Provides test cases for rendered HTML `stroke-linecap` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `stroke-linecap`
-     * attribute, including bool, string, UnitEnum, and replacement scenarios.
+     * attribute, including string, UnitEnum, and replacement scenarios.
      *
      * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
      * message for clear identification.
      *
      * @return array Test data for rendered `stroke-linecap` attribute scenarios.
      *
-     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
      */
     public static function renderAttribute(): array
     {
@@ -88,14 +88,14 @@ final class StrokeLineCapProvider
      * Provides test cases for HTML `stroke-linecap` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `stroke-linecap`
-     * attribute, including bool, string, UnitEnum, and replacement scenarios.
+     * attribute, including string, UnitEnum, and replacement scenarios.
      *
      * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
      * clear identification.
      *
      * @return array Test data for `stroke-linecap` attribute scenarios.
      *
-     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
      */
     public static function values(): array
     {
