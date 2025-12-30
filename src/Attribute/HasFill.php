@@ -25,6 +25,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://svgwg.org/svg2-draft/painting.html#FillProperty
+ *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
@@ -34,8 +35,7 @@ trait HasFill
      * Sets the SVG `fill` attribute for the element.
      *
      * Creates a new instance with the specified fill value, supporting explicit assignment according to the SVG 2
-     * specification for painting properties. Accepts any valid SVG paint value, including color keywords, gradients,
-     * patterns, or `null` to unset the attribute.
+     * specification for painting properties.
      *
      * @param string|null $value Fill value to set for the element. Can be a color, pattern, gradient, or `null` to
      * unset.

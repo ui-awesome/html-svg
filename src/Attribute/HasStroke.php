@@ -22,6 +22,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Supports string and `null` for flexible stroke assignment (color, pattern, or none).
  *
  * @link https://svgwg.org/svg2-draft/painting.html#StrokeProperty
+ *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
@@ -30,7 +31,7 @@ trait HasStroke
     /**
      * Sets the SVG `stroke` attribute for the element.
      *
-     * Creates a new instance with the specified stroke value, supporting explicit assignment according to the SVG
+     * Creates a new instance with the specified stroke value, supporting explicit assignment according to the SVG 2
      * specification for painting outlines of shapes and text content elements.
      *
      * @param string|null $value Stroke paint value to set for the element. Accepts any valid SVG paint specification
