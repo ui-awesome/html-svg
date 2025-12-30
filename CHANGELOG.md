@@ -15,6 +15,7 @@
 - Enh #15: Add `HasStrokeWidth` trait and corresponding tests for managing SVG `stroke-width` attribute (@terabytesoftw)
 - Bug #16: Update links and references to SVG 2 specification across multiple attributes and tests (@terabytesoftw)
 - Bug #17: Add references to predefined enum values in `HasStrokeLineCap` and `HasStrokeLineJoin` traits (@terabytesoftw)
+- Bug #18: Update assertion message for integer setting in `StrokeWidthProvider` class (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
