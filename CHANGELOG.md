@@ -10,6 +10,7 @@
 - Enh #10: Add `HasStroke` trait and corresponding tests for managing SVG `stroke` attribute (@terabytesoftw)
 - Bug #11: Update documentation to specify SVG 2 specification for `HasFillTest` class (@terabytesoftw)
 - Bug #12: Clarify fill and stroke attribute documentation for SVG 2 compliance (@terabytesoftw)
+- Enh #13: Add `HasStrokeLineCap` trait and corresponding tests for managing SVG `stroke-linecap` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
