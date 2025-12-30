@@ -9,7 +9,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
 /**
  * Trait for managing the SVG `fill` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `fill` attribute on SVG elements, following the SVG
+ * Provides a standards-compliant, immutable API for setting the `fill` attribute on SVG elements, following the SVG 2
  * specification for painting properties.
  *
  * Intended for use in SVG tags and components that require dynamic or programmatic manipulation of the `fill` property,
@@ -33,7 +33,7 @@ trait HasFill
     /**
      * Sets the SVG `fill` attribute for the element.
      *
-     * Creates a new instance with the specified fill value, supporting explicit assignment according to the SVG
+     * Creates a new instance with the specified fill value, supporting explicit assignment according to the SVG 2
      * specification for painting properties. Accepts any valid SVG paint value, including color keywords, gradients,
      * patterns, or `null` to unset the attribute.
      *

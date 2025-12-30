@@ -6,6 +6,7 @@
 - Enh #6: Add `SvgBlock` enum for HTML SVG tag representation and implement `BlockInterface` class (@terabytesoftw)
 - Enh #7: Add `BaseSvgTag` and `Defs` classes for SVG block-level elements and related tests (@terabytesoftw)
 - Enh #8: Add `HasFill` trait and corresponding tests for managing SVG `fill` attribute (@terabytesoftw)
+- Bug #9: Correct SVG specification reference in `HasFill` trait documentation (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
