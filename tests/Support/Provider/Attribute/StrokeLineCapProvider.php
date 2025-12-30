@@ -67,7 +67,7 @@ final class StrokeLineCapProvider
                 ' stroke-linecap="butt"',
                 "Should return new 'stroke-linecap' after replacing the existing 'stroke-linecap' attribute.",
             ],
-            'string color' => [
+            'string' => [
                 'butt',
                 [],
                 ' stroke-linecap="butt"',
@@ -120,7 +120,7 @@ final class StrokeLineCapProvider
                 'butt',
                 "Should return new 'stroke-linecap' after replacing the existing 'stroke-linecap' attribute.",
             ],
-            'string color' => [
+            'string' => [
                 'butt',
                 [],
                 'butt',
