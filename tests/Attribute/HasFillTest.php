@@ -14,7 +14,7 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillProvider;
 /**
  * Test suite for {@see HasFill} trait functionality and behavior.
  *
- * Validates the management of the SVG `fill` attribute according to the SVG specification.
+ * Validates the management of the SVG `fill` attribute according to the SVG 2 specification.
  *
  * Ensures correct handling, immutability, and validation of the `fill` attribute in tag rendering, supporting both
  * string and `null` for dynamic identifier assignment.
