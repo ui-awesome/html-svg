@@ -49,7 +49,7 @@ trait HasStrokeLineCap
      * $element->strokeLineCap('round');
      *
      * // sets the `stroke-linecap` attribute to 'square' using enum
-     * $element->strokeLineCap(StrokeLineCap::Square);
+     * $element->strokeLineCap(StrokeLineCap::SQUARE);
      *
      * // unsets the `stroke-linecap` attribute
      * $element->strokeLineCap(null);

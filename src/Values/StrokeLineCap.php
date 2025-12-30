@@ -7,8 +7,8 @@ namespace UIAwesome\Html\Svg\Values;
 /**
  * Represents standardized values for the SVG 2 `stroke-linecap` attribute.
  *
- * Provides a type-safe, standards-compliant set of contenteditable identifiers for use in element rendering,
- * attributes, and view helpers, ensuring technical consistency with the HTML specification and modern web standards.
+ * Provides a type-safe, standards-compliant set of stroke line cap values for use in SVG element rendering, attributes,
+ * and view helpers, ensuring technical consistency with the SVG specification and modern web standards.
  *
  * Key features.
  * - Designed for use in tags, components, and helpers requiring stroke line cap assignment.
