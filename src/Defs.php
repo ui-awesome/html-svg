@@ -14,7 +14,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * will be referenced and used at a later time without direct rendering.
  *
  * Designed for integration in view renderers, tag systems, and component libraries, ensuring consistent and
- * standards-compliant handling of SVG definition containers according to the SVG specification.
+ * standards-compliant handling of SVG definition containers according to the SVG 2 specification.
  *
  * Key features.
  * - Container for reusable graphical objects (gradients, patterns, shapes, etc.).

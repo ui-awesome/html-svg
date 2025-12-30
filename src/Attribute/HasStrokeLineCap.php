@@ -23,7 +23,7 @@ use UnitEnum;
  * - Immutable method for setting or overriding the `stroke-linecap` attribute.
  * - Supports string and `null` for flexible cap assignment ('butt', 'round', 'square', or unset).
  *
- * @link https://svgwg.org/svg2-draft/painting.html#LineCaps
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-linecap
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

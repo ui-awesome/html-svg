@@ -13,6 +13,7 @@
 - Enh #13: Add `HasStrokeLineCap` trait and corresponding tests for managing SVG `stroke-linecap` attribute (@terabytesoftw)
 - Enh #14: Add `HasStrokeLineJoin` trait and corresponding tests for managing SVG `stroke-linejoin` attribute (@terabytesoftw)
 - Enh #15: Add `HasStrokeWidth` trait and corresponding tests for managing SVG `stroke-width` attribute (@terabytesoftw)
+- Bug #16: Update links and references to SVG 2 specification across multiple attributes and tests (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

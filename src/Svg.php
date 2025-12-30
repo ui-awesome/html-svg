@@ -14,7 +14,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * attribute management for advanced rendering scenarios.
  *
  * Designed for integration in view renderers, tag systems, and component libraries, ensuring consistent and
- * standards-compliant handling of SVG container elements according to the SVG specification.
+ * standards-compliant handling of SVG container elements according to the SVG 2 specification.
  *
  * Key features.
  * - Immutable, stateless design for safe reuse in rendering engines.

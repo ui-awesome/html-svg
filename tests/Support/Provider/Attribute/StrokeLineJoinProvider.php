@@ -12,10 +12,11 @@ use UnitEnum;
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasStrokeLineJoinTest} class.
  *
  * Supplies comprehensive test data for validating the handling of the SVG `stroke-linejoin` attribute in tag rendering,
- * ensuring standards-compliant assignment, override behavior, and value propagation according to the SVG specification.
+ * ensuring standards-compliant assignment, override behavior, and value propagation according to the SVG 2
+ * specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `stroke-linejoin` attribute,
- * supporting both explicit string and `null` for attribute removal, to maintain consistent output across different
+ * supporting explicit string, UnitEnum and `null` for attribute removal, to maintain consistent output across different
  * rendering configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test

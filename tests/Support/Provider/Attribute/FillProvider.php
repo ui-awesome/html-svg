@@ -8,7 +8,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasFillTest} class.
  *
  * Supplies comprehensive test data for validating the handling of the SVG `fill` attribute in tag rendering, ensuring
- * standards-compliant assignment, override behavior, and value propagation according to the SVG specification.
+ * standards-compliant assignment, override behavior, and value propagation according to the SVG 2 specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `fill` attribute, supporting
  * both explicit string and `null` for attribute removal, to maintain consistent output across different rendering
