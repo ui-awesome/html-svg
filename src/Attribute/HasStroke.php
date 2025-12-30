@@ -37,8 +37,7 @@ trait HasStroke
      * @param string|null $value Stroke paint value to set for the element. Accepts any valid SVG paint specification
      * (for example, color keyword, hex, rgb(), url reference, or `null` to unset).
      *
-     * @return static New instance with the updated `stroke` attribute. Can be a color, pattern, gradient, or `null` to
-     * unset.
+     * @return static New instance with the updated `stroke` attribute.
      *
      * @link https://svgwg.org/svg2-draft/painting.html#StrokeProperty
      *
