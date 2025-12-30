@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\OpacityProvider;
  * Test coverage.
  * - Accurate rendering of attributes with the `opacity` attribute.
  * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `stroke-dasharray` attribute.
+ * - Immutability of the trait's API when setting or overriding the `opacity` attribute.
  * - Proper assignment and overriding of `opacity` value.
  *
  * {@see OpacityProvider} for test case data providers.
