@@ -30,13 +30,14 @@ trait HasStroke
     /**
      * Sets the SVG `stroke` attribute for the element.
      *
-     * Creates a new instance with the specified stroke value, supporting explicit assignment according to the SVG
+     * Creates a new instance with the specified stroke value, supporting explicit assignment according to the SVG 2
      * specification for painting outlines of shapes and text content elements.
      *
      * @param string|null $value Stroke paint value to set for the element. Accepts any valid SVG paint specification
      * (for example, color keyword, hex, rgb(), url reference, or `null` to unset).
      *
-     * @return static New instance with the updated `stroke` attribute.
+     * @return static New instance with the updated `stroke` attribute. Can be a color, pattern, gradient, or `null` to
+     * unset.
      *
      * @link https://svgwg.org/svg2-draft/painting.html#StrokeProperty
      *
