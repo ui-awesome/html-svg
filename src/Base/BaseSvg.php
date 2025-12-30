@@ -15,7 +15,14 @@ use UIAwesome\Html\Attribute\Media\{HasHeight, HasWidth};
 use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Core\Html;
 use UIAwesome\Html\Helper\{Attributes, Enum};
-use UIAwesome\Html\Svg\Attribute\{HasFill, HasStroke, HasStrokeLineCap, HasStrokeLineJoin, HasStrokeWidth};
+use UIAwesome\Html\Svg\Attribute\{
+    HasFill,
+    HasStroke,
+    HasStrokeDashArray,
+    HasStrokeLineCap,
+    HasStrokeLineJoin,
+    HasStrokeWidth,
+};
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
 
@@ -52,6 +59,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     use HasFill;
     use HasHeight;
     use HasStroke;
+    use HasStrokeDashArray;
     use HasStrokeLineCap;
     use HasStrokeLineJoin;
     use HasStrokeWidth;
