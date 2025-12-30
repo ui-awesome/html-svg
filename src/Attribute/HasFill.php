@@ -33,7 +33,7 @@ trait HasFill
     /**
      * Sets the SVG `fill` attribute for the element.
      *
-     * Creates a new instance with the specified fill value, supporting explicit assignment according to the SVG
+     * Creates a new instance with the specified fill value, supporting explicit assignment according to the SVG 2
      * specification for painting properties. Accepts any valid SVG paint value, including color keywords, gradients,
      * patterns, or `null` to unset the attribute.
      *
