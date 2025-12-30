@@ -36,7 +36,7 @@ trait HasStrokeDashArray
      * specification for controlling the dash and gap pattern of the outline painted for shapes and text content
      * elements.
      *
-     * @param string|int|null $value Dash array value to set for the element. Accepts any valid SVG dash pattern,
+     * @param int|string|null $value Dash array value to set for the element. Accepts any valid SVG dash pattern,
      * number, length, or `null` to unset (for example, '5,3', 4, or `null`).
      *
      * @return static New instance with the updated `stroke-dasharray` attribute.
