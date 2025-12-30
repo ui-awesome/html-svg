@@ -12,7 +12,7 @@ use UnitEnum;
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasStrokeLineCapTest} class.
  *
  * Supplies comprehensive test data for validating the handling of the SVG `stroke-linecap` attribute in tag rendering,
- * ensuring standards-compliant assignment, override behavior, and value propagation according to the SVG  2
+ * ensuring standards-compliant assignment, override behavior, and value propagation according to the SVG 2
  * specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `stroke-linecap` attribute,
