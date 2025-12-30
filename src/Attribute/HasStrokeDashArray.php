@@ -55,7 +55,7 @@ trait HasStrokeDashArray
      * $element->strokeDashArray(null);
      * ```
      */
-    public function strokeDashArray(string|int|float|null $value): static
+    public function strokeDashArray(float|int|string|null $value): static
     {
         return $this->addAttribute(SvgProperty::STROKE_DASHARRAY, $value);
     }

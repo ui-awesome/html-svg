@@ -39,7 +39,7 @@ final class StrokeDashArrayProvider
      *
      * @return array Test data for `stroke-dasharray` attribute rendering scenarios.
      *
-     * @phpstan-return array<string, array{int|float|string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], string, string}>
      */
     public static function renderAttribute(): array
     {
@@ -100,7 +100,7 @@ final class StrokeDashArrayProvider
      *
      * @return array Test data for `stroke-dasharray` attribute scenarios.
      *
-     * @phpstan-return array<string, array{int|float|string|null, mixed[], int|float|string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string}>
      */
     public static function values(): array
     {
