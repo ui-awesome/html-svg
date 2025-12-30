@@ -20,7 +20,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `stroke-dasharray` attribute.
  * - Immutable method for setting or overriding the `stroke-dasharray` attribute.
- * - Supports int, string, and `null` for flexible dash pattern assignment (absolute, relative, or unset).
+ * - Supports int, float, string, and `null` for flexible dash pattern assignment (absolute, relative, or unset).
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray
  *
@@ -36,8 +36,8 @@ trait HasStrokeDashArray
      * specification for controlling the dash and gap pattern of the outline painted for shapes and text content
      * elements.
      *
-     * @param int|string|null $value Dash array value to set for the element. Accepts any valid SVG dash pattern,
-     * number, length, or `null` to unset (for example, '5,3', 4, or `null`).
+     * @param int|float|string|null $value Dash array value to set for the element. Accepts any valid SVG dash pattern,
+     * number, length, or `null` to unset (for example, '5.3', 4, or `null`).
      *
      * @return static New instance with the updated `stroke-dasharray` attribute.
      *
@@ -45,8 +45,8 @@ trait HasStrokeDashArray
      *
      * Usage example:
      * ```php
-     * // sets the `stroke-dasharray` attribute to '5,3'
-     * $element->strokeDashArray('5,3');
+     * // sets the `stroke-dasharray` attribute to '5.3'
+     * $element->strokeDashArray(5.3);
      *
      * // sets the `stroke-dasharray` attribute to 4 user units
      * $element->strokeDashArray(4);
@@ -55,7 +55,7 @@ trait HasStrokeDashArray
      * $element->strokeDashArray(null);
      * ```
      */
-    public function strokeDashArray(string|int|null $value): static
+    public function strokeDashArray(string|int|float|null $value): static
     {
         return $this->addAttribute(SvgProperty::STROKE_DASHARRAY, $value);
     }

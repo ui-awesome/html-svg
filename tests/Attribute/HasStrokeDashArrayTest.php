@@ -38,7 +38,7 @@ final class HasStrokeDashArrayTest extends TestCase
      */
     #[DataProviderExternal(StrokeDashArrayProvider::class, 'renderAttribute')]
     public function testRenderAttributesWithStrokeDashArrayAttribute(
-        int|string|null $strokeDashArray,
+        int|float|string|null $strokeDashArray,
         array $attributes,
         string $expected,
         string $message,
@@ -89,9 +89,9 @@ final class HasStrokeDashArrayTest extends TestCase
      */
     #[DataProviderExternal(StrokeDashArrayProvider::class, 'values')]
     public function testSetStrokeDashArrayAttributeValue(
-        int|string|null $strokeDashArray,
+        int|float|string|null $strokeDashArray,
         array $attributes,
-        int|string $expected,
+        int|float|string $expected,
         string $message,
     ): void {
         $instance = new class {
