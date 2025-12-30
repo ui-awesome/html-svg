@@ -45,7 +45,7 @@ trait HasStrokeDashArray
      *
      * Usage example:
      * ```php
-     * // sets the `stroke-dasharray` attribute to '5.3'
+     * // sets the `stroke-dasharray` attribute to 5.3
      * $element->strokeDashArray(5.3);
      *
      * // sets the `stroke-dasharray` attribute to 4 user units
