@@ -54,7 +54,7 @@ final class StrokeWidthProvider
                 3,
                 [],
                 ' stroke-width="3"',
-                'Should return the attribute value after setting it with an integer.',
+                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
