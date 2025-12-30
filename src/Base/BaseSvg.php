@@ -15,7 +15,7 @@ use UIAwesome\Html\Attribute\Media\{HasHeight, HasWidth};
 use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Core\Html;
 use UIAwesome\Html\Helper\{Attributes, Enum};
-use UIAwesome\Html\Svg\Attribute\HasFill;
+use UIAwesome\Html\Svg\Attribute\{HasFill, HasStroke};
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
 
@@ -51,6 +51,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
 {
     use HasFill;
     use HasHeight;
+    use HasStroke;
     use HasWidth;
 
     /**
@@ -168,28 +169,6 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     public function preserveAspectRatio(string|null $value): static
     {
         return $this->addAttribute(SvgProperty::PRESERVE_ASPECT_RATIO, $value);
-    }
-
-    /**
-     * Sets the `stroke` attribute for the SVG element.
-     *
-     * Creates a new instance with the specified stroke value, supporting explicit assignment according to the HTML
-     * specification for SVG attributes.
-     *
-     * @param string|null $value Stroke color or pattern.
-     *
-     * @return static New instance with the updated `stroke` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/painting.html#StrokeProperty
-     *
-     * Usage example:
-     * ```php
-     * Svg::tag()->stroke('black');
-     * ```
-     */
-    public function stroke(string|null $value): static
-    {
-        return $this->addAttribute(SvgProperty::STROKE, $value);
     }
 
     /**
