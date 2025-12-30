@@ -91,7 +91,7 @@ final class HasStrokeWidthTest extends TestCase
     public function testSetStrokeWidthAttributeValue(
         int|string|null $strokeWidth,
         array $attributes,
-        int|string|null $expected,
+        int|string $expected,
         string $message,
     ): void {
         $instance = new class {
