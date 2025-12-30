@@ -63,6 +63,14 @@ enum SvgProperty: string
     case STROKE = 'stroke';
 
     /**
+     * `stroke-dasharray` - Stroke dasharray attribute is a presentation attribute defining the pattern of dashes and
+     * gaps used to stroke paths.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dasharray
+     */
+    case STROKE_DASHARRAY = 'stroke-dasharray';
+
+    /**
      * `stroke-linecap` - Stroke linecap attribute is a presentation attribute defining the shape to be used at the end
      * of open subpaths when they are stroked.
      *
