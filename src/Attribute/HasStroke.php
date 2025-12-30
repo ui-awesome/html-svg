@@ -21,7 +21,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Immutable method for setting or overriding the `stroke` attribute.
  * - Supports string and `null` for flexible stroke assignment (color, pattern, or none).
  *
- * @link https://svgwg.org/svg2-draft/painting.html#StrokeProperty
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

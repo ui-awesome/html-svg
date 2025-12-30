@@ -24,7 +24,7 @@ use UnitEnum;
  * - Supports `string`, `UnitEnum`, and `null` for flexible join assignment ('miter', 'round', 'bevel', 'miter-clip',
  *   'arcs', or unset).
  *
- * @link https://svgwg.org/svg2-draft/painting.html#LineJoin
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-linejoin
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
