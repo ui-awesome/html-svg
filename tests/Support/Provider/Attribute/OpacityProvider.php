@@ -57,9 +57,9 @@ final class OpacityProvider
                 'Should return the attribute value after setting it.',
             ],
             'float' => [
-                1.0,
+                0.3,
                 [],
-                ' opacity="1.0"',
+                ' opacity="0.3"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -118,9 +118,9 @@ final class OpacityProvider
                 'Should return the attribute value after setting it.',
             ],
             'float' => [
-                1.0,
+                0.3,
                 [],
-                1.0,
+                0.3,
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
