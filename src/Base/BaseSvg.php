@@ -15,7 +15,7 @@ use UIAwesome\Html\Attribute\Media\{HasHeight, HasWidth};
 use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Core\Html;
 use UIAwesome\Html\Helper\{Attributes, Enum};
-use UIAwesome\Html\Svg\Attribute\{HasFill, HasStroke, HasStrokeLineCap};
+use UIAwesome\Html\Svg\Attribute\{HasFill, HasStroke, HasStrokeLineCap, HasStrokeLineJoin};
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
 
@@ -53,6 +53,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     use HasHeight;
     use HasStroke;
     use HasStrokeLineCap;
+    use HasStrokeLineJoin;
     use HasWidth;
 
     /**
@@ -170,28 +171,6 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     public function preserveAspectRatio(string|null $value): static
     {
         return $this->addAttribute(SvgProperty::PRESERVE_ASPECT_RATIO, $value);
-    }
-
-    /**
-     * Sets the `stroke-linejoin` attribute for the SVG element.
-     *
-     * Creates a new instance with the specified line join style, supporting explicit assignment according to the HTML
-     * specification for SVG attributes.
-     *
-     * @param string|null $value Line join style.
-     *
-     * @return static New instance with the updated `stroke-linejoin` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/painting.html#LineJoin
-     *
-     * Usage example:
-     * ```php
-     * Svg::tag()->strokeLineJoin('bevel');
-     * ```
-     */
-    public function strokeLineJoin(string|null $value): static
-    {
-        return $this->addAttribute(SvgProperty::STROKE_LINEJOIN, $value);
     }
 
     /**
