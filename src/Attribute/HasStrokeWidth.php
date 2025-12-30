@@ -53,7 +53,7 @@ trait HasStrokeWidth
      * $element->strokeWidth(null);
      * ```
      */
-    public function strokeWidth(string|int|null $value): static
+    public function strokeWidth(int|string|null $value): static
     {
         return $this->addAttribute(SvgProperty::STROKE_WIDTH, $value);
     }
