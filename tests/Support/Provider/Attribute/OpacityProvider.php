@@ -69,15 +69,15 @@ final class OpacityProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                '1.5em',
+                '0.5em',
                 ['opacity' => '1'],
-                ' opacity="1.5em"',
+                ' opacity="0.5em"',
                 "Should return new 'opacity' after replacing the existing 'opacity' attribute.",
             ],
             'string' => [
-                '1.5em',
+                '0.5em',
                 [],
-                ' opacity="1.5em"',
+                ' opacity="0.5em"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
@@ -130,15 +130,15 @@ final class OpacityProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                '1.5em',
+                '0.5em',
                 ['opacity' => '1'],
-                '1.5em',
+                '0.5em',
                 "Should return new 'opacity' after replacing the existing 'opacity' attribute.",
             ],
             'string' => [
-                '1.5em',
+                '0.5em',
                 [],
-                '1.5em',
+                '0.5em',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
