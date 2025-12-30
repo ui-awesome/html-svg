@@ -17,6 +17,7 @@ use UIAwesome\Html\Core\Html;
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Svg\Attribute\{
     HasFill,
+    HasOpacity,
     HasStroke,
     HasStrokeDashArray,
     HasStrokeLineCap,
@@ -58,6 +59,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
 {
     use HasFill;
     use HasHeight;
+    use HasOpacity;
     use HasStroke;
     use HasStrokeDashArray;
     use HasStrokeLineCap;
@@ -136,28 +138,6 @@ abstract class BaseSvg extends BaseBlock implements Stringable
         }
 
         return $content . parent::getContent();
-    }
-
-    /**
-     * Sets the `opacity` attribute for the SVG element.
-     *
-     * Creates a new instance with the specified opacity value, supporting explicit assignment according to the HTML
-     * specification for SVG attributes.
-     *
-     * @param float|string|null $value Opacity value (for example, '0.0–1.0').
-     *
-     * @return static New instance with the updated `opacity` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/render.html#ObjectAndGroupOpacityProperties
-     *
-     * Usage example:
-     * ```php
-     * Svg::tag()->opacity(0.5);
-     * ```
-     */
-    public function opacity(string|float|null $value): static
-    {
-        return $this->addAttribute(SvgProperty::OPACITY, $value);
     }
 
     /**
