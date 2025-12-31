@@ -18,12 +18,14 @@ use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Svg\Attribute\{
     HasFill,
     HasFillOpacity,
+    HasFillRule,
     HasOpacity,
     HasStroke,
     HasStrokeDashArray,
     HasStrokeLineCap,
     HasStrokeLineJoin,
-    HasStrokeWidth, HasTransform,
+    HasStrokeWidth,
+    HasTransform,
 };
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
@@ -60,6 +62,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
 {
     use HasFill;
     use HasFillOpacity;
+    use HasFillRule;
     use HasHeight;
     use HasOpacity;
     use HasStroke;
