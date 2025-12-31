@@ -31,7 +31,7 @@ final class StrokeMiterlimitProvider
      * Provides test cases for SVG `stroke-miterlimit` attribute rendering scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of SVG `stroke-miterlimit` attribute,
-     * including int,   `null`, and standard string.
+     * including int, `null`, and standard string.
      *
      * Each test case includes input value, initial attributes, expected rendered output, and an assertion message for
      * clear identification.
