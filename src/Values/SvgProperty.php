@@ -103,6 +103,14 @@ enum SvgProperty: string
     case STROKE_LINEJOIN = 'stroke-linejoin';
 
     /**
+     * `stroke-miterlimit` - Stroke miterlimit attribute is a presentation attribute defining a limit on the ratio of
+     * the miter length to the stroke-width.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-miterlimit
+     */
+    case STROKE_MITERLIMIT = 'stroke-miterlimit';
+
+    /**
      * `stroke-width` - Stroke width attribute is a presentation attribute defining the width of the outline on the
      * current object.
      *
