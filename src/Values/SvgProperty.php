@@ -14,7 +14,6 @@ namespace UIAwesome\Html\Svg\Values;
  * - Suitable for building attribute arrays and rendering SVG markup.
  * - Values follow the `<svg>` attributes listed in the MDN documentation.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/svg
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
@@ -41,6 +40,13 @@ enum SvgProperty: string
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/fill-opacity
      */
     case FILL_OPACITY = 'fill-opacity';
+
+    /**
+     * `fill-rule` - Fill rule attribute indicates which algorithm to use to determine the inside part of a shape.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/fill-rule
+     */
+    case FILL_RULE = 'fill-rule';
 
     /**
      * `height` - Displayed height of the rectangular viewport (not the height of its coordinate system).

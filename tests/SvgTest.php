@@ -14,7 +14,7 @@ use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Svg;
 use UIAwesome\Html\Svg\Tests\Support\Stub\{DefaultProvider, DefaultThemeProvider};
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
-use UIAwesome\Html\Svg\Values\{StrokeLineCap, StrokeLineJoin};
+use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin};
 
 /**
  * Test suite for {@see Svg} element functionality and behavior.
@@ -219,7 +219,7 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             Svg::tag()->content('value')->contentEditable(ContentEditable::TRUE)->render(),
-            "Failed asserting that element renders correctly with 'contentEditable' attribute using enum.",
+            "Failed asserting that element renders correctly with 'contentEditable' attribute.",
         );
     }
 
@@ -290,7 +290,7 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             Svg::tag()->content('value')->dir(Direction::RTL)->render(),
-            "Failed asserting that element renders correctly with 'dir' attribute using enum.",
+            "Failed asserting that element renders correctly with 'dir' attribute.",
         );
     }
 
@@ -316,7 +316,7 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             Svg::tag()->content('value')->draggable(Draggable::TRUE)->render(),
-            "Failed asserting that element renders correctly with 'draggable' attribute using enum.",
+            "Failed asserting that element renders correctly with 'draggable' attribute.",
         );
     }
 
@@ -416,6 +416,32 @@ final class SvgTest extends TestCase
             HTML,
             Svg::tag()->content('value')->fillOpacity('0.7')->render(),
             "Failed asserting that element renders correctly with 'fill-opacity' attribute.",
+        );
+    }
+
+    public function testRenderWithFillRule(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg fill-rule="evenodd">
+            value
+            </svg>
+            HTML,
+            Svg::tag()->content('value')->fillRule('evenodd')->render(),
+            "Failed asserting that element renders correctly with 'fill-rule' attribute.",
+        );
+    }
+
+    public function testRenderWithFillRuleUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg fill-rule="nonzero">
+            value
+            </svg>
+            HTML,
+            Svg::tag()->content('value')->fillRule(FillRule::NONZERO)->render(),
+            "Failed asserting that element renders correctly with 'fill-rule' attribute.",
         );
     }
 
@@ -552,7 +578,7 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             Svg::tag()->content('value')->lang(Language::SPANISH)->render(),
-            "Failed asserting that element renders correctly with 'lang' attribute using enum.",
+            "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
 
@@ -604,7 +630,7 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             Svg::tag()->content('value')->role(Role::BANNER)->render(),
-            "Failed asserting that element renders correctly with 'role' attribute using enum.",
+            "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
@@ -815,7 +841,7 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             Svg::tag()->content('value')->translate(Translate::YES)->render(),
-            "Failed asserting that element renders correctly with 'translate' attribute using enum.",
+            "Failed asserting that element renders correctly with 'translate' attribute.",
         );
     }
 
