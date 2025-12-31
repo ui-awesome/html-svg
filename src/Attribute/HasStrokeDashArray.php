@@ -22,7 +22,9 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Immutable method for setting or overriding the `stroke-dasharray` attribute.
  * - Supports int, float, string, and `null` for flexible dash pattern assignment (absolute, relative, or unset).
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.

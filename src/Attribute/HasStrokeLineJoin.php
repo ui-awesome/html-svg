@@ -24,7 +24,9 @@ use UnitEnum;
  * - Supports string, UnitEnum, and `null` for flexible join assignment ('miter', 'round', 'bevel', 'miter-clip',
  *   'arcs', or unset).
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-linejoin
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
