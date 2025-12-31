@@ -19,6 +19,7 @@
 - Enh #19: Add `HasStrokeDashArray` trait and corresponding tests for managing SVG `stroke-dasharray` attribute (@terabytesoftw)
 - Bug #20: Update `HasStrokeDashArray` trait and tests to support float values for `stroke-dasharray` attribute (@terabytesoftw)
 - Enh #21: Add `HasOpacity` trait and corresponding tests for managing SVG `opacity` attribute (@terabytesoftw)
+- Bug #22: Add float type support to `stroke-dasharray` attribute and update documentation (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
