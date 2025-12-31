@@ -17,6 +17,7 @@ use UIAwesome\Html\Core\Html;
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Svg\Attribute\{
     HasFill,
+    HasFillOpacity,
     HasOpacity,
     HasStroke,
     HasStrokeDashArray,
@@ -58,6 +59,7 @@ use function is_string;
 abstract class BaseSvg extends BaseBlock implements Stringable
 {
     use HasFill;
+    use HasFillOpacity;
     use HasHeight;
     use HasOpacity;
     use HasStroke;
