@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Attribute;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Core\Mixin\HasAttributes;
-use UIAwesome\Html\Helper\Attributes;
+use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Attribute\HasFillRule;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillRuleProvider;
+use UIAwesome\Html\Svg\Values\FillRule;
 use UnitEnum;
 
 /**
@@ -107,5 +110,24 @@ final class HasFillRuleTest extends TestCase
             $instance->getAttributes()['fill-rule'] ?? '',
             $message,
         );
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidFillRuleValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasFillRule;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                'fill-rule',
+                implode('\', \'', Enum::normalizeArray(FillRule::cases())),
+            ),
+        );
+
+        $instance->fillRule('invalid-value');
     }
 }
