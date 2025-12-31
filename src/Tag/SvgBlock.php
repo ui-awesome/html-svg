@@ -33,6 +33,13 @@ enum SvgBlock: string implements BlockInterface
     case DEFS = 'defs';
 
     /**
+     * `<g>` - Groups SVG shapes together.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
+     */
+    case G = 'g';
+
+    /**
      * `<svg>` - The root container for SVG graphics.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
