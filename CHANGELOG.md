@@ -26,6 +26,7 @@
 - Enh #26: Add `HasFillOpacity` trait and corresponding tests for managing SVG `fill-opacity` attribute (@terabytesoftw)
 - Bug #27: Add `addAttribute` method to multiple SVG attribute traits for enhanced attribute management and minor correction in phpdoc (@terabytesoftw)
 - Enh #28: Add `HasFillRule` trait and corresponding tests for managing SVG `fill-rule` attribute (@terabytesoftw)
+- Enh #29: Add `HasStrokeMiterlimit` trait and corresponding tests for managing SVG `stroke-miterlimit` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

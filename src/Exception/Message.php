@@ -60,6 +60,13 @@ enum Message: string
     case TITLE_ATTRIBUTE_MUST_BE_STRING_OR_NULL = 'Title attribute must be a string or null.';
 
     /**
+     * Error when the value is not a number '>= 1' or `null`.
+     *
+     * Message: "Value must be a number greater than or equal to '1' or 'null' to unset."
+     */
+    case VALUE_MUST_BE_GTE_ONE_OR_NULL = "Value must be a number greater than or equal to '1' or 'null' to unset.";
+
+    /**
      * Returns the formatted message string for the error case.
      *
      * Retrieves and formats the error message string by interpolating the provided arguments.
