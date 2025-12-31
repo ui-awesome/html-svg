@@ -21,6 +21,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Immutable method for setting or overriding the `fill-opacity` attribute.
  * - Supports string and `null` for flexible fill opacity assignment ('0-1' range or unset).
  *
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/fill-opacity
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.

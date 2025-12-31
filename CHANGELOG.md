@@ -24,6 +24,7 @@
 - Enh #24: Add `G` class and corresponding tests for SVG `<g>` element functionality (@terabytesoftw)
 - Bug #25: Add tests for rendering SVG with `stroke-dasharray`, `stroke-linecap`, and `stroke-linejoin` attributes (@terabytesoftw)
 - Enh #26: Add `HasFillOpacity` trait and corresponding tests for managing SVG `fill-opacity` attribute (@terabytesoftw)
+- Bug #27: Add `addAttribute` method to multiple SVG attribute traits for enhanced attribute management and minor correction in phpdoc (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
