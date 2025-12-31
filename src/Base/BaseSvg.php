@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Attribute\{
     HasStrokeDashArray,
     HasStrokeLineCap,
     HasStrokeLineJoin,
-    HasStrokeWidth,
+    HasStrokeWidth, HasTransform,
 };
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
@@ -65,6 +65,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     use HasStrokeLineCap;
     use HasStrokeLineJoin;
     use HasStrokeWidth;
+    use HasTransform;
     use HasWidth;
 
     /**
@@ -160,28 +161,6 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     public function preserveAspectRatio(string|null $value): static
     {
         return $this->addAttribute(SvgProperty::PRESERVE_ASPECT_RATIO, $value);
-    }
-
-    /**
-     * Sets the `transform` attribute for the SVG element.
-     *
-     * Creates a new instance with the specified transform value, supporting explicit assignment according to the HTML
-     * specification for SVG attributes.
-     *
-     * @param string|null $value Transform value.
-     *
-     * @return static New instance with the updated `transform` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/coords.html#TransformProperty
-     *
-     * Usage example:
-     * ```php
-     * Svg::tag()->transform('rotate(45)');
-     * ```
-     */
-    public function transform(string|null $value): static
-    {
-        return $this->addAttribute(SvgProperty::TRANSFORM, $value);
     }
 
     /**
