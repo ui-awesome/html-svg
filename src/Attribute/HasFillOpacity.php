@@ -1,0 +1,57 @@
+<?php
+
+declare(strict_types=1);
+
+namespace UIAwesome\Html\Svg\Attribute;
+
+use UIAwesome\Html\Svg\Values\SvgProperty;
+
+/**
+ * Trait for managing SVG `fill-opacity` attribute in tag rendering.
+ *
+ * Provides a standards-compliant, immutable API for setting `fill-opacity` attribute on SVG elements, following the SVG
+ * 2 specification for painting and opacity properties.
+ *
+ * Intended for use in tags and components that require dynamic or programmatic manipulation of fill opacity property,
+ * ensuring correct attribute handling, type safety, and value validation.
+ *
+ * Key features.
+ * - Designed for use in SVG tag and component classes.
+ * - Enforces standards-compliant handling of SVG `fill-opacity` attribute.
+ * - Immutable method for setting or overriding the `fill-opacity` attribute.
+ * - Supports string and `null` for flexible fill opacity assignment ('0-1' range or unset).
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/fill-opacity
+ *
+ * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ */
+trait HasFillOpacity
+{
+    /**
+     * Sets SVG `fill-opacity` attribute for the element.
+     *
+     * Creates a new instance with the specified fill opacity value, supporting explicit assignment according to the SVG
+     * 2 specification for painting and opacity properties.
+     *
+     * @param string|null $value Fill opacity value to set for the element. Accepts any valid opacity value ('0-1' range
+     * or `null` to unset).
+     *
+     * @return static New instance with the updated `fill-opacity` attribute.
+     *
+     * @link https://svgwg.org/svg2-draft/painting.html#FillOpacityProperty
+     *
+     * Usage example:
+     * ```php
+     * // sets the `fill-opacity` attribute to '0.5'
+     * $element->fillOpacity('0.5');
+     *
+     * // unsets the `fill-opacity` attribute
+     * $element->fillOpacity(null);
+     * ```
+     */
+    public function fillOpacity(string|null $value): static
+    {
+        return $this->addAttribute(SvgProperty::FILL_OPACITY, $value);
+    }
+}

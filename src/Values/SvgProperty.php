@@ -33,6 +33,16 @@ enum SvgProperty: string
     case FILL = 'fill';
 
     /**
+     * `fill-opacity` - Fill opacity attribute specifies the transparency of the fill paint.
+     *
+     * It defines the opacity level for the fill of the current element, with valid values ranging from 0.0 (fully
+     * transparent) to '1.0' (fully opaque).
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/fill-opacity
+     */
+    case FILL_OPACITY = 'fill-opacity';
+
+    /**
      * `height` - Displayed height of the rectangular viewport (not the height of its coordinate system).
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/height

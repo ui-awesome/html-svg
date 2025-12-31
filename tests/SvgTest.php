@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Tests;
 
 use InvalidArgumentException;
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use UIAwesome\Html\Core\Factory\SimpleFactory;
@@ -40,6 +41,7 @@ use UIAwesome\Html\Svg\Values\{StrokeLineCap, StrokeLineJoin};
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
+#[Group('svg')]
 final class SvgTest extends TestCase
 {
     use TestSupport;
@@ -401,6 +403,19 @@ final class SvgTest extends TestCase
             HTML,
             Svg::tag()->content('value')->fill('#ff0000')->render(),
             "Failed asserting that element renders correctly with 'fill' attribute.",
+        );
+    }
+
+    public function testRenderWithFillOpacity(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg fill-opacity="0.7">
+            value
+            </svg>
+            HTML,
+            Svg::tag()->content('value')->fillOpacity('0.7')->render(),
+            "Failed asserting that element renders correctly with 'fill-opacity' attribute.",
         );
     }
 
