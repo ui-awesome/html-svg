@@ -62,7 +62,7 @@ final class FillRuleProvider
                 "Should return an empty string when attribute is set to 'null'.",
             ],
             'replace existing' => [
-                FillRule::NONZERO,
+                'nonzero',
                 ['fill-rule' => 'evenodd'],
                 ' fill-rule="nonzero"',
                 "Should return new 'fill-rule' after replacing existing 'fill-rule' attribute.",
