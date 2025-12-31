@@ -42,7 +42,7 @@ final class FillRuleProvider
      *
      * @return array Test data for `fill-rule` attribute rendering scenarios.
      *
-     * @phpstan-return array<string, array{string|null|UnitEnum, mixed[], string, string}>
+     * @phpstan-return array<string, array{string|null|UnitEnum, mixed[], string|UnitEnum, string}>
      */
     public static function renderAttribute(): array
     {
