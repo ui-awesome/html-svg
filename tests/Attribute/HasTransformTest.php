@@ -91,7 +91,7 @@ final class HasTransformTest extends TestCase
     public function testSetTransformAttributeValue(
         string|null $transform,
         array $attributes,
-        string|null $expected,
+        string $expected,
         string $message,
     ): void {
         $instance = new class {

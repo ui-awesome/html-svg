@@ -91,7 +91,7 @@ final class HasFillTest extends TestCase
     public function testSetFillAttributeValue(
         string|null $fill,
         array $attributes,
-        string|null $expected,
+        string $expected,
         string $message,
     ): void {
         $instance = new class {

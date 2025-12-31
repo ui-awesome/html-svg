@@ -95,7 +95,7 @@ final class HasStrokeLineCapTest extends TestCase
     public function testSetStrokeLineCapAttributeValue(
         string|UnitEnum|null $strokeLineCap,
         array $attributes,
-        string|UnitEnum|null $expected,
+        string|UnitEnum $expected,
         string $message,
     ): void {
         $instance = new class {

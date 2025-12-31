@@ -95,7 +95,7 @@ final class HasFillRuleTest extends TestCase
     public function testSetFillRuleAttributeValue(
         string|UnitEnum|null $fillRule,
         array $attributes,
-        string|UnitEnum|null $expected,
+        string|UnitEnum $expected,
         string $message,
     ): void {
         $instance = new class {
