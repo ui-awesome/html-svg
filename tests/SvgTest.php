@@ -13,6 +13,7 @@ use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Svg;
 use UIAwesome\Html\Svg\Tests\Support\Stub\{DefaultProvider, DefaultThemeProvider};
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
+use UIAwesome\Html\Svg\Values\{StrokeLineCap, StrokeLineJoin};
 
 /**
  * Test suite for {@see Svg} element functionality and behavior.
@@ -618,6 +619,19 @@ final class SvgTest extends TestCase
         );
     }
 
+    public function testRenderWithStrokeDashArray(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg stroke-dasharray="5,5">
+            value
+            </svg>
+            HTML,
+            Svg::tag()->content('value')->strokeDashArray('5,5')->render(),
+            "Failed asserting that element renders correctly with 'stroke-dasharray' attribute.",
+        );
+    }
+
     public function testRenderWithStrokeLineCap(): void
     {
         self::equalsWithoutLE(
@@ -631,6 +645,19 @@ final class SvgTest extends TestCase
         );
     }
 
+    public function testRenderWithStrokeLineCapUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg stroke-linecap="square">
+            value
+            </svg>
+            HTML,
+            Svg::tag()->content('value')->strokeLineCap(StrokeLineCap::SQUARE)->render(),
+            "Failed asserting that element renders correctly with 'stroke-linecap' attribute.",
+        );
+    }
+
     public function testRenderWithStrokeLineJoin(): void
     {
         self::equalsWithoutLE(
@@ -640,6 +667,19 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             Svg::tag()->content('value')->strokeLineJoin('round')->render(),
+            "Failed asserting that element renders correctly with 'stroke-linejoin' attribute.",
+        );
+    }
+
+    public function testRenderWithStrokeLineJoinUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg stroke-linejoin="round">
+            value
+            </svg>
+            HTML,
+            Svg::tag()->content('value')->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
             "Failed asserting that element renders correctly with 'stroke-linejoin' attribute.",
         );
     }

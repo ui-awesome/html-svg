@@ -22,6 +22,7 @@
 - Bug #22: Add float type support to `stroke-dasharray` attribute and update documentation (@terabytesoftw)
 - Enh #23: Add `HasTransform` trait and corresponding tests for managing SVG `transform` attribute (@terabytesoftw)
 - Enh #24: Add `G` class and corresponding tests for SVG `<g>` element functionality (@terabytesoftw)
+- Bug #25: Add tests for rendering SVG with `stroke-dasharray`, `stroke-linecap`, and `stroke-linejoin` attributes (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
