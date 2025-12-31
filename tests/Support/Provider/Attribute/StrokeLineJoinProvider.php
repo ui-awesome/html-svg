@@ -25,7 +25,7 @@ use UnitEnum;
  * Key features.
  * - Ensures correct propagation, override, and removal of the `stroke-linejoin` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of empty string, `null`, and standard string for the `stroke-linejoin` attribute.
+ * - Validation of empty string, UnitEnum,`null`, and standard string for the `stroke-linejoin` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -47,9 +47,9 @@ final class StrokeLineJoinProvider
      */
     public static function renderAttribute(): array
     {
-        $enumCases = EnumDataGenerator::cases(StrokeLineJoin::class, 'stroke-linejoin', true);
+        $enumCases = EnumDataGenerator::cases(StrokeLineJoin::class, 'stroke-linejoin');
 
-        $staticCase = [
+        $staticCases = [
             'empty string' => [
                 '',
                 [],
@@ -82,7 +82,7 @@ final class StrokeLineJoinProvider
             ],
         ];
 
-        return [...$staticCase, ...$enumCases];
+        return [...$staticCases, ...$enumCases];
     }
 
     /**
@@ -102,7 +102,7 @@ final class StrokeLineJoinProvider
     {
         $enumCases = EnumDataGenerator::cases(StrokeLineJoin::class, 'stroke-linejoin', false);
 
-        $staticCase = [
+        $staticCases = [
             'empty string' => [
                 '',
                 [],
@@ -135,6 +135,6 @@ final class StrokeLineJoinProvider
             ],
         ];
 
-        return [...$staticCase, ...$enumCases];
+        return [...$staticCases, ...$enumCases];
     }
 }

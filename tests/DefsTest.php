@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests;
 
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Core\Factory\SimpleFactory;
 use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
@@ -36,6 +37,7 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
+#[Group('svg')]
 final class DefsTest extends TestCase
 {
     use TestSupport;
@@ -243,7 +245,7 @@ final class DefsTest extends TestCase
             </defs>
             HTML,
             Defs::tag()->content('value')->lang(Language::SPANISH)->render(),
-            "Failed asserting that element renders correctly with 'lang' attribute using enum.",
+            "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
 
@@ -269,7 +271,7 @@ final class DefsTest extends TestCase
             </defs>
             HTML,
             Defs::tag()->content('value')->role(Role::BANNER)->render(),
-            "Failed asserting that element renders correctly with 'role' attribute using enum.",
+            "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 

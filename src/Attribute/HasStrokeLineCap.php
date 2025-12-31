@@ -21,7 +21,10 @@ use UnitEnum;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `stroke-linecap` attribute.
  * - Immutable method for setting or overriding the `stroke-linecap` attribute.
- * - Supports string and `null` for flexible cap assignment ('butt', 'round', 'square', or unset).
+ * - Supports string, UnitEnum, and `null` for flexible cap assignment ('butt', 'round', 'square', or unset).
+ *
+ * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-linecap
  *
