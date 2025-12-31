@@ -21,7 +21,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Immutable method for setting or overriding the `opacity` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible opacity assignment (object or group opacity, or unset).
  *
- * @method addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/opacity

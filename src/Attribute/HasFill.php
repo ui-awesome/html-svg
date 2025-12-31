@@ -21,7 +21,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Immutable method for setting or overriding the `fill` attribute.
  * - Supports string and `null` for flexible fill assignment (color, pattern, gradient, or unset).
  *
- * @method addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/fill
