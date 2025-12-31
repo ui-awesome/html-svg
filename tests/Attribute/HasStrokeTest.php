@@ -91,7 +91,7 @@ final class HasStrokeTest extends TestCase
     public function testSetStrokeAttributeValue(
         string|null $stroke,
         array $attributes,
-        string|null $expected,
+        string $expected,
         string $message,
     ): void {
         $instance = new class {

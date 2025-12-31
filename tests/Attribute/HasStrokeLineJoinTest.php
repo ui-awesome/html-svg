@@ -95,7 +95,7 @@ final class HasStrokeLineJoinTest extends TestCase
     public function testSetStrokeLineJoinAttributeValue(
         string|UnitEnum|null $strokeLineJoin,
         array $attributes,
-        string|UnitEnum|null $expected,
+        string|UnitEnum $expected,
         string $message,
     ): void {
         $instance = new class {

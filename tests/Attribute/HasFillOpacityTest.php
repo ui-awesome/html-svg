@@ -91,7 +91,7 @@ final class HasFillOpacityTest extends TestCase
     public function testSetFillOpacityAttributeValue(
         string|null $fillOpacity,
         array $attributes,
-        string|null $expected,
+        string $expected,
         string $message,
     ): void {
         $instance = new class {
