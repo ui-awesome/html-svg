@@ -95,11 +95,11 @@ final class FillRuleProvider
      *
      * @return array Test data for `fill-rule` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|null|UnitEnum, mixed[], string, string}>
+     * @phpstan-return array<string, array{string|null|UnitEnum, mixed[], string|UnitEnum, string}>
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(FillRule::class, 'fill-rule');
+        $enumCases = EnumDataGenerator::cases(FillRule::class, 'fill-rule', false);
 
         $staticCases = [
             'empty string' => [
@@ -115,7 +115,7 @@ final class FillRuleProvider
                 "Should return an empty string when attribute is set to 'null'.",
             ],
             'replace existing' => [
-                FillRule::EVENODD,
+                'evenodd',
                 ['fill-rule' => 'nonzero'],
                 'evenodd',
                 "Should return new 'fill-rule' after replacing existing 'fill-rule' attribute.",
