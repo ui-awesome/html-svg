@@ -110,7 +110,22 @@ final class HasStrokeMiterlimitTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeMiterlimitValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingInvalidNegativeStrokeMiterlimitValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasStrokeMiterlimit;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_MUST_BE_GTE_ONE_OR_NULL->getMessage(),
+        );
+
+        $instance->strokeMiterlimit(-5);
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidStringStrokeMiterlimitValue(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -123,5 +138,20 @@ final class HasStrokeMiterlimitTest extends TestCase
         );
 
         $instance->strokeMiterlimit('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingLessThanOneStrokeMiterlimitValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasStrokeMiterlimit;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_MUST_BE_GTE_ONE_OR_NULL->getMessage(),
+        );
+
+        $instance->strokeMiterlimit(0.9);
     }
 }
