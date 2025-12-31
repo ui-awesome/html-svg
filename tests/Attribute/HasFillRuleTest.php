@@ -10,7 +10,6 @@ use UIAwesome\Html\Core\Mixin\HasAttributes;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Svg\Attribute\HasFillRule;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillRuleProvider;
-use UIAwesome\Html\Svg\Values\FillRule;
 use UnitEnum;
 
 /**
@@ -58,7 +57,7 @@ final class HasFillRuleTest extends TestCase
             $message,
         );
     }
-    
+
     public function testReturnEmptyWhenFillRuleAttributeNotSet(): void
     {
         $instance = new class {
