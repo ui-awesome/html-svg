@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Attribute;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Core\Mixin\HasAttributes;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Svg\Attribute\HasOpacity;
+use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\OpacityProvider;
 
 /**
@@ -79,7 +81,7 @@ final class HasOpacityTest extends TestCase
 
         self::assertNotSame(
             $instance,
-            $instance->opacity(''),
+            $instance->opacity('0'),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -106,5 +108,50 @@ final class HasOpacityTest extends TestCase
             $instance->getAttributes()['opacity'] ?? '',
             $message,
         );
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidNegativeOpacityValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasOpacity;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+        );
+
+        $instance->opacity(-5);
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidOverOneOpacityValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasOpacity;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+        );
+
+        $instance->opacity(1.5);
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidStringOpacityValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasOpacity;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+        );
+
+        $instance->opacity('invalid-value');
     }
 }

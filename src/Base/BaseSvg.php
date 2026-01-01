@@ -24,6 +24,8 @@ use UIAwesome\Html\Svg\Attribute\{
     HasStrokeDashArray,
     HasStrokeLineCap,
     HasStrokeLineJoin,
+    HasStrokeMiterlimit,
+    HasStrokeOpacity,
     HasStrokeWidth,
     HasTransform,
 };
@@ -69,6 +71,8 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     use HasStrokeDashArray;
     use HasStrokeLineCap;
     use HasStrokeLineJoin;
+    use HasStrokeMiterlimit;
+    use HasStrokeOpacity;
     use HasStrokeWidth;
     use HasTransform;
     use HasWidth;

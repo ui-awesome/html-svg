@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
+use InvalidArgumentException;
+use UIAwesome\Html\Helper\Validator;
+use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
 
 /**
@@ -19,7 +22,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `opacity` attribute.
  * - Immutable method for setting or overriding the `opacity` attribute.
- * - Supports `float`, `int`, `string`, and `null` for flexible opacity assignment (object or group opacity, or unset).
+ * - Supports float, int, string, and `null` for flexible opacity assignment (object or group opacity, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
@@ -39,7 +42,7 @@ trait HasOpacity
      * to the canvas.
      *
      * @param float|int|string|null $value Opacity value to set for the element. Accepts any valid SVG opacity value
-     * (for example, `0.0`–`1.0`, integer, string, or `null` to unset).
+     * (for example, `0.0`–`1.0`, float, integer, string, or `null` to unset).
      *
      * @return static New instance with the updated `opacity` attribute.
      *
@@ -59,6 +62,12 @@ trait HasOpacity
      */
     public function opacity(float|int|string|null $value): static
     {
+        if ($value !== null && Validator::positiveLike($value, 0, 1) === false) {
+            throw new InvalidArgumentException(
+                Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+            );
+        }
+
         return $this->addAttribute(SvgProperty::OPACITY, $value);
     }
 }

@@ -11,8 +11,8 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * standards-compliant assignment, override behavior, and value propagation according to SVG 2 specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting `stroke-opacity` attribute,
- * supporting explicit float, int, string and `null` for attribute removal, to maintain consistent output across
- * different rendering configurations.
+ * supporting float, int, string, and `null` for attribute removal, to maintain consistent output across different
+ * rendering configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
  * execution and debugging sessions.
@@ -31,7 +31,7 @@ final class StrokeOpacityProvider
      * Provides test cases for SVG `stroke-opacity` attribute rendering scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of SVG `stroke-opacity` attribute, including
-     * float, int, `null`, and standard string.
+     * float, int, string, and `null`.
      *
      * Each test case includes input value, initial attributes, expected rendered output, and an assertion message for
      * clear identification.
@@ -71,13 +71,13 @@ final class StrokeOpacityProvider
                 '0',
                 [],
                 ' stroke-opacity="0"',
-                'Should return the attribute value after setting it to zero opacity.',
+                'Should return the attribute value after setting it.',
             ],
-            'string numeric' => [
+            'string float' => [
                 '0.5',
                 [],
                 ' stroke-opacity="0.5"',
-                'Should return the attribute value after setting it to half opacity.',
+                'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
@@ -92,7 +92,7 @@ final class StrokeOpacityProvider
      * Provides test cases for SVG `stroke-opacity` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of SVG `stroke-opacity` attribute, including
-     * float, int, `null`, and standard string.
+     * float, int, string, and `null`.
      *
      * Each test case includes input value, initial attributes, expected value, and an assertion message for clear
      * identification.
@@ -114,7 +114,7 @@ final class StrokeOpacityProvider
                 1,
                 [],
                 1,
-                'Should return the attribute value after setting it to full opacity.',
+                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
@@ -132,13 +132,13 @@ final class StrokeOpacityProvider
                 '0',
                 [],
                 '0',
-                'Should return the attribute value after setting it to zero opacity.',
+                'Should return the attribute value after setting it.',
             ],
-            'string numeric' => [
+            'string float' => [
                 '0.5',
                 [],
                 '0.5',
-                'Should return the attribute value after setting it to half opacity.',
+                'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,

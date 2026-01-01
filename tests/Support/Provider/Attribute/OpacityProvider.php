@@ -12,8 +12,8 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `opacity` attribute, supporting
- * explicit float, int, string and `null` for attribute removal, to maintain consistent output across different
- * rendering configurations.
+ * float, int, string, and `null` for attribute removal, to maintain consistent output across different rendering
+ * configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
  * execution and debugging sessions.
@@ -21,7 +21,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Key features.
  * - Ensures correct propagation, override, and removal of the `opacity` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of empty string, float, int, `null`, and standard string for the `opacity` attribute.
+ * - Validation of float, int, `null`, and standard string for the `opacity` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -32,7 +32,7 @@ final class OpacityProvider
      * Provides test cases for SVG `opacity` attribute rendering scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the SVG `opacity` attribute, including
-     * empty string, float, int, `null`, and standard string.
+     * float, int, string, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
      * message for clear identification.
@@ -44,22 +44,16 @@ final class OpacityProvider
     public static function renderAttribute(): array
     {
         return [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'int' => [
-                0,
-                [],
-                ' opacity="0"',
-                'Should return the attribute value after setting it.',
-            ],
             'float' => [
                 0.3,
                 [],
                 ' opacity="0.3"',
+                'Should return the attribute value after setting it.',
+            ],
+            'integer' => [
+                0,
+                [],
+                ' opacity="0"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -69,15 +63,21 @@ final class OpacityProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                '0.5em',
+                '0.5',
                 ['opacity' => '1'],
-                ' opacity="0.5em"',
+                ' opacity="0.5"',
                 "Should return new 'opacity' after replacing the existing 'opacity' attribute.",
             ],
             'string' => [
-                '0.5em',
+                '0',
                 [],
-                ' opacity="0.5em"',
+                ' opacity="0"',
+                'Should return the attribute value after setting it.',
+            ],
+            'string float' => [
+                '0.5',
+                [],
+                ' opacity="0.5"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
@@ -93,7 +93,7 @@ final class OpacityProvider
      * Provides test cases for SVG `opacity` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the SVG `opacity` attribute, including
-     * empty string, float, int, `null`, and standard string.
+     * float, int, string, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
      * clear identification.
@@ -105,22 +105,16 @@ final class OpacityProvider
     public static function values(): array
     {
         return [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'int' => [
-                0,
-                [],
-                0,
-                'Should return the attribute value after setting it.',
-            ],
             'float' => [
                 0.3,
                 [],
                 0.3,
+                'Should return the attribute value after setting it.',
+            ],
+            'integer' => [
+                0,
+                [],
+                0,
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -130,15 +124,21 @@ final class OpacityProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                '0.5em',
+                '0.5',
                 ['opacity' => '1'],
-                '0.5em',
+                '0.5',
                 "Should return new 'opacity' after replacing the existing 'opacity' attribute.",
             ],
             'string' => [
-                '0.5em',
+                '0',
                 [],
-                '0.5em',
+                '0',
+                'Should return the attribute value after setting it.',
+            ],
+            'string float' => [
+                '0.5',
+                [],
+                '0.5',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
