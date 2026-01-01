@@ -40,7 +40,7 @@ final class HasStrokeOpacityTest extends TestCase
      */
     #[DataProviderExternal(StrokeOpacityProvider::class, 'renderAttribute')]
     public function testRenderAttributesWithStrokeOpacityAttribute(
-        string|null $strokeOpacity,
+        float|int|string|null $strokeOpacity,
         array $attributes,
         string $expected,
         string $message,
@@ -91,9 +91,9 @@ final class HasStrokeOpacityTest extends TestCase
      */
     #[DataProviderExternal(StrokeOpacityProvider::class, 'values')]
     public function testSetStrokeOpacityAttributeValue(
-        string|null $strokeOpacity,
+        float|int|string|null $strokeOpacity,
         array $attributes,
-        string $expected,
+        float|int|string $expected,
         string $message,
     ): void {
         $instance = new class {

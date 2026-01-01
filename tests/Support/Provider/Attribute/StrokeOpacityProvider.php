@@ -38,11 +38,23 @@ final class StrokeOpacityProvider
      *
      * @return array Test data for `stroke-opacity` attribute rendering scenarios.
      *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], string, string}>
      */
     public static function renderAttribute(): array
     {
         return [
+            'float' => [
+                0.8,
+                [],
+                ' stroke-opacity="0.8"',
+                'Should return the attribute value after setting it.',
+            ],
+            'integer' => [
+                1,
+                [],
+                ' stroke-opacity="1"',
+                'Should return the attribute value after setting it.',
+            ],
             'null' => [
                 null,
                 [],
@@ -50,30 +62,18 @@ final class StrokeOpacityProvider
                 "Should return an empty string when attribute is set to 'null'.",
             ],
             'replace existing' => [
-                '0.8',
+                0.8,
                 ['stroke-opacity' => '0.5'],
                 ' stroke-opacity="0.8"',
                 "Should return new 'stroke-opacity' after replacing existing 'stroke-opacity' attribute.",
             ],
-            'decimal value' => [
-                '0.8',
-                [],
-                ' stroke-opacity="0.8"',
-                'Should return the attribute value after setting it.',
-            ],
-            'full opacity' => [
-                '1',
-                [],
-                ' stroke-opacity="1"',
-                'Should return the attribute value after setting it to full opacity.',
-            ],
-            'zero opacity' => [
+            'string' => [
                 '0',
                 [],
                 ' stroke-opacity="0"',
                 'Should return the attribute value after setting it to zero opacity.',
             ],
-            'half opacity' => [
+            'string numeric' => [
                 '0.5',
                 [],
                 ' stroke-opacity="0.5"',
@@ -99,11 +99,23 @@ final class StrokeOpacityProvider
      *
      * @return array Test data for `stroke-opacity` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string}>
      */
     public static function values(): array
     {
         return [
+            'float' => [
+                0.8,
+                [],
+                0.8,
+                'Should return the attribute value after setting it.',
+            ],
+            'integer' => [
+                1,
+                [],
+                1,
+                'Should return the attribute value after setting it to full opacity.',
+            ],
             'null' => [
                 null,
                 [],
@@ -111,30 +123,18 @@ final class StrokeOpacityProvider
                 "Should return an empty string when attribute is set to 'null'.",
             ],
             'replace existing' => [
-                '0.8',
+                0.8,
                 ['stroke-opacity' => '0.5'],
-                '0.8',
+                0.8,
                 "Should return new 'stroke-opacity' after replacing existing 'stroke-opacity' attribute.",
             ],
-            'decimal value' => [
-                '0.8',
-                [],
-                '0.8',
-                'Should return the attribute value after setting it.',
-            ],
-            'full opacity' => [
-                '1',
-                [],
-                '1',
-                'Should return the attribute value after setting it to full opacity.',
-            ],
-            'zero opacity' => [
+            'string' => [
                 '0',
                 [],
                 '0',
                 'Should return the attribute value after setting it to zero opacity.',
             ],
-            'half opacity' => [
+            'string numeric' => [
                 '0.5',
                 [],
                 '0.5',
