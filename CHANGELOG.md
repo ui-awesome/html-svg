@@ -28,6 +28,7 @@
 - Enh #28: Add `HasFillRule` trait and corresponding tests for managing SVG `fill-rule` attribute (@terabytesoftw)
 - Enh #29: Add `HasStrokeMiterlimit` trait and corresponding tests for managing SVG `stroke-miterlimit` attribute (@terabytesoftw)
 - Bug #30: Update expected type for attribute value parameters in multiple test cases (@terabytesoftw)
+- Enh #31: Add `HasStrokeOpacity` trait and corresponding tests for managing SVG `stroke-opacity` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

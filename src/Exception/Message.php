@@ -67,6 +67,13 @@ enum Message: string
     case VALUE_MUST_BE_GTE_ONE_OR_NULL = "Value must be a number greater than or equal to '1' or 'null' to unset.";
 
     /**
+     * Error when the value is out of range or not `null`.
+     *
+     * Message: "Value must be a number between '%s' and '%s' inclusive or 'null' to unset."
+     */
+    case VALUE_OUT_OF_RANGE_OR_NULL = "Value must be a number between '%s' and '%s' inclusive or 'null' to unset.";
+
+    /**
      * Returns the formatted message string for the error case.
      *
      * Retrieves and formats the error message string by interpolating the provided arguments.

@@ -111,6 +111,16 @@ enum SvgProperty: string
     case STROKE_MITERLIMIT = 'stroke-miterlimit';
 
     /**
+     * `stroke-opacity` - Stroke opacity attribute specifies the transparency of the stroke paint.
+     *
+     * It defines the opacity level for the stroke of the current element, with valid values ranging from '0.0' (fully
+     * transparent) to '1.0' (fully opaque).
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-opacity
+     */
+    case STROKE_OPACITY = 'stroke-opacity';
+
+    /**
      * `stroke-width` - Stroke width attribute is a presentation attribute defining the width of the outline on the
      * current object.
      *
