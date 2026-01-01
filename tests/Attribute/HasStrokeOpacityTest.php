@@ -124,4 +124,34 @@ final class HasStrokeOpacityTest extends TestCase
 
         $instance->strokeOpacity(-5);
     }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidOverOneStrokeOpacityValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasStrokeOpacity;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+        );
+
+        $instance->strokeOpacity(1.5);
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidStringStrokeOpacityValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasStrokeOpacity;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+        );
+
+        $instance->strokeOpacity('invalid-value');
+    }
 }
