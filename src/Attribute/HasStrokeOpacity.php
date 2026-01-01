@@ -1,0 +1,72 @@
+<?php
+
+declare(strict_types=1);
+
+namespace UIAwesome\Html\Svg\Attribute;
+
+use InvalidArgumentException;
+use UIAwesome\Html\Helper\Validator;
+use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Values\SvgProperty;
+
+/**
+ * Trait for managing SVG `stroke-opacity` attribute in tag rendering.
+ *
+ * Provides a standards-compliant, immutable API for setting `stroke-opacity` attribute on SVG elements, following the
+ * SVG 2 specification for painting and opacity properties.
+ *
+ * Intended for use in tags and components that require dynamic or programmatic manipulation of stroke opacity property,
+ * ensuring correct attribute handling, type safety, and value validation.
+ *
+ * Key features.
+ * - Designed for use in SVG tag and component classes.
+ * - Enforces standards-compliant handling of SVG `stroke-opacity` attribute.
+ * - Immutable method for setting or overriding the `stroke-opacity` attribute.
+ * - Supports float, int, string, and `null` for flexible stroke opacity assignment (object or group opacity, or unset).
+ *
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-opacity
+ *
+ * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ */
+trait HasStrokeOpacity
+{
+    /**
+     * Sets SVG `stroke-opacity` attribute for the element.
+     *
+     * Creates a new instance with the specified stroke opacity value, supporting explicit assignment according to the
+     * SVG 2 specification for painting and opacity properties.
+     *
+     * @param float|int|string|null $value Stroke opacity value to set for the element. Accepts any valid opacity value
+     * ('0-1' range or `null` to unset).
+     *
+     * @return static New instance with the updated `stroke-opacity` attribute.
+     *
+     * @link https://svgwg.org/svg2-draft/painting.html#StrokeOpacityProperty
+     *
+     * Usage example:
+     * ```php
+     * // sets the `stroke-opacity` attribute to 0.8
+     * $element->strokeOpacity(0.8);
+     *
+     * // sets the `stroke-opacity` attribute to '0.6'
+     * $element->strokeOpacity('0.6');
+     *
+     * // unsets the `stroke-opacity` attribute
+     * $element->strokeOpacity(null);
+     * ```
+     */
+    public function strokeOpacity(float|int|string|null $value): static
+    {
+        if ($value !== null && Validator::positiveLike($value, 0, 1) === false) {
+            throw new InvalidArgumentException(
+                Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+            );
+        }
+
+        return $this->addAttribute(SvgProperty::STROKE_OPACITY, $value);
+    }
+}
