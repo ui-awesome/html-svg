@@ -725,6 +725,32 @@ final class SvgTest extends TestCase
         );
     }
 
+    public function testRenderWithStrokeMiterlimit(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg stroke-miterlimit="10">
+            value
+            </svg>
+            HTML,
+            Svg::tag()->content('value')->strokeMiterlimit(10)->render(),
+            "Failed asserting that element renders correctly with 'stroke-miterlimit' attribute.",
+        );
+    }
+
+    public function testRenderWithStrokeOpacity(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg stroke-opacity="0.8">
+            value
+            </svg>
+            HTML,
+            Svg::tag()->content('value')->strokeOpacity(0.8)->render(),
+            "Failed asserting that element renders correctly with 'stroke-opacity' attribute.",
+        );
+    }
+
     public function testRenderWithStrokeWidth(): void
     {
         self::equalsWithoutLE(
@@ -930,7 +956,17 @@ final class SvgTest extends TestCase
         );
         self::assertNotSame(
             $svg,
-            $svg->opacity(''),
+            $svg->fillOpacity('0'),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $svg,
+            $svg->fillRule(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $svg,
+            $svg->opacity('0'),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -945,12 +981,27 @@ final class SvgTest extends TestCase
         );
         self::assertNotSame(
             $svg,
+            $svg->strokeDashArray(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $svg,
             $svg->strokeLineCap(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $svg,
             $svg->strokeLineJoin(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $svg,
+            $svg->strokeMiterlimit('1'),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $svg,
+            $svg->strokeOpacity('0'),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(

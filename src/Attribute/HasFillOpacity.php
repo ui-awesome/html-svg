@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
+use InvalidArgumentException;
+use UIAwesome\Html\Helper\Validator;
+use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
 
 /**
@@ -19,7 +22,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `fill-opacity` attribute.
  * - Immutable method for setting or overriding the `fill-opacity` attribute.
- * - Supports string and `null` for flexible fill opacity assignment ('0-1' range or unset).
+ * - Supports float, int, string and `null` for flexible fill opacity assignment ('0-1' range or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
@@ -37,8 +40,8 @@ trait HasFillOpacity
      * Creates a new instance with the specified fill opacity value, supporting explicit assignment according to the SVG
      * 2 specification for painting and opacity properties.
      *
-     * @param string|null $value Fill opacity value to set for the element. Accepts any valid opacity value ('0-1' range
-     * or `null` to unset).
+     * @param float|int|string|null $value Fill opacity value to set for the element. Accepts any valid opacity value
+     * ('0-1' range or `null` to unset).
      *
      * @return static New instance with the updated `fill-opacity` attribute.
      *
@@ -53,8 +56,14 @@ trait HasFillOpacity
      * $element->fillOpacity(null);
      * ```
      */
-    public function fillOpacity(string|null $value): static
+    public function fillOpacity(float|int|string|null $value): static
     {
+        if ($value !== null && Validator::positiveLike($value, 0, 1) === false) {
+            throw new InvalidArgumentException(
+                Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+            );
+        }
+
         return $this->addAttribute(SvgProperty::FILL_OPACITY, $value);
     }
 }
