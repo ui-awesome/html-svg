@@ -63,7 +63,7 @@ trait HasStrokeMiterlimit
      */
     public function strokeMiterlimit(float|int|string|null $value): static
     {
-        if ($value !== null && Validator::positiveLike($value, 0.99) === false) {
+        if ($value !== null && Validator::positiveLike($value, 1) === false) {
             throw new InvalidArgumentException(
                 Message::VALUE_MUST_BE_GTE_ONE_OR_NULL->getMessage(),
             );
