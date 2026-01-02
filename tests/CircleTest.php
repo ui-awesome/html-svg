@@ -107,6 +107,17 @@ final class CircleTest extends TestCase
         );
     }
 
+    public function testRenderWithCx(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <circle cx="100">
+            HTML,
+            Circle::tag()->cx(100)->render(),
+            "Failed asserting that element renders correctly with 'cx' attribute.",
+        );
+    }
+
     public function testRenderWithDataAttributes(): void
     {
         self::equalsWithoutLE(

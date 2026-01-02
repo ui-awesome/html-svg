@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Svg;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Core\Tag\VoidInterface;
 use UIAwesome\Html\Svg\Attribute\{
+    HasCx,
     HasFill,
     HasFillOpacity,
     HasFillRule,
@@ -45,6 +46,7 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  */
 final class Circle extends BaseVoid
 {
+    use HasCx;
     use HasFill;
     use HasFillOpacity;
     use HasFillRule;
