@@ -24,12 +24,12 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  *
  * {@see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs} The `<defs>` element is used to store graphical
  * objects that will be used at a later time. Objects created inside a `<defs>` element are not rendered directly.
- * {@see BaseSvgTag} for the base implementation.
+ * {@see BaseSvgBlockTag} for the base implementation.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class Defs extends Base\BaseSvgTag
+final class Defs extends Base\BaseSvgBlockTag
 {
     /**
      * Returns the tag enumeration for the `<defs>` element.

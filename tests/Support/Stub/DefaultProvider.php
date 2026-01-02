@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Stub;
 
 use UIAwesome\Html\Core\Base\BaseTag;
 use UIAwesome\Html\Core\Provider\DefaultsProviderInterface;
-use UIAwesome\Html\Svg\Base\BaseSvgTag;
+use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 
 /**
  * Provides default configuration values for tag instances in HTML helper and UI component testing.
@@ -34,7 +34,7 @@ final class DefaultProvider implements DefaultsProviderInterface
     public function getDefaults(BaseTag $tag): array
     {
         return match (true) {
-            $tag instanceof BaseSvgTag => [
+            $tag instanceof BaseSvgBlockTag => [
                 'class' => 'default-class',
             ],
             default => [

@@ -42,7 +42,7 @@ use function preg_replace;
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-abstract class BaseSvgTag extends BaseTag
+abstract class BaseSvgBlockTag extends BaseTag
 {
     use HasAria;
     use HasAttributes;
