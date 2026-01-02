@@ -254,6 +254,17 @@ final class CircleTest extends TestCase
         );
     }
 
+    public function testRenderWithR(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <circle r="50">
+            HTML,
+            Circle::tag()->r(50)->render(),
+            "Failed asserting that element renders correctly with 'r' attribute.",
+        );
+    }
+
     public function testRenderWithRole(): void
     {
         self::equalsWithoutLE(

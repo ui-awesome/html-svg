@@ -13,6 +13,7 @@ use UIAwesome\Html\Svg\Attribute\{
     HasFillOpacity,
     HasFillRule,
     HasOpacity,
+    HasR,
     HasStroke,
     HasStrokeDashArray,
     HasStrokeLineCap,
@@ -53,6 +54,7 @@ final class Circle extends BaseVoid
     use HasFillOpacity;
     use HasFillRule;
     use HasOpacity;
+    use HasR;
     use HasStroke;
     use HasStrokeDashArray;
     use HasStrokeLineCap;
