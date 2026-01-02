@@ -34,10 +34,10 @@
 - Enh #34: Enhance `G` element with `fill-opacity`, `fill-rule`, `stroke-miterlimit`, and `stroke-opacity` attributes, including new tests for rendering (@terabytesoftw)
 - Bug #35: Refactor `G` and `Defs` class to extend `BaseSvgBlockTag` for improved SVG grouping functionality and enhance documentation (@terabytesoftw)
 - Enh #36: Add `Circle` class and corresponding tests for SVG `<circle>` element functionality (@terabytesoftw)
-- Enh #36: Add `HasCx` trait and corresponding tests for managing SVG `cx` attribute (@terabytesoftw)
-- Enh #37: Add `HasCy` trait and corresponding tests for managing SVG `cy` attribute (@terabytesoftw)
-- Enh #38: Add `HasR` trait and corresponding tests for managing SVG `r` attribute (@terabytesoftw)
-- Bug #39: Update validation for `fill-opacity`, `opacity`, and `stroke-opacity` attributes to use max parameter in `Validator` (@terabytesoftw)
+- Enh #37: Add `HasCx` trait and corresponding tests for managing SVG `cx` attribute (@terabytesoftw)
+- Enh #38: Add `HasCy` trait and corresponding tests for managing SVG `cy` attribute (@terabytesoftw)
+- Enh #39: Add `HasR` trait and corresponding tests for managing SVG `r` attribute (@terabytesoftw)
+- Bug #40: Update validation for `fill-opacity`, `opacity`, and `stroke-opacity` attributes to use max parameter in `Validator` (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
