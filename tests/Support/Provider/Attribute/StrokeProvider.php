@@ -71,7 +71,7 @@ final class StrokeProvider
                 'url(#gradient1)',
                 [],
                 ' stroke="url(#gradient1)"',
-                'Should return the attribute value after setting it to a gradient reference.',
+                'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
@@ -126,7 +126,7 @@ final class StrokeProvider
                 'url(#gradient1)',
                 [],
                 'url(#gradient1)',
-                'Should return the attribute value after setting it to a gradient reference.',
+                'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,

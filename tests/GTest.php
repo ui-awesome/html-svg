@@ -152,6 +152,7 @@ final class GTest extends TestCase
             </g>
             HTML,
             G::tag()->class('value')->content('value')->render(),
+            "Failed asserting that element renders correctly with 'class' attribute.",
         );
     }
 
