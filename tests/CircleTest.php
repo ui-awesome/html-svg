@@ -118,6 +118,17 @@ final class CircleTest extends TestCase
         );
     }
 
+    public function testRenderWithCy(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <circle cy="150">
+            HTML,
+            Circle::tag()->cy(150)->render(),
+            "Failed asserting that element renders correctly with 'cy' attribute.",
+        );
+    }
+
     public function testRenderWithDataAttributes(): void
     {
         self::equalsWithoutLE(
