@@ -89,6 +89,15 @@ enum SvgProperty: string
     case PRESERVE_ASPECT_RATIO = 'preserveAspectRatio';
 
     /**
+     * `r` - Radius of a circle element.
+     *
+     * Defines the radius of the circle in the current user coordinate system.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/r
+     */
+    case R = 'r';
+
+    /**
      * `stroke` - Stroke attribute is a presentation attribute defining the color (or any SVG paint servers like
      * gradients or patterns) used to paint the outline of the shape.
      *

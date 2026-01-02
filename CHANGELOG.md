@@ -36,6 +36,7 @@
 - Enh #36: Add `Circle` class and corresponding tests for SVG `<circle>` element functionality (@terabytesoftw)
 - Enh #36: Add `HasCx` trait and corresponding tests for managing SVG `cx` attribute (@terabytesoftw)
 - Enh #37: Add `HasCy` trait and corresponding tests for managing SVG `cy` attribute (@terabytesoftw)
+- Enh #38: Add `HasR` trait and corresponding tests for managing SVG `r` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
