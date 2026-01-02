@@ -7,11 +7,15 @@ namespace UIAwesome\Html\Svg;
 use UIAwesome\Html\Core\Tag\BlockInterface;
 use UIAwesome\Html\Svg\Attribute\{
     HasFill,
+    HasFillOpacity,
+    HasFillRule,
     HasOpacity,
     HasStroke,
     HasStrokeDashArray,
     HasStrokeLineCap,
     HasStrokeLineJoin,
+    HasStrokeMiterlimit,
+    HasStrokeOpacity,
     HasStrokeWidth,
     HasTransform,
 };
@@ -40,11 +44,15 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 final class G extends Base\BaseSvgTag
 {
     use HasFill;
+    use HasFillOpacity;
+    use HasFillRule;
     use HasOpacity;
     use HasStroke;
     use HasStrokeDashArray;
     use HasStrokeLineCap;
     use HasStrokeLineJoin;
+    use HasStrokeMiterlimit;
+    use HasStrokeOpacity;
     use HasStrokeWidth;
     use HasTransform;
 

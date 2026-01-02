@@ -11,7 +11,7 @@ use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
 use UIAwesome\Html\Svg\G;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
-use UIAwesome\Html\Svg\Values\{StrokeLineCap, StrokeLineJoin};
+use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin};
 
 /**
  * Test suite for {@see G} element functionality and behavior.
@@ -220,6 +220,45 @@ final class GTest extends TestCase
         );
     }
 
+    public function testRenderWithFillOpacity(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <g fill-opacity="0.7">
+            value
+            </g>
+            HTML,
+            G::tag()->content('value')->fillOpacity('0.7')->render(),
+            "Failed asserting that element renders correctly with 'fill-opacity' attribute.",
+        );
+    }
+
+    public function testRenderWithFillRule(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <g fill-rule="evenodd">
+            value
+            </g>
+            HTML,
+            G::tag()->content('value')->fillRule('evenodd')->render(),
+            "Failed asserting that element renders correctly with 'fill-rule' attribute.",
+        );
+    }
+
+    public function testRenderWithFillRuleUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <g fill-rule="nonzero">
+            value
+            </g>
+            HTML,
+            G::tag()->content('value')->fillRule(FillRule::NONZERO)->render(),
+            "Failed asserting that element renders correctly with 'fill-rule' attribute.",
+        );
+    }
+
     public function testRenderWithGlobalDefaultsAreApplied(): void
     {
         SimpleFactory::setDefaults(G::class, ['class' => 'default-class']);
@@ -380,6 +419,32 @@ final class GTest extends TestCase
         );
     }
 
+    public function testRenderWithStrokeMiterlimit(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <g stroke-miterlimit="10">
+            value
+            </g>
+            HTML,
+            G::tag()->content('value')->strokeMiterlimit(10)->render(),
+            "Failed asserting that element renders correctly with 'stroke-miterlimit' attribute.",
+        );
+    }
+
+    public function testRenderWithStrokeOpacity(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <g stroke-opacity="0.8">
+            value
+            </g>
+            HTML,
+            G::tag()->content('value')->strokeOpacity(0.8)->render(),
+            "Failed asserting that element renders correctly with 'stroke-opacity' attribute.",
+        );
+    }
+
     public function testRenderWithStrokeWidth(): void
     {
         self::equalsWithoutLE(
@@ -460,5 +525,71 @@ final class GTest extends TestCase
         );
 
         SimpleFactory::setDefaults(G::class, []);
+    }
+
+    public function testReturnNewInstanceWhenSettingAttribute(): void
+    {
+        $g = G::tag();
+
+        self::assertNotSame(
+            $g,
+            $g->fill(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->fillOpacity('0'),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->fillRule(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->opacity('0'),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->stroke(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->strokeDashArray(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->strokeLineCap(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->strokeLineJoin(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->strokeMiterlimit('1'),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->strokeOpacity('0'),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->strokeWidth(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $g,
+            $g->transform(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
     }
 }
