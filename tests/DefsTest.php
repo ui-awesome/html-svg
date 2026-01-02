@@ -151,6 +151,7 @@ final class DefsTest extends TestCase
             </defs>
             HTML,
             Defs::tag()->class('value')->content('value')->render(),
+            "Failed asserting that element renders correctly with 'class' attribute.",
         );
     }
 

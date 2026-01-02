@@ -40,7 +40,7 @@ final class HasStrokeMiterlimitTest extends TestCase
      */
     #[DataProviderExternal(StrokeMiterlimitProvider::class, 'renderAttribute')]
     public function testRenderAttributesWithStrokeMiterlimitAttribute(
-        int|string|null $strokeMiterlimit,
+        float|int|string|null $strokeMiterlimit,
         array $attributes,
         string $expected,
         string $message,
@@ -91,9 +91,9 @@ final class HasStrokeMiterlimitTest extends TestCase
      */
     #[DataProviderExternal(StrokeMiterlimitProvider::class, 'values')]
     public function testSetStrokeMiterlimitAttributeValue(
-        int|string|null $strokeMiterlimit,
+        float|int|string|null $strokeMiterlimit,
         array $attributes,
-        int|string $expected,
+        float|int|string $expected,
         string $message,
     ): void {
         $instance = new class {

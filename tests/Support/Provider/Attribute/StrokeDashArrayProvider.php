@@ -50,16 +50,16 @@ final class StrokeDashArrayProvider
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
-            'int' => [
-                3,
-                [],
-                ' stroke-dasharray="3"',
-                'Should return the attribute value after setting it.',
-            ],
             'float' => [
                 3.5,
                 [],
                 ' stroke-dasharray="3.5"',
+                'Should return the attribute value after setting it.',
+            ],
+            'integer' => [
+                3,
+                [],
+                ' stroke-dasharray="3"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -111,16 +111,16 @@ final class StrokeDashArrayProvider
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
-            'int' => [
-                3,
-                [],
-                3,
-                'Should return the attribute value after setting it.',
-            ],
             'float' => [
                 3.5,
                 [],
                 3.5,
+                'Should return the attribute value after setting it.',
+            ],
+            'integer' => [
+                3,
+                [],
+                3,
                 'Should return the attribute value after setting it.',
             ],
             'null' => [

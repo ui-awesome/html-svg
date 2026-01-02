@@ -50,7 +50,7 @@ final class StrokeWidthProvider
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
-            'int' => [
+            'integer' => [
                 3,
                 [],
                 ' stroke-width="3"',
@@ -68,7 +68,13 @@ final class StrokeWidthProvider
                 ' stroke-width="1.5em"',
                 "Should return new 'stroke-width' after replacing the existing 'stroke-width' attribute.",
             ],
-            'string' => [
+            'string percentage' => [
+                '50%',
+                [],
+                ' stroke-width="50%"',
+                'Should return the attribute value after setting it.',
+            ],
+            'string with units' => [
                 '1.5em',
                 [],
                 ' stroke-width="1.5em"',
@@ -105,7 +111,7 @@ final class StrokeWidthProvider
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
-            'int' => [
+            'integer' => [
                 3,
                 [],
                 3,
@@ -123,7 +129,13 @@ final class StrokeWidthProvider
                 '1.5em',
                 "Should return new 'stroke-width' after replacing the existing 'stroke-width' attribute.",
             ],
-            'string' => [
+            'string percentage' => [
+                '50%',
+                [],
+                '50%',
+                'Should return the attribute value after setting it.',
+            ],
+            'string with units' => [
                 '1.5em',
                 [],
                 '1.5em',

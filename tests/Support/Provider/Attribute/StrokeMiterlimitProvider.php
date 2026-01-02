@@ -31,14 +31,14 @@ final class StrokeMiterlimitProvider
      * Provides test cases for SVG `stroke-miterlimit` attribute rendering scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of SVG `stroke-miterlimit` attribute,
-     * including int, `null`, and standard string.
+     * including float, int, `null`, and standard string.
      *
      * Each test case includes input value, initial attributes, expected rendered output, and an assertion message for
      * clear identification.
      *
      * @return array Test data for `stroke-miterlimit` attribute rendering scenarios.
      *
-     * @phpstan-return array<string, array{int|string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], string, string}>
      */
     public static function renderAttribute(): array
     {
@@ -49,7 +49,13 @@ final class StrokeMiterlimitProvider
                 '',
                 "Should return an empty string when attribute is set to 'null'.",
             ],
-            'int' => [
+            'float' => [
+                4.0,
+                [],
+                ' stroke-miterlimit="4"',
+                'Should return the attribute value after setting it.',
+            ],
+            'integer' => [
                 4,
                 [],
                 ' stroke-miterlimit="4"',
@@ -67,7 +73,7 @@ final class StrokeMiterlimitProvider
                 ' stroke-miterlimit="1"',
                 'Should return the attribute value after setting it.',
             ],
-            'string decimal' => [
+            'string float' => [
                 '3.5',
                 [],
                 ' stroke-miterlimit="3.5"',
@@ -86,14 +92,14 @@ final class StrokeMiterlimitProvider
      * Provides test cases for SVG `stroke-miterlimit` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of SVG `stroke-miterlimit` attribute,
-     * including int, `null`, and standard string.
+     * including float, int, `null`, and standard string.
      *
      * Each test case includes input value, initial attributes, expected value, and an assertion message for clear
      * identification.
      *
      * @return array Test data for `stroke-miterlimit` attribute scenarios.
      *
-     * @phpstan-return array<string, array{int|string|null, mixed[], int|string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string}>
      */
     public static function values(): array
     {
@@ -104,7 +110,13 @@ final class StrokeMiterlimitProvider
                 '',
                 "Should return an empty string when attribute is set to 'null'.",
             ],
-            'int' => [
+            'float' => [
+                4.0,
+                [],
+                4.0,
+                'Should return the attribute value after setting it.',
+            ],
+            'integer' => [
                 4,
                 [],
                 4,
@@ -122,7 +134,7 @@ final class StrokeMiterlimitProvider
                 '1',
                 'Should return the attribute value after setting it.',
             ],
-            'string decimal' => [
+            'string float' => [
                 '3.5',
                 [],
                 '3.5',
