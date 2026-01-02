@@ -440,6 +440,16 @@ final class CircleTest extends TestCase
 
         self::assertNotSame(
             $circle,
+            $circle->cx(0),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $circle,
+            $circle->cy(0),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $circle,
             $circle->fill(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
@@ -456,6 +466,11 @@ final class CircleTest extends TestCase
         self::assertNotSame(
             $circle,
             $circle->opacity('0'),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $circle,
+            $circle->r(0),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
