@@ -34,6 +34,7 @@
 - Enh #34: Enhance `G` element with `fill-opacity`, `fill-rule`, `stroke-miterlimit`, and `stroke-opacity` attributes, including new tests for rendering (@terabytesoftw)
 - Bug #35: Refactor `G` and `Defs` class to extend `BaseSvgBlockTag` for improved SVG grouping functionality and enhance documentation (@terabytesoftw)
 - Enh #36: Add `HasCx` trait and corresponding tests for managing SVG `cx` attribute (@terabytesoftw)
+- Enh #37: Add `HasCy` trait and corresponding tests for managing SVG `cy` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
