@@ -59,7 +59,7 @@ final class RProvider
                 50,
                 [],
                 ' r="50"',
-                 'Should return the attribute value after setting it.',
+                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
