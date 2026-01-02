@@ -22,6 +22,15 @@ namespace UIAwesome\Html\Svg\Values;
 enum SvgProperty: string
 {
     /**
+     * `cx` - Center x-coordinate of a circle or ellipse element.
+     *
+     * Defines the horizontal position of the center point of the element in the current user coordinate system.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/cx
+     */
+    case CX = 'cx';
+
+    /**
      * `fill` - Fill attribute has two different meanings.
      *
      * For shapes and text it's a presentation attribute that defines the color (or any SVG paint servers like gradients
