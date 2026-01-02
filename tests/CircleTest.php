@@ -104,6 +104,7 @@ final class CircleTest extends TestCase
             <circle class="value">
             HTML,
             Circle::tag()->class('value')->render(),
+            "Failed asserting that element renders correctly with 'class' attribute.",
         );
     }
 
