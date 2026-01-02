@@ -61,7 +61,7 @@ trait HasStrokeOpacity
      */
     public function strokeOpacity(float|int|string|null $value): static
     {
-        if ($value !== null && Validator::positiveLike($value, 0, 1) === false) {
+        if ($value !== null && Validator::positiveLike($value, max: 1) === false) {
             throw new InvalidArgumentException(
                 Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
             );

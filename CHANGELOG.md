@@ -37,6 +37,7 @@
 - Enh #36: Add `HasCx` trait and corresponding tests for managing SVG `cx` attribute (@terabytesoftw)
 - Enh #37: Add `HasCy` trait and corresponding tests for managing SVG `cy` attribute (@terabytesoftw)
 - Enh #38: Add `HasR` trait and corresponding tests for managing SVG `r` attribute (@terabytesoftw)
+- Bug #39: Update validation for `fill-opacity`, `opacity`, and `stroke-opacity` attributes to use max parameter in `Validator` (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
