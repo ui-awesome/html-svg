@@ -31,6 +31,7 @@
 - Enh #31: Add `HasStrokeOpacity` trait and corresponding tests for managing SVG `stroke-opacity` attribute (@terabytesoftw)
 - Bug #32: Update validation for `stroke-miterlimit` to require a minimum value of `1` (@terabytesoftw)
 - Bug #33: Refactor `fill-opacity` and `opacity` handling with type validation and new tests for SVG attributes (@terabytesoftw)
+- Enh #34: Enhance `G` element with `fill-opacity`, `fill-rule`, `stroke-miterlimit`, and `stroke-opacity` attributes, including new tests for rendering (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
