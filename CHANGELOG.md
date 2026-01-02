@@ -33,6 +33,7 @@
 - Bug #33: Refactor `fill-opacity` and `opacity` handling with type validation and new tests for SVG attributes (@terabytesoftw)
 - Enh #34: Enhance `G` element with `fill-opacity`, `fill-rule`, `stroke-miterlimit`, and `stroke-opacity` attributes, including new tests for rendering (@terabytesoftw)
 - Bug #35: Refactor `G` and `Defs` class to extend `BaseSvgBlockTag` for improved SVG grouping functionality and enhance documentation (@terabytesoftw)
+- Enh #36: Add `Circle` class and corresponding tests for SVG `<circle>` element functionality (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
