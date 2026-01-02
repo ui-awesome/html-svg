@@ -24,7 +24,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/cx
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/cx
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
