@@ -11,7 +11,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * standards-compliant assignment, override behavior, and value propagation according to the SVG 2 specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `y` attribute, supporting int,
- * string and `null` for attribute removal, to maintain consistent output across different rendering configurations.
+ * string, and `null` for attribute removal, to maintain consistent output across different rendering configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
  * execution and debugging sessions.
@@ -19,7 +19,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Key features.
  * - Ensures correct propagation, override, and removal of the `y` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of int, string and `null` for the `y` attribute.
+ * - Validation of int, string, and `null` for the `y` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

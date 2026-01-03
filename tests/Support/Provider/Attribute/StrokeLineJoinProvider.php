@@ -16,7 +16,7 @@ use UnitEnum;
  * specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `stroke-linejoin` attribute,
- * supporting string, UnitEnum and `null` for attribute removal, to maintain consistent output across different
+ * supporting string, UnitEnum, and `null` for attribute removal, to maintain consistent output across different
  * rendering configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test

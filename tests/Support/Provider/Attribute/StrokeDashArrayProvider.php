@@ -12,7 +12,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `stroke-dasharray` attribute,
- * supporting float, int, string and `null` for attribute removal, to maintain consistent output across different
+ * supporting float, int, string, and `null` for attribute removal, to maintain consistent output across different
  * rendering configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test

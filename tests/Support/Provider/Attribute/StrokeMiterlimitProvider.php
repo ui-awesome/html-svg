@@ -11,8 +11,8 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * ensuring standards-compliant assignment, override behavior, and value propagation according to SVG 2 specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting `stroke-miterlimit` attribute,
- * supporting int, string and `null` for attribute removal, to maintain consistent output across different rendering
- * configurations.
+ * supporting float, int, string and `null` for attribute removal, to maintain consistent output across different
+ * rendering configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
  * execution and debugging sessions.
@@ -20,7 +20,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Key features.
  * - Ensures correct propagation, override, and removal of `stroke-miterlimit` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of int, string, and `null` for `stroke-miterlimit` attribute.
+ * - Validation of float, int, string, and `null` for `stroke-miterlimit` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
