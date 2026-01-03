@@ -19,7 +19,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `y` attribute.
  * - Immutable method for setting or overriding the `y` attribute.
- * - Supports int, string and `null` for flexible coordinate assignment (absolute, relative, or unset).
+ * - Supports float, int, string and `null` for flexible coordinate assignment (absolute, relative, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
@@ -37,8 +37,8 @@ trait HasY
      * Creates a new instance with the specified y-coordinate value, supporting explicit assignment according to the SVG
      * 2 specification for defining the vertical position of an element.
      *
-     * @param int|string|null $value Y coordinate value to set for the element. Accepts any valid SVG length,
-     * percentage, or `null` to unset (for example, '50', '10px', '50%', or `null`).
+     * @param float|int|string|null $value Y coordinate value to set for the element. Accepts any valid SVG length,
+     * percentage, or `null` to unset (for example, '10.3', '50', '10px', '50%', or `null`).
      *
      * @return static New instance with the updated `y` attribute.
      *
@@ -49,6 +49,9 @@ trait HasY
      * // sets the `y` attribute to 20 user units
      * $element->y(20);
      *
+     * // sets the `y` attribute to 10.3 user units
+     * $element->y(10.3);
+     *
      * // sets the `y` attribute to a relative value
      * $element->y('50%');
      *
@@ -56,7 +59,7 @@ trait HasY
      * $element->y(null);
      * ```
      */
-    public function y(int|string|null $value): static
+    public function y(float|int|string|null $value): static
     {
         return $this->addAttribute(SvgProperty::Y, $value);
     }
