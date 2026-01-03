@@ -28,6 +28,8 @@ use UIAwesome\Html\Svg\Attribute\{
     HasStrokeOpacity,
     HasStrokeWidth,
     HasTransform,
+    HasX,
+    HasY,
 };
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
@@ -76,6 +78,8 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     use HasStrokeWidth;
     use HasTransform;
     use HasWidth;
+    use HasX;
+    use HasY;
 
     /**
      * Path to the SVG file to be loaded and rendered.
@@ -94,7 +98,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * Usage example:
      * ```php
-     * Svg::tag()->filePath('/path/to/icon.svg');
+     * $element->filePath('/path/to/icon.svg');
      * ```
      */
     public function filePath(string $value): static
@@ -113,7 +117,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * Usage example:
      * ```php
-     * $svg->getAttributes();
+     * $element->getAttributes();
      * ```
      */
     public function getAttributes(): array
@@ -135,7 +139,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * Usage example:
      * ```php
-     * $svg->getContent();
+     * $element->getContent();
      * ```
      */
     public function getContent(): string
@@ -164,7 +168,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * Usage example:
      * ```php
-     * Svg::tag()->preserveAspectRatio('xMidYMid meet');
+     * $element->preserveAspectRatio('xMidYMid meet');
      * ```
      */
     public function preserveAspectRatio(string|null $value): static
@@ -186,34 +190,12 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * Usage example:
      * ```php
-     * Svg::tag()->viewBox('0 0 100 100');
+     * $element->viewBox('0 0 100 100');
      * ```
      */
     public function viewBox(string|null $value): static
     {
         return $this->addAttribute(SvgProperty::VIEW_BOX, $value);
-    }
-
-    /**
-     * Sets the `x` attribute for the SVG element.
-     *
-     * Creates a new instance with the specified x coordinate value, supporting explicit assignment according to the
-     * HTML specification for SVG attributes.
-     *
-     * @param string|null $value X coordinate value.
-     *
-     * @return static New instance with the updated `x` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/geometry.html#XProperty
-     *
-     * Usage example:
-     * ```php
-     * Svg::tag()->x('10');
-     * ```
-     */
-    public function x(string|null $value): static
-    {
-        return $this->addAttribute(SvgProperty::X, $value);
     }
 
     /**
@@ -233,34 +215,12 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * Usage example:
      * ```php
-     * $svg = (new MySvg())->xmlns('http://www.w3.org/2000/svg');
+     * $element->xmlns('http://www.w3.org/2000/svg');
      * ```
      */
     public function xmlns(string|null $value): static
     {
         return $this->addAttribute(SvgProperty::XMLNS, $value);
-    }
-
-    /**
-     * Sets the `y` attribute for the SVG element.
-     *
-     * Creates a new instance with the specified y coordinate value, supporting explicit assignment according to the
-     * HTML specification for SVG attributes.
-     *
-     * @param string|null $value Y coordinate value.
-     *
-     * @return static New instance with the updated `y` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/geometry.html#YProperty
-     *
-     * Usage example:
-     * ```php
-     * $svg = (new MySvg())->y('20');
-     * ```
-     */
-    public function y(string|null $value): static
-    {
-        return $this->addAttribute(SvgProperty::Y, $value);
     }
 
     /**
