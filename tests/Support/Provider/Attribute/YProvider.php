@@ -55,6 +55,24 @@ final class YProvider
                 ' y="10.3"',
                 'Should return the attribute value after setting a float.',
             ],
+            'float negative' => [
+                -5.7,
+                [],
+                ' y="-5.7"',
+                'Should return the attribute value after setting a negative float.',
+            ],
+            'float precision' => [
+                10.12345,
+                [],
+                ' y="10.12345"',
+                'Should return the attribute value after setting a float with precision.',
+            ],
+            'float zero' => [
+                0.0,
+                [],
+                ' y="0"',
+                'Should return the attribute value after setting float zero.',
+            ],
             'integer' => [
                 10,
                 [],
@@ -127,6 +145,24 @@ final class YProvider
                 [],
                 10.3,
                 'Should return the attribute value after setting a float.',
+            ],
+            'float negative' => [
+                -5.7,
+                [],
+                -5.7,
+                'Should return the attribute value after setting a negative float.',
+            ],
+            'float precision' => [
+                10.12345,
+                [],
+                10.12345,
+                'Should return the attribute value after setting a float with precision.',
+            ],
+            'float zero' => [
+                0.0,
+                [],
+                0.0,
+                'Should return the attribute value after setting float zero.',
             ],
             'integer' => [
                 10,

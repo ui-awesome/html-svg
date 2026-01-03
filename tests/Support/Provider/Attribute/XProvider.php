@@ -55,6 +55,24 @@ final class XProvider
                 ' x="10.3"',
                 'Should return the attribute value after setting a float.',
             ],
+            'float negative' => [
+                -5.7,
+                [],
+                ' x="-5.7"',
+                'Should return the attribute value after setting a negative float.',
+            ],
+            'float precision' => [
+                10.12345,
+                [],
+                ' x="10.12345"',
+                'Should return the attribute value after setting a float with precision.',
+            ],
+            'float zero' => [
+                0.0,
+                [],
+                ' x="0"',
+                'Should return the attribute value after setting float zero.',
+            ],
             'integer' => [
                 10,
                 [],
@@ -127,6 +145,24 @@ final class XProvider
                 [],
                 10.3,
                 'Should return the attribute value after setting a float.',
+            ],
+            'float negative' => [
+                -5.7,
+                [],
+                -5.7,
+                'Should return the attribute value after setting a negative float.',
+            ],
+            'float precision' => [
+                10.12345,
+                [],
+                10.12345,
+                'Should return the attribute value after setting a float with precision.',
+            ],
+            'float zero' => [
+                0.0,
+                [],
+                0.0,
+                'Should return the attribute value after setting float zero.',
             ],
             'integer' => [
                 10,
