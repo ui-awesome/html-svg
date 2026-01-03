@@ -38,7 +38,7 @@ final class HasYTest extends TestCase
      */
     #[DataProviderExternal(YProvider::class, 'renderAttribute')]
     public function testRenderAttributesWithYAttribute(
-        int|string|null $y,
+        float|int|string|null $y,
         array $attributes,
         string $expected,
         string $message,
@@ -89,9 +89,9 @@ final class HasYTest extends TestCase
      */
     #[DataProviderExternal(YProvider::class, 'values')]
     public function testSetYAttributeValue(
-        int|string|null $y,
+        float|int|string|null $y,
         array $attributes,
-        int|string $expected,
+        float|int|string $expected,
         string $message,
     ): void {
         $instance = new class {
