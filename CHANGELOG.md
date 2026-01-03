@@ -42,6 +42,7 @@
 - Enh #42: Add `HasX` trait and corresponding tests for managing SVG `x` attribute (@terabytesoftw)
 - Enh #43: Add `HasY` trait and corresponding tests for managing SVG `y` attribute (@terabytesoftw)
 - Bug #44: Update validation descriptions for SVG attributes to include float, int, string, and `null` types in providers classes (@terabytesoftw)
+- Bug #45: Improve `HasX` and `HasY` traits to support float values for SVG coordinate attributes (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

@@ -19,7 +19,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `x` attribute.
  * - Immutable method for setting or overriding the `x` attribute.
- * - Supports int, string and `null` for flexible coordinate assignment (absolute, relative, or unset).
+ * - Supports float, int, string and `null` for flexible coordinate assignment (absolute, relative, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing attributes.
@@ -37,8 +37,8 @@ trait HasX
      * Creates a new instance with the specified x-coordinate value, supporting explicit assignment according to the
      * SVG 2 specification for defining the horizontal position of an element.
      *
-     * @param int|string|null $value X coordinate value to set for the element. Accepts any valid SVG length,
-     * percentage, or `null` to unset (for example, '50', '10px', '50%', or `null`).
+     * @param float|int|string|null $value X coordinate value to set for the element. Accepts any valid SVG length,
+     * percentage, or `null` to unset (for example, '10.3', '50', '10px', '50%', or `null`).
      *
      * @return static New instance with the updated `x` attribute.
      *
@@ -49,6 +49,9 @@ trait HasX
      * // sets the `x` attribute to 10 user units
      * $element->x(10);
      *
+     * // sets the `x` attribute to 10.3 user units
+     * $element->x(10.3);
+     *
      * // sets the `x` attribute to a relative value
      * $element->x('50%');
      *
@@ -56,7 +59,7 @@ trait HasX
      * $element->x(null);
      * ```
      */
-    public function x(int|string|null $value): static
+    public function x(float|int|string|null $value): static
     {
         return $this->addAttribute(SvgProperty::X, $value);
     }

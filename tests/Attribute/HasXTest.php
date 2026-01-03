@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\XProvider;
  *
  * Validates the management of the SVG `x` attribute according to the SVG 2 specification.
  *
- * Ensures correct handling, immutability, and validation of the `x` attribute in tag rendering, supporting int, string,
- * and `null` for dynamic coordinate assignment.
+ * Ensures correct handling, immutability, and validation of the `x` attribute in tag rendering, supporting float, int,
+ * string, and `null` for dynamic coordinate assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with the `x` attribute.
@@ -38,7 +38,7 @@ final class HasXTest extends TestCase
      */
     #[DataProviderExternal(XProvider::class, 'renderAttribute')]
     public function testRenderAttributesWithXAttribute(
-        int|string|null $x,
+        float|int|string|null $x,
         array $attributes,
         string $expected,
         string $message,
@@ -89,9 +89,9 @@ final class HasXTest extends TestCase
      */
     #[DataProviderExternal(XProvider::class, 'values')]
     public function testSetXAttributeValue(
-        int|string|null $x,
+        float|int|string|null $x,
         array $attributes,
-        int|string $expected,
+        float|int|string $expected,
         string $message,
     ): void {
         $instance = new class {

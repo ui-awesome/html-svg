@@ -10,8 +10,9 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Supplies comprehensive test data for validating the handling of the SVG `y` attribute in tag rendering, ensuring
  * standards-compliant assignment, override behavior, and value propagation according to the SVG 2 specification.
  *
- * The test data covers real-world scenarios for setting, overriding, and unsetting the `y` attribute, supporting int,
- * string, and `null` for attribute removal, to maintain consistent output across different rendering configurations.
+ * The test data covers real-world scenarios for setting, overriding, and unsetting the `y` attribute, supporting float,
+ * int, string, and `null` for attribute removal, to maintain consistent output across different rendering
+ * configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
  * execution and debugging sessions.
@@ -19,7 +20,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Key features.
  * - Ensures correct propagation, override, and removal of the `y` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of int, string, and `null` for the `y` attribute.
+ * - Validation of float, int, string, and `null` for the `y` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -29,15 +30,15 @@ final class YProvider
     /**
      * Provides test cases for SVG `y` attribute rendering scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of the SVG `y` attribute, including int,
-     * string, and `null`.
+     * Supplies test data for validating assignment, override, and removal of the SVG `y` attribute, including, float,
+     * int, string, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
      * message for clear identification.
      *
      * @return array Test data for `y` attribute rendering scenarios.
      *
-     * @phpstan-return array<string, array{int|string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], string, string}>
      */
     public static function renderAttribute(): array
     {
@@ -47,6 +48,30 @@ final class YProvider
                 [],
                 '',
                 'Should return an empty string when setting an empty string.',
+            ],
+            'float' => [
+                10.3,
+                [],
+                ' y="10.3"',
+                'Should return the attribute value after setting a float.',
+            ],
+            'float negative' => [
+                -5.7,
+                [],
+                ' y="-5.7"',
+                'Should return the attribute value after setting a negative float.',
+            ],
+            'float precision' => [
+                10.12345,
+                [],
+                ' y="10.12345"',
+                'Should return the attribute value after setting a float with precision.',
+            ],
+            'float zero' => [
+                0.0,
+                [],
+                ' y="0"',
+                'Should return the attribute value after setting float zero.',
             ],
             'integer' => [
                 10,
@@ -96,15 +121,15 @@ final class YProvider
     /**
      * Provides test cases for SVG `y` attribute scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of the SVG `y` attribute, including int,
-     * string, and `null`.
+     * Supplies test data for validating assignment, override, and removal of the SVG `y` attribute, including float,
+     * int, string, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
      * clear identification.
      *
      * @return array Test data for `y` attribute scenarios.
      *
-     * @phpstan-return array<string, array{int|string|null, mixed[], int|string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string}>
      */
     public static function values(): array
     {
@@ -114,6 +139,30 @@ final class YProvider
                 [],
                 '',
                 'Should return an empty string when setting an empty string.',
+            ],
+            'float' => [
+                10.3,
+                [],
+                10.3,
+                'Should return the attribute value after setting a float.',
+            ],
+            'float negative' => [
+                -5.7,
+                [],
+                -5.7,
+                'Should return the attribute value after setting a negative float.',
+            ],
+            'float precision' => [
+                10.12345,
+                [],
+                10.12345,
+                'Should return the attribute value after setting a float with precision.',
+            ],
+            'float zero' => [
+                0.0,
+                [],
+                0.0,
+                'Should return the attribute value after setting float zero.',
             ],
             'integer' => [
                 10,
