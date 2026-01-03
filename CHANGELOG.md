@@ -39,6 +39,7 @@
 - Enh #39: Add `HasR` trait and corresponding tests for managing SVG `r` attribute (@terabytesoftw)
 - Bug #40: Update validation for `fill-opacity`, `opacity`, and `stroke-opacity` attributes to use max parameter in `Validator` (@terabytesoftw)
 - Bug #41: Add additional SVG block cases and enhance test assertions for rendering attributes (@terabytesoftw)
+- Enh #42: Add `HasX` trait and corresponding tests for managing SVG `x` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

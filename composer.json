@@ -15,7 +15,7 @@
         "ext-dom": "*",
         "ext-libxml": "*",
         "enshrined/svg-sanitize": "^0.22",
-        "ui-awesome/html-attribute": "^0.4",
+        "ui-awesome/html-attribute": "0.5.x-dev",
         "ui-awesome/html-core": "0.5.x-dev",
         "ui-awesome/html-helper": "^0.6"
     },
