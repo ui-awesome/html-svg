@@ -10,9 +10,9 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Supplies comprehensive test data for validating the handling of the SVG `cx` attribute in tag rendering, ensuring
  * standards-compliant assignment, override behavior, and value propagation according to the SVG 2 specification.
  *
- * The test data covers real-world scenarios for setting, overriding, and unsetting the `cx` attribute, supporting both
- * explicit numeric values, strings with units, and `null` for attribute removal, to maintain consistent output across
- * different rendering configurations.
+ * The test data covers real-world scenarios for setting, overriding, and unsetting the `cx` attribute, supporting
+ * float, int, string, and `null` for attribute removal, to maintain consistent output across different rendering
+ * configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
  * execution and debugging sessions.
@@ -20,7 +20,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Key features.
  * - Ensures correct propagation, override, and removal of the `cx` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of numeric, string, and `null` values for the `cx` attribute.
+ * - Validation of float, int, string, and `null` for the `cx` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -30,8 +30,8 @@ final class CxProvider
     /**
      * Provides test cases for SVG `cx` attribute rendering scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of the SVG `cx` attribute, including numeric,
-     * string with units, and `null` values.
+     * Supplies test data for validating assignment, override, and removal of the SVG `cx` attribute, including float,
+     * int, string, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
      * message for clear identification.
@@ -97,8 +97,8 @@ final class CxProvider
     /**
      * Provides test cases for SVG `cx` attribute scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of the SVG `cx` attribute, including numeric,
-     * string with units, and `null` values.
+     * Supplies test data for validating assignment, override, and removal of the SVG `cx` attribute, including float,
+     * int, string, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
      * clear identification.
