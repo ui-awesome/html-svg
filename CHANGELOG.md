@@ -41,6 +41,7 @@
 - Bug #41: Add additional SVG block cases and enhance test assertions for rendering attributes (@terabytesoftw)
 - Enh #42: Add `HasX` trait and corresponding tests for managing SVG `x` attribute (@terabytesoftw)
 - Enh #43: Add `HasY` trait and corresponding tests for managing SVG `y` attribute (@terabytesoftw)
+- Bug #44: Update validation descriptions for SVG attributes to include float, int, string, and `null` types in providers classes (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

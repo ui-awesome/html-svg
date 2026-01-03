@@ -19,7 +19,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Key features.
  * - Ensures correct propagation, override, and removal of the `x` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of int, string and `null` values for the `x` attribute.
+ * - Validation of int, string and `null` for the `x` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -30,7 +30,7 @@ final class XProvider
      * Provides test cases for SVG `x` attribute rendering scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the SVG `x` attribute, including int,
-     * string and `null` values.
+     * string, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
      * message for clear identification.
@@ -97,7 +97,7 @@ final class XProvider
      * Provides test cases for SVG `x` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the SVG `x` attribute, including int,
-     * string, and `null` values.
+     * string, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
      * clear identification.

@@ -15,7 +15,7 @@ use UnitEnum;
  * standards-compliant assignment, override behavior, and value propagation according to SVG 2 specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting `fill-rule` attribute, supporting
- * explicit string, UnitEnum, and `null` for attribute removal, to maintain consistent output across different rendering
+ * string, UnitEnum, and `null` for attribute removal, to maintain consistent output across different rendering
  * configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
@@ -24,7 +24,7 @@ use UnitEnum;
  * Key features.
  * - Ensures correct propagation, override, and removal of `fill-rule` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of empty string, UnitEnum, `null`, and standard string for `fill-rule` attribute.
+ * - Validation of string, UnitEnum, and `null` for `fill-rule` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -34,8 +34,8 @@ final class FillRuleProvider
     /**
      * Provides test cases for SVG `fill-rule` attribute rendering scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of SVG `fill-rule` attribute, including empty
-     * string, UnitEnum, `null`, and standard string.
+     * Supplies test data for validating assignment, override, and removal of SVG `fill-rule` attribute, including
+     * string, UnitEnum, and `null`.
      *
      * Each test case includes input value, initial attributes, expected rendered output, and an assertion message for
      * clear identification.
@@ -87,8 +87,8 @@ final class FillRuleProvider
     /**
      * Provides test cases for SVG `fill-rule` attribute scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of SVG `fill-rule` attribute, including empty
-     * string, UnitEnum, `null`, and standard string.
+     * Supplies test data for validating assignment, override, and removal of SVG `fill-rule` attribute, including
+     * string, UnitEnum, and `null`.
      *
      * Each test case includes input value, initial attributes, expected value, and an assertion message for clear
      * identification.

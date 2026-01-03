@@ -16,7 +16,7 @@ use UnitEnum;
  * specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `stroke-linejoin` attribute,
- * supporting explicit string, UnitEnum and `null` for attribute removal, to maintain consistent output across different
+ * supporting string, UnitEnum and `null` for attribute removal, to maintain consistent output across different
  * rendering configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
@@ -25,7 +25,7 @@ use UnitEnum;
  * Key features.
  * - Ensures correct propagation, override, and removal of the `stroke-linejoin` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of empty string, UnitEnum,`null`, and standard string for the `stroke-linejoin` attribute.
+ * - Validation of string, UnitEnum, and `null` for the `stroke-linejoin` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -36,7 +36,7 @@ final class StrokeLineJoinProvider
      * Provides test cases for rendered HTML `stroke-linejoin` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `stroke-linejoin`
-     * attribute, including string, UnitEnum, and replacement scenarios.
+     * attribute, including string, UnitEnum, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
      * message for clear identification.
@@ -89,7 +89,7 @@ final class StrokeLineJoinProvider
      * Provides test cases for HTML `stroke-linejoin` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `stroke-linejoin`
-     * attribute, including string, UnitEnum, and replacement scenarios.
+     * attribute, including string, UnitEnum, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
      * clear identification.

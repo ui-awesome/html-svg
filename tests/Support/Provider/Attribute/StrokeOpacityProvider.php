@@ -20,7 +20,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Key features.
  * - Ensures correct propagation, override, and removal of `stroke-opacity` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of float, int, `null`, and standard string for `stroke-opacity` attribute.
+ * - Validation of float, int, string, and `null` for `stroke-opacity` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
