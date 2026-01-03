@@ -30,7 +30,7 @@ final class YProvider
      * Provides test cases for SVG `y` attribute rendering scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the SVG `y` attribute, including int,
-     * string and `null`.
+     * string, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
      * message for clear identification.
@@ -97,7 +97,7 @@ final class YProvider
      * Provides test cases for SVG `y` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the SVG `y` attribute, including int,
-     * string, and `null` values.
+     * string, and `null`.
      *
      * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
      * clear identification.
