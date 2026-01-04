@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
+use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{StrokeLineCap, SvgProperty};
 use UnitEnum;
@@ -41,6 +42,8 @@ trait HasStrokeLineCap
      *
      * @param string|UnitEnum|null $value Stroke line cap style to set for the element. Accepts 'butt', 'round',
      * 'square', or `null` to unset.
+     *
+     * @throws InvalidArgumentException if the provided value is not a valid {@see StrokeLineCap} enum or string.
      *
      * @return static New instance with the updated `stroke-linecap` attribute.
      *

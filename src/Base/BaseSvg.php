@@ -115,6 +115,10 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      * This ensures 'title' is never rendered as a standard SVG attribute, without modifying the internal state of the
      * object.
      *
+     * @return array Filtered attributes array without 'title'.
+     *
+     * @phpstan-return mixed[]
+     *
      * Usage example:
      * ```php
      * $element->getAttributes();
@@ -224,11 +228,13 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     }
 
     /**
-     * Validates that either content or file path is provided before rendering.
+     * Pre-run validation for SVG rendering.
      *
-     * @throws InvalidArgumentException if both content and file path are empty.
+     * Ensures at least one source of content is provided: either the `filePath` property or the internal `content`.
      *
-     * @return bool Whether rendering should proceed.
+     * @throws InvalidArgumentException if both `filePath` and `content` are empty.
+     *
+     * @return bool `true` when preconditions are satisfied and the parent pre-run succeeds.
      */
     protected function beforeRun(): bool
     {
@@ -242,9 +248,12 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     }
 
     /**
-     * Renders the SVG element.
+     * Executes the rendering routine for the SVG element.
      *
-     * @return string Rendered SVG markup.
+     * If a `filePath` is configured the SVG content is loaded, sanitized, and injected into the current document. When
+     * no `filePath` is provided the parent's run method is used.
+     *
+     * @return string Rendered SVG string or parent's result.
      */
     protected function run(): string
     {
@@ -258,11 +267,13 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     }
 
     /**
-     * Retrieves and validates the `title` attribute from the attributes array.
+     * Extracts and validates the `title` attribute value.
      *
-     * @throws InvalidArgumentException if the title attribute is not a string or `null`.
+     * Normalizes the attribute using {@see Enum::normalizeValue} and ensures the value is either `null` or a string.
      *
-     * @return string Title content, or an empty string if not set.
+     * @throws InvalidArgumentException if the `title` attribute exists but is not a string nor `null`.
+     *
+     * @return string Validated title value or empty string when absent.
      */
     private function getTitleAttribute(): string
     {
@@ -318,11 +329,9 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     }
 
     /**
-     * Renders the SVG markup from a file, injecting attributes and optional title content.
+     * Renders the SVG by loading, sanitizing, and injecting normalized attributes and title.
      *
-     * @throws RuntimeException if SVG file loading or sanitization fails.
-     *
-     * @return false|string Rendered SVG markup, or `false` on failure.
+     * @return false|string Serialized SVG string on success or `false` when rendering failed.
      */
     private function renderSvg(): false|string
     {

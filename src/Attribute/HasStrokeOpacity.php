@@ -43,6 +43,8 @@ trait HasStrokeOpacity
      * @param float|int|string|null $value Stroke opacity value to set for the element. Accepts any valid opacity value
      * ('0-1' range or `null` to unset).
      *
+     * @throws InvalidArgumentException if the value is outside the allowed range ('0-1') and not `null`.
+     *
      * @return static New instance with the updated `stroke-opacity` attribute.
      *
      * @link https://svgwg.org/svg2-draft/painting.html#StrokeOpacityProperty

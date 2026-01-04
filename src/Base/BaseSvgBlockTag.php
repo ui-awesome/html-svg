@@ -81,11 +81,6 @@ abstract class BaseSvgBlockTag extends BaseTag
      * @param string $result Rendered HTML output.
      *
      * @return string Cleaned HTML output with excessive newlines removed.
-     *
-     * Usage example:
-     * ```php
-     * $block->afterRun($html);
-     * ```
      */
     protected function afterRun(string $result): string
     {
@@ -95,17 +90,9 @@ abstract class BaseSvgBlockTag extends BaseTag
     }
 
     /**
-     * Renders the block element.
+     * Executes the rendering routine for the SVG block-level element.
      *
-     * If the begin tag was not executed, renders the complete tag with content and attributes; otherwise, returns the
-     * closing tag for the block element.
-     *
-     * @return string Rendered HTML for the block element.
-     *
-     * Usage example:
-     * ```php
-     * $block->run();
-     * ```
+     * @return string Rendered SVG string or parent's result.
      */
     protected function run(): string
     {
@@ -122,11 +109,6 @@ abstract class BaseSvgBlockTag extends BaseTag
      * Returns the opening tag for the block element with the current attributes.
      *
      * @return string Opening HTML tag for the block element.
-     *
-     * Usage example:
-     * ```php
-     * $block->runBegin();
-     * ```
      */
     protected function runBegin(): string
     {
