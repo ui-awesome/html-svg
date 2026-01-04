@@ -358,6 +358,11 @@ final class UsesTest extends TestCase
         );
         self::assertNotSame(
             $use,
+            $use->width(0),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $use,
             $use->x(0),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
