@@ -18,8 +18,8 @@ use UIAwesome\Html\Svg\Uses;
  * Validates the management and rendering of the SVG `<use>` element according to the SVG 2 and HTML Living Standard
  * specifications.
  *
- * Ensures correct handling, immutability, and validation of the `Use` tag rendering, supporting all global HTML and SVG
- * 2 attributes, content, and provider-based configuration.
+ * Ensures correct handling, immutability, and validation of the `Uses` tag rendering, supporting all global HTML and
+ * SVG 2 attributes, content, and provider-based configuration.
  *
  * Test coverage:
  * - Accurate rendering of the `<use>` element.
