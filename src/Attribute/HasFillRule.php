@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
+use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{FillRule, SvgProperty};
 use UnitEnum;
@@ -41,6 +42,8 @@ trait HasFillRule
      *
      * @param string|UnitEnum|null $value Fill rule value to set for the element. Accepts `nonzero`, `evenodd`,
      * `FillRule` enum, or `null` to unset.
+     *
+     * @throws InvalidArgumentException if the provided value is not a valid {@see FillRule} enum or string.
      *
      * @return static New instance with the updated `fill-rule` attribute.
      *

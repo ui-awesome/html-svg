@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
+use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgProperty};
 use UnitEnum;
@@ -37,28 +38,12 @@ trait HasStrokeLineJoin
     /**
      * Sets the SVG `stroke-linejoin` attribute for the element.
      *
-     * Creates a new instance with the specified stroke line join value, supporting explicit assignment according to the
-     * SVG 2 specification for painting corners of shapes and text content elements.
-     *
      * @param string|UnitEnum|null $value Stroke line join style to set for the element. Accepts 'miter', 'round',
      * 'bevel', 'miter-clip', 'arcs', or `null` to unset.
      *
+     * @throws InvalidArgumentException if the provided value is not a valid {@see StrokeLineJoin} enum or string.
+     *
      * @return static New instance with the updated `stroke-linejoin` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/painting.html#LineJoin
-     * {@see StrokeLineJoin} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * // sets the `stroke-linejoin` attribute to 'round'
-     * $element->strokeLineJoin('round');
-     *
-     * // sets the `stroke-linejoin` attribute to 'bevel' using enum
-     * $element->strokeLineJoin(StrokeLineJoin::BEVEL);
-     *
-     * // unsets the `stroke-linejoin` attribute
-     * $element->strokeLineJoin(null);
-     * ```
      */
     public function strokeLineJoin(string|UnitEnum|null $value): static
     {

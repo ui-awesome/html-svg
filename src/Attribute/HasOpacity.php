@@ -44,6 +44,8 @@ trait HasOpacity
      * @param float|int|string|null $value Opacity value to set for the element. Accepts any valid SVG opacity value
      * (for example, `0.0`–`1.0`, float, integer, string, or `null` to unset).
      *
+     * @throws InvalidArgumentException if the value is outside the allowed range ('0-1') and not `null`.
+     *
      * @return static New instance with the updated `opacity` attribute.
      *
      * @link https://svgwg.org/svg2-draft/render.html#ObjectAndGroupOpacityProperties
