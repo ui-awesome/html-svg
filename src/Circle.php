@@ -39,8 +39,7 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports all paint attributes (`fill`, `stroke`, `opacity`).
  * - Supports transform attribute for positioning and scaling.
  *
- * {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle} The `<circle>` element is an SVG basic shape
- * used to create circles based on a center point and a radius.
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle
  * {@see BaseVoid} for the base implementation.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.

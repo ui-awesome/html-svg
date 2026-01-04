@@ -17,8 +17,8 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * Provides a concrete, type-safe implementation of the SVG `<use>` element, enabling the reuse of defined SVG graphical
  * objects via references, according to the SVG 2 specification.
  *
- * Designed for integration in view renderers, tag systems, and component libraries, ensuring consistent and
- * standards-compliant handling of SVG reuse elements.
+ * The `<use>` element takes nodes from within the SVG document, and duplicates them somewhere else. The effect is the
+ * same as if the nodes were deeply cloned into a new location.
  *
  * Key features.
  * - Immutable, stateless design for safe reuse in rendering engines.
@@ -26,9 +26,7 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports referencing internal and external SVG fragments.
  * - Type-safe methods for attribute management.
  *
- * {@see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use} The `<use>` element takes nodes from within the
- * SVG document, and duplicates them somewhere else. The effect is the same as if the nodes were deeply cloned into a
- * new location.
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
  * {@see BaseVoid} for the base implementation.
  */
 final class Uses extends BaseVoid

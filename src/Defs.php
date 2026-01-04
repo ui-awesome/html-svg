@@ -13,8 +13,8 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * Provides a concrete, type-safe implementation of the SVG `<defs>` element, designed to store graphical objects that
  * will be referenced and used at a later time without direct rendering.
  *
- * Designed for integration in view renderers, tag systems, and component libraries, ensuring consistent and
- * standards-compliant handling of SVG definition containers according to the SVG 2 specification.
+ * The `<defs>` element is used to store graphical objects that will be used at a later time. Objects created inside a
+ * `<defs>` element are not rendered directly.
  *
  * Key features.
  * - Container for reusable graphical objects (gradients, patterns, shapes, etc.).
@@ -22,8 +22,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Standards-compliant rendering of the `<defs>` SVG element.
  * - Type-safe methods for content and attribute management.
  *
- * {@see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs} The `<defs>` element is used to store graphical
- * objects that will be used at a later time. Objects created inside a `<defs>` element are not rendered directly.
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
  * {@see BaseSvgBlockTag} for the base implementation.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
