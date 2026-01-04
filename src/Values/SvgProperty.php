@@ -22,6 +22,13 @@ namespace UIAwesome\Html\Svg\Values;
 enum SvgProperty: string
 {
     /**
+     * `clipPathUnits` - Defines the coordinate system for the contents of the `<clipPath>` element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clipPathUnits
+     */
+    case CLIP_PATH_UNITS = 'clipPathUnits';
+
+    /**
      * `cx` - Center x-coordinate of a circle or ellipse element.
      *
      * Defines the horizontal position of the center point of the element in the current user coordinate system.

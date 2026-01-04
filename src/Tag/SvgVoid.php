@@ -32,4 +32,11 @@ enum SvgVoid: string implements VoidInterface
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle
      */
     case CIRCLE = 'circle';
+
+    /**
+     * `<use>` - Reuses an existing SVG element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
+     */
+    case USES = 'use';
 }

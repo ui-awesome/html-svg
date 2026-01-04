@@ -26,6 +26,13 @@ use UIAwesome\Html\Core\Tag\BlockInterface;
 enum SvgBlock: string implements BlockInterface
 {
     /**
+     * `<clipPath>` - Defines clipping path.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath
+     */
+    case CLIP_PATH = 'clipPath';
+
+    /**
      * `<defs>` - Container for elements not rendered directly.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
