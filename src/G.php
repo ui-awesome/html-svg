@@ -36,8 +36,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Standards-compliant implementation of the SVG `<g>` container element.
  * - Supports grouping, attribute inheritance, and collective transformations.
  *
- * {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g} The `<g>` SVG element is a container used to group
- * other SVG elements.
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
  * {@see BaseSvgBlockTag} for the base implementation.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.

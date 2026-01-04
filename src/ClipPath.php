@@ -27,8 +27,7 @@ use UnitEnum;
  * - Standards-compliant implementation of the SVG `<clipPath>` container element.
  * - Supports opacity and transform attributes.
  *
- * {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath} The `<clipPath>` SVG element is used to
- * define a clipping path that restricts the region to which paint can be applied.
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath
  * {@see BaseSvgBlockTag} for the base implementation.
  */
 final class ClipPath extends Base\BaseSvgBlockTag
