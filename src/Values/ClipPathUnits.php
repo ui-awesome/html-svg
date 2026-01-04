@@ -27,7 +27,7 @@ enum ClipPathUnits: string
      * `objectBoundingBox` - Coordinate system for the contents of the `<clipPath>` is established by the bounding box
      * of the element to which the clipping path is applied.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clipPathUnits
+     * @link https://drafts.csswg.org/css-masking-1/#element-attrdef-clippath-clippathunits
      */
     case OBJECT_BOUNDING_BOX = 'objectBoundingBox';
 
@@ -35,7 +35,7 @@ enum ClipPathUnits: string
      * `userSpaceOnUse` - Coordinate system for the contents of the `<clipPath>` is established by the current user
      * coordinate system in place at the time when the `<clipPath>` is referenced.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clipPathUnits
+     * @link https://drafts.csswg.org/css-masking-1/#element-attrdef-clippath-clippathunits
      */
     case USER_SPACE_ON_USE = 'userSpaceOnUse';
 }

@@ -19,19 +19,18 @@ use UIAwesome\Html\Svg\Values\ClipPathUnits;
 /**
  * Test suite for {@see ClipPath} element functionality and behavior.
  *
- * Validates the management and rendering of the SVG `<clipPath>` element according to the SVG and HTML Living Standard
- * specifications.
+ * Validates the management and rendering of the SVG `<clipPath>` element according to the SVG 2 and HTML Living
+ * Standard specifications.
  *
  * Ensures correct handling, immutability, and validation of the `ClipPath` tag rendering, supporting all global HTML
- * and SVG attributes, content, and provider-based configuration.
+ * and SVG 2 attributes, content, and provider-based configuration.
  *
  * Test coverage:
- * - Accurate rendering of the `<clipPath>` element with inline content.
+ * - Accurate rendering of the `<clipPath>` element.
  * - Correct application of global HTML attributes and SVG-specific attributes.
  * - Error handling for invalid attributes or configuration.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  * - Integration with configuration providers and global factory defaults.
- * - Nested rendering structure using `begin()` and `end()` methods.
  * - Precedence of user-defined attributes over global defaults and provider settings.
  *
  * {@see ClipPath} for element implementation details.
