@@ -45,6 +45,7 @@
 - Bug #45: Improve `HasX` and `HasY` traits to support float values for SVG coordinate attributes (@terabytesoftw)
 - Bug #46: Add `HasX` and `HasY` traits into `BaseSvg` for enhanced SVG coordinate management (@terabytesoftw)
 - Enh #47: Add `ClipPath` and `Uses` classes and corresponding tests for SVG `<clipPath>` and `<use>` element functionality (@terabytesoftw)
+- Bug #48: Add phpdoc in `CircleTest` class (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
