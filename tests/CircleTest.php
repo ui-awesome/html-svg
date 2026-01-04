@@ -7,17 +7,36 @@ namespace UIAwesome\Html\Svg\Tests;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Core\Factory\SimpleFactory;
-use UIAwesome\Html\Core\Values\Aria;
-use UIAwesome\Html\Core\Values\DataProperty;
-use UIAwesome\Html\Core\Values\Language;
-use UIAwesome\Html\Core\Values\Role;
+use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
 use UIAwesome\Html\Svg\Circle;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
-use UIAwesome\Html\Svg\Values\FillRule;
-use UIAwesome\Html\Svg\Values\StrokeLineCap;
-use UIAwesome\Html\Svg\Values\StrokeLineJoin;
+use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin};
 
+/**
+ * Test suite for {@see Circle} element functionality and behavior.
+ *
+ * Validates the management and rendering of the SVG `<circle>` element according to the SVG 2 and HTML Living Standard
+ * specifications.
+ *
+ * Ensures correct handling, immutability, and validation of the `Circle` tag rendering, supporting all global HTML and
+ * SVG 2 attributes, content, and provider-based configuration.
+ *
+ * Test coverage:
+ * - Accurate rendering of the `<circle>` element.
+ * - Correct application of global HTML attributes and SVG-specific attributes.
+ * - Error handling for invalid attributes or configuration.
+ * - Immutability of the API, ensuring that setting attributes returns a new instance.
+ * - Integration with configuration providers and global factory defaults.
+ * - Precedence of user-defined attributes over global defaults and provider settings.
+ *
+ * {@see Circle} for element implementation details.
+ * {@see SimpleFactory} for default configuration management.
+ * {@see TestSupport} for assertion utilities.
+ *
+ * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ */
 #[Group('svg')]
 final class CircleTest extends TestCase
 {
