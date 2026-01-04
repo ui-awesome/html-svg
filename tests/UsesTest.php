@@ -300,6 +300,17 @@ final class UsesTest extends TestCase
         SimpleFactory::setDefaults(Uses::class, []);
     }
 
+    public function testRenderWithWidth(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <use width="200">
+            HTML,
+            Uses::tag()->width(200)->render(),
+            "Failed asserting that element renders correctly with 'width' attribute.",
+        );
+    }
+
     public function testRenderWithX(): void
     {
         self::equalsWithoutLE(

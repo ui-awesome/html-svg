@@ -4,13 +4,17 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Core\Factory\SimpleFactory;
 use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
+use UIAwesome\Html\Helper\Enum;
+use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\ClipPath;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
+use UIAwesome\Html\Svg\Values\ClipPathUnits;
 
 /**
  * Test suite for {@see ClipPath} element functionality and behavior.
@@ -152,6 +156,32 @@ final class ClipPathTest extends TestCase
             HTML,
             ClipPath::tag()->class('value')->content('value')->render(),
             "Failed asserting that element renders correctly with 'class' attribute.",
+        );
+    }
+
+    public function testRenderWithClipPathUnits(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <clipPath clipPathUnits="userSpaceOnUse">
+            value
+            </clipPath>
+            HTML,
+            ClipPath::tag()->content('value')->clipPathUnits('userSpaceOnUse')->render(),
+            "Failed asserting that element renders correctly with 'clipPathUnits' attribute.",
+        );
+    }
+
+    public function testRenderWithClipPathUnitsUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <clipPath clipPathUnits="objectBoundingBox">
+            value
+            </clipPath>
+            HTML,
+            ClipPath::tag()->content('value')->clipPathUnits(ClipPathUnits::OBJECT_BOUNDING_BOX)->render(),
+            "Failed asserting that element renders correctly with 'clipPathUnits' attribute using enum.",
         );
     }
 
@@ -364,6 +394,11 @@ final class ClipPathTest extends TestCase
 
         self::assertNotSame(
             $clipPath,
+            $clipPath->clipPathUnits('userSpaceOnUse'),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+        self::assertNotSame(
+            $clipPath,
             $clipPath->opacity('0'),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
@@ -372,5 +407,19 @@ final class ClipPathTest extends TestCase
             $clipPath->transform(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidClipPathUnitsValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                'clipPathUnits',
+                implode('\', \'', Enum::normalizeArray(ClipPathUnits::cases())),
+            ),
+        );
+
+        ClipPath::tag()->clipPathUnits('invalid-value');
     }
 }
