@@ -13,8 +13,8 @@ namespace UIAwesome\Html\Svg\Values;
  * Key features.
  * - Designed for use in tags, components, and helpers requiring stroke line join assignment.
  * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of stroke-linejoin values for semantic markup generation and accessibility.
- * - Values follow the SVG 2 specification for stroke-linejoin: `arcs`, `bevel`, `miter`, `miter-clip`, and `round`.
+ * - Strict mapping of `stroke-linejoin` values for semantic markup generation and accessibility.
+ * - Values follow the SVG 2 specification for `stroke-linejoin` attribute.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
  *

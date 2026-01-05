@@ -26,7 +26,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgPrope
  * Ensures correct handling, immutability, and validation of the `Svg` tag rendering, supporting all global HTML and SVG
  * attributes, content, and provider-based configuration.
  *
- * Test coverage:
+ * Test coverage.
  * - Accurate rendering of the `<svg>` element with inline content or external files via `filePath()` method.
  * - Correct application of global HTML attributes and SVG-specific attributes like `viewBox`, `fill`, and `transform`.
  * - Error handling for invalid file paths, missing content, or malformed SVG files.

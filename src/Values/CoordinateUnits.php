@@ -19,7 +19,7 @@ namespace UIAwesome\Html\Svg\Values;
  * - Designed for use in tags, components, and helpers requiring coordinate units assignment.
  * - Integration-ready for tag rendering and element generation APIs.
  * - Strict mapping of values for semantic markup generation and accessibility.
- * - Values follow SVG 2 and CSS Masking Module Level 1 specifications: `objectBoundingBox` and `userSpaceOnUse`.
+ * - Values follow SVG 2 and CSS Masking Module Level 1 specifications.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clipPathUnits
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/filterUnits

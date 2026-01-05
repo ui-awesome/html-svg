@@ -25,7 +25,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgPrope
  * Ensures correct handling, immutability, and validation of the `<g>` tag rendering, supporting all global HTML and SVG
  * attributes, content, and provider-based configuration.
  *
- * Test coverage:
+ * Test coverage.
  * - Accurate rendering of the `<g>` element with inline content.
  * - Correct application of global HTML attributes and SVG-specific attributes like `fill`, and `transform`.
  * - Error handling for invalid attributes or configuration.

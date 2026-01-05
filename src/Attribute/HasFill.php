@@ -15,7 +15,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * Intended for use in SVG tags and components that require dynamic or programmatic manipulation of the `fill` property,
  * ensuring correct attribute handling, type safety, and value validation.
  *
- * Key features:
+ * Key features.
  * - Designed for use in SVG tags and components.
  * - Enforces standards-compliant handling of the SVG `fill` attribute.
  * - Immutable method for setting or overriding the `fill` attribute.

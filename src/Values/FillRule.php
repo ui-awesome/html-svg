@@ -13,8 +13,8 @@ namespace UIAwesome\Html\Svg\Values;
  * Key features.
  * - Designed for use in tags, components, and helpers requiring fill rule assignment.
  * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of fill-rule values for semantic markup generation and accessibility.
- * - Values follow SVG 2 specification for fill-rule: `nonzero` and `evenodd`.
+ * - Strict mapping of `fill-rule` values for semantic markup generation and accessibility.
+ * - Values follow SVG 2 specification for `fill-rule` attribute.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
  *

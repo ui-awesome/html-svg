@@ -25,7 +25,7 @@ use UIAwesome\Html\Svg\Values\CoordinateUnits;
  * Ensures correct handling, immutability, and validation of the `ClipPath` tag rendering, supporting all global HTML
  * and SVG 2 attributes, content, and provider-based configuration.
  *
- * Test coverage:
+ * Test coverage.
  * - Accurate rendering of the `<clipPath>` element.
  * - Correct application of global HTML attributes and SVG-specific attributes.
  * - Error handling for invalid attributes or configuration.

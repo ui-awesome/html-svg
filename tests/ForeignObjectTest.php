@@ -23,7 +23,7 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
  * Ensures correct handling, immutability, and validation of the `ForeignObject` tag rendering, supporting all global
  * HTML and SVG 2 attributes, content, and provider-based configuration.
  *
- * Test coverage:
+ * Test coverage.
  * - Accurate rendering of the `<foreignObject>` element.
  * - Correct application of global HTML attributes and SVG-specific attributes like `height`, `width`, `x`, `y`,
  *   `opacity`, and `transform`.

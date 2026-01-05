@@ -58,7 +58,8 @@
 - Bug #59: Add exception for invalid `clipPathUnits` value in `clipPathUnits` method of `ClipPath` class (@terabytesoftw)
 - Enh #60: Add `ForeignObject` class and corresponding tests for SVG `<foreignObject>` element functionality (@terabytesoftw)
 - Bug #61: Add tests for invalid attribute values in `CircleTest`, `EllipseTest`, `GTest`, `SvgTest`, and `UsesTest` classes (@terabytesoftw)
-- Enh #63: Add `HasPreserveAspectRatio` trait and corresponding tests for managing SVG `preserveAspectRatio` attribute (@terabytesoftw)
+- Enh #62: Add `HasPreserveAspectRatio` trait and corresponding tests for managing SVG `preserveAspectRatio` attribute (@terabytesoftw)
+- Bug #63: Improve phpdocs and error handling for invalid attributes in related classes and tests (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
