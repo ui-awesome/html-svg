@@ -44,12 +44,6 @@ final class PathLengthProvider
     public static function renderAttribute(): array
     {
         return [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
             'float' => [
                 50.5,
                 [],
@@ -99,12 +93,6 @@ final class PathLengthProvider
     public static function values(): array
     {
         return [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
             'float' => [
                 50.5,
                 [],

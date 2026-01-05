@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
+use InvalidArgumentException;
+use UIAwesome\Html\Helper\Validator;
+use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgProperty;
 
 /**
@@ -40,6 +43,8 @@ trait HasPathLength
      * @param float|int|string|null $value Path length value to set for the element. Accepts any valid number or `null`
      * to unset (for example, '100', '50.5', or `null`).
      *
+     * @throws InvalidArgumentException If the provided value is not a positive number or `null`.
+     *
      * @return static New instance with the updated `pathLength` attribute.
      *
      * @link https://svgwg.org/svg2-draft/paths.html#PathLengthAttribute
@@ -58,6 +63,12 @@ trait HasPathLength
      */
     public function pathLength(float|int|string|null $value): static
     {
+        if ($value !== null && Validator::positiveLike($value) === false) {
+            throw new InvalidArgumentException(
+                Message::VALUE_MUST_BE_POSITIVE_NUMBER_OR_NULL->getMessage(),
+            );
+        }
+
         return $this->addAttribute(SvgProperty::PATH_LENGTH, $value);
     }
 }

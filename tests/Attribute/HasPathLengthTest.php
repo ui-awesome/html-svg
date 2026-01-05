@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Attribute;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Core\Mixin\HasAttributes;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Svg\Attribute\HasPathLength;
+use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\PathLengthProvider;
 
 /**
@@ -79,7 +81,7 @@ final class HasPathLengthTest extends TestCase
 
         self::assertNotSame(
             $instance,
-            $instance->pathLength(''),
+            $instance->pathLength('0'),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -106,5 +108,35 @@ final class HasPathLengthTest extends TestCase
             $instance->getAttributes()['pathLength'] ?? '',
             $message,
         );
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidNegativePathLengthValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasPathLength;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_MUST_BE_POSITIVE_NUMBER_OR_NULL->getMessage(),
+        );
+
+        $instance->pathLength(-5);
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidStringPathLengthValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasPathLength;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_MUST_BE_POSITIVE_NUMBER_OR_NULL->getMessage(),
+        );
+
+        $instance->pathLength('invalid-value');
     }
 }
