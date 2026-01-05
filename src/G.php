@@ -58,7 +58,7 @@ final class G extends Base\BaseSvgBlockTag
     use HasTransform;
 
     /**
-     * Returns the tag enumeration for the `g` element.
+     * Returns the tag enumeration for the `<g>` element.
      *
      * @return BlockInterface Tag enumeration instance for `<g>`.
      *

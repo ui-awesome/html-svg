@@ -53,6 +53,7 @@
 - Enh #53: Add `HasPathLength` trait and corresponding tests for managing SVG `pathLength` attribute (@terabytesoftw)
 - Enh #54: Add `Ellipse` class and corresponding tests for SVG `<ellipse>` element functionality (@terabytesoftw)
 - Bug #55: Better naming `ClipPathUnits` with `CoordinateUnits` for SVG `<clipPath>` element and update related functionality and tests (@terabytesoftw)
+- Bug #56: Update documentation to use angle brackets for `<circle>` and `<g>` element references (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
