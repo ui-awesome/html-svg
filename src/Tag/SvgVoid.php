@@ -34,6 +34,13 @@ enum SvgVoid: string implements VoidInterface
     case CIRCLE = 'circle';
 
     /**
+     * `<ellipse>` - SVG ellipse element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse
+     */
+    case ELLIPSE = 'ellipse';
+
+    /**
      * `<use>` - Reuses an existing SVG element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use

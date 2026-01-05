@@ -51,6 +51,7 @@
 - Enh #51: Add `HasRx` trait and corresponding tests for managing SVG `rx` attribute (@terabytesoftw)
 - Enh #52: Add `HasRy` trait and corresponding tests for managing SVG `ry` attribute (@terabytesoftw)
 - Enh #53: Add `HasPathLength` trait and corresponding tests for managing SVG `pathLength` attribute (@terabytesoftw)
+- Enh #54: Add `Ellipse` class and corresponding tests for SVG `<ellipse>` element functionality (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
