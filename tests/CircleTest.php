@@ -4,14 +4,17 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Core\Factory\SimpleFactory;
 use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
+use UIAwesome\Html\Helper\Enum;
+use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Circle;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
-use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin};
+use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgProperty};
 
 /**
  * Test suite for {@see Circle} element functionality and behavior.
@@ -25,6 +28,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin};
  * Test coverage:
  * - Accurate rendering of the `<circle>` element.
  * - Correct application of global HTML attributes and SVG-specific attributes.
+ * - Error handling for invalid attributes or configuration.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  * - Integration with configuration providers and global factory defaults.
  * - Precedence of user-defined attributes over global defaults and provider settings.
@@ -532,5 +536,87 @@ final class CircleTest extends TestCase
             $circle->transform(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidFillOpacityValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+        );
+
+        Circle::tag()->fillOpacity('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidFillRuleValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                SvgProperty::FILL_RULE->value,
+                implode('\', \'', Enum::normalizeArray(FillRule::cases())),
+            ),
+        );
+
+        Circle::tag()->fillRule('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidOpacityValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+        );
+
+        Circle::tag()->opacity('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineCapValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                SvgProperty::STROKE_LINECAP->value,
+                implode('\', \'', Enum::normalizeArray(StrokeLineCap::cases())),
+            ),
+        );
+
+        Circle::tag()->strokeLineCap('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineJoinValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                SvgProperty::STROKE_LINEJOIN->value,
+                implode('\', \'', Enum::normalizeArray(StrokeLineJoin::cases())),
+            ),
+        );
+
+        Circle::tag()->strokeLineJoin('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeMiterlimitValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::VALUE_MUST_BE_GTE_ONE_OR_NULL->getMessage(),
+        );
+
+        Circle::tag()->strokeMiterlimit('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeOpacityValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+        );
+
+        Circle::tag()->strokeOpacity('invalid-value');
     }
 }
