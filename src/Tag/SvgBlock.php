@@ -40,6 +40,13 @@ enum SvgBlock: string implements BlockInterface
     case DEFS = 'defs';
 
     /**
+     * `<filter>` - Filter effects container.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter
+     */
+    case FILTER = 'filter';
+
+    /**
      * `<g>` - Groups SVG shapes together.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g

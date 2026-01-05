@@ -74,6 +74,13 @@ enum SvgProperty: string
     case FILL_RULE = 'fill-rule';
 
     /**
+     * `filterUnits` - Defines the coordinate system for the contents of the `<filter>` element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/filterUnits
+     */
+    case FILTER_UNITS = 'filterUnits';
+
+    /**
      * `height` - Displayed height of the rectangular viewport (not the height of its coordinate system).
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/height
@@ -105,6 +112,13 @@ enum SvgProperty: string
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/preserveAspectRatio
      */
     case PRESERVE_ASPECT_RATIO = 'preserveAspectRatio';
+
+    /**
+     * `primitiveUnits` - Defines the coordinate system for the contents of filter primitive elements.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/primitiveUnits
+     */
+    case PRIMITIVE_UNITS = 'primitiveUnits';
 
     /**
      * `r` - Radius of a circle element.
