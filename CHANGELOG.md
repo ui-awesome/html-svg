@@ -48,6 +48,7 @@
 - Bug #48: Add phpdoc in `CircleTest` class (@terabytesoftw)
 - Bug #49: Add exception documentation for `fill-opacity`, `opacity`, `stroke-opacity`, and `stroke-linecap` attributes (@terabytesoftw)
 - Bug #50: Update documentation links for SVG elements in `Circle`, `ClipPath`, `Defs`, `G`, `Svg`, and `Uses` classes (@terabytesoftw)
+- Enh #51: Add `HasRx` trait and corresponding tests for managing SVG `rx` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

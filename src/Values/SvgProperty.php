@@ -105,6 +105,16 @@ enum SvgProperty: string
     case R = 'r';
 
     /**
+     * `rx` - The x-axis radius of the ellipse.
+     *
+     * Defines the radius along the x-axis of an `<ellipse>` element or the x-axis radius of rounded corners of a
+     * `<rect>` element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rx
+     */
+    case RX = 'rx';
+
+    /**
      * `stroke` - Stroke attribute is a presentation attribute defining the color (or any SVG paint servers like
      * gradients or patterns) used to paint the outline of the shape.
      *
