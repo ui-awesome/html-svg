@@ -81,7 +81,7 @@ final class Filter extends Base\BaseSvgBlockTag
      *
      * @return static New instance with the updated `primitiveUnits` property.
      *
-     * @link https://drafts.csswg.org/filter-effects-1/#element-attrdef-filter-filterunits
+     * @link https://drafts.csswg.org/filter-effects-1/#element-attrdef-filter-primitiveunits
      * {@see CoordinateUnits} for predefined enum values.
      *
      * Usage example:
