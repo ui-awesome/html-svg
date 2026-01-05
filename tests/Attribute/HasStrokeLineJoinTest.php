@@ -21,7 +21,7 @@ use UnitEnum;
  * Validates the management of the SVG `stroke-linejoin` attribute according to the SVG 2 specification.
  *
  * Ensures correct handling, immutability, and validation of the `stroke-linejoin` attribute in tag rendering,
- * supporting both string and `null` for dynamic identifier assignment.
+ * supporting string and `null` for dynamic identifier assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with the `stroke-linejoin` attribute.

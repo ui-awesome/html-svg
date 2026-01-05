@@ -13,8 +13,8 @@ namespace UIAwesome\Html\Svg\Values;
  * Key features.
  * - Designed for use in tags, components, and helpers requiring stroke line cap assignment.
  * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of stroke-linecap values for semantic markup generation and accessibility.
- * - Values follow the SVG 2 specification for stroke-linecap: `butt`, `round`, and `square`.
+ * - Strict mapping of `stroke-linecap` values for semantic markup generation and accessibility.
+ * - Values follow the SVG 2 specification for `stroke-linecap` attribute.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap
  *

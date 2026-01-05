@@ -25,7 +25,7 @@ use UIAwesome\Html\Svg\Values\CoordinateUnits;
  * Ensures correct handling, immutability, and validation of the `<filter>` tag rendering, supporting all global HTML
  * and SVG attributes, content, and provider-based configuration.
  *
- * Test coverage:
+ * Test coverage.
  * - Accurate rendering of the `<filter>` element with inline content.
  * - Correct application of global HTML attributes and SVG-specific attributes like `fill`, and `transform`.
  * - Error handling for invalid attributes or configuration.

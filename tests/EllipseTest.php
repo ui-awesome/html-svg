@@ -25,7 +25,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgPrope
  * Ensures correct handling, immutability, and validation of the `Ellipse` tag rendering, supporting all global HTML and
  * SVG 2 attributes, content, and provider-based configuration.
  *
- * Test coverage:
+ * Test coverage.
  * - Accurate rendering of the `<ellipse>` element.
  * - Correct application of global HTML attributes and SVG-specific attributes.
  * - Error handling for invalid attributes or configuration.

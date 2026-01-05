@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Uses;
  * Ensures correct handling, immutability, and validation of the `Uses` tag rendering, supporting all global HTML and
  * SVG 2 attributes, content, and provider-based configuration.
  *
- * Test coverage:
+ * Test coverage.
  * - Accurate rendering of the `<use>` element.
  * - Correct application of global HTML attributes and SVG-specific attributes.
  * - Error handling for invalid attributes or configuration.

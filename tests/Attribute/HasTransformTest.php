@@ -16,7 +16,7 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\TransformProvider;
  *
  * Validates the management of the SVG `transform` attribute according to the SVG 2 specification.
  *
- * Ensures correct handling, immutability, and validation of the `transform` attribute in tag rendering, supporting both
+ * Ensures correct handling, immutability, and validation of the `transform` attribute in tag rendering, supporting
  * string and `null` for dynamic identifier assignment.
  *
  * Test coverage.

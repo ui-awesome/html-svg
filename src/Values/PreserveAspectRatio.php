@@ -14,7 +14,7 @@ namespace UIAwesome\Html\Svg\Values;
  * - Designed for use in tags, components, and helpers requiring preserve aspect ratio assignment.
  * - Integration-ready for tag rendering and element generation APIs.
  * - Strict mapping of `preserveAspectRatio` values for semantic markup generation and accessibility.
- * - Values follow SVG 2 specification for `preserveAspectRatio`.
+ * - Values follow SVG 2 specification for `preserveAspectRatio` attribute.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/preserveAspectRatio
  *

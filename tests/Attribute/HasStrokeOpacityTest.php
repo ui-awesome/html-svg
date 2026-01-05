@@ -24,6 +24,7 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeOpacityProvider;
  * Test coverage.
  * - Accurate rendering of attributes with `stroke-opacity` attribute.
  * - Data provider-driven validation for edge cases and expected behaviors.
+ * - Error handling for invalid attributes.
  * - Immutability of trait's API when setting or overriding `stroke-opacity` attribute.
  * - Proper assignment and overriding of `stroke-opacity` value.
  *

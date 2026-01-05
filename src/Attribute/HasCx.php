@@ -15,7 +15,7 @@ use UIAwesome\Html\Svg\Values\SvgProperty;
  * Intended for use in tags and components that require dynamic or programmatic manipulation of the center x-coordinate
  * property, ensuring correct attribute handling, type safety, and value validation.
  *
- * Key features:
+ * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `cx` attribute.
  * - Immutable method for setting or overriding the `cx` attribute.
