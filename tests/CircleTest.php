@@ -28,7 +28,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgPrope
  * Test coverage:
  * - Accurate rendering of the `<circle>` element.
  * - Correct application of global HTML attributes and SVG-specific attributes.
- * - Error handling for invalid file paths, missing content, or malformed SVG files.
+ * - Error handling for invalid attributes or configuration.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  * - Integration with configuration providers and global factory defaults.
  * - Precedence of user-defined attributes over global defaults and provider settings.
