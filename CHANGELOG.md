@@ -50,6 +50,7 @@
 - Bug #50: Update documentation links for SVG elements in `Circle`, `ClipPath`, `Defs`, `G`, `Svg`, and `Uses` classes (@terabytesoftw)
 - Enh #51: Add `HasRx` trait and corresponding tests for managing SVG `rx` attribute (@terabytesoftw)
 - Enh #52: Add `HasRy` trait and corresponding tests for managing SVG `ry` attribute (@terabytesoftw)
+- Enh #53: Add `HasPathLength` trait and corresponding tests for managing SVG `pathLength` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

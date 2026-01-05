@@ -88,6 +88,17 @@ enum SvgProperty: string
     case OPACITY = 'opacity';
 
     /**
+     * `pathLength` - Specifies the total length for the path.
+     *
+     * Allows the author to specify a total length for the path in user units, which can be used for stroke-dasharray
+     * animations and other length-based calculations. If provided, all length calculations for the path are scaled as
+     * if the user coordinates along the path were mapped onto a range of 0 to pathLength.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/pathLength
+     */
+    case PATH_LENGTH = 'pathLength';
+
+    /**
      * `preserveAspectRatio` - Indicates how content with a `viewBox` must fit into a viewport with a different aspect
      * ratio.
      *
