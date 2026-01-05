@@ -20,6 +20,7 @@ use UIAwesome\Html\Svg\Attribute\{
     HasFillOpacity,
     HasFillRule,
     HasOpacity,
+    HasPreserveAspectRatio,
     HasStroke,
     HasStrokeDashArray,
     HasStrokeLineCap,
@@ -69,6 +70,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     use HasFillRule;
     use HasHeight;
     use HasOpacity;
+    use HasPreserveAspectRatio;
     use HasStroke;
     use HasStrokeDashArray;
     use HasStrokeLineCap;
@@ -156,28 +158,6 @@ abstract class BaseSvg extends BaseBlock implements Stringable
         }
 
         return $content . parent::getContent();
-    }
-
-    /**
-     * Sets the `preserveAspectRatio` attribute for the SVG element.
-     *
-     * Creates a new instance with the specified preserve aspect ratio value, supporting explicit assignment according
-     * to the HTML specification for SVG attributes.
-     *
-     * @param string|null $value Aspect ratio preservation value.
-     *
-     * @return static New instance with the updated `preserveAspectRatio` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
-     *
-     * Usage example:
-     * ```php
-     * $element->preserveAspectRatio('xMidYMid meet');
-     * ```
-     */
-    public function preserveAspectRatio(string|null $value): static
-    {
-        return $this->addAttribute(SvgProperty::PRESERVE_ASPECT_RATIO, $value);
     }
 
     /**
