@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg;
 
+use InvalidArgumentException;
 use UIAwesome\Html\Core\Tag\BlockInterface;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform};
@@ -42,6 +43,8 @@ final class ClipPath extends Base\BaseSvgBlockTag
      * HTML specification for SVG attributes.
      *
      * @param string|UnitEnum|null $value Clip path units value (for example, "objectBoundingBox" or "userSpaceOnUse").
+     *
+     * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
      *
      * @return static New instance with the updated `clipPathUnits` property.
      *
