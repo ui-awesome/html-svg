@@ -57,6 +57,7 @@
 - Enh #58: Add `Filter` class and corresponding tests for SVG `<filter>` element functionality (@terabytesoftw)
 - Bug #59: Add exception for invalid `clipPathUnits` value in `clipPathUnits` method of `ClipPath` class (@terabytesoftw)
 - Enh #60: Add `ForeignObject` class and corresponding tests for SVG `<foreignObject>` element functionality (@terabytesoftw)
+- Bug #61: Add tests for invalid attribute values in `CircleTest`, `EllipseTest`, `GTest`, `SvgTest`, and `UsesTest` classes (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
