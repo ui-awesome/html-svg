@@ -47,6 +47,13 @@ enum SvgBlock: string implements BlockInterface
     case FILTER = 'filter';
 
     /**
+     * `<foreignObject>` - Renders foreign content (XHTML).
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject
+     */
+    case FOREIGN_OBJECT = 'foreignObject';
+
+    /**
      * `<g>` - Groups SVG shapes together.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
