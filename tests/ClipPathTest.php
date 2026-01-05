@@ -14,7 +14,7 @@ use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\ClipPath;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
-use UIAwesome\Html\Svg\Values\ClipPathUnits;
+use UIAwesome\Html\Svg\Values\CoordinateUnits;
 
 /**
  * Test suite for {@see ClipPath} element functionality and behavior.
@@ -179,7 +179,7 @@ final class ClipPathTest extends TestCase
             value
             </clipPath>
             HTML,
-            ClipPath::tag()->content('value')->clipPathUnits(ClipPathUnits::OBJECT_BOUNDING_BOX)->render(),
+            ClipPath::tag()->content('value')->clipPathUnits(CoordinateUnits::OBJECT_BOUNDING_BOX)->render(),
             "Failed asserting that element renders correctly with 'clipPathUnits' attribute using enum.",
         );
     }
@@ -415,7 +415,7 @@ final class ClipPathTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 'clipPathUnits',
-                implode('\', \'', Enum::normalizeArray(ClipPathUnits::cases())),
+                implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
             ),
         );
 

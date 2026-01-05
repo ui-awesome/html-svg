@@ -8,7 +8,7 @@ use UIAwesome\Html\Core\Tag\BlockInterface;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform};
 use UIAwesome\Html\Svg\Tag\SvgBlock;
-use UIAwesome\Html\Svg\Values\{ClipPathUnits, SvgProperty};
+use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgProperty};
 use UnitEnum;
 
 /**
@@ -46,7 +46,7 @@ final class ClipPath extends Base\BaseSvgBlockTag
      * @return static New instance with the updated `clipPathUnits` property.
      *
      * @link https://drafts.csswg.org/css-masking-1/#element-attrdef-clippath-clippathunits
-     * {@see ClipPathUnits} for predefined enum values.
+     * {@see CoordinateUnits} for predefined enum values.
      *
      * Usage example:
      * ```php
@@ -54,12 +54,12 @@ final class ClipPath extends Base\BaseSvgBlockTag
      * $element->clipPathUnits('userSpaceOnUse');
      *
      * // sets the `clipPathUnits` attribute using enum
-     * $element->clipPathUnits(ClipPathUnits::OBJECT_BOUNDING_BOX);
+     * $element->clipPathUnits(CoordinateUnits::OBJECT_BOUNDING_BOX);
      * ```
      */
     public function clipPathUnits(string|UnitEnum|null $value): self
     {
-        Validator::oneOf($value, ClipPathUnits::cases(), SvgProperty::CLIP_PATH_UNITS);
+        Validator::oneOf($value, CoordinateUnits::cases(), SvgProperty::CLIP_PATH_UNITS);
 
         return $this->addAttribute(SvgProperty::CLIP_PATH_UNITS, $value);
     }
