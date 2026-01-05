@@ -14,7 +14,7 @@ use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Filter;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
-use UIAwesome\Html\Svg\Values\CoordinateUnits;
+use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgProperty};
 
 /**
  * Test suite for {@see Filter} element functionality and behavior.
@@ -482,7 +482,7 @@ final class FilterTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                'filterUnits',
+                SvgProperty::FILTER_UNITS->value,
                 implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
             ),
         );
@@ -496,7 +496,7 @@ final class FilterTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                'primitiveUnits',
+                SvgProperty::PRIMITIVE_UNITS->value,
                 implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
             ),
         );

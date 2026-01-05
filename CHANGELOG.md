@@ -60,6 +60,7 @@
 - Bug #61: Add tests for invalid attribute values in `CircleTest`, `EllipseTest`, `GTest`, `SvgTest`, and `UsesTest` classes (@terabytesoftw)
 - Enh #62: Add `HasPreserveAspectRatio` trait and corresponding tests for managing SVG `preserveAspectRatio` attribute (@terabytesoftw)
 - Bug #63: Improve phpdocs and error handling for invalid attributes in related classes and tests (@terabytesoftw)
+- Bug #64: Update exception messages to use `SvgProperty` constants in attribute tests (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

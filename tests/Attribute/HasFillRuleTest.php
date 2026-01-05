@@ -12,7 +12,7 @@ use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Attribute\HasFillRule;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillRuleProvider;
-use UIAwesome\Html\Svg\Values\FillRule;
+use UIAwesome\Html\Svg\Values\{FillRule, SvgProperty};
 use UnitEnum;
 
 /**
@@ -124,7 +124,7 @@ final class HasFillRuleTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                'fill-rule',
+                SvgProperty::FILL_RULE->value,
                 implode('\', \'', Enum::normalizeArray(FillRule::cases())),
             ),
         );

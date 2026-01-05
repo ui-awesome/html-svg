@@ -12,7 +12,7 @@ use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Attribute\HasStrokeLineCap;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeLineCapProvider;
-use UIAwesome\Html\Svg\Values\StrokeLineCap;
+use UIAwesome\Html\Svg\Values\{StrokeLineCap, SvgProperty};
 use UnitEnum;
 
 /**
@@ -124,7 +124,7 @@ final class HasStrokeLineCapTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                'stroke-linecap',
+                SvgProperty::STROKE_LINECAP->value,
                 implode('\', \'', Enum::normalizeArray(StrokeLineCap::cases())),
             ),
         );

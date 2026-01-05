@@ -15,7 +15,7 @@ use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Svg;
 use UIAwesome\Html\Svg\Tests\Support\Stub\{DefaultProvider, DefaultThemeProvider};
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
-use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgProperty};
+use UIAwesome\Html\Svg\Values\{FillRule, PreserveAspectRatio, StrokeLineCap, StrokeLineJoin, SvgProperty};
 
 /**
  * Test suite for {@see Svg} element functionality and behavior.
@@ -46,6 +46,19 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgPrope
 final class SvgTest extends TestCase
 {
     use TestSupport;
+
+    public function testRenderPreserveAspectRatioUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg preserveAspectRatio="xMinYMin slice">
+            value
+            </svg>
+            HTML,
+            Svg::tag()->content('value')->preserveAspectRatio(PreserveAspectRatio::X_MIN_Y_MIN_SLICE)->render(),
+            "Failed asserting that element renders correctly with 'preserveAspectRatio' attribute.",
+        );
+    }
 
     public function testRenderWithAccesskey(): void
     {
@@ -1091,6 +1104,20 @@ final class SvgTest extends TestCase
         );
 
         Svg::tag()->opacity('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingInvalidPreserveAspectRatioValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                SvgProperty::PRESERVE_ASPECT_RATIO->value,
+                implode('\', \'', Enum::normalizeArray(PreserveAspectRatio::cases())),
+            ),
+        );
+
+        Svg::tag()->preserveAspectRatio('invalid-value');
     }
 
     public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineCapValue(): void
