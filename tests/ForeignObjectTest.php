@@ -449,8 +449,8 @@ final class ForeignObjectTest extends TestCase
     }
 
     public function testThrowInvalidArgumentExceptionForSettingInvalidOpacityValue(): void
-        {
-            $this->expectException(InvalidArgumentException::class);
+    {
+        $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
             Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
         );
