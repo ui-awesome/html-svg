@@ -34,7 +34,7 @@ enum SvgVoid: string implements VoidInterface
     case CIRCLE = 'circle';
 
     /**
-     * `<ellipse>` - SVG ellipse element.
+     * `<ellipse>` - Draws an ellipse based on a center point and two radii.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse
      */
