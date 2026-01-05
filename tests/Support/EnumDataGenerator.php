@@ -8,7 +8,6 @@ use UIAwesome\Html\Helper\Enum;
 use UnitEnum;
 
 use function sprintf;
-use function strtolower;
 
 /**
  * Utility class for generating structured test data for enum-based HTML attribute scenarios.
@@ -44,7 +43,7 @@ final class EnumDataGenerator
         $cases = [];
 
         foreach ($enumClass::cases() as $case) {
-            $normalizedValue = strtolower((string) Enum::normalizeValue($case));
+            $normalizedValue = Enum::normalizeValue($case);
 
             $key = "enum: {$normalizedValue}";
             $expected = $asHtml ? " {$attribute}=\"{$normalizedValue}\"" : $case;
