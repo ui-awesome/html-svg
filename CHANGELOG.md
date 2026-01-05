@@ -55,6 +55,7 @@
 - Bug #56: Better naming `ClipPathUnits` with `CoordinateUnits` for SVG `<clipPath>` element and update related functionality and tests (@terabytesoftw)
 - Bug #57: Update documentation to use angle brackets for `<circle>` and `<g>` element references (@terabytesoftw)
 - Enh #58: Add `Filter` class and corresponding tests for SVG `<filter>` element functionality (@terabytesoftw)
+- Bug #59: Add exception for invalid `clipPathUnits` value in `clipPathUnits` method of `ClipPath` class (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
