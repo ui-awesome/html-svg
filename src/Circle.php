@@ -64,7 +64,7 @@ final class Circle extends BaseVoid
     use HasTransform;
 
     /**
-     * Returns the tag enumeration for the `circle` element.
+     * Returns the tag enumeration for the `<circle>` element.
      *
      * @return VoidInterface Tag enumeration instance for `<circle>`.
      *
