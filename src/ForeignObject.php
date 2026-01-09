@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg;
 
-use UIAwesome\Html\Attribute\Media\{HasHeight, HasWidth};
-use UIAwesome\Html\Core\Tag\BlockInterface;
+use UIAwesome\Html\Attribute\Element\{HasHeight, HasWidth};
+use UIAwesome\Html\Interop\BlockInterface;
 use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform, HasX, HasY};
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 

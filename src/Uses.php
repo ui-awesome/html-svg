@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg;
 
-use UIAwesome\Html\Attribute\Link\HasHref;
-use UIAwesome\Html\Attribute\Media\{HasHeight, HasWidth};
+use UIAwesome\Html\Attribute\Element\{HasHeight, HasHref, HasWidth};
 use UIAwesome\Html\Core\Element\BaseVoid;
-use UIAwesome\Html\Core\Tag\VoidInterface;
+use UIAwesome\Html\Interop\VoidInterface;
 use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform, HasX, HasY};
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 

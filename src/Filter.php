@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg;
 
 use InvalidArgumentException;
-use UIAwesome\Html\Attribute\Media\{HasHeight, HasWidth};
-use UIAwesome\Html\Core\Tag\BlockInterface;
+use UIAwesome\Html\Attribute\Element\{HasHeight, HasWidth};
 use UIAwesome\Html\Helper\Validator;
+use UIAwesome\Html\Interop\BlockInterface;
 use UIAwesome\Html\Svg\Attribute\{HasX, HasY};
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgProperty};

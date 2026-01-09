@@ -7,8 +7,8 @@ namespace UIAwesome\Html\Svg\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
 use UIAwesome\Html\Core\Factory\SimpleFactory;
-use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\G;
@@ -93,7 +93,7 @@ final class GTest extends TestCase
             value
             </g>
             HTML,
-            G::tag()->addDataAttribute(DataProperty::VALUE, 'value')->content('value')->render(),
+            G::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }

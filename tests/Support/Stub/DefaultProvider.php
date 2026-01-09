@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Stub;
 
 use UIAwesome\Html\Core\Base\BaseTag;
 use UIAwesome\Html\Core\Provider\DefaultsProviderInterface;
-use UIAwesome\Html\Core\Tag\BlockInterface;
+use UIAwesome\Html\Interop\BlockInterface;
 
 /**
  * Provides default configuration values for tag instances in HTML helper and UI component testing.

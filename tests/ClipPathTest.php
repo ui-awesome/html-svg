@@ -7,8 +7,8 @@ namespace UIAwesome\Html\Svg\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
 use UIAwesome\Html\Core\Factory\SimpleFactory;
-use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\ClipPath;
@@ -92,7 +92,7 @@ final class ClipPathTest extends TestCase
             value
             </clipPath>
             HTML,
-            ClipPath::tag()->addDataAttribute(DataProperty::VALUE, 'value')->content('value')->render(),
+            ClipPath::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }

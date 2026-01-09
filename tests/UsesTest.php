@@ -7,8 +7,8 @@ namespace UIAwesome\Html\Svg\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
 use UIAwesome\Html\Core\Factory\SimpleFactory;
-use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Uses;
@@ -81,7 +81,7 @@ final class UsesTest extends TestCase
             <<<HTML
             <use data-value="value">
             HTML,
-            Uses::tag()->addDataAttribute(DataProperty::VALUE, 'value')->render(),
+            Uses::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }

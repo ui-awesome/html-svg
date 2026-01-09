@@ -8,8 +8,8 @@ use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
+use UIAwesome\Html\Attribute\Values\{Aria, ContentEditable, Data, Direction, Draggable, Language, Role, Translate};
 use UIAwesome\Html\Core\Factory\SimpleFactory;
-use UIAwesome\Html\Core\Values\{Aria, ContentEditable, DataProperty, Direction, Draggable, Language, Role, Translate};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Svg;
@@ -120,7 +120,7 @@ final class SvgTest extends TestCase
             value
             </svg>
             HTML,
-            Svg::tag()->addDataAttribute(DataProperty::VALUE, 'value')->content('value')->render(),
+            Svg::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }

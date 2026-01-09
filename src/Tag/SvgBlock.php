@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tag;
 
-use UIAwesome\Html\Core\Tag\BlockInterface;
+use UIAwesome\Html\Interop\BlockInterface;
 
 /**
  * Represents standardized SVG block-level HTML element names as enum cases.

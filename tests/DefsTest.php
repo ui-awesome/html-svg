@@ -6,8 +6,8 @@ namespace UIAwesome\Html\Svg\Tests;
 
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
 use UIAwesome\Html\Core\Factory\SimpleFactory;
-use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
 use UIAwesome\Html\Svg\Defs;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
@@ -89,7 +89,7 @@ final class DefsTest extends TestCase
             value
             </defs>
             HTML,
-            Defs::tag()->addDataAttribute(DataProperty::VALUE, 'value')->content('value')->render(),
+            Defs::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }

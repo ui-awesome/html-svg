@@ -7,8 +7,8 @@ namespace UIAwesome\Html\Svg\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
 use UIAwesome\Html\Core\Factory\SimpleFactory;
-use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Circle;
@@ -84,7 +84,7 @@ final class CircleTest extends TestCase
             <<<HTML
             <circle data-value="value">
             HTML,
-            Circle::tag()->addDataAttribute(DataProperty::VALUE, 'value')->render(),
+            Circle::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
