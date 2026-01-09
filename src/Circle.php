@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg;
 
 use UIAwesome\Html\Core\Element\BaseVoid;
-use UIAwesome\Html\Core\Tag\VoidInterface;
+use UIAwesome\Html\Interop\VoidInterface;
 use UIAwesome\Html\Svg\Attribute\{
     HasCx,
     HasCy,

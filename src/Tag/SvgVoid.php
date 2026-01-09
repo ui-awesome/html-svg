@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tag;
 
-use UIAwesome\Html\Core\Tag\VoidInterface;
+use UIAwesome\Html\Interop\VoidInterface;
 
 /**
  * Represents standardized SVG void (self-closing) HTML element names as enum cases.
@@ -39,6 +39,13 @@ enum SvgVoid: string implements VoidInterface
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse
      */
     case ELLIPSE = 'ellipse';
+
+    /**
+     * `<image>` - Embeds bitmap images.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
+     */
+    case IMAGE = 'image';
 
     /**
      * `<use>` - Reuses an existing SVG element.

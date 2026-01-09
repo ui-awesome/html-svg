@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg;
 
 use InvalidArgumentException;
-use UIAwesome\Html\Core\Tag\BlockInterface;
 use UIAwesome\Html\Helper\Validator;
+use UIAwesome\Html\Interop\BlockInterface;
 use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform};
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgProperty};

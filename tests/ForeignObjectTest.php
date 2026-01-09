@@ -7,8 +7,8 @@ namespace UIAwesome\Html\Svg\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
 use UIAwesome\Html\Core\Factory\SimpleFactory;
-use UIAwesome\Html\Core\Values\{Aria, DataProperty, Language, Role};
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\ForeignObject;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
@@ -91,7 +91,7 @@ final class ForeignObjectTest extends TestCase
             value
             </foreignObject>
             HTML,
-            ForeignObject::tag()->addDataAttribute(DataProperty::VALUE, 'value')->content('value')->render(),
+            ForeignObject::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }

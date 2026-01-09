@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Base;
 
-use UIAwesome\Html\Core\Attribute\{
+use UIAwesome\Html\Attribute\Global\{
     HasAria,
     HasClass,
     HasData,
@@ -17,8 +17,8 @@ use UIAwesome\Html\Core\Attribute\{
 };
 use UIAwesome\Html\Core\Base\BaseTag;
 use UIAwesome\Html\Core\Html;
-use UIAwesome\Html\Core\Mixin\{HasAttributes, HasContent};
-use UIAwesome\Html\Core\Tag\BlockInterface;
+use UIAwesome\Html\Interop\BlockInterface;
+use UIAwesome\Html\Mixin\{HasAttributes, HasContent};
 
 use function preg_replace;
 

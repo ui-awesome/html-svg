@@ -11,7 +11,7 @@ use Exception;
 use InvalidArgumentException;
 use RuntimeException;
 use Stringable;
-use UIAwesome\Html\Attribute\Media\{HasHeight, HasWidth};
+use UIAwesome\Html\Attribute\Element\{HasHeight, HasWidth};
 use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Core\Html;
 use UIAwesome\Html\Helper\{Attributes, Enum};

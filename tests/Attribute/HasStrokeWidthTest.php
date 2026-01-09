@@ -6,8 +6,8 @@ namespace UIAwesome\Html\Svg\Tests\Attribute;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use UIAwesome\Html\Core\Mixin\HasAttributes;
 use UIAwesome\Html\Helper\Attributes;
+use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasStrokeWidth;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeWidthProvider;
 
