@@ -18,6 +18,7 @@
         "ui-awesome/html-attribute": "^0.6@dev",
         "ui-awesome/html-core": "^0.5@dev",
         "ui-awesome/html-helper": "^0.6",
+        "ui-awesome/html-interop": "^0.2",
         "ui-awesome/html-mixin": "^0.4@dev"
     },
     "require-dev": {
