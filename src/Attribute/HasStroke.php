@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing the SVG `stroke` attribute in tag rendering.
@@ -58,6 +58,6 @@ trait HasStroke
      */
     public function stroke(string|null $value): static
     {
-        return $this->addAttribute(SvgProperty::STROKE, $value);
+        return $this->addAttribute(SvgAttribute::STROKE, $value);
     }
 }

@@ -12,7 +12,7 @@ use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasPreserveAspectRatio;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\PreserveAspectRatioProvider;
-use UIAwesome\Html\Svg\Values\{PreserveAspectRatio, SvgProperty};
+use UIAwesome\Html\Svg\Values\{PreserveAspectRatio, SvgAttribute};
 use UnitEnum;
 
 /**
@@ -124,7 +124,7 @@ final class HasPreserveAspectRatioTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                SvgProperty::PRESERVE_ASPECT_RATIO->value,
+                SvgAttribute::PRESERVE_ASPECT_RATIO->value,
                 implode('\', \'', Enum::normalizeArray(PreserveAspectRatio::cases())),
             ),
         );

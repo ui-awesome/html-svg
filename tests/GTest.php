@@ -14,7 +14,7 @@ use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\G;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
-use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgProperty};
+use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
  * Test suite for {@see G} element functionality and behavior.
@@ -613,7 +613,7 @@ final class GTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                SvgProperty::FILL_RULE->value,
+                SvgAttribute::FILL_RULE->value,
                 implode('\', \'', Enum::normalizeArray(FillRule::cases())),
             ),
         );
@@ -637,7 +637,7 @@ final class GTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                SvgProperty::STROKE_LINECAP->value,
+                SvgAttribute::STROKE_LINECAP->value,
                 implode('\', \'', Enum::normalizeArray(StrokeLineCap::cases())),
             ),
         );
@@ -651,7 +651,7 @@ final class GTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                SvgProperty::STROKE_LINEJOIN->value,
+                SvgAttribute::STROKE_LINEJOIN->value,
                 implode('\', \'', Enum::normalizeArray(StrokeLineJoin::cases())),
             ),
         );

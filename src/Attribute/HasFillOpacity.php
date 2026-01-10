@@ -7,7 +7,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing SVG `fill-opacity` attribute in tag rendering.
@@ -66,6 +66,6 @@ trait HasFillOpacity
             );
         }
 
-        return $this->addAttribute(SvgProperty::FILL_OPACITY, $value);
+        return $this->addAttribute(SvgAttribute::FILL_OPACITY, $value);
     }
 }

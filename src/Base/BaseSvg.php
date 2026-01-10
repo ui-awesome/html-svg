@@ -33,7 +33,7 @@ use UIAwesome\Html\Svg\Attribute\{
     HasY,
 };
 use UIAwesome\Html\Svg\Exception\Message;
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 use function file_get_contents;
 use function is_string;
@@ -58,7 +58,7 @@ use function is_string;
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
  * {@see BaseBlock} for the base block-level implementation.
- * {@see SvgProperty} for supported SVG attributes.
+ * {@see SvgAttribute} for supported SVG attributes.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -154,7 +154,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
         $titleAttribute = $this->getTitleAttribute();
 
         if ($titleAttribute !== '') {
-            $content = Html::element(SvgProperty::TITLE, $this->getTitleAttribute(), []) . PHP_EOL;
+            $content = Html::element(SvgAttribute::TITLE, $this->getTitleAttribute(), []) . PHP_EOL;
         }
 
         return $content . parent::getContent();
@@ -179,7 +179,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      */
     public function viewBox(string|null $value): static
     {
-        return $this->addAttribute(SvgProperty::VIEW_BOX, $value);
+        return $this->addAttribute(SvgAttribute::VIEW_BOX, $value);
     }
 
     /**
@@ -204,7 +204,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      */
     public function xmlns(string|null $value): static
     {
-        return $this->addAttribute(SvgProperty::XMLNS, $value);
+        return $this->addAttribute(SvgAttribute::XMLNS, $value);
     }
 
     /**

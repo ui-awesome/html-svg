@@ -62,6 +62,7 @@
 - Bug #63: Improve phpdocs and error handling for invalid attributes in related classes and tests (@terabytesoftw)
 - Bug #64: Update exception messages to use `SvgProperty` constants in attribute tests (@terabytesoftw)
 - Enh #65: Add `ui-awesome/html-mixin` package for reusable HTML attribute, mixins traits and update related imports accordingly (@terabytesoftw)
+- Bug #66: Better naming `SvgProperty` with `SvgAttribute` for SVG attribute constants and update related functionality and tests (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

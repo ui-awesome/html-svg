@@ -10,7 +10,7 @@ use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Interop\BlockInterface;
 use UIAwesome\Html\Svg\Attribute\{HasX, HasY};
 use UIAwesome\Html\Svg\Tag\SvgBlock;
-use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgProperty};
+use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 use UnitEnum;
 
 /**
@@ -64,9 +64,9 @@ final class Filter extends Base\BaseSvgBlockTag
      */
     public function filterUnits(string|UnitEnum|null $value): self
     {
-        Validator::oneOf($value, CoordinateUnits::cases(), SvgProperty::FILTER_UNITS);
+        Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::FILTER_UNITS);
 
-        return $this->addAttribute(SvgProperty::FILTER_UNITS, $value);
+        return $this->addAttribute(SvgAttribute::FILTER_UNITS, $value);
     }
 
     /**
@@ -95,9 +95,9 @@ final class Filter extends Base\BaseSvgBlockTag
      */
     public function primitiveUnits(string|UnitEnum|null $value): self
     {
-        Validator::oneOf($value, CoordinateUnits::cases(), SvgProperty::PRIMITIVE_UNITS);
+        Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::PRIMITIVE_UNITS);
 
-        return $this->addAttribute(SvgProperty::PRIMITIVE_UNITS, $value);
+        return $this->addAttribute(SvgAttribute::PRIMITIVE_UNITS, $value);
     }
 
     /**

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing the SVG `r` attribute in tag rendering.
@@ -58,6 +58,6 @@ trait HasR
      */
     public function r(float|int|string|null $value): static
     {
-        return $this->addAttribute(SvgProperty::R, $value);
+        return $this->addAttribute(SvgAttribute::R, $value);
     }
 }

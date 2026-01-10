@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing the SVG `transform` attribute in tag rendering.
@@ -58,6 +58,6 @@ trait HasTransform
      */
     public function transform(string|null $value): static
     {
-        return $this->addAttribute(SvgProperty::TRANSFORM, $value);
+        return $this->addAttribute(SvgAttribute::TRANSFORM, $value);
     }
 }

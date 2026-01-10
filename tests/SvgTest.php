@@ -15,7 +15,7 @@ use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Svg;
 use UIAwesome\Html\Svg\Tests\Support\Stub\{DefaultProvider, DefaultThemeProvider};
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
-use UIAwesome\Html\Svg\Values\{FillRule, PreserveAspectRatio, StrokeLineCap, StrokeLineJoin, SvgProperty};
+use UIAwesome\Html\Svg\Values\{FillRule, PreserveAspectRatio, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
  * Test suite for {@see Svg} element functionality and behavior.
@@ -1088,7 +1088,7 @@ final class SvgTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                SvgProperty::FILL_RULE->value,
+                SvgAttribute::FILL_RULE->value,
                 implode('\', \'', Enum::normalizeArray(FillRule::cases())),
             ),
         );
@@ -1112,7 +1112,7 @@ final class SvgTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                SvgProperty::PRESERVE_ASPECT_RATIO->value,
+                SvgAttribute::PRESERVE_ASPECT_RATIO->value,
                 implode('\', \'', Enum::normalizeArray(PreserveAspectRatio::cases())),
             ),
         );
@@ -1126,7 +1126,7 @@ final class SvgTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                SvgProperty::STROKE_LINECAP->value,
+                SvgAttribute::STROKE_LINECAP->value,
                 implode('\', \'', Enum::normalizeArray(StrokeLineCap::cases())),
             ),
         );
@@ -1140,7 +1140,7 @@ final class SvgTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                SvgProperty::STROKE_LINEJOIN->value,
+                SvgAttribute::STROKE_LINEJOIN->value,
                 implode('\', \'', Enum::normalizeArray(StrokeLineJoin::cases())),
             ),
         );

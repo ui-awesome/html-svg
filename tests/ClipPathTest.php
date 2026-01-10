@@ -14,7 +14,7 @@ use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\ClipPath;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
-use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgProperty};
+use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 
 /**
  * Test suite for {@see ClipPath} element functionality and behavior.
@@ -414,7 +414,7 @@ final class ClipPathTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                SvgProperty::CLIP_PATH_UNITS->value,
+                SvgAttribute::CLIP_PATH_UNITS->value,
                 implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
             ),
         );

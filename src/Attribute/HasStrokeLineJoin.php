@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
-use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgProperty};
+use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgAttribute};
 use UnitEnum;
 
 /**
@@ -47,8 +47,8 @@ trait HasStrokeLineJoin
      */
     public function strokeLineJoin(string|UnitEnum|null $value): static
     {
-        Validator::oneOf($value, StrokeLineJoin::cases(), SvgProperty::STROKE_LINEJOIN);
+        Validator::oneOf($value, StrokeLineJoin::cases(), SvgAttribute::STROKE_LINEJOIN);
 
-        return $this->addAttribute(SvgProperty::STROKE_LINEJOIN, $value);
+        return $this->addAttribute(SvgAttribute::STROKE_LINEJOIN, $value);
     }
 }

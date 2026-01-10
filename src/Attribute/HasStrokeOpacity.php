@@ -7,7 +7,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing SVG `stroke-opacity` attribute in tag rendering.
@@ -69,6 +69,6 @@ trait HasStrokeOpacity
             );
         }
 
-        return $this->addAttribute(SvgProperty::STROKE_OPACITY, $value);
+        return $this->addAttribute(SvgAttribute::STROKE_OPACITY, $value);
     }
 }

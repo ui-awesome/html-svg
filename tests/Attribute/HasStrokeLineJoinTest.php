@@ -12,7 +12,7 @@ use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasStrokeLineJoin;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeLineJoinProvider;
-use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgProperty};
+use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgAttribute};
 use UnitEnum;
 
 /**
@@ -123,7 +123,7 @@ final class HasStrokeLineJoinTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                SvgProperty::STROKE_LINEJOIN->value,
+                SvgAttribute::STROKE_LINEJOIN->value,
                 implode('\', \'', Enum::normalizeArray(StrokeLineJoin::cases())),
             ),
         );

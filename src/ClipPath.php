@@ -9,7 +9,7 @@ use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Interop\BlockInterface;
 use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform};
 use UIAwesome\Html\Svg\Tag\SvgBlock;
-use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgProperty};
+use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 use UnitEnum;
 
 /**
@@ -62,9 +62,9 @@ final class ClipPath extends Base\BaseSvgBlockTag
      */
     public function clipPathUnits(string|UnitEnum|null $value): self
     {
-        Validator::oneOf($value, CoordinateUnits::cases(), SvgProperty::CLIP_PATH_UNITS);
+        Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::CLIP_PATH_UNITS);
 
-        return $this->addAttribute(SvgProperty::CLIP_PATH_UNITS, $value);
+        return $this->addAttribute(SvgAttribute::CLIP_PATH_UNITS, $value);
     }
 
     /**

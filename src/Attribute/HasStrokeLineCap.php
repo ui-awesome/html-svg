@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
-use UIAwesome\Html\Svg\Values\{StrokeLineCap, SvgProperty};
+use UIAwesome\Html\Svg\Values\{StrokeLineCap, SvgAttribute};
 use UnitEnum;
 
 /**
@@ -64,8 +64,8 @@ trait HasStrokeLineCap
      */
     public function strokeLineCap(string|UnitEnum|null $value): static
     {
-        Validator::oneOf($value, StrokeLineCap::cases(), SvgProperty::STROKE_LINECAP);
+        Validator::oneOf($value, StrokeLineCap::cases(), SvgAttribute::STROKE_LINECAP);
 
-        return $this->addAttribute(SvgProperty::STROKE_LINECAP, $value);
+        return $this->addAttribute(SvgAttribute::STROKE_LINECAP, $value);
     }
 }
