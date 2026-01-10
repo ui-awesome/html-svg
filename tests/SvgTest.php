@@ -47,19 +47,6 @@ final class SvgTest extends TestCase
 {
     use TestSupport;
 
-    public function testRenderPreserveAspectRatioUsingEnum(): void
-    {
-        self::equalsWithoutLE(
-            <<<HTML
-            <svg preserveAspectRatio="xMinYMin slice">
-            value
-            </svg>
-            HTML,
-            Svg::tag()->content('value')->preserveAspectRatio(PreserveAspectRatio::X_MIN_Y_MIN_SLICE)->render(),
-            "Failed asserting that element renders correctly with 'preserveAspectRatio' attribute.",
-        );
-    }
-
     public function testRenderWithAccesskey(): void
     {
         self::equalsWithoutLE(
@@ -620,6 +607,19 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             Svg::tag()->content('value')->preserveAspectRatio('xMidYMid meet')->render(),
+            "Failed asserting that element renders correctly with 'preserveAspectRatio' attribute.",
+        );
+    }
+
+    public function testRenderWithPreserveAspectRatioUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <svg preserveAspectRatio="xMinYMin slice">
+            value
+            </svg>
+            HTML,
+            Svg::tag()->content('value')->preserveAspectRatio(PreserveAspectRatio::X_MIN_Y_MIN_SLICE)->render(),
             "Failed asserting that element renders correctly with 'preserveAspectRatio' attribute.",
         );
     }

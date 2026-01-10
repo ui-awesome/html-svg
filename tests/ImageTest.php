@@ -13,6 +13,7 @@ use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Image;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
+use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
 
 /**
  * Test suite for {@see Image} element functionality and behavior.
@@ -250,6 +251,28 @@ final class ImageTest extends TestCase
             HTML,
             Image::tag()->opacity('0.5')->render(),
             "Failed asserting that element renders correctly with 'opacity' attribute.",
+        );
+    }
+
+    public function testRenderWithPreserveAspectRatio(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <image preserveAspectRatio="xMidYMid meet">
+            HTML,
+            Image::tag()->preserveAspectRatio('xMidYMid meet')->render(),
+            "Failed asserting that element renders correctly with 'preserveAspectRatio' attribute.",
+        );
+    }
+
+    public function testRenderWithPreserveAspectRatioUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <image preserveAspectRatio="xMinYMin slice">
+            HTML,
+            Image::tag()->preserveAspectRatio(PreserveAspectRatio::X_MIN_Y_MIN_SLICE)->render(),
+            "Failed asserting that element renders correctly with 'preserveAspectRatio' attribute.",
         );
     }
 

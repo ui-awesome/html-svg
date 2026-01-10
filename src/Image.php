@@ -8,7 +8,7 @@ use UIAwesome\Html\Attribute\Element\{HasDecoding, HasHeight, HasHref, HasWidth}
 use UIAwesome\Html\Attribute\HasFetchpriority;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Interop\VoidInterface;
-use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform, HasX, HasY};
+use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasPreserveAspectRatio, HasTransform, HasX, HasY};
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 
 /**
@@ -36,6 +36,7 @@ final class Image extends BaseVoid
     use HasHeight;
     use HasHref;
     use HasOpacity;
+    use HasPreserveAspectRatio;
     use HasTransform;
     use HasWidth;
     use HasX;
