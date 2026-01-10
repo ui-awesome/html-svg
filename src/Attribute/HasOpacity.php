@@ -7,7 +7,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing the SVG `opacity` attribute in tag rendering.
@@ -70,6 +70,6 @@ trait HasOpacity
             );
         }
 
-        return $this->addAttribute(SvgProperty::OPACITY, $value);
+        return $this->addAttribute(SvgAttribute::OPACITY, $value);
     }
 }

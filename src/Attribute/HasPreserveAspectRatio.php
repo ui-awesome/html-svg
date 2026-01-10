@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
-use UIAwesome\Html\Svg\Values\{PreserveAspectRatio, SvgProperty};
+use UIAwesome\Html\Svg\Values\{PreserveAspectRatio, SvgAttribute};
 use UnitEnum;
 
 /**
@@ -68,8 +68,8 @@ trait HasPreserveAspectRatio
      */
     public function preserveAspectRatio(string|UnitEnum|null $value): static
     {
-        Validator::oneOf($value, PreserveAspectRatio::cases(), SvgProperty::PRESERVE_ASPECT_RATIO);
+        Validator::oneOf($value, PreserveAspectRatio::cases(), SvgAttribute::PRESERVE_ASPECT_RATIO);
 
-        return $this->addAttribute(SvgProperty::PRESERVE_ASPECT_RATIO, $value);
+        return $this->addAttribute(SvgAttribute::PRESERVE_ASPECT_RATIO, $value);
     }
 }

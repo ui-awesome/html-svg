@@ -7,7 +7,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing SVG `stroke-miterlimit` attribute in tag rendering.
@@ -69,6 +69,6 @@ trait HasStrokeMiterlimit
             );
         }
 
-        return $this->addAttribute(SvgProperty::STROKE_MITERLIMIT, $value);
+        return $this->addAttribute(SvgAttribute::STROKE_MITERLIMIT, $value);
     }
 }

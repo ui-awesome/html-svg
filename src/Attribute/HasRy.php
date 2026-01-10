@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing the SVG `ry` attribute in tag rendering.
@@ -59,6 +59,6 @@ trait HasRy
      */
     public function ry(float|int|string|null $value): static
     {
-        return $this->addAttribute(SvgProperty::RY, $value);
+        return $this->addAttribute(SvgAttribute::RY, $value);
     }
 }

@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
-use UIAwesome\Html\Svg\Values\{FillRule, SvgProperty};
+use UIAwesome\Html\Svg\Values\{FillRule, SvgAttribute};
 use UnitEnum;
 
 /**
@@ -64,8 +64,8 @@ trait HasFillRule
      */
     public function fillRule(string|UnitEnum|null $value): static
     {
-        Validator::oneOf($value, FillRule::cases(), SvgProperty::FILL_RULE);
+        Validator::oneOf($value, FillRule::cases(), SvgAttribute::FILL_RULE);
 
-        return $this->addAttribute(SvgProperty::FILL_RULE, $value);
+        return $this->addAttribute(SvgAttribute::FILL_RULE, $value);
     }
 }

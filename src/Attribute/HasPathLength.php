@@ -7,7 +7,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing the SVG `pathLength` attribute in tag rendering.
@@ -69,6 +69,6 @@ trait HasPathLength
             );
         }
 
-        return $this->addAttribute(SvgProperty::PATH_LENGTH, $value);
+        return $this->addAttribute(SvgAttribute::PATH_LENGTH, $value);
     }
 }

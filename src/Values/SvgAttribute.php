@@ -19,7 +19,7 @@ namespace UIAwesome\Html\Svg\Values;
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-enum SvgProperty: string
+enum SvgAttribute: string
 {
     /**
      * `clipPathUnits` - Defines the coordinate system for the contents of the `<clipPath>` element.

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing the SVG `fill` attribute in tag rendering.
@@ -58,6 +58,6 @@ trait HasFill
      */
     public function fill(string|null $value): static
     {
-        return $this->addAttribute(SvgProperty::FILL, $value);
+        return $this->addAttribute(SvgAttribute::FILL, $value);
     }
 }

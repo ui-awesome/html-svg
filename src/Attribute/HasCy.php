@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Attribute;
 
-use UIAwesome\Html\Svg\Values\SvgProperty;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Trait for managing the SVG `cy` attribute in tag rendering.
@@ -59,6 +59,6 @@ trait HasCy
      */
     public function cy(float|int|string|null $value): static
     {
-        return $this->addAttribute(SvgProperty::CY, $value);
+        return $this->addAttribute(SvgAttribute::CY, $value);
     }
 }
