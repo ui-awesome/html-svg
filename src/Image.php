@@ -1,0 +1,56 @@
+<?php
+
+declare(strict_types=1);
+
+namespace UIAwesome\Html\Svg;
+
+use UIAwesome\Html\Attribute\Element\{HasDecoding, HasHeight, HasHref, HasWidth};
+use UIAwesome\Html\Attribute\HasFetchpriority;
+use UIAwesome\Html\Core\Element\BaseVoid;
+use UIAwesome\Html\Interop\VoidInterface;
+use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasPreserveAspectRatio, HasTransform, HasX, HasY};
+use UIAwesome\Html\Svg\Tag\SvgVoid;
+
+/**
+ * Represents the SVG `<image>` element for embedding bitmap images.
+ *
+ * Provides a standards-compliant, immutable API for rendering the `<image>` container element, following SVG 2 and HTML
+ * specifications for embedding raster images.
+ *
+ * The `<image>` element embeds an external image (PNG, JPG, etc.) into the SVG.
+ *
+ * Key features.
+ * - Designed for use in SVG tag/component classes requiring image embedding.
+ * - Standards-compliant implementation of the SVG `<image>` element.
+ * - Supports opacity and transform attributes.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
+ *
+ * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ */
+final class Image extends BaseVoid
+{
+    use HasDecoding;
+    use HasFetchpriority;
+    use HasHeight;
+    use HasHref;
+    use HasOpacity;
+    use HasPreserveAspectRatio;
+    use HasTransform;
+    use HasWidth;
+    use HasX;
+    use HasY;
+
+    /**
+     * Returns the tag enumeration for the `<image>` element.
+     *
+     * @return VoidInterface Tag enumeration instance for `<image>`.
+     *
+     * {@see SvgVoid} for valid SVG void-level tags.
+     */
+    protected function getTag(): VoidInterface
+    {
+        return SvgVoid::IMAGE;
+    }
+}
