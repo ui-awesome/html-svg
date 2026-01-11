@@ -10,8 +10,8 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 /**
  * SVG `<svg>` element implementation for scalable vector graphics containers.
  *
- * Provides a concrete, type-safe implementation of the SVG `<svg>` element, supporting flexible content injection and
- * attribute management for advanced rendering scenarios.
+ * Provides a concrete, type-safe implementation of the SVG `<svg>` container element, supporting flexible content
+ * injection and attribute management for advanced rendering scenarios.
  *
  * The `<svg>` element defines a new coordinate system and viewport for SVG graphics. It is used as the outermost
  * element of SVG documents, or to embed SVG fragments within HTML or SVG documents.
@@ -23,7 +23,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Type-safe methods for content and attribute management.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/svg
- * {@see BaseSvg} for the base implementation.
+ * {@see Base\BaseSvg} for the base implementation.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
