@@ -48,6 +48,13 @@ enum SvgVoid: string implements VoidInterface
     case IMAGE = 'image';
 
     /**
+     * `<line>` - Draws a straight line between two points.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line
+     */
+    case LINE = 'line';
+
+    /**
      * `<use>` - Reuses an existing SVG element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
