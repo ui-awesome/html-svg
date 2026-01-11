@@ -276,4 +276,14 @@ enum SvgAttribute: string
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/y
      */
     case Y = 'y';
+
+    /**
+     * `y1` - First y coordinate for drawing an SVG element.
+     *
+     * Specifies the first y-coordinate for drawing an SVG element that requires more than one coordinate. Used by
+     * elements like `<line>` and `<linearGradient>`.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/y1
+     */
+    case Y1 = 'y1';
 }

@@ -66,6 +66,7 @@
 - Enh #67: Add `Image` class and corresponding tests for SVG `<image>` element functionality (@terabytesoftw)
 - Enh #68: Add `HasX1` trait and corresponding tests for managing SVG `x1` attribute (@terabytesoftw)
 - Enh #69: Add `HasX2` trait and corresponding tests for managing SVG `x2` attribute (@terabytesoftw)
+- Enh #70: Add `HasY1` trait and corresponding tests for managing SVG `y1` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
