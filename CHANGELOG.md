@@ -64,6 +64,7 @@
 - Enh #65: Add `ui-awesome/html-mixin` package for reusable HTML attribute, mixins traits and update related imports accordingly (@terabytesoftw)
 - Bug #66: Better naming `SvgProperty` with `SvgAttribute` for SVG attribute constants and update related functionality and tests (@terabytesoftw)
 - Enh #67: Add `Image` class and corresponding tests for SVG `<image>` element functionality (@terabytesoftw)
+- Enh #68: Add `HasX1` trait and corresponding tests for managing SVG `x1` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
