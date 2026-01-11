@@ -43,9 +43,8 @@ trait HasGradientUnits
      * @param string|UnitEnum|null $value Gradient units value to set for the element. Accepts 'userSpaceOnUse',
      * 'objectBoundingBox', a {@see CoordinateUnits} enum, or `null` to unset.
      *
-     * @return static New instance with the updated `gradientUnits` attribute.
-     *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
+     * @return static New instance with the updated `gradientUnits` attribute.
      *
      * @link https://svgwg.org/svg2-draft/pservers.html#LinearGradientElementGradientUnitsAttribute
      * {@see CoordinateUnits} for predefined enum values.
