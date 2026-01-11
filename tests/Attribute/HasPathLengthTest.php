@@ -62,6 +62,7 @@ final class HasPathLengthTest extends TestCase
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
+
     /**
      * @phpstan-param mixed[] $attributes
      */
