@@ -81,7 +81,7 @@ final class HasCyTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::CY->value] ?? '',
+            $instance->getAttribute(SvgAttribute::CY, ''),
             $message,
         );
         self::assertSame(

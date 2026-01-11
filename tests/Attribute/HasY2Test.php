@@ -81,7 +81,7 @@ final class HasY2Test extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::Y2->value] ?? '',
+            $instance->getAttribute(SvgAttribute::Y2, ''),
             $message,
         );
         self::assertSame(

@@ -81,7 +81,7 @@ final class HasCxTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::CX->value] ?? '',
+            $instance->getAttribute(SvgAttribute::CX, ''),
             $message,
         );
         self::assertSame(

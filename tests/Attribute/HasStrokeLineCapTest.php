@@ -85,7 +85,7 @@ final class HasStrokeLineCapTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::STROKE_LINECAP->value] ?? '',
+            $instance->getAttribute(SvgAttribute::STROKE_LINECAP, ''),
             $message,
         );
         self::assertSame(

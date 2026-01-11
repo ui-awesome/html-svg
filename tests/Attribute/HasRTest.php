@@ -81,7 +81,7 @@ final class HasRTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::R->value] ?? '',
+            $instance->getAttribute(SvgAttribute::R, ''),
             $message,
         );
         self::assertSame(

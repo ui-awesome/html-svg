@@ -81,7 +81,7 @@ final class HasX1Test extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::X1->value] ?? '',
+            $instance->getAttribute(SvgAttribute::X1, ''),
             $message,
         );
         self::assertSame(

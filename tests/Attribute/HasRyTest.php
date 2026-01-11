@@ -81,7 +81,7 @@ final class HasRyTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::RY->value] ?? '',
+            $instance->getAttribute(SvgAttribute::RY, ''),
             $message,
         );
         self::assertSame(

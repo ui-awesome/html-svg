@@ -81,7 +81,7 @@ final class HasStrokeWidthTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::STROKE_WIDTH->value] ?? '',
+            $instance->getAttribute(SvgAttribute::STROKE_WIDTH, ''),
             $message,
         );
         self::assertSame(

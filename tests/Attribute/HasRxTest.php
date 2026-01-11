@@ -81,7 +81,7 @@ final class HasRxTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::RX->value] ?? '',
+            $instance->getAttribute(SvgAttribute::RX, ''),
             $message,
         );
         self::assertSame(
