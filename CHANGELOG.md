@@ -67,6 +67,7 @@
 - Enh #68: Add `HasX1` trait and corresponding tests for managing SVG `x1` attribute (@terabytesoftw)
 - Enh #69: Add `HasX2` trait and corresponding tests for managing SVG `x2` attribute (@terabytesoftw)
 - Enh #70: Add `HasY1` trait and corresponding tests for managing SVG `y1` attribute (@terabytesoftw)
+- Enh #71: Add `HasY2` trait and corresponding tests for managing SVG `y2` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

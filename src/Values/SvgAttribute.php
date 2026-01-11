@@ -286,4 +286,14 @@ enum SvgAttribute: string
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/y1
      */
     case Y1 = 'y1';
+
+    /**
+     * `y2` - Second y coordinate for drawing an SVG element.
+     *
+     * Specifies the second y-coordinate for drawing an SVG element that requires more than one coordinate. Used by
+     * elements like `<line>` and `<linearGradient>`.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/y2
+     */
+    case Y2 = 'y2';
 }
