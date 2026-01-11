@@ -47,7 +47,7 @@ final class PreserveAspectRatioProvider
     public static function values(): array
     {
         $enumCases = EnumDataGenerator::cases(PreserveAspectRatio::class, 'preserveAspectRatio');
-        
+
         $staticCases = [
             'empty string' => [
                 '',

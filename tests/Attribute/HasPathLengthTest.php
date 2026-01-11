@@ -92,21 +92,6 @@ final class HasPathLengthTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingValueNegative(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasPathLength;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::VALUE_MUST_BE_POSITIVE_NUMBER_OR_NULL->getMessage(),
-        );
-
-        $instance->pathLength(-5);
-    }
-
     public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
     {
         $instance = new class {
@@ -120,5 +105,20 @@ final class HasPathLengthTest extends TestCase
         );
 
         $instance->pathLength('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingValueNegative(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasPathLength;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_MUST_BE_POSITIVE_NUMBER_OR_NULL->getMessage(),
+        );
+
+        $instance->pathLength(-5);
     }
 }
