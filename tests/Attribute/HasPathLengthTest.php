@@ -36,30 +36,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\PathLengthProvider;
 #[Group('attribute')]
 final class HasPathLengthTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(PathLengthProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithPathLengthAttribute(
-        float|int|string|null $pathLength,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasPathLength;
-        };
-
-        $instance = $instance->attributes($attributes)->pathLength($pathLength);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenPathLengthAttributeNotSet(): void
     {
         $instance = new class {
@@ -82,19 +58,19 @@ final class HasPathLengthTest extends TestCase
 
         self::assertNotSame(
             $instance,
-            $instance->pathLength('0'),
+            $instance->pathLength(10),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
-
     /**
      * @phpstan-param mixed[] $attributes
      */
     #[DataProviderExternal(PathLengthProvider::class, 'values')]
     public function testSetPathLengthAttributeValue(
-        float|int|string|null $pathLength,
+        float|int|string|null $pathlength,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,16 +78,21 @@ final class HasPathLengthTest extends TestCase
             use HasPathLength;
         };
 
-        $instance = $instance->attributes($attributes)->pathLength($pathLength);
+        $instance = $instance->attributes($attributes)->pathLength($pathlength);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['pathLength'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidNegativePathLengthValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingValueNegative(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -126,7 +107,7 @@ final class HasPathLengthTest extends TestCase
         $instance->pathLength(-5);
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStringPathLengthValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
     {
         $instance = new class {
             use HasAttributes;

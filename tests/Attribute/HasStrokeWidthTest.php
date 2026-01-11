@@ -33,30 +33,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeWidthProvider;
 #[Group('attribute')]
 final class HasStrokeWidthTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(StrokeWidthProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithStrokeWidthAttribute(
-        int|string|null $strokeWidth,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeWidth;
-        };
-
-        $instance = $instance->attributes($attributes)->strokeWidth($strokeWidth);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenStrokeWidthAttributeNotSet(): void
     {
         $instance = new class {
@@ -89,9 +65,10 @@ final class HasStrokeWidthTest extends TestCase
      */
     #[DataProviderExternal(StrokeWidthProvider::class, 'values')]
     public function testSetStrokeWidthAttributeValue(
-        int|string|null $strokeWidth,
+        int|string|null $strokewidth,
         array $attributes,
-        int|string $expected,
+        int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -99,11 +76,16 @@ final class HasStrokeWidthTest extends TestCase
             use HasStrokeWidth;
         };
 
-        $instance = $instance->attributes($attributes)->strokeWidth($strokeWidth);
+        $instance = $instance->attributes($attributes)->strokeWidth($strokewidth);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['stroke-width'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

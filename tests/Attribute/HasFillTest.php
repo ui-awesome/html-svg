@@ -33,30 +33,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillProvider;
 #[Group('attribute')]
 final class HasFillTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(FillProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithFillAttribute(
-        string|null $fill,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasFill;
-        };
-
-        $instance = $instance->attributes($attributes)->fill($fill);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenFillAttributeNotSet(): void
     {
         $instance = new class {
@@ -91,7 +67,8 @@ final class HasFillTest extends TestCase
     public function testSetFillAttributeValue(
         string|null $fill,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +79,13 @@ final class HasFillTest extends TestCase
         $instance = $instance->attributes($attributes)->fill($fill);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['fill'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

@@ -33,30 +33,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\TransformProvider;
 #[Group('attribute')]
 final class HasTransformTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(TransformProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithTransformAttribute(
-        string|null $transform,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasTransform;
-        };
-
-        $instance = $instance->attributes($attributes)->transform($transform);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenTransformAttributeNotSet(): void
     {
         $instance = new class {
@@ -83,7 +59,7 @@ final class HasTransformTest extends TestCase
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
-
+    
     /**
      * @phpstan-param mixed[] $attributes
      */
@@ -91,7 +67,8 @@ final class HasTransformTest extends TestCase
     public function testSetTransformAttributeValue(
         string|null $transform,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +79,13 @@ final class HasTransformTest extends TestCase
         $instance = $instance->attributes($attributes)->transform($transform);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['transform'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

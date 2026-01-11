@@ -38,30 +38,6 @@ use UnitEnum;
 #[Group('attribute')]
 final class HasStrokeLineCapTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(StrokeLineCapProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithStrokeLineCapAttribute(
-        string|UnitEnum|null $strokeLineCap,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeLineCap;
-        };
-
-        $instance = $instance->attributes($attributes)->strokeLineCap($strokeLineCap);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenStrokeLineCapAttributeNotSet(): void
     {
         $instance = new class {
@@ -96,7 +72,8 @@ final class HasStrokeLineCapTest extends TestCase
     public function testSetStrokeLineCapAttributeValue(
         string|UnitEnum|null $strokeLineCap,
         array $attributes,
-        string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -107,13 +84,18 @@ final class HasStrokeLineCapTest extends TestCase
         $instance = $instance->attributes($attributes)->strokeLineCap($strokeLineCap);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['stroke-linecap'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineCapValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
     {
         $instance = new class {
             use HasAttributes;

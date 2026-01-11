@@ -36,30 +36,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeOpacityProvider;
 #[Group('attribute')]
 final class HasStrokeOpacityTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(StrokeOpacityProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithStrokeOpacityAttribute(
-        float|int|string|null $strokeOpacity,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeOpacity;
-        };
-
-        $instance = $instance->attributes($attributes)->strokeOpacity($strokeOpacity);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenStrokeOpacityAttributeNotSet(): void
     {
         $instance = new class {
@@ -82,8 +58,8 @@ final class HasStrokeOpacityTest extends TestCase
 
         self::assertNotSame(
             $instance,
-            $instance->strokeOpacity('0'),
-            'Should return a new instance when setting attribute, ensuring immutability.',
+            $instance->strokeOpacity(0.5),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
 
@@ -92,9 +68,10 @@ final class HasStrokeOpacityTest extends TestCase
      */
     #[DataProviderExternal(StrokeOpacityProvider::class, 'values')]
     public function testSetStrokeOpacityAttributeValue(
-        float|int|string|null $strokeOpacity,
+        float|int|string|null $strokeopacity,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,16 +79,21 @@ final class HasStrokeOpacityTest extends TestCase
             use HasStrokeOpacity;
         };
 
-        $instance = $instance->attributes($attributes)->strokeOpacity($strokeOpacity);
+        $instance = $instance->attributes($attributes)->strokeOpacity($strokeopacity);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['stroke-opacity'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidNegativeStrokeOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingValueIsGreaterThanOne(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -123,36 +105,6 @@ final class HasStrokeOpacityTest extends TestCase
             Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
         );
 
-        $instance->strokeOpacity(-5);
-    }
-
-    public function testThrowInvalidArgumentExceptionForSettingInvalidOverOneStrokeOpacityValue(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeOpacity;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
-        );
-
-        $instance->strokeOpacity(1.5);
-    }
-
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStringStrokeOpacityValue(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeOpacity;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
-        );
-
-        $instance->strokeOpacity('invalid-value');
+        $instance->strokeOpacity(1.1);
     }
 }

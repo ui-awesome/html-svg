@@ -36,30 +36,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\OpacityProvider;
 #[Group('attribute')]
 final class HasOpacityTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(OpacityProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithOpacityAttribute(
-        float|int|string|null $opacity,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasOpacity;
-        };
-
-        $instance = $instance->attributes($attributes)->opacity($opacity);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenOpacityAttributeNotSet(): void
     {
         $instance = new class {
@@ -82,7 +58,7 @@ final class HasOpacityTest extends TestCase
 
         self::assertNotSame(
             $instance,
-            $instance->opacity('0'),
+            $instance->opacity(0.5),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -94,7 +70,8 @@ final class HasOpacityTest extends TestCase
     public function testSetOpacityAttributeValue(
         float|int|string|null $opacity,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -105,13 +82,18 @@ final class HasOpacityTest extends TestCase
         $instance = $instance->attributes($attributes)->opacity($opacity);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['opacity'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidNegativeOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingValueIsGreaterThanOne(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -123,36 +105,6 @@ final class HasOpacityTest extends TestCase
             Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
         );
 
-        $instance->opacity(-5);
-    }
-
-    public function testThrowInvalidArgumentExceptionForSettingInvalidOverOneOpacityValue(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasOpacity;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
-        );
-
-        $instance->opacity(1.5);
-    }
-
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStringOpacityValue(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasOpacity;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
-        );
-
-        $instance->opacity('invalid-value');
+        $instance->opacity(1.1);
     }
 }

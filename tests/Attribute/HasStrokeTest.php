@@ -33,30 +33,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeProvider;
 #[Group('attribute')]
 final class HasStrokeTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(StrokeProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithStrokeAttribute(
-        string|null $stroke,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasStroke;
-        };
-
-        $instance = $instance->attributes($attributes)->stroke($stroke);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenStrokeAttributeNotSet(): void
     {
         $instance = new class {
@@ -91,7 +67,8 @@ final class HasStrokeTest extends TestCase
     public function testSetStrokeAttributeValue(
         string|null $stroke,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +79,13 @@ final class HasStrokeTest extends TestCase
         $instance = $instance->attributes($attributes)->stroke($stroke);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['stroke'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

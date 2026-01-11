@@ -33,30 +33,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\YProvider;
 #[Group('attribute')]
 final class HasYTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(YProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithYAttribute(
-        float|int|string|null $y,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasY;
-        };
-
-        $instance = $instance->attributes($attributes)->y($y);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenYAttributeNotSet(): void
     {
         $instance = new class {
@@ -83,7 +59,7 @@ final class HasYTest extends TestCase
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
-
+    
     /**
      * @phpstan-param mixed[] $attributes
      */
@@ -91,7 +67,8 @@ final class HasYTest extends TestCase
     public function testSetYAttributeValue(
         float|int|string|null $y,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +79,13 @@ final class HasYTest extends TestCase
         $instance = $instance->attributes($attributes)->y($y);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['y'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

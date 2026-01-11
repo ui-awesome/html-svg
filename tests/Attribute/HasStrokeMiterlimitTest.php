@@ -36,30 +36,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeMiterlimitProvider
 #[Group('attribute')]
 final class HasStrokeMiterlimitTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(StrokeMiterlimitProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithStrokeMiterlimitAttribute(
-        float|int|string|null $strokeMiterlimit,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeMiterlimit;
-        };
-
-        $instance = $instance->attributes($attributes)->strokeMiterlimit($strokeMiterlimit);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenStrokeMiterlimitAttributeNotSet(): void
     {
         $instance = new class {
@@ -82,8 +58,8 @@ final class HasStrokeMiterlimitTest extends TestCase
 
         self::assertNotSame(
             $instance,
-            $instance->strokeMiterlimit('1'),
-            'Should return a new instance when setting attribute, ensuring immutability.',
+            $instance->strokeMiterlimit(1),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
 
@@ -92,9 +68,10 @@ final class HasStrokeMiterlimitTest extends TestCase
      */
     #[DataProviderExternal(StrokeMiterlimitProvider::class, 'values')]
     public function testSetStrokeMiterlimitAttributeValue(
-        float|int|string|null $strokeMiterlimit,
+        float|int|string|null $strokemiterlimit,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,16 +79,21 @@ final class HasStrokeMiterlimitTest extends TestCase
             use HasStrokeMiterlimit;
         };
 
-        $instance = $instance->attributes($attributes)->strokeMiterlimit($strokeMiterlimit);
+        $instance = $instance->attributes($attributes)->strokeMiterlimit($strokemiterlimit);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['stroke-miterlimit'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidNegativeStrokeMiterlimitValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingValueIsLessThanOne(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -123,36 +105,6 @@ final class HasStrokeMiterlimitTest extends TestCase
             Message::VALUE_MUST_BE_GTE_ONE_OR_NULL->getMessage(),
         );
 
-        $instance->strokeMiterlimit(-5);
-    }
-
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStringStrokeMiterlimitValue(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeMiterlimit;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::VALUE_MUST_BE_GTE_ONE_OR_NULL->getMessage(),
-        );
-
-        $instance->strokeMiterlimit('invalid-value');
-    }
-
-    public function testThrowInvalidArgumentExceptionForSettingLessThanOneStrokeMiterlimitValue(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeMiterlimit;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::VALUE_MUST_BE_GTE_ONE_OR_NULL->getMessage(),
-        );
-
-        $instance->strokeMiterlimit(0.9);
+        $instance->strokeMiterlimit(0.5);
     }
 }

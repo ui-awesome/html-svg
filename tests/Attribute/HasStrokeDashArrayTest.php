@@ -33,30 +33,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeDashArrayProvider;
 #[Group('attribute')]
 final class HasStrokeDashArrayTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(StrokeDashArrayProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithStrokeDashArrayAttribute(
-        float|int|string|null $strokeDashArray,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeDashArray;
-        };
-
-        $instance = $instance->attributes($attributes)->strokeDashArray($strokeDashArray);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenStrokeDashArrayAttributeNotSet(): void
     {
         $instance = new class {
@@ -89,9 +65,10 @@ final class HasStrokeDashArrayTest extends TestCase
      */
     #[DataProviderExternal(StrokeDashArrayProvider::class, 'values')]
     public function testSetStrokeDashArrayAttributeValue(
-        float|int|string|null $strokeDashArray,
+        float|int|string|null $strokedasharray,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -99,11 +76,16 @@ final class HasStrokeDashArrayTest extends TestCase
             use HasStrokeDashArray;
         };
 
-        $instance = $instance->attributes($attributes)->strokeDashArray($strokeDashArray);
+        $instance = $instance->attributes($attributes)->strokeDashArray($strokedasharray);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['stroke-dasharray'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

@@ -33,30 +33,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\RProvider;
 #[Group('attribute')]
 final class HasRTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(RProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithRAttribute(
-        float|int|string|null $r,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasR;
-        };
-
-        $instance = $instance->attributes($attributes)->r($r);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenRAttributeNotSet(): void
     {
         $instance = new class {
@@ -91,7 +67,8 @@ final class HasRTest extends TestCase
     public function testSetRAttributeValue(
         float|int|string|null $r,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +79,13 @@ final class HasRTest extends TestCase
         $instance = $instance->attributes($attributes)->r($r);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['r'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

@@ -33,30 +33,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\CxProvider;
 #[Group('attribute')]
 final class HasCxTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(CxProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithCxAttribute(
-        float|int|string|null $cx,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasCx;
-        };
-
-        $instance = $instance->attributes($attributes)->cx($cx);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenCxAttributeNotSet(): void
     {
         $instance = new class {
@@ -91,7 +67,8 @@ final class HasCxTest extends TestCase
     public function testSetCxAttributeValue(
         float|int|string|null $cx,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +79,13 @@ final class HasCxTest extends TestCase
         $instance = $instance->attributes($attributes)->cx($cx);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()['cx'] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
