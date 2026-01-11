@@ -254,6 +254,16 @@ enum SvgAttribute: string
     case X1 = 'x1';
 
     /**
+     * `x2` - Second x coordinate for drawing an SVG element.
+     *
+     * Specifies the second x-coordinate for drawing an SVG element that requires more than one coordinate. Used by
+     * elements like `<line>` and `<linearGradient>`.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/x2
+     */
+    case X2 = 'x2';
+
+    /**
      * `xmlns` - XML namespace for the SVG element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Guides/Namespaces_crash_course
