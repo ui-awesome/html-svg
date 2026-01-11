@@ -44,6 +44,7 @@ trait HasSpreadMethod
      * 'repeat', a SpreadMethod enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see SpreadMethod} enum or string.
+     *
      * @return static New instance with the updated `spreadMethod` attribute.
      *
      * @link https://svgwg.org/svg2-draft/pservers.html#LinearGradientElementSpreadMethodAttribute
