@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasX2;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\X2Provider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasX2} trait functionality and behavior.
@@ -80,7 +81,7 @@ final class HasX2Test extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['x2'] ?? '',
+            $instance->getAttributes()[SvgAttribute::X2->value] ?? '',
             $message,
         );
         self::assertSame(

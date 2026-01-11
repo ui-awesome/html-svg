@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasStroke;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasStroke} trait functionality and behavior.
@@ -80,7 +81,7 @@ final class HasStrokeTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['stroke'] ?? '',
+            $instance->getAttributes()[SvgAttribute::STROKE->value] ?? '',
             $message,
         );
         self::assertSame(

@@ -85,7 +85,7 @@ final class HasFillRuleTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['fill-rule'] ?? '',
+            $instance->getAttributes()[SvgAttribute::FILL_RULE->value] ?? '',
             $message,
         );
         self::assertSame(

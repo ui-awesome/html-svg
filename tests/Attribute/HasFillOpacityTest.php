@@ -12,6 +12,7 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasFillOpacity;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillOpacityProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasFillOpacity} trait functionality and behavior.
@@ -83,7 +84,7 @@ final class HasFillOpacityTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['fill-opacity'] ?? '',
+            $instance->getAttributes()[SvgAttribute::FILL_OPACITY->value] ?? '',
             $message,
         );
         self::assertSame(

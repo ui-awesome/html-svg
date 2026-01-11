@@ -12,6 +12,7 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasStrokeMiterlimit;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeMiterlimitProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasStrokeMiterlimit} trait functionality and behavior.
@@ -83,7 +84,7 @@ final class HasStrokeMiterlimitTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['stroke-miterlimit'] ?? '',
+            $instance->getAttributes()[SvgAttribute::STROKE_MITERLIMIT->value] ?? '',
             $message,
         );
         self::assertSame(

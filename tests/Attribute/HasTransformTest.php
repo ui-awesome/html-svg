@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasTransform;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\TransformProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasTransform} trait functionality and behavior.
@@ -80,7 +81,7 @@ final class HasTransformTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['transform'] ?? '',
+            $instance->getAttributes()[SvgAttribute::TRANSFORM->value] ?? '',
             $message,
         );
         self::assertSame(

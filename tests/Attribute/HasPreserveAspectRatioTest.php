@@ -85,7 +85,7 @@ final class HasPreserveAspectRatioTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['preserveAspectRatio'] ?? '',
+            $instance->getAttributes()[SvgAttribute::PRESERVE_ASPECT_RATIO->value] ?? '',
             $message,
         );
         self::assertSame(

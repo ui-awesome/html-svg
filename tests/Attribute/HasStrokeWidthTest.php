@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasStrokeWidth;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeWidthProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasStrokeWidth} trait functionality and behavior.
@@ -65,7 +66,7 @@ final class HasStrokeWidthTest extends TestCase
      */
     #[DataProviderExternal(StrokeWidthProvider::class, 'values')]
     public function testSetStrokeWidthAttributeValue(
-        int|string|null $strokewidth,
+        int|string|null $strokeWidth,
         array $attributes,
         int|string $expectedValue,
         string $expectedRenderAttribute,
@@ -76,11 +77,11 @@ final class HasStrokeWidthTest extends TestCase
             use HasStrokeWidth;
         };
 
-        $instance = $instance->attributes($attributes)->strokeWidth($strokewidth);
+        $instance = $instance->attributes($attributes)->strokeWidth($strokeWidth);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['stroke-width'] ?? '',
+            $instance->getAttributes()[SvgAttribute::STROKE_WIDTH->value] ?? '',
             $message,
         );
         self::assertSame(

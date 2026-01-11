@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasY;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\YProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasY} trait functionality and behavior.
@@ -80,7 +81,7 @@ final class HasYTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['y'] ?? '',
+            $instance->getAttributes()[SvgAttribute::Y->value] ?? '',
             $message,
         );
         self::assertSame(

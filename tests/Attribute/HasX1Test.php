@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasX1;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\X1Provider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasX1} trait functionality and behavior.
@@ -80,7 +81,7 @@ final class HasX1Test extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['x1'] ?? '',
+            $instance->getAttributes()[SvgAttribute::X1->value] ?? '',
             $message,
         );
         self::assertSame(

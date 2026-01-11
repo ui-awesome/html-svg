@@ -84,7 +84,7 @@ final class HasStrokeLineJoinTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['stroke-linejoin'] ?? '',
+            $instance->getAttributes()[SvgAttribute::STROKE_LINEJOIN->value] ?? '',
             $message,
         );
         self::assertSame(

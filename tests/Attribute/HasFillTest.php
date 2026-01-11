@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasFill;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasFill} trait functionality and behavior.
@@ -80,7 +81,7 @@ final class HasFillTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['fill'] ?? '',
+            $instance->getAttributes()[SvgAttribute::FILL->value] ?? '',
             $message,
         );
         self::assertSame(

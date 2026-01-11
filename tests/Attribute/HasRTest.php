@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasR;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\RProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasR} trait functionality and behavior.
@@ -80,7 +81,7 @@ final class HasRTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['r'] ?? '',
+            $instance->getAttributes()[SvgAttribute::R->value] ?? '',
             $message,
         );
         self::assertSame(

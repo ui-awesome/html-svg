@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasY2;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\Y2Provider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasY2} trait functionality and behavior.
@@ -80,7 +81,7 @@ final class HasY2Test extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['y2'] ?? '',
+            $instance->getAttributes()[SvgAttribute::Y2->value] ?? '',
             $message,
         );
         self::assertSame(

@@ -7,20 +7,21 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 /**
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasStrokeMiterlimitTest} class.
  *
- * Supplies comprehensive test data for validating the handling of the SVG `strokemiterlimit` attribute in tag rendering, ensuring
- * standards-compliant assignment, override behavior, and value propagation according to the SVG 2 specification.
+ * Supplies comprehensive test data for validating the handling of the SVG `stroke-miterlimit` attribute in tag
+ * rendering, ensuring standards-compliant assignment, override behavior, and value propagation according to the SVG 2
+ * specification.
  *
- * The test data covers real-world scenarios for setting, overriding, and unsetting the `strokemiterlimit` attribute, supporting
- * appropriate types and `null` for attribute removal, to maintain consistent output across different rendering
- * configurations.
+ * The test data covers real-world scenarios for setting, overriding, and unsetting the `stroke-miterlimit` attribute,
+ * supporting appropriate types and `null` for attribute removal, to maintain consistent output across different
+ * rendering configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
  * execution and debugging sessions.
  *
  * Key features.
- * - Ensures correct propagation, override, and removal of the `strokemiterlimit` attribute in SVG element rendering.
+ * - Ensures correct propagation, override, and removal of the `stroke-miterlimit` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of appropriate types and `null` for the `strokemiterlimit` attribute.
+ * - Validation of appropriate types and `null` for the `stroke-miterlimit` attribute.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -28,14 +29,14 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 final class StrokeMiterlimitProvider
 {
     /**
-     * Provides test cases for SVG `strokemiterlimit` attribute scenarios.
+     * Provides test cases for SVG `stroke-miterlimit` attribute scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of the SVG `strokemiterlimit` attribute.
+     * Supplies test data for validating assignment, override, and removal of the SVG `stroke-miterlimit` attribute.
      *
      * Each test case includes the input value, the initial attributes, the expected value, the expected rendered
      * attribute string, and an assertion message for clear identification.
      *
-     * @return array Test data for `strokemiterlimit` attribute scenarios.
+     * @return array Test data for `stroke-miterlimit` attribute scenarios.
      *
      * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string, string}>
      */

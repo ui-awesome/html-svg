@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasStrokeDashArray;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeDashArrayProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasStrokeDashArray} trait functionality and behavior.
@@ -65,7 +66,7 @@ final class HasStrokeDashArrayTest extends TestCase
      */
     #[DataProviderExternal(StrokeDashArrayProvider::class, 'values')]
     public function testSetStrokeDashArrayAttributeValue(
-        float|int|string|null $strokedasharray,
+        float|int|string|null $strokeDashArray,
         array $attributes,
         float|int|string $expectedValue,
         string $expectedRenderAttribute,
@@ -76,11 +77,11 @@ final class HasStrokeDashArrayTest extends TestCase
             use HasStrokeDashArray;
         };
 
-        $instance = $instance->attributes($attributes)->strokeDashArray($strokedasharray);
+        $instance = $instance->attributes($attributes)->strokeDashArray($strokeDashArray);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['stroke-dasharray'] ?? '',
+            $instance->getAttributes()[SvgAttribute::STROKE_DASHARRAY->value] ?? '',
             $message,
         );
         self::assertSame(

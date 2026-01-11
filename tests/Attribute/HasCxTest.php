@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasCx;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\CxProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasCx} trait functionality and behavior.
@@ -80,7 +81,7 @@ final class HasCxTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['cx'] ?? '',
+            $instance->getAttributes()[SvgAttribute::CX->value] ?? '',
             $message,
         );
         self::assertSame(

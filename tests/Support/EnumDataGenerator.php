@@ -35,7 +35,7 @@ final class EnumDataGenerator
      * @return array Structured test cases indexed by normalized enum value.
      *
      * @phpstan-param class-string<UnitEnum> $enumClass Enum class name implementing UnitEnum.
-     * @phpstan-return array<string, array{UnitEnum, mixed[], string|UnitEnum, string, string}>
+     * @phpstan-return array<string, array{UnitEnum, mixed[], UnitEnum, string, string}>
      */
     public static function cases(string $enumClass, string|UnitEnum $attribute): array
     {

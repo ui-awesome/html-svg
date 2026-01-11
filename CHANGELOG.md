@@ -68,7 +68,7 @@
 - Enh #69: Add `HasX2` trait and corresponding tests for managing SVG `x2` attribute (@terabytesoftw)
 - Enh #70: Add `HasY1` trait and corresponding tests for managing SVG `y1` attribute (@terabytesoftw)
 - Enh #71: Add `HasY2` trait and corresponding tests for managing SVG `y2` attribute (@terabytesoftw)
-- Bug #72: Refactor SVG attribute providers to standardize type validation and improve documentation, and remove redudant excesive tests cases (@terabytesoftw)
+- Bug #72: Refactor SVG attribute providers to standardize type validation and improve documentation, and remove redundant excessive tests cases (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasRy;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\RyProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasRy} trait functionality and behavior.
@@ -80,7 +81,7 @@ final class HasRyTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['ry'] ?? '',
+            $instance->getAttributes()[SvgAttribute::RY->value] ?? '',
             $message,
         );
         self::assertSame(

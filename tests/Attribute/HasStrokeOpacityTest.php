@@ -12,6 +12,7 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasStrokeOpacity;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeOpacityProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasStrokeOpacity} trait functionality and behavior.
@@ -68,7 +69,7 @@ final class HasStrokeOpacityTest extends TestCase
      */
     #[DataProviderExternal(StrokeOpacityProvider::class, 'values')]
     public function testSetStrokeOpacityAttributeValue(
-        float|int|string|null $strokeopacity,
+        float|int|string|null $strokeOpacity,
         array $attributes,
         float|int|string $expectedValue,
         string $expectedRenderAttribute,
@@ -79,11 +80,11 @@ final class HasStrokeOpacityTest extends TestCase
             use HasStrokeOpacity;
         };
 
-        $instance = $instance->attributes($attributes)->strokeOpacity($strokeopacity);
+        $instance = $instance->attributes($attributes)->strokeOpacity($strokeOpacity);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['stroke-opacity'] ?? '',
+            $instance->getAttributes()[SvgAttribute::STROKE_OPACITY->value] ?? '',
             $message,
         );
         self::assertSame(

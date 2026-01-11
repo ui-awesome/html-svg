@@ -12,6 +12,7 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasPathLength;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\PathLengthProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasPathLength} trait functionality and behavior.
@@ -68,7 +69,7 @@ final class HasPathLengthTest extends TestCase
      */
     #[DataProviderExternal(PathLengthProvider::class, 'values')]
     public function testSetPathLengthAttributeValue(
-        float|int|string|null $pathlength,
+        float|int|string|null $pathLength,
         array $attributes,
         float|int|string $expectedValue,
         string $expectedRenderAttribute,
@@ -79,11 +80,11 @@ final class HasPathLengthTest extends TestCase
             use HasPathLength;
         };
 
-        $instance = $instance->attributes($attributes)->pathLength($pathlength);
+        $instance = $instance->attributes($attributes)->pathLength($pathLength);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()['pathLength'] ?? '',
+            $instance->getAttributes()[SvgAttribute::PATH_LENGTH->value] ?? '',
             $message,
         );
         self::assertSame(
