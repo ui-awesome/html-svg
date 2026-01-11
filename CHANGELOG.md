@@ -75,6 +75,7 @@
 - Bug #76: Update documentation for `Circle`, `Ellipse`, and `Image` class to correct terminology from container element to element (@terabytesoftw)
 - Enh #77: Add `HasGradientTransform` trait and corresponding tests for managing SVG `gradientTransform` attribute (@terabytesoftw)
 - Enh #78: Add `HasGradientUnits` trait and corresponding tests for managing SVG `gradientUnits` attribute (@terabytesoftw)
+- Enh #79: Add `HasSpreadMethod` trait and corresponding tests for managing SVG `spreadMethod` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
