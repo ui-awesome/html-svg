@@ -44,7 +44,7 @@ trait HasGradientUnits
      * 'objectBoundingBox', a {@see CoordinateUnits} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
-     * 
+     *
      * @return static New instance with the updated `gradientUnits` attribute.
      *
      * @link https://svgwg.org/svg2-draft/pservers.html#LinearGradientElementGradientUnitsAttribute
