@@ -76,6 +76,7 @@
 - Enh #77: Add `HasGradientTransform` trait and corresponding tests for managing SVG `gradientTransform` attribute (@terabytesoftw)
 - Enh #78: Add `HasGradientUnits` trait and corresponding tests for managing SVG `gradientUnits` attribute (@terabytesoftw)
 - Enh #79: Add `HasSpreadMethod` trait and corresponding tests for managing SVG `spreadMethod` attribute (@terabytesoftw)
+- Enh #80: Add `LinearGradient` class and corresponding tests for SVG `<linearGradient>` element functionality (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
