@@ -43,9 +43,8 @@ trait HasSpreadMethod
      * @param string|UnitEnum|null $value Spread method value to set for the element. Accepts 'pad', 'reflect',
      * 'repeat', a SpreadMethod enum, or `null` to unset.
      *
-     * @return static New instance with the updated `spreadMethod` attribute.
-     *
      * @throws InvalidArgumentException if the provided value is not a valid {@see SpreadMethod} enum or string.
+     * @return static New instance with the updated `spreadMethod` attribute.
      *
      * @link https://svgwg.org/svg2-draft/pservers.html#LinearGradientElementSpreadMethodAttribute
      * {@see SpreadMethod} for predefined enum values.
