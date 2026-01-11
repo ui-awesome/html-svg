@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasX;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\XProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasX} trait functionality and behavior.
@@ -33,30 +34,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\XProvider;
 #[Group('attribute')]
 final class HasXTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(XProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithXAttribute(
-        float|int|string|null $x,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasX;
-        };
-
-        $instance = $instance->attributes($attributes)->x($x);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenXAttributeNotSet(): void
     {
         $instance = new class {
@@ -91,7 +68,8 @@ final class HasXTest extends TestCase
     public function testSetXAttributeValue(
         float|int|string|null $x,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +80,13 @@ final class HasXTest extends TestCase
         $instance = $instance->attributes($attributes)->x($x);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['x'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[SvgAttribute::X->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

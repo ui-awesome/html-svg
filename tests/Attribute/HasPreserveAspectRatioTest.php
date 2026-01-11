@@ -38,30 +38,6 @@ use UnitEnum;
 #[Group('attribute')]
 final class HasPreserveAspectRatioTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(PreserveAspectRatioProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithPreserveAspectRatioAttribute(
-        string|UnitEnum|null $preserveAspectRatio,
-        array $attributes,
-        string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasPreserveAspectRatio;
-        };
-
-        $instance = $instance->attributes($attributes)->preserveAspectRatio($preserveAspectRatio);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenPreserveAspectRatioAttributeNotSet(): void
     {
         $instance = new class {
@@ -96,7 +72,8 @@ final class HasPreserveAspectRatioTest extends TestCase
     public function testSetPreserveAspectRatioAttributeValue(
         string|UnitEnum|null $preserveAspectRatio,
         array $attributes,
-        string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -107,13 +84,18 @@ final class HasPreserveAspectRatioTest extends TestCase
         $instance = $instance->attributes($attributes)->preserveAspectRatio($preserveAspectRatio);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['preserveAspectRatio'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[SvgAttribute::PRESERVE_ASPECT_RATIO->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidPreserveAspectRatioValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
     {
         $instance = new class {
             use HasAttributes;

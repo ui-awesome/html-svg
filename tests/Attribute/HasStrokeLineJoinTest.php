@@ -37,30 +37,6 @@ use UnitEnum;
 #[Group('attribute')]
 final class HasStrokeLineJoinTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(StrokeLineJoinProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithStrokeLineJoinAttribute(
-        string|UnitEnum|null $strokeLineJoin,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeLineJoin;
-        };
-
-        $instance = $instance->attributes($attributes)->strokeLineJoin($strokeLineJoin);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenStrokeLineJoinAttributeNotSet(): void
     {
         $instance = new class {
@@ -95,7 +71,8 @@ final class HasStrokeLineJoinTest extends TestCase
     public function testSetStrokeLineJoinAttributeValue(
         string|UnitEnum|null $strokeLineJoin,
         array $attributes,
-        string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -106,13 +83,18 @@ final class HasStrokeLineJoinTest extends TestCase
         $instance = $instance->attributes($attributes)->strokeLineJoin($strokeLineJoin);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['stroke-linejoin'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[SvgAttribute::STROKE_LINEJOIN->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineJoinValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
     {
         $instance = new class {
             use HasAttributes;

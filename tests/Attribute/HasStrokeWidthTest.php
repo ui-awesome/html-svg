@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasStrokeWidth;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeWidthProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasStrokeWidth} trait functionality and behavior.
@@ -33,30 +34,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeWidthProvider;
 #[Group('attribute')]
 final class HasStrokeWidthTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(StrokeWidthProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithStrokeWidthAttribute(
-        int|string|null $strokeWidth,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeWidth;
-        };
-
-        $instance = $instance->attributes($attributes)->strokeWidth($strokeWidth);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenStrokeWidthAttributeNotSet(): void
     {
         $instance = new class {
@@ -91,7 +68,8 @@ final class HasStrokeWidthTest extends TestCase
     public function testSetStrokeWidthAttributeValue(
         int|string|null $strokeWidth,
         array $attributes,
-        int|string $expected,
+        int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +80,13 @@ final class HasStrokeWidthTest extends TestCase
         $instance = $instance->attributes($attributes)->strokeWidth($strokeWidth);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['stroke-width'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[SvgAttribute::STROKE_WIDTH->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

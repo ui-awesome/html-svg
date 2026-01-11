@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasY2;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\Y2Provider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasY2} trait functionality and behavior.
@@ -33,30 +34,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\Y2Provider;
 #[Group('attribute')]
 final class HasY2Test extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(Y2Provider::class, 'renderAttribute')]
-    public function testRenderAttributesWithY2Attribute(
-        float|int|string|null $y2,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasY2;
-        };
-
-        $instance = $instance->attributes($attributes)->y2($y2);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenY2AttributeNotSet(): void
     {
         $instance = new class {
@@ -91,7 +68,8 @@ final class HasY2Test extends TestCase
     public function testSetY2AttributeValue(
         float|int|string|null $y2,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +80,13 @@ final class HasY2Test extends TestCase
         $instance = $instance->attributes($attributes)->y2($y2);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['y2'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[SvgAttribute::Y2->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

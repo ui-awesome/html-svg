@@ -10,6 +10,7 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasStrokeDashArray;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeDashArrayProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasStrokeDashArray} trait functionality and behavior.
@@ -33,30 +34,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeDashArrayProvider;
 #[Group('attribute')]
 final class HasStrokeDashArrayTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(StrokeDashArrayProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithStrokeDashArrayAttribute(
-        float|int|string|null $strokeDashArray,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasStrokeDashArray;
-        };
-
-        $instance = $instance->attributes($attributes)->strokeDashArray($strokeDashArray);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenStrokeDashArrayAttributeNotSet(): void
     {
         $instance = new class {
@@ -91,7 +68,8 @@ final class HasStrokeDashArrayTest extends TestCase
     public function testSetStrokeDashArrayAttributeValue(
         float|int|string|null $strokeDashArray,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +80,13 @@ final class HasStrokeDashArrayTest extends TestCase
         $instance = $instance->attributes($attributes)->strokeDashArray($strokeDashArray);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['stroke-dasharray'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[SvgAttribute::STROKE_DASHARRAY->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

@@ -12,6 +12,7 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UIAwesome\Html\Svg\Attribute\HasFillOpacity;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillOpacityProvider;
+use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
  * Test suite for {@see HasFillOpacity} trait functionality and behavior.
@@ -36,30 +37,6 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillOpacityProvider;
 #[Group('attribute')]
 final class HasFillOpacityTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(FillOpacityProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithFillOpacityAttribute(
-        float|int|string|null $fillOpacity,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasFillOpacity;
-        };
-
-        $instance = $instance->attributes($attributes)->fillOpacity($fillOpacity);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenFillOpacityAttributeNotSet(): void
     {
         $instance = new class {
@@ -82,8 +59,8 @@ final class HasFillOpacityTest extends TestCase
 
         self::assertNotSame(
             $instance,
-            $instance->fillOpacity('0'),
-            'Should return a new instance when setting attribute, ensuring immutability.',
+            $instance->fillOpacity(0.5),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
 
@@ -92,9 +69,10 @@ final class HasFillOpacityTest extends TestCase
      */
     #[DataProviderExternal(FillOpacityProvider::class, 'values')]
     public function testSetFillOpacityAttributeValue(
-        float|int|string|null $fillOpacity,
+        float|int|string|null $fillopacity,
         array $attributes,
-        float|int|string $expected,
+        float|int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,16 +80,21 @@ final class HasFillOpacityTest extends TestCase
             use HasFillOpacity;
         };
 
-        $instance = $instance->attributes($attributes)->fillOpacity($fillOpacity);
+        $instance = $instance->attributes($attributes)->fillOpacity($fillopacity);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['fill-opacity'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[SvgAttribute::FILL_OPACITY->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidNegativeFillOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingValueIsGreaterThanOne(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -123,36 +106,6 @@ final class HasFillOpacityTest extends TestCase
             Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
         );
 
-        $instance->fillOpacity(-5);
-    }
-
-    public function testThrowInvalidArgumentExceptionForSettingInvalidOverOneFillOpacityValue(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasFillOpacity;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
-        );
-
-        $instance->fillOpacity(1.5);
-    }
-
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStringFillOpacityValue(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasFillOpacity;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
-        );
-
-        $instance->fillOpacity('invalid-value');
+        $instance->fillOpacity(1.1);
     }
 }

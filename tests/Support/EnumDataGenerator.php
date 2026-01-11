@@ -29,33 +29,30 @@ final class EnumDataGenerator
      * Normalizes enum values and produces expected output for both HTML attribute and enum instance scenarios,
      * supporting platform-independent and type-safe test validation.
      *
-     * @phpstan-param class-string<UnitEnum> $enumClass Enum class name implementing UnitEnum.
      * @param string $enumClass Enum class name implementing UnitEnum.
-     * @param string $attribute HTML attribute name to test.
-     * @param bool $asHtml Whether to generate expected output as HTML attribute or enum instance. Default is `true`.
+     * @param string|UnitEnum $attribute HTML attribute name to test.
      *
      * @return array Structured test cases indexed by normalized enum value.
      *
-     * @phpstan-return array<string, array{UnitEnum, mixed[], string|UnitEnum, string}>
+     * @phpstan-param class-string<UnitEnum> $enumClass Enum class name implementing UnitEnum.
+     * @phpstan-return array<string, array{UnitEnum, mixed[], UnitEnum, string, string}>
      */
-    public static function cases(string $enumClass, string $attribute, bool $asHtml = true): array
+    public static function cases(string $enumClass, string|UnitEnum $attribute): array
     {
+        $attribute = Enum::normalizeValue($attribute);
         $cases = [];
 
         foreach ($enumClass::cases() as $case) {
             $normalizedValue = Enum::normalizeValue($case);
 
             $key = "enum: {$normalizedValue}";
-            $expected = $asHtml ? " {$attribute}=\"{$normalizedValue}\"" : $case;
-            $message = $asHtml
-                ? "Should return the '{$attribute}' attribute value for enum case: {$normalizedValue}."
-                : "Should return the enum instance for case: {$normalizedValue}.";
 
             $cases[$key] = [
                 $case,
                 [],
-                $expected,
-                $message,
+                $case,
+                " {$attribute}=\"{$normalizedValue}\"",
+                "Should return the '{$attribute}' attribute value for enum case: {$normalizedValue}.",
             ];
         }
 

@@ -12,7 +12,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `opacity` attribute, supporting
- * float, int, string, and `null` for attribute removal, to maintain consistent output across different rendering
+ * appropriate types and `null` for attribute removal, to maintain consistent output across different rendering
  * configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
@@ -21,7 +21,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * Key features.
  * - Ensures correct propagation, override, and removal of the `opacity` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of float, int, `null`, and standard string for the `opacity` attribute.
+ * - Validation of appropriate types and `null` for the `opacity` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -29,78 +29,16 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 final class OpacityProvider
 {
     /**
-     * Provides test cases for SVG `opacity` attribute rendering scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the SVG `opacity` attribute, including
-     * float, int, string, and `null`.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for `opacity` attribute rendering scenarios.
-     *
-     * @phpstan-return array<string, array{float|int|string|null, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'float' => [
-                0.3,
-                [],
-                ' opacity="0.3"',
-                'Should return the attribute value after setting it.',
-            ],
-            'integer' => [
-                0,
-                [],
-                ' opacity="0"',
-                'Should return the attribute value after setting it.',
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                '0.5',
-                ['opacity' => '1'],
-                ' opacity="0.5"',
-                "Should return new 'opacity' after replacing the existing 'opacity' attribute.",
-            ],
-            'string' => [
-                '0',
-                [],
-                ' opacity="0"',
-                'Should return the attribute value after setting it.',
-            ],
-            'string float' => [
-                '0.5',
-                [],
-                ' opacity="0.5"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['opacity' => '1'],
-                '',
-                "Should unset the 'opacity' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for SVG `opacity` attribute scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of the SVG `opacity` attribute, including
-     * float, int, string, and `null`.
+     * Supplies test data for validating assignment, override, and removal of the SVG `opacity` attribute.
      *
-     * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
-     * clear identification.
+     * Each test case includes the input value, the initial attributes, the expected value, the expected rendered
+     * attribute string, and an assertion message for clear identification.
      *
      * @return array Test data for `opacity` attribute scenarios.
      *
-     * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string, string}>
      */
     public static function values(): array
     {
@@ -109,17 +47,20 @@ final class OpacityProvider
                 0.3,
                 [],
                 0.3,
+                ' opacity="0.3"',
                 'Should return the attribute value after setting it.',
             ],
             'integer' => [
                 0,
                 [],
                 0,
+                ' opacity="0"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
                 [],
+                '',
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -127,25 +68,36 @@ final class OpacityProvider
                 '0.5',
                 ['opacity' => '1'],
                 '0.5',
+                ' opacity="0.5"',
                 "Should return new 'opacity' after replacing the existing 'opacity' attribute.",
             ],
             'string' => [
                 '0',
                 [],
                 '0',
+                ' opacity="0"',
                 'Should return the attribute value after setting it.',
             ],
             'string float' => [
                 '0.5',
                 [],
                 '0.5',
+                ' opacity="0.5"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['opacity' => '1'],
                 '',
+                '',
                 "Should unset the 'opacity' attribute when 'null' is provided after a value.",
+            ],
+            'value exactly 1' => [
+                1,
+                [],
+                1,
+                ' opacity="1"',
+                "Should accept value exactly '1'.",
             ],
         ];
     }

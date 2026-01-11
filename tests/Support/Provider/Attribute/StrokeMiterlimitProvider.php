@@ -7,99 +7,38 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 /**
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasStrokeMiterlimitTest} class.
  *
- * Supplies comprehensive test data for validating handling of SVG `stroke-miterlimit` attribute in tag rendering,
- * ensuring standards-compliant assignment, override behavior, and value propagation according to SVG 2 specification.
+ * Supplies comprehensive test data for validating the handling of the SVG `stroke-miterlimit` attribute in tag
+ * rendering, ensuring standards-compliant assignment, override behavior, and value propagation according to the SVG 2
+ * specification.
  *
- * The test data covers real-world scenarios for setting, overriding, and unsetting `stroke-miterlimit` attribute,
- * supporting float, int, string and `null` for attribute removal, to maintain consistent output across different
+ * The test data covers real-world scenarios for setting, overriding, and unsetting the `stroke-miterlimit` attribute,
+ * supporting appropriate types and `null` for attribute removal, to maintain consistent output across different
  * rendering configurations.
  *
  * The provider organizes test cases with descriptive names for clear identification of failure cases during test
  * execution and debugging sessions.
  *
  * Key features.
- * - Ensures correct propagation, override, and removal of `stroke-miterlimit` attribute in SVG element rendering.
+ * - Ensures correct propagation, override, and removal of the `stroke-miterlimit` attribute in SVG element rendering.
  * - Named test data sets for precise failure identification.
- * - Validation of float, int, string, and `null` for `stroke-miterlimit` attribute.
+ * - Validation of appropriate types and `null` for the `stroke-miterlimit` attribute.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class StrokeMiterlimitProvider
 {
     /**
-     * Provides test cases for SVG `stroke-miterlimit` attribute rendering scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of SVG `stroke-miterlimit` attribute,
-     * including float, int, string, and `null`.
-     *
-     * Each test case includes input value, initial attributes, expected rendered output, and an assertion message for
-     * clear identification.
-     *
-     * @return array Test data for `stroke-miterlimit` attribute rendering scenarios.
-     *
-     * @phpstan-return array<string, array{float|int|string|null, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when attribute is set to 'null'.",
-            ],
-            'float' => [
-                4.0,
-                [],
-                ' stroke-miterlimit="4"',
-                'Should return the attribute value after setting it.',
-            ],
-            'integer' => [
-                4,
-                [],
-                ' stroke-miterlimit="4"',
-                'Should return the attribute value after setting it.',
-            ],
-            'replace existing' => [
-                '4',
-                ['stroke-miterlimit' => '10'],
-                ' stroke-miterlimit="4"',
-                "Should return new 'stroke-miterlimit' after replacing existing 'stroke-miterlimit' attribute.",
-            ],
-            'string' => [
-                '1',
-                [],
-                ' stroke-miterlimit="1"',
-                'Should return the attribute value after setting it.',
-            ],
-            'string float' => [
-                '3.5',
-                [],
-                ' stroke-miterlimit="3.5"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['stroke-miterlimit' => '4'],
-                '',
-                "Should unset the 'stroke-miterlimit' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for SVG `stroke-miterlimit` attribute scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of SVG `stroke-miterlimit` attribute,
-     * including float, int, string, and `null`.
+     * Supplies test data for validating assignment, override, and removal of the SVG `stroke-miterlimit` attribute.
      *
-     * Each test case includes input value, initial attributes, expected value, and an assertion message for clear
-     * identification.
+     * Each test case includes the input value, the initial attributes, the expected value, the expected rendered
+     * attribute string, and an assertion message for clear identification.
      *
      * @return array Test data for `stroke-miterlimit` attribute scenarios.
      *
-     * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string}>
+     * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string, string}>
      */
     public static function values(): array
     {
@@ -108,43 +47,57 @@ final class StrokeMiterlimitProvider
                 null,
                 [],
                 '',
+                '',
                 "Should return an empty string when attribute is set to 'null'.",
             ],
             'float' => [
                 4.0,
                 [],
                 4.0,
+                ' stroke-miterlimit="4"',
                 'Should return the attribute value after setting it.',
             ],
             'integer' => [
                 4,
                 [],
                 4,
+                ' stroke-miterlimit="4"',
                 'Should return the attribute value after setting it.',
             ],
             'replace existing' => [
                 '4',
                 ['stroke-miterlimit' => '10'],
                 '4',
+                ' stroke-miterlimit="4"',
                 "Should return new 'stroke-miterlimit' after replacing existing 'stroke-miterlimit' attribute.",
             ],
             'string' => [
                 '1',
                 [],
                 '1',
+                ' stroke-miterlimit="1"',
                 'Should return the attribute value after setting it.',
             ],
             'string float' => [
                 '3.5',
                 [],
                 '3.5',
+                ' stroke-miterlimit="3.5"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['stroke-miterlimit' => '4'],
                 '',
+                '',
                 "Should unset the 'stroke-miterlimit' attribute when 'null' is provided after a value.",
+            ],
+            'value exactly 1' => [
+                1,
+                [],
+                1,
+                ' stroke-miterlimit="1"',
+                "Should accept value exactly '1'.",
             ],
         ];
     }

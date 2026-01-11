@@ -38,30 +38,6 @@ use UnitEnum;
 #[Group('attribute')]
 final class HasFillRuleTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(FillRuleProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithFillRuleAttribute(
-        string|UnitEnum|null $fillRule,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasFillRule;
-        };
-
-        $instance = $instance->attributes($attributes)->fillRule($fillRule);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenFillRuleAttributeNotSet(): void
     {
         $instance = new class {
@@ -85,7 +61,7 @@ final class HasFillRuleTest extends TestCase
         self::assertNotSame(
             $instance,
             $instance->fillRule(''),
-            'Should return a new instance when setting attribute, ensuring immutability.',
+            'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
 
@@ -96,7 +72,8 @@ final class HasFillRuleTest extends TestCase
     public function testSetFillRuleAttributeValue(
         string|UnitEnum|null $fillRule,
         array $attributes,
-        string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -107,13 +84,18 @@ final class HasFillRuleTest extends TestCase
         $instance = $instance->attributes($attributes)->fillRule($fillRule);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['fill-rule'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[SvgAttribute::FILL_RULE->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidFillRuleValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
     {
         $instance = new class {
             use HasAttributes;
