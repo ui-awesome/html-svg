@@ -81,7 +81,7 @@ final class HasTransformTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::TRANSFORM->value] ?? '',
+            $instance->getAttribute(SvgAttribute::TRANSFORM, ''),
             $message,
         );
         self::assertSame(

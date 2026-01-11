@@ -84,7 +84,7 @@ final class HasStrokeMiterlimitTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::STROKE_MITERLIMIT->value] ?? '',
+            $instance->getAttribute(SvgAttribute::STROKE_MITERLIMIT, ''),
             $message,
         );
         self::assertSame(

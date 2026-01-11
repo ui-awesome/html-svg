@@ -81,7 +81,7 @@ final class HasXTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::X->value] ?? '',
+            $instance->getAttribute(SvgAttribute::X, ''),
             $message,
         );
         self::assertSame(

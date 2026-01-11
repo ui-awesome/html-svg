@@ -81,7 +81,7 @@ final class HasFillTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::FILL->value] ?? '',
+            $instance->getAttribute(SvgAttribute::FILL, ''),
             $message,
         );
         self::assertSame(

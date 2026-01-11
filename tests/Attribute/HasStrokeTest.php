@@ -81,7 +81,7 @@ final class HasStrokeTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::STROKE->value] ?? '',
+            $instance->getAttribute(SvgAttribute::STROKE, ''),
             $message,
         );
         self::assertSame(

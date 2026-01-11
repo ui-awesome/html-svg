@@ -84,7 +84,7 @@ final class HasPathLengthTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::PATH_LENGTH->value] ?? '',
+            $instance->getAttribute(SvgAttribute::PATH_LENGTH, ''),
             $message,
         );
         self::assertSame(

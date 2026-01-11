@@ -84,7 +84,7 @@ final class HasOpacityTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::OPACITY->value] ?? '',
+            $instance->getAttribute(SvgAttribute::OPACITY, ''),
             $message,
         );
         self::assertSame(

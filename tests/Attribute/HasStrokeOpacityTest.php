@@ -84,7 +84,7 @@ final class HasStrokeOpacityTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::STROKE_OPACITY->value] ?? '',
+            $instance->getAttribute(SvgAttribute::STROKE_OPACITY, ''),
             $message,
         );
         self::assertSame(

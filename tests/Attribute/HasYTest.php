@@ -81,7 +81,7 @@ final class HasYTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::Y->value] ?? '',
+            $instance->getAttribute(SvgAttribute::Y, ''),
             $message,
         );
         self::assertSame(

@@ -81,7 +81,7 @@ final class HasStrokeDashArrayTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[SvgAttribute::STROKE_DASHARRAY->value] ?? '',
+            $instance->getAttribute(SvgAttribute::STROKE_DASHARRAY, ''),
             $message,
         );
         self::assertSame(
