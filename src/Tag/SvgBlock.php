@@ -61,6 +61,13 @@ enum SvgBlock: string implements BlockInterface
     case G = 'g';
 
     /**
+     * `<linearGradient>` - Linear gradient definition.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
+     */
+    case LINEAR_GRADIENT = 'linearGradient';
+
+    /**
      * `<svg>` - The root container for SVG graphics.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
