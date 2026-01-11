@@ -164,6 +164,13 @@ enum SvgAttribute: string
     case RY = 'ry';
 
     /**
+     * `spreadMethod` - Indicates how a gradient behaves if it starts or ends inside the bounds of the shape.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod
+     */
+    case SPREAD_METHOD = 'spreadMethod';
+
+    /**
      * `stroke` - Stroke attribute is a presentation attribute defining the color (or any SVG paint servers like
      * gradients or patterns) used to paint the outline of the shape.
      *
