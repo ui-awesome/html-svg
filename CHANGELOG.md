@@ -67,12 +67,14 @@
 - Enh #68: Add `HasX1` trait and corresponding tests for managing SVG `x1` attribute (@terabytesoftw)
 - Enh #69: Add `HasX2` trait and corresponding tests for managing SVG `x2` attribute (@terabytesoftw)
 - Enh #70: Add `HasY1` trait and corresponding tests for managing SVG `y1` attribute (@terabytesoftw)
-- Enh #71: Add `HasY2` trait and corresponding tests for managing SVG `y2` attribute (@terabytesoftw)
-- Bug #72: Refactor SVG attribute providers to standardize type validation and improve documentation, and remove redundant excessive tests cases (@terabytesoftw)
-- Bug #73: Update attribute retrieval in tests to use `getAttribute()` method for consistency (@terabytesoftw)
-- Enh #74: Add `Line` class and corresponding tests for SVG `<line>` element functionality (@terabytesoftw)
-- Bug #75: Update documentation for `Circle`, `Ellipse`, and `Image` class to correct terminology from container element to element (@terabytesoftw)
-- Enh #76: Add `HasGradientTransform` trait and corresponding tests for managing SVG `gradientTransform` attribute (@terabytesoftw)
+- Bug #71: Update memory limit options for `mutation-static` and `static` scripts in `composer.json` (@terabytesoftw)
+- Enh #72: Add `HasY2` trait and corresponding tests for managing SVG `y2` attribute (@terabytesoftw)
+- Bug #73: Refactor SVG attribute providers to standardize type validation and improve documentation, and remove redundant excessive tests cases (@terabytesoftw)
+- Bug #74: Update attribute retrieval in tests to use `getAttribute()` method for consistency (@terabytesoftw)
+- Enh #75: Add `Line` class and corresponding tests for SVG `<line>` element functionality (@terabytesoftw)
+- Bug #76: Update documentation for `Circle`, `Ellipse`, and `Image` class to correct terminology from container element to element (@terabytesoftw)
+- Enh #77: Add `HasGradientTransform` trait and corresponding tests for managing SVG `gradientTransform` attribute (@terabytesoftw)
+- Enh #78: Add `HasGradientUnits` trait and corresponding tests for managing SVG `gradientUnits` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

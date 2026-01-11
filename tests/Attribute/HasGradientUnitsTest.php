@@ -1,0 +1,116 @@
+<?php
+
+declare(strict_types=1);
+
+namespace UIAwesome\Html\Svg\Tests\Attribute;
+
+use InvalidArgumentException;
+use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
+use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Exception\Message;
+use UIAwesome\Html\Mixin\HasAttributes;
+use UIAwesome\Html\Svg\Attribute\HasGradientUnits;
+use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\GradientUnitsProvider;
+use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
+use UnitEnum;
+
+/**
+ * Test suite for {@see HasGradientUnits} trait functionality and behavior.
+ *
+ * Validates the management of the SVG `gradientUnits` attribute according to the SVG 2 specification.
+ *
+ * Ensures correct handling, immutability, and validation of the `gradientUnits` attribute in tag rendering, supporting
+ * both string and `null` for dynamic identifier assignment.
+ *
+ * Test coverage.
+ * - Accurate rendering of attributes with the `gradientUnits` attribute.
+ * - Data provider-driven validation for edge cases and expected behaviors.
+ * - Error handling for invalid attributes.
+ * - Immutability of the trait's API when setting or overriding the `gradientUnits` attribute.
+ * - Proper assignment and overriding of `gradientUnits` value.
+ *
+ * {@see GradientUnitsProvider} for test case data providers.
+ *
+ * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ */
+#[Group('attribute')]
+final class HasGradientUnitsTest extends TestCase
+{
+    public function testReturnEmptyWhenGradientUnitsAttributeNotSet(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasGradientUnits;
+        };
+
+        self::assertEmpty(
+            $instance->getAttributes(),
+            'Should have no attributes set when no attribute is provided.',
+        );
+    }
+
+    public function testReturnNewInstanceWhenSettingGradientUnitsAttribute(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasGradientUnits;
+        };
+
+        self::assertNotSame(
+            $instance,
+            $instance->gradientUnits(''),
+            'Should return a new instance when setting the attribute, ensuring immutability.',
+        );
+    }
+
+    /**
+     * @phpstan-param mixed[] $attributes
+     */
+    #[DataProviderExternal(GradientUnitsProvider::class, 'values')]
+    public function testSetGradientUnitsAttributeValue(
+        string|UnitEnum|null $gradientUnits,
+        array $attributes,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
+        string $message,
+    ): void {
+        $instance = new class {
+            use HasAttributes;
+            use HasGradientUnits;
+        };
+
+        $instance = $instance->attributes($attributes)->gradientUnits($gradientUnits);
+
+        self::assertSame(
+            $expectedValue,
+            $instance->getAttribute(SvgAttribute::GRADIENT_UNITS, ''),
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
+            $message,
+        );
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasGradientUnits;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                SvgAttribute::GRADIENT_UNITS->value,
+                implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
+            ),
+        );
+
+        $instance->gradientUnits('invalid-value');
+    }
+}
