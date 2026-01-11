@@ -26,7 +26,7 @@ use UnitEnum;
  * - Standards-compliant implementation of the SVG `<filter>` element.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter
- * {@see BaseSvgBlockTag} for the base implementation.
+ * {@see Base\BaseSvgBlockTag} for the base implementation.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

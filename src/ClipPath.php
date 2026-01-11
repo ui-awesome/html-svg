@@ -29,7 +29,7 @@ use UnitEnum;
  * - Supports opacity and transform attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath
- * {@see BaseSvgBlockTag} for the base implementation.
+ * {@see Base\BaseSvgBlockTag} for the base implementation.
  */
 final class ClipPath extends Base\BaseSvgBlockTag
 {
