@@ -69,7 +69,7 @@ final class HasStrokeMiterlimitTest extends TestCase
      */
     #[DataProviderExternal(StrokeMiterlimitProvider::class, 'values')]
     public function testSetStrokeMiterlimitAttributeValue(
-        float|int|string|null $strokemiterlimit,
+        float|int|string|null $strokemiterLimit,
         array $attributes,
         float|int|string $expectedValue,
         string $expectedRenderAttribute,
@@ -80,7 +80,7 @@ final class HasStrokeMiterlimitTest extends TestCase
             use HasStrokeMiterlimit;
         };
 
-        $instance = $instance->attributes($attributes)->strokeMiterlimit($strokemiterlimit);
+        $instance = $instance->attributes($attributes)->strokeMiterlimit($strokemiterLimit);
 
         self::assertSame(
             $expectedValue,

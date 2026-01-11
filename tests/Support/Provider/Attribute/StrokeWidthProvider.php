@@ -31,7 +31,7 @@ final class StrokeWidthProvider
     /**
      * Provides test cases for SVG `stroke-width` attribute scenarios.
      *
-     * Supplies test data for validating assignment, override, and removal of the SVG `strokewidth` attribute.
+     * Supplies test data for validating assignment, override, and removal of the SVG `stroke-width` attribute.
      *
      * Each test case includes the input value, the initial attributes, the expected value, the expected rendered
      * attribute string, and an assertion message for clear identification.
