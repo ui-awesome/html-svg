@@ -71,6 +71,7 @@
 - Bug #72: Refactor SVG attribute providers to standardize type validation and improve documentation, and remove redundant excessive tests cases (@terabytesoftw)
 - Bug #73: Update attribute retrieval in tests to use `getAttribute()` method for consistency (@terabytesoftw)
 - Enh #74: Add `Line` class and corresponding tests for SVG `<line>` element functionality (@terabytesoftw)
+- Bug #75: Update documentation for `Circle`, `Ellipse`, and `Image` class to correct terminology from container element to element (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

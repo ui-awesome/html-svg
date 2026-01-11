@@ -14,7 +14,7 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
 /**
  * Represents the SVG `<image>` element for embedding bitmap images.
  *
- * Provides a standards-compliant, immutable API for rendering the `<image>` container element, following SVG 2 and HTML
+ * Provides a standards-compliant, immutable API for rendering the `<image>` element, following SVG 2 and HTML
  * specifications for embedding raster images.
  *
  * The `<image>` element embeds an external image (PNG, JPG, etc.) into the SVG.
