@@ -59,7 +59,7 @@ final class HasX2Test extends TestCase
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
-    
+
     /**
      * @phpstan-param mixed[] $attributes
      */
