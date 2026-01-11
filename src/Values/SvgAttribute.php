@@ -88,6 +88,13 @@ enum SvgAttribute: string
     case GRADIENT_TRANSFORM = 'gradientTransform';
 
     /**
+     * `gradientUnits` - Defines the coordinate system for gradient attributes.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits
+     */
+    case GRADIENT_UNITS = 'gradientUnits';
+
+    /**
      * `height` - Displayed height of the rectangular viewport (not the height of its coordinate system).
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/height
