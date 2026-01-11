@@ -24,7 +24,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Type-safe methods for content and attribute management.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
- * {@see BaseLinearGradient} for the base implementation.
+ * {@see Base\BaseSvgBlockTag} for the base implementation.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
