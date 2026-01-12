@@ -78,7 +78,7 @@ final class StrokeWidthProvider
                 ' stroke-width="50%"',
                 'Should return the attribute value after setting it.',
             ],
-            'string with units' => [
+            'string with unit' => [
                 '1.5em',
                 [],
                 '1.5em',

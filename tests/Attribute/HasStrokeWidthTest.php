@@ -18,7 +18,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Validates the management of the SVG `stroke-width` attribute according to the SVG 2 specification.
  *
  * Ensures correct handling, immutability, and validation of the `stroke-width` attribute in tag rendering, supporting
- * int, string and `null` for dynamic identifier assignment.
+ * appropriate types and `null` for dynamic identifier assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with the `stroke-width` attribute.

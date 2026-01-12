@@ -21,7 +21,7 @@ use UnitEnum;
  * Validates the management of the SVG `gradientUnits` attribute according to the SVG 2 specification.
  *
  * Ensures correct handling, immutability, and validation of the `gradientUnits` attribute in tag rendering, supporting
- * both string and `null` for dynamic identifier assignment.
+ * appropriate types and `null` for dynamic identifier assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with the `gradientUnits` attribute.
@@ -32,7 +32,7 @@ use UnitEnum;
  *
  * {@see GradientUnitsProvider} for test case data providers.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]

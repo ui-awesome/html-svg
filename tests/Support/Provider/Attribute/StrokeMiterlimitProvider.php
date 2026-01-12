@@ -58,10 +58,10 @@ final class StrokeMiterlimitProvider
                 'Should return the attribute value after setting it.',
             ],
             'integer' => [
-                4,
+                1,
                 [],
-                4,
-                ' stroke-miterlimit="4"',
+                1,
+                ' stroke-miterlimit="1"',
                 'Should return the attribute value after setting it.',
             ],
             'replace existing' => [
@@ -91,13 +91,6 @@ final class StrokeMiterlimitProvider
                 '',
                 '',
                 "Should unset the 'stroke-miterlimit' attribute when 'null' is provided after a value.",
-            ],
-            'value exactly 1' => [
-                1,
-                [],
-                1,
-                ' stroke-miterlimit="1"',
-                "Should accept value exactly '1'.",
             ],
         ];
     }
