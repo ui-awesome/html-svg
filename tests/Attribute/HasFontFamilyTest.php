@@ -13,7 +13,7 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FontFamilyProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasDy} trait functionality and behavior.
+ * Test suite for {@see HasFontFamily} trait functionality and behavior.
  *
  * Validates the management of the SVG `font-family` attribute according to the SVG 2 specification.
  *
