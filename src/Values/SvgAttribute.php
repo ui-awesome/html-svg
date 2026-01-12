@@ -65,6 +65,15 @@ enum SvgAttribute: string
     case DX = 'dx';
 
     /**
+     * `dy` - Vertical offset for text positioning.
+     *
+     * Specifies a shift along the y-axis on the position of an element or its content.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dy
+     */
+    case DY = 'dy';
+
+    /**
      * `fill` - Fill attribute has two different meanings.
      *
      * For shapes and text it's a presentation attribute that defines the color (or any SVG paint servers like gradients
