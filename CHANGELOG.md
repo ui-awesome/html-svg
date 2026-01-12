@@ -80,6 +80,7 @@
 - Bug #81: Update documentation references to `Base\BaseSvgBlockTag` and `Base\BaseSvg` in multiple SVG classes (@terabytesoftw)
 - Enh #82: Add `HasDominantBaseline` trait and corresponding tests for managing SVG `dominant-baseline` attribute (@terabytesoftw)
 - Enh #83: Add `HasDx` trait and corresponding tests for managing SVG `dx` attribute (@terabytesoftw)
+- Enh #84: Add `HasDy` trait and corresponding tests for managing SVG `dy` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
