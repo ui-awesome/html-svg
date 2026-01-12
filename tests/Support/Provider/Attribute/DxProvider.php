@@ -63,6 +63,13 @@ final class DxProvider
                 ' dx="10"',
                 'Should return the attribute value after setting it.',
             ],
+            'negative integer' => [
+                -5,
+                [],
+                -5,
+                ' dx="-5"',
+                'Should return the attribute value after setting it.',
+            ],
             'null' => [
                 null,
                 [],
@@ -90,6 +97,13 @@ final class DxProvider
                 '1 2 3',
                 ' dx="1 2 3"',
                 'Should return the attribute value after setting space-separated list.',
+            ],
+            'string with unit' => [
+                '10px',
+                [],
+                '10px',
+                ' dx="10px"',
+                'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
