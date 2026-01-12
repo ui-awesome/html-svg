@@ -56,6 +56,15 @@ enum SvgAttribute: string
     case DOMINANT_BASELINE = 'dominant-baseline';
 
     /**
+     * `dx` - Horizontal offset for text positioning.
+     *
+     * Specifies a shift along the x-axis on the position of an element or its content.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dx
+     */
+    case DX = 'dx';
+
+    /**
      * `fill` - Fill attribute has two different meanings.
      *
      * For shapes and text it's a presentation attribute that defines the color (or any SVG paint servers like gradients
