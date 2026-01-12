@@ -82,7 +82,7 @@
 - Enh #83: Add `HasDx` trait and corresponding tests for managing SVG `dx` attribute (@terabytesoftw)
 - Enh #84: Add `HasDy` trait and corresponding tests for managing SVG `dy` attribute (@terabytesoftw)
 - Bug #85: Standardize all documentation in related classes (@terabytesoftw)
-- Enh #85: Add `HasFontFamily` trait and corresponding tests for managing SVG `font-family` attribute (@terabytesoftw)
+- Enh #86: Add `HasFontFamily` trait and corresponding tests for managing SVG `font-family` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
