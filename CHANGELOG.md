@@ -81,6 +81,7 @@
 - Enh #82: Add `HasDominantBaseline` trait and corresponding tests for managing SVG `dominant-baseline` attribute (@terabytesoftw)
 - Enh #83: Add `HasDx` trait and corresponding tests for managing SVG `dx` attribute (@terabytesoftw)
 - Enh #84: Add `HasDy` trait and corresponding tests for managing SVG `dy` attribute (@terabytesoftw)
+- Enh #85: Add `HasFontFamily` trait and corresponding tests for managing SVG `font-family` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

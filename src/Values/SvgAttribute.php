@@ -108,6 +108,15 @@ enum SvgAttribute: string
     case FILTER_UNITS = 'filterUnits';
 
     /**
+     * `font-family` - Font family for text content.
+     *
+     * Specifies the font family to be used for rendering text.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-family
+     */
+    case FONT_FAMILY = 'font-family';
+
+    /**
      * `gradientTransform` - Defines a transformation applied to the gradient coordinate system.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientTransform
