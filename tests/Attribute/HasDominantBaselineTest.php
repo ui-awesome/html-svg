@@ -62,7 +62,7 @@ final class HasDominantBaselineTest extends TestCase
             $instance,
             $instance->dominantBaseline(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
-            );
+        );
     }
 
     /**
