@@ -20,7 +20,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Validates management of SVG `fill-opacity` attribute according to SVG 2 specification.
  *
  * Ensures correct handling, immutability, and validation of `fill-opacity` attribute in tag rendering, supporting
- * float, int, string and `null` for dynamic identifier assignment.
+ * appropriate types and `null` for dynamic identifier assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with `fill-opacity` attribute.

@@ -22,7 +22,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * - Named test data sets for precise failure identification.
  * - Validation of appropriate types and `null` for the `ry` attribute.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class RyProvider
@@ -84,7 +84,7 @@ final class RyProvider
                 ' ry="50%"',
                 'Should return the attribute value after setting it.',
             ],
-            'string with units' => [
+            'string with unit' => [
                 '10px',
                 [],
                 '10px',

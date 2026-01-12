@@ -29,7 +29,7 @@ use UnitEnum;
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 trait HasGradientUnits
@@ -41,7 +41,7 @@ trait HasGradientUnits
      * SVG 2 specification for defining the coordinate system of gradient attributes.
      *
      * @param string|UnitEnum|null $value Gradient units value to set for the element. Accepts 'userSpaceOnUse',
-     * 'objectBoundingBox', a {@see CoordinateUnits} enum, or `null` to unset.
+     * 'objectBoundingBox', {@see CoordinateUnits} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
      *

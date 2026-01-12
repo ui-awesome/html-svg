@@ -20,8 +20,8 @@ use UnitEnum;
  *
  * Validates management of SVG `fill-rule` attribute according to SVG 2 specification.
  *
- * Ensures correct handling, immutability, and validation of `fill-rule` attribute in tag rendering, supporting string,
- * UnitEnum, and `null` for dynamic identifier assignment.
+ * Ensures correct handling, immutability, and validation of `fill-rule` attribute in tag rendering, supporting
+ * appropriate types and `null` for dynamic identifier assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with `fill-rule` attribute.

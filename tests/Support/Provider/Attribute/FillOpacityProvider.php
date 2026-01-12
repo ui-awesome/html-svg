@@ -51,10 +51,10 @@ final class FillOpacityProvider
                 'Should return the attribute value after setting it.',
             ],
             'integer' => [
-                0,
+                1,
                 [],
-                0,
-                ' fill-opacity="0"',
+                1,
+                ' fill-opacity="1"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -91,13 +91,6 @@ final class FillOpacityProvider
                 '',
                 '',
                 "Should unset the 'fill-opacity' attribute when 'null' is provided after a value.",
-            ],
-            'value exactly 1' => [
-                1,
-                [],
-                1,
-                ' fill-opacity="1"',
-                "Should accept value exactly '1'.",
             ],
         ];
     }

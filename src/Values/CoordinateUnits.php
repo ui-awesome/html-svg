@@ -25,7 +25,7 @@ namespace UIAwesome\Html\Svg\Values;
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/filterUnits
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/primitiveUnits
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 enum CoordinateUnits: string

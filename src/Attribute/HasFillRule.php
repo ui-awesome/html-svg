@@ -41,7 +41,7 @@ trait HasFillRule
      * specification for painting properties.
      *
      * @param string|UnitEnum|null $value Fill rule value to set for the element. Accepts `nonzero`, `evenodd`,
-     * `FillRule` enum, or `null` to unset.
+     * {@see FillRule} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see FillRule} enum or string.
      *

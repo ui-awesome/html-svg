@@ -17,8 +17,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * Validates the management of the SVG `r` attribute according to the SVG 2 specification.
  *
- * Ensures correct handling, immutability, and validation of the `r` attribute in tag rendering, supporting int, float,
- * string and `null` for dynamic radius assignment.
+ * Ensures correct handling, immutability, and validation of the `r` attribute in tag rendering, supporting appropriate
+ * types and `null` for dynamic radius assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with the `r` attribute.
@@ -28,7 +28,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * {@see RProvider} for test case data providers.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]

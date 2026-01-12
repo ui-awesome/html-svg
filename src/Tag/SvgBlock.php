@@ -73,4 +73,11 @@ enum SvgBlock: string implements BlockInterface
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
      */
     case SVG = 'svg';
+
+    /**
+     * `<text>` - SVG text content element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
+     */
+    case TEXT = 'text';
 }

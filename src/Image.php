@@ -27,7 +27,7 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
  * {@see BaseVoid} for the base implementation.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class Image extends BaseVoid

@@ -29,7 +29,7 @@ use UnitEnum;
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/preserveAspectRatio
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 trait HasPreserveAspectRatio
@@ -42,7 +42,8 @@ trait HasPreserveAspectRatio
      * different aspect ratio.
      *
      * @param string|UnitEnum|null $value Preserve aspect ratio value. Accepts any valid preserveAspectRatio
-     * specification (for example, 'xMidYMid meet', 'none', 'xMaxYMax slice', or `null` to unset).
+     * specification (for example, 'xMidYMid meet', 'none', 'xMaxYMax slice', {@see PreserveAspectRatio} enum, or `null`
+     * to unset).
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see PreserveAspectRatio} enum or string.
      *

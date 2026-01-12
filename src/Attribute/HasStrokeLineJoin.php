@@ -39,11 +39,26 @@ trait HasStrokeLineJoin
      * Sets the SVG `stroke-linejoin` attribute for the element.
      *
      * @param string|UnitEnum|null $value Stroke line join style to set for the element. Accepts 'miter', 'round',
-     * 'bevel', 'miter-clip', 'arcs', or `null` to unset.
+     * 'bevel', 'miter-clip', 'arcs', {@see StrokeLineJoin} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see StrokeLineJoin} enum or string.
      *
      * @return static New instance with the updated `stroke-linejoin` attribute.
+     *
+     * @link https://svgwg.org/svg2-draft/painting.html#LineJoin
+     * {@see StrokeLineJoin} for predefined enum values.
+     *
+     * Usage example:
+     * ```php
+     * // sets the `stroke-linejoin` attribute to 'miter'
+     * $element->strokeLineJoin('miter');
+     *
+     * // sets the `stroke-linejoin` attribute using an enum
+     * $element->strokeLineJoin(StrokeLineJoin::ROUND);
+     *
+     * // unsets the `stroke-linejoin` attribute
+     * $element->strokeLineJoin(null);
+     * ```
      */
     public function strokeLineJoin(string|UnitEnum|null $value): static
     {

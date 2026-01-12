@@ -20,7 +20,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Validates management of SVG `stroke-opacity` attribute according to SVG 2 specification.
  *
  * Ensures correct handling, immutability, and validation of `stroke-opacity` attribute in tag rendering, supporting
- * float, int, string, and `null` for dynamic identifier assignment.
+ * appropriate types and `null` for dynamic identifier assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with `stroke-opacity` attribute.
@@ -31,7 +31,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * {@see StrokeOpacityProvider} for test case data providers.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]

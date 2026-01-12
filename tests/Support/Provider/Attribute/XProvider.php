@@ -22,7 +22,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * - Named test data sets for precise failure identification.
  * - Validation of appropriate types and `null` for the `x` attribute.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class XProvider
@@ -54,28 +54,28 @@ final class XProvider
                 [],
                 10.3,
                 ' x="10.3"',
-                'Should return the attribute value after setting a float.',
+                'Should return the attribute value after setting it.',
             ],
             'float negative' => [
                 -5.7,
                 [],
                 -5.7,
                 ' x="-5.7"',
-                'Should return the attribute value after setting a negative float.',
+                'Should return the attribute value after setting it.',
             ],
             'float precision' => [
                 10.12345,
                 [],
                 10.12345,
                 ' x="10.12345"',
-                'Should return the attribute value after setting a float with precision.',
+                'Should return the attribute value after setting it.',
             ],
             'float zero' => [
                 0.0,
                 [],
                 0.0,
                 ' x="0"',
-                'Should return the attribute value after setting float zero.',
+                'Should return the attribute value after setting it.',
             ],
             'integer' => [
                 10,
@@ -112,7 +112,7 @@ final class XProvider
                 ' x="50%"',
                 'Should return the attribute value after setting it.',
             ],
-            'string with units' => [
+            'string with unit' => [
                 '10px',
                 [],
                 '10px',

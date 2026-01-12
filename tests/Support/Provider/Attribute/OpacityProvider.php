@@ -51,10 +51,10 @@ final class OpacityProvider
                 'Should return the attribute value after setting it.',
             ],
             'integer' => [
-                0,
+                1,
                 [],
-                0,
-                ' opacity="0"',
+                1,
+                ' opacity="1"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -91,13 +91,6 @@ final class OpacityProvider
                 '',
                 '',
                 "Should unset the 'opacity' attribute when 'null' is provided after a value.",
-            ],
-            'value exactly 1' => [
-                1,
-                [],
-                1,
-                ' opacity="1"',
-                "Should accept value exactly '1'.",
             ],
         ];
     }

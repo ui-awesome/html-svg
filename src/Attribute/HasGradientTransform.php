@@ -19,14 +19,14 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * - Designed for use in SVG gradient tag and component classes.
  * - Enforces standards-compliant handling of the SVG `gradientTransform` attribute.
  * - Immutable method for setting or overriding the `gradientTransform` attribute.
- * - Supports `string` and `null` for flexible transform assignment (matrix, translate, scale, rotate, skew, or unset).
+ * - Supports string and `null` for flexible transform assignment (matrix, translate, scale, rotate, skew, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientTransform
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 trait HasGradientTransform

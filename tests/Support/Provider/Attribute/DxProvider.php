@@ -22,7 +22,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * - Named test data sets for precise failure identification.
  * - Validation of appropriate types and `null` for the `dx` attribute.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class DxProvider
@@ -96,7 +96,7 @@ final class DxProvider
                 [],
                 '1 2 3',
                 ' dx="1 2 3"',
-                'Should return the attribute value after setting space-separated list.',
+                'Should return the attribute value after setting it.',
             ],
             'string with unit' => [
                 '10px',

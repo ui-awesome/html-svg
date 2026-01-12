@@ -19,7 +19,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `transform` attribute.
  * - Immutable method for setting or overriding the `transform` attribute.
- * - Supports `string` and `null` for flexible transform assignment (matrix, translate, scale, rotate, skew, or unset).
+ * - Supports string and `null` for flexible transform assignment (matrix, translate, scale, rotate, skew, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.

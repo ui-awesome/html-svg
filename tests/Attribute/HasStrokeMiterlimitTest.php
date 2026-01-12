@@ -20,7 +20,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Validates management of SVG `stroke-miterlimit` attribute according to SVG 2 specification.
  *
  * Ensures correct handling, immutability, and validation of `stroke-miterlimit` attribute in tag rendering, supporting
- * int, string and `null` for dynamic identifier assignment.
+ * appropriate types and `null` for dynamic identifier assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with `stroke-miterlimit` attribute.

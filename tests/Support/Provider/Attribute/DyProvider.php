@@ -96,7 +96,7 @@ final class DyProvider
                 [],
                 '1 2 3',
                 ' dy="1 2 3"',
-                'Should return the attribute value after setting space-separated list.',
+                'Should return the attribute value after setting it.',
             ],
             'string with unit' => [
                 '10px',

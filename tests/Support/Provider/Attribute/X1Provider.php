@@ -54,28 +54,28 @@ final class X1Provider
                 [],
                 10.3,
                 ' x1="10.3"',
-                'Should return the attribute value after setting a float.',
+                'Should return the attribute value after setting it.',
             ],
             'float negative' => [
                 -5.7,
                 [],
                 -5.7,
                 ' x1="-5.7"',
-                'Should return the attribute value after setting a negative float.',
+                'Should return the attribute value after setting it.',
             ],
             'float precision' => [
                 10.12345,
                 [],
                 10.12345,
                 ' x1="10.12345"',
-                'Should return the attribute value after setting a float with precision.',
+                'Should return the attribute value after setting it.',
             ],
             'float zero' => [
                 0.0,
                 [],
                 0.0,
                 ' x1="0"',
-                'Should return the attribute value after setting float zero.',
+                'Should return the attribute value after setting it.',
             ],
             'integer' => [
                 10,
@@ -112,7 +112,7 @@ final class X1Provider
                 ' x1="50%"',
                 'Should return the attribute value after setting it.',
             ],
-            'string with units' => [
+            'string with unit' => [
                 '10px',
                 [],
                 '10px',

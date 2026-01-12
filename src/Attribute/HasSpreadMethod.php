@@ -29,7 +29,7 @@ use UnitEnum;
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 trait HasSpreadMethod
@@ -41,7 +41,7 @@ trait HasSpreadMethod
      * SVG 2 specification for defining how a gradient behaves beyond its defined edges.
      *
      * @param string|UnitEnum|null $value Spread method value to set for the element. Accepts 'pad', 'reflect',
-     * 'repeat', a SpreadMethod enum, or `null` to unset.
+     * 'repeat', {@see SpreadMethod} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see SpreadMethod} enum or string.
      *

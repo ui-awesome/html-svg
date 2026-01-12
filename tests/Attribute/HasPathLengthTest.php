@@ -20,7 +20,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Validates the management of the SVG `pathLength` attribute according to the SVG 2 specification.
  *
  * Ensures correct handling, immutability, and validation of the `pathLength` attribute in tag rendering, supporting
- * float, int, string and `null` for dynamic path length assignment.
+ * appropriate types and `null` for dynamic path length assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with the `pathLength` attribute.
@@ -31,7 +31,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * {@see PathLengthProvider} for test case data providers.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]

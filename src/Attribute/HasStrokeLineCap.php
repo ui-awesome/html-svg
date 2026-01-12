@@ -41,7 +41,7 @@ trait HasStrokeLineCap
      * SVG 2 specification for painting outlines of shapes and text content elements.
      *
      * @param string|UnitEnum|null $value Stroke line cap style to set for the element. Accepts 'butt', 'round',
-     * 'square', or `null` to unset.
+     * 'square', {@see StrokeLineCap} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see StrokeLineCap} enum or string.
      *
