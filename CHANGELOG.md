@@ -78,6 +78,7 @@
 - Enh #79: Add `HasSpreadMethod` trait and corresponding tests for managing SVG `spreadMethod` attribute (@terabytesoftw)
 - Enh #80: Add `LinearGradient` class and corresponding tests for SVG `<linearGradient>` element functionality (@terabytesoftw)
 - Bug #81: Update documentation references to `Base\BaseSvgBlockTag` and `Base\BaseSvg` in multiple SVG classes (@terabytesoftw)
+- Enh #82: Add `HasDominantBaseline` trait and corresponding tests for managing SVG `dominant-baseline` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

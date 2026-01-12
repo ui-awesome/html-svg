@@ -47,6 +47,15 @@ enum SvgAttribute: string
     case CY = 'cy';
 
     /**
+     * `dominant-baseline` - Dominant baseline positioning attribute.
+     *
+     * Specifies the baseline used to align the text content of an element with respect to its parent.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     */
+    case DOMINANT_BASELINE = 'dominant-baseline';
+
+    /**
      * `fill` - Fill attribute has two different meanings.
      *
      * For shapes and text it's a presentation attribute that defines the color (or any SVG paint servers like gradients
