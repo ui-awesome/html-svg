@@ -117,6 +117,15 @@ enum SvgAttribute: string
     case FONT_FAMILY = 'font-family';
 
     /**
+     * `font-size` - Font size for text content.
+     *
+     * Specifies the size of the font from baseline to baseline.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-size
+     */
+    case FONT_SIZE = 'font-size';
+
+    /**
      * `gradientTransform` - Defines a transformation applied to the gradient coordinate system.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientTransform
