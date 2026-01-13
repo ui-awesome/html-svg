@@ -12,6 +12,7 @@ use InvalidArgumentException;
 use RuntimeException;
 use Stringable;
 use UIAwesome\Html\Attribute\Element\{HasHeight, HasWidth};
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Core\Html;
 use UIAwesome\Html\Helper\{Attributes, Enum};
@@ -154,7 +155,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
         $titleAttribute = $this->getTitleAttribute();
 
         if ($titleAttribute !== '') {
-            $content = Html::element(SvgAttribute::TITLE, $this->getTitleAttribute(), []) . PHP_EOL;
+            $content = Html::element(GlobalAttribute::TITLE, $this->getTitleAttribute(), []) . PHP_EOL;
         }
 
         return $content . parent::getContent();
