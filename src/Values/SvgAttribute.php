@@ -348,6 +348,13 @@ enum SvgAttribute: string
     case VIEW_BOX = 'viewBox';
 
     /**
+     * `word-spacing` - Controls spacing between words in text.
+     *
+     * @link https://www.w3.org/TR/SVG2/text.html#WordSpacingProperty
+     */
+    case WORD_SPACING = 'word-spacing';
+
+    /**
      * `x` - Displayed x coordinate of the SVG container. No effect on outermost `svg` elements.
      *
      * @link https://www.w3.org/TR/SVG2/geometry.html#XProperty
