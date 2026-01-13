@@ -18,7 +18,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Validates the management of the SVG `font-weight` attribute according to the SVG 2 specification.
  *
  * Ensures correct handling, immutability, and validation of the `font-weight` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic offset assignment.
+ * appropriate types and `null` for dynamic font weight assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with the `font-weight` attribute.
