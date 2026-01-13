@@ -26,7 +26,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * - Immutability of the trait's API when setting or overriding the `rotate` attribute.
  * - Proper assignment and overriding of `rotate` value.
  *
- * {@see LetterSpacingProvider} for test case data providers.
+ * {@see RotateProvider} for test case data providers.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
