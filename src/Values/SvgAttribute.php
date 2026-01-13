@@ -214,6 +214,13 @@ enum SvgAttribute: string
     case R = 'r';
 
     /**
+     * `rotate` - Rotation values for individual glyphs in text.
+     *
+     * @link https://www.w3.org/TR/SVG2/text.html#TextElementRotateAttribute
+     */
+    case ROTATE = 'rotate';
+
+    /**
      * `rx` - The x-axis radius of the ellipse.
      *
      * Defines the radius along the x-axis of an `<ellipse>` element or the `x-axis` radius of rounded corners of a
