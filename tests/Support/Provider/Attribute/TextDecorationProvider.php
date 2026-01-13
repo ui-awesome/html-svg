@@ -47,8 +47,8 @@ final class TextDecorationProvider
     public static function values(): array
     {
         $enumCases = [
-            ... EnumDataGenerator::cases(TextDecorationLine::class, SvgAttribute::TEXT_DECORATION),
-            ... EnumDataGenerator::cases(TextDecorationStyle::class, SvgAttribute::TEXT_DECORATION),
+            ...EnumDataGenerator::cases(TextDecorationLine::class, SvgAttribute::TEXT_DECORATION),
+            ...EnumDataGenerator::cases(TextDecorationStyle::class, SvgAttribute::TEXT_DECORATION),
         ];
 
         $staticCases = [
