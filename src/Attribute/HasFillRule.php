@@ -22,7 +22,7 @@ use UnitEnum;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `fill-rule` attribute.
  * - Immutable method for setting or overriding the `fill-rule` attribute.
- * - Supports string, UnitEnum, and `null` for flexible fill rule assignment.
+ * - Supports string, UnitEnum, and `null` for flexible fill rule assignment (specific value or unset).
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.

@@ -26,6 +26,7 @@ use UnitEnum;
  * Test coverage.
  * - Accurate rendering of attributes with the `stroke-linejoin` attribute.
  * - Data provider-driven validation for edge cases and expected behaviors.
+ * - Error handling for invalid attributes.
  * - Immutability of the trait's API when setting or overriding the `stroke-linejoin` attribute.
  * - Proper assignment and overriding of `stroke-linejoin` value.
  *

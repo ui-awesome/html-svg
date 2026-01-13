@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `pathLength` attribute.
  * - Immutable method for setting or overriding the `pathLength` attribute.
- * - Supports float, int, string, and `null` for flexible path length assignment.
+ * - Supports float, int, string, and `null` for flexible path length assignment (specific length or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
