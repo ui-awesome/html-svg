@@ -19,7 +19,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `font-family` attribute.
  * - Immutable method for setting or overriding the `font-family` attribute.
- * - Supports string and `null` for flexible font family assignment.
+ * - Supports string and `null` for flexible font family assignment (specific font(s) or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.

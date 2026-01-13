@@ -20,7 +20,8 @@ use UnitEnum;
  * - Designed for use in SVG text tag and component classes.
  * - Enforces standards-compliant handling of the SVG `text-decoration` shorthand attribute.
  * - Immutable method for setting or overriding the `text-decoration` attribute.
- * - Supports string (space-separated shorthand), UnitEnum, and `null` for flexible text decoration assignment.
+ * - Supports string (space-separated shorthand), UnitEnum, and `null` for flexible text decoration assignment (specific
+ *   value or unset).
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.

@@ -98,6 +98,13 @@ final class DyProvider
                 ' dy="1 2 3"',
                 'Should return the attribute value after setting it.',
             ],
+            'string percentage' => [
+                '50%',
+                [],
+                '50%',
+                ' dy="50%"',
+                'Should return the attribute value after setting it.',
+            ],
             'string with unit' => [
                 '10px',
                 [],

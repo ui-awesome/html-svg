@@ -95,6 +95,7 @@
 - Enh #96: Add `HasTextDecoration` trait and corresponding tests for managing SVG `text-decoration` attribute (@terabytesoftw)
 - Enh #97: Add `HasTextLength` trait and corresponding tests for managing SVG `textLength` attribute (@terabytesoftw)
 - Enh #98: Add `HasWordSpacing` trait and corresponding tests for managing SVG `word-spacing` attribute (@terabytesoftw)
+- Bug #99: Update support descriptions for various SVG attributes to clarify assignment options (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

@@ -19,7 +19,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `letter-spacing` attribute.
  * - Immutable method for setting or overriding the `letter-spacing` attribute.
- * - Supports float, int, string and `null` for flexible letter spacing assignment.
+ * - Supports float, int, string and `null` for flexible letter spacing assignment (absolute, relative, percentage, or
+ *   unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
