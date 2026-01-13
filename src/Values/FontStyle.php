@@ -26,21 +26,21 @@ enum FontStyle: string
     /**
      * `italic` - Selects a font that is classified as `italic`.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-style
+     * @link https://www.w3.org/TR/css-fonts-3/#font-style-prop
      */
     case ITALIC = 'italic';
 
     /**
      * `normal` - Selects a font that is classified as `normal`.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-style
+     * @link https://www.w3.org/TR/css-fonts-3/#font-style-prop
      */
     case NORMAL = 'normal';
 
     /**
      * `oblique` - Selects a font that is classified as `oblique`.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-style
+     * @link https://www.w3.org/TR/css-fonts-3/#font-style-prop
      */
     case OBLIQUE = 'oblique';
 }
