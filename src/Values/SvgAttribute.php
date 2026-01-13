@@ -158,6 +158,13 @@ enum SvgAttribute: string
     case GRADIENT_UNITS = 'gradientUnits';
 
     /**
+     * `lengthAdjust` - Controls how text is stretched or compressed to fit the width defined by textLength.
+     *
+     * @link https://www.w3.org/TR/SVG2/text.html#TextElementLengthAdjustAttribute
+     */
+    case LENGTH_ADJUST = 'lengthAdjust';
+
+    /**
      * `opacity` - Opacity attribute specifies the transparency of an element.
      *
      * @link https://www.w3.org/TR/SVG2/render.html#ObjectAndGroupOpacityProperties
