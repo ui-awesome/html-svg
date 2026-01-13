@@ -324,6 +324,15 @@ enum SvgAttribute: string
     case TEXT_DECORATION = 'text-decoration';
 
     /**
+     * `textLength` - Target length for text rendering.
+     *
+     * Specifies the width into which the text will be scaled to fit.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/textLength
+     */
+    case TEXT_LENGTH = 'textLength';
+
+    /**
      * `transform` - Transform attribute defines a list of transform definitions that are applied to an element and the
      * element's children.
      *
