@@ -88,6 +88,7 @@
 - Bug #89: Update SVG attribute links to point to the latest SVG2 specifications (@terabytesoftw)
 - Enh #90: Add `HasFontWeight` trait and corresponding tests for managing SVG `font-weight` attribute (@terabytesoftw)
 - Enh #91: Add `HasLengthAdjust` trait and corresponding tests for managing SVG `lengthAdjust` attribute (@terabytesoftw)
+- Enh #92: Add `HasLetterSpacing` trait and corresponding tests for managing SVG `letter-spacing` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

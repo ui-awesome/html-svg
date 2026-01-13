@@ -165,6 +165,13 @@ enum SvgAttribute: string
     case LENGTH_ADJUST = 'lengthAdjust';
 
     /**
+     * `letter-spacing` - Controls spacing between text characters.
+     *
+     * @link https://www.w3.org/TR/css-text-3/#letter-spacing-property
+     */
+    case LETTER_SPACING = 'letter-spacing';
+
+    /**
      * `opacity` - Opacity attribute specifies the transparency of an element.
      *
      * @link https://www.w3.org/TR/SVG2/render.html#ObjectAndGroupOpacityProperties
