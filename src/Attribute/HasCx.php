@@ -43,7 +43,7 @@ trait HasCx
      *
      * @return static New instance with the updated `cx` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/pservers.html#RadialGradientElementCXAttribute
+     * @link https://www.w3.org/TR/SVG2/geometry.html#CxProperty
      *
      * Usage example:
      * ```php

@@ -33,7 +33,7 @@ enum SvgAttribute: string
      *
      * Defines the horizontal position of the center point of the element in the current user coordinate system.
      *
-     * @link https://www.w3.org/TR/SVG2/pservers.html#RadialGradientElementCXAttribute
+     * @link https://www.w3.org/TR/SVG2/geometry.html#CxProperty
      */
     case CX = 'cx';
 
@@ -42,7 +42,7 @@ enum SvgAttribute: string
      *
      * Defines the vertical position of the center point of the element in the current user coordinate system.
      *
-     * @link https://www.w3.org/TR/SVG2/pservers.html#RadialGradientElementCYAttribute
+     * @link https://www.w3.org/TR/SVG2/geometry.html#CyProperty
      */
     case CY = 'cy';
 
