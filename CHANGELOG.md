@@ -86,6 +86,7 @@
 - Enh #87: Add `HasFontSize` trait and corresponding tests for managing SVG `font-size` attribute (@terabytesoftw)
 - Enh #88: Add `HasFontStyle` trait and corresponding tests for managing SVG `font-style` attribute (@terabytesoftw)
 - Bug #89: Update SVG attribute links to point to the latest SVG2 specifications (@terabytesoftw)
+- Enh #90: Add `HasFontWeight` trait and corresponding tests for managing SVG `font-weight` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

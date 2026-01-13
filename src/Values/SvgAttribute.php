@@ -135,6 +135,15 @@ enum SvgAttribute: string
     case FONT_STYLE = 'font-style';
 
     /**
+     * `font-weight` - Font weight for text content.
+     *
+     * Specifies the weight (or boldness) of the font.
+     *
+     * @link https://www.w3.org/TR/css-fonts-3/#font-weight-prop
+     */
+    case FONT_WEIGHT = 'font-weight';
+
+    /**
      * `gradientTransform` - Defines a transformation applied to the gradient coordinate system.
      *
      * @link https://www.w3.org/TR/SVG2/pservers.html#LinearGradientElementGradientTransformAttribute
