@@ -315,6 +315,15 @@ enum SvgAttribute: string
     case TEXT_ANCHOR = 'text-anchor';
 
     /**
+     * `text-decoration` - Text decoration styling attribute.
+     *
+     * Specifies decorations applied to text such as underline, overline, or line-through.
+     *
+     * @link https://www.w3.org/TR/SVG2/text.html#TextDecorationProperties
+     */
+    case TEXT_DECORATION = 'text-decoration';
+
+    /**
      * `transform` - Transform attribute defines a list of transform definitions that are applied to an element and the
      * element's children.
      *
