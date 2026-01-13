@@ -306,14 +306,6 @@ enum SvgAttribute: string
     case STROKE_WIDTH = 'stroke-width';
 
     /**
-     * `transform` - Transform attribute defines a list of transform definitions that are applied to an element and the
-     * element's children.
-     *
-     * @link https://www.w3.org/TR/SVG2/coords.html#TransformProperty
-     */
-    case TRANSFORM = 'transform';
-
-    /**
      * `text-anchor` - Text anchor positioning attribute.
      *
      * Defines the horizontal alignment of text content relative to a given point.
@@ -321,6 +313,14 @@ enum SvgAttribute: string
      * @link https://www.w3.org/TR/SVG2/text.html#TextAnchorProperty
      */
     case TEXT_ANCHOR = 'text-anchor';
+
+    /**
+     * `transform` - Transform attribute defines a list of transform definitions that are applied to an element and the
+     * element's children.
+     *
+     * @link https://www.w3.org/TR/SVG2/coords.html#TransformProperty
+     */
+    case TRANSFORM = 'transform';
 
     /**
      * `viewBox` - Defines the position and dimension, in user space, of an SVG viewport.
