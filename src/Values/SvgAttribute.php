@@ -314,6 +314,15 @@ enum SvgAttribute: string
     case TRANSFORM = 'transform';
 
     /**
+     * `text-anchor` - Text anchor positioning attribute.
+     *
+     * Defines the horizontal alignment of text content relative to a given point.
+     *
+     * @link https://www.w3.org/TR/SVG2/text.html#TextAnchorProperty
+     */
+    case TEXT_ANCHOR = 'text-anchor';
+
+    /**
      * `viewBox` - Defines the position and dimension, in user space, of an SVG viewport.
      *
      * @link https://www.w3.org/TR/SVG2/coords.html#ViewBoxAttribute
