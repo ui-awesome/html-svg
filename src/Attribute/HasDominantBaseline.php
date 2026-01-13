@@ -48,7 +48,7 @@ trait HasDominantBaseline
      *
      * @return static New instance with the updated `dominant-baseline` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/text.html#DominantBaselineProperty
+     * @link https://www.w3.org/TR/SVG2/text.html#DominantBaselineProperty
      * {@see DominantBaseline} for predefined enum values.
      *
      * Usage example:

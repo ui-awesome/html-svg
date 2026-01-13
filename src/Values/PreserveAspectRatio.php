@@ -29,7 +29,7 @@ enum PreserveAspectRatio: string
      * Scale the graphic content of the given element non-uniformly if necessary such that the element's bounding box
      * exactly matches the viewport rectangle.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case NONE = 'none';
 
@@ -40,7 +40,7 @@ enum PreserveAspectRatio: string
      *
      * Default meetOrSlice value is 'meet'.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MAX_Y_MAX = 'xMaxYMax';
 
@@ -52,7 +52,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewBox is visible within the viewport,
      * and the viewBox is scaled up as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MAX_Y_MAX_MEET = 'xMaxYMax meet';
 
@@ -64,7 +64,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewport is covered by the viewBox, and
      * the viewBox is scaled down as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MAX_Y_MAX_SLICE = 'xMaxYMax slice';
 
@@ -75,7 +75,7 @@ enum PreserveAspectRatio: string
      *
      * Default meetOrSlice value is 'meet'.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MAX_Y_MID = 'xMaxYMid';
 
@@ -87,7 +87,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewBox is visible within the viewport,
      * and the viewBox is scaled up as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MAX_Y_MID_MEET = 'xMaxYMid meet';
 
@@ -99,7 +99,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewport is covered by the viewBox, and
      * the viewBox is scaled down as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MAX_Y_MID_SLICE = 'xMaxYMid slice';
 
@@ -110,7 +110,7 @@ enum PreserveAspectRatio: string
      *
      * Default meetOrSlice value is 'meet'.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MAX_Y_MIN = 'xMaxYMin';
 
@@ -122,7 +122,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewBox is visible within the viewport,
      * and the viewBox is scaled up as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MAX_Y_MIN_MEET = 'xMaxYMin meet';
 
@@ -134,7 +134,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewport is covered by the viewBox, and
      * the viewBox is scaled down as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MAX_Y_MIN_SLICE = 'xMaxYMin slice';
 
@@ -145,7 +145,7 @@ enum PreserveAspectRatio: string
      *
      * Default meetOrSlice value is 'meet'.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MID_Y_MAX = 'xMidYMax';
 
@@ -157,7 +157,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewBox is visible within the viewport,
      * and the viewBox is scaled up as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MID_Y_MAX_MEET = 'xMidYMax meet';
 
@@ -169,7 +169,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewport is covered by the viewBox, and
      * the viewBox is scaled down as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MID_Y_MAX_SLICE = 'xMidYMax slice';
 
@@ -180,7 +180,7 @@ enum PreserveAspectRatio: string
      *
      * This is the default value.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MID_Y_MID = 'xMidYMid';
 
@@ -192,7 +192,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewBox is visible within the viewport,
      * and the viewBox is scaled up as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MID_Y_MID_MEET = 'xMidYMid meet';
 
@@ -204,7 +204,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewport is covered by the viewBox, and
      * the viewBox is scaled down as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MID_Y_MID_SLICE = 'xMidYMid slice';
 
@@ -215,7 +215,7 @@ enum PreserveAspectRatio: string
      *
      * Default meetOrSlice value is 'meet'.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MID_Y_MIN = 'xMidYMin';
 
@@ -227,7 +227,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewBox is visible within the viewport,
      * and the viewBox is scaled up as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MID_Y_MIN_MEET = 'xMidYMin meet';
 
@@ -239,7 +239,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewport is covered by the viewBox, and
      * the viewBox is scaled down as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MID_Y_MIN_SLICE = 'xMidYMin slice';
 
@@ -250,7 +250,7 @@ enum PreserveAspectRatio: string
      *
      * Default meetOrSlice value is 'meet'.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MIN_Y_MAX = 'xMinYMax';
 
@@ -262,7 +262,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewBox is visible within the viewport,
      * and the viewBox is scaled up as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MIN_Y_MAX_MEET = 'xMinYMax meet';
 
@@ -274,7 +274,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewport is covered by the viewBox, and
      * the viewBox is scaled down as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MIN_Y_MAX_SLICE = 'xMinYMax slice';
 
@@ -285,7 +285,7 @@ enum PreserveAspectRatio: string
      *
      * Default meetOrSlice value is 'meet'.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MIN_Y_MID = 'xMinYMid';
 
@@ -297,7 +297,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewBox is visible within the viewport,
      * and the viewBox is scaled up as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MIN_Y_MID_MEET = 'xMinYMid meet';
 
@@ -309,7 +309,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewport is covered by the viewBox, and
      * the viewBox is scaled down as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MIN_Y_MID_SLICE = 'xMinYMid slice';
 
@@ -320,7 +320,7 @@ enum PreserveAspectRatio: string
      *
      * Default meetOrSlice value is 'meet'.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MIN_Y_MIN = 'xMinYMin';
 
@@ -332,7 +332,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewBox is visible within the viewport,
      * and the viewBox is scaled up as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MIN_Y_MIN_MEET = 'xMinYMin meet';
 
@@ -344,7 +344,7 @@ enum PreserveAspectRatio: string
      * Scales the graphic such that the aspect ratio is preserved, the entire viewport is covered by the viewBox, and
      * the viewBox is scaled down as much as possible.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      */
     case X_MIN_Y_MIN_SLICE = 'xMinYMin slice';
 }

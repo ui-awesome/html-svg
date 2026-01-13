@@ -26,63 +26,63 @@ enum DominantBaseline: string
     /**
      * `alphabetic` - Uses the alphabetic baseline.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     * @link https://www.w3.org/TR/SVG2/text.html#DominantBaselineProperty
      */
     case ALPHABETIC = 'alphabetic';
 
     /**
      * `auto` - Uses the computed baseline for the script to which the character belongs.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     * @link https://www.w3.org/TR/SVG2/text.html#DominantBaselineProperty
      */
     case AUTO = 'auto';
 
     /**
      * `central` - Uses the central baseline.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     * @link https://www.w3.org/TR/SVG2/text.html#DominantBaselineProperty
      */
     case CENTRAL = 'central';
 
     /**
      * `hanging` - Uses the hanging baseline.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     * @link https://www.w3.org/TR/SVG2/text.html#DominantBaselineProperty
      */
     case HANGING = 'hanging';
 
     /**
      * `ideographic` - Uses the ideographic baseline.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     * @link https://www.w3.org/TR/SVG2/text.html#DominantBaselineProperty
      */
     case IDEOGRAPHIC = 'ideographic';
 
     /**
      * `mathematical` - Uses the mathematical baseline.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     * @link https://www.w3.org/TR/SVG2/text.html#DominantBaselineProperty
      */
     case MATHEMATICAL = 'mathematical';
 
     /**
      * `middle` - Uses the middle baseline.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     * @link https://www.w3.org/TR/SVG2/text.html#DominantBaselineProperty
      */
     case MIDDLE = 'middle';
 
     /**
      * `text-bottom` - Uses the bottom of the em box as the baseline.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     * @link https://www.w3.org/TR/SVG2/text.html#DominantBaselineProperty
      */
     case TEXT_BOTTOM = 'text-bottom';
 
     /**
      * `text-top` - Uses the top of the em box as the baseline.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+     * @link https://www.w3.org/TR/SVG2/text.html#DominantBaselineProperty
      */
     case TEXT_TOP = 'text-top';
 }

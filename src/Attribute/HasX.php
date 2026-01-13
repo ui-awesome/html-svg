@@ -42,7 +42,7 @@ trait HasX
      *
      * @return static New instance with the updated `x` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/geometry.html#XProperty
+     * @link https://www.w3.org/TR/SVG2/geometry.html#XProperty
      *
      * Usage example:
      * ```php

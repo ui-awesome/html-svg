@@ -45,7 +45,7 @@ trait HasStrokeLineJoin
      *
      * @return static New instance with the updated `stroke-linejoin` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/painting.html#LineJoin
+     * @link https://www.w3.org/TR/SVG2/painting.html#LineJoin
      * {@see StrokeLineJoin} for predefined enum values.
      *
      * Usage example:

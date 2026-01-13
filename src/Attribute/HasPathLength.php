@@ -47,7 +47,7 @@ trait HasPathLength
      *
      * @return static New instance with the updated `pathLength` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/paths.html#PathLengthAttribute
+     * @link https://www.w3.org/TR/SVG2/paths.html#PathLengthAttribute
      *
      * Usage example:
      * ```php

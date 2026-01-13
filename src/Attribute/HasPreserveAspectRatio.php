@@ -49,7 +49,7 @@ trait HasPreserveAspectRatio
      *
      * @return static New instance with the updated `preserveAspectRatio` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#PreserveAspectRatioAttribute
+     * @link https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute
      * {@see PreserveAspectRatio} for predefined enum values.
      *
      * Usage example:

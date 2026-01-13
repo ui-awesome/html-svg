@@ -47,7 +47,7 @@ trait HasFontStyle
      *
      * @return static New instance with the updated `font-style` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/text.html#FontStyleProperty
+     * @link https://www.w3.org/TR/css-fonts-3/#font-style-prop
      * {@see FontStyle} for predefined enum values.
      *
      * Usage example:

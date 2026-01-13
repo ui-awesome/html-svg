@@ -47,7 +47,7 @@ trait HasSpreadMethod
      *
      * @return static New instance with the updated `spreadMethod` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/pservers.html#LinearGradientElementSpreadMethodAttribute
+     * @link https://www.w3.org/TR/SVG2/pservers.html#LinearGradientElementSpreadMethodAttribute
      * {@see SpreadMethod} for predefined enum values.
      *
      * Usage example:

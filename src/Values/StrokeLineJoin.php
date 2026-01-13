@@ -26,35 +26,35 @@ enum StrokeLineJoin: string
     /**
      * `arcs` - Stroke is drawn using circular arcs to join segments.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
+     * @link https://www.w3.org/TR/SVG2/painting.html#LineJoin
      */
     case ARCS = 'arcs';
 
     /**
      * `bevel` - Stroke is squared off at the join.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
+     * @link https://www.w3.org/TR/SVG2/painting.html#LineJoin
      */
     case BEVEL = 'bevel';
 
     /**
      * `miter` - Stroke is extended to a sharp point.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
+     * @link https://www.w3.org/TR/SVG2/painting.html#LineJoin
      */
     case MITER = 'miter';
 
     /**
      * `miter-clip` - Stroke is extended to a sharp point, but clipped to avoid excessively long miters.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
+     * @link https://www.w3.org/TR/SVG2/painting.html#LineJoin
      */
     case MITER_CLIP = 'miter-clip';
 
     /**
      * `round` - Stroke is rounded at the join.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
+     * @link https://www.w3.org/TR/SVG2/painting.html#LineJoin
      */
     case ROUND = 'round';
 }

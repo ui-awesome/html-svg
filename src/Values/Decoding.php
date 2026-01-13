@@ -27,6 +27,8 @@ enum Decoding: string
      * Decode the image asynchronously, after rendering and presenting the other content (`async`).
      *
      * The browser will render and present other content first, then decode the image and present it later.
+     *
+     * @link https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decoding
      */
     case ASYNC = 'async';
 
@@ -34,6 +36,8 @@ enum Decoding: string
      * No preference for the decoding mode (`auto`).
      *
      * The browser decides what is best for the user. This is the default value.
+     *
+     * @link https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decoding
      */
     case AUTO = 'auto';
 
@@ -41,6 +45,8 @@ enum Decoding: string
      * Decode the image synchronously along with rendering the other content (`sync`).
      *
      * The browser will decode the image along with rendering other content and present everything together.
+     *
+     * @link https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decoding
      */
     case SYNC = 'sync';
 }

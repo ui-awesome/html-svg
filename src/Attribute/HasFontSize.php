@@ -42,7 +42,7 @@ trait HasFontSize
      *
      * @return static New instance with the updated `font-size` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/text.html#FontSizeProperty
+     * @link https://www.w3.org/TR/css-fonts-3/#font-size-prop
      *
      * Usage example:
      * ```php

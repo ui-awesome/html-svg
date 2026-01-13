@@ -44,7 +44,7 @@ trait HasStrokeDashArray
      *
      * @return static New instance with the updated `stroke-dasharray` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/painting.html#StrokeDashing
+     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
      *
      * Usage example:
      * ```php

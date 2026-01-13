@@ -50,7 +50,7 @@ trait HasStrokeMiterlimit
      *
      * @return static New instance with the updated `stroke-miterlimit` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/painting.html#StrokeMiterlimitProperty
+     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
      *
      * Usage example:
      * ```php
