@@ -22,7 +22,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
  * - Named test data sets for precise failure identification.
  * - Validation of appropriate types and `null` for the `rotate` attribute.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class RotateProvider
@@ -82,6 +82,13 @@ final class RotateProvider
                 [],
                 '15',
                 ' rotate="15"',
+                'Should return the attribute value after setting it.',
+            ],
+            'string space-separated list' => [
+                '10 20 30 40',
+                [],
+                '10 20 30 40',
+                ' rotate="10 20 30 40"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [

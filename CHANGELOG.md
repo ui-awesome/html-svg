@@ -90,6 +90,7 @@
 - Enh #91: Add `HasLengthAdjust` trait and corresponding tests for managing SVG `lengthAdjust` attribute (@terabytesoftw)
 - Enh #92: Add `HasLetterSpacing` trait and corresponding tests for managing SVG `letter-spacing` attribute (@terabytesoftw)
 - Enh #93: Add `HasRotate` trait and corresponding tests for managing SVG `rotate` attribute (@terabytesoftw)
+- Bug #94: Update `RotateProvider` to support string space-separated list for `rotate` attribute and enhance related tests (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
