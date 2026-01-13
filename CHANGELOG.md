@@ -93,7 +93,6 @@
 - Bug #94: Update `RotateProvider` to support string space-separated list for `rotate` attribute and enhance related tests (@terabytesoftw)
 - Enh #95: Add `HasTextAnchor` trait and corresponding tests for managing SVG `text-anchor` attribute (@terabytesoftw)
 - Enh #96: Add `HasTextDecoration` trait and corresponding tests for managing SVG `text-decoration` attribute (@terabytesoftw)
-- Enh #97: Add `HasWordSpacing` trait and corresponding tests for managing SVG `word-spacing` attribute (@terabytesoftw)
 - Enh #97: Add `HasTextLength` trait and corresponding tests for managing SVG `textLength` attribute (@terabytesoftw)
 - Enh #98: Add `HasWordSpacing` trait and corresponding tests for managing SVG `word-spacing` attribute (@terabytesoftw)
 - Bug #99: Update support descriptions for various SVG attributes to clarify assignment options (@terabytesoftw)
