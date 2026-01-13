@@ -328,7 +328,7 @@ enum SvgAttribute: string
      *
      * Specifies the width into which the text will be scaled to fit.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/textLength
+     * @link https://www.w3.org/TR/SVG2/text.html#TextElementTextLengthAttribute
      */
     case TEXT_LENGTH = 'textLength';
 
