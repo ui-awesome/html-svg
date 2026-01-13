@@ -26,21 +26,21 @@ enum StrokeLineCap: string
     /**
      * `butt` - Stroke is squared off at the endpoint of the path. This is the default value.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap
+     * @link https://www.w3.org/TR/SVG2/painting.html#LineCaps
      */
     case BUTT = 'butt';
 
     /**
      * `round` - Stroke is rounded at the endpoint of the path.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap
+     * @link https://www.w3.org/TR/SVG2/painting.html#LineCaps
      */
     case ROUND = 'round';
 
     /**
      * `square` - Stroke continues beyond the endpoint of the path for a distance equal to half the stroke width.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap
+     * @link https://www.w3.org/TR/SVG2/painting.html#LineCaps
      */
     case SQUARE = 'square';
 }

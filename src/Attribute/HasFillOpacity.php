@@ -47,7 +47,7 @@ trait HasFillOpacity
      *
      * @return static New instance with the updated `fill-opacity` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/painting.html#FillOpacityProperty
+     * @link https://www.w3.org/TR/SVG2/painting.html#FillOpacity
      *
      * Usage example:
      * ```php

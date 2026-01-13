@@ -42,7 +42,7 @@ trait HasDy
      *
      * @return static New instance with the updated `dy` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/text.html#TextElementDYAttribute
+     * @link https://www.w3.org/TR/SVG2/text.html#TextElementDYAttribute
      *
      * Usage example:
      * ```php

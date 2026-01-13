@@ -43,7 +43,7 @@ trait HasRy
      *
      * @return static New instance with the updated `ry` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/geometry.html#RY
+     * @link https://www.w3.org/TR/SVG2/geometry.html#RY
      *
      * Usage example:
      * ```php

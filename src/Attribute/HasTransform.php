@@ -42,7 +42,7 @@ trait HasTransform
      *
      * @return static New instance with the updated `transform` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/coords.html#TransformProperty
+     * @link https://www.w3.org/TR/SVG2/coords.html#TransformProperty
      *
      * Usage example:
      * ```php

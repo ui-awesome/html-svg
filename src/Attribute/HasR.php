@@ -42,7 +42,7 @@ trait HasR
      *
      * @return static New instance with the updated `r` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/geometry.html#R
+     * @link https://www.w3.org/TR/SVG2/geometry.html#R
      *
      * Usage example:
      * ```php

@@ -42,7 +42,7 @@ trait HasY2
      *
      * @return static New instance with the updated `y2` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/shapes.html#LineElementY2Attribute
+     * @link https://www.w3.org/TR/SVG2/shapes.html#LineElementY2Attribute
      *
      * Usage example:
      * ```php

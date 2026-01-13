@@ -42,7 +42,7 @@ trait HasX1
      *
      * @return static New instance with the updated `x1` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/shapes.html#LineElementX1Attribute
+     * @link https://www.w3.org/TR/SVG2/shapes.html#LineElementX1Attribute
      *
      * Usage example:
      * ```php

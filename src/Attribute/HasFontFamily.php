@@ -42,7 +42,7 @@ trait HasFontFamily
      *
      * @return static New instance with the updated `font-family` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/text.html#FontFamilyProperty
+     * @link https://www.w3.org/TR/css-fonts-3/#font-family-prop
      *
      * Usage example:
      * ```php

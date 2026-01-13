@@ -47,7 +47,7 @@ trait HasStrokeLineCap
      *
      * @return static New instance with the updated `stroke-linecap` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/painting.html#LineCaps
+     * @link https://www.w3.org/TR/SVG2/painting.html#LineCaps
      * {@see StrokeLineCap} for predefined enum values.
      *
      * Usage example:

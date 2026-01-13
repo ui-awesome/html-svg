@@ -43,7 +43,7 @@ trait HasRx
      *
      * @return static New instance with the updated `rx` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/geometry.html#RX
+     * @link https://www.w3.org/TR/SVG2/geometry.html#RX
      *
      * Usage example:
      * ```php

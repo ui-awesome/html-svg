@@ -47,7 +47,7 @@ trait HasStrokeOpacity
      *
      * @return static New instance with the updated `stroke-opacity` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/painting.html#StrokeOpacityProperty
+     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeOpacityProperty
      *
      * Usage example:
      * ```php

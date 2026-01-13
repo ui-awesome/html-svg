@@ -42,7 +42,7 @@ trait HasGradientTransform
      *
      * @return static New instance with the updated `gradientTransform` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/pservers.html#LinearGradientElementGradientTransformAttribute
+     * @link https://www.w3.org/TR/SVG2/pservers.html#LinearGradientElementGradientTransformAttribute
      *
      * Usage example:
      * ```php

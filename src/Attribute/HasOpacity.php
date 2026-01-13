@@ -48,7 +48,7 @@ trait HasOpacity
      *
      * @return static New instance with the updated `opacity` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/render.html#ObjectAndGroupOpacityProperties
+     * @link https://www.w3.org/TR/SVG2/render.html#ObjectAndGroupOpacityProperties
      *
      * Usage example:
      * ```php

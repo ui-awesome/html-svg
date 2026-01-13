@@ -29,7 +29,7 @@ enum FillRule: string
      *
      * If this number is odd, the point is inside; if even, the point is outside.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+     * @link https://www.w3.org/TR/SVG2/painting.html#FillRuleProperty
      */
     case EVENODD = 'evenodd';
 
@@ -37,7 +37,7 @@ enum FillRule: string
      * `nonzero` - This value determines the "insideness" of a point on the canvas by drawing a ray from that point to
      * infinity in any direction and counting the number of path segments from the given shape that the ray crosses.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+     * @link https://www.w3.org/TR/SVG2/painting.html#FillRuleProperty
      */
     case NONZERO = 'nonzero';
 }

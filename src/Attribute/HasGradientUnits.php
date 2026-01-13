@@ -47,7 +47,7 @@ trait HasGradientUnits
      *
      * @return static New instance with the updated `gradientUnits` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/pservers.html#LinearGradientElementGradientUnitsAttribute
+     * @link https://www.w3.org/TR/SVG2/pservers.html#LinearGradientElementGradientUnitsAttribute
      * {@see CoordinateUnits} for predefined enum values.
      *
      * Usage example:

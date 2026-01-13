@@ -47,7 +47,7 @@ trait HasFillRule
      *
      * @return static New instance with the updated `fill-rule` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/painting.html#FillRuleProperty
+     * @link https://www.w3.org/TR/SVG2/painting.html#WindingRule
      * {@see FillRule} for predefined enum values.
      *
      * Usage example:

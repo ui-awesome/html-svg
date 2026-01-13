@@ -43,7 +43,7 @@ trait HasCy
      *
      * @return static New instance with the updated `cy` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/geometry.html#CY
+     * @link https://www.w3.org/TR/SVG2/geometry.html#CyProperty
      *
      * Usage example:
      * ```php

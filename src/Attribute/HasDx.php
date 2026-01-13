@@ -42,7 +42,7 @@ trait HasDx
      *
      * @return static New instance with the updated `dx` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/text.html#TextElementDXAttribute
+     * @link https://www.w3.org/TR/SVG2/text.html#TextElementDXAttribute
      *
      * Usage example:
      * ```php

@@ -26,21 +26,21 @@ enum SpreadMethod: string
     /**
      * `pad` - The final color of the gradient fills the shape beyond the gradient edges.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod
+     * @link https://www.w3.org/TR/SVG2/pservers.html#LinearGradientElementSpreadMethodAttribute
      */
     case PAD = 'pad';
 
     /**
      * `reflect` - The gradient repeats in reverse beyond its edges.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod
+     * @link https://www.w3.org/TR/SVG2/pservers.html#LinearGradientElementSpreadMethodAttribute
      */
     case REFLECT = 'reflect';
 
     /**
      * `repeat` - The gradient repeats in the original order beyond its edges.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod
+     * @link https://www.w3.org/TR/SVG2/pservers.html#LinearGradientElementSpreadMethodAttribute
      */
     case REPEAT = 'repeat';
 }
