@@ -65,8 +65,7 @@ final class TextAnchorProvider
             ],
             'replace existing' => [
                 'start',
-                ['text-anchor' =>
-                'middle'],
+                ['text-anchor' => 'middle'],
                 'start',
                 ' text-anchor="start"',
                 "Should return new 'text-anchor' after replacing the existing 'text-anchor' attribute.",

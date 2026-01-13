@@ -26,21 +26,21 @@ enum TextAnchor: string
     /**
      * `end` - Text is aligned such that the end of the text is at the initial current text position.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor
+     * @link https://www.w3.org/TR/SVG2/text.html#TextAnchorProperty
      */
     case END = 'end';
 
     /**
      * `middle` - Text is aligned such that the middle of the text is at the initial current text position.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor
+     * @link https://www.w3.org/TR/SVG2/text.html#TextAnchorProperty
      */
     case MIDDLE = 'middle';
 
     /**
      * `start` - Text is aligned such that the start of the text is at the initial current text position.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor
+     * @link https://www.w3.org/TR/SVG2/text.html#TextAnchorProperty
      */
     case START = 'start';
 }
