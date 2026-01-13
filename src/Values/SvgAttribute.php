@@ -86,7 +86,7 @@ enum SvgAttribute: string
     /**
      * `fill-opacity` - Fill opacity attribute specifies the transparency of the fill paint.
      *
-     * It defines the opacity level for the fill of the current element, with valid values ranging from 0.0 (fully
+     * It defines the opacity level for the fill of the current element, with valid values ranging from '0.0' (fully
      * transparent) to '1.0' (fully opaque).
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/fill-opacity
@@ -126,6 +126,15 @@ enum SvgAttribute: string
     case FONT_SIZE = 'font-size';
 
     /**
+     * `font-style` - Font style for text content.
+     *
+     * Specifies whether the font should be styled with a 'normal', 'italic', or 'oblique' face.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-style
+     */
+    case FONT_STYLE = 'font-style';
+
+    /**
      * `gradientTransform` - Defines a transformation applied to the gradient coordinate system.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientTransform
@@ -156,9 +165,9 @@ enum SvgAttribute: string
     /**
      * `pathLength` - Specifies the total length for the path.
      *
-     * Allows the author to specify a total length for the path in user units, which can be used for stroke-dasharray
+     * Allows the author to specify a total length for the path in user units, which can be used for `stroke-dasharray`
      * animations and other length-based calculations. If provided, all length calculations for the path are scaled as
-     * if the user coordinates along the path were mapped onto a range of 0 to pathLength.
+     * if the user coordinates along the path were mapped onto a range of '0' to `pathLength`.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/pathLength
      */
@@ -191,7 +200,7 @@ enum SvgAttribute: string
     /**
      * `rx` - The x-axis radius of the ellipse.
      *
-     * Defines the radius along the x-axis of an `<ellipse>` element or the x-axis radius of rounded corners of a
+     * Defines the radius along the x-axis of an `<ellipse>` element or the `x-axis` radius of rounded corners of a
      * `<rect>` element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rx
@@ -201,7 +210,7 @@ enum SvgAttribute: string
     /**
      * `ry` - The y-axis radius of the ellipse.
      *
-     * Defines the radius along the y-axis of an `<ellipse>` element or the y-axis radius of rounded corners of a
+     * Defines the radius along the y-axis of an `<ellipse>` element or the `y-axis` radius of rounded corners of a
      * `<rect>` element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/ry
