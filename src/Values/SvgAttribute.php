@@ -355,6 +355,15 @@ enum SvgAttribute: string
     case WORD_SPACING = 'word-spacing';
 
     /**
+     * `writing-mode` - Defines text direction and orientation.
+     *
+     * Specifies whether the initial inline-progression-direction is left-to-right, right-to-left, or top-to-bottom.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode
+     */
+    case WRITING_MODE = 'writing-mode';
+
+    /**
      * `x` - Displayed x coordinate of the SVG container. No effect on outermost `svg` elements.
      *
      * @link https://www.w3.org/TR/SVG2/geometry.html#XProperty
