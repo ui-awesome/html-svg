@@ -19,10 +19,10 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
  * Validates the management and rendering of the SVG `<linearGradient>` element according to the SVG 2 specification.
  *
  * Ensures correct handling, immutability, and validation of the `LinearGradient` tag rendering, supporting all global
- * attributes and gradient-specific attributes.
+ * attributes, content, and gradient-specific attributes.
  *
  * Test coverage.
- * - Accurate rendering of the `<linearGradient>` element with content.
+ * - Accurate rendering of the `<linearGradient>` element with inline content.
  * - Correct application of coordinate attributes like `x1`, `y1`, `x2`, and `y2`.
  * - Correct application of gradient-specific attributes like `gradientUnits`, `gradientTransform`, and `spreadMethod`.
  * - Error handling for invalid attribute values.

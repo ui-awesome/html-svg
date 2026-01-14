@@ -22,8 +22,8 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  * Validates the management and rendering of the SVG `<circle>` element according to the SVG 2 and HTML Living Standard
  * specifications.
  *
- * Ensures correct handling, immutability, and validation of the `Circle` tag rendering, supporting all global HTML and
- * SVG 2 attributes, content, and provider-based configuration.
+ * Ensures correct handling, immutability, and validation of the `Circle` tag rendering, supporting all global HTML, SVG
+ * 2 attributes and provider-based configuration.
  *
  * Test coverage.
  * - Accurate rendering of the `<circle>` element.

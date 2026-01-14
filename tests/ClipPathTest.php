@@ -26,7 +26,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * and SVG 2 attributes, content, and provider-based configuration.
  *
  * Test coverage.
- * - Accurate rendering of the `<clipPath>` element.
+ * - Accurate rendering of the `<clipPath>` element with inline content.
  * - Correct application of global HTML attributes and SVG-specific attributes.
  * - Error handling for invalid attribute values.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.

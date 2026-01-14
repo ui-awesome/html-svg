@@ -31,7 +31,7 @@ use UIAwesome\Html\Svg\Values\{
  * typography, alignment, and writing mode attributes.
  *
  * Test coverage.
- * - Accurate rendering of the `<text>` element with content and global/specific attributes.
+ * - Accurate rendering of the `<text>` element with inline content.
  * - Correct application of typography attributes like `font-family`, `font-size`, `font-weight`, and `font-style`.
  * - Error handling for invalid attribute values.
  * - Handling of text alignment and spacing via `text-anchor`, `dominant-baseline`, `letter-spacing`, and
