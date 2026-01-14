@@ -55,6 +55,13 @@ enum SvgVoid: string implements VoidInterface
     case LINE = 'line';
 
     /**
+     * `<polyline>` - SVG polyline element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline
+     */
+    case POLYLINE = 'polyline';
+
+    /**
      * `<rect>` - Draws a rectangle.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect
