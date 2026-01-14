@@ -18,7 +18,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Validates the management of the SVG `points` attribute according to the SVG 2 specification.
  *
  * Ensures correct handling, immutability, and rendering of the `points` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic path length assignment.
+ * appropriate types and `null` for dynamic points assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with the `points` attribute.
