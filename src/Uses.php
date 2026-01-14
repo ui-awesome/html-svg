@@ -11,7 +11,7 @@ use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform, HasX, HasY};
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 
 /**
- * SVG `<use>` element implementation for referencing and reusing SVG fragments.
+ * Represents the SVG `<use>` (use) element for referencing and reusing SVG fragments.
  *
  * Provides a concrete, type-safe implementation of the SVG `<use>` element, enabling the reuse of defined SVG graphical
  * objects via references, according to the SVG 2 specification.

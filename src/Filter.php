@@ -14,7 +14,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 use UnitEnum;
 
 /**
- * Represents the SVG `<filter>` element for defining filter effects.
+ * Represents the SVG `<filter>` (filter) element for defining filter effects.
  *
  * Provides a standards-compliant, immutable API for rendering the `<filter>` container element, following the SVG 2 and
  * HTML specifications for defining filter effects.
