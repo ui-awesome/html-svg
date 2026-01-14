@@ -27,8 +27,8 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
 /**
  * Represents the SVG `<polyline>` (polyline) element for rendering polylines.
  *
- * Provides a standards-compliant, immutable API for rendering the `<polyline>` container element, following the SVG 2
- * and HTML specifications for defining connected line sequences.
+ * Provides a standards-compliant, immutable API for rendering the `<polyline>` element, following the SVG 2 and HTML
+ * specifications for defining connected line sequences.
  *
  * The `<polyline>` element is an SVG basic shape used to create a series of connected line segments.
  *
