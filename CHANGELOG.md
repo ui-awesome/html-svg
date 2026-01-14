@@ -105,6 +105,7 @@
 - Enh #106: Add `HasPoints` trait and corresponding tests for managing SVG `points` attribute (@terabytesoftw)
 - Enh #107: Add `Polyline` class and corresponding tests for SVG `<polyline>` element functionality (@terabytesoftw)
 - Bug #108: Improve docblock descriptions for SVG elements in `Defs`, `LinearGradient`, `Rect`, and `Text` classes (@terabytesoftw)
+- Enh #109: Add `Polygon` class and corresponding tests for SVG `<polygon>` element functionality (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
