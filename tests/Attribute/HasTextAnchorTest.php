@@ -95,7 +95,7 @@ final class HasTextAnchorTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidTextAnchor(): void
     {
         $instance = new class {
             use HasAttributes;

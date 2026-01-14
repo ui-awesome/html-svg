@@ -27,7 +27,7 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
  * - Accurate rendering of the `<foreignObject>` element.
  * - Correct application of global HTML attributes and SVG-specific attributes like `height`, `width`, `x`, `y`,
  *   `opacity`, and `transform`.
- * - Error handling for invalid attributes or configuration.
+ * - Error handling for invalid attribute values.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  * - Integration with configuration providers and global factory defaults.
  * - Precedence of user-defined attributes over global defaults and provider settings.
@@ -448,7 +448,7 @@ final class ForeignObjectTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingOpacityValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(

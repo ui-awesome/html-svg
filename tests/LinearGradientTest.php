@@ -284,7 +284,7 @@ final class LinearGradientTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidGradientUnitsValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingGradientUnitsValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -298,7 +298,7 @@ final class LinearGradientTest extends TestCase
         LinearGradient::tag()->gradientUnits('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidSpreadMethodValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingSpreadMethodValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(

@@ -95,7 +95,7 @@ final class HasDominantBaselineTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidDominantBaseline(): void
     {
         $instance = new class {
             use HasAttributes;

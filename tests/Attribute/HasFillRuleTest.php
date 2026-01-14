@@ -95,7 +95,7 @@ final class HasFillRuleTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidFillRule(): void
     {
         $instance = new class {
             use HasAttributes;

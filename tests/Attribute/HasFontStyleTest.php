@@ -95,7 +95,7 @@ final class HasFontStyleTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidFontStyle(): void
     {
         $instance = new class {
             use HasAttributes;

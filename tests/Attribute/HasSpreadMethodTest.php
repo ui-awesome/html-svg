@@ -95,7 +95,7 @@ final class HasSpreadMethodTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidSpreadMethod(): void
     {
         $instance = new class {
             use HasAttributes;

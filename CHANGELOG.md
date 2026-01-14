@@ -98,6 +98,7 @@
 - Bug #99: Update support descriptions for various SVG attributes to clarify assignment options (@terabytesoftw)
 - Enh #100: Add `HasWritingMode` trait and corresponding tests for managing SVG `writing-mode` attribute (@terabytesoftw)
 - Enh #101: Add `Text` class and corresponding tests for SVG `<text>` element functionality (@terabytesoftw)
+- Bug #102: Improve exception test method names for clarity and consistency across SVG attribute tests (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

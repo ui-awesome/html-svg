@@ -95,7 +95,7 @@ final class HasWritingModeTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidWritingMode(): void
     {
         $instance = new class {
             use HasAttributes;

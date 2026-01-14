@@ -95,7 +95,7 @@ final class HasLengthAdjustTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidLengthAdjust(): void
     {
         $instance = new class {
             use HasAttributes;

@@ -532,7 +532,7 @@ final class TextTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForInvalidDominantBaseline(): void
+    public function testThrowInvalidArgumentExceptionForDominantBaseline(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -546,7 +546,7 @@ final class TextTest extends TestCase
         Text::tag()->dominantBaseline('invalid')->render();
     }
 
-    public function testThrowInvalidArgumentExceptionForInvalidFontStyle(): void
+    public function testThrowInvalidArgumentExceptionForFontStyle(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -560,7 +560,7 @@ final class TextTest extends TestCase
         Text::tag()->fontStyle('invalid')->render();
     }
 
-    public function testThrowInvalidArgumentExceptionForInvalidLengthAdjust(): void
+    public function testThrowInvalidArgumentExceptionForLengthAdjust(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -574,7 +574,7 @@ final class TextTest extends TestCase
         Text::tag()->lengthAdjust('invalid')->render();
     }
 
-    public function testThrowInvalidArgumentExceptionForInvalidTextAnchor(): void
+    public function testThrowInvalidArgumentExceptionForTextAnchor(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -588,7 +588,7 @@ final class TextTest extends TestCase
         Text::tag()->textAnchor('invalid')->render();
     }
 
-    public function testThrowInvalidArgumentExceptionForInvalidWritingMode(): void
+    public function testThrowInvalidArgumentExceptionForWritingMode(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(

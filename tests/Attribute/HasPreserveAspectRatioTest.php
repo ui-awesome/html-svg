@@ -95,7 +95,7 @@ final class HasPreserveAspectRatioTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidPreserveAspectRatio(): void
     {
         $instance = new class {
             use HasAttributes;

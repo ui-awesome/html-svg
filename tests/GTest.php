@@ -28,7 +28,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  * Test coverage.
  * - Accurate rendering of the `<g>` element with inline content.
  * - Correct application of global HTML attributes and SVG-specific attributes like `fill`, and `transform`.
- * - Error handling for invalid attributes or configuration.
+ * - Error handling for invalid attribute values.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  * - Integration with configuration providers and global factory defaults.
  * - Nested rendering structure using `begin()` and `end()` methods.
@@ -597,7 +597,7 @@ final class GTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidFillOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingFillOpacityValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -607,7 +607,7 @@ final class GTest extends TestCase
         G::tag()->fillOpacity('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidFillRuleValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingFillRuleValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -621,7 +621,7 @@ final class GTest extends TestCase
         G::tag()->fillRule('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingOpacityValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -631,7 +631,7 @@ final class GTest extends TestCase
         G::tag()->opacity('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineCapValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeLineCapValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -645,7 +645,7 @@ final class GTest extends TestCase
         G::tag()->strokeLineCap('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineJoinValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeLineJoinValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -659,7 +659,7 @@ final class GTest extends TestCase
         G::tag()->strokeLineJoin('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeMiterlimitValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeMiterlimitValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -669,7 +669,7 @@ final class GTest extends TestCase
         G::tag()->strokeMiterlimit('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeOpacityValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
