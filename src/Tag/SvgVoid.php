@@ -55,6 +55,13 @@ enum SvgVoid: string implements VoidInterface
     case LINE = 'line';
 
     /**
+     * `<rect>` - Draws a rectangle.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect
+     */
+    case RECT = 'rect';
+
+    /**
      * `<use>` - Reuses an existing SVG element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
