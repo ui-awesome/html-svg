@@ -103,6 +103,7 @@
 - Bug #104: Update class docblocks to include element names for clarity in SVG implementations (@terabytesoftw)
 - Bug #105: Update docblocks to format paint attributes in related classes (@terabytesoftw)
 - Enh #106: Add `HasPoints` trait and corresponding tests for managing SVG `points` attribute (@terabytesoftw)
+- Enh #107: Add `Polyline` class and corresponding tests for SVG `<polyline>` element functionality (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
