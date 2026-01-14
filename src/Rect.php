@@ -73,7 +73,6 @@ final class Rect extends BaseVoid
      *
      * {@see SvgVoid} for valid SVG void-level tags.
      */
-
     protected function getTag(): VoidInterface
     {
         return SvgVoid::RECT;
