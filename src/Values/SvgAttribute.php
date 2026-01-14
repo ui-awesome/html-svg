@@ -190,6 +190,15 @@ enum SvgAttribute: string
     case PATH_LENGTH = 'pathLength';
 
     /**
+     * `points` - List of points for polyline and polygon elements.
+     *
+     * Defines the list of coordinate pairs used to draw the element.
+     *
+     * @link https://www.w3.org/TR/SVG2/shapes.html#PolylineElementPointsAttribute
+     */
+    case POINTS = 'points';
+
+    /**
      * `preserveAspectRatio` - Indicates how content with a `viewBox` must fit into a viewport with a different aspect
      * ratio.
      *
