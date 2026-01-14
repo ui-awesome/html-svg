@@ -24,7 +24,7 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
  * HTML and SVG 2 attributes, content, and provider-based configuration.
  *
  * Test coverage.
- * - Accurate rendering of the `<foreignObject>` element.
+ * - Accurate rendering of the `<foreignObject>` element with inline content.
  * - Correct application of global HTML attributes and SVG-specific attributes like `height`, `width`, `x`, `y`,
  *   `opacity`, and `transform`.
  * - Error handling for invalid attribute values.
