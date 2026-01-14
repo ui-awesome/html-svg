@@ -9,7 +9,7 @@ use UIAwesome\Html\Svg\Attribute\{HasGradientTransform, HasGradientUnits, HasSpr
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
- * Represents the SVG `<linearGradient>` element for defining linear gradients.
+ * Represents the SVG `<linearGradient>` (linearGradient) element for defining linear gradients.
  *
  * Provides a concrete, type-safe implementation of the SVG `<linearGradient>` container element, supporting flexible
  * content injection and attribute management for advanced gradient rendering scenarios.

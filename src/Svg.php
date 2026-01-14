@@ -8,7 +8,7 @@ use UIAwesome\Html\Interop\BlockInterface;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
- * SVG `<svg>` element implementation for scalable vector graphics containers.
+ * Represents the SVG `<svg>` (svg) element for scalable vector graphics containers.
  *
  * Provides a concrete, type-safe implementation of the SVG `<svg>` container element, supporting flexible content
  * injection and attribute management for advanced rendering scenarios.

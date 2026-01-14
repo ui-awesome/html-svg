@@ -8,7 +8,7 @@ use UIAwesome\Html\Interop\BlockInterface;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
- * SVG `<defs>` element implementation for reusable graphical object definitions.
+ * Represents the SVG `<defs>` (defs) element for defining graphical object definitions.
  *
  * Provides a concrete, type-safe implementation of the SVG `<defs>` element, designed to store graphical objects that
  * will be referenced and used at a later time without direct rendering.

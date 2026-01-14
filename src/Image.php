@@ -12,7 +12,7 @@ use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasPreserveAspectRatio, HasTransfo
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 
 /**
- * Represents the SVG `<image>` element for embedding bitmap images.
+ * Represents the SVG `<image>` (image) element for embedding bitmap images.
  *
  * Provides a standards-compliant, immutable API for rendering the `<image>` element, following SVG 2 and HTML
  * specifications for embedding raster images.

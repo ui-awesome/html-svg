@@ -10,7 +10,7 @@ use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform, HasX, HasY};
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
- * Represents the SVG `<foreignObject>` element for rendering foreign content.
+ * Represents the SVG `<foreignObject>` (foreignObject) element for rendering foreign content.
  *
  * Provides a standards-compliant, immutable API for rendering the `<foreignObject>` container element, following SVG 2
  * and HTML specifications for embedding XHTML content.
