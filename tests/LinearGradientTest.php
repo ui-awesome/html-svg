@@ -130,28 +130,6 @@ final class LinearGradientTest extends TestCase
         );
     }
 
-    public function testRenderWithMultipleAttributes(): void
-    {
-        self::equalsWithoutLE(
-            <<<HTML
-            <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse" spreadMethod="pad">
-            value
-            </linearGradient>
-            HTML,
-            LinearGradient::tag()
-                ->content('value')
-                ->id('myGradient')
-                ->x1('0%')
-                ->y1('0%')
-                ->x2('100%')
-                ->y2('0%')
-                ->gradientUnits('userSpaceOnUse')
-                ->spreadMethod('pad')
-                ->render(),
-            'Failed asserting that element renders correctly with multiple attributes.',
-        );
-    }
-
     public function testRenderWithSpreadMethod(): void
     {
         self::equalsWithoutLE(

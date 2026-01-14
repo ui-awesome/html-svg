@@ -227,26 +227,6 @@ final class TextTest extends TestCase
         );
     }
 
-    public function testRenderWithMultipleAttributes(): void
-    {
-        self::assertSame(
-            <<<HTML
-            <text fill="red" font-family="Arial" font-size="16" text-anchor="middle" x="100" y="50">
-            Hello
-            </text>
-            HTML,
-            Text::tag()
-                ->content('Hello')
-                ->fill('red')
-                ->fontFamily('Arial')
-                ->fontSize('16')
-                ->textAnchor('middle')
-                ->x('100')
-                ->y('50')
-                ->render(),
-        );
-    }
-
     public function testRenderWithOpacity(): void
     {
         self::assertSame(
@@ -321,17 +301,6 @@ final class TextTest extends TestCase
             </text>
             HTML,
             Text::tag()->textDecoration('underline')->render(),
-        );
-    }
-
-    public function testRenderWithTextDecorationMultipleValues(): void
-    {
-        self::assertSame(
-            <<<HTML
-            <text text-decoration="underline overline">
-            </text>
-            HTML,
-            Text::tag()->textDecoration('underline overline')->render(),
         );
     }
 

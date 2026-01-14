@@ -42,8 +42,8 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 /**
  * Represents the SVG `<text>` (text) element for rendering text content in SVG graphics.
  *
- * Provides a standards-compliant, immutable API for rendering the `<text>` element, following the SVG 2 and HTML
- * specifications for text content, positioning, typography, and text decoration.
+ * Provides a standards-compliant, immutable API for rendering the `<text>` container element, following the SVG 2 and
+ * HTML specifications for text content, positioning, typography, and text decoration.
  *
  * The `<text>` element is used to define text in SVG graphics. It supports advanced typography features including text
  * positioning (`x`, `y`, `dx`, `dy`, `rotate`), text rendering adjustments (`textLength`, `lengthAdjust`), alignment
