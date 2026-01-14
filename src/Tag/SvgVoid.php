@@ -55,6 +55,13 @@ enum SvgVoid: string implements VoidInterface
     case LINE = 'line';
 
     /**
+     * `<polygon>` - Draws a closed shape with straight lines.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon
+     */
+    case POLYGON = 'polygon';
+
+    /**
      * `<polyline>` - SVG polyline element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline
