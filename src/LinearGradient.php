@@ -20,7 +20,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * Key features.
  * - Immutable, stateless design for safe reuse in rendering engines.
  * - Standards-compliant rendering of the `<linearGradient>` SVG element.
- * - Supports gradient attributes such as gradientUnits, gradientTransform, and spreadMethod.
+ * - Supports gradient attributes such as `gradientUnits`, `gradientTransform`, and `spreadMethod`.
  * - Type-safe methods for content and attribute management.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient

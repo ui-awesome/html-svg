@@ -38,7 +38,7 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * Key features:
  * - Designed for use in SVG tag/component classes requiring ellipse rendering.
  * - Standards-compliant implementation of the SVG `<ellipse>` element.
- * - Supports all paint attributes (fill, stroke, opacity).
+ * - Supports all paint attributes (`fill`, `stroke`, `opacity`).
  * - Supports transform attribute for positioning and scaling.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse

@@ -101,6 +101,7 @@
 - Bug #102: Improve exception test method names for clarity and consistency across SVG attribute tests (@terabytesoftw)
 - Enh #103: Add `Rect` class and corresponding tests for SVG `<rect>` element functionality (@terabytesoftw)
 - Bug #104: Update class docblocks to include element names for clarity in SVG implementations (@terabytesoftw)
+- Bug #105: Update docblocks to format paint attributes in related classes (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
