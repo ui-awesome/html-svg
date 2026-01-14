@@ -29,7 +29,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, PreserveAspectRatio, StrokeLineCap, Str
  * Test coverage.
  * - Accurate rendering of the `<svg>` element with inline content or external files via `filePath()` method.
  * - Correct application of global HTML attributes and SVG-specific attributes like `viewBox`, `fill`, and `transform`.
- * - Error handling for invalid file paths, missing content, or malformed SVG files.
+ * - Error handling for invalid file paths, missing content, malformed SVG files or invalid attribute values.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  * - Integration with configuration providers and global factory defaults.
  * - Nested rendering structure using `begin()` and `end()` methods.
@@ -1052,7 +1052,7 @@ final class SvgTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForContentIsEmpty(): void
+    public function testThrowInvalidArgumentExceptionForSettingContent(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1062,7 +1062,7 @@ final class SvgTest extends TestCase
         Svg::tag()->content('')->render();
     }
 
-    public function testThrowInvalidArgumentExceptionForFilePathIsEmpty(): void
+    public function testThrowInvalidArgumentExceptionForSettingFilePath(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1072,7 +1072,7 @@ final class SvgTest extends TestCase
         Svg::tag()->filePath('')->render();
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidFillOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingFillOpacityValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1082,7 +1082,7 @@ final class SvgTest extends TestCase
         Svg::tag()->fillOpacity('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidFillRuleValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingFillRuleValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1096,7 +1096,7 @@ final class SvgTest extends TestCase
         Svg::tag()->fillRule('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingOpacityValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1106,7 +1106,7 @@ final class SvgTest extends TestCase
         Svg::tag()->opacity('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidPreserveAspectRatioValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingPreserveAspectRatioValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1120,7 +1120,7 @@ final class SvgTest extends TestCase
         Svg::tag()->preserveAspectRatio('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineCapValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeLineCapValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1134,7 +1134,7 @@ final class SvgTest extends TestCase
         Svg::tag()->strokeLineCap('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineJoinValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeLineJoinValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1148,7 +1148,7 @@ final class SvgTest extends TestCase
         Svg::tag()->strokeLineJoin('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeMiterlimitValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeMiterlimitValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1158,7 +1158,7 @@ final class SvgTest extends TestCase
         Svg::tag()->strokeMiterlimit('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeOpacityValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1168,7 +1168,7 @@ final class SvgTest extends TestCase
         Svg::tag()->strokeOpacity('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidTitleValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingTitleValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -1178,7 +1178,7 @@ final class SvgTest extends TestCase
         Svg::tag()->attributes(['title' => []])->content('value')->render();
     }
 
-    public function testThrowRuntimeExceptionForFilePathInvalidPath(): void
+    public function testThrowRuntimeExceptionForSettingFilePath(): void
     {
         $file = 'invalid-path.svg';
 
@@ -1190,7 +1190,7 @@ final class SvgTest extends TestCase
         Svg::tag()->filePath($file)->render();
     }
 
-    public function testThrowRuntimeExceptionForFileSvgFailedToRead(): void
+    public function testThrowRuntimeExceptionForSettingFileSvgFailedToRead(): void
     {
         $filePath = __DIR__ . '/Support/Stub/svg-failed.svg';
 

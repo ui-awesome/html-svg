@@ -28,7 +28,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * Test coverage.
  * - Accurate rendering of the `<clipPath>` element.
  * - Correct application of global HTML attributes and SVG-specific attributes.
- * - Error handling for invalid attributes or configuration.
+ * - Error handling for invalid attribute values.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  * - Integration with configuration providers and global factory defaults.
  * - Precedence of user-defined attributes over global defaults and provider settings.
@@ -408,7 +408,7 @@ final class ClipPathTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidClipPathUnitsValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingClipPathUnitsValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(

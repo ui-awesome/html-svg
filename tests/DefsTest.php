@@ -24,7 +24,7 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
  * Test coverage.
  * - Accurate rendering of the `<defs>` element with inline content.
  * - Correct application of global HTML attributes and SVG-specific attributes.
- * - Error handling for invalid attributes or configuration.
+ * - Error handling for invalid attribute values.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  * - Integration with configuration providers and global factory defaults.
  * - Nested rendering structure using `begin()` and `end()` methods.

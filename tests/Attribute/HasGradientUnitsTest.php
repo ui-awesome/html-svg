@@ -95,7 +95,7 @@ final class HasGradientUnitsTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidGradientUnits(): void
     {
         $instance = new class {
             use HasAttributes;

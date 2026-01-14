@@ -95,7 +95,7 @@ final class HasStrokeLineCapTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidStrokeLineCap(): void
     {
         $instance = new class {
             use HasAttributes;

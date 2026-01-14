@@ -95,7 +95,7 @@ final class HasStrokeLineJoinTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingStringInvalidValue(): void
+    public function testThrowInvalidArgumentExceptionForInvalidStrokeLineJoin(): void
     {
         $instance = new class {
             use HasAttributes;

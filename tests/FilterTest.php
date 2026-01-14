@@ -28,7 +28,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * Test coverage.
  * - Accurate rendering of the `<filter>` element with inline content.
  * - Correct application of global HTML attributes and SVG-specific attributes like `fill`, and `transform`.
- * - Error handling for invalid attributes or configuration.
+ * - Error handling for invalid attribute values.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  * - Integration with configuration providers and global factory defaults.
  * - Nested rendering structure using `begin()` and `end()` methods.
@@ -476,7 +476,7 @@ final class FilterTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidFilterUnitsValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingFilterUnitsValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -490,7 +490,7 @@ final class FilterTest extends TestCase
         Filter::tag()->filterUnits('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidPrimitiveUnitsValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingPrimitiveUnitsValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(

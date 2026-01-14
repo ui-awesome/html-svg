@@ -28,7 +28,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  * Test coverage.
  * - Accurate rendering of the `<ellipse>` element.
  * - Correct application of global HTML attributes and SVG-specific attributes.
- * - Error handling for invalid attributes or configuration.
+ * - Error handling for invalid attribute values.
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  * - Integration with configuration providers and global factory defaults.
  * - Precedence of user-defined attributes over global defaults and provider settings.
@@ -570,7 +570,7 @@ final class EllipseTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidFillOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingFillOpacityValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -580,7 +580,7 @@ final class EllipseTest extends TestCase
         Ellipse::tag()->fillOpacity('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidFillRuleValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingFillRuleValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -594,7 +594,7 @@ final class EllipseTest extends TestCase
         Ellipse::tag()->fillRule('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingOpacityValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -604,7 +604,7 @@ final class EllipseTest extends TestCase
         Ellipse::tag()->opacity('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidPathLengthValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingPathLengthValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -614,7 +614,7 @@ final class EllipseTest extends TestCase
         Ellipse::tag()->pathLength('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineCapValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeLineCapValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -628,7 +628,7 @@ final class EllipseTest extends TestCase
         Ellipse::tag()->strokeLineCap('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeLineJoinValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeLineJoinValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -642,7 +642,7 @@ final class EllipseTest extends TestCase
         Ellipse::tag()->strokeLineJoin('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeMiterlimitValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeMiterlimitValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -652,7 +652,7 @@ final class EllipseTest extends TestCase
         Ellipse::tag()->strokeMiterlimit('invalid-value');
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidStrokeOpacityValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingStrokeOpacityValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
