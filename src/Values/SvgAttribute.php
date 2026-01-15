@@ -181,6 +181,16 @@ enum SvgAttribute: string
     case MARKER_HEIGHT = 'markerHeight';
 
     /**
+     * `markerUnits` - Defines the coordinate system for attributes `markerWidth`, `markerHeight`, and marker contents.
+     *
+     * Specifies whether the marker coordinate system is based on the stroke width of the element using the marker, or
+     * on the user coordinate system at the time of reference.
+     *
+     * @link https://www.w3.org/TR/SVG2/painting.html#MarkerElementMarkerUnitsAttribute
+     */
+    case MARKER_UNITS = 'markerUnits';
+
+    /**
      * `opacity` - Opacity attribute specifies the transparency of an element.
      *
      * @link https://www.w3.org/TR/SVG2/render.html#ObjectAndGroupOpacityProperties

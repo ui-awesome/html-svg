@@ -109,6 +109,7 @@
 - Bug #110: Update docblock descriptions for various SVG elements to clarify content handling (@terabytesoftw)
 - Bug #111: Update copyright year to `2026` in `Polygon`, `Polyline`, `Rect` classes and `RectTest` (@terabytesoftw)
 - Enh #112: Add `HasMarkerHeight` trait and corresponding tests for managing SVG `markerHeight` attribute (@terabytesoftw)
+- Enh #113: Add `HasMarkerUnits` trait and corresponding tests for managing SVG `markerUnits` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
