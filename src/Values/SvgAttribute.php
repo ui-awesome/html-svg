@@ -191,6 +191,15 @@ enum SvgAttribute: string
     case MARKER_UNITS = 'markerUnits';
 
     /**
+     * `markerWidth` - Represents the width of the viewport into which the marker is to be fitted.
+     *
+     * Defines the width of the marker viewport. Only applicable when the marker is rendered.
+     *
+     * @link https://www.w3.org/TR/SVG2/painting.html#MarkerElementMarkerWidthAttribute
+     */
+    case MARKER_WIDTH = 'markerWidth';
+
+    /**
      * `opacity` - Opacity attribute specifies the transparency of an element.
      *
      * @link https://www.w3.org/TR/SVG2/render.html#ObjectAndGroupOpacityProperties
@@ -390,15 +399,6 @@ enum SvgAttribute: string
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode
      */
     case WRITING_MODE = 'writing-mode';
-
-    /**
-     * `markerWidth` - Represents the width of the viewport into which the marker is to be fitted.
-     *
-     * Defines the width of the marker viewport. Only applicable when the marker is rendered.
-     *
-     * @link https://www.w3.org/TR/SVG2/painting.html#MarkerElementMarkerWidthAttribute
-     */
-    case MARKER_WIDTH = 'markerWidth';
 
     /**
      * `x` - Displayed x coordinate of the SVG container. No effect on outermost `svg` elements.
