@@ -35,6 +35,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports presentation attributes like `opacity` and `transform`.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker
+ * {@see Base\BaseSvgBlockTag} for the base implementation.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
