@@ -214,6 +214,13 @@ enum SvgAttribute: string
     case MASK_TYPE = 'mask-type';
 
     /**
+     * `maskUnits` - Defines the coordinate system for x, y, width, and height of the `<mask>` element.
+     *
+     * @link https://drafts.csswg.org/css-masking/#element-attrdef-mask-maskunits
+     */
+    case MASK_UNITS = 'maskUnits';
+
+    /**
      * `opacity` - Opacity attribute specifies the transparency of an element.
      *
      * @link https://www.w3.org/TR/SVG2/render.html#ObjectAndGroupOpacityProperties
