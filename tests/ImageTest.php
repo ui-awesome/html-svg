@@ -44,6 +44,17 @@ final class ImageTest extends TestCase
 {
     use TestSupport;
 
+    public function testRenderWithAccesskey(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <image accesskey="k">
+            HTML,
+            Image::tag()->accesskey('k')->render(),
+            "Failed asserting that element renders correctly with 'accesskey' attribute.",
+        );
+    }
+
     public function testRenderWithAddAriaAttribute(): void
     {
         self::equalsWithoutLE(
@@ -173,6 +184,17 @@ final class ImageTest extends TestCase
         );
     }
 
+    public function testRenderWithDir(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <image dir="rtl">
+            HTML,
+            Image::tag()->dir('rtl')->render(),
+            "Failed asserting that element renders correctly with 'dir' attribute.",
+        );
+    }
+
     public function testRenderWithFetchpriority(): void
     {
         self::equalsWithoutLE(
@@ -207,6 +229,17 @@ final class ImageTest extends TestCase
             HTML,
             Image::tag()->height('200')->render(),
             "Failed asserting that element renders correctly with 'height' attribute.",
+        );
+    }
+
+    public function testRenderWithHidden(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <image hidden>
+            HTML,
+            Image::tag()->hidden(true)->render(),
+            "Failed asserting that element renders correctly with 'hidden' attribute.",
         );
     }
 
@@ -309,6 +342,17 @@ final class ImageTest extends TestCase
         );
     }
 
+    public function testRenderWithTitle(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <image title="test-value">
+            HTML,
+            Image::tag()->title('test-value')->render(),
+            "Failed asserting that element renders correctly with 'title' attribute.",
+        );
+    }
+
     public function testRenderWithToString(): void
     {
         self::equalsWithoutLE(
@@ -328,6 +372,17 @@ final class ImageTest extends TestCase
             HTML,
             Image::tag()->transform('rotate(45)')->render(),
             "Failed asserting that element renders correctly with 'transform' attribute.",
+        );
+    }
+
+    public function testRenderWithTranslate(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <image translate="no">
+            HTML,
+            Image::tag()->translate(false)->render(),
+            "Failed asserting that element renders correctly with 'translate' attribute.",
         );
     }
 

@@ -7,8 +7,11 @@ namespace UIAwesome\Html\Svg\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Attribute\Values\{Aria, Data, Language};
+use UIAwesome\Html\Core\Factory\SimpleFactory;
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
+use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Text;
 use UIAwesome\Html\Svg\Values\{
@@ -50,6 +53,106 @@ final class TextTest extends TestCase
 {
     use TestSupport;
 
+    public function testRenderWithAddAriaAttribute(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text aria-pressed="true">
+            value
+            </text>
+            HTML,
+            Text::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
+        );
+    }
+
+    public function testRenderWithAddAriaAttributeUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text aria-pressed="true">
+            value
+            </text>
+            HTML,
+            Text::tag()->addAriaAttribute(Aria::PRESSED, true)->content('value')->render(),
+            "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
+        );
+    }
+
+    public function testRenderWithAddDataAttribute(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text data-value="value">
+            value
+            </text>
+            HTML,
+            Text::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
+        );
+    }
+
+    public function testRenderWithAddDataAttributeUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text data-value="value">
+            value
+            </text>
+            HTML,
+            Text::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
+            "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
+        );
+    }
+
+    public function testRenderWithAriaAttributes(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            value
+            </text>
+            HTML,
+            Text::tag()
+                ->ariaAttributes(
+                    [
+                        'controls' => static fn(): string => 'modal-1',
+                        'hidden' => false,
+                        'label' => 'Close',
+                    ],
+                )
+                ->content('value')
+                ->render(),
+            "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
+        );
+    }
+
+    public function testRenderWithAttributes(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text class="value">
+            value
+            </text>
+            HTML,
+            Text::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            "Failed asserting that element renders correctly with 'attributes()' method.",
+        );
+    }
+
+    public function testRenderWithBeginEnd(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text>
+            Content
+            </text>
+            HTML,
+            Text::tag()->begin() . 'Content' . Text::end(),
+            "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
+        );
+    }
+
     public function testRenderWithClass(): void
     {
         self::assertSame(
@@ -70,6 +173,45 @@ final class TextTest extends TestCase
             </text>
             HTML,
             Text::tag()->content('Hello SVG')->render(),
+        );
+    }
+
+    public function testRenderWithDataAttributes(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text data-value="test-value">
+            value
+            </text>
+            HTML,
+            Text::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            "Failed asserting that element renders correctly with 'dataAttributes()' method.",
+        );
+    }
+
+    public function testRenderWithDefaultConfigurationValues(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text class="default-class">
+            value
+            </text>
+            HTML,
+            Text::tag(['class' => 'default-class'])->content('value')->render(),
+            'Failed asserting that default configuration values are applied correctly.',
+        );
+    }
+
+    public function testRenderWithDefaultProvider(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text class="default-class" title="default-title">
+            value
+            </text>
+            HTML,
+            Text::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+            'Failed asserting that default provider is applied correctly.',
         );
     }
 
@@ -183,6 +325,23 @@ final class TextTest extends TestCase
         );
     }
 
+    public function testRenderWithGlobalDefaultsAreApplied(): void
+    {
+        SimpleFactory::setDefaults(Text::class, ['class' => 'default-class']);
+
+        self::equalsWithoutLE(
+            <<<HTML
+            <text class="default-class">
+            value
+            </text>
+            HTML,
+            Text::tag()->content('value')->render(),
+            'Failed asserting that global defaults are applied correctly.',
+        );
+
+        SimpleFactory::setDefaults(Text::class, []);
+    }
+
     public function testRenderWithId(): void
     {
         self::assertSame(
@@ -191,6 +350,32 @@ final class TextTest extends TestCase
             </text>
             HTML,
             Text::tag()->id('text-id')->render(),
+        );
+    }
+
+    public function testRenderWithLang(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text lang="es">
+            value
+            </text>
+            HTML,
+            Text::tag()->content('value')->lang('es')->render(),
+            "Failed asserting that element renders correctly with 'lang' attribute.",
+        );
+    }
+
+    public function testRenderWithLangUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text lang="es">
+            value
+            </text>
+            HTML,
+            Text::tag()->content('value')->lang(Language::SPANISH)->render(),
+            "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
 
@@ -238,6 +423,17 @@ final class TextTest extends TestCase
         );
     }
 
+    public function testRenderWithRole(): void
+    {
+        self::assertSame(
+            <<<HTML
+            <text role="banner">
+            </text>
+            HTML,
+            Text::tag()->role('banner')->render(),
+        );
+    }
+
     public function testRenderWithRotate(): void
     {
         self::assertSame(
@@ -268,6 +464,19 @@ final class TextTest extends TestCase
             </text>
             HTML,
             Text::tag()->style('color: red;')->render(),
+        );
+    }
+
+    public function testRenderWithTabIndex(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <text tabindex="3">
+            value
+            </text>
+            HTML,
+            Text::tag()->content('value')->tabIndex(3)->render(),
+            "Failed asserting that element renders correctly with 'tabindex' attribute.",
         );
     }
 

@@ -45,6 +45,17 @@ final class LineTest extends TestCase
 {
     use TestSupport;
 
+    public function testRenderWithAccesskey(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <line accesskey="k">
+            HTML,
+            Line::tag()->accesskey('k')->render(),
+            "Failed asserting that element renders correctly with 'accesskey' attribute.",
+        );
+    }
+
     public function testRenderWithAddAriaAttribute(): void
     {
         self::equalsWithoutLE(
@@ -163,6 +174,17 @@ final class LineTest extends TestCase
         );
     }
 
+    public function testRenderWithDir(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <line dir="rtl">
+            HTML,
+            Line::tag()->dir('rtl')->render(),
+            "Failed asserting that element renders correctly with 'dir' attribute.",
+        );
+    }
+
     public function testRenderWithFill(): void
     {
         self::equalsWithoutLE(
@@ -220,6 +242,17 @@ final class LineTest extends TestCase
         );
 
         SimpleFactory::setDefaults(Line::class, []);
+    }
+
+    public function testRenderWithHidden(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <line hidden>
+            HTML,
+            Line::tag()->hidden(true)->render(),
+            "Failed asserting that element renders correctly with 'hidden' attribute.",
+        );
     }
 
     public function testRenderWithId(): void
@@ -398,6 +431,17 @@ final class LineTest extends TestCase
         );
     }
 
+    public function testRenderWithTitle(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <line title="test-value">
+            HTML,
+            Line::tag()->title('test-value')->render(),
+            "Failed asserting that element renders correctly with 'title' attribute.",
+        );
+    }
+
     public function testRenderWithToString(): void
     {
         self::equalsWithoutLE(
@@ -417,6 +461,17 @@ final class LineTest extends TestCase
             HTML,
             Line::tag()->transform('rotate(45)')->render(),
             "Failed asserting that element renders correctly with 'transform' attribute.",
+        );
+    }
+
+    public function testRenderWithTranslate(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <line translate="no">
+            HTML,
+            Line::tag()->translate(false)->render(),
+            "Failed asserting that element renders correctly with 'translate' attribute.",
         );
     }
 

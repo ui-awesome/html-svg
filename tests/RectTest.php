@@ -45,6 +45,17 @@ final class RectTest extends TestCase
 {
     use TestSupport;
 
+    public function testRenderWithAccesskey(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <rect accesskey="k">
+            HTML,
+            Rect::tag()->accesskey('k')->render(),
+            "Failed asserting that element renders correctly with 'accesskey' attribute.",
+        );
+    }
+
     public function testRenderWithAddAriaAttribute(): void
     {
         self::equalsWithoutLE(
@@ -163,6 +174,17 @@ final class RectTest extends TestCase
         );
     }
 
+    public function testRenderWithDir(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <rect dir="rtl">
+            HTML,
+            Rect::tag()->dir('rtl')->render(),
+            "Failed asserting that element renders correctly with 'dir' attribute.",
+        );
+    }
+
     public function testRenderWithFill(): void
     {
         self::equalsWithoutLE(
@@ -230,6 +252,17 @@ final class RectTest extends TestCase
             HTML,
             Rect::tag()->height(150)->render(),
             "Failed asserting that element renders correctly with 'height' attribute.",
+        );
+    }
+
+    public function testRenderWithHidden(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <rect hidden>
+            HTML,
+            Rect::tag()->hidden(true)->render(),
+            "Failed asserting that element renders correctly with 'hidden' attribute.",
         );
     }
 
@@ -431,6 +464,17 @@ final class RectTest extends TestCase
         );
     }
 
+    public function testRenderWithTitle(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <rect title="test-value">
+            HTML,
+            Rect::tag()->title('test-value')->render(),
+            "Failed asserting that element renders correctly with 'title' attribute.",
+        );
+    }
+
     public function testRenderWithToString(): void
     {
         self::equalsWithoutLE(
@@ -450,6 +494,17 @@ final class RectTest extends TestCase
             HTML,
             Rect::tag()->transform('rotate(45)')->render(),
             "Failed asserting that element renders correctly with 'transform' attribute.",
+        );
+    }
+
+    public function testRenderWithTranslate(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <rect translate="no">
+            HTML,
+            Rect::tag()->translate(false)->render(),
+            "Failed asserting that element renders correctly with 'translate' attribute.",
         );
     }
 
