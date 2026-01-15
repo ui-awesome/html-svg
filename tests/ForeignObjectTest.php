@@ -139,7 +139,7 @@ final class ForeignObjectTest extends TestCase
             Content
             </foreignObject>
             HTML,
-            ForeignObject::tag()->content('value')->begin() . 'Content' . ForeignObject::end(),
+            ForeignObject::tag()->begin() . 'Content' . ForeignObject::end(),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }

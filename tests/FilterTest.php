@@ -141,7 +141,7 @@ final class FilterTest extends TestCase
             Content
             </filter>
             HTML,
-            Filter::tag()->content('value')->begin() . 'Content' . Filter::end(),
+            Filter::tag()->begin() . 'Content' . Filter::end(),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }

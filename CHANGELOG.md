@@ -116,6 +116,7 @@
 - Enh #117: Add `HasRefY` trait and corresponding tests for managing SVG `refY` attribute (@terabytesoftw)
 - Enh #118: Add `HasViewBox` trait and corresponding tests for managing SVG `viewBox` attribute (@terabytesoftw)
 - Enh #119: Add `Marker` class and corresponding tests for SVG `<marker>` element functionality (@terabytesoftw)
+- Bug #120: Update test cases to remove unnecessary `content()` calls for SVG elements (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
