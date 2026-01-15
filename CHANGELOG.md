@@ -120,6 +120,7 @@
 - Bug #121: Use enum for method parameter in related SVG attribute traits (@terabytesoftw)
 - Bug #122: Update configuration files and improve code structure for better maintainability (@terabytesoftw)
 - Bug #123: fix(docs): Update PHPdoc in `Marker` and `Rect` classes (@terabytesoftw)
+- Enh #124: Add `HasMaskContentUnits` trait and corresponding tests for managing SVG `maskContentUnits` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
