@@ -124,6 +124,7 @@
 - Bug #125: Update documentation to reflect CSS Masking Module Level 1 specification for `maskContentUnits` trait (@terabytesoftw)
 - Enh #126: Add `HasMaskType` trait and corresponding tests for managing SVG `mask-type` attribute (@terabytesoftw)
 - Enh #127: Add `HasMaskUnits` trait and corresponding tests for managing SVG `maskUnits` attribute (@terabytesoftw)
+- Enh #128: Add `Mask` class and corresponding tests for SVG `<mask>` element functionality (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
