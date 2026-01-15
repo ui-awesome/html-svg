@@ -207,6 +207,13 @@ enum SvgAttribute: string
     case MASK_CONTENT_UNITS = 'maskContentUnits';
 
     /**
+     * `mask-type` - Defines the mask mode for the contents of the `<mask>` element.
+     *
+     * @link https://drafts.csswg.org/css-masking/#element-attrdef-mask-mask-type
+     */
+    case MASK_TYPE = 'mask-type';
+
+    /**
      * `opacity` - Opacity attribute specifies the transparency of an element.
      *
      * @link https://www.w3.org/TR/SVG2/render.html#ObjectAndGroupOpacityProperties
