@@ -119,7 +119,7 @@
 - Bug #120: Update test cases to remove unnecessary `content()` calls for SVG elements (@terabytesoftw)
 - Bug #121: Use enum for method parameter in related SVG attribute traits (@terabytesoftw)
 - Bug #122: Update configuration files and improve code structure for better maintainability (@terabytesoftw)
-- Bug #123: Update PHPdoc in `Marker`, `Rect` and `SvgBlock` classes (@terabytesoftw)
+- Bug #123: fix(docs): Update PHPdoc in `Marker` and `Rect` classes (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

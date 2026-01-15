@@ -75,13 +75,6 @@ enum SvgBlock: string implements BlockInterface
     case MARKER = 'marker';
 
     /**
-     * `<mask>` - Masking container.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask
-     */
-    case MASK = 'mask';
-
-    /**
      * `<svg>` - The root container for SVG graphics.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
