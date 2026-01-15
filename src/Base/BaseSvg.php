@@ -30,6 +30,7 @@ use UIAwesome\Html\Svg\Attribute\{
     HasStrokeOpacity,
     HasStrokeWidth,
     HasTransform,
+    HasViewBox,
     HasX,
     HasY,
 };
@@ -80,6 +81,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     use HasStrokeOpacity;
     use HasStrokeWidth;
     use HasTransform;
+    use HasViewBox;
     use HasWidth;
     use HasX;
     use HasY;
@@ -159,28 +161,6 @@ abstract class BaseSvg extends BaseBlock implements Stringable
         }
 
         return $content . parent::getContent();
-    }
-
-    /**
-     * Sets the `viewBox` attribute for the SVG element.
-     *
-     * Creates a new instance with the specified view box value, supporting explicit assignment according to the HTML
-     * specification for SVG attributes.
-     *
-     * @param string|null $value ViewBox value (for example, '0 0 100 100').
-     *
-     * @return static New instance with the updated `viewBox` attribute.
-     *
-     * @link https://svgwg.org/svg2-draft/coords.html#ViewBoxAttribute
-     *
-     * Usage example:
-     * ```php
-     * $element->viewBox('0 0 100 100');
-     * ```
-     */
-    public function viewBox(string|null $value): static
-    {
-        return $this->addAttribute(SvgAttribute::VIEW_BOX, $value);
     }
 
     /**
