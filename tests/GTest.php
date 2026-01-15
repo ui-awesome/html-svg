@@ -141,7 +141,7 @@ final class GTest extends TestCase
             Content
             </g>
             HTML,
-            G::tag()->content('value')->begin() . 'Content' . G::end(),
+            G::tag()->begin() . 'Content' . G::end(),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }

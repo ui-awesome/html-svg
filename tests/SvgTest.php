@@ -168,7 +168,7 @@ final class SvgTest extends TestCase
             Content
             </svg>
             HTML,
-            Svg::tag()->content('value')->begin() . 'Content' . Svg::end(),
+            Svg::tag()->begin() . 'Content' . Svg::end(),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }

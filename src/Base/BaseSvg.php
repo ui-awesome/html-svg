@@ -199,7 +199,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      */
     protected function beforeRun(): bool
     {
-        if ($this->filePath === '' && $this->content === '') {
+        if ($this->isBeginExecuted() === false && $this->filePath === '' && $this->content === '') {
             throw new InvalidArgumentException(
                 Message::CONTENT_AND_FILEPATH_CANNOT_BE_BOTH_EMPTY->getMessage(),
             );

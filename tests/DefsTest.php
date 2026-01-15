@@ -136,7 +136,7 @@ final class DefsTest extends TestCase
             Content
             </defs>
             HTML,
-            Defs::tag()->content('value')->begin() . 'Content' . Defs::end(),
+            Defs::tag()->begin() . 'Content' . Defs::end(),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }

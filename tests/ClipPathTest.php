@@ -140,7 +140,7 @@ final class ClipPathTest extends TestCase
             Content
             </clipPath>
             HTML,
-            ClipPath::tag()->content('value')->begin() . 'Content' . ClipPath::end(),
+            ClipPath::tag()->begin() . 'Content' . ClipPath::end(),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }

@@ -47,7 +47,7 @@ final class LinearGradientTest extends TestCase
             Content
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->begin() . 'Content' . LinearGradient::end(),
+            LinearGradient::tag()->begin() . 'Content' . LinearGradient::end(),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }
