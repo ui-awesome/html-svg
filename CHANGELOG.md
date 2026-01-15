@@ -111,6 +111,7 @@
 - Enh #112: Add `HasMarkerHeight` trait and corresponding tests for managing SVG `markerHeight` attribute (@terabytesoftw)
 - Enh #113: Add `HasMarkerUnits` trait and corresponding tests for managing SVG `markerUnits` attribute (@terabytesoftw)
 - Enh #114: Add `HasMarkerWidth` trait and corresponding tests for managing SVG `markerWidth` attribute (@terabytesoftw)
+- Enh #115: Add `HasOrient` trait and corresponding tests for managing SVG `orient` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

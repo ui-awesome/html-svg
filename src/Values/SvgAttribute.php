@@ -207,6 +207,16 @@ enum SvgAttribute: string
     case OPACITY = 'opacity';
 
     /**
+     * `orient` - Indicates how the marker is rotated when placed at its position on the shape.
+     *
+     * Defines the orientation of the marker relative to the shape on which it is placed. Can be 'auto',
+     * 'auto-start-reverse', or a specific angle.
+     *
+     * @link https://www.w3.org/TR/SVG2/painting.html#MarkerElementOrientAttribute
+     */
+    case ORIENT = 'orient';
+
+    /**
      * `pathLength` - Specifies the total length for the path.
      *
      * Allows the author to specify a total length for the path in user units, which can be used for `stroke-dasharray`
