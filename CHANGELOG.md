@@ -114,6 +114,7 @@
 - Enh #115: Add `HasOrient` trait and corresponding tests for managing SVG `orient` attribute (@terabytesoftw)
 - Enh #116: Add `HasRefX` trait and corresponding tests for managing SVG `refX` attribute (@terabytesoftw)
 - Enh #117: Add `HasRefY` trait and corresponding tests for managing SVG `refY` attribute (@terabytesoftw)
+- Enh #118: Add `HasViewBox` trait and corresponding tests for managing SVG `viewBox` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
