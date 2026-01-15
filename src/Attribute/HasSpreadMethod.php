@@ -62,7 +62,7 @@ trait HasSpreadMethod
      * $element->spreadMethod(null);
      * ```
      */
-    public function spreadMethod(string|SpreadMethod|null $value): static
+    public function spreadMethod(SpreadMethod|string|null $value): static
     {
         Validator::oneOf($value, SpreadMethod::cases(), SvgAttribute::SPREAD_METHOD);
 

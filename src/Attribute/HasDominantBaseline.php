@@ -63,7 +63,7 @@ trait HasDominantBaseline
      * $element->dominantBaseline(null);
      * ```
      */
-    public function dominantBaseline(string|DominantBaseline|null $value): static
+    public function dominantBaseline(DominantBaseline|string|null $value): static
     {
         Validator::oneOf($value, DominantBaseline::cases(), SvgAttribute::DOMINANT_BASELINE);
 

@@ -65,7 +65,7 @@ trait HasPreserveAspectRatio
      * $element->preserveAspectRatio(null);
      * ```
      */
-    public function preserveAspectRatio(string|PreserveAspectRatio|null $value): static
+    public function preserveAspectRatio(PreserveAspectRatio|string|null $value): static
     {
         Validator::oneOf($value, PreserveAspectRatio::cases(), SvgAttribute::PRESERVE_ASPECT_RATIO);
 

@@ -63,7 +63,7 @@ final class ClipPath extends Base\BaseSvgBlockTag
      * $element->clipPathUnits(CoordinateUnits::OBJECT_BOUNDING_BOX);
      * ```
      */
-    public function clipPathUnits(string|CoordinateUnits|null $value): self
+    public function clipPathUnits(CoordinateUnits|string|null $value): self
     {
         Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::CLIP_PATH_UNITS);
 

@@ -62,7 +62,7 @@ trait HasLengthAdjust
      * $element->lengthAdjust(null);
      * ```
      */
-    public function lengthAdjust(string|LengthAdjust|null $value): static
+    public function lengthAdjust(LengthAdjust|string|null $value): static
     {
         Validator::oneOf($value, LengthAdjust::cases(), SvgAttribute::LENGTH_ADJUST);
 

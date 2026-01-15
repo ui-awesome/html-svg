@@ -61,7 +61,7 @@ trait HasFillRule
      * $element->fillRule(null);
      * ```
      */
-    public function fillRule(string|FillRule|null $value): static
+    public function fillRule(FillRule|string|null $value): static
     {
         Validator::oneOf($value, FillRule::cases(), SvgAttribute::FILL_RULE);
 

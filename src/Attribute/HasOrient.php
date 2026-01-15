@@ -62,7 +62,7 @@ trait HasOrient
      * $element->orient(null);
      * ```
      */
-    public function orient(float|int|string|Orient|null $value): static
+    public function orient(float|int|Orient|string|null $value): static
     {
         return $this->addAttribute(SvgAttribute::ORIENT, $value);
     }

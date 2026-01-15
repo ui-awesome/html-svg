@@ -62,7 +62,7 @@ final class Filter extends Base\BaseSvgBlockTag
      * $element->filterUnits(CoordinateUnits::OBJECT_BOUNDING_BOX);
      * ```
      */
-    public function filterUnits(string|CoordinateUnits|null $value): self
+    public function filterUnits(CoordinateUnits|string|null $value): self
     {
         Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::FILTER_UNITS);
 
@@ -94,7 +94,7 @@ final class Filter extends Base\BaseSvgBlockTag
      * $element->primitiveUnits(CoordinateUnits::OBJECT_BOUNDING_BOX);
      * ```
      */
-    public function primitiveUnits(string|CoordinateUnits|null $value): self
+    public function primitiveUnits(CoordinateUnits|string|null $value): self
     {
         Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::PRIMITIVE_UNITS);
 

@@ -62,7 +62,7 @@ trait HasGradientUnits
      * $element->gradientUnits(null);
      * ```
      */
-    public function gradientUnits(string|CoordinateUnits|null $value): static
+    public function gradientUnits(CoordinateUnits|string|null $value): static
     {
         Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::GRADIENT_UNITS);
 

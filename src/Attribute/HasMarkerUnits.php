@@ -62,7 +62,7 @@ trait HasMarkerUnits
      * $element->markerUnits(null);
      * ```
      */
-    public function markerUnits(string|MarkerUnits|null $value): static
+    public function markerUnits(MarkerUnits|string|null $value): static
     {
         Validator::oneOf($value, MarkerUnits::cases(), SvgAttribute::MARKER_UNITS);
 

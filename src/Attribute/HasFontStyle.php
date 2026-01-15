@@ -61,7 +61,7 @@ trait HasFontStyle
      * $element->fontStyle(null);
      * ```
      */
-    public function fontStyle(string|FontStyle|null $value): static
+    public function fontStyle(FontStyle|string|null $value): static
     {
         Validator::oneOf($value, FontStyle::cases(), SvgAttribute::FONT_STYLE);
 
