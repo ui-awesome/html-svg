@@ -12,8 +12,8 @@ use UnitEnum;
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasMaskContentUnitsTest} class.
  *
  * Supplies comprehensive test data for validating the handling of the SVG `maskContentUnits` attribute in tag
- * rendering, ensuring standards-compliant assignment, override behavior, and value propagation according to the SVG 2
- * specification.
+ * rendering, ensuring standards-compliant assignment, override behavior, and value propagation according to the CSS
+ * Masking Module Level 1 specification.
  *
  * The test data covers real-world scenarios for setting, overriding, and unsetting the `maskContentUnits` attribute,
  * supporting appropriate types and `null` for attribute removal.
