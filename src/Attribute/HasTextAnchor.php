@@ -7,7 +7,6 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{SvgAttribute, TextAnchor};
-use UnitEnum;
 
 /**
  * Trait for managing SVG `text-anchor` attribute in tag rendering.
@@ -22,9 +21,9 @@ use UnitEnum;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `text-anchor` attribute.
  * - Immutable method for setting or overriding the `text-anchor` attribute.
- * - Supports string, UnitEnum, and `null` for flexible text anchor assignment (specific value or unset).
+ * - Supports string, {@see TextAnchor} enum, and `null` for flexible text anchor assignment (specific value or unset).
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor
@@ -40,7 +39,7 @@ trait HasTextAnchor
      * Creates a new instance with the specified text anchor value, supporting explicit assignment according to the SVG
      * 2 specification for text anchor positioning properties.
      *
-     * @param string|UnitEnum|null $value Text anchor value to set for the element. Accepts `start`, `middle`, `end`,
+     * @param string|TextAnchor|null $value Text anchor value to set for the element. Accepts `start`, `middle`, `end`,
      * {@see TextAnchor} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see TextAnchor} enum or string.
@@ -62,7 +61,7 @@ trait HasTextAnchor
      * $element->textAnchor(null);
      * ```
      */
-    public function textAnchor(string|UnitEnum|null $value): static
+    public function textAnchor(string|TextAnchor|null $value): static
     {
         Validator::oneOf($value, TextAnchor::cases(), SvgAttribute::TEXT_ANCHOR);
 

@@ -7,7 +7,6 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{PreserveAspectRatio, SvgAttribute};
-use UnitEnum;
 
 /**
  * Trait for managing the SVG `preserveAspectRatio` attribute in tag rendering.
@@ -22,9 +21,9 @@ use UnitEnum;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `preserveAspectRatio` attribute.
  * - Immutable method for setting or overriding the `preserveAspectRatio` attribute.
- * - Supports string, UnitEnum, and `null` for flexible preserve aspect ratio assignment (specific value or unset).
- *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * - Supports string, {@see PreserveAspectRatio} enum, and `null` for flexible preserve aspect ratio assignment
+ *   (specific value or unset).
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/preserveAspectRatio
@@ -41,9 +40,8 @@ trait HasPreserveAspectRatio
      * to the SVG 2 specification for preserving aspect ratio when scaling SVG content to fit a viewport with a
      * different aspect ratio.
      *
-     * @param string|UnitEnum|null $value Preserve aspect ratio value. Accepts any valid preserveAspectRatio
-     * specification (for example, 'xMidYMid meet', 'none', 'xMaxYMax slice', {@see PreserveAspectRatio} enum, or `null`
-     * to unset).
+     * @param string|PreserveAspectRatio|null $value Preserve aspect ratio value supported by {@see PreserveAspectRatio}
+     * (for example, 'xMidYMid meet', 'none', 'xMaxYMax slice'), {@see PreserveAspectRatio} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see PreserveAspectRatio} enum or string.
      *
@@ -67,7 +65,7 @@ trait HasPreserveAspectRatio
      * $element->preserveAspectRatio(null);
      * ```
      */
-    public function preserveAspectRatio(string|UnitEnum|null $value): static
+    public function preserveAspectRatio(string|PreserveAspectRatio|null $value): static
     {
         Validator::oneOf($value, PreserveAspectRatio::cases(), SvgAttribute::PRESERVE_ASPECT_RATIO);
 

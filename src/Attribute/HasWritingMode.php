@@ -7,7 +7,6 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{SvgAttribute, WritingMode};
-use UnitEnum;
 
 /**
  * Trait for managing SVG `writing-mode` attribute in tag rendering.
@@ -22,9 +21,9 @@ use UnitEnum;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `writing-mode` attribute.
  * - Immutable method for setting or overriding the `writing-mode` attribute.
- * - Supports string, UnitEnum, and `null` for flexible writing mode assignment.
+ * - Supports string, {@see WritingMode} enum, and `null` for flexible writing mode assignment.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode
@@ -40,7 +39,7 @@ trait HasWritingMode
      * Creates a new instance with the specified writing mode value, supporting explicit assignment according to the SVG
      * 2 specification for writing mode properties.
      *
-     * @param string|UnitEnum|null $value Writing mode value to set for the element. Accepts `horizontal-tb`,
+     * @param string|WritingMode|null $value Writing mode value to set for the element. Accepts `horizontal-tb`,
      * `vertical-rl`, `vertical-lr`, `sideways-rl`, `sideways-lr`, {@see WritingMode} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see WritingMode} enum or string.
@@ -62,7 +61,7 @@ trait HasWritingMode
      * $element->writingMode(null);
      * ```
      */
-    public function writingMode(string|UnitEnum|null $value): static
+    public function writingMode(string|WritingMode|null $value): static
     {
         Validator::oneOf($value, WritingMode::cases(), SvgAttribute::WRITING_MODE);
 
