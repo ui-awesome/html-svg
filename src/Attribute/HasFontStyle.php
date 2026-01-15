@@ -7,13 +7,12 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{FontStyle, SvgAttribute};
-use UnitEnum;
 
 /**
  * Trait for managing SVG `font-style` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting `font-style` attribute on SVG elements, following the SVG
- * 2 specification for font style properties.
+ * Provides a standards-compliant, immutable API for setting `font-style` attribute on SVG elements, following the SVG 2
+ * specification for font style properties.
  *
  * Intended for use in tags and components that require dynamic or programmatic manipulation of font style property,
  * ensuring correct attribute handling, type safety, and value validation.
@@ -22,9 +21,9 @@ use UnitEnum;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `font-style` attribute.
  * - Immutable method for setting or overriding the `font-style` attribute.
- * - Supports string, UnitEnum, and `null` for flexible font style assignment (specific value or unset).
+ * - Supports string, {@see FontStyle} enum, and `null` for flexible font style assignment (specific value or unset).
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-style
@@ -37,10 +36,10 @@ trait HasFontStyle
     /**
      * Sets SVG `font-style` attribute for the element.
      *
-     * Creates a new instance with the specified font style value, supporting explicit assignment according to the SVG
-     * 2 specification for font style properties.
+     * Creates a new instance with the specified font style value, supporting explicit assignment according to the SVG 2
+     * specification for font style properties.
      *
-     * @param string|UnitEnum|null $value Font style value to set for the element. Accepts `normal`, `italic`,
+     * @param FontStyle|string|null $value Font style value to set for the element. Accepts `normal`, `italic`,
      * `oblique`, {@see FontStyle} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see FontStyle} enum or string.
@@ -62,7 +61,7 @@ trait HasFontStyle
      * $element->fontStyle(null);
      * ```
      */
-    public function fontStyle(string|UnitEnum|null $value): static
+    public function fontStyle(FontStyle|string|null $value): static
     {
         Validator::oneOf($value, FontStyle::cases(), SvgAttribute::FONT_STYLE);
 

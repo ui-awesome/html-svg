@@ -7,7 +7,6 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{LengthAdjust, SvgAttribute};
-use UnitEnum;
 
 /**
  * Trait for managing SVG `lengthAdjust` attribute in tag rendering.
@@ -22,9 +21,10 @@ use UnitEnum;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `lengthAdjust` attribute.
  * - Immutable method for setting or overriding the `lengthAdjust` attribute.
- * - Supports string, UnitEnum, and `null` for flexible length adjust assignment (specific value or unset).
+ * - Supports string, {@see LengthAdjust} enum, and `null` for flexible length adjust assignment (specific value or
+ *   unset).
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lengthAdjust
@@ -40,7 +40,7 @@ trait HasLengthAdjust
      * Creates a new instance with the specified length adjust value, supporting explicit assignment according to the
      * SVG 2 specification for text length adjustment properties.
      *
-     * @param string|UnitEnum|null $value Length adjust value to set for the element. Accepts `spacing`,
+     * @param LengthAdjust|string|null $value Length adjust value to set for the element. Accepts `spacing`,
      * `spacingAndGlyphs`, {@see LengthAdjust} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see LengthAdjust} enum or string.
@@ -62,7 +62,7 @@ trait HasLengthAdjust
      * $element->lengthAdjust(null);
      * ```
      */
-    public function lengthAdjust(string|UnitEnum|null $value): static
+    public function lengthAdjust(LengthAdjust|string|null $value): static
     {
         Validator::oneOf($value, LengthAdjust::cases(), SvgAttribute::LENGTH_ADJUST);
 

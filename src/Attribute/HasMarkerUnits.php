@@ -7,7 +7,6 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{MarkerUnits, SvgAttribute};
-use UnitEnum;
 
 /**
  * Trait for managing the SVG `markerUnits` attribute in tag rendering.
@@ -22,9 +21,10 @@ use UnitEnum;
  * - Designed for use in SVG marker tag and component classes.
  * - Enforces standards-compliant handling of the SVG `markerUnits` attribute.
  * - Immutable method for setting or overriding the `markerUnits` attribute.
- * - Supports string, UnitEnum, and `null` for flexible marker coordinate system assignment (specific value or unset).
+ * - Supports string, {@see MarkerUnits} enum, and `null` for flexible marker coordinate system assignment (specific
+ *   value or unset).
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/markerUnits
@@ -40,7 +40,7 @@ trait HasMarkerUnits
      * Creates a new instance with the specified marker units value, supporting explicit assignment according to the SVG
      * 2 specification for defining the coordinate system of marker attributes.
      *
-     * @param string|UnitEnum|null $value Marker units value to set for the element. Accepts 'strokeWidth',
+     * @param MarkerUnits|string|null $value Marker units value to set for the element. Accepts 'strokeWidth',
      * 'userSpaceOnUse', {@see MarkerUnits} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see MarkerUnits} enum or string.
@@ -62,7 +62,7 @@ trait HasMarkerUnits
      * $element->markerUnits(null);
      * ```
      */
-    public function markerUnits(string|UnitEnum|null $value): static
+    public function markerUnits(MarkerUnits|string|null $value): static
     {
         Validator::oneOf($value, MarkerUnits::cases(), SvgAttribute::MARKER_UNITS);
 

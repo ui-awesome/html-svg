@@ -7,7 +7,6 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{FillRule, SvgAttribute};
-use UnitEnum;
 
 /**
  * Trait for managing SVG `fill-rule` attribute in tag rendering.
@@ -22,9 +21,9 @@ use UnitEnum;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `fill-rule` attribute.
  * - Immutable method for setting or overriding the `fill-rule` attribute.
- * - Supports string, UnitEnum, and `null` for flexible fill rule assignment (specific value or unset).
+ * - Supports string, {@see FillRule} enum, and `null` for flexible fill rule assignment (specific value or unset).
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/fill-rule
@@ -40,7 +39,7 @@ trait HasFillRule
      * Creates a new instance with the specified fill rule value, supporting explicit assignment according to the SVG 2
      * specification for painting properties.
      *
-     * @param string|UnitEnum|null $value Fill rule value to set for the element. Accepts `nonzero`, `evenodd`,
+     * @param FillRule|string|null $value Fill rule value to set for the element. Accepts `nonzero`, `evenodd`,
      * {@see FillRule} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see FillRule} enum or string.
@@ -62,7 +61,7 @@ trait HasFillRule
      * $element->fillRule(null);
      * ```
      */
-    public function fillRule(string|UnitEnum|null $value): static
+    public function fillRule(FillRule|string|null $value): static
     {
         Validator::oneOf($value, FillRule::cases(), SvgAttribute::FILL_RULE);
 

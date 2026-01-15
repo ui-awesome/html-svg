@@ -7,7 +7,6 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
-use UnitEnum;
 
 /**
  * Trait for managing the SVG `gradientUnits` attribute in tag rendering.
@@ -22,9 +21,10 @@ use UnitEnum;
  * - Designed for use in SVG gradient tag and component classes.
  * - Enforces standards-compliant handling of the SVG `gradientUnits` attribute.
  * - Immutable method for setting or overriding the `gradientUnits` attribute.
- * - Supports string, UnitEnum, and `null` for flexible gradient coordinate system assignment (specific value or unset).
+ * - Supports string, {@see CoordinateUnits} enum, and `null` for flexible gradient coordinate system assignment
+ *   (specific value or unset).
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits
@@ -40,7 +40,7 @@ trait HasGradientUnits
      * Creates a new instance with the specified gradient units value, supporting explicit assignment according to the
      * SVG 2 specification for defining the coordinate system of gradient attributes.
      *
-     * @param string|UnitEnum|null $value Gradient units value to set for the element. Accepts 'userSpaceOnUse',
+     * @param CoordinateUnits|string|null $value Gradient units value to set for the element. Accepts 'userSpaceOnUse',
      * 'objectBoundingBox', {@see CoordinateUnits} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
@@ -62,7 +62,7 @@ trait HasGradientUnits
      * $element->gradientUnits(null);
      * ```
      */
-    public function gradientUnits(string|UnitEnum|null $value): static
+    public function gradientUnits(CoordinateUnits|string|null $value): static
     {
         Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::GRADIENT_UNITS);
 

@@ -117,6 +117,7 @@
 - Enh #118: Add `HasViewBox` trait and corresponding tests for managing SVG `viewBox` attribute (@terabytesoftw)
 - Enh #119: Add `Marker` class and corresponding tests for SVG `<marker>` element functionality (@terabytesoftw)
 - Bug #120: Update test cases to remove unnecessary `content()` calls for SVG elements (@terabytesoftw)
+- Bug #121: Use enum for method parameter in related SVG attribute traits (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

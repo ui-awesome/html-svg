@@ -7,7 +7,6 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{SpreadMethod, SvgAttribute};
-use UnitEnum;
 
 /**
  * Trait for managing the SVG `spreadMethod` attribute in tag rendering.
@@ -22,9 +21,10 @@ use UnitEnum;
  * - Designed for use in SVG gradient tag and component classes.
  * - Enforces standards-compliant handling of the SVG `spreadMethod` attribute.
  * - Immutable method for setting or overriding the `spreadMethod` attribute.
- * - Supports string, UnitEnum, and `null` for flexible spread method assignment (specific value or unset).
+ * - Supports string, {@see SpreadMethod} enum, and `null` for flexible spread method assignment (specific value or
+ *   unset).
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod
@@ -40,7 +40,7 @@ trait HasSpreadMethod
      * Creates a new instance with the specified spread method value, supporting explicit assignment according to the
      * SVG 2 specification for defining how a gradient behaves beyond its defined edges.
      *
-     * @param string|UnitEnum|null $value Spread method value to set for the element. Accepts 'pad', 'reflect',
+     * @param SpreadMethod|string|null $value Spread method value to set for the element. Accepts 'pad', 'reflect',
      * 'repeat', {@see SpreadMethod} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see SpreadMethod} enum or string.
@@ -62,7 +62,7 @@ trait HasSpreadMethod
      * $element->spreadMethod(null);
      * ```
      */
-    public function spreadMethod(string|UnitEnum|null $value): static
+    public function spreadMethod(SpreadMethod|string|null $value): static
     {
         Validator::oneOf($value, SpreadMethod::cases(), SvgAttribute::SPREAD_METHOD);
 

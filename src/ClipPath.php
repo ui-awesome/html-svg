@@ -10,7 +10,6 @@ use UIAwesome\Html\Interop\BlockInterface;
 use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform};
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
-use UnitEnum;
 
 /**
  * Represents the SVG `<clipPath>` (clipping path) element for defining clipping paths.
@@ -45,7 +44,8 @@ final class ClipPath extends Base\BaseSvgBlockTag
      * Creates a new instance with the specified clip path units value, supporting explicit assignment according to the
      * HTML specification for SVG attributes.
      *
-     * @param string|UnitEnum|null $value Clip path units value (for example, "objectBoundingBox" or "userSpaceOnUse").
+     * @param CoordinateUnits|string|null $value Clip path units value (for example, "objectBoundingBox" or
+     * "userSpaceOnUse").
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
      *
@@ -63,7 +63,7 @@ final class ClipPath extends Base\BaseSvgBlockTag
      * $element->clipPathUnits(CoordinateUnits::OBJECT_BOUNDING_BOX);
      * ```
      */
-    public function clipPathUnits(string|UnitEnum|null $value): self
+    public function clipPathUnits(CoordinateUnits|string|null $value): self
     {
         Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::CLIP_PATH_UNITS);
 

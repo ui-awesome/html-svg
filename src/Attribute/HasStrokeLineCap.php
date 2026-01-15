@@ -7,7 +7,6 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{StrokeLineCap, SvgAttribute};
-use UnitEnum;
 
 /**
  * Trait for managing the SVG `stroke-linecap` attribute in tag rendering.
@@ -22,9 +21,10 @@ use UnitEnum;
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `stroke-linecap` attribute.
  * - Immutable method for setting or overriding the `stroke-linecap` attribute.
- * - Supports string, UnitEnum, and `null` for flexible cap assignment ('butt', 'round', 'square', or unset).
+ * - Supports string, {@see StrokeLineCap} enum, and `null` for flexible cap assignment ('butt', 'round', 'square', or
+ *   unset).
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-linecap
@@ -40,7 +40,7 @@ trait HasStrokeLineCap
      * Creates a new instance with the specified stroke line cap value, supporting explicit assignment according to the
      * SVG 2 specification for painting outlines of shapes and text content elements.
      *
-     * @param string|UnitEnum|null $value Stroke line cap style to set for the element. Accepts 'butt', 'round',
+     * @param string|StrokeLineCap|null $value Stroke line cap style to set for the element. Accepts 'butt', 'round',
      * 'square', {@see StrokeLineCap} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see StrokeLineCap} enum or string.
@@ -62,7 +62,7 @@ trait HasStrokeLineCap
      * $element->strokeLineCap(null);
      * ```
      */
-    public function strokeLineCap(string|UnitEnum|null $value): static
+    public function strokeLineCap(string|StrokeLineCap|null $value): static
     {
         Validator::oneOf($value, StrokeLineCap::cases(), SvgAttribute::STROKE_LINECAP);
 

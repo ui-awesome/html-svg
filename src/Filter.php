@@ -11,7 +11,6 @@ use UIAwesome\Html\Interop\BlockInterface;
 use UIAwesome\Html\Svg\Attribute\{HasX, HasY};
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
-use UnitEnum;
 
 /**
  * Represents the SVG `<filter>` (filter) element for defining filter effects.
@@ -44,7 +43,8 @@ final class Filter extends Base\BaseSvgBlockTag
      * Creates a new instance with the specified filter units value, supporting explicit assignment according to the
      * HTML specification for SVG attributes.
      *
-     * @param string|UnitEnum|null $value Filter units value (for example, "objectBoundingBox" or "userSpaceOnUse").
+     * @param CoordinateUnits|string|null $value Filter units value (for example, "objectBoundingBox" or
+     * "userSpaceOnUse").
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
      *
@@ -62,7 +62,7 @@ final class Filter extends Base\BaseSvgBlockTag
      * $element->filterUnits(CoordinateUnits::OBJECT_BOUNDING_BOX);
      * ```
      */
-    public function filterUnits(string|UnitEnum|null $value): self
+    public function filterUnits(CoordinateUnits|string|null $value): self
     {
         Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::FILTER_UNITS);
 
@@ -72,10 +72,11 @@ final class Filter extends Base\BaseSvgBlockTag
     /**
      * Sets the `primitiveUnits` attribute for the `<filter>` element.
      *
-     * Creates a new instance with the specified filter units value, supporting explicit assignment according to the
+     * Creates a new instance with the specified primitive units value, supporting explicit assignment according to the
      * HTML specification for SVG attributes.
      *
-     * @param string|UnitEnum|null $value Primitive units value (for example, "objectBoundingBox" or "userSpaceOnUse").
+     * @param CoordinateUnits|string|null $value Primitive units value (for example, "objectBoundingBox" or
+     * "userSpaceOnUse").
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
      *
@@ -93,7 +94,7 @@ final class Filter extends Base\BaseSvgBlockTag
      * $element->primitiveUnits(CoordinateUnits::OBJECT_BOUNDING_BOX);
      * ```
      */
-    public function primitiveUnits(string|UnitEnum|null $value): self
+    public function primitiveUnits(CoordinateUnits|string|null $value): self
     {
         Validator::oneOf($value, CoordinateUnits::cases(), SvgAttribute::PRIMITIVE_UNITS);
 
