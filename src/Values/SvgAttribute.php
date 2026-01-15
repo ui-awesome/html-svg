@@ -392,6 +392,15 @@ enum SvgAttribute: string
     case WRITING_MODE = 'writing-mode';
 
     /**
+     * `markerWidth` - Represents the width of the viewport into which the marker is to be fitted.
+     *
+     * Defines the width of the marker viewport. Only applicable when the marker is rendered.
+     *
+     * @link https://www.w3.org/TR/SVG2/painting.html#MarkerElementMarkerWidthAttribute
+     */
+    case MARKER_WIDTH = 'markerWidth';
+
+    /**
      * `x` - Displayed x coordinate of the SVG container. No effect on outermost `svg` elements.
      *
      * @link https://www.w3.org/TR/SVG2/geometry.html#XProperty
