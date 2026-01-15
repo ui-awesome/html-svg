@@ -261,6 +261,16 @@ enum SvgAttribute: string
     case R = 'r';
 
     /**
+     * `refX` - Defines the x coordinate for the reference point of the marker.
+     *
+     * Specifies the horizontal position of the marker's reference point, which is placed at the marker position on the
+     * shape.
+     *
+     * @link https://www.w3.org/TR/SVG2/painting.html#MarkerElementRefXAttribute
+     */
+    case REF_X = 'refX';
+
+    /**
      * `rotate` - Rotation values for individual glyphs in text.
      *
      * @link https://www.w3.org/TR/SVG2/text.html#TextElementRotateAttribute
