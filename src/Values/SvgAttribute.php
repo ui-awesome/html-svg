@@ -172,6 +172,15 @@ enum SvgAttribute: string
     case LETTER_SPACING = 'letter-spacing';
 
     /**
+     * `markerHeight` - Represents the height of the viewport into which the marker is to be fitted.
+     *
+     * Defines the height of the marker viewport. Only applicable when the marker is rendered.
+     *
+     * @link https://www.w3.org/TR/SVG2/painting.html#MarkerElementMarkerHeightAttribute
+     */
+    case MARKER_HEIGHT = 'markerHeight';
+
+    /**
      * `opacity` - Opacity attribute specifies the transparency of an element.
      *
      * @link https://www.w3.org/TR/SVG2/render.html#ObjectAndGroupOpacityProperties
