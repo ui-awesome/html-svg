@@ -18,7 +18,8 @@ use UnitEnum;
 /**
  * Test suite for {@see HasMaskContentUnits} trait functionality and behavior.
  *
- * Validates the management of the SVG `maskContentUnits` attribute according to the SVG 2 specification.
+ * Validates the management of the SVG `maskContentUnits` attribute according to the CSS Masking Module Level 1
+ * specification.
  *
  * Ensures correct handling, immutability, and validation of the `maskContentUnits` attribute in tag rendering,
  * supporting appropriate types and `null` for dynamic coordinate system assignment.
