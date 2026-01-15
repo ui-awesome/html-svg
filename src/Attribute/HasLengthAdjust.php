@@ -40,7 +40,7 @@ trait HasLengthAdjust
      * Creates a new instance with the specified length adjust value, supporting explicit assignment according to the
      * SVG 2 specification for text length adjustment properties.
      *
-     * @param string|LengthAdjust|null $value Length adjust value to set for the element. Accepts `spacing`,
+     * @param LengthAdjust|string|null $value Length adjust value to set for the element. Accepts `spacing`,
      * `spacingAndGlyphs`, {@see LengthAdjust} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see LengthAdjust} enum or string.

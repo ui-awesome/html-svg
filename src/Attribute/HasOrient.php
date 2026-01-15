@@ -38,7 +38,7 @@ trait HasOrient
      * Creates a new instance with the specified orientation value, supporting explicit assignment according to the SVG
      * 2 specification for defining how the marker is rotated when placed at its position on the shape.
      *
-     * @param float|int|string|Orient|null $value Orient value to set for the element. Accepts 'auto',
+     * @param float|int|Orient|string|null $value Orient value to set for the element. Accepts 'auto',
      * 'auto-start-reverse', {@see Orient} enum, numeric angle (for example, '45', '90', '45.5'), or `null` to unset.
      *
      * @return static New instance with the updated `orient` attribute.

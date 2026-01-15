@@ -44,7 +44,7 @@ final class ClipPath extends Base\BaseSvgBlockTag
      * Creates a new instance with the specified clip path units value, supporting explicit assignment according to the
      * HTML specification for SVG attributes.
      *
-     * @param string|CoordinateUnits|null $value Clip path units value (for example, "objectBoundingBox" or
+     * @param CoordinateUnits|string|null $value Clip path units value (for example, "objectBoundingBox" or
      * "userSpaceOnUse").
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.

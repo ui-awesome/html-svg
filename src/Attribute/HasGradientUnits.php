@@ -40,7 +40,7 @@ trait HasGradientUnits
      * Creates a new instance with the specified gradient units value, supporting explicit assignment according to the
      * SVG 2 specification for defining the coordinate system of gradient attributes.
      *
-     * @param string|CoordinateUnits|null $value Gradient units value to set for the element. Accepts 'userSpaceOnUse',
+     * @param CoordinateUnits|string|null $value Gradient units value to set for the element. Accepts 'userSpaceOnUse',
      * 'objectBoundingBox', {@see CoordinateUnits} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.

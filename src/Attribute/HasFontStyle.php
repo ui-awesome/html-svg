@@ -39,7 +39,7 @@ trait HasFontStyle
      * Creates a new instance with the specified font style value, supporting explicit assignment according to the SVG 2
      * specification for font style properties.
      *
-     * @param string|FontStyle|null $value Font style value to set for the element. Accepts `normal`, `italic`,
+     * @param FontStyle|string|null $value Font style value to set for the element. Accepts `normal`, `italic`,
      * `oblique`, {@see FontStyle} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see FontStyle} enum or string.

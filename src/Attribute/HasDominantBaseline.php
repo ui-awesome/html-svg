@@ -40,7 +40,7 @@ trait HasDominantBaseline
      * Creates a new instance with the specified dominant baseline value, supporting explicit assignment according to
      * the SVG 2 specification for baseline alignment properties.
      *
-     * @param string|DominantBaseline|null $value Dominant baseline value to set for the element. Accepts `auto`,
+     * @param DominantBaseline|string|null $value Dominant baseline value to set for the element. Accepts `auto`,
      * `alphabetic`, `middle`, `central`, `hanging`, `mathematical`, `ideographic`, `text-top`, `text-bottom`,
      * {@see DominantBaseline} enum, or `null` to unset.
      *

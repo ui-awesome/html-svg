@@ -43,7 +43,7 @@ final class Filter extends Base\BaseSvgBlockTag
      * Creates a new instance with the specified filter units value, supporting explicit assignment according to the
      * HTML specification for SVG attributes.
      *
-     * @param string|CoordinateUnits|null $value Filter units value (for example, "objectBoundingBox" or
+     * @param CoordinateUnits|string|null $value Filter units value (for example, "objectBoundingBox" or
      * "userSpaceOnUse").
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
@@ -75,7 +75,7 @@ final class Filter extends Base\BaseSvgBlockTag
      * Creates a new instance with the specified primitive units value, supporting explicit assignment according to the
      * HTML specification for SVG attributes.
      *
-     * @param string|CoordinateUnits|null $value Primitive units value (for example, "objectBoundingBox" or
+     * @param CoordinateUnits|string|null $value Primitive units value (for example, "objectBoundingBox" or
      * "userSpaceOnUse").
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.

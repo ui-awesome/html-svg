@@ -39,7 +39,7 @@ trait HasFillRule
      * Creates a new instance with the specified fill rule value, supporting explicit assignment according to the SVG 2
      * specification for painting properties.
      *
-     * @param string|FillRule|null $value Fill rule value to set for the element. Accepts `nonzero`, `evenodd`,
+     * @param FillRule|string|null $value Fill rule value to set for the element. Accepts `nonzero`, `evenodd`,
      * {@see FillRule} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see FillRule} enum or string.

@@ -40,7 +40,7 @@ trait HasPreserveAspectRatio
      * to the SVG 2 specification for preserving aspect ratio when scaling SVG content to fit a viewport with a
      * different aspect ratio.
      *
-     * @param string|PreserveAspectRatio|null $value Preserve aspect ratio value supported by {@see PreserveAspectRatio}
+     * @param PreserveAspectRatio|string|null $value Preserve aspect ratio value supported by {@see PreserveAspectRatio}
      * (for example, 'xMidYMid meet', 'none', 'xMaxYMax slice'), {@see PreserveAspectRatio} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see PreserveAspectRatio} enum or string.

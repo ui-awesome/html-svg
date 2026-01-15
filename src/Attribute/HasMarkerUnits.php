@@ -40,7 +40,7 @@ trait HasMarkerUnits
      * Creates a new instance with the specified marker units value, supporting explicit assignment according to the SVG
      * 2 specification for defining the coordinate system of marker attributes.
      *
-     * @param string|MarkerUnits|null $value Marker units value to set for the element. Accepts 'strokeWidth',
+     * @param MarkerUnits|string|null $value Marker units value to set for the element. Accepts 'strokeWidth',
      * 'userSpaceOnUse', {@see MarkerUnits} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException if the provided value is not a valid {@see MarkerUnits} enum or string.
