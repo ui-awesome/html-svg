@@ -107,6 +107,7 @@
 - Bug #108: Improve docblock descriptions for SVG elements in `Defs`, `LinearGradient`, `Rect`, and `Text` classes (@terabytesoftw)
 - Enh #109: Add `Polygon` class and corresponding tests for SVG `<polygon>` element functionality (@terabytesoftw)
 - Bug #110: Update docblock descriptions for various SVG elements to clarify content handling (@terabytesoftw)
+- Bug #111: Update copyright year to `2026` in `Polygon`, `Polyline`, `Rect` classes and `RectTest` (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
