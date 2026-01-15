@@ -45,6 +45,17 @@ final class PolylineTest extends TestCase
 {
     use TestSupport;
 
+    public function testRenderWithAccesskey(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <polyline accesskey="k">
+            HTML,
+            Polyline::tag()->accesskey('k')->render(),
+            "Failed asserting that element renders correctly with 'accesskey' attribute.",
+        );
+    }
+
     public function testRenderWithAddAriaAttribute(): void
     {
         self::equalsWithoutLE(
@@ -163,6 +174,17 @@ final class PolylineTest extends TestCase
         );
     }
 
+    public function testRenderWithDir(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <polyline dir="rtl">
+            HTML,
+            Polyline::tag()->dir('rtl')->render(),
+            "Failed asserting that element renders correctly with 'dir' attribute.",
+        );
+    }
+
     public function testRenderWithFill(): void
     {
         self::equalsWithoutLE(
@@ -220,6 +242,17 @@ final class PolylineTest extends TestCase
         );
 
         SimpleFactory::setDefaults(Polyline::class, []);
+    }
+
+    public function testRenderWithHidden(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <polyline hidden>
+            HTML,
+            Polyline::tag()->hidden(true)->render(),
+            "Failed asserting that element renders correctly with 'hidden' attribute.",
+        );
     }
 
     public function testRenderWithId(): void
@@ -409,6 +442,17 @@ final class PolylineTest extends TestCase
         );
     }
 
+    public function testRenderWithTitle(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <polyline title="test-value">
+            HTML,
+            Polyline::tag()->title('test-value')->render(),
+            "Failed asserting that element renders correctly with 'title' attribute.",
+        );
+    }
+
     public function testRenderWithToString(): void
     {
         self::equalsWithoutLE(
@@ -428,6 +472,17 @@ final class PolylineTest extends TestCase
             HTML,
             Polyline::tag()->transform('rotate(45)')->render(),
             "Failed asserting that element renders correctly with 'transform' attribute.",
+        );
+    }
+
+    public function testRenderWithTranslate(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <polyline translate="no">
+            HTML,
+            Polyline::tag()->translate(false)->render(),
+            "Failed asserting that element renders correctly with 'translate' attribute.",
         );
     }
 

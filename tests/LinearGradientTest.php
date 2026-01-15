@@ -39,6 +39,93 @@ final class LinearGradientTest extends TestCase
 {
     use TestSupport;
 
+    public function testRenderWithAddAriaAttribute(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient aria-pressed="true">
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
+        );
+    }
+
+    public function testRenderWithAddAriaAttributeUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient aria-pressed="true">
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->addAriaAttribute(\UIAwesome\Html\Attribute\Values\Aria::PRESSED, true)->content('value')->render(),
+            "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
+        );
+    }
+
+    public function testRenderWithAddDataAttribute(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient data-value="value">
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
+        );
+    }
+
+    public function testRenderWithAddDataAttributeUsingEnum(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient data-value="value">
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->addDataAttribute(\UIAwesome\Html\Attribute\Values\Data::VALUE, 'value')->content('value')->render(),
+            "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
+        );
+    }
+
+    public function testRenderWithAriaAttributes(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()
+                ->ariaAttributes(
+                    [
+                        'controls' => static fn(): string => 'modal-1',
+                        'hidden' => false,
+                        'label' => 'Close',
+                    ],
+                )
+                ->content('value')
+                ->render(),
+            "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
+        );
+    }
+
+    public function testRenderWithAttributes(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient class="value">
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            "Failed asserting that element renders correctly with 'attributes()' method.",
+        );
+    }
+
     public function testRenderWithBeginEnd(): void
     {
         self::equalsWithoutLE(
@@ -75,6 +162,19 @@ final class LinearGradientTest extends TestCase
             HTML,
             LinearGradient::tag()->content('value')->render(),
             'Failed asserting that element renders correctly with default values.',
+        );
+    }
+
+    public function testRenderWithDataAttributes(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient data-value="test-value">
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            "Failed asserting that element renders correctly with 'dataAttributes()' method.",
         );
     }
 
@@ -130,6 +230,32 @@ final class LinearGradientTest extends TestCase
         );
     }
 
+    public function testRenderWithLang(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient lang="es">
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->content('value')->lang('es')->render(),
+            "Failed asserting that element renders correctly with 'lang' attribute.",
+        );
+    }
+
+    public function testRenderWithRole(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient role="banner">
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->role('banner')->content('value')->render(),
+            "Failed asserting that element renders correctly with 'role' attribute.",
+        );
+    }
+
     public function testRenderWithSpreadMethod(): void
     {
         self::equalsWithoutLE(
@@ -153,6 +279,32 @@ final class LinearGradientTest extends TestCase
             HTML,
             LinearGradient::tag()->content('value')->spreadMethod(SpreadMethod::REPEAT)->render(),
             "Failed asserting that element renders correctly with 'spreadMethod' attribute using enum.",
+        );
+    }
+
+    public function testRenderWithStyle(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient style='test-value'>
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->style('test-value')->content('value')->render(),
+            "Failed asserting that element renders correctly with 'style' attribute.",
+        );
+    }
+
+    public function testRenderWithTabindex(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient tabindex="3">
+            value
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->content('value')->tabIndex(3)->render(),
+            "Failed asserting that element renders correctly with 'tabindex' attribute.",
         );
     }
 

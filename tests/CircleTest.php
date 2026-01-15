@@ -45,6 +45,17 @@ final class CircleTest extends TestCase
 {
     use TestSupport;
 
+    public function testRenderWithAccesskey(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <circle accesskey="k">
+            HTML,
+            Circle::tag()->accesskey('k')->render(),
+            "Failed asserting that element renders correctly with 'accesskey' attribute.",
+        );
+    }
+
     public function testRenderWithAddAriaAttribute(): void
     {
         self::equalsWithoutLE(
@@ -185,6 +196,17 @@ final class CircleTest extends TestCase
         );
     }
 
+    public function testRenderWithDir(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <circle dir="rtl">
+            HTML,
+            Circle::tag()->dir('rtl')->render(),
+            "Failed asserting that element renders correctly with 'dir' attribute.",
+        );
+    }
+
     public function testRenderWithFill(): void
     {
         self::equalsWithoutLE(
@@ -242,6 +264,17 @@ final class CircleTest extends TestCase
         );
 
         SimpleFactory::setDefaults(Circle::class, []);
+    }
+
+    public function testRenderWithHidden(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <circle hidden>
+            HTML,
+            Circle::tag()->hidden(true)->render(),
+            "Failed asserting that element renders correctly with 'hidden' attribute.",
+        );
     }
 
     public function testRenderWithId(): void
@@ -420,6 +453,17 @@ final class CircleTest extends TestCase
         );
     }
 
+    public function testRenderWithTitle(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <circle title="test-value">
+            HTML,
+            Circle::tag()->title('test-value')->render(),
+            "Failed asserting that element renders correctly with 'title' attribute.",
+        );
+    }
+
     public function testRenderWithToString(): void
     {
         self::equalsWithoutLE(
@@ -439,6 +483,17 @@ final class CircleTest extends TestCase
             HTML,
             Circle::tag()->transform('rotate(45)')->render(),
             "Failed asserting that element renders correctly with 'transform' attribute.",
+        );
+    }
+
+    public function testRenderWithTranslate(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <circle translate="no">
+            HTML,
+            Circle::tag()->translate(false)->render(),
+            "Failed asserting that element renders correctly with 'translate' attribute.",
         );
     }
 

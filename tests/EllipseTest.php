@@ -45,6 +45,17 @@ final class EllipseTest extends TestCase
 {
     use TestSupport;
 
+    public function testRenderWithAccesskey(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <ellipse accesskey="k">
+            HTML,
+            Ellipse::tag()->accesskey('k')->render(),
+            "Failed asserting that element renders correctly with 'accesskey' attribute.",
+        );
+    }
+
     public function testRenderWithAddAriaAttribute(): void
     {
         self::equalsWithoutLE(
@@ -185,6 +196,17 @@ final class EllipseTest extends TestCase
         );
     }
 
+    public function testRenderWithDir(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <ellipse dir="rtl">
+            HTML,
+            Ellipse::tag()->dir('rtl')->render(),
+            "Failed asserting that element renders correctly with 'dir' attribute.",
+        );
+    }
+
     public function testRenderWithFill(): void
     {
         self::equalsWithoutLE(
@@ -242,6 +264,17 @@ final class EllipseTest extends TestCase
         );
 
         SimpleFactory::setDefaults(Ellipse::class, []);
+    }
+
+    public function testRenderWithHidden(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <ellipse hidden>
+            HTML,
+            Ellipse::tag()->hidden(true)->render(),
+            "Failed asserting that element renders correctly with 'hidden' attribute.",
+        );
     }
 
     public function testRenderWithId(): void
@@ -442,6 +475,17 @@ final class EllipseTest extends TestCase
         );
     }
 
+    public function testRenderWithTitle(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <ellipse title="test-value">
+            HTML,
+            Ellipse::tag()->title('test-value')->render(),
+            "Failed asserting that element renders correctly with 'title' attribute.",
+        );
+    }
+
     public function testRenderWithToString(): void
     {
         self::equalsWithoutLE(
@@ -461,6 +505,17 @@ final class EllipseTest extends TestCase
             HTML,
             Ellipse::tag()->transform('rotate(45)')->render(),
             "Failed asserting that element renders correctly with 'transform' attribute.",
+        );
+    }
+
+    public function testRenderWithTranslate(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <ellipse translate="no">
+            HTML,
+            Ellipse::tag()->translate(false)->render(),
+            "Failed asserting that element renders correctly with 'translate' attribute.",
         );
     }
 
