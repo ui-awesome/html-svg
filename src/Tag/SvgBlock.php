@@ -68,6 +68,13 @@ enum SvgBlock: string implements BlockInterface
     case LINEAR_GRADIENT = 'linearGradient';
 
     /**
+     * `<marker>` - Marker definition for paths.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker
+     */
+    case MARKER = 'marker';
+
+    /**
      * `<svg>` - The root container for SVG graphics.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
