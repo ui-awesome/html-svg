@@ -122,6 +122,7 @@
 - Bug #123: fix(docs): Update PHPdoc in `Marker` and `Rect` classes (@terabytesoftw)
 - Enh #124: Add `HasMaskContentUnits` trait and corresponding tests for managing SVG `maskContentUnits` attribute (@terabytesoftw)
 - Bug #125: Update documentation to reflect CSS Masking Module Level 1 specification for `maskContentUnits` trait (@terabytesoftw)
+- Enh #126: Add `HasMaskType` trait and corresponding tests for managing SVG `mask-type` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
