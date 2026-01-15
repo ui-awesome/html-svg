@@ -200,6 +200,13 @@ enum SvgAttribute: string
     case MARKER_WIDTH = 'markerWidth';
 
     /**
+     * `maskContentUnits` - Defines the coordinate system for the contents of the `<mask>` element.
+     *
+     * @link https://drafts.csswg.org/css-masking/#element-attrdef-mask-maskcontentunits
+     */
+    case MASK_CONTENT_UNITS = 'maskContentUnits';
+
+    /**
      * `opacity` - Opacity attribute specifies the transparency of an element.
      *
      * @link https://www.w3.org/TR/SVG2/render.html#ObjectAndGroupOpacityProperties
