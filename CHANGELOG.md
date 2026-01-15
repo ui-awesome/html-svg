@@ -118,6 +118,7 @@
 - Enh #119: Add `Marker` class and corresponding tests for SVG `<marker>` element functionality (@terabytesoftw)
 - Bug #120: Update test cases to remove unnecessary `content()` calls for SVG elements (@terabytesoftw)
 - Bug #121: Use enum for method parameter in related SVG attribute traits (@terabytesoftw)
+- Bug #122: Update configuration files and improve code structure for better maintainability (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
