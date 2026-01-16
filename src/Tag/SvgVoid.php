@@ -55,6 +55,13 @@ enum SvgVoid: string implements VoidInterface
     case LINE = 'line';
 
     /**
+     * `<path>` - Draws a path using commands.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path
+     */
+    case PATH = 'path';
+
+    /**
      * `<polygon>` - Draws a closed shape with straight lines.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon
