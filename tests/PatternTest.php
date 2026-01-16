@@ -596,4 +596,18 @@ final class PatternTest extends TestCase
 
         Pattern::tag()->patternUnits('invalid-value');
     }
+
+    public function testThrowInvalidArgumentExceptionForSettingPreserveAspectRatioValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                SvgAttribute::PRESERVE_ASPECT_RATIO->value,
+                implode("', '", Enum::normalizeArray(PreserveAspectRatio::cases())),
+            ),
+        );
+
+        Pattern::tag()->preserveAspectRatio('invalid-value');
+    }
 }
