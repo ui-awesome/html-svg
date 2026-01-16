@@ -265,6 +265,13 @@ enum SvgAttribute: string
     case PATTERN_CONTENT_UNITS = 'patternContentUnits';
 
     /**
+     * `patternTransform` - Defines a list of transformations applied to the pattern tile.
+     *
+     * @link https://www.w3.org/TR/SVG2/pservers.html#PatternElementPatternTransformAttribute
+     */
+    case PATTERN_TRANSFORM = 'patternTransform';
+
+    /**
      * `points` - List of points for polyline and polygon elements.
      *
      * Defines the list of coordinate pairs used to draw the element.
