@@ -107,7 +107,7 @@ final class HasSpreadMethodTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::SPREAD_METHOD->value,
-                implode('\', \'', Enum::normalizeArray(SpreadMethod::cases())),
+                implode("', '", Enum::normalizeArray(SpreadMethod::cases())),
             ),
         );
 

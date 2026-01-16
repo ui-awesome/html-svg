@@ -637,7 +637,7 @@ final class LineTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::FILL_RULE->value,
-                implode('\', \'', Enum::normalizeArray(FillRule::cases())),
+                implode("', '", Enum::normalizeArray(FillRule::cases())),
             ),
         );
 
@@ -661,7 +661,7 @@ final class LineTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::STROKE_LINECAP->value,
-                implode('\', \'', Enum::normalizeArray(StrokeLineCap::cases())),
+                implode("', '", Enum::normalizeArray(StrokeLineCap::cases())),
             ),
         );
 
@@ -675,7 +675,7 @@ final class LineTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::STROKE_LINEJOIN->value,
-                implode('\', \'', Enum::normalizeArray(StrokeLineJoin::cases())),
+                implode("', '", Enum::normalizeArray(StrokeLineJoin::cases())),
             ),
         );
 
