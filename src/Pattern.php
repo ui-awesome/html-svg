@@ -26,8 +26,11 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * The `<pattern>` element defines a pattern that can be referenced by fill/stroke.
  *
  * Key features.
- * - Designed for use in SVG tag/component classes requiring pattern rendering.
- * - Standards-compliant implementation of the SVG `<pattern>` element.
+ * - Container element accepts child elements.
+ * - Supports geometry attributes (`x`, `y`, `width`, `height`).
+ * - Supports linking attribute (`href`).
+ * - Supports pattern-specific attributes (`patternUnits`, `patternContentUnits`, `patternTransform`).
+ * - Supports view attributes (`viewBox`, `preserveAspectRatio`).
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/pattern
  *

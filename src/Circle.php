@@ -33,11 +33,11 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  *
  * The `<circle>` element is an SVG basic shape used to create circles based on a center point and a radius.
  *
- * Key features:
- * - Designed for use in SVG tag/component classes requiring circle rendering.
- * - Standards-compliant implementation of the SVG `<circle>` element.
- * - Supports all paint attributes (`fill`, `stroke`, `opacity`).
- * - Supports transform attribute for positioning and scaling.
+ * Key features.
+ * - Supports geometry attributes (`cx`, `cy`, `r`).
+ * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
+ * - Supports transform attribute (`transform`).
+ * - Void element does not accept child elements.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle
  * {@see BaseVoid} for the base implementation.

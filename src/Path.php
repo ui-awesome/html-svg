@@ -32,11 +32,11 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  *
  * The `<path>` element is the most powerful SVG element for drawing arbitrary shapes, using a path data string.
  *
- * Key features:
- * - Designed for use in SVG tag/component classes requiring complex shape rendering.
- * - Standards-compliant implementation of the SVG `<path>` element.
- * - Supports all paint attributes (`d`, `fill`, `opacity`, `pathLength`,`stroke`).
- * - Supports transform attribute for positioning and scaling.
+ * Key features.
+ * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
+ * - Supports path and geometry attributes (`d`, `pathLength`).
+ * - Supports transform attribute (`transform`).
+ * - Void element does not accept child elements.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path
  *

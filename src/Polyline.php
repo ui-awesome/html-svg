@@ -32,11 +32,11 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  *
  * The `<polyline>` element is an SVG basic shape used to create a series of connected line segments.
  *
- * Key features:
- * - Designed for use in SVG tag/component classes requiring polyline rendering.
- * - Standards-compliant implementation of the SVG `<polyline>` element.
- * - Supports all stroke attributes (`stroke-width`, `stroke-dasharray`, etc.).
- * - Supports transform attribute for positioning.
+ * Key features.
+ * - Supports geometry attributes (`points`, `pathLength`).
+ * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
+ * - Supports transform attribute (`transform`).
+ * - Void element does not accept child elements.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline
  * {@see BaseVoid} for the base implementation.

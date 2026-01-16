@@ -21,11 +21,11 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * `clip-path` property. The content within a `<clipPath>` defines the area that will be visible when the clipping path
  * is applied.
  *
- * Key features:
- * - Allows specification of {@see clipPathUnits()} to define coordinate system for clipping path.
- * - Designed for use in SVG tag class requiring clipping path definitions.
- * - Standards-compliant implementation of the SVG `<clipPath>` container element.
- * - Supports opacity and transform attributes.
+ * Key features.
+ * - Container element accepts child elements.
+ * - Supports coordinate system attribute (`clipPathUnits`).
+ * - Supports presentation attributes (`opacity`).
+ * - Supports transform attribute (`transform`).
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath
  * {@see Base\BaseSvgBlockTag} for the base implementation.

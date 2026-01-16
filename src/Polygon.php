@@ -32,11 +32,11 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  *
  * The `<polygon>` element is an SVG basic shape used to create closed shapes defined by a list of points.
  *
- * Key features:
- * - Designed for use in SVG tag/component classes requiring polygon rendering.
- * - Standards-compliant implementation of the SVG `<polygon>` element.
- * - Supports all paint attributes (`fill`, `stroke`, `opacity`).
- * - Supports transform attribute for positioning and scaling.
+ * Key features.
+ * - Supports geometry attribute (`points`).
+ * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
+ * - Supports transform attribute (`transform`).
+ * - Void element does not accept child elements.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon
  * {@see BaseVoid} for the base implementation.
