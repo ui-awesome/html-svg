@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\DxProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasDx} trait functionality and behavior.
+ * Unit test for the {@see HasDx} trait managing the `dx` SVG attribute.
  *
- * Validates the management of the SVG `dx` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `dx` attribute in tag rendering, supporting appropriate
- * types and `null` for dynamic offset assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `dx` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `dx` attribute.
- * - Proper assignment and overriding of `dx` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see DxProvider} for test case data providers.
  *

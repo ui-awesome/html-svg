@@ -13,18 +13,10 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\CyProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasCy} trait functionality and behavior.
+ * Unit test for the {@see HasCy} trait managing the `cy` SVG attribute.
  *
- * Validates the management of the SVG `cy` attribute according to the SVG 2 specification.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
- * Ensures correct handling, immutability, and validation of the `cy` attribute in tag rendering, supporting appropriate
- * types and `null` for dynamic coordinate assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `cy` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `cy` attribute.
- * - Proper assignment and overriding of `cy` value.
  *
  * {@see CyProvider} for test case data providers.
  *

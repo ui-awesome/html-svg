@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\X1Provider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasX1} trait functionality and behavior.
+ * Unit test for the {@see HasX1} trait managing the `x1` SVG attribute.
  *
- * Validates the management of the SVG `x1` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `x1` attribute in tag rendering, supporting appropriate
- * types and `null` for dynamic coordinate assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `x1` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `x1` attribute.
- * - Proper assignment and overriding of `x1` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see X1Provider} for test case data providers.
  *

@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\GradientTransformProvide
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasGradientTransform} trait functionality and behavior.
+ * Unit test for the {@see HasGradientTransform} trait managing the `gradientTransform` SVG attribute.
  *
- * Validates the management of the SVG `gradientTransform` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `gradientTransform` attribute in tag rendering,
- * supporting appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `gradientTransform` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `gradientTransform` attribute.
- * - Proper assignment and overriding of `gradientTransform` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see GradientTransformProvider} for test case data providers.
  *

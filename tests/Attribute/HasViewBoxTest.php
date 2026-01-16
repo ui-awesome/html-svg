@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\ViewBoxProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasViewBox} trait functionality and behavior.
+ * Unit test for the {@see HasViewBox} trait managing the `viewBox` SVG attribute.
  *
- * Validates the management of the SVG `viewBox` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `viewBox` attribute in tag rendering, supporting string
- * type and `null` for dynamic viewport assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `viewBox` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `viewBox` attribute.
- * - Proper assignment and overriding of `viewBox` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see ViewBoxProvider} for test case data providers.
  *

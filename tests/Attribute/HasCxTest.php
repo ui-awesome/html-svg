@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\CxProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasCx} trait functionality and behavior.
+ * Unit test for the {@see HasCx} trait managing the `cx` SVG attribute.
  *
- * Validates the management of the SVG `cx` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `cx` attribute in tag rendering, supporting appropriate
- * types and `null` for dynamic coordinate assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `cx` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `cx` attribute.
- * - Proper assignment and overriding of `cx` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see CxProvider} for test case data providers.
  *

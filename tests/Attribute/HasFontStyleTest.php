@@ -16,19 +16,9 @@ use UIAwesome\Html\Svg\Values\{FontStyle, SvgAttribute};
 use UnitEnum;
 
 /**
- * Test suite for {@see HasFontStyle} trait functionality and behavior.
+ * Unit test for the {@see HasFontStyle} trait managing the `font-style` SVG attribute.
  *
- * Validates the management of the SVG `font-style` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `font-style` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic offset assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `font-style` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `font-style` attribute.
- * - Proper assignment and overriding of `font-style` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see FontStyleProvider} for test case data providers.
  *

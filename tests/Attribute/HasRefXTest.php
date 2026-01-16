@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\RefXProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasRefX} trait functionality and behavior.
+ * Unit test for the {@see HasRefX} trait managing the `refX` SVG attribute.
  *
- * Validates the management of the SVG `refX` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `refX` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic reference point assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `refX` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `refX` attribute.
- * - Proper assignment and overriding of `refX` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see RefXProvider} for test case data providers.
  *

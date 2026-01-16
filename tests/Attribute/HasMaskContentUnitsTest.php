@@ -16,20 +16,9 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 use UnitEnum;
 
 /**
- * Test suite for {@see HasMaskContentUnits} trait functionality and behavior.
+ * Unit test for the {@see HasMaskContentUnits} trait managing the `maskContentUnits` SVG attribute.
  *
- * Validates the management of the SVG `maskContentUnits` attribute according to the CSS Masking Module Level 1
- * specification.
- *
- * Ensures correct handling, immutability, and validation of the `maskContentUnits` attribute in tag rendering,
- * supporting appropriate types and `null` for dynamic coordinate system assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `maskContentUnits` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `maskContentUnits` attribute.
- * - Proper assignment and overriding of `maskContentUnits` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see MaskContentUnitsProvider} for test case data providers.
  *

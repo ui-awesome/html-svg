@@ -16,19 +16,9 @@ use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgAttribute};
 use UnitEnum;
 
 /**
- * Test suite for {@see HasStrokeLineJoin} trait functionality and behavior.
+ * Unit test for the {@see HasStrokeLineJoin} trait managing the `stroke-linejoin` SVG attribute.
  *
- * Validates the management of the SVG `stroke-linejoin` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `stroke-linejoin` attribute in tag rendering,
- * supporting appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `stroke-linejoin` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `stroke-linejoin` attribute.
- * - Proper assignment and overriding of `stroke-linejoin` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see StrokeLineJoinProvider} for test case data providers.
  *

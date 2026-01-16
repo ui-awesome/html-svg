@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasStroke} trait functionality and behavior.
+ * Unit test for the {@see HasStroke} trait managing the `stroke` SVG attribute.
  *
- * Validates the management of the SVG `stroke` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `stroke` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `stroke` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `stroke` attribute.
- * - Proper assignment and overriding of `stroke` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see StrokeProvider} for test case data providers.
  *

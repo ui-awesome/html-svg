@@ -16,19 +16,9 @@ use UIAwesome\Html\Svg\Values\{MarkerUnits, SvgAttribute};
 use UnitEnum;
 
 /**
- * Test suite for {@see HasMarkerUnits} trait functionality and behavior.
+ * Unit test for the {@see HasMarkerUnits} trait managing the `markerUnits` SVG attribute.
  *
- * Validates the management of the SVG `markerUnits` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `markerUnits` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic coordinate system assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `markerUnits` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `markerUnits` attribute.
- * - Proper assignment and overriding of `markerUnits` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see MarkerUnitsProvider} for test case data providers.
  *

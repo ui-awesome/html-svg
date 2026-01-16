@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\RxProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasRx} trait functionality and behavior.
+ * Unit test for the {@see HasRx} trait managing the `rx` SVG attribute.
  *
- * Validates the management of the SVG `rx` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `rx` attribute in tag rendering, supporting appropriate
- * types and `null` for dynamic radius assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `rx` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `rx` attribute.
- * - Proper assignment and overriding of `rx` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see RxProvider} for test case data providers.
  *

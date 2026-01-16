@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\MarkerHeightProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasMarkerHeight} trait functionality and behavior.
+ * Unit test for the {@see HasMarkerHeight} trait managing the `markerHeight` SVG attribute.
  *
- * Validates the management of the SVG `markerHeight` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `markerHeight` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic height assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `markerHeight` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `markerHeight` attribute.
- * - Proper assignment and overriding of `markerHeight` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see MarkerHeightProvider} for test case data providers.
  *

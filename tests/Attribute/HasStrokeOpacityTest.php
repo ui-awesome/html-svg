@@ -15,19 +15,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeOpacityProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasStrokeOpacity} trait functionality and behavior.
+ * Unit test for the {@see HasStrokeOpacity} trait managing the `stroke-opacity` SVG attribute.
  *
- * Validates management of SVG `stroke-opacity` attribute according to SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of `stroke-opacity` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with `stroke-opacity` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of trait's API when setting or overriding `stroke-opacity` attribute.
- * - Proper assignment and overriding of `stroke-opacity` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see StrokeOpacityProvider} for test case data providers.
  *

@@ -16,19 +16,9 @@ use UIAwesome\Html\Svg\Values\{MaskType, SvgAttribute};
 use UnitEnum;
 
 /**
- * Test suite for {@see HasMaskType} trait functionality and behavior.
+ * Unit test for the {@see HasMaskType} trait managing the `mask-type` SVG attribute.
  *
- * Validates the management of the SVG `mask-type` attribute according to the CSS Masking Module Level 1 specification.
- *
- * Ensures correct handling, immutability, and validation of the `mask-type` attribute in tag rendering, supporting
- * appropriate types and `null` for attribute removal.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `mask-type` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `mask-type` attribute.
- * - Proper assignment and overriding of `mask-type` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see MaskTypeProvider} for test case data providers.
  *

@@ -16,19 +16,9 @@ use UIAwesome\Html\Svg\Values\{PreserveAspectRatio, SvgAttribute};
 use UnitEnum;
 
 /**
- * Test suite for {@see HasPreserveAspectRatio} trait functionality and behavior.
+ * Unit test for the {@see HasPreserveAspectRatio} trait managing the `preserveAspectRatio` SVG attribute.
  *
- * Validates the management of the SVG `preserveAspectRatio` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `preserveAspectRatio` attribute in tag rendering,
- * supporting appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `preserveAspectRatio` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `preserveAspectRatio` attribute.
- * - Proper assignment and overriding of `preserveAspectRatio` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see PreserveAspectRatioProvider} for test case data providers.
  *

@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeWidthProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasStrokeWidth} trait functionality and behavior.
+ * Unit test for the {@see HasStrokeWidth} trait managing the `stroke-width` SVG attribute.
  *
- * Validates the management of the SVG `stroke-width` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `stroke-width` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `stroke-width` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `stroke-width` attribute.
- * - Proper assignment and overriding of `stroke-width` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see StrokeWidthProvider} for test case data providers.
  *

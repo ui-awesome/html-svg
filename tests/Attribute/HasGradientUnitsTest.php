@@ -16,19 +16,9 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 use UnitEnum;
 
 /**
- * Test suite for {@see HasGradientUnits} trait functionality and behavior.
+ * Unit test for the {@see HasGradientUnits} trait managing the `gradientUnits` SVG attribute.
  *
- * Validates the management of the SVG `gradientUnits` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `gradientUnits` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `gradientUnits` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `gradientUnits` attribute.
- * - Proper assignment and overriding of `gradientUnits` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see GradientUnitsProvider} for test case data providers.
  *
