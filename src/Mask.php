@@ -18,12 +18,11 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * The `<mask>` element defines a mask that can be applied to other elements.
  *
  * Key features.
- * - Designed for use in SVG tag/component classes requiring mask rendering.
- * - Standards-compliant implementation of the SVG `<mask>` element.
- * - Supports `maskUnits`, `maskContentUnits`, and `mask-type` attributes.
- * - Supports masking area attributes (`x`, `y`, `width`, `height`).
+ * - Container element accepts child elements.
+ * - Supports geometry attributes (`x`, `y`, `width`, `height`).
+ * - Supports mask-specific attributes (`maskUnits`, `maskContentUnits`, `mask-type`).
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/mask
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.

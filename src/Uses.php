@@ -20,10 +20,11 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * same as if the nodes were deeply cloned into a new location.
  *
  * Key features.
- * - Immutable, stateless design for safe reuse in rendering engines.
- * - Standards-compliant rendering of the `<use>` SVG element.
- * - Supports referencing internal and external SVG fragments.
- * - Type-safe methods for attribute management.
+ * - Enables referencing of internal and external SVG fragments.
+ * - Supports linking and geometry attributes (`href`, `x`, `y`, `width`, `height`).
+ * - Supports presentation attributes (`opacity`).
+ * - Supports transform attribute (`transform`).
+ * - Void element does not accept child elements.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
  * {@see BaseVoid} for the base implementation.

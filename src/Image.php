@@ -20,9 +20,11 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * The `<image>` element embeds an external image (PNG, JPG, etc.) into the SVG.
  *
  * Key features.
- * - Designed for use in SVG tag/component classes requiring image embedding.
- * - Standards-compliant implementation of the SVG `<image>` element.
- * - Supports opacity and transform attributes.
+ * - Supports image-specific attributes (`decoding`, `fetchpriority`).
+ * - Supports linking and geometry attributes (`href`, `x`, `y`, `width`, `height`).
+ * - Supports presentation attributes (`opacity`).
+ * - Supports transform and aspect ratio attributes (`transform`, `preserveAspectRatio`).
+ * - Void element does not accept child elements.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
  * {@see BaseVoid} for the base implementation.

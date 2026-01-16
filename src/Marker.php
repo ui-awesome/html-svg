@@ -28,11 +28,11 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * The `<marker>` element defines a marker that can be attached to lines, polylines, and polygons.
  *
  * Key features.
- * - Designed for use in SVG tag/component classes requiring marker rendering.
- * - Standards-compliant implementation of the SVG `<marker>` element.
- * - Supports marker-specific attributes like `markerWidth`, `markerHeight`, `markerUnits`, `orient`, `refX`, `refY`,
- *   `viewBox`, and `preserveAspectRatio`.
- * - Supports presentation attributes like `opacity` and `transform`.
+ * - Container element accepts child elements.
+ * - Supports marker attributes (`markerWidth`, `markerHeight`, `markerUnits`, `orient`, `refX`, `refY`).
+ * - Supports presentation attributes (`opacity`).
+ * - Supports transform attribute (`transform`).
+ * - Supports view attributes (`viewBox`, `preserveAspectRatio`).
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker
  * {@see Base\BaseSvgBlockTag} for the base implementation.

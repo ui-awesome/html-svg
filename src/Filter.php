@@ -21,8 +21,9 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * The `<filter>` element defines a filter that can be applied to other elements.
  *
  * Key features.
- * - Designed for use in SVG tag/component classes requiring filter rendering.
- * - Standards-compliant implementation of the SVG `<filter>` element.
+ * - Container element accepts child elements.
+ * - Supports filter-specific attributes (`filterUnits`, `primitiveUnits`).
+ * - Supports geometry attributes (`x`, `y`, `width`, `height`).
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter
  * {@see Base\BaseSvgBlockTag} for the base implementation.

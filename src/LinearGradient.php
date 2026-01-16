@@ -18,10 +18,9 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * gradient varies along a linear vector defined by the x1, y1, x2, and y2 attributes.
  *
  * Key features.
- * - Designed for use in SVG tag/component classes requiring linear gradient rendering.
- * - Immutable, stateless design for safe reuse in rendering engines.
- * - Standards-compliant rendering of the `<linearGradient>` SVG element.
- * - Supports gradient attributes such as `gradientUnits`, `gradientTransform`, and `spreadMethod`.
+ * - Container element accepts child elements.
+ * - Supports gradient attributes (`gradientUnits`, `gradientTransform`, `spreadMethod`).
+ * - Supports gradient geometry attributes (`x1`, `y1`, `x2`, `y2`).
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  * {@see Base\BaseSvgBlockTag} for the base implementation.

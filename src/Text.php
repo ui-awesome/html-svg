@@ -50,10 +50,15 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * (`textAnchor`, `dominantBaseline`), font properties (`fontFamily`, `fontSize`, `fontWeight`, `fontStyle`), spacing
  * (`letterSpacing`, `wordSpacing`), decoration (`textDecoration`), and writing mode (`writingMode`).
  *
- * Key features:
- * - Designed for use in SVG tag/component classes requiring text rendering.
- * - Standards-compliant implementation of the SVG `<text>` element.
- * - Supports comprehensive text positioning, typography, and decoration attributes.
+ * Key features.
+ * - Container element accepts child elements.
+ * - Supports global attribute (`title`) for accessibility.
+ * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.) and transform attribute
+ *   (`transform`).
+ * - Supports text layout attributes (`textLength`, `lengthAdjust`, `text-anchor`, `dominant-baseline`).
+ * - Supports text positioning attributes (`x`, `y`, `dx`, `dy`, `rotate`).
+ * - Supports typography attributes (`font-family`, `font-size`, `font-weight`, `font-style`, `letter-spacing`,
+ *   `word-spacing`, `text-decoration`, `writing-mode`).
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
  * {@see Base\BaseSvgBlockTag} for the base implementation.

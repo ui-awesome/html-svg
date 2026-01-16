@@ -17,10 +17,9 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * `<defs>` element are not rendered directly.
  *
  * Key features.
- * - Container for reusable graphical objects (gradients, patterns, shapes, etc.).
- * - Immutable, stateless design for safe reuse in rendering engines.
- * - Standards-compliant rendering of the `<defs>` SVG element.
- * - Type-safe methods for content and attribute management.
+ * - Container element accepts child elements.
+ * - Content is not rendered directly.
+ * - Defines reusable graphical objects (gradients, patterns, masks, etc.).
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
  * {@see Base\BaseSvgBlockTag} for the base implementation.

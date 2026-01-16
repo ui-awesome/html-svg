@@ -18,9 +18,10 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * The `<foreignObject>` element allows embedding of external XHTML/XML content within SVG.
  *
  * Key features.
- * - Designed for use in SVG tag/component classes requiring foreign content rendering.
- * - Standards-compliant implementation of the SVG `<foreignObject>` element.
- * - Supports opacity and transform attributes.
+ * - Container element accepts child elements.
+ * - Supports geometry attributes (`x`, `y`, `width`, `height`).
+ * - Supports presentation attributes (`opacity`).
+ * - Supports transform attribute (`transform`).
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject
  * {@see Base\BaseSvgBlockTag} for the base implementation.

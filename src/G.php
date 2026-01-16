@@ -31,10 +31,10 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * inheritance, and referencing via the `<use>` element. Attributes set on `<g>` are inherited by its children, and any
  * transformation applied to the group affects all contained elements.
  *
- * Key features:
- * - Designed for use in SVG tag/component classes requiring logical grouping of elements.
- * - Standards-compliant implementation of the SVG `<g>` container element.
- * - Supports grouping, attribute inheritance, and collective transformations.
+ * Key features.
+ * - Container element accepts child elements.
+ * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
+ * - Supports transform attribute (`transform`) for collective transformations.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
  * {@see Base\BaseSvgBlockTag} for the base implementation.
