@@ -82,6 +82,13 @@ enum SvgBlock: string implements BlockInterface
     case MASK = 'mask';
 
     /**
+     * `<pattern>` - Pattern definition.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/pattern
+     */
+    case PATTERN = 'pattern';
+
+    /**
      * `<svg>` - The root container for SVG graphics.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
