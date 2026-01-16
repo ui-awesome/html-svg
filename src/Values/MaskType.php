@@ -16,7 +16,7 @@ namespace UIAwesome\Html\Svg\Values;
  * - Strict mapping of `mask-type` values for semantic markup generation.
  * - Values follow the CSS Masking Module Level 1 specification for the `<mask>` element.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/mask-type
+ * @see \UIAwesome\Html\Svg\Mask::maskType()
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

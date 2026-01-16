@@ -16,7 +16,7 @@ namespace UIAwesome\Html\Svg\Values;
  * - Strict mapping of `spreadMethod` values for semantic markup generation and accessibility.
  * - Values follow the SVG 2 specification for `spreadMethod` attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/spreadMethod
+ * @see \UIAwesome\Html\Svg\LinearGradient::spreadMethod()
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

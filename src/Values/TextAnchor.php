@@ -16,7 +16,7 @@ namespace UIAwesome\Html\Svg\Values;
  * - Strict mapping of `text-anchor` values for semantic markup generation and accessibility.
  * - Values follow the SVG 2 specification for `text-anchor` attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor
+ * @see \UIAwesome\Html\Svg\Text::textAnchor()
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

@@ -16,7 +16,10 @@ namespace UIAwesome\Html\Svg\Values;
  * - Strict mapping of `preserveAspectRatio` values for semantic markup generation and accessibility.
  * - Values follow SVG 2 specification for `preserveAspectRatio` attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/preserveAspectRatio
+ * @see \UIAwesome\Html\Svg\Image::preserveAspectRatio()
+ * @see \UIAwesome\Html\Svg\Marker::preserveAspectRatio()
+ * @see \UIAwesome\Html\Svg\Pattern::preserveAspectRatio()
+ * @see \UIAwesome\Html\Svg\Svg::preserveAspectRatio()
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

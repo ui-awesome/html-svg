@@ -16,7 +16,7 @@ namespace UIAwesome\Html\Svg\Values;
  * - Strict mapping of decoding values for semantic markup generation and performance optimization.
  * - Values follow the HTML specification for decoding: `async`, `sync`, and `auto`.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding
+ * @see \UIAwesome\Html\Svg\Image::decoding()
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
