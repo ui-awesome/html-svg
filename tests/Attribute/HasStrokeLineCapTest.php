@@ -16,19 +16,9 @@ use UIAwesome\Html\Svg\Values\{StrokeLineCap, SvgAttribute};
 use UnitEnum;
 
 /**
- * Test suite for {@see HasStrokeLineCap} trait functionality and behavior.
+ * Unit test for the {@see HasStrokeLineCap} trait managing the `stroke-linecap` SVG attribute.
  *
- * Validates the management of the SVG `stroke-linecap` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `stroke-linecap` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `stroke-linecap` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `stroke-linecap` attribute.
- * - Proper assignment and overriding of `stroke-linecap` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see StrokeLineCapProvider} for test case data providers.
  *

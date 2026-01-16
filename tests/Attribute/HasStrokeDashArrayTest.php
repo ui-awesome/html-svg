@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeDashArrayProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasStrokeDashArray} trait functionality and behavior.
+ * Unit test for the {@see HasStrokeDashArray} trait managing the `stroke-dasharray` SVG attribute.
  *
- * Validates the management of the SVG `stroke-dasharray` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `stroke-dasharray` attribute in tag rendering,
- * supporting appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `stroke-dasharray` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `stroke-dasharray` attribute.
- * - Proper assignment and overriding of `stroke-dasharray` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see StrokeDashArrayProvider} for test case data providers.
  *

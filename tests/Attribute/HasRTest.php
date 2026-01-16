@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\RProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasR} trait functionality and behavior.
+ * Unit test for the {@see HasR} trait managing the `r` SVG attribute.
  *
- * Validates the management of the SVG `r` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `r` attribute in tag rendering, supporting appropriate
- * types and `null` for dynamic radius assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `r` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `r` attribute.
- * - Proper assignment and overriding of `r` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see RProvider} for test case data providers.
  *

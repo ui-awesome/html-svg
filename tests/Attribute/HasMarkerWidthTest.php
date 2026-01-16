@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\MarkerWidthProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasMarkerWidth} trait functionality and behavior.
+ * Unit test for the {@see HasMarkerWidth} trait managing the `markerWidth` SVG attribute.
  *
- * Validates the management of the SVG `markerWidth` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `markerWidth` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic width assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `markerWidth` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `markerWidth` attribute.
- * - Proper assignment and overriding of `markerWidth` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see MarkerWidthProvider} for test case data providers.
  *

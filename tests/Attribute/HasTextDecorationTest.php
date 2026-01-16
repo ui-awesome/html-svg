@@ -14,18 +14,9 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasTextDecoration} trait functionality and behavior.
+ * Unit test for the {@see HasTextDecoration} trait managing the `text-decoration` SVG attribute.
  *
- * Validates the management of the SVG `text-decoration` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `text-decoration` attribute in tag rendering,
- * supporting appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `text-decoration` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `text-decoration` attribute.
- * - Proper assignment and overriding of `text-decoration` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see TextDecorationProvider} for test case data providers.
  *

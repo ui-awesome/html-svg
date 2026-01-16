@@ -16,19 +16,9 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, WritingMode};
 use UnitEnum;
 
 /**
- * Test suite for {@see HasWritingMode} trait functionality and behavior.
+ * Unit test for the {@see HasWritingMode} trait managing the `writing-mode` SVG attribute.
  *
- * Validates the management of the SVG `writing-mode` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `writing-mode` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `writing-mode` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `writing-mode` attribute.
- * - Proper assignment and overriding of `writing-mode` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see WritingModeProvider} for test case data providers.
  *

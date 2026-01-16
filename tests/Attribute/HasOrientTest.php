@@ -14,18 +14,9 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasOrient} trait functionality and behavior.
+ * Unit test for the {@see HasOrient} trait managing the `orient` SVG attribute.
  *
- * Validates the management of the SVG `orient` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `orient` attribute in tag rendering, supporting
- * appropriate types (enum keywords, numeric angles, strings) and `null` for dynamic orientation assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `orient` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `orient` attribute.
- * - Proper assignment and overriding of `orient` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see OrientProvider} for test case data providers.
  *

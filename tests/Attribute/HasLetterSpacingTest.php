@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\LetterSpacingProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasLetterSpacing} trait functionality and behavior.
+ * Unit test for the {@see HasLetterSpacing} trait managing the `letter-spacing` SVG attribute.
  *
- * Validates the management of the SVG `letter-spacing` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `letter-spacing` attribute in tag rendering,
- * supporting appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `letter-spacing` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `letter-spacing` attribute.
- * - Proper assignment and overriding of `letter-spacing` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see LetterSpacingProvider} for test case data providers.
  *

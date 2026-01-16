@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\XProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasX} trait functionality and behavior.
+ * Unit test for the {@see HasX} trait managing the `x` SVG attribute.
  *
- * Validates the management of the SVG `x` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `x` attribute in tag rendering, supporting appropriate
- * types and `null` for dynamic coordinate assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `x` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `x` attribute.
- * - Proper assignment and overriding of `x` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see XProvider} for test case data providers.
  *

@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\Y1Provider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasY1} trait functionality and behavior.
+ * Unit test for the {@see HasY1} trait managing the `y1` SVG attribute.
  *
- * Validates the management of the SVG `y1` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `y1` attribute in tag rendering, supporting appropriate
- * types and `null` for dynamic coordinate assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `y1` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `y1` attribute.
- * - Proper assignment and overriding of `y1` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see Y1Provider} for test case data providers.
  *

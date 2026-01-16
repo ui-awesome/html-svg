@@ -15,19 +15,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillOpacityProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasFillOpacity} trait functionality and behavior.
+ * Unit test for the {@see HasFillOpacity} trait managing the `fill-opacity` SVG attribute.
  *
- * Validates management of SVG `fill-opacity` attribute according to SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of `fill-opacity` attribute in tag rendering, supporting
- * appropriate types and `null` for dynamic identifier assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with `fill-opacity` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of trait's API when setting or overriding `fill-opacity` attribute.
- * - Proper assignment and overriding of `fill-opacity` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see FillOpacityProvider} for test case data providers.
  *

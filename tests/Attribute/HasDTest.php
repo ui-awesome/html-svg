@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\DProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasD} trait functionality and behavior.
+ * Unit test for the {@see HasD} trait managing the `d` SVG attribute.
  *
- * Validates the management of the SVG `d` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and rendering of the `d` attribute in tag rendering, supporting appropriate
- * types and `null` for dynamic path data assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `d` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `d` attribute.
- * - Proper assignment and overriding of `d` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see DProvider} for test case data providers.
  *

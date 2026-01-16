@@ -13,18 +13,9 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\RyProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Test suite for {@see HasRy} trait functionality and behavior.
+ * Unit test for the {@see HasRy} trait managing the `ry` SVG attribute.
  *
- * Validates the management of the SVG `ry` attribute according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `ry` attribute in tag rendering, supporting appropriate
- * types and `null` for dynamic radius assignment.
- *
- * Test coverage.
- * - Accurate rendering of attributes with the `ry` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `ry` attribute.
- * - Proper assignment and overriding of `ry` value.
+ * Validates correct rendering, immutability, and attribute override behavior.
  *
  * {@see RyProvider} for test case data providers.
  *
