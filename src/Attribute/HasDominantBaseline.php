@@ -14,14 +14,14 @@ use UIAwesome\Html\Svg\Values\{DominantBaseline, SvgAttribute};
  * Provides a standards-compliant, immutable API for setting `dominant-baseline` attribute on SVG elements, following
  * the SVG 2 specification for baseline alignment properties.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of dominant baseline
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of dominant
+ * baseline property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `dominant-baseline` attribute.
  * - Immutable method for setting or overriding the `dominant-baseline` attribute.
- * - Supports string, {@see DominantBaseline} enum, and `null` for flexible baseline alignment assignment (specific
+ * - Supports `string`, {@see DominantBaseline} enum, and `null` for flexible baseline alignment assignment (specific
  *   value or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
@@ -44,7 +44,7 @@ trait HasDominantBaseline
      * `alphabetic`, `middle`, `central`, `hanging`, `mathematical`, `ideographic`, `text-top`, `text-bottom`,
      * {@see DominantBaseline} enum, or `null` to unset.
      *
-     * @throws InvalidArgumentException if the provided value is not a valid {@see DominantBaseline} enum or string.
+     * @throws InvalidArgumentException If the provided value is not a valid {@see DominantBaseline} enum or `string`.
      *
      * @return static New instance with the updated `dominant-baseline` attribute.
      *
@@ -53,13 +53,8 @@ trait HasDominantBaseline
      *
      * Usage example:
      * ```php
-     * // sets the `dominant-baseline` attribute to 'middle'
      * $element->dominantBaseline('middle');
-     *
-     * // sets the `dominant-baseline` attribute using enum
      * $element->dominantBaseline(DominantBaseline::HANGING);
-     *
-     * // unsets the `dominant-baseline` attribute
      * $element->dominantBaseline(null);
      * ```
      */

@@ -12,14 +12,14 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Provides a standards-compliant, immutable API for setting the `word-spacing` attribute on SVG elements, following the
  * SVG 2 specification for defining spacing between words in text.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the word spacing
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the word
+ * spacing property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `word-spacing` attribute.
  * - Immutable method for setting or overriding the `word-spacing` attribute.
- * - Supports float, int, string and `null` for flexible word spacing assignment (absolute, relative, or unset).
+ * - Supports `float`, `int`, `string`, and `null` for flexible word spacing assignment (absolute, relative, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -37,8 +37,8 @@ trait HasWordSpacing
      * Creates a new instance with the specified word spacing value, supporting explicit assignment according to the SVG
      * 2 specification for controlling spacing between words in text.
      *
-     * @param float|int|string|null $value Word spacing value to set for the element. Accepts any valid SVG length or
-     * keyword ('normal'), or `null` to unset (for example, '5', '0.5em', 'normal', or `null`).
+     * @param float|int|string|null $value Word spacing value (for example, `5`, `'0.5em'`, `'normal'`, or `null` to
+     * unset).
      *
      * @return static New instance with the updated `word-spacing` attribute.
      *
@@ -46,13 +46,8 @@ trait HasWordSpacing
      *
      * Usage example:
      * ```php
-     * // sets the `word-spacing` attribute to 5 user units
      * $element->wordSpacing(5);
-     *
-     * // sets the `word-spacing` attribute to 0.5em
      * $element->wordSpacing('0.5em');
-     *
-     * // unsets the `word-spacing` attribute
      * $element->wordSpacing(null);
      * ```
      */

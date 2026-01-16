@@ -12,15 +12,15 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Provides a standards-compliant, immutable API for setting the `font-size` attribute on SVG elements, following the
  * SVG 2 specification for defining the font size for text content.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the font size property,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the font size
+ * property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `font-size` attribute.
  * - Immutable method for setting or overriding the `font-size` attribute.
- * - Supports float, int, string and `null` for flexible font size assignment (absolute, relative, percentage, or
- *   unset).
+ * - Supports `float`, `int`, `string`, and `null` for flexible font size assignment (absolute, relative, percentage,
+ *   or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -38,8 +38,7 @@ trait HasFontSize
      * Creates a new instance with the specified font size value, supporting explicit assignment according to the SVG 2
      * specification for defining the size of the font from baseline to baseline.
      *
-     * @param float|int|string|null $value Font size value to set for the element. Accepts any valid SVG length,
-     * percentage, or keyword, or `null` to unset (for example, '16', '16px', '1.2em', '120%', or `null`).
+     * @param float|int|string|null $value Font size value (for example, `16`, `'1.2em'`, `'120%'`, or `null` to unset).
      *
      * @return static New instance with the updated `font-size` attribute.
      *
@@ -47,13 +46,8 @@ trait HasFontSize
      *
      * Usage example:
      * ```php
-     * // sets the `font-size` attribute to 16 user units
      * $element->fontSize(16);
-     *
-     * // sets the `font-size` attribute to 1.2em
      * $element->fontSize('1.2em');
-     *
-     * // unsets the `font-size` attribute
      * $element->fontSize(null);
      * ```
      */

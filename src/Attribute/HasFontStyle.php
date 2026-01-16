@@ -14,14 +14,14 @@ use UIAwesome\Html\Svg\Values\{FontStyle, SvgAttribute};
  * Provides a standards-compliant, immutable API for setting `font-style` attribute on SVG elements, following the SVG 2
  * specification for font style properties.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of font style property,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of font style
+ * property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `font-style` attribute.
  * - Immutable method for setting or overriding the `font-style` attribute.
- * - Supports string, {@see FontStyle} enum, and `null` for flexible font style assignment (specific value or unset).
+ * - Supports `string`, {@see FontStyle} enum, and `null` for flexible font style assignment (specific value or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -42,7 +42,7 @@ trait HasFontStyle
      * @param FontStyle|string|null $value Font style value to set for the element. Accepts `normal`, `italic`,
      * `oblique`, {@see FontStyle} enum, or `null` to unset.
      *
-     * @throws InvalidArgumentException if the provided value is not a valid {@see FontStyle} enum or string.
+     * @throws InvalidArgumentException If the provided value is not a valid {@see FontStyle} enum or `string`.
      *
      * @return static New instance with the updated `font-style` attribute.
      *
@@ -51,13 +51,8 @@ trait HasFontStyle
      *
      * Usage example:
      * ```php
-     * // sets the `font-style` attribute to 'italic'
      * $element->fontStyle('italic');
-     *
-     * // sets the `font-style` attribute using enum
      * $element->fontStyle(FontStyle::OBLIQUE);
-     *
-     * // unsets the `font-style` attribute
      * $element->fontStyle(null);
      * ```
      */

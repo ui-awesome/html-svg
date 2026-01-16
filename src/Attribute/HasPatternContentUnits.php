@@ -14,20 +14,20 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * Provides a standards-compliant, immutable API for setting the `patternContentUnits` attribute on SVG `<pattern>`
  * elements, following the SVG 2 specification for defining the coordinate system used by the pattern contents.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the pattern content
- * coordinate system, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the pattern
+ * content coordinate system, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG `<pattern>` tag and component classes.
  * - Enforces standards-compliant handling of the SVG `patternContentUnits` attribute.
  * - Immutable method for setting or overriding the `patternContentUnits` attribute.
- * - Supports string, {@see CoordinateUnits} enum, and `null` for flexible coordinate system assignment (specific value
- *   or unset).
+ * - Supports `string`, {@see CoordinateUnits} enum, and `null` for flexible coordinate system assignment (specific
+ *   value or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/patternContentUnits
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/patternContentUnits
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -40,10 +40,10 @@ trait HasPatternContentUnits
      * Creates a new instance with the specified pattern content units value, supporting explicit assignment according
      * to the SVG 2 specification.
      *
-     * @param CoordinateUnits|string|null $value Pattern content units value to set for the element. Accepts
-     * 'userSpaceOnUse', 'objectBoundingBox', {@see CoordinateUnits} enum, or `null` to unset.
+     * @param CoordinateUnits|string|null $value Pattern content units value (for example, `'userSpaceOnUse'`,
+     * {@see CoordinateUnits} enum, or `null` to unset).
      *
-     * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
+     * @throws InvalidArgumentException If the provided value is not a valid {@see CoordinateUnits} enum or `string`.
      *
      * @return static New instance with the updated `patternContentUnits` attribute.
      *
@@ -52,13 +52,8 @@ trait HasPatternContentUnits
      *
      * Usage example:
      * ```php
-     * // sets the `patternContentUnits` attribute to 'userSpaceOnUse'
      * $element->patternContentUnits('userSpaceOnUse');
-     *
-     * // sets the `patternContentUnits` attribute using an enum
      * $element->patternContentUnits(CoordinateUnits::OBJECT_BOUNDING_BOX);
-     *
-     * // unsets the `patternContentUnits` attribute
      * $element->patternContentUnits(null);
      * ```
      */

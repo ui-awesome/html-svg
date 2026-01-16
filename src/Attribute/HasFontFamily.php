@@ -12,14 +12,14 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Provides a standards-compliant, immutable API for setting the `font-family` attribute on SVG elements, following the
  * SVG 2 specification for defining the font family for text content.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the font family
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the font
+ * family property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `font-family` attribute.
  * - Immutable method for setting or overriding the `font-family` attribute.
- * - Supports string and `null` for flexible font family assignment (specific font(s) or unset).
+ * - Supports `string` and `null` for flexible font family assignment (specific font(s) or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -37,8 +37,7 @@ trait HasFontFamily
      * Creates a new instance with the specified font family value, supporting explicit assignment according to the SVG
      * 2 specification for defining the font family to be used for rendering text.
      *
-     * @param string|null $value Font family value to set for the element. Accepts any valid font family name or list of
-     * names, or `null` to unset (for example, 'Arial', 'Arial, sans-serif', or `null`).
+     * @param string|null $value Font family value (for example, `'Arial'`, `'Arial, sans-serif'`, or `null` to unset).
      *
      * @return static New instance with the updated `font-family` attribute.
      *
@@ -46,13 +45,8 @@ trait HasFontFamily
      *
      * Usage example:
      * ```php
-     * // sets the `font-family` attribute to Arial
      * $element->fontFamily('Arial');
-     *
-     * // sets the `font-family` attribute to a font stack
      * $element->fontFamily('Arial, Helvetica, sans-serif');
-     *
-     * // unsets the `font-family` attribute
      * $element->fontFamily(null);
      * ```
      */

@@ -14,14 +14,14 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, WritingMode};
  * Provides a standards-compliant, immutable API for setting `writing-mode` attribute on SVG elements, following the SVG
  * 2 specification for writing mode properties.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of writing mode property,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of writing mode
+ * property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `writing-mode` attribute.
  * - Immutable method for setting or overriding the `writing-mode` attribute.
- * - Supports string, {@see WritingMode} enum, and `null` for flexible writing mode assignment.
+ * - Supports `string`, {@see WritingMode} enum, and `null` for flexible writing mode assignment.
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -42,7 +42,7 @@ trait HasWritingMode
      * @param string|WritingMode|null $value Writing mode value to set for the element. Accepts `horizontal-tb`,
      * `vertical-rl`, `vertical-lr`, `sideways-rl`, `sideways-lr`, {@see WritingMode} enum, or `null` to unset.
      *
-     * @throws InvalidArgumentException if the provided value is not a valid {@see WritingMode} enum or string.
+     * @throws InvalidArgumentException If the provided value is not a valid {@see WritingMode} enum or `string`.
      *
      * @return static New instance with the updated `writing-mode` attribute.
      *
@@ -51,13 +51,8 @@ trait HasWritingMode
      *
      * Usage example:
      * ```php
-     * // sets the `writing-mode` attribute to 'vertical-rl'
      * $element->writingMode('vertical-rl');
-     *
-     * // sets the `writing-mode` attribute using enum
      * $element->writingMode(WritingMode::HORIZONTAL_TB);
-     *
-     * // unsets the `writing-mode` attribute
      * $element->writingMode(null);
      * ```
      */
