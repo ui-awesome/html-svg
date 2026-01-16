@@ -126,6 +126,7 @@
 - Enh #127: Add `HasMaskUnits` trait and corresponding tests for managing SVG `maskUnits` attribute (@terabytesoftw)
 - Enh #128: Add `Mask` class and corresponding tests for SVG `<mask>` element functionality (@terabytesoftw)
 - Bug #129: Update tests for rendering SVG elements with `accesskey`, `dir`, `hidden`, `title`, and `translate` attributes (@terabytesoftw)
+- Enh #130: Add `HasD` trait and corresponding tests for managing SVG `d` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
