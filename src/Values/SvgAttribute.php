@@ -258,6 +258,13 @@ enum SvgAttribute: string
     case PATH_LENGTH = 'pathLength';
 
     /**
+     * `patternContentUnits` - Defines the coordinate system for the contents of the `<pattern>` element.
+     *
+     * @link https://www.w3.org/TR/SVG2/pservers.html#PatternElementPatternContentUnitsAttribute
+     */
+    case PATTERN_CONTENT_UNITS = 'patternContentUnits';
+
+    /**
      * `points` - List of points for polyline and polygon elements.
      *
      * Defines the list of coordinate pairs used to draw the element.
