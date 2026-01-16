@@ -20,11 +20,11 @@ use function sprintf;
  * This centralized approach improves the consistency of error messages and simplifies potential internationalization.
  *
  * Key features.
- * - Centralization of an error text for easier maintenance.
- * - Consistent error handling across the system.
- * - Integration with specific exception classes.
- * - Message formatting with dynamic parameters.
- * - Standardized error messages for common and utility cases.
+ * - Centralizes error messages for easier maintenance.
+ * - Ensures consistent error messages across the system.
+ * - Integrates with exception classes.
+ * - Standardizes error messages for common cases.
+ * - Supports message formatting with dynamic parameters.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -53,37 +53,37 @@ enum Message: string
     case FAILED_TO_SANITIZE_SVG = "Failed to sanitize SVG content from file: '%s'.";
 
     /**
-     * Error when the title attribute is not a string or null.
+     * Error when the title attribute is not a `string` or `null`.
      *
-     * Message: "Title attribute must be a string or null."
+     * Message: "Title attribute must be a `string` or `null`."
      */
-    case TITLE_ATTRIBUTE_MUST_BE_STRING_OR_NULL = 'Title attribute must be a string or null.';
+    case TITLE_ATTRIBUTE_MUST_BE_STRING_OR_NULL = 'Title attribute must be a `string` or `null`.';
 
     /**
-     * Error when the value is not a number '>= 1' or `null`.
+     * Error when the value is not a number `>= 1` or `null`.
      *
-     * Message: "Value must be a number greater than or equal to '1' or 'null' to unset."
+     * Message: "Value must be a number greater than or equal to `1` or `null` to unset."
      */
-    case VALUE_MUST_BE_GTE_ONE_OR_NULL = "Value must be a number greater than or equal to '1' or 'null' to unset.";
+    case VALUE_MUST_BE_GTE_ONE_OR_NULL = 'Value must be a number greater than or equal to `1` or `null` to unset.';
 
     /**
      * Error when the value is not a positive number or `null`.
      *
-     * Message: "Value must be a positive number or 'null' to unset."
+     * Message: "Value must be a positive number or `null` to unset."
      */
-    case VALUE_MUST_BE_POSITIVE_NUMBER_OR_NULL = "Value must be a positive number or 'null' to unset.";
+    case VALUE_MUST_BE_POSITIVE_NUMBER_OR_NULL = 'Value must be a positive number or `null` to unset.';
 
     /**
      * Error when the value is out of range or not `null`.
      *
-     * Message: "Value must be a number between '%s' and '%s' inclusive or 'null' to unset."
+     * Message: "Value must be a number between '%s' and '%s' inclusive or `null` to unset."
      */
-    case VALUE_OUT_OF_RANGE_OR_NULL = "Value must be a number between '%s' and '%s' inclusive or 'null' to unset.";
+    case VALUE_OUT_OF_RANGE_OR_NULL = "Value must be a number between '%s' and '%s' inclusive or `null` to unset.";
 
     /**
      * Returns the formatted message string for the error case.
      *
-     * @param int|string $argument Dynamic arguments to insert into the message template.
+     * @param int|string ...$argument Values to insert into the message template.
      *
      * @return string Formatted error message with interpolated arguments.
      *

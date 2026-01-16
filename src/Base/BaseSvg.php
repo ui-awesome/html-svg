@@ -46,17 +46,17 @@ use function is_string;
  * Provides a standards-compliant, extensible foundation for SVG container rendering, supporting SVG attributes, content
  * management, and attribute immutability.
  *
- * Intended for use in components and tags that require dynamic or programmatic manipulation of SVG container elements,
- * supporting advanced rendering scenarios and consistent API design.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of SVG container
+ * elements, supporting advanced rendering scenarios and consistent API design.
  *
- * Key features:
- * - Automatically extracts the `title` attribute and renders it as a `<title>` tag (first child), ensuring
- *   compatibility with screen readers.
- * - Enforces standards-compliant handling of the `<svg>` element as defined by the SVG 2 specification.
+ * Key features.
+ * - Container element accepts child elements.
+ * - Enforces standards-compliant handling of the `<svg>` element (SVG 2 specification).
+ * - Extensible for custom SVG element implementations.
+ * - Extracts global attribute (`title`) into a `<title>` child for accessibility.
  * - Immutable API for attribute and content assignment.
- * - Implements the core logic for SVG container construction and file-based SVG injection.
  * - Integrates SVG attribute management.
- * - Supports extensibility for custom SVG element implementations.
+ * - Supports file-based SVG injection.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
  * {@see BaseBlock} for the base block-level implementation.

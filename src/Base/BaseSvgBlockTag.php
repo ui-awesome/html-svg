@@ -28,14 +28,15 @@ use function preg_replace;
  * Provides a standards-compliant, extensible foundation for SVG tag rendering, supporting attribute management,
  * content handling, and output normalization for block elements.
  *
- * Intended for use in components and tags that require dynamic or programmatic manipulation of SVG block elements,
- * ensuring consistent rendering and API design.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of SVG block
+ * elements, ensuring consistent rendering and API design.
  *
- * Key features:
- * - Implements content injection and output normalization for clean HTML structure.
- * - Integrates attribute, class, data, event, and style management for SVG block tags.
- * - Provides an abstract contract for specifying the concrete block tag via `getTag()` method.
- * - Supports `aria-*`, `language`, `role`, and `tabindex` attribute for accessibility and semantics.
+ * Key features.
+ * - Abstract contract for specifying the block tag via `getTag()` method.
+ * - Container element accepts child elements.
+ * - Integrates attribute, class, data, event, and style management.
+ * - Supports `aria-*`, `lang`, `role`, and `tabindex` attributes for accessibility and semantics.
+ * - Supports content injection and output normalization.
  *
  * {@see BaseTag} for the base tag-level implementation.
  *
