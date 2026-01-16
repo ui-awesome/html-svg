@@ -5,22 +5,9 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasRTest} class.
+ * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasRTest}.
  *
- * Supplies comprehensive test data for validating the handling of the SVG `r` attribute in tag rendering, ensuring
- * standards-compliant assignment, override behavior, and value propagation according to the SVG 2 specification.
- *
- * The test data covers real-world scenarios for setting, overriding, and unsetting the `r` attribute, supporting
- * appropriate types and `null` for attribute removal, to maintain consistent output across different rendering
- * configurations.
- *
- * The provider organizes test cases with descriptive names for clear identification of failure cases during test
- * execution and debugging sessions.
- *
- * Key features.
- * - Ensures correct propagation, override, and removal of the `r` attribute in SVG element rendering.
- * - Named test data sets for precise failure identification.
- * - Validation of appropriate types and `null` for the `r` attribute.
+ * Supplies test data for validating the SVG `r` attribute in tag rendering.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -28,15 +15,6 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 final class RProvider
 {
     /**
-     * Provides test cases for SVG `r` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the SVG `r` attribute.
-     *
-     * Each test case includes the input value, the initial attributes, the expected value, the expected rendered
-     * attribute string, and an assertion message for clear identification.
-     *
-     * @return array Test data for `r` attribute scenarios.
-     *
      * @phpstan-return array<string, array{float|int|string|null, mixed[], float|int|string, string, string}>
      */
     public static function values(): array

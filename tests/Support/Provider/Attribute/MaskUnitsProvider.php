@@ -9,22 +9,9 @@ use UIAwesome\Html\Svg\Values\CoordinateUnits;
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasMaskUnitsTest} class.
+ * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasMaskUnitsTest}.
  *
- * Supplies comprehensive test data for validating the handling of the SVG `maskUnits` attribute in tag rendering,
- * ensuring standards-compliant assignment, override behavior, and value propagation according to the CSS Masking Module
- * Level 1 specification.
- *
- * The test data covers real-world scenarios for setting, overriding, and unsetting the `maskUnits` attribute,
- * supporting appropriate types and `null` for attribute removal.
- *
- * The provider organizes test cases with descriptive names for clear identification of failure cases during test
- * execution and debugging sessions.
- *
- * Key features.
- * - Ensures correct propagation, override, and removal of the `maskUnits` attribute in SVG element rendering.
- * - Named test data sets for precise failure identification.
- * - Validation of appropriate types and `null` for the `maskUnits` attribute.
+ * Supplies test data for validating the SVG `maskUnits` attribute in tag rendering.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -32,15 +19,6 @@ use UnitEnum;
 final class MaskUnitsProvider
 {
     /**
-     * Provides test cases for SVG `maskUnits` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the SVG `maskUnits` attribute.
-     *
-     * Each test case includes the input value, the initial attributes, the expected value, the expected rendered
-     * attribute string, and an assertion message for clear identification.
-     *
-     * @return array Test data for `maskUnits` attribute scenarios.
-     *
      * @phpstan-return array<string, array{string|null|UnitEnum, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
