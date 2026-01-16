@@ -14,19 +14,19 @@ use UIAwesome\Html\Svg\Values\{PreserveAspectRatio, SvgAttribute};
  * Provides a standards-compliant, immutable API for setting the `preserveAspectRatio` attribute on SVG elements,
  * following the SVG 2 specification for preserving aspect ratio when scaling SVG content.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the preserve aspect
- * ratio property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the preserve
+ * aspect ratio property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `preserveAspectRatio` attribute.
  * - Immutable method for setting or overriding the `preserveAspectRatio` attribute.
- * - Supports string, {@see PreserveAspectRatio} enum, and `null` for flexible preserve aspect ratio assignment
+ * - Supports `string`, {@see PreserveAspectRatio} enum, and `null` for flexible preserve aspect ratio assignment
  *   (specific value or unset).
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/preserveAspectRatio
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -40,10 +40,10 @@ trait HasPreserveAspectRatio
      * to the SVG 2 specification for preserving aspect ratio when scaling SVG content to fit a viewport with a
      * different aspect ratio.
      *
-     * @param PreserveAspectRatio|string|null $value Preserve aspect ratio value supported by {@see PreserveAspectRatio}
-     * (for example, 'xMidYMid meet', 'none', 'xMaxYMax slice'), {@see PreserveAspectRatio} enum, or `null` to unset.
+     * @param PreserveAspectRatio|string|null $value Preserve aspect ratio value (for example, `'xMidYMid meet'`,
+     * {@see PreserveAspectRatio} enum, or `null` to unset).
      *
-     * @throws InvalidArgumentException if the provided value is not a valid {@see PreserveAspectRatio} enum or string.
+     * @throws InvalidArgumentException If the provided value is not a valid {@see PreserveAspectRatio} enum or `string`.
      *
      * @return static New instance with the updated `preserveAspectRatio` attribute.
      *
@@ -52,16 +52,8 @@ trait HasPreserveAspectRatio
      *
      * Usage example:
      * ```php
-     * // sets the `preserveAspectRatio` attribute to 'xMidYMid meet' (default)
      * $element->preserveAspectRatio('xMidYMid meet');
-     *
-     * // sets the `preserveAspectRatio` attribute to 'none' for non-uniform scaling
-     * $element->preserveAspectRatio('none');
-     *
-     * // sets the `preserveAspectRatio` attribute to 'xMaxYMax slice' using enum
      * $element->preserveAspectRatio(PreserveAspectRatio::X_MAX_Y_MAX_SLICE);
-     *
-     * // unsets the `preserveAspectRatio` attribute
      * $element->preserveAspectRatio(null);
      * ```
      */

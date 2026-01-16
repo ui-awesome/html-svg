@@ -12,19 +12,19 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Provides a standards-compliant, immutable API for setting the `points` attribute on SVG elements, following the SVG 2
  * specification for defining the list of points that make up a polyline.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of point lists, ensuring
- * correct attribute handling, type safety, and predictable rendering.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of point lists,
+ * ensuring correct attribute handling, type safety, and predictable rendering.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `points` attribute.
  * - Immutable method for setting or overriding the `points` attribute.
- * - Supports string and `null` for flexible point list assignment (or unset).
+ * - Supports `string` and `null` for flexible point list assignment (or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/points
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/points
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -37,8 +37,7 @@ trait HasPoints
      * Creates a new instance with the specified list of points value, supporting explicit assignment according to the
      * SVG 2 specification for defining the list of coordinate pairs.
      *
-     * @param string|null $value List of points (pairs of x,y coordinates) to set for the element. Accepts a string such
-     * as `0,0 10,10 20,0` or `null` to unset.
+     * @param string|null $value List of points (for example, `'0,0 10,10 20,0'`, or `null` to unset).
      *
      * @return static New instance with the updated `points` attribute.
      *
@@ -46,10 +45,7 @@ trait HasPoints
      *
      * Usage example:
      * ```php
-     * // sets the `points` attribute
      * $element->points('0,100 50,25 50,75 100,0');
-     *
-     * // unsets the `points` attribute
      * $element->points(null);
      * ```
      */

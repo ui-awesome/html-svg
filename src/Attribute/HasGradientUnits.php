@@ -14,14 +14,14 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * Provides a standards-compliant, immutable API for setting the `gradientUnits` attribute on SVG gradient elements,
  * following the SVG 2 specification for gradient coordinate systems.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the gradient units
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the gradient
+ * units property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG gradient tag and component classes.
  * - Enforces standards-compliant handling of the SVG `gradientUnits` attribute.
  * - Immutable method for setting or overriding the `gradientUnits` attribute.
- * - Supports string, {@see CoordinateUnits} enum, and `null` for flexible gradient coordinate system assignment
+ * - Supports `string`, {@see CoordinateUnits} enum, and `null` for flexible gradient coordinate system assignment
  *   (specific value or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
@@ -40,10 +40,10 @@ trait HasGradientUnits
      * Creates a new instance with the specified gradient units value, supporting explicit assignment according to the
      * SVG 2 specification for defining the coordinate system of gradient attributes.
      *
-     * @param CoordinateUnits|string|null $value Gradient units value to set for the element. Accepts 'userSpaceOnUse',
-     * 'objectBoundingBox', {@see CoordinateUnits} enum, or `null` to unset.
+     * @param CoordinateUnits|string|null $value Gradient units value (for example, `'userSpaceOnUse'`,
+     * {@see CoordinateUnits} enum, or `null` to unset).
      *
-     * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
+     * @throws InvalidArgumentException If the provided value is not a valid {@see CoordinateUnits} enum or `string`.
      *
      * @return static New instance with the updated `gradientUnits` attribute.
      *
@@ -52,13 +52,8 @@ trait HasGradientUnits
      *
      * Usage example:
      * ```php
-     * // sets the `gradientUnits` attribute to 'userSpaceOnUse'
      * $element->gradientUnits('userSpaceOnUse');
-     *
-     * // sets the `gradientUnits` attribute using an enum
      * $element->gradientUnits(CoordinateUnits::OBJECT_BOUNDING_BOX);
-     *
-     * // unsets the `gradientUnits` attribute
      * $element->gradientUnits(null);
      * ```
      */

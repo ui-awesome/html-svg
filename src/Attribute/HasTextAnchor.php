@@ -14,14 +14,14 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, TextAnchor};
  * Provides a standards-compliant, immutable API for setting `text-anchor` attribute on SVG elements, following the SVG
  * 2 specification for text anchor positioning properties.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of text anchor property,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of text anchor
+ * property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of SVG `text-anchor` attribute.
  * - Immutable method for setting or overriding the `text-anchor` attribute.
- * - Supports string, {@see TextAnchor} enum, and `null` for flexible text anchor assignment (specific value or unset).
+ * - Supports `string`, {@see TextAnchor} enum, and `null` for flexible text anchor assignment (specific value or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -42,7 +42,7 @@ trait HasTextAnchor
      * @param string|TextAnchor|null $value Text anchor value to set for the element. Accepts `start`, `middle`, `end`,
      * {@see TextAnchor} enum, or `null` to unset.
      *
-     * @throws InvalidArgumentException if the provided value is not a valid {@see TextAnchor} enum or string.
+     * @throws InvalidArgumentException If the provided value is not a valid {@see TextAnchor} enum or `string`.
      *
      * @return static New instance with the updated `text-anchor` attribute.
      *
@@ -51,13 +51,8 @@ trait HasTextAnchor
      *
      * Usage example:
      * ```php
-     * // sets the `text-anchor` attribute to 'middle'
      * $element->textAnchor('middle');
-     *
-     * // sets the `text-anchor` attribute using enum
      * $element->textAnchor(TextAnchor::END);
-     *
-     * // unsets the `text-anchor` attribute
      * $element->textAnchor(null);
      * ```
      */

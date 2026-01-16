@@ -14,20 +14,20 @@ use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgAttribute};
  * Provides a standards-compliant, immutable API for setting the `stroke-linejoin` attribute on SVG elements, following
  * the SVG 2 specification for controlling the shape of the corners where two lines meet in a stroked path or shape.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the stroke line join
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the stroke
+ * line join property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `stroke-linejoin` attribute.
  * - Immutable method for setting or overriding the `stroke-linejoin` attribute.
- * - Supports string, {@see StrokeLineJoin} enum, and `null` for flexible join assignment ('miter', 'round', 'bevel',
- *   'miter-clip', 'arcs', or unset).
+ * - Supports `string`, {@see StrokeLineJoin} enum, and `null` for flexible join assignment ('miter', 'round',
+ *   'bevel', 'miter-clip', 'arcs', or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-linejoin
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -37,10 +37,10 @@ trait HasStrokeLineJoin
     /**
      * Sets the SVG `stroke-linejoin` attribute for the element.
      *
-     * @param string|StrokeLineJoin|null $value Stroke line join style to set for the element. Accepts 'miter', 'round',
-     * 'bevel', 'miter-clip', 'arcs', {@see StrokeLineJoin} enum, or `null` to unset.
+     * @param string|StrokeLineJoin|null $value Stroke line join style (for example, `'miter'`,
+     * {@see StrokeLineJoin} enum, or `null` to unset).
      *
-     * @throws InvalidArgumentException if the provided value is not a valid {@see StrokeLineJoin} enum or string.
+     * @throws InvalidArgumentException If the provided value is not a valid {@see StrokeLineJoin} enum or `string`.
      *
      * @return static New instance with the updated `stroke-linejoin` attribute.
      *
@@ -49,13 +49,8 @@ trait HasStrokeLineJoin
      *
      * Usage example:
      * ```php
-     * // sets the `stroke-linejoin` attribute to 'miter'
      * $element->strokeLineJoin('miter');
-     *
-     * // sets the `stroke-linejoin` attribute using an enum
      * $element->strokeLineJoin(StrokeLineJoin::ROUND);
-     *
-     * // unsets the `stroke-linejoin` attribute
      * $element->strokeLineJoin(null);
      * ```
      */

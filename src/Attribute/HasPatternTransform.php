@@ -12,20 +12,20 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Provides a standards-compliant, immutable API for setting the `patternTransform` attribute on SVG `<pattern>`
  * elements, following the SVG 2 specification for pattern transformations.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the pattern transform
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the pattern
+ * transform property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG `<pattern>` tag and component classes.
  * - Enforces standards-compliant handling of the SVG `patternTransform` attribute.
  * - Immutable method for setting or overriding the `patternTransform` attribute.
- * - Supports string and `null` for flexible transform assignment (`matrix`, `translate`, `scale`, `rotate`, `skew`, or
- *   unset).
+ * - Supports `string` and `null` for flexible transform assignment (`matrix`, `translate`, `scale`, `rotate`, `skew`,
+ *   or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/patternTransform
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/patternTransform
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -38,8 +38,7 @@ trait HasPatternTransform
      * Creates a new instance with the specified pattern transform value, supporting explicit assignment according to
      * the SVG 2 specification for transforming pattern tiles.
      *
-     * @param string|null $value Transform value to set for the pattern element. Accepts any valid SVG transform
-     * specification (for example, 'rotate(45)', 'scale(2)', 'translate(10,20)', or `null` to unset).
+     * @param string|null $value Transform value (for example, `'rotate(45)'`, `'scale(2)'`, or `null` to unset).
      *
      * @return static New instance with the updated `patternTransform` attribute.
      *
@@ -47,13 +46,8 @@ trait HasPatternTransform
      *
      * Usage example:
      * ```php
-     * // sets the `patternTransform` attribute to rotate 45 degrees
      * $element->patternTransform('rotate(45)');
-     *
-     * // sets the `patternTransform` attribute to scale by 2
      * $element->patternTransform('scale(2)');
-     *
-     * // unsets the `patternTransform` attribute
      * $element->patternTransform(null);
      * ```
      */

@@ -12,15 +12,15 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, TextDecorationLine, TextDecorationS
  * Provides a standards-compliant, immutable API for setting the `text-decoration` attribute on SVG text elements,
  * following the SVG 2 specification and CSS Text Decoration Module for text decoration values.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the text decoration
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the text
+ * decoration property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG text tag and component classes.
  * - Enforces standards-compliant handling of the SVG `text-decoration` shorthand attribute.
  * - Immutable method for setting or overriding the `text-decoration` attribute.
- * - Supports string (space-separated shorthand), {@see TextDecorationLine} enum, {@see TextDecorationStyle} enum, and
- *   `null` for flexible text decoration assignment (specific value or unset).
+ * - Supports `string` (space-separated shorthand), {@see TextDecorationLine} enum, {@see TextDecorationStyle} enum,
+ *   and `null` for flexible text decoration assignment (specific value or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -38,9 +38,8 @@ trait HasTextDecoration
      * Creates a new instance with the specified text decoration value, supporting explicit assignment according to the
      * SVG 2 specification and CSS Text Decoration Module for defining decorative lines, styles, and colors on text.
      *
-     * @param string|TextDecorationLine|TextDecorationStyle|null $value Text decoration shorthand value to set for the
-     * element. Accepts {@see TextDecorationLine} enum, {@see TextDecorationStyle} enum, space-separated shorthand (for
-     * example, 'underline wavy red'), or `null` to unset.
+     * @param string|TextDecorationLine|TextDecorationStyle|null $value Text decoration shorthand value (for example,
+     * `'underline wavy red'`, {@see TextDecorationLine} enum, or `null` to unset).
      *
      * @return static New instance with the updated `text-decoration` attribute.
      *
@@ -50,19 +49,8 @@ trait HasTextDecoration
      *
      * Usage example:
      * ```php
-     * // sets the `text-decoration` attribute to 'underline'
      * $element->textDecoration('underline');
-     *
-     * // sets multiple line decorations with style and color
-     * $element->textDecoration('underline overline wavy red');
-     *
-     * // sets the `text-decoration` attribute using a line enum
      * $element->textDecoration(TextDecorationLine::LINE_THROUGH);
-     *
-     * // sets the `text-decoration` attribute using a style enum
-     * $element->textDecoration(TextDecorationStyle::DASHED);
-     *
-     * // unsets the `text-decoration` attribute
      * $element->textDecoration(null);
      * ```
      */

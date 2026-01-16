@@ -13,14 +13,14 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * the SVG 2 specification for controlling the pattern of dashes and gaps used to render the outline of shapes and text
  * content elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the stroke dash array
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the stroke dash
+ * array property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `stroke-dasharray` attribute.
  * - Immutable method for setting or overriding the `stroke-dasharray` attribute.
- * - Supports int, float, string, and `null` for flexible dash pattern assignment (absolute, relative, or unset).
+ * - Supports `int`, `float`, `string`, and `null` for flexible dash pattern assignment (absolute, relative, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -39,8 +39,7 @@ trait HasStrokeDashArray
      * specification for controlling the dash and gap pattern of the outline painted for shapes and text content
      * elements.
      *
-     * @param float|int|string|null $value Dash array value to set for the element. Accepts any valid SVG dash pattern,
-     * number, length, or `null` to unset (for example, '5.3', 4, or `null`).
+     * @param float|int|string|null $value Dash array value (for example, `5.3`, `4`, `'5.3 2'`, or `null` to unset).
      *
      * @return static New instance with the updated `stroke-dasharray` attribute.
      *
@@ -48,13 +47,8 @@ trait HasStrokeDashArray
      *
      * Usage example:
      * ```php
-     * // sets the `stroke-dasharray` attribute to 5.3
      * $element->strokeDashArray(5.3);
-     *
-     * // sets the `stroke-dasharray` attribute to 4 user units
      * $element->strokeDashArray(4);
-     *
-     * // unsets the `stroke-dasharray` attribute
      * $element->strokeDashArray(null);
      * ```
      */

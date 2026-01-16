@@ -14,20 +14,20 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * Provides a standards-compliant, immutable API for setting the `maskContentUnits` attribute on SVG `<mask>` elements,
  * following the CSS Masking Module Level 1 specification for defining the coordinate system used by the mask contents.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the mask content
- * coordinate system, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the mask
+ * content coordinate system, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG `<mask>` tag and component classes.
  * - Enforces standards-compliant handling of the SVG `maskContentUnits` attribute.
  * - Immutable method for setting or overriding the `maskContentUnits` attribute.
- * - Supports string, {@see CoordinateUnits} enum, and `null` for flexible coordinate system assignment (specific value
- *   or unset).
+ * - Supports `string`, {@see CoordinateUnits} enum, and `null` for flexible coordinate system assignment (specific
+ *   value or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/maskContentUnits
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/maskContentUnits
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -40,10 +40,10 @@ trait HasMaskContentUnits
      * Creates a new instance with the specified mask content units value, supporting explicit assignment according to
      * the CSS Masking Module Level 1 specification.
      *
-     * @param CoordinateUnits|string|null $value Mask content units value to set for the element. Accepts
-     * 'userSpaceOnUse', 'objectBoundingBox', {@see CoordinateUnits} enum, or `null` to unset.
+     * @param CoordinateUnits|string|null $value Mask content units value (for example, `'userSpaceOnUse'`,
+     * {@see CoordinateUnits} enum, or `null` to unset).
      *
-     * @throws InvalidArgumentException if the provided value is not a valid {@see CoordinateUnits} enum or string.
+     * @throws InvalidArgumentException If the provided value is not a valid {@see CoordinateUnits} enum or `string`.
      *
      * @return static New instance with the updated `maskContentUnits` attribute.
      *
@@ -52,13 +52,8 @@ trait HasMaskContentUnits
      *
      * Usage example:
      * ```php
-     * // sets the `maskContentUnits` attribute to 'userSpaceOnUse'
      * $element->maskContentUnits('userSpaceOnUse');
-     *
-     * // sets the `maskContentUnits` attribute using an enum
      * $element->maskContentUnits(CoordinateUnits::OBJECT_BOUNDING_BOX);
-     *
-     * // unsets the `maskContentUnits` attribute
      * $element->maskContentUnits(null);
      * ```
      */

@@ -15,14 +15,14 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Provides a standards-compliant, immutable API for setting the `opacity` attribute on SVG elements, following the
  * SVG 2 and HTML specifications for controlling the transparency of graphical and container elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the opacity property,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the opacity
+ * property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `opacity` attribute.
  * - Immutable method for setting or overriding the `opacity` attribute.
- * - Supports float, int, string, and `null` for flexible opacity assignment (object or group opacity, or unset).
+ * - Supports `float`, `int`, `string`, and `null` for flexible opacity assignment (object or group opacity, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -41,10 +41,9 @@ trait HasOpacity
      * specification for object and group opacity, which controls the transparency of the element or group when painted
      * to the canvas.
      *
-     * @param float|int|string|null $value Opacity value to set for the element. Accepts any valid SVG opacity value
-     * (for example, `0.0`–`1.0`, float, integer, string, or `null` to unset).
+     * @param float|int|string|null $value Opacity value (for example, `0.5`, `'0.75'`, or `null` to unset).
      *
-     * @throws InvalidArgumentException if the value is outside the allowed range ('0-1') and not `null`.
+     * @throws InvalidArgumentException If the value is outside the allowed range (`0`-`1`) and not `null`.
      *
      * @return static New instance with the updated `opacity` attribute.
      *
@@ -52,13 +51,8 @@ trait HasOpacity
      *
      * Usage example:
      * ```php
-     * // sets the `opacity` attribute to 0.5
      * $element->opacity(0.5);
-     *
-     * // sets the `opacity` attribute to '0.75'
      * $element->opacity('0.75');
-     *
-     * // unsets the `opacity` attribute
      * $element->opacity(null);
      * ```
      */

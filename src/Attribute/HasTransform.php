@@ -12,14 +12,14 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Provides a standards-compliant, immutable API for setting the `transform` attribute on SVG elements, following the
  * SVG 2 and HTML specifications for coordinate systems and transformations.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the transform property,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the transform
+ * property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
  * - Enforces standards-compliant handling of the SVG `transform` attribute.
  * - Immutable method for setting or overriding the `transform` attribute.
- * - Supports string and `null` for flexible transform assignment (matrix, translate, scale, rotate, skew, or unset).
+ * - Supports `string` and `null` for flexible transform assignment (matrix, translate, scale, rotate, skew, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -37,8 +37,7 @@ trait HasTransform
      * Creates a new instance with the specified transform value, supporting explicit assignment according to the SVG 2
      * and HTML specifications for transforming coordinate systems of graphical content.
      *
-     * @param string|null $value Transform value to set for the element. Accepts any valid SVG transform specification
-     * (for example, 'rotate(45)', 'scale(2)', 'translate(10,20)', or `null` to unset).
+     * @param string|null $value Transform value (for example, `'rotate(45)'`, `'scale(2)'`, or `null` to unset).
      *
      * @return static New instance with the updated `transform` attribute.
      *
@@ -46,13 +45,8 @@ trait HasTransform
      *
      * Usage example:
      * ```php
-     * // sets the `transform` attribute to rotate 45 degrees
      * $element->transform('rotate(45)');
-     *
-     * // sets the `transform` attribute to scale by 2
      * $element->transform('scale(2)');
-     *
-     * // unsets the `transform` attribute
      * $element->transform(null);
      * ```
      */

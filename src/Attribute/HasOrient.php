@@ -12,15 +12,15 @@ use UIAwesome\Html\Svg\Values\{Orient, SvgAttribute};
  * Provides a standards-compliant, immutable API for setting the `orient` attribute on SVG marker elements, following
  * the SVG 2 specification for defining marker orientation.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the marker orientation
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the marker
+ * orientation property, ensuring correct attribute handling, type safety, and value validation.
  *
  * Key features.
  * - Designed for use in SVG marker tag and component classes.
  * - Enforces standards-compliant handling of the SVG `orient` attribute.
  * - Immutable method for setting or overriding the `orient` attribute.
- * - Supports float, int, string, {@see Orient} enum, and `null` for flexible orientation assignment (angle, keyword, or
- *   unset).
+ * - Supports `float`, `int`, `string`, {@see Orient} enum, and `null` for flexible orientation assignment (angle,
+ *   keyword, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
@@ -38,8 +38,8 @@ trait HasOrient
      * Creates a new instance with the specified orientation value, supporting explicit assignment according to the SVG
      * 2 specification for defining how the marker is rotated when placed at its position on the shape.
      *
-     * @param float|int|Orient|string|null $value Orient value to set for the element. Accepts 'auto',
-     * 'auto-start-reverse', {@see Orient} enum, numeric angle (for example, '45', '90', '45.5'), or `null` to unset.
+     * @param float|int|Orient|string|null $value Orient value (for example, `'auto'`, {@see Orient} enum, `45`,
+     * or `null` to unset).
      *
      * @return static New instance with the updated `orient` attribute.
      *
@@ -48,17 +48,8 @@ trait HasOrient
      *
      * Usage example:
      * ```php
-     * // sets the `orient` attribute to 'auto'
      * $element->orient('auto');
-     *
-     * // sets the `orient` attribute using an enum
      * $element->orient(Orient::AUTO_START_REVERSE);
-     *
-     * // sets the `orient` attribute to a numeric angle
-     * $element->orient(45);
-     * $element->orient('90deg');
-     *
-     * // unsets the `orient` attribute
      * $element->orient(null);
      * ```
      */
