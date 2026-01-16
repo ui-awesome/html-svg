@@ -272,6 +272,13 @@ enum SvgAttribute: string
     case PATTERN_TRANSFORM = 'patternTransform';
 
     /**
+     * `patternUnits` - Defines the coordinate system for the geometry of the `<pattern>` element.
+     *
+     * @link https://www.w3.org/TR/SVG2/pservers.html#PatternElementPatternUnitsAttribute
+     */
+    case PATTERN_UNITS = 'patternUnits';
+
+    /**
      * `points` - List of points for polyline and polygon elements.
      *
      * Defines the list of coordinate pairs used to draw the element.
