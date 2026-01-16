@@ -515,7 +515,7 @@ final class MaskTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::MASK_CONTENT_UNITS->value,
-                implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
+                implode("', '", Enum::normalizeArray(CoordinateUnits::cases())),
             ),
         );
 
@@ -529,7 +529,7 @@ final class MaskTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::MASK_TYPE->value,
-                implode('\', \'', Enum::normalizeArray(MaskType::cases())),
+                implode("', '", Enum::normalizeArray(MaskType::cases())),
             ),
         );
 
@@ -543,7 +543,7 @@ final class MaskTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::MASK_UNITS->value,
-                implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
+                implode("', '", Enum::normalizeArray(CoordinateUnits::cases())),
             ),
         );
 

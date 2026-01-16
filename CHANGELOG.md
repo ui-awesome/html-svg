@@ -133,6 +133,7 @@
 - Enh #134: Add `HasPatternTransform` trait and corresponding tests for managing SVG `patternTransform` attribute (@terabytesoftw)
 - Enh #135: Add `HasPatternUnits` trait and corresponding tests for managing SVG `patternUnits` attribute (@terabytesoftw)
 - Enh #136: Add `Pattern` class and corresponding tests for SVG `<pattern>` element functionality (@terabytesoftw)
+- Bug #137: Correct string formatting in error messages for SVG attribute validation tests (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

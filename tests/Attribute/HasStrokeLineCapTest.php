@@ -107,7 +107,7 @@ final class HasStrokeLineCapTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::STROKE_LINECAP->value,
-                implode('\', \'', Enum::normalizeArray(StrokeLineCap::cases())),
+                implode("', '", Enum::normalizeArray(StrokeLineCap::cases())),
             ),
         );
 

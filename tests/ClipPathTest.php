@@ -415,7 +415,7 @@ final class ClipPathTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::CLIP_PATH_UNITS->value,
-                implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
+                implode("', '", Enum::normalizeArray(CoordinateUnits::cases())),
             ),
         );
 

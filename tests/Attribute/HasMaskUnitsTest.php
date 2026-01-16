@@ -107,7 +107,7 @@ final class HasMaskUnitsTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::MASK_UNITS->value,
-                implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
+                implode("', '", Enum::normalizeArray(CoordinateUnits::cases())),
             ),
         );
 

@@ -107,7 +107,7 @@ final class HasFillRuleTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::FILL_RULE->value,
-                implode('\', \'', Enum::normalizeArray(FillRule::cases())),
+                implode("', '", Enum::normalizeArray(FillRule::cases())),
             ),
         );
 

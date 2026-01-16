@@ -483,7 +483,7 @@ final class FilterTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::FILTER_UNITS->value,
-                implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
+                implode("', '", Enum::normalizeArray(CoordinateUnits::cases())),
             ),
         );
 
@@ -497,7 +497,7 @@ final class FilterTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::PRIMITIVE_UNITS->value,
-                implode('\', \'', Enum::normalizeArray(CoordinateUnits::cases())),
+                implode("', '", Enum::normalizeArray(CoordinateUnits::cases())),
             ),
         );
 

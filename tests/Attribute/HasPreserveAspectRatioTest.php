@@ -107,7 +107,7 @@ final class HasPreserveAspectRatioTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::PRESERVE_ASPECT_RATIO->value,
-                implode('\', \'', Enum::normalizeArray(PreserveAspectRatio::cases())),
+                implode("', '", Enum::normalizeArray(PreserveAspectRatio::cases())),
             ),
         );
 
