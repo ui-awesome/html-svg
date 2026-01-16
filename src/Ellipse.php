@@ -36,7 +36,7 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * The `<ellipse>` element is an SVG basic shape used to create ellipses based on a center point and two radii.
  *
  * Key features.
- * - Supports geometry attributes (`cx`, `cy`, `rx`, `ry`).
+ * - Supports geometry attributes (`cx`, `cy`, `rx`, `ry`, `pathLength`).
  * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
  * - Supports transform attribute (`transform`).
  * - Void element does not accept child elements.
