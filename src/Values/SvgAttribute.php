@@ -47,6 +47,15 @@ enum SvgAttribute: string
     case CY = 'cy';
 
     /**
+     * `d` - Path data string for `<path>` elements.
+     *
+     * Defines the list of commands and parameters used to draw a path.
+     *
+     * @link https://www.w3.org/TR/SVG2/paths.html#DAttribute
+     */
+    case D = 'd';
+
+    /**
      * `dominant-baseline` - Dominant baseline positioning attribute.
      *
      * Specifies the baseline used to align the text content of an element with respect to its parent.
