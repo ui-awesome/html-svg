@@ -512,7 +512,7 @@ final class PolylineTest extends TestCase
         );
         self::assertNotSame(
             $polyline,
-            $polyline->fillOpacity('0'),
+            $polyline->fillOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -522,12 +522,12 @@ final class PolylineTest extends TestCase
         );
         self::assertNotSame(
             $polyline,
-            $polyline->opacity('0'),
+            $polyline->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $polyline,
-            $polyline->pathLength(0),
+            $polyline->pathLength(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -557,12 +557,12 @@ final class PolylineTest extends TestCase
         );
         self::assertNotSame(
             $polyline,
-            $polyline->strokeMiterlimit('1'),
+            $polyline->strokeMiterlimit(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $polyline,
-            $polyline->strokeOpacity('0'),
+            $polyline->strokeOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(

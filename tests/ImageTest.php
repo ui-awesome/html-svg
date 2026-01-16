@@ -460,7 +460,7 @@ final class ImageTest extends TestCase
         );
         self::assertNotSame(
             $image,
-            $image->opacity('0'),
+            $image->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -475,12 +475,12 @@ final class ImageTest extends TestCase
         );
         self::assertNotSame(
             $image,
-            $image->x(0),
+            $image->x(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $image,
-            $image->y(0),
+            $image->y(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }

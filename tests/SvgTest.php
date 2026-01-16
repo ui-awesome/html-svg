@@ -972,7 +972,7 @@ final class SvgTest extends TestCase
         );
         self::assertNotSame(
             $svg,
-            $svg->fillOpacity('0'),
+            $svg->fillOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -982,7 +982,7 @@ final class SvgTest extends TestCase
         );
         self::assertNotSame(
             $svg,
-            $svg->opacity('0'),
+            $svg->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -1012,12 +1012,12 @@ final class SvgTest extends TestCase
         );
         self::assertNotSame(
             $svg,
-            $svg->strokeMiterlimit('1'),
+            $svg->strokeMiterlimit(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $svg,
-            $svg->strokeOpacity('0'),
+            $svg->strokeOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(

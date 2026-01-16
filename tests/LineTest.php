@@ -545,7 +545,7 @@ final class LineTest extends TestCase
         );
         self::assertNotSame(
             $line,
-            $line->fillOpacity('0'),
+            $line->fillOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -555,7 +555,7 @@ final class LineTest extends TestCase
         );
         self::assertNotSame(
             $line,
-            $line->opacity('0'),
+            $line->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -580,12 +580,12 @@ final class LineTest extends TestCase
         );
         self::assertNotSame(
             $line,
-            $line->strokeMiterlimit('1'),
+            $line->strokeMiterlimit(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $line,
-            $line->strokeOpacity('0'),
+            $line->strokeOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -600,22 +600,22 @@ final class LineTest extends TestCase
         );
         self::assertNotSame(
             $line,
-            $line->x1(0),
+            $line->x1(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $line,
-            $line->x2(0),
+            $line->x2(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $line,
-            $line->y1(0),
+            $line->y1(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $line,
-            $line->y2(0),
+            $line->y2(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }

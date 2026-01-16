@@ -393,12 +393,12 @@ final class ClipPathTest extends TestCase
 
         self::assertNotSame(
             $clipPath,
-            $clipPath->clipPathUnits('userSpaceOnUse'),
+            $clipPath->clipPathUnits(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $clipPath,
-            $clipPath->opacity('0'),
+            $clipPath->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(

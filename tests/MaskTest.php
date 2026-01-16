@@ -36,6 +36,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, MaskType, SvgAttribute};
  * - Precedence of user-defined attributes over global defaults and provider settings.
  *
  * {@see Mask} for element implementation details.
+ * {@see SimpleFactory} for default configuration management.
  * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.

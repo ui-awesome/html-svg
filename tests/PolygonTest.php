@@ -512,7 +512,7 @@ final class PolygonTest extends TestCase
         );
         self::assertNotSame(
             $polygon,
-            $polygon->fillOpacity('0'),
+            $polygon->fillOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -522,12 +522,12 @@ final class PolygonTest extends TestCase
         );
         self::assertNotSame(
             $polygon,
-            $polygon->opacity('0'),
+            $polygon->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $polygon,
-            $polygon->pathLength(0),
+            $polygon->pathLength(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -557,12 +557,12 @@ final class PolygonTest extends TestCase
         );
         self::assertNotSame(
             $polygon,
-            $polygon->strokeMiterlimit('1'),
+            $polygon->strokeMiterlimit(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $polygon,
-            $polygon->strokeOpacity('0'),
+            $polygon->strokeOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(

@@ -36,6 +36,7 @@ use UIAwesome\Html\Svg\Values\{MarkerUnits, Orient, PreserveAspectRatio, SvgAttr
  * - Precedence of user-defined attributes over global defaults and provider settings.
  *
  * {@see Marker} for element implementation details.
+ * {@see SimpleFactory} for default configuration management.
  * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.

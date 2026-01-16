@@ -542,7 +542,7 @@ final class GTest extends TestCase
         );
         self::assertNotSame(
             $g,
-            $g->fillOpacity('0'),
+            $g->fillOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -552,7 +552,7 @@ final class GTest extends TestCase
         );
         self::assertNotSame(
             $g,
-            $g->opacity('0'),
+            $g->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -577,12 +577,12 @@ final class GTest extends TestCase
         );
         self::assertNotSame(
             $g,
-            $g->strokeMiterlimit('1'),
+            $g->strokeMiterlimit(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $g,
-            $g->strokeOpacity('0'),
+            $g->strokeOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(

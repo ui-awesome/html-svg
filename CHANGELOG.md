@@ -128,6 +128,7 @@
 - Bug #129: Update tests for rendering SVG elements with `accesskey`, `dir`, `hidden`, `title`, and `translate` attributes (@terabytesoftw)
 - Enh #130: Add `HasD` trait and corresponding tests for managing SVG `d` attribute (@terabytesoftw)
 - Enh #131: Add `Path` class and corresponding tests for SVG `<path>` element functionality (@terabytesoftw)
+- Bug #132: Update related tests classes to ensure immutability and add missing tests (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
