@@ -394,7 +394,7 @@ final class UsesTest extends TestCase
 
         self::assertNotSame(
             $use,
-            $use->height(0),
+            $use->height(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -404,7 +404,7 @@ final class UsesTest extends TestCase
         );
         self::assertNotSame(
             $use,
-            $use->opacity('0'),
+            $use->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -414,17 +414,17 @@ final class UsesTest extends TestCase
         );
         self::assertNotSame(
             $use,
-            $use->width(0),
+            $use->width(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $use,
-            $use->x(0),
+            $use->x(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $use,
-            $use->y(0),
+            $use->y(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }

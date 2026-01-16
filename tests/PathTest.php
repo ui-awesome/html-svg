@@ -507,7 +507,7 @@ final class PathTest extends TestCase
 
         self::assertNotSame(
             $path,
-            $path->d('M10 10 H 90 V 90 H 10 Z'),
+            $path->d(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -517,7 +517,7 @@ final class PathTest extends TestCase
         );
         self::assertNotSame(
             $path,
-            $path->fillOpacity('0'),
+            $path->fillOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -532,7 +532,7 @@ final class PathTest extends TestCase
         );
         self::assertNotSame(
             $path,
-            $path->pathLength(0),
+            $path->pathLength(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -557,12 +557,12 @@ final class PathTest extends TestCase
         );
         self::assertNotSame(
             $path,
-            $path->strokeMiterlimit('1'),
+            $path->strokeMiterlimit(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $path,
-            $path->strokeOpacity('0'),
+            $path->strokeOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(

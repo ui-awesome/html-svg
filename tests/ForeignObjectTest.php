@@ -418,12 +418,12 @@ final class ForeignObjectTest extends TestCase
 
         self::assertNotSame(
             $foreignObject,
-            $foreignObject->height('0'),
+            $foreignObject->height(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $foreignObject,
-            $foreignObject->opacity('0'),
+            $foreignObject->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -433,17 +433,17 @@ final class ForeignObjectTest extends TestCase
         );
         self::assertNotSame(
             $foreignObject,
-            $foreignObject->width('0'),
+            $foreignObject->width(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $foreignObject,
-            $foreignObject->x('0'),
+            $foreignObject->x(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $foreignObject,
-            $foreignObject->y('0'),
+            $foreignObject->y(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }

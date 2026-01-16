@@ -446,32 +446,32 @@ final class FilterTest extends TestCase
 
         self::assertNotSame(
             $filter,
-            $filter->filterUnits('userSpaceOnUse'),
+            $filter->filterUnits(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $filter,
-            $filter->height('0'),
+            $filter->height(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $filter,
-            $filter->primitiveUnits('objectBoundingBox'),
+            $filter->primitiveUnits(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $filter,
-            $filter->width('0'),
+            $filter->width(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $filter,
-            $filter->x('0'),
+            $filter->x(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $filter,
-            $filter->y('0'),
+            $filter->y(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }

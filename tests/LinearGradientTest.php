@@ -7,9 +7,11 @@ namespace UIAwesome\Html\Svg\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Core\Factory\SimpleFactory;
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\LinearGradient;
+use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
 
@@ -29,6 +31,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
  * - Immutability of the API, ensuring that setting attributes returns a new instance.
  *
  * {@see LinearGradient} for element implementation details.
+ * {@see SimpleFactory} for default configuration management.
  * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
@@ -178,6 +181,46 @@ final class LinearGradientTest extends TestCase
         );
     }
 
+    public function testRenderWithDefaultConfigurationValues(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient class="default-class">
+            </linearGradient>
+            HTML,
+            LinearGradient::tag(['class' => 'default-class'])->render(),
+            'Failed asserting that default configuration values are applied correctly.',
+        );
+    }
+
+    public function testRenderWithDefaultProvider(): void
+    {
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient class="default-class">
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+            'Failed asserting that default provider is applied correctly.',
+        );
+    }
+
+    public function testRenderWithGlobalDefaultsAreApplied(): void
+    {
+        SimpleFactory::setDefaults(LinearGradient::class, ['class' => 'default-class']);
+
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient class="default-class">
+            </linearGradient>
+            HTML,
+            LinearGradient::tag()->render(),
+            'Failed asserting that global defaults are applied correctly.',
+        );
+
+        SimpleFactory::setDefaults(LinearGradient::class, []);
+    }
+
     public function testRenderWithGradientTransform(): void
     {
         self::equalsWithoutLE(
@@ -321,6 +364,22 @@ final class LinearGradientTest extends TestCase
         );
     }
 
+    public function testRenderWithUserOverridesGlobalDefaults(): void
+    {
+        SimpleFactory::setDefaults(LinearGradient::class, ['class' => 'from-global', 'id' => 'id-global']);
+
+        self::equalsWithoutLE(
+            <<<HTML
+            <linearGradient class="from-global" id="id-user">
+            </linearGradient>
+            HTML,
+            LinearGradient::tag(['id' => 'id-user'])->render(),
+            'Failed asserting that user-defined attributes override global defaults correctly.',
+        );
+
+        SimpleFactory::setDefaults(LinearGradient::class, []);
+    }
+
     public function testRenderWithX1(): void
     {
         self::equalsWithoutLE(
@@ -379,7 +438,7 @@ final class LinearGradientTest extends TestCase
 
         self::assertNotSame(
             $gradient,
-            $gradient->gradientUnits('userSpaceOnUse'),
+            $gradient->gradientUnits(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -389,27 +448,27 @@ final class LinearGradientTest extends TestCase
         );
         self::assertNotSame(
             $gradient,
-            $gradient->spreadMethod('pad'),
+            $gradient->spreadMethod(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $gradient,
-            $gradient->x1('0'),
+            $gradient->x1(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $gradient,
-            $gradient->y1('0'),
+            $gradient->y1(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $gradient,
-            $gradient->x2('100%'),
+            $gradient->x2(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $gradient,
-            $gradient->y2('100%'),
+            $gradient->y2(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }

@@ -518,12 +518,12 @@ final class CircleTest extends TestCase
 
         self::assertNotSame(
             $circle,
-            $circle->cx(0),
+            $circle->cx(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $circle,
-            $circle->cy(0),
+            $circle->cy(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -533,7 +533,7 @@ final class CircleTest extends TestCase
         );
         self::assertNotSame(
             $circle,
-            $circle->fillOpacity('0'),
+            $circle->fillOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -543,12 +543,12 @@ final class CircleTest extends TestCase
         );
         self::assertNotSame(
             $circle,
-            $circle->opacity('0'),
+            $circle->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $circle,
-            $circle->r(0),
+            $circle->r(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -573,12 +573,12 @@ final class CircleTest extends TestCase
         );
         self::assertNotSame(
             $circle,
-            $circle->strokeMiterlimit('1'),
+            $circle->strokeMiterlimit(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $circle,
-            $circle->strokeOpacity('0'),
+            $circle->strokeOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(

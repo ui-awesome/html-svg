@@ -43,6 +43,7 @@ use UIAwesome\Html\Svg\Values\{
  * - Validation of positioning attributes such as `x`, `y`, `dx`, `dy`, and `rotate`.
  *
  * {@see Text} for element implementation details.
+ * {@see SimpleFactory} for default configuration management.
  * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -564,6 +565,22 @@ final class TextTest extends TestCase
         );
     }
 
+    public function testRenderWithUserOverridesGlobalDefaults(): void
+    {
+        SimpleFactory::setDefaults(Text::class, ['class' => 'from-global', 'id' => 'id-global']);
+
+        self::equalsWithoutLE(
+            <<<HTML
+            <text class="from-global" id="id-user">
+            </text>
+            HTML,
+            Text::tag(['id' => 'id-user'])->render(),
+            'Failed asserting that user-defined attributes override global defaults correctly.',
+        );
+
+        SimpleFactory::setDefaults(Text::class, []);
+    }
+
     public function testRenderWithWordSpacing(): void
     {
         self::assertSame(
@@ -630,12 +647,12 @@ final class TextTest extends TestCase
         );
         self::assertNotSame(
             $text,
-            $text->dx('0'),
+            $text->dx(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $text,
-            $text->dy('0'),
+            $text->dy(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -685,12 +702,12 @@ final class TextTest extends TestCase
         );
         self::assertNotSame(
             $text,
-            $text->textLength('0'),
+            $text->textLength(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $text,
-            $text->wordSpacing('0'),
+            $text->wordSpacing(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -700,12 +717,12 @@ final class TextTest extends TestCase
         );
         self::assertNotSame(
             $text,
-            $text->x('0'),
+            $text->x(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $text,
-            $text->y('0'),
+            $text->y(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }

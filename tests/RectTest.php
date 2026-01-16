@@ -567,7 +567,7 @@ final class RectTest extends TestCase
         );
         self::assertNotSame(
             $rect,
-            $rect->fillOpacity('0'),
+            $rect->fillOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -582,12 +582,12 @@ final class RectTest extends TestCase
         );
         self::assertNotSame(
             $rect,
-            $rect->opacity('0'),
+            $rect->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $rect,
-            $rect->pathLength('0'),
+            $rect->pathLength(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -622,12 +622,12 @@ final class RectTest extends TestCase
         );
         self::assertNotSame(
             $rect,
-            $rect->strokeMiterlimit('1'),
+            $rect->strokeMiterlimit(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $rect,
-            $rect->strokeOpacity('0'),
+            $rect->strokeOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(

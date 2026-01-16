@@ -540,12 +540,12 @@ final class EllipseTest extends TestCase
 
         self::assertNotSame(
             $ellipse,
-            $ellipse->cx(0),
+            $ellipse->cx(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $ellipse,
-            $ellipse->cy(0),
+            $ellipse->cy(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -555,7 +555,7 @@ final class EllipseTest extends TestCase
         );
         self::assertNotSame(
             $ellipse,
-            $ellipse->fillOpacity('0'),
+            $ellipse->fillOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -565,22 +565,22 @@ final class EllipseTest extends TestCase
         );
         self::assertNotSame(
             $ellipse,
-            $ellipse->opacity('0'),
+            $ellipse->opacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $ellipse,
-            $ellipse->pathLength(0),
+            $ellipse->pathLength(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $ellipse,
-            $ellipse->rx(0),
+            $ellipse->rx(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $ellipse,
-            $ellipse->ry(0),
+            $ellipse->ry(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
@@ -605,12 +605,12 @@ final class EllipseTest extends TestCase
         );
         self::assertNotSame(
             $ellipse,
-            $ellipse->strokeMiterlimit('1'),
+            $ellipse->strokeMiterlimit(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
             $ellipse,
-            $ellipse->strokeOpacity('0'),
+            $ellipse->strokeOpacity(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
         self::assertNotSame(
