@@ -16,7 +16,7 @@ namespace UIAwesome\Html\Svg\Values;
  * - Strict mapping of `text-decoration-style` values for semantic markup generation.
  * - Values follow the CSS Text Decoration specification.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style
+ * @see \UIAwesome\Html\Svg\Text::textDecoration()
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

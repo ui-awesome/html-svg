@@ -14,7 +14,7 @@ namespace UIAwesome\Html\Svg\Values;
  * - Suitable for building attribute arrays and rendering SVG markup.
  * - Values follow the `<svg>` attributes listed in the MDN documentation.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -477,7 +477,7 @@ enum SvgAttribute: string
      *
      * Specifies whether the initial inline-progression-direction is left-to-right, right-to-left, or top-to-bottom.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode
+     * @link https://www.w3.org/TR/SVG2/text.html#WritingModeProperty
      */
     case WRITING_MODE = 'writing-mode';
 

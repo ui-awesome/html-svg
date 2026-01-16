@@ -16,7 +16,7 @@ namespace UIAwesome\Html\Svg\Values;
  * - Strict mapping of `dominant-baseline` values for semantic markup generation and accessibility.
  * - Values follow the SVG 2 specification for `dominant-baseline` attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline
+ * @see \UIAwesome\Html\Svg\Text::dominantBaseline()
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

@@ -135,6 +135,7 @@
 - Enh #136: Add `Pattern` class and corresponding tests for SVG `<pattern>` element functionality (@terabytesoftw)
 - Bug #137: Correct string formatting in error messages for SVG attribute validation tests (@terabytesoftw)
 - Bug #138: Refactor PHPdocs in SVG attribute handling for improved clarity and consistency (@terabytesoftw)
+- Bug #139: Update PHPdoc references for SVG value enums to improve clarity and consistency (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

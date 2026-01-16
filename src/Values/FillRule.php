@@ -16,7 +16,15 @@ namespace UIAwesome\Html\Svg\Values;
  * - Strict mapping of `fill-rule` values for semantic markup generation and accessibility.
  * - Values follow SVG 2 specification for `fill-rule` attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+ * @see \UIAwesome\Html\Svg\Circle::fillRule()
+ * @see \UIAwesome\Html\Svg\Ellipse::fillRule()
+ * @see \UIAwesome\Html\Svg\G::fillRule()
+ * @see \UIAwesome\Html\Svg\Line::fillRule()
+ * @see \UIAwesome\Html\Svg\Path::fillRule()
+ * @see \UIAwesome\Html\Svg\Polygon::fillRule()
+ * @see \UIAwesome\Html\Svg\Polyline::fillRule()
+ * @see \UIAwesome\Html\Svg\Rect::fillRule()
+ * @see \UIAwesome\Html\Svg\Text::fillRule()
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

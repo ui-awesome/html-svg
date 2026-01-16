@@ -16,7 +16,15 @@ namespace UIAwesome\Html\Svg\Values;
  * - Strict mapping of `stroke-linecap` values for semantic markup generation and accessibility.
  * - Values follow the SVG 2 specification for `stroke-linecap` attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap
+ * @see \UIAwesome\Html\Svg\Circle::strokeLineCap()
+ * @see \UIAwesome\Html\Svg\Ellipse::strokeLineCap()
+ * @see \UIAwesome\Html\Svg\G::strokeLineCap()
+ * @see \UIAwesome\Html\Svg\Line::strokeLineCap()
+ * @see \UIAwesome\Html\Svg\Path::strokeLineCap()
+ * @see \UIAwesome\Html\Svg\Polygon::strokeLineCap()
+ * @see \UIAwesome\Html\Svg\Polyline::strokeLineCap()
+ * @see \UIAwesome\Html\Svg\Rect::strokeLineCap()
+ * @see \UIAwesome\Html\Svg\Text::strokeLineCap()
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

@@ -16,7 +16,7 @@ namespace UIAwesome\Html\Svg\Values;
  * - Strict mapping of `font-style` values for semantic markup generation and accessibility.
  * - Values follow the SVG 2 specification for `font-style` attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-style
+ * @see \UIAwesome\Html\Svg\Text::fontStyle()
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
