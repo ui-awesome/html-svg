@@ -137,6 +137,7 @@
 - Bug #138: Refactor PHPdocs in SVG attribute handling for improved clarity and consistency (@terabytesoftw)
 - Bug #139: Update PHPdoc references for SVG value enums to improve clarity and consistency (@terabytesoftw)
 - Bug #140: Update PHPdoc descriptions for SVG elements to enhance clarity and consistency (@terabytesoftw)
+- Bug #141: Improve PHPdoc descriptions for related SVG classes to improve clarity and consistency (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

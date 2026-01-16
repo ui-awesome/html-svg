@@ -12,13 +12,13 @@ use UIAwesome\Html\Interop\VoidInterface;
  * Provides a type-safe set of SVG void element tokens for use in helpers and components that require explicit SVG
  * element names.
  *
- * Key features:
- * - Designed for SVG elements that do not contain child elements (void elements).
- * - Implementation of {@see VoidInterface} for contract adherence.
+ * Key features.
+ * - Implements {@see VoidInterface} for contract adherence.
  * - Suitable for SVG markup generation and element validation.
- * - Values correspond to SVG elements as defined in the MDN documentation.
+ * - Values correspond to SVG elements as defined in MDN documentation.
+ * - Void element does not accept child elements.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element
  * {@see VoidInterface} for contract details.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
@@ -69,7 +69,7 @@ enum SvgVoid: string implements VoidInterface
     case POLYGON = 'polygon';
 
     /**
-     * `<polyline>` - SVG polyline element.
+     * `<polyline>` - Draws a series of connected straight lines.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline
      */
