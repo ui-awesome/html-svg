@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{LengthAdjust, SvgAttribute};
  * Intended for use in SVG tag and component classes that set length adjustment values.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `lengthAdjust` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `lengthAdjust` attribute.
  * - Supports `string`, {@see LengthAdjust} enum, and `null` for flexible length adjust assignment (specific value or
  *   unset).

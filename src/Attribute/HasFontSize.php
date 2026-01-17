@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set the font size.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `font-size` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `font-size` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible font size assignment (absolute, relative, percentage,
  *   or unset).

@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set point lists.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `points` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `points` attribute.
  * - Supports `string` and `null` for flexible point list assignment (or unset).
  *

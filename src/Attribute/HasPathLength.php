@@ -17,8 +17,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set path length values.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `pathLength` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `pathLength` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible path length assignment (specific length or unset).
  *

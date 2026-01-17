@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set the reference y coordinate.
  *
  * Key features.
- * - Designed for use in SVG marker tag and component classes.
  * - Delegates to `addAttribute()` for the `refY` attribute.
+ * - Designed for use in SVG marker tag and component classes.
  * - Immutable method for setting or overriding the `refY` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible coordinate assignment (absolute, relative, or unset).
  *

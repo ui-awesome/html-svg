@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{MaskType, SvgAttribute};
  * Intended for use in SVG tag and component classes that set mask type values.
  *
  * Key features.
- * - Designed for use in SVG `<mask>` tag and component classes.
  * - Delegates to `addAttribute()` for the `mask-type` attribute.
+ * - Designed for use in SVG `<mask>` tag and component classes.
  * - Immutable method for setting or overriding the `mask-type` attribute.
  * - Supports `string`, {@see MaskType} enum, and `null` for flexible mask type assignment (specific value or unset).
  *

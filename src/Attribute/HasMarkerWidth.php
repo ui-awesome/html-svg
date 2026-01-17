@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set marker width.
  *
  * Key features.
- * - Designed for use in SVG marker tag and component classes.
  * - Delegates to `addAttribute()` for the `markerWidth` attribute.
+ * - Designed for use in SVG marker tag and component classes.
  * - Immutable method for setting or overriding the `markerWidth` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible width assignment (absolute, relative, or unset).
  *

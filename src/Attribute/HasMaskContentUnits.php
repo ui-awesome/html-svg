@@ -17,8 +17,8 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * Intended for use in SVG tag and component classes that set mask content units.
  *
  * Key features.
- * - Designed for use in SVG `<mask>` tag and component classes.
  * - Delegates to `addAttribute()` for the `maskContentUnits` attribute.
+ * - Designed for use in SVG `<mask>` tag and component classes.
  * - Immutable method for setting or overriding the `maskContentUnits` attribute.
  * - Supports `string`, {@see CoordinateUnits} enum, and `null` for flexible coordinate system assignment (specific
  *   value or unset).

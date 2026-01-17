@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set rotation values.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `rotate` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `rotate` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible rotation assignment (single value, list, or unset).
  *

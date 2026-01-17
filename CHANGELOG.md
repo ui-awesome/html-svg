@@ -147,7 +147,7 @@
 - Enh #148: Add `HasFx` trait and corresponding tests for managing SVG `fx` attribute (@terabytesoftw)
 - Enh #149: Add `HasFy` trait and corresponding tests for managing SVG `fy` attribute (@terabytesoftw)
 - Enh #150: Add `RadialGradient` class and corresponding tests for SVG `<radialGradient>` element functionality (@terabytesoftw)
-
+- Bug #151: Ordered key features in PHPdoc for better readability in related SVG attribute traits (@terabytesoftw)
 ## 0.2.0 March 31, 2024
 
 - Enh #2: Add `ui-awesome/html-core` package and remove `ui-awesome/html-helper` package (@terabytesoftw)

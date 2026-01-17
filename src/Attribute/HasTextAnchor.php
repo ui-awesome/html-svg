@@ -16,10 +16,11 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, TextAnchor};
  * Intended for use in SVG tag and component classes that set text anchor values.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `text-anchor` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `text-anchor` attribute.
- * - Supports `string`, {@see TextAnchor} enum, and `null` for flexible text anchor assignment (specific value or unset).
+ * - Supports `string`, {@see TextAnchor} enum, and `null` for flexible text anchor assignment (specific value or
+ *   unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.

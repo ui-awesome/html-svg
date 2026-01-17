@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set path data.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `d` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `d` attribute.
  * - Supports `string` and `null` for flexible path data assignment (or unset).
  *

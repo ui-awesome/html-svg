@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgAttribute};
  * Intended for use in SVG tag and component classes that set the stroke line join.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `stroke-linejoin` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `stroke-linejoin` attribute.
  * - Supports `string`, {@see StrokeLineJoin} enum, and `null` for flexible join assignment (`miter`, `round`,
  *   `bevel`, `miter-clip`, `arcs`, or unset).

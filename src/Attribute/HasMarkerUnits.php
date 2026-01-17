@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{MarkerUnits, SvgAttribute};
  * Intended for use in SVG tag and component classes that set marker units.
  *
  * Key features.
- * - Designed for use in SVG marker tag and component classes.
  * - Delegates to `addAttribute()` for the `markerUnits` attribute.
+ * - Designed for use in SVG marker tag and component classes.
  * - Immutable method for setting or overriding the `markerUnits` attribute.
  * - Supports `string`, {@see MarkerUnits} enum, and `null` for flexible marker coordinate system assignment (specific
  *   value or unset).

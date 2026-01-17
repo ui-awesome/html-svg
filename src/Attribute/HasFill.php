@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set the fill paint value.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `fill` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `fill` attribute.
  * - Supports `string` and `null` for flexible fill assignment (color, pattern, gradient, or unset).
  *

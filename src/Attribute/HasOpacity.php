@@ -17,8 +17,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set opacity values.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `opacity` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `opacity` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible opacity assignment (object or group opacity, or unset).
  *

@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{FillRule, SvgAttribute};
  * Intended for use in SVG tag and component classes that set the fill rule.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `fill-rule` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `fill-rule` attribute.
  * - Supports `string`, {@see FillRule} enum, and `null` for flexible fill rule assignment (specific value or unset).
  *

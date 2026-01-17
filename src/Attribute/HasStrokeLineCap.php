@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{StrokeLineCap, SvgAttribute};
  * Intended for use in SVG tag and component classes that set the stroke line cap.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `stroke-linecap` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `stroke-linecap` attribute.
  * - Supports `string`, {@see StrokeLineCap} enum, and `null` for flexible cap assignment (`butt`, `round`, `square`,
  *   or unset).

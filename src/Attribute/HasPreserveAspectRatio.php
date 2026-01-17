@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{PreserveAspectRatio, SvgAttribute};
  * Intended for use in SVG tag and component classes that set preserve aspect ratio values.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `preserveAspectRatio` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `preserveAspectRatio` attribute.
  * - Supports `string`, {@see PreserveAspectRatio} enum, and `null` for flexible preserve aspect ratio assignment
  *   (specific value or unset).

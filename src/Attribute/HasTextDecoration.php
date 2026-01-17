@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, TextDecorationLine, TextDecorationS
  * Intended for use in SVG tag and component classes that set text decoration values.
  *
  * Key features.
- * - Designed for use in SVG text tag and component classes.
  * - Delegates to `addAttribute()` for the `text-decoration` attribute.
+ * - Designed for use in SVG text tag and component classes.
  * - Immutable method for setting or overriding the `text-decoration` attribute.
  * - Supports `string` (space-separated shorthand), {@see TextDecorationLine} enum, {@see TextDecorationStyle} enum,
  *   and `null` for flexible text decoration assignment (specific value or unset).

@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set the stroke paint value.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `stroke` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `stroke` attribute.
  * - Supports `string` and `null` for flexible stroke assignment (color, pattern, or none).
  *

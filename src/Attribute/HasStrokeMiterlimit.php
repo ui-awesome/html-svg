@@ -17,8 +17,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set stroke miter limit values.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `stroke-miterlimit` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `stroke-miterlimit` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible stroke miter limit assignment (number `>= 1` or unset).
  *

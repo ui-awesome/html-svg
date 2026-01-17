@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set letter spacing.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `letter-spacing` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `letter-spacing` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible letter spacing assignment (absolute, relative,
  *   percentage, or unset).

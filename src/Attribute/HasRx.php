@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set the x-axis radius.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `rx` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `rx` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible radius assignment (absolute, relative, or unset).
  *
