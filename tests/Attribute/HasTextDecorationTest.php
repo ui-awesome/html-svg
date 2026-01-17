@@ -14,9 +14,14 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 use UnitEnum;
 
 /**
- * Unit test for the {@see HasTextDecoration} trait managing the `text-decoration` SVG attribute.
+ * Unit tests for the {@see HasTextDecoration} trait managing the `text-decoration` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `text-decoration` attribute is not provided.
+ * - Sets the `text-decoration` SVG attribute and renders the expected output.
  *
  * {@see TextDecorationProvider} for test case data providers.
  *

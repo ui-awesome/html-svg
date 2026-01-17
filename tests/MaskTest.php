@@ -17,23 +17,17 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, MaskType, SvgAttribute};
 
 /**
- * Test suite for {@see Mask} element functionality and behavior.
+ * Unit tests for {@see Mask} element rendering, content, and attribute handling.
  *
- * Validates the management and rendering of the SVG `<mask>` element according to the SVG 2 and CSS Masking
- * specifications.
- *
- * Ensures correct handling, immutability, and validation of the `Mask` tag rendering, supporting all global HTML
- * attributes, content, and mask-specific attributes.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Mask::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<mask>` element with inline content.
- * - Correct application of mask-specific attributes like `x`, `y`, `width`, `height`, `maskUnits`, `maskContentUnits`,
- *   and `mask-type`.
- * - Error handling for invalid attribute values.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
- * - Integration with configuration providers and global factory defaults.
- * - Nested rendering structure using `begin()` and `end()` methods.
- * - Precedence of user-defined attributes over global defaults and provider settings.
+ * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Renders `<mask>` with inline content.
+ * - Renders `<mask>` with representative mask and presentation attributes.
+ * - Supports nested rendering via `begin()` and `end()`.
  *
  * {@see Mask} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

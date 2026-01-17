@@ -14,21 +14,16 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Uses;
 
 /**
- * Test suite for {@see Uses} element functionality and behavior.
+ * Unit tests for {@see Uses} element rendering and attribute handling.
  *
- * Validates the management and rendering of the SVG `<use>` element according to the SVG 2 and HTML Living Standard
- * specifications.
- *
- * Ensures correct handling, immutability, and validation of the `Uses` tag rendering, supporting all global HTML, SVG 2
- * attributes and provider-based configuration.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Uses::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<use>` element.
- * - Correct application of global HTML attributes and SVG-specific attributes.
- * - Error handling for invalid attribute values.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
- * - Integration with configuration providers and global factory defaults.
- * - Precedence of user-defined attributes over global defaults and provider settings.
+ * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Renders `<use>` with representative global HTML attributes.
+ * - Renders `<use>` with representative SVG attributes.
  *
  * {@see Uses} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

@@ -16,9 +16,15 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 use UnitEnum;
 
 /**
- * Unit test for the {@see HasPatternContentUnits} trait managing the `patternContentUnits` SVG attribute.
+ * Unit tests for the {@see HasPatternContentUnits} trait managing the `patternContentUnits` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `patternContentUnits` attribute is not provided.
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Sets the `patternContentUnits` SVG attribute and renders the expected output.
  *
  * {@see PatternContentUnitsProvider} for test case data providers.
  *

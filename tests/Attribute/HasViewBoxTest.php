@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\ViewBoxProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasViewBox} trait managing the `viewBox` SVG attribute.
+ * Unit tests for the {@see HasViewBox} trait managing the `viewBox` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `viewBox` attribute is not provided.
+ * - Sets the `viewBox` SVG attribute and renders the expected output.
  *
  * {@see ViewBoxProvider} for test case data providers.
  *

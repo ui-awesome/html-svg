@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\TransformProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasTransform} trait managing the `transform` SVG attribute.
+ * Unit tests for the {@see HasTransform} trait managing the `transform` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `transform` attribute is not provided.
+ * - Sets the `transform` SVG attribute and renders the expected output.
  *
  * {@see TransformProvider} for test case data providers.
  *

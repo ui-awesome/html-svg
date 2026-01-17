@@ -16,9 +16,15 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 use UnitEnum;
 
 /**
- * Unit test for the {@see HasMaskContentUnits} trait managing the `maskContentUnits` SVG attribute.
+ * Unit tests for the {@see HasMaskContentUnits} trait managing the `maskContentUnits` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `maskContentUnits` attribute is not provided.
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Sets the `maskContentUnits` SVG attribute and renders the expected output.
  *
  * {@see MaskContentUnitsProvider} for test case data providers.
  *

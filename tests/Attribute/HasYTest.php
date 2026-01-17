@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\YProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasY} trait managing the `y` SVG attribute.
+ * Unit tests for the {@see HasY} trait managing the `y` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `y` attribute is not provided.
+ * - Sets the `y` SVG attribute and renders the expected output.
  *
  * {@see YProvider} for test case data providers.
  *

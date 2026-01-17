@@ -9,9 +9,9 @@ use UIAwesome\Html\Core\Provider\ThemeProviderInterface;
 use UIAwesome\Html\Svg\Svg;
 
 /**
- * Theme configuration provider stub for tests.
+ * Stub theme provider for tests.
  *
- * Supplies an associative array of theme options used to configure and render tag instances.
+ * Returns deterministic theme attributes for tag instances to verify theme application behavior.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

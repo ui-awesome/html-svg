@@ -15,22 +15,17 @@ use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 
 /**
- * Test suite for {@see ForeignObject} element functionality and behavior.
+ * Unit tests for {@see ForeignObject} element rendering, content, and attribute handling.
  *
- * Validates the management and rendering of the SVG `<foreignObject>` element according to the SVG 2 and HTML Living
- * Standard specifications.
- *
- * Ensures correct handling, immutability, and validation of the `ForeignObject` tag rendering, supporting all global
- * HTML and SVG 2 attributes, content, and provider-based configuration.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see ForeignObject::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<foreignObject>` element with inline content.
- * - Correct application of global HTML attributes and SVG-specific attributes like `height`, `width`, `x`, `y`,
- *   `opacity`, and `transform`.
- * - Error handling for invalid attribute values.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
- * - Integration with configuration providers and global factory defaults.
- * - Precedence of user-defined attributes over global defaults and provider settings.
+ * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Renders `<foreignObject>` with inline content.
+ * - Renders `<foreignObject>` with representative global HTML and SVG attributes.
+ * - Supports nested rendering via `begin()` and `end()`.
  *
  * {@see ForeignObject} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

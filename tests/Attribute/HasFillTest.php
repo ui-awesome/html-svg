@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FillProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasFill} trait managing the `fill` SVG attribute.
+ * Unit tests for the {@see HasFill} trait managing the `fill` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `fill` attribute is not provided.
+ * - Sets the `fill` SVG attribute and renders the expected output.
  *
  * {@see FillProvider} for test case data providers.
  *

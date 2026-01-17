@@ -16,9 +16,15 @@ use UIAwesome\Html\Svg\Values\{LengthAdjust, SvgAttribute};
 use UnitEnum;
 
 /**
- * Unit test for the {@see HasLengthAdjust} trait managing the `lengthAdjust` SVG attribute.
+ * Unit tests for the {@see HasLengthAdjust} trait managing the `lengthAdjust` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `lengthAdjust` attribute is not provided.
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Sets the `lengthAdjust` SVG attribute and renders the expected output.
  *
  * {@see LengthAdjustProvider} for test case data providers.
  *

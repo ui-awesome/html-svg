@@ -10,13 +10,9 @@ use UnitEnum;
 use function sprintf;
 
 /**
- * Utility class for generating structured test data for enum-based HTML attribute scenarios.
+ * Test data generator for enum-based attribute scenarios.
  *
- * Provides a standardized API for producing test cases involving PHP enums and HTML attributes, supporting
- * normalization and comparison of enum values for robust validation in PHPUnit test suites.
- *
- * Designed to facilitate consistent and type-safe generation of test data for attribute rendering, value extraction,
- * and output verification in HTML contexts.
+ * Builds deterministic datasets for PHPUnit data providers using {@see UnitEnum} cases and normalized values.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

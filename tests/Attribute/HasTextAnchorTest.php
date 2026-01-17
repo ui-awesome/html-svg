@@ -16,9 +16,15 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, TextAnchor};
 use UnitEnum;
 
 /**
- * Unit test for the {@see HasTextAnchor} trait managing the `text-anchor` SVG attribute.
+ * Unit tests for the {@see HasTextAnchor} trait managing the `text-anchor` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `text-anchor` attribute is not provided.
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Sets the `text-anchor` SVG attribute and renders the expected output.
  *
  * {@see TextAnchorProvider} for test case data providers.
  *

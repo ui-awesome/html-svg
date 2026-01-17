@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\DxProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasDx} trait managing the `dx` SVG attribute.
+ * Unit tests for the {@see HasDx} trait managing the `dx` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `dx` attribute is not provided.
+ * - Sets the `dx` SVG attribute and renders the expected output.
  *
  * {@see DxProvider} for test case data providers.
  *

@@ -17,23 +17,17 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{MarkerUnits, Orient, PreserveAspectRatio, SvgAttribute};
 
 /**
- * Test suite for {@see Marker} element functionality and behavior.
+ * Unit tests for {@see Marker} element rendering, content, and attribute handling.
  *
- * Validates the management and rendering of the SVG `<marker>` element according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `Marker` tag rendering, supporting all global
- * attributes, content, and marker-specific attributes.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Marker::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<marker>` element with inline content.
- * - Correct application of marker-specific attributes like `markerWidth`, `markerHeight`, `markerUnits`, `orient`,
- *   `refX`, `refY`, `viewBox`, and `preserveAspectRatio`.
- * - Correct application of presentation attributes like `opacity` and `transform`.
- * - Error handling for invalid attribute values.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
- * - Integration with configuration providers and global factory defaults.
- * - Nested rendering structure using `begin()` and `end()` methods.
- * - Precedence of user-defined attributes over global defaults and provider settings.
+ * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Renders `<marker>` with inline content.
+ * - Renders `<marker>` with representative marker and presentation attributes.
+ * - Supports nested rendering via `begin()` and `end()`.
  *
  * {@see Marker} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

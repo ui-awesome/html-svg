@@ -14,9 +14,14 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 use UnitEnum;
 
 /**
- * Unit test for the {@see HasOrient} trait managing the `orient` SVG attribute.
+ * Unit tests for the {@see HasOrient} trait managing the `orient` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `orient` attribute is not provided.
+ * - Sets the `orient` SVG attribute and renders the expected output.
  *
  * {@see OrientProvider} for test case data providers.
  *

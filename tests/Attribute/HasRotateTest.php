@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\RotateProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasRotate} trait managing the `rotate` SVG attribute.
+ * Unit tests for the {@see HasRotate} trait managing the `rotate` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `rotate` attribute is not provided.
+ * - Sets the `rotate` SVG attribute and renders the expected output.
  *
  * {@see RotateProvider} for test case data providers.
  *

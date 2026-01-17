@@ -16,9 +16,15 @@ use UIAwesome\Html\Svg\Values\{FillRule, SvgAttribute};
 use UnitEnum;
 
 /**
- * Unit test for the {@see HasFillRule} trait managing the `fill-rule` SVG attribute.
+ * Unit tests for the {@see HasFillRule} trait managing the `fill-rule` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `fill-rule` attribute is not provided.
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Sets the `fill-rule` SVG attribute and renders the expected output.
  *
  * {@see FillRuleProvider} for test case data providers.
  *

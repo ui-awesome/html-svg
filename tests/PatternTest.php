@@ -17,24 +17,17 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, PreserveAspectRatio, SvgAttribute};
 
 /**
- * Test suite for {@see Pattern} element functionality and behavior.
+ * Unit tests for {@see Pattern} element rendering, content, and attribute handling.
  *
- * Validates the management and rendering of the SVG `<pattern>` element according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `Pattern` tag rendering, supporting all global HTML
- * attributes, content, and pattern-specific attributes.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Pattern::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<pattern>` element with inline content.
- * - Correct application of pattern-specific attributes like `patternUnits`, `patternContentUnits`, and
- *   `patternTransform`.
- * - Correct application of geometry and viewport attributes like `x`, `y`, `width`, `height`, `viewBox`,
- *   `preserveAspectRatio`, and `href`.
- * - Error handling for invalid attribute values.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
- * - Integration with configuration providers and global factory defaults.
- * - Nested rendering structure using `begin()` and `end()` methods.
- * - Precedence of user-defined attributes over global defaults and provider settings.
+ * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Renders `<pattern>` with inline content.
+ * - Renders `<pattern>` with representative pattern and viewport attributes.
+ * - Supports nested rendering via `begin()` and `end()`.
  *
  * {@see Pattern} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

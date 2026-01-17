@@ -18,22 +18,19 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{FillRule, PreserveAspectRatio, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
- * Test suite for {@see Svg} element functionality and behavior.
+ * Unit tests for {@see Svg} element rendering, file loading, and attribute handling.
  *
- * Validates the management and rendering of the HTML `<svg>` element according to the SVG and HTML Living Standard
- * specifications.
- *
- * Ensures correct handling, immutability, and validation of the `Svg` tag rendering, supporting all global HTML and SVG
- * attributes, content, and provider-based configuration.
+ * Verifies rendered output, file loading behavior, configuration precedence, immutability, and validation behavior for
+ * {@see Svg::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<svg>` element with inline content or external files via `filePath()` method.
- * - Correct application of global HTML attributes and SVG-specific attributes like `viewBox`, `fill`, and `transform`.
- * - Error handling for invalid file paths, missing content, malformed SVG files or invalid attribute values.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
- * - Integration with configuration providers and global factory defaults.
- * - Nested rendering structure using `begin()` and `end()` methods.
- * - Precedence of user-defined attributes over global defaults and provider settings.
+ * - Applies defaults via {@see SimpleFactory}, preserving user overrides.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid input by throwing exceptions with expected messages.
+ * - Renders `<svg>` content loaded from files via `filePath()`.
+ * - Renders `<svg>` with inline content and representative global HTML and SVG attributes.
+ * - Supports nested rendering via `begin()` and `end()`.
+ * - Supports theme configuration via {@see DefaultThemeProvider}.
  *
  * {@see Svg} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

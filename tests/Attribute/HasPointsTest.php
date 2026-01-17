@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\PointsProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasPoints} trait managing the `points` SVG attribute.
+ * Unit tests for the {@see HasPoints} trait managing the `points` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `points` attribute is not provided.
+ * - Sets the `points` SVG attribute and renders the expected output.
  *
  * {@see PointsProvider} for test case data providers.
  *

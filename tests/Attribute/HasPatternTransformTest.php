@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\PatternTransformProvider
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasPatternTransform} trait managing the `patternTransform` SVG attribute.
+ * Unit tests for the {@see HasPatternTransform} trait managing the `patternTransform` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `patternTransform` attribute is not provided.
+ * - Sets the `patternTransform` SVG attribute and renders the expected output.
  *
  * {@see PatternTransformProvider} for test case data providers.
  *

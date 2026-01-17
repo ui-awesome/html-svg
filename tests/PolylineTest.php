@@ -17,21 +17,16 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
- * Test suite for {@see Polyline} element functionality and behavior.
+ * Unit tests for {@see Polyline} element rendering and attribute handling.
  *
- * Validates the management and rendering of the SVG `<polyline>` element according to the SVG 2 and HTML Living
- * Standard specifications.
- *
- * Ensures correct handling, immutability, and validation of the `Polyline` tag rendering, supporting all global HTML,
- * SVG 2 attributes and provider-based configuration.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Polyline::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<polyline>` element.
- * - Correct application of global HTML attributes and SVG-specific attributes.
- * - Error handling for invalid attribute values.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
- * - Integration with configuration providers and global factory defaults.
- * - Precedence of user-defined attributes over global defaults and provider settings.
+ * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Renders `<polyline>` with representative global HTML attributes.
+ * - Renders `<polyline>` with representative SVG attributes.
  *
  * {@see Polyline} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

@@ -15,9 +15,15 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\PathLengthProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasPathLength} trait managing the `pathLength` SVG attribute.
+ * Unit tests for the {@see HasPathLength} trait managing the `pathLength` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `pathLength` attribute is not provided.
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Sets the `pathLength` SVG attribute and renders the expected output.
  *
  * {@see PathLengthProvider} for test case data providers.
  *
