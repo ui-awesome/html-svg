@@ -145,6 +145,7 @@
 - Bug #146: Standardize PHPDoc headers in SVG-related classes (@terabytesoftw)
 - Enh #147: Add `HasFr` trait and corresponding tests for managing SVG `fr` attribute (@terabytesoftw)
 - Enh #148: Add `HasFx` trait and corresponding tests for managing SVG `fx` attribute (@terabytesoftw)
+- Enh #149: Add `HasFy` trait and corresponding tests for managing SVG `fy` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
