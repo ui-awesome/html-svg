@@ -143,6 +143,7 @@
 - Bug #144: Update PHPdoc descriptions for `DefaultProvider` and `DefaultThemeProvider` classes for clarity (@terabytesoftw)
 - Bug #145: Standardize PHPUnit PHPDoc headers in SVG-related test classes (@terabytesoftw)
 - Bug #146: Standardize PHPDoc headers in SVG-related classes (@terabytesoftw)
+- Enh #147: Add `HasFr` trait and corresponding tests for managing SVG `fr` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
