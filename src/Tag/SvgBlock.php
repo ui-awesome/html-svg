@@ -89,6 +89,13 @@ enum SvgBlock: string implements BlockInterface
     case PATTERN = 'pattern';
 
     /**
+     * `<radialGradient>` - Radial gradient definition.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient
+     */
+    case RADIAL_GRADIENT = 'radialGradient';
+
+    /**
      * `<svg>` - Root container for SVG graphics.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
