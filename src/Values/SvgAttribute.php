@@ -162,6 +162,16 @@ enum SvgAttribute: string
     case FR = 'fr';
 
     /**
+     * `fx` - Center x-coordinate of the start circle of the radial gradient.
+     *
+     * Defines the horizontal position of the start circle. If not specified, it defaults to the presentational value of
+     * `cx`.
+     *
+     * @link https://www.w3.org/TR/SVG2/pservers.html#RadialGradientElementFXAttribute
+     */
+    case FX = 'fx';
+
+    /**
      * `gradientTransform` - Defines a transformation applied to the gradient coordinate system.
      *
      * @link https://www.w3.org/TR/SVG2/pservers.html#LinearGradientElementGradientTransformAttribute
