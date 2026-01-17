@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set transforms.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `transform` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `transform` attribute.
  * - Supports `string` and `null` for flexible transform assignment (matrix, translate, scale, rotate, skew, or unset).
  *

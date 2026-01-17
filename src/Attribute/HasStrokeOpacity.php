@@ -17,10 +17,11 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set stroke opacity.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `stroke-opacity` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `stroke-opacity` attribute.
- * - Supports `float`, `int`, `string`, and `null` for flexible stroke opacity assignment (object or group opacity, or unset).
+ * - Supports `float`, `int`, `string`, and `null` for flexible stroke opacity assignment (object or group opacity, or
+ *   unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.

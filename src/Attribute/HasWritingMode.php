@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, WritingMode};
  * Intended for use in SVG tag and component classes that set writing mode values.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `writing-mode` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `writing-mode` attribute.
  * - Supports `string`, {@see WritingMode} enum, and `null` for flexible writing mode assignment.
  *

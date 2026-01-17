@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * Intended for use in SVG tag and component classes that set the gradient coordinate system.
  *
  * Key features.
- * - Designed for use in SVG gradient tag and component classes.
  * - Delegates to `addAttribute()` for the `gradientUnits` attribute.
+ * - Designed for use in SVG gradient tag and component classes.
  * - Immutable method for setting or overriding the `gradientUnits` attribute.
  * - Supports `string`, {@see CoordinateUnits} enum, and `null` for flexible gradient coordinate system assignment
  *   (specific value or unset).

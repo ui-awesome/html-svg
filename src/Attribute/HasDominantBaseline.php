@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{DominantBaseline, SvgAttribute};
  * Intended for use in SVG tag and component classes that set dominant baseline values.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `dominant-baseline` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `dominant-baseline` attribute.
  * - Supports `string`, {@see DominantBaseline} enum, and `null` for flexible baseline alignment assignment (specific
  *   value or unset).

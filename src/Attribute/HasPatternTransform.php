@@ -15,8 +15,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set the pattern transform.
  *
  * Key features.
- * - Designed for use in SVG `<pattern>` tag and component classes.
  * - Delegates to `addAttribute()` for the `patternTransform` attribute.
+ * - Designed for use in SVG `<pattern>` tag and component classes.
  * - Immutable method for setting or overriding the `patternTransform` attribute.
  * - Supports `string` and `null` for flexible transform assignment (`matrix`, `translate`, `scale`, `rotate`, `skew`,
  *   or unset).

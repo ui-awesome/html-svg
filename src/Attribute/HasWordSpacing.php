@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * Intended for use in SVG tag and component classes that set word spacing.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `word-spacing` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `word-spacing` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible word spacing assignment (absolute, relative, or unset).
  *

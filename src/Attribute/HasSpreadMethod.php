@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{SpreadMethod, SvgAttribute};
  * Intended for use in SVG tag and component classes that set the spread method attribute.
  *
  * Key features.
- * - Designed for use in SVG gradient tag and component classes.
  * - Delegates to `addAttribute()` for the `spreadMethod` attribute.
+ * - Designed for use in SVG gradient tag and component classes.
  * - Immutable method for setting or overriding the `spreadMethod` attribute.
  * - Supports `string`, {@see SpreadMethod} enum, and `null` for flexible spread method assignment (specific value or
  *   unset).

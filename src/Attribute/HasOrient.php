@@ -14,8 +14,8 @@ use UIAwesome\Html\Svg\Values\{Orient, SvgAttribute};
  * Intended for use in SVG tag and component classes that set marker orientation.
  *
  * Key features.
- * - Designed for use in SVG marker tag and component classes.
  * - Delegates to `addAttribute()` for the `orient` attribute.
+ * - Designed for use in SVG marker tag and component classes.
  * - Immutable method for setting or overriding the `orient` attribute.
  * - Supports `float`, `int`, `string`, {@see Orient} enum, and `null` for flexible orientation assignment (angle,
  *   keyword, or unset).

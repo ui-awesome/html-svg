@@ -16,8 +16,8 @@ use UIAwesome\Html\Svg\Values\{FontStyle, SvgAttribute};
  * Intended for use in SVG tag and component classes that set font style values.
  *
  * Key features.
- * - Designed for use in SVG tag and component classes.
  * - Delegates to `addAttribute()` for the `font-style` attribute.
+ * - Designed for use in SVG tag and component classes.
  * - Immutable method for setting or overriding the `font-style` attribute.
  * - Supports `string`, {@see FontStyle} enum, and `null` for flexible font style assignment (specific value or unset).
  *
