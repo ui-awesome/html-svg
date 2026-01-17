@@ -9,9 +9,9 @@ use UIAwesome\Html\Core\Provider\DefaultsProviderInterface;
 use UIAwesome\Html\Interop\BlockInterface;
 
 /**
- * Default configuration provider stub for tests.
+ * Stub defaults provider for tests.
  *
- * Supplies an associative array of default options used when configuring and rendering tag instances.
+ * Returns deterministic default attributes for tag instances to verify configuration precedence and rendering.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

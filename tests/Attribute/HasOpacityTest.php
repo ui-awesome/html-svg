@@ -15,9 +15,15 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\OpacityProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasOpacity} trait managing the `opacity` SVG attribute.
+ * Unit tests for the {@see HasOpacity} trait managing the `opacity` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `opacity` attribute is not provided.
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Sets the `opacity` SVG attribute and renders the expected output.
  *
  * {@see OpacityProvider} for test case data providers.
  *

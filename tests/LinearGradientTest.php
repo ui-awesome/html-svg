@@ -16,19 +16,17 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
 
 /**
- * Test suite for {@see LinearGradient} element functionality and behavior.
+ * Unit tests for {@see LinearGradient} element rendering, content, and attribute handling.
  *
- * Validates the management and rendering of the SVG `<linearGradient>` element according to the SVG 2 specification.
- *
- * Ensures correct handling, immutability, and validation of the `LinearGradient` tag rendering, supporting all global
- * attributes, content, and gradient-specific attributes.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see LinearGradient::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<linearGradient>` element with inline content.
- * - Correct application of coordinate attributes like `x1`, `y1`, `x2`, and `y2`.
- * - Correct application of gradient-specific attributes like `gradientUnits`, `gradientTransform`, and `spreadMethod`.
- * - Error handling for invalid attribute values.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
+ * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Renders `<linearGradient>` with inline content.
+ * - Renders `<linearGradient>` with representative gradient and coordinate attributes.
+ * - Supports nested rendering via `begin()` and `end()`.
  *
  * {@see LinearGradient} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

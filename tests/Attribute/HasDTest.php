@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\DProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasD} trait managing the `d` SVG attribute.
+ * Unit tests for the {@see HasD} trait managing the `d` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `d` attribute is not provided.
+ * - Sets the `d` SVG attribute and renders the expected output.
  *
  * {@see DProvider} for test case data providers.
  *

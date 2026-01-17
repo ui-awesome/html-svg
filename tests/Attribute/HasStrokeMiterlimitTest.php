@@ -15,9 +15,15 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\StrokeMiterlimitProvider
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasStrokeMiterlimit} trait managing the `stroke-miterlimit` SVG attribute.
+ * Unit tests for the {@see HasStrokeMiterlimit} trait managing the `stroke-miterlimit` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `stroke-miterlimit` attribute is not provided.
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Sets the `stroke-miterlimit` SVG attribute and renders the expected output.
  *
  * {@see StrokeMiterlimitProvider} for test case data providers.
  *

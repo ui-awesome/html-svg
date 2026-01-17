@@ -26,21 +26,17 @@ use UIAwesome\Html\Svg\Values\{
 };
 
 /**
- * Test suite for {@see Text} element functionality and behavior.
+ * Unit tests for {@see Text} element rendering, content, and attribute handling.
  *
- * Validates the management and rendering of the SVG `<text>` element according to the SVG 2 and HTML specifications.
- *
- * Ensures correct handling, immutability, and validation of the `Text` tag rendering, supporting text positioning,
- * typography, alignment, and writing mode attributes.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Text::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<text>` element with inline content.
- * - Correct application of typography attributes like `font-family`, `font-size`, `font-weight`, and `font-style`.
- * - Error handling for invalid attribute values.
- * - Handling of text alignment and spacing via `text-anchor`, `dominant-baseline`, `letter-spacing`, and
- *   `word-spacing`.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
- * - Validation of positioning attributes such as `x`, `y`, `dx`, `dy`, and `rotate`.
+ * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Renders `<text>` with inline content.
+ * - Renders `<text>` with representative positioning and typography attributes.
+ * - Supports nested rendering via `begin()` and `end()`.
  *
  * {@see Text} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

@@ -13,21 +13,15 @@ use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
 use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 
 /**
- * Test suite for {@see Defs} element functionality and behavior.
+ * Unit tests for {@see Defs} element rendering, content, and attribute handling.
  *
- * Validates the management and rendering of the SVG `<defs>` element according to the SVG and HTML Living Standard
- * specifications.
- *
- * Ensures correct handling, immutability, and validation of the `Defs` tag rendering, supporting all global HTML and
- * SVG attributes, content, and provider-based configuration.
+ * Verifies rendered output, configuration precedence, and nested rendering behavior for {@see Defs::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<defs>` element with inline content.
- * - Correct application of global HTML attributes and SVG-specific attributes.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
- * - Integration with configuration providers and global factory defaults.
- * - Nested rendering structure using `begin()` and `end()` methods.
- * - Precedence of user-defined attributes over global defaults and provider settings.
+ * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
+ * - Renders `<defs>` with inline content.
+ * - Renders `<defs>` with representative global HTML attributes.
+ * - Supports nested rendering via `begin()` and `end()`.
  *
  * {@see Defs} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

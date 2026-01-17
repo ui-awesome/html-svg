@@ -9,13 +9,9 @@ use PHPUnit\Framework\{Assert, AssertionFailedError};
 use function str_replace;
 
 /**
- * Trait providing assertion utilities for test scenarios involving string comparison and normalization.
+ * Assertion helpers for PHPUnit tests that compare rendered output.
  *
- * Supplies standardized methods for comparing string values in test cases, ensuring consistent handling of line endings
- * and whitespace normalization across different platforms and environments.
- *
- * Designed for use in PHPUnit-based test suites to facilitate robust validation of HTML output, attribute rendering,
- * and component behavior.
+ * Normalizes line endings before comparison to keep string assertions deterministic across platforms.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

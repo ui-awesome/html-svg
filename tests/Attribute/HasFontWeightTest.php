@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FontWeightProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasFontWeight} trait managing the `font-weight` SVG attribute.
+ * Unit tests for the {@see HasFontWeight} trait managing the `font-weight` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `font-weight` attribute is not provided.
+ * - Sets the `font-weight` SVG attribute and renders the expected output.
  *
  * {@see FontWeightProvider} for test case data providers.
  *

@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\RxProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasRx} trait managing the `rx` SVG attribute.
+ * Unit tests for the {@see HasRx} trait managing the `rx` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `rx` attribute is not provided.
+ * - Sets the `rx` SVG attribute and renders the expected output.
  *
  * {@see RxProvider} for test case data providers.
  *

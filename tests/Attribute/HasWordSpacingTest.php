@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\WordSpacingProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasWordSpacing} trait managing the `word-spacing` SVG attribute.
+ * Unit tests for the {@see HasWordSpacing} trait managing the `word-spacing` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `word-spacing` attribute is not provided.
+ * - Sets the `word-spacing` SVG attribute and renders the expected output.
  *
  * {@see WordSpacingProvider} for test case data providers.
  *

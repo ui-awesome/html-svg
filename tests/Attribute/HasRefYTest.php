@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\RefYProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasRefY} trait managing the `refY` SVG attribute.
+ * Unit tests for the {@see HasRefY} trait managing the `refY` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `refY` attribute is not provided.
+ * - Sets the `refY` SVG attribute and renders the expected output.
  *
  * {@see RefYProvider} for test case data providers.
  *

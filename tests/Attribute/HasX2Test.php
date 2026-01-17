@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\X2Provider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasX2} trait managing the `x2` SVG attribute.
+ * Unit tests for the {@see HasX2} trait managing the `x2` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `x2` attribute is not provided.
+ * - Sets the `x2` SVG attribute and renders the expected output.
  *
  * {@see X2Provider} for test case data providers.
  *

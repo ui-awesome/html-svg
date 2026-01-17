@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\CxProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasCx} trait managing the `cx` SVG attribute.
+ * Unit tests for the {@see HasCx} trait managing the `cx` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `cx` attribute is not provided.
+ * - Sets the `cx` SVG attribute and renders the expected output.
  *
  * {@see CxProvider} for test case data providers.
  *

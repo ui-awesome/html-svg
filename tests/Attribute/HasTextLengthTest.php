@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\TextLengthProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasTextLength} trait managing the `textLength` SVG attribute.
+ * Unit tests for the {@see HasTextLength} trait managing the `textLength` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `textLength` attribute is not provided.
+ * - Sets the `textLength` SVG attribute and renders the expected output.
  *
  * {@see TextLengthProvider} for test case data providers.
  *

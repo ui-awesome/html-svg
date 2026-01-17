@@ -17,22 +17,17 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
- * Test suite for {@see G} element functionality and behavior.
+ * Unit tests for {@see G} element rendering, content, and attribute handling.
  *
- * Validates the management and rendering of the SVG `<g>` element according to the SVG and HTML Living Standard
- * specifications.
- *
- * Ensures correct handling, immutability, and validation of the `<g>` tag rendering, supporting all global HTML and SVG
- * attributes, content, and provider-based configuration.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see G::tag()}.
  *
  * Test coverage.
- * - Accurate rendering of the `<g>` element with inline content.
- * - Correct application of global HTML attributes and SVG-specific attributes like `fill`, and `transform`.
- * - Error handling for invalid attribute values.
- * - Immutability of the API, ensuring that setting attributes returns a new instance.
- * - Integration with configuration providers and global factory defaults.
- * - Nested rendering structure using `begin()` and `end()` methods.
- * - Precedence of user-defined attributes over global defaults and provider settings.
+ * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
+ * - Renders `<g>` with inline content.
+ * - Renders `<g>` with representative global HTML and SVG attributes.
+ * - Supports nested rendering via `begin()` and `end()`.
  *
  * {@see G} for element implementation details.
  * {@see SimpleFactory} for default configuration management.

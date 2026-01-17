@@ -13,9 +13,14 @@ use UIAwesome\Html\Svg\Tests\Support\Provider\Attribute\FontFamilyProvider;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
 /**
- * Unit test for the {@see HasFontFamily} trait managing the `font-family` SVG attribute.
+ * Unit tests for the {@see HasFontFamily} trait managing the `font-family` SVG attribute.
  *
- * Validates correct rendering, immutability, and attribute override behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
+ *
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `font-family` attribute is not provided.
+ * - Sets the `font-family` SVG attribute and renders the expected output.
  *
  * {@see FontFamilyProvider} for test case data providers.
  *
