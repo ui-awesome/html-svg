@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support;
 
-use PHPUnit\Framework\Assert;
-use PHPUnit\Framework\AssertionFailedError;
+use PHPUnit\Framework\{Assert, AssertionFailedError};
 
 use function str_replace;
 

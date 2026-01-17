@@ -9,10 +9,9 @@ use UIAwesome\Html\Core\Provider\ThemeProviderInterface;
 use UIAwesome\Html\Svg\Svg;
 
 /**
- * Provides theme configuration values for tag instances in HTML helper and UI component testing.
+ * Theme configuration provider stub for tests.
  *
- * Supplies a standardized associative array of theme options for use in scenarios involving tag configuration,
- * attribute generation, and component rendering.
+ * Supplies an associative array of theme options used to configure and render tag instances.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -20,16 +19,6 @@ use UIAwesome\Html\Svg\Svg;
 final class DefaultThemeProvider implements ThemeProviderInterface
 {
     /**
-     * Applies theme configuration to the given tag instance.
-     *
-     * Returns an associative array of configuration values for the specified tag and theme, supporting extensible and
-     * consistent theme application across the system.
-     *
-     * @param BaseTag $tag Tag instance to which the theme is applied.
-     * @param string $theme Theme identifier to apply.
-     *
-     * @return array Associative array of theme configuration values.
-     *
      * @phpstan-return mixed[]
      */
     public function apply(BaseTag $tag, string $theme): array
