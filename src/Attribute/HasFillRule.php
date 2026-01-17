@@ -11,15 +11,13 @@ use UIAwesome\Html\Svg\Values\{FillRule, SvgAttribute};
 /**
  * Trait for managing SVG `fill-rule` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting `fill-rule` attribute on SVG elements, following the SVG 2
- * specification for painting properties.
+ * Provides a method that delegates to `addAttribute()` to set the `fill-rule` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of fill rule
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the fill rule.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of SVG `fill-rule` attribute.
+ * - Delegates to `addAttribute()` for the `fill-rule` attribute.
  * - Immutable method for setting or overriding the `fill-rule` attribute.
  * - Supports `string`, {@see FillRule} enum, and `null` for flexible fill rule assignment (specific value or unset).
  *
@@ -36,8 +34,7 @@ trait HasFillRule
     /**
      * Sets SVG `fill-rule` attribute for the element.
      *
-     * Creates a new instance with the specified fill rule value, supporting explicit assignment according to the SVG 2
-     * specification for painting properties.
+     * Creates a new instance with the specified fill rule value for the rendered element.
      *
      * @param FillRule|string|null $value Fill rule value to set for the element. Accepts `nonzero`, `evenodd`,
      * {@see FillRule} enum, or `null` to unset.

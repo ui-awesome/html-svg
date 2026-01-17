@@ -12,15 +12,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing SVG `stroke-opacity` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting `stroke-opacity` attribute on SVG elements, following the
- * SVG 2 specification for painting and opacity properties.
+ * Provides a method that delegates to `addAttribute()` to set the `stroke-opacity` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of stroke opacity
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set stroke opacity.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of SVG `stroke-opacity` attribute.
+ * - Delegates to `addAttribute()` for the `stroke-opacity` attribute.
  * - Immutable method for setting or overriding the `stroke-opacity` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible stroke opacity assignment (object or group opacity, or unset).
  *
@@ -37,8 +35,7 @@ trait HasStrokeOpacity
     /**
      * Sets SVG `stroke-opacity` attribute for the element.
      *
-     * Creates a new instance with the specified stroke opacity value, supporting explicit assignment according to the
-     * SVG 2 specification for painting and opacity properties.
+     * Creates a new instance with the specified stroke opacity value for the rendered element.
      *
      * @param float|int|string|null $value Stroke opacity value (for example, `0.8`, `'0.6'`, or `null` to unset).
      *

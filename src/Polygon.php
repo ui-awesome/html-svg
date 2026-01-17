@@ -27,8 +27,8 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
 /**
  * Represents the SVG `<polygon>` (polygon) element for rendering polygons.
  *
- * Provides a standards-compliant, immutable API for rendering the `<polygon>` element, following the SVG 2 and HTML
- * specifications for defining closed polygonal shapes.
+ * Provides a concrete `<polygon>` element implementation that returns `SvgVoid::POLYGON` and mixes in geometry,
+ * paint, and transform attribute traits.
  *
  * The `<polygon>` element is an SVG basic shape used to create closed shapes defined by a list of points.
  *

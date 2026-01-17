@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `font-weight` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `font-weight` attribute on SVG elements, following the
- * SVG 2 specification for defining the font weight for text content.
+ * Provides a method that delegates to `addAttribute()` to set the `font-weight` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the font weight
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the font weight.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `font-weight` attribute.
+ * - Delegates to `addAttribute()` for the `font-weight` attribute.
  * - Immutable method for setting or overriding the `font-weight` attribute.
  * - Supports `int`, `string`, and `null` for flexible font weight assignment (numeric or keyword).
  *
@@ -34,8 +32,7 @@ trait HasFontWeight
     /**
      * Sets the SVG `font-weight` attribute for the element.
      *
-     * Creates a new instance with the specified font weight value, supporting explicit assignment according to the SVG
-     * 2 specification for defining the weight (or boldness) of the font.
+     * Creates a new instance with the specified font weight value for the rendered element.
      *
      * @param int|string|null $value Font weight value (for example, `700`, `'bold'`, or `null` to unset).
      *

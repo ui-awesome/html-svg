@@ -7,15 +7,15 @@ namespace UIAwesome\Html\Svg\Tag;
 use UIAwesome\Html\Interop\BlockInterface;
 
 /**
- * Represents standardized SVG block-level HTML element names as enum cases.
+ * Represents SVG block-level element names as enum cases.
  *
- * Provides a type-safe set of SVG element tokens and concise documentation aligned with the MDN reference.
+ * Provides the literal tag names for block-level SVG elements that implement {@see BlockInterface}.
  *
  * Key features.
  * - Container element accepts child elements.
  * - Implements {@see BlockInterface} for contract adherence.
  * - Suitable for building SVG markup and element validation.
- * - Values follow SVG elements listed in MDN documentation.
+ * - Values map to SVG element tag names.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element
  * {@see BlockInterface} for contract details.

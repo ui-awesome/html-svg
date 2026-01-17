@@ -11,15 +11,13 @@ use UIAwesome\Html\Svg\Values\{PreserveAspectRatio, SvgAttribute};
 /**
  * Trait for managing the SVG `preserveAspectRatio` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `preserveAspectRatio` attribute on SVG elements,
- * following the SVG 2 specification for preserving aspect ratio when scaling SVG content.
+ * Provides a method that delegates to `addAttribute()` to set the `preserveAspectRatio` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the preserve
- * aspect ratio property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set preserve aspect ratio values.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `preserveAspectRatio` attribute.
+ * - Delegates to `addAttribute()` for the `preserveAspectRatio` attribute.
  * - Immutable method for setting or overriding the `preserveAspectRatio` attribute.
  * - Supports `string`, {@see PreserveAspectRatio} enum, and `null` for flexible preserve aspect ratio assignment
  *   (specific value or unset).
@@ -36,9 +34,7 @@ trait HasPreserveAspectRatio
     /**
      * Sets the SVG `preserveAspectRatio` attribute for the element.
      *
-     * Creates a new instance with the specified preserve aspect ratio value, supporting explicit assignment according
-     * to the SVG 2 specification for preserving aspect ratio when scaling SVG content to fit a viewport with a
-     * different aspect ratio.
+     * Creates a new instance with the specified preserve aspect ratio value for the rendered element.
      *
      * @param PreserveAspectRatio|string|null $value Preserve aspect ratio value (for example, `'xMidYMid meet'`,
      * {@see PreserveAspectRatio} enum, or `null` to unset).

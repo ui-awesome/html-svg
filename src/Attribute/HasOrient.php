@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\{Orient, SvgAttribute};
 /**
  * Trait for managing the SVG `orient` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `orient` attribute on SVG marker elements, following
- * the SVG 2 specification for defining marker orientation.
+ * Provides a method that delegates to `addAttribute()` to set the `orient` attribute on SVG marker elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the marker
- * orientation property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set marker orientation.
  *
  * Key features.
  * - Designed for use in SVG marker tag and component classes.
- * - Enforces standards-compliant handling of the SVG `orient` attribute.
+ * - Delegates to `addAttribute()` for the `orient` attribute.
  * - Immutable method for setting or overriding the `orient` attribute.
  * - Supports `float`, `int`, `string`, {@see Orient} enum, and `null` for flexible orientation assignment (angle,
  *   keyword, or unset).
@@ -35,8 +33,7 @@ trait HasOrient
     /**
      * Sets the SVG `orient` attribute for the marker element.
      *
-     * Creates a new instance with the specified orientation value, supporting explicit assignment according to the SVG
-     * 2 specification for defining how the marker is rotated when placed at its position on the shape.
+     * Creates a new instance with the specified orientation value for the rendered element.
      *
      * @param float|int|Orient|string|null $value Orient value (for example, `'auto'`, {@see Orient} enum, `45`,
      * or `null` to unset).

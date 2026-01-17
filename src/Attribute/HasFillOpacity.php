@@ -12,15 +12,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing SVG `fill-opacity` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting `fill-opacity` attribute on SVG elements, following the SVG
- * 2 specification for painting and opacity properties.
+ * Provides a method that delegates to `addAttribute()` to set the `fill-opacity` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of fill opacity
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set fill opacity.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of SVG `fill-opacity` attribute.
+ * - Delegates to `addAttribute()` for the `fill-opacity` attribute.
  * - Immutable method for setting or overriding the `fill-opacity` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible fill opacity assignment (`0`-`1` range or unset).
  *
@@ -37,8 +35,7 @@ trait HasFillOpacity
     /**
      * Sets SVG `fill-opacity` attribute for the element.
      *
-     * Creates a new instance with the specified fill opacity value, supporting explicit assignment according to the SVG
-     * 2 specification for painting and opacity properties.
+     * Creates a new instance with the specified fill opacity value for the rendered element.
      *
      * @param float|int|string|null $value Fill opacity value (for example, `'0.5'`, `0.5`, or `null` to unset).
      *

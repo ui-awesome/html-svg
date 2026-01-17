@@ -28,8 +28,8 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
 /**
  * Represents the SVG `<circle>` (circle) element for rendering circles.
  *
- * Provides a standards-compliant, immutable API for rendering the `<circle>` element, following the SVG 2 and HTML
- * specifications for defining circle shapes.
+ * Provides a concrete `<circle>` element implementation that returns `SvgVoid::CIRCLE` and mixes in geometry, paint,
+ * and transform attribute traits.
  *
  * The `<circle>` element is an SVG basic shape used to create circles based on a center point and a radius.
  *

@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Values;
 
 /**
- * Represents standardized values for the SVG 2 `text-anchor` attribute.
+ * Represents literal string values for the SVG `text-anchor` attribute.
  *
- * Provides a type-safe, standards-compliant set of text anchor values for use in SVG text element rendering,
- * attributes, and view helpers, ensuring technical consistency with the SVG 2 specification and modern web standards.
+ * Provides the keyword values used by the `text-anchor` attribute.
  *
  * Key features.
  * - Designed for use in text elements, components, and helpers requiring text anchor assignment.
- * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of `text-anchor` values for semantic markup generation and accessibility.
- * - Values follow the SVG 2 specification for `text-anchor` attribute.
+ * - Can be used as an enum value in attribute assignment.
+ * - Values map to `text-anchor` keyword values.
+ * - Useful for attribute assignment where a literal value is required.
  *
  * @see \UIAwesome\Html\Svg\Text::textAnchor()
  *

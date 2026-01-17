@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Values;
 
 /**
- * Represents standardized values for the SVG `markerUnits` attribute.
+ * Represents literal string values for the SVG `markerUnits` attribute.
  *
- * Provides a type-safe, standards-compliant set of values for use in SVG marker element rendering, ensuring technical
- * consistency with SVG 2 specification and modern web standards.
+ * Provides the keyword values used by the `markerUnits` attribute.
  *
  * Key features.
  * - Designed for use in tags, components, and helpers requiring marker units assignment.
- * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of `markerUnits` values for semantic markup generation and accessibility.
- * - Values follow SVG 2 specification for marker coordinate systems.
+ * - Can be used as an enum value in attribute assignment.
+ * - Values map to `markerUnits` keyword values.
+ * - Useful for attribute assignment where a literal value is required.
  *
  * @see \UIAwesome\Html\Svg\Marker::markerUnits()
  *

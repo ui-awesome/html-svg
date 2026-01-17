@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `dx` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `dx` attribute on SVG elements, following the SVG 2
- * specification for defining horizontal offset of an element or its content.
+ * Provides a method that delegates to `addAttribute()` to set the `dx` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the dx-offset
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the dx offset.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `dx` attribute.
+ * - Delegates to `addAttribute()` for the `dx` attribute.
  * - Immutable method for setting or overriding the `dx` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible offset assignment (absolute, relative, list, or unset).
  *
@@ -34,8 +32,7 @@ trait HasDx
     /**
      * Sets the SVG `dx` attribute for the element.
      *
-     * Creates a new instance with the specified dx-offset value, supporting explicit assignment according to the SVG 2
-     * specification for defining the horizontal shift of an element or its content.
+     * Creates a new instance with the specified dx-offset value for the rendered element.
      *
      * @param float|int|string|null $value DX offset value (for example, `10`, `'5 10 15'`, or `null` to unset).
      *

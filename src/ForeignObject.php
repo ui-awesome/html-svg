@@ -12,10 +12,10 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 /**
  * Represents the SVG `<foreignObject>` (foreignObject) element for rendering foreign content.
  *
- * Provides a standards-compliant, immutable API for rendering the `<foreignObject>` container element, following SVG 2
- * and HTML specifications for embedding XHTML content.
+ * Provides a concrete `<foreignObject>` element implementation that returns `SvgBlock::FOREIGN_OBJECT` and mixes in
+ * geometry, presentation, and transform attribute traits.
  *
- * The `<foreignObject>` element allows embedding of external XHTML/XML content within SVG.
+ * The `<foreignObject>` element allows embedding external content within SVG.
  *
  * Key features.
  * - Container element accepts child elements.

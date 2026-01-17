@@ -9,16 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `stroke-dasharray` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `stroke-dasharray` attribute on SVG elements, following
- * the SVG 2 specification for controlling the pattern of dashes and gaps used to render the outline of shapes and text
- * content elements.
+ * Provides a method that delegates to `addAttribute()` to set the `stroke-dasharray` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the stroke dash
- * array property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the stroke dash pattern.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `stroke-dasharray` attribute.
+ * - Delegates to `addAttribute()` for the `stroke-dasharray` attribute.
  * - Immutable method for setting or overriding the `stroke-dasharray` attribute.
  * - Supports `int`, `float`, `string`, and `null` for flexible dash pattern assignment (absolute, relative, or unset).
  *
@@ -35,9 +32,7 @@ trait HasStrokeDashArray
     /**
      * Sets the SVG `stroke-dasharray` attribute for the element.
      *
-     * Creates a new instance with the specified dash array value, supporting explicit assignment according to the SVG 2
-     * specification for controlling the dash and gap pattern of the outline painted for shapes and text content
-     * elements.
+     * Creates a new instance with the specified dash array value for the rendered element.
      *
      * @param float|int|string|null $value Dash array value (for example, `5.3`, `4`, `'5.3 2'`, or `null` to unset).
      *

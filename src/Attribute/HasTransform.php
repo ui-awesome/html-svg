@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `transform` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `transform` attribute on SVG elements, following the
- * SVG 2 and HTML specifications for coordinate systems and transformations.
+ * Provides a method that delegates to `addAttribute()` to set the `transform` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the transform
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set transforms.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `transform` attribute.
+ * - Delegates to `addAttribute()` for the `transform` attribute.
  * - Immutable method for setting or overriding the `transform` attribute.
  * - Supports `string` and `null` for flexible transform assignment (matrix, translate, scale, rotate, skew, or unset).
  *
@@ -34,8 +32,7 @@ trait HasTransform
     /**
      * Sets the SVG `transform` attribute for the element.
      *
-     * Creates a new instance with the specified transform value, supporting explicit assignment according to the SVG 2
-     * and HTML specifications for transforming coordinate systems of graphical content.
+     * Creates a new instance with the specified transform value for the rendered element.
      *
      * @param string|null $value Transform value (for example, `'rotate(45)'`, `'scale(2)'`, or `null` to unset).
      *

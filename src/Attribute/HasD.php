@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `d` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `d` attribute on SVG elements, following the SVG 2
- * specification for defining the path data string used to draw paths.
+ * Provides a method that delegates to `addAttribute()` to set the `d` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of path data,
- * ensuring correct attribute handling and predictable rendering.
+ * Intended for use in SVG tag and component classes that set path data.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `d` attribute.
+ * - Delegates to `addAttribute()` for the `d` attribute.
  * - Immutable method for setting or overriding the `d` attribute.
  * - Supports `string` and `null` for flexible path data assignment (or unset).
  *
@@ -34,8 +32,7 @@ trait HasD
     /**
      * Sets the SVG `d` attribute for the element.
      *
-     * Creates a new instance with the specified path data value, supporting explicit assignment according to the SVG 2
-     * specification for defining the path data string.
+     * Creates a new instance with the specified path data value for the rendered element.
      *
      * @param string|null $value Path data string (for example, `'M10 10 H 90 V 90 H 10 Z'`, or `null` to unset).
      *

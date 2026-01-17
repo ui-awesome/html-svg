@@ -11,11 +11,10 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 /**
  * Represents the SVG `<linearGradient>` (linearGradient) element for defining linear gradients.
  *
- * Provides a concrete, type-safe implementation of the SVG `<linearGradient>` container element, supporting flexible
- * content injection and attribute management for advanced gradient rendering scenarios.
+ * Provides a concrete `<linearGradient>` element implementation that returns `SvgBlock::LINEAR_GRADIENT` and mixes in
+ * gradient and coordinate attribute traits.
  *
- * The `<linearGradient>` element defines a linear gradient that can be applied to SVG elements as fill or stroke. The
- * gradient varies along a linear vector defined by the x1, y1, x2, and y2 attributes.
+ * The `<linearGradient>` element defines a linear gradient with coordinates and gradient attributes.
  *
  * Key features.
  * - Container element accepts child elements.

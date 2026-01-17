@@ -12,15 +12,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing SVG `stroke-miterlimit` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting `stroke-miterlimit` attribute on SVG elements, following
- * the SVG 2 specification for painting and stroking graphical content.
+ * Provides a method that delegates to `addAttribute()` to set the `stroke-miterlimit` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of stroke miter
- * limit property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set stroke miter limit values.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of SVG `stroke-miterlimit` attribute.
+ * - Delegates to `addAttribute()` for the `stroke-miterlimit` attribute.
  * - Immutable method for setting or overriding the `stroke-miterlimit` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible stroke miter limit assignment (number `>= 1` or unset).
  *
@@ -37,10 +35,9 @@ trait HasStrokeMiterlimit
     /**
      * Sets SVG `stroke-miterlimit` attribute for the element.
      *
-     * Creates a new instance with the specified stroke miter limit value, supporting explicit assignment according to
-     * the SVG 2 specification for painting and stroking properties.
+     * Creates a new instance with the specified stroke miter limit value for the rendered element.
      *
-     * The `stroke-miterlimit` attribute controls the limit on the ratio of the miter length to the stroke-width. When
+     * The `stroke-miterlimit` attribute controls the limit on the ratio of the miter length to the stroke width. When
      * the limit is exceeded, the join is converted from a miter to a bevel. The value must be a number `>= 1`.
      *
      * @param float|int|string|null $value Stroke miter limit value (for example, `4`, `'10'`, or `null` to unset).

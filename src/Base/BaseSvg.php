@@ -41,19 +41,17 @@ use function file_get_contents;
 use function is_string;
 
 /**
- * Base class for constructing `<svg>` elements according to the SVG 2 specification.
+ * Base class for constructing `<svg>` elements.
  *
- * Provides a standards-compliant, extensible foundation for SVG container rendering, supporting SVG attributes, content
- * management, and attribute immutability.
+ * Provides the shared implementation for SVG container rendering, including attribute handling, content management, and
+ * immutable updates.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of SVG container
- * elements, supporting advanced rendering scenarios and consistent API design.
+ * Intended for SVG classes that need SVG container behavior with file-backed rendering and attribute processing.
  *
  * Key features.
  * - Container element accepts child elements.
- * - Enforces standards-compliant handling of the `<svg>` element (SVG 2 specification).
  * - Extensible for custom SVG element implementations.
- * - Extracts global attribute (`title`) into a `<title>` child for accessibility.
+ * - Moves the global `title` attribute into a `<title>` child when present.
  * - Immutable API for attribute and content assignment.
  * - Integrates SVG attribute management.
  * - Supports file-based SVG injection.
@@ -139,10 +137,10 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     }
 
     /**
-     * Retrieves the content of the SVG element, injecting accessibility tags if defined.
+     * Retrieves the content of the SVG element, injecting a `<title>` element when defined.
      *
-     * Overrides the base implementation to intercept the `title` attribute. If present, it creates a `<title>` HTML
-     * element and prepends it to the content, ensuring proper accessibility for manually constructed SVGs.
+     * Overrides the base implementation to intercept the `title` attribute. If present, it creates a `<title>` element and
+     * prepends it to the content before the remaining SVG content.
      *
      * @return string Combined content string with the title injected.
      *
@@ -166,11 +164,9 @@ abstract class BaseSvg extends BaseBlock implements Stringable
     /**
      * Sets the `xmlns` attribute for the SVG element.
      *
-     * Creates a new instance with the specified XML namespace URI, supporting explicit assignment according to the HTML
-     * specification for SVG attributes.
+     * Creates a new instance with the specified XML namespace URI for the rendered `<svg>` element.
      *
-     * The `xmlns` attribute is required only on the outermost `<svg>` element in SVG documents or when embedding SVG in
-     * XML.
+     * The `xmlns` attribute is typically used on the outermost `<svg>` element.
      *
      * @param string|null $value XML namespace URI.
      *

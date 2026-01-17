@@ -11,15 +11,14 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 /**
  * Trait for managing the SVG `patternUnits` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `patternUnits` attribute on SVG `<pattern>` elements,
- * following the SVG 2 specification for defining the coordinate system used by the pattern tile.
+ * Provides a method that delegates to `addAttribute()` to set the `patternUnits` attribute on SVG `<pattern>`
+ * elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the pattern
- * coordinate system, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set pattern units.
  *
  * Key features.
  * - Designed for use in SVG `<pattern>` tag and component classes.
- * - Enforces standards-compliant handling of the SVG `patternUnits` attribute.
+ * - Delegates to `addAttribute()` for the `patternUnits` attribute.
  * - Immutable method for setting or overriding the `patternUnits` attribute.
  * - Supports `string`, {@see CoordinateUnits} enum, and `null` for flexible coordinate system assignment (specific
  *   value or unset).
@@ -37,8 +36,7 @@ trait HasPatternUnits
     /**
      * Sets the SVG `patternUnits` attribute for the `<pattern>` element.
      *
-     * Creates a new instance with the specified pattern units value, supporting explicit assignment according to the
-     * SVG 2 specification.
+     * Creates a new instance with the specified pattern units value for the rendered element.
      *
      * @param CoordinateUnits|string|null $value Pattern units value (for example, `'objectBoundingBox'`,
      * {@see CoordinateUnits} enum, or `null` to unset).

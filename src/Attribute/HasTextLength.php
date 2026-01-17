@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `textLength` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `textLength` attribute on SVG elements, following the
- * SVG 2 specification for defining target length for text rendering.
+ * Provides a method that delegates to `addAttribute()` to set the `textLength` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the text
- * length property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set text length values.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `textLength` attribute.
+ * - Delegates to `addAttribute()` for the `textLength` attribute.
  * - Immutable method for setting or overriding the `textLength` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible length assignment.
  *
@@ -34,8 +32,7 @@ trait HasTextLength
     /**
      * Sets the SVG `textLength` attribute for the element.
      *
-     * Creates a new instance with the specified text length value, supporting explicit assignment according to the SVG
-     * 2 specification for defining the width into which text will be scaled to fit.
+     * Creates a new instance with the specified text length value for the rendered element.
      *
      * @param float|int|string|null $value Text length value (for example, `100`, `'50%'`, or `null` to unset).
      *

@@ -11,15 +11,13 @@ use UIAwesome\Html\Svg\Values\{SpreadMethod, SvgAttribute};
 /**
  * Trait for managing the SVG `spreadMethod` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `spreadMethod` attribute on SVG gradient elements,
- * following the SVG 2 specification for gradient spread methods.
+ * Provides a method that delegates to `addAttribute()` to set the `spreadMethod` attribute on SVG gradient elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the spread
- * method property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the spread method attribute.
  *
  * Key features.
  * - Designed for use in SVG gradient tag and component classes.
- * - Enforces standards-compliant handling of the SVG `spreadMethod` attribute.
+ * - Delegates to `addAttribute()` for the `spreadMethod` attribute.
  * - Immutable method for setting or overriding the `spreadMethod` attribute.
  * - Supports `string`, {@see SpreadMethod} enum, and `null` for flexible spread method assignment (specific value or
  *   unset).
@@ -37,8 +35,7 @@ trait HasSpreadMethod
     /**
      * Sets the SVG `spreadMethod` attribute for the gradient element.
      *
-     * Creates a new instance with the specified spread method value, supporting explicit assignment according to the
-     * SVG 2 specification for defining how a gradient behaves beyond its defined edges.
+     * Creates a new instance with the specified spread method value for the rendered element.
      *
      * @param SpreadMethod|string|null $value Spread method value (for example, `'pad'`, {@see SpreadMethod} enum, or
      * `null` to unset).

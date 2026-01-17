@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `markerHeight` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `markerHeight` attribute on SVG marker elements,
- * following the SVG 2 specification for defining the height of the marker viewport.
+ * Provides a method that delegates to `addAttribute()` to set the `markerHeight` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the marker
- * height property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set marker height.
  *
  * Key features.
  * - Designed for use in SVG marker tag and component classes.
- * - Enforces standards-compliant handling of the SVG `markerHeight` attribute.
+ * - Delegates to `addAttribute()` for the `markerHeight` attribute.
  * - Immutable method for setting or overriding the `markerHeight` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible height assignment (absolute, relative, or unset).
  *
@@ -34,8 +32,7 @@ trait HasMarkerHeight
     /**
      * Sets the SVG `markerHeight` attribute for the marker element.
      *
-     * Creates a new instance with the specified marker height value, supporting explicit assignment according to the
-     * SVG 2 specification for defining the height of the marker viewport.
+     * Creates a new instance with the specified marker height value for the rendered element.
      *
      * @param float|int|string|null $value Marker height value (for example, `3`, `'10%'`, or `null` to unset).
      *

@@ -12,15 +12,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `opacity` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `opacity` attribute on SVG elements, following the
- * SVG 2 and HTML specifications for controlling the transparency of graphical and container elements.
+ * Provides a method that delegates to `addAttribute()` to set the `opacity` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the opacity
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set opacity values.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `opacity` attribute.
+ * - Delegates to `addAttribute()` for the `opacity` attribute.
  * - Immutable method for setting or overriding the `opacity` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible opacity assignment (object or group opacity, or unset).
  *
@@ -37,9 +35,7 @@ trait HasOpacity
     /**
      * Sets the SVG `opacity` attribute for the element.
      *
-     * Creates a new instance with the specified opacity value, supporting explicit assignment according to the SVG 2
-     * specification for object and group opacity, which controls the transparency of the element or group when painted
-     * to the canvas.
+     * Creates a new instance with the specified opacity value for the rendered element.
      *
      * @param float|int|string|null $value Opacity value (for example, `0.5`, `'0.75'`, or `null` to unset).
      *

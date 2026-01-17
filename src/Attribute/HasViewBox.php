@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `viewBox` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `viewBox` attribute on SVG elements, following the SVG
- * 2 specification for defining the position and dimension of an SVG viewport.
+ * Provides a method that delegates to `addAttribute()` to set the `viewBox` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the view box
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the view box.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `viewBox` attribute.
+ * - Delegates to `addAttribute()` for the `viewBox` attribute.
  * - Immutable method for setting or overriding the `viewBox` attribute.
  * - Supports `string` and `null` for flexible viewport assignment (specific value or unset).
  *
@@ -34,8 +32,7 @@ trait HasViewBox
     /**
      * Sets the SVG `viewBox` attribute for the element.
      *
-     * Creates a new instance with the specified view box value, supporting explicit assignment according to the SVG 2
-     * specification for defining the position and dimension of an SVG viewport in user space.
+     * Creates a new instance with the specified view box value for the rendered element.
      *
      * @param string|null $value ViewBox value (for example, `'0 0 100 100'`, or `null` to unset).
      *

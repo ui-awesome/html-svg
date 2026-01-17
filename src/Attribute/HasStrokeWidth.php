@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `stroke-width` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `stroke-width` attribute on SVG elements, following the
- * SVG 2 specification for controlling the thickness of the stroke applied to shapes and text content elements.
+ * Provides a method that delegates to `addAttribute()` to set the `stroke-width` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the stroke
- * width property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set stroke width.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `stroke-width` attribute.
+ * - Delegates to `addAttribute()` for the `stroke-width` attribute.
  * - Immutable method for setting or overriding the `stroke-width` attribute.
  * - Supports `int`, `string`, and `null` for flexible width assignment (absolute, relative, or unset).
  *
@@ -34,8 +32,7 @@ trait HasStrokeWidth
     /**
      * Sets the SVG `stroke-width` attribute for the element.
      *
-     * Creates a new instance with the specified stroke width value, supporting explicit assignment according to the
-     * SVG 2 specification for controlling the thickness of the outline painted for shapes and text content elements.
+     * Creates a new instance with the specified stroke width value for the rendered element.
      *
      * @param int|string|null $value Stroke width value (for example, `2`, `'1.5em'`, or `null` to unset).
      *

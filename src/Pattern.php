@@ -20,10 +20,10 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 /**
  * Represents the SVG `<pattern>` element for defining reusable patterns.
  *
- * Provides a standards-compliant, immutable API for rendering the `<pattern>` container element, following SVG 2 and
- * HTML specifications for defining patterns.
+ * Provides a concrete `<pattern>` element implementation that returns `SvgBlock::PATTERN` and mixes in geometry,
+ * linking, pattern, and view attribute traits.
  *
- * The `<pattern>` element defines a pattern that can be referenced by fill/stroke.
+ * The `<pattern>` element defines a pattern that can be referenced by `fill` and `stroke` attributes.
  *
  * Key features.
  * - Container element accepts child elements.

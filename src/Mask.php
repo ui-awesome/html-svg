@@ -12,8 +12,8 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 /**
  * Represents the SVG `<mask>` element for defining masking regions.
  *
- * Provides a standards-compliant, immutable API for rendering the `<mask>` container element, following SVG 2 and CSS
- * Masking specifications for defining masks.
+ * Provides a concrete `<mask>` element implementation that returns `SvgBlock::MASK` and mixes in mask and geometry
+ * attribute traits.
  *
  * The `<mask>` element defines a mask that can be applied to other elements.
  *

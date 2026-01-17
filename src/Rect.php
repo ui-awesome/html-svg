@@ -28,10 +28,10 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
 /**
  * Represents the SVG `<rect>` (rectangle) element for rendering rectangles.
  *
- * Provides a standards-compliant, immutable API for rendering the `<rect>` element, following the SVG 2 and HTML
- * specifications for defining rectangular shapes.
+ * Provides a concrete `<rect>` element implementation that returns `SvgVoid::RECT` and mixes in geometry, paint, and
+ * transform attribute traits.
  *
- * The `<rect>` element is an SVG basic shape used to create rectangles based on a position and size.
+ * The `<rect>` element is an SVG basic shape used to create rectangles based on position and size attributes.
  *
  * Key features.
  * - Supports geometry attributes (`x`, `y`, `width`, `height`, `rx`, `ry`, `pathLength`).

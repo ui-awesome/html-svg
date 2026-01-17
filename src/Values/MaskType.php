@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Values;
 
 /**
- * Represents standardized values for the SVG `mask-type` attribute.
+ * Represents literal string values for the SVG `mask-type` attribute.
  *
- * Provides a type-safe, standards-compliant set of values for use in SVG `<mask>` element rendering, ensuring
- * consistency with the CSS Masking Module Level 1 specification.
+ * Provides the keyword values used by the `mask-type` attribute.
  *
  * Key features.
  * - Designed for use in `<mask>` elements, components, and helpers requiring mask mode assignment.
- * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of `mask-type` values for semantic markup generation.
- * - Values follow the CSS Masking Module Level 1 specification for the `<mask>` element.
+ * - Can be used as an enum value in attribute assignment.
+ * - Values map to `mask-type` keyword values.
+ * - Useful for attribute assignment where a literal value is required.
  *
  * @see \UIAwesome\Html\Svg\Mask::maskType()
  *

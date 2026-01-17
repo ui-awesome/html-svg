@@ -30,8 +30,8 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
 /**
  * Represents the SVG `<line>` (line) element for rendering straight lines.
  *
- * Provides a standards-compliant, immutable API for rendering the `<line>` element, following the SVG 2 and HTML
- * specifications for defining straight lines.
+ * Provides a concrete `<line>` element implementation that returns `SvgVoid::LINE` and mixes in geometry, paint, and
+ * transform attribute traits.
  *
  * The `<line>` element is an SVG basic shape used to draw a straight line between two points.
  *

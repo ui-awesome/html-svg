@@ -11,15 +11,14 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 /**
  * Trait for managing the SVG `patternContentUnits` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `patternContentUnits` attribute on SVG `<pattern>`
- * elements, following the SVG 2 specification for defining the coordinate system used by the pattern contents.
+ * Provides a method that delegates to `addAttribute()` to set the `patternContentUnits` attribute on SVG `<pattern>`
+ * elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the pattern
- * content coordinate system, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set pattern content units.
  *
  * Key features.
  * - Designed for use in SVG `<pattern>` tag and component classes.
- * - Enforces standards-compliant handling of the SVG `patternContentUnits` attribute.
+ * - Delegates to `addAttribute()` for the `patternContentUnits` attribute.
  * - Immutable method for setting or overriding the `patternContentUnits` attribute.
  * - Supports `string`, {@see CoordinateUnits} enum, and `null` for flexible coordinate system assignment (specific
  *   value or unset).
@@ -37,8 +36,7 @@ trait HasPatternContentUnits
     /**
      * Sets the SVG `patternContentUnits` attribute for the `<pattern>` element.
      *
-     * Creates a new instance with the specified pattern content units value, supporting explicit assignment according
-     * to the SVG 2 specification.
+     * Creates a new instance with the specified pattern content units value for the rendered element.
      *
      * @param CoordinateUnits|string|null $value Pattern content units value (for example, `'userSpaceOnUse'`,
      * {@see CoordinateUnits} enum, or `null` to unset).

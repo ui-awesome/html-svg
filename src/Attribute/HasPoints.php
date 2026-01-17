@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `points` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `points` attribute on SVG elements, following the SVG 2
- * specification for defining the list of points that make up a polyline.
+ * Provides a method that delegates to `addAttribute()` to set the `points` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of point lists,
- * ensuring correct attribute handling, type safety, and predictable rendering.
+ * Intended for use in SVG tag and component classes that set point lists.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `points` attribute.
+ * - Delegates to `addAttribute()` for the `points` attribute.
  * - Immutable method for setting or overriding the `points` attribute.
  * - Supports `string` and `null` for flexible point list assignment (or unset).
  *
@@ -34,8 +32,7 @@ trait HasPoints
     /**
      * Sets the SVG `points` attribute for the element.
      *
-     * Creates a new instance with the specified list of points value, supporting explicit assignment according to the
-     * SVG 2 specification for defining the list of coordinate pairs.
+     * Creates a new instance with the specified list of points value for the rendered element.
      *
      * @param string|null $value List of points (for example, `'0,0 10,10 20,0'`, or `null` to unset).
      *

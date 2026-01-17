@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `letter-spacing` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `letter-spacing` attribute on SVG elements, following
- * the SVG 2 specification for defining spacing between text characters.
+ * Provides a method that delegates to `addAttribute()` to set the `letter-spacing` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the letter
- * spacing property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set letter spacing.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `letter-spacing` attribute.
+ * - Delegates to `addAttribute()` for the `letter-spacing` attribute.
  * - Immutable method for setting or overriding the `letter-spacing` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible letter spacing assignment (absolute, relative,
  *   percentage, or unset).
@@ -35,8 +33,7 @@ trait HasLetterSpacing
     /**
      * Sets the SVG `letter-spacing` attribute for the element.
      *
-     * Creates a new instance with the specified letter spacing value, supporting explicit assignment according to the
-     * SVG 2 specification for controlling spacing between text characters.
+     * Creates a new instance with the specified letter spacing value for the rendered element.
      *
      * @param float|int|string|null $value Letter spacing value (for example, `2`, `'0.1em'`, `'normal'`, or `null` to
      * unset).

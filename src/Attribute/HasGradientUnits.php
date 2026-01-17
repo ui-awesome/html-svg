@@ -11,15 +11,13 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 /**
  * Trait for managing the SVG `gradientUnits` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `gradientUnits` attribute on SVG gradient elements,
- * following the SVG 2 specification for gradient coordinate systems.
+ * Provides a method that delegates to `addAttribute()` to set the `gradientUnits` attribute on SVG gradient elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the gradient
- * units property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the gradient coordinate system.
  *
  * Key features.
  * - Designed for use in SVG gradient tag and component classes.
- * - Enforces standards-compliant handling of the SVG `gradientUnits` attribute.
+ * - Delegates to `addAttribute()` for the `gradientUnits` attribute.
  * - Immutable method for setting or overriding the `gradientUnits` attribute.
  * - Supports `string`, {@see CoordinateUnits} enum, and `null` for flexible gradient coordinate system assignment
  *   (specific value or unset).
@@ -37,8 +35,7 @@ trait HasGradientUnits
     /**
      * Sets the SVG `gradientUnits` attribute for the gradient element.
      *
-     * Creates a new instance with the specified gradient units value, supporting explicit assignment according to the
-     * SVG 2 specification for defining the coordinate system of gradient attributes.
+     * Creates a new instance with the specified gradient units value for the rendered element.
      *
      * @param CoordinateUnits|string|null $value Gradient units value (for example, `'userSpaceOnUse'`,
      * {@see CoordinateUnits} enum, or `null` to unset).
