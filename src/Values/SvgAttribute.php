@@ -153,6 +153,15 @@ enum SvgAttribute: string
     case FONT_WEIGHT = 'font-weight';
 
     /**
+     * `fr` - Radius of the start circle of the radial gradient.
+     *
+     * Defines the radius of the start circle. The 0% `<stop>` is mapped to the perimeter of this circle.
+     *
+     * @link https://www.w3.org/TR/SVG2/pservers.html#RadialGradientElementFRAttribute
+     */
+    case FR = 'fr';
+
+    /**
      * `gradientTransform` - Defines a transformation applied to the gradient coordinate system.
      *
      * @link https://www.w3.org/TR/SVG2/pservers.html#LinearGradientElementGradientTransformAttribute
