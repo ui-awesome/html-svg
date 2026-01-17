@@ -7,14 +7,13 @@ namespace UIAwesome\Html\Svg\Values;
 /**
  * Represents standardized values for the CSS `text-decoration-line` property in SVG text decoration.
  *
- * Provides a type-safe, standards-compliant set of text decoration line values for use in SVG text element rendering,
- * attributes, and view helpers, ensuring technical consistency with CSS and SVG specifications.
+ * Provides literal string values for the `text-decoration-line` keyword options.
  *
  * Key features.
  * - Designed for use in text elements, components, and helpers requiring text decoration line assignment.
- * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of `text-decoration-line` values for semantic markup generation.
- * - Values follow the CSS Text Decoration specification.
+ * - Can be used as an enum value in attribute assignment.
+ * - Values map to `text-decoration-line` keyword values.
+ * - Useful for attribute assignment where a literal value is required.
  *
  * @see \UIAwesome\Html\Svg\Text::textDecoration()
  *

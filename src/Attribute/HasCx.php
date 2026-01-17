@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `cx` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `cx` attribute on SVG elements, following the SVG 2
- * specification for defining the x-axis coordinate of the center of an element.
+ * Provides a method that delegates to `addAttribute()` to set the `cx` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the center
- * x-coordinate property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the center x coordinate.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `cx` attribute.
+ * - Delegates to `addAttribute()` for the `cx` attribute.
  * - Immutable method for setting or overriding the `cx` attribute.
  * - Supports `int`, `float`, `string`, and `null` for flexible coordinate assignment (absolute, relative, or unset).
  *
@@ -34,9 +32,7 @@ trait HasCx
     /**
      * Sets the SVG `cx` attribute for the element.
      *
-     * Creates a new instance with the specified center x-coordinate value, supporting explicit assignment according to
-     * the SVG 2 specification for defining the horizontal position of the center of an element such as a circle or
-     * ellipse.
+     * Creates a new instance with the specified center x-coordinate value for the rendered element.
      *
      * @param float|int|string|null $value Center x-coordinate value (for example, `50`, `'50%'`, or `null` to unset).
      *

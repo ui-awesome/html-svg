@@ -11,15 +11,13 @@ use UIAwesome\Html\Svg\Values\{LengthAdjust, SvgAttribute};
 /**
  * Trait for managing SVG `lengthAdjust` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting `lengthAdjust` attribute on SVG elements, following the SVG
- * 2 specification for text length adjustment properties.
+ * Provides a method that delegates to `addAttribute()` to set the `lengthAdjust` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of length adjust
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set length adjustment values.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of SVG `lengthAdjust` attribute.
+ * - Delegates to `addAttribute()` for the `lengthAdjust` attribute.
  * - Immutable method for setting or overriding the `lengthAdjust` attribute.
  * - Supports `string`, {@see LengthAdjust} enum, and `null` for flexible length adjust assignment (specific value or
  *   unset).
@@ -37,8 +35,7 @@ trait HasLengthAdjust
     /**
      * Sets SVG `lengthAdjust` attribute for the element.
      *
-     * Creates a new instance with the specified length adjust value, supporting explicit assignment according to the
-     * SVG 2 specification for text length adjustment properties.
+     * Creates a new instance with the specified length adjust value for the rendered element.
      *
      * @param LengthAdjust|string|null $value Length adjust value (for example, `spacing`,
      * {@see LengthAdjust} enum, or `null` to unset).

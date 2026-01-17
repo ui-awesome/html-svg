@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `cy` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `cy` attribute on SVG elements, following the SVG 2
- * specification for defining the y-axis coordinate of the center of an element.
+ * Provides a method that delegates to `addAttribute()` to set the `cy` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the center
- * y-coordinate property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the center y coordinate.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `cy` attribute.
+ * - Delegates to `addAttribute()` for the `cy` attribute.
  * - Immutable method for setting or overriding the `cy` attribute.
  * - Supports `int`, `float`, `string`, and `null` for flexible coordinate assignment (absolute, relative, or unset).
  *
@@ -34,9 +32,7 @@ trait HasCy
     /**
      * Sets the SVG `cy` attribute for the element.
      *
-     * Creates a new instance with the specified center y-coordinate value, supporting explicit assignment according to
-     * the SVG 2 specification for defining the vertical position of the center of an element such as a circle or
-     * ellipse.
+     * Creates a new instance with the specified center y-coordinate value for the rendered element.
      *
      * @param float|int|string|null $value Center y-coordinate value (for example, `50`, `'50%'`, or `null` to unset).
      *

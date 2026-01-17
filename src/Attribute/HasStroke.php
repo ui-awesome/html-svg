@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `stroke` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `stroke` attribute on SVG elements, following the SVG 2
- * specification for painting and stroking graphical content.
+ * Provides a method that delegates to `addAttribute()` to set the `stroke` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the stroke
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the stroke paint value.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `stroke` attribute.
+ * - Delegates to `addAttribute()` for the `stroke` attribute.
  * - Immutable method for setting or overriding the `stroke` attribute.
  * - Supports `string` and `null` for flexible stroke assignment (color, pattern, or none).
  *
@@ -34,8 +32,7 @@ trait HasStroke
     /**
      * Sets the SVG `stroke` attribute for the element.
      *
-     * Creates a new instance with the specified stroke value, supporting explicit assignment according to the SVG 2
-     * specification for painting outlines of shapes and text content elements.
+     * Creates a new instance with the specified stroke value for the rendered element.
      *
      * @param string|null $value Stroke paint value (for example, `'black'`, `'url(#gradient1)'`, or `null` to unset).
      *

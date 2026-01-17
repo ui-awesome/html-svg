@@ -30,8 +30,8 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
 /**
  * Represents the SVG `<ellipse>` (ellipse) element for rendering ellipses.
  *
- * Provides a standards-compliant, immutable API for rendering the `<ellipse>` element, following the SVG 2 and HTML
- * specifications for defining ellipse shapes.
+ * Provides a concrete `<ellipse>` element implementation that returns `SvgVoid::ELLIPSE` and mixes in geometry,
+ * paint, and transform attribute traits.
  *
  * The `<ellipse>` element is an SVG basic shape used to create ellipses based on a center point and two radii.
  *

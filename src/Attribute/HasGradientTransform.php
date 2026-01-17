@@ -9,15 +9,14 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `gradientTransform` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `gradientTransform` attribute on SVG gradient elements,
- * following the SVG 2 specification for gradient transformations.
+ * Provides a method that delegates to `addAttribute()` to set the `gradientTransform` attribute on SVG gradient
+ * elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the gradient
- * transform property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the gradient transform.
  *
  * Key features.
  * - Designed for use in SVG gradient tag and component classes.
- * - Enforces standards-compliant handling of the SVG `gradientTransform` attribute.
+ * - Delegates to `addAttribute()` for the `gradientTransform` attribute.
  * - Immutable method for setting or overriding the `gradientTransform` attribute.
  * - Supports `string` and `null` for flexible transform assignment (matrix, translate, scale, rotate, skew, or unset).
  *
@@ -34,8 +33,7 @@ trait HasGradientTransform
     /**
      * Sets the SVG `gradientTransform` attribute for the gradient element.
      *
-     * Creates a new instance with the specified gradient transform value, supporting explicit assignment according to
-     * the SVG 2 specification for transforming gradient coordinate systems.
+     * Creates a new instance with the specified gradient transform value for the rendered element.
      *
      * @param string|null $value Transform value (for example, `'rotate(45)'`, `'scale(2)'`, or `null` to unset).
      *

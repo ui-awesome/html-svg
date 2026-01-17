@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `fill` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `fill` attribute on SVG elements, following the SVG 2
- * specification for painting properties.
+ * Provides a method that delegates to `addAttribute()` to set the `fill` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the `fill`
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the fill paint value.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `fill` attribute.
+ * - Delegates to `addAttribute()` for the `fill` attribute.
  * - Immutable method for setting or overriding the `fill` attribute.
  * - Supports `string` and `null` for flexible fill assignment (color, pattern, gradient, or unset).
  *
@@ -34,8 +32,7 @@ trait HasFill
     /**
      * Sets the SVG `fill` attribute for the element.
      *
-     * Creates a new instance with the specified fill value, supporting explicit assignment according to the SVG 2
-     * specification for painting properties.
+     * Creates a new instance with the specified fill value for the rendered element.
      *
      * @param string|null $value Fill value (for example, `'red'`, `'url(#gradient1)'`, or `null` to unset).
      *

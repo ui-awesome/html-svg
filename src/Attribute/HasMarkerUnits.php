@@ -11,15 +11,13 @@ use UIAwesome\Html\Svg\Values\{MarkerUnits, SvgAttribute};
 /**
  * Trait for managing the SVG `markerUnits` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `markerUnits` attribute on SVG marker elements,
- * following the SVG 2 specification for marker coordinate systems.
+ * Provides a method that delegates to `addAttribute()` to set the `markerUnits` attribute on SVG marker elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the marker
- * units property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set marker units.
  *
  * Key features.
  * - Designed for use in SVG marker tag and component classes.
- * - Enforces standards-compliant handling of the SVG `markerUnits` attribute.
+ * - Delegates to `addAttribute()` for the `markerUnits` attribute.
  * - Immutable method for setting or overriding the `markerUnits` attribute.
  * - Supports `string`, {@see MarkerUnits} enum, and `null` for flexible marker coordinate system assignment (specific
  *   value or unset).
@@ -37,8 +35,7 @@ trait HasMarkerUnits
     /**
      * Sets the SVG `markerUnits` attribute for the marker element.
      *
-     * Creates a new instance with the specified marker units value, supporting explicit assignment according to the SVG
-     * 2 specification for defining the coordinate system of marker attributes.
+     * Creates a new instance with the specified marker units value for the rendered element.
      *
      * @param MarkerUnits|string|null $value Marker units value (for example, `'strokeWidth'`,
      * {@see MarkerUnits} enum, or `null` to unset).

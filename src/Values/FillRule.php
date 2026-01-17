@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Values;
 
 /**
- * Represents standardized values for SVG 2 `fill-rule` attribute.
+ * Represents literal string values for the SVG `fill-rule` attribute.
  *
- * Provides a type-safe, standards-compliant set of fill rule values for use in SVG element rendering, attributes, and
- * view helpers, ensuring technical consistency with SVG 2 specification and modern web standards.
+ * Provides the keyword values used by the `fill-rule` attribute.
  *
  * Key features.
  * - Designed for use in tags, components, and helpers requiring fill rule assignment.
- * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of `fill-rule` values for semantic markup generation and accessibility.
- * - Values follow SVG 2 specification for `fill-rule` attribute.
+ * - Can be used as an enum value in attribute assignment.
+ * - Values map to `fill-rule` keyword values.
+ * - Useful for attribute assignment where a literal value is required.
  *
  * @see \UIAwesome\Html\Svg\Circle::fillRule()
  * @see \UIAwesome\Html\Svg\Ellipse::fillRule()

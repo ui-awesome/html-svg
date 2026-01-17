@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Values;
 
 /**
- * Represents standardized values for SVG coordinate system units.
+ * Represents literal string values for SVG coordinate system units.
  *
- * Provides a type-safe, standards-compliant set of values for use in SVG attributes that define coordinate systems,
- * ensuring consistency with SVG 2 and CSS Masking specifications.
+ * Provides the keyword values used by attributes that define coordinate systems.
  *
  * Key features.
  * - Designed for use in tags, components, and helpers requiring coordinate units assignment.
- * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of values for semantic markup generation and accessibility.
- * - Values follow SVG 2 and CSS Masking Module Level 1 specifications.
+ * - Can be used as an enum value in attribute assignment.
+ * - Values map to coordinate unit keyword values.
+ * - Useful for attribute assignment where a literal value is required.
  *
  * @see \UIAwesome\Html\Svg\ClipPath::clipPathUnits()
  * @see \UIAwesome\Html\Svg\Filter::filterUnits()

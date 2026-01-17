@@ -27,10 +27,10 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
 /**
  * Represents the SVG `<path>` (path) element for rendering complex shapes.
  *
- * Provides a standards-compliant, immutable API for rendering the `<path>` element, following the SVG 2 and HTML
- * specifications for defining arbitrary shapes.
+ * Provides a concrete `<path>` element implementation that returns `SvgVoid::PATH` and mixes in path, paint, and
+ * transform attribute traits.
  *
- * The `<path>` element is the most powerful SVG element for drawing arbitrary shapes, using a path data string.
+ * The `<path>` element draws arbitrary shapes defined by a path data string.
  *
  * Key features.
  * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).

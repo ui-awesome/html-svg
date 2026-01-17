@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `y1` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `y1` attribute on SVG elements, following the SVG 2
- * specification for defining the first y-axis coordinate of an element.
+ * Provides a method that delegates to `addAttribute()` to set the `y1` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the first y-coordinate
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the first y coordinate.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `y1` attribute.
+ * - Delegates to `addAttribute()` for the `y1` attribute.
  * - Immutable method for setting or overriding the `y1` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible coordinate assignment (absolute, relative, or unset).
  *
@@ -34,8 +32,7 @@ trait HasY1
     /**
      * Sets the SVG `y1` attribute for the element.
      *
-     * Creates a new instance with the specified first y-coordinate value, supporting explicit assignment according to
-     * the SVG 2 specification for defining the first vertical position of an element.
+     * Creates a new instance with the specified first y-coordinate value for the rendered element.
      *
      * @param float|int|string|null $value First y coordinate value (for example, `10`, `'50%'`, or `null` to unset).
      *

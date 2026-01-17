@@ -11,15 +11,13 @@ use UIAwesome\Html\Svg\Values\{MaskType, SvgAttribute};
 /**
  * Trait for managing the SVG `mask-type` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `mask-type` attribute on SVG `<mask>` elements,
- * following the CSS Masking Module Level 1 specification for defining how mask content is interpreted.
+ * Provides a method that delegates to `addAttribute()` to set the `mask-type` attribute on SVG `<mask>` elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the mask type,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set mask type values.
  *
  * Key features.
  * - Designed for use in SVG `<mask>` tag and component classes.
- * - Enforces standards-compliant handling of the SVG `mask-type` attribute.
+ * - Delegates to `addAttribute()` for the `mask-type` attribute.
  * - Immutable method for setting or overriding the `mask-type` attribute.
  * - Supports `string`, {@see MaskType} enum, and `null` for flexible mask type assignment (specific value or unset).
  *
@@ -36,10 +34,9 @@ trait HasMaskType
     /**
      * Sets the SVG `mask-type` attribute for the `<mask>` element.
      *
-     * Creates a new instance with the specified mask type value, supporting explicit assignment according to the CSS
-     * Masking Module Level 1 specification.
+     * Creates a new instance with the specified mask type value for the rendered element.
      *
-     * @param MaskType|string|null $value Mask type value to set for the element. Accepts 'alpha', 'luminance',
+     * @param MaskType|string|null $value Mask type value to set for the element. Accepts `alpha`, `luminance`,
      * {@see MaskType} enum, or `null` to unset.
      *
      * @throws InvalidArgumentException If the provided value is not a valid {@see MaskType} enum or `string`.

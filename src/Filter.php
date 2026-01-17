@@ -15,8 +15,8 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 /**
  * Represents the SVG `<filter>` (filter) element for defining filter effects.
  *
- * Provides a standards-compliant, immutable API for rendering the `<filter>` container element, following the SVG 2 and
- * HTML specifications for defining filter effects.
+ * Provides a concrete `<filter>` element implementation that returns `SvgBlock::FILTER` and mixes in filter and
+ * geometry attribute traits.
  *
  * The `<filter>` element defines a filter that can be applied to other elements.
  *
@@ -41,8 +41,7 @@ final class Filter extends Base\BaseSvgBlockTag
     /**
      * Sets the `filterUnits` attribute for the `<filter>` element.
      *
-     * Creates a new instance with the specified filter units value, supporting explicit assignment according to the
-     * HTML specification for SVG attributes.
+     * Creates a new instance with the specified filter units value for the rendered `<filter>` element.
      *
      * @param CoordinateUnits|string|null $value Filter units value (for example, "objectBoundingBox" or
      * "userSpaceOnUse").
@@ -73,8 +72,7 @@ final class Filter extends Base\BaseSvgBlockTag
     /**
      * Sets the `primitiveUnits` attribute for the `<filter>` element.
      *
-     * Creates a new instance with the specified primitive units value, supporting explicit assignment according to the
-     * HTML specification for SVG attributes.
+     * Creates a new instance with the specified primitive units value for the rendered `<filter>` element.
      *
      * @param CoordinateUnits|string|null $value Primitive units value (for example, "objectBoundingBox" or
      * "userSpaceOnUse").

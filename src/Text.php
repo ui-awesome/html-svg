@@ -42,17 +42,14 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 /**
  * Represents the SVG `<text>` (text) element for rendering text content in SVG graphics.
  *
- * Provides a standards-compliant, immutable API for rendering the `<text>` container element, following the SVG 2 and
- * HTML specifications for text content, positioning, typography, and text decoration.
+ * Provides a concrete `<text>` element implementation that returns `SvgBlock::TEXT` and mixes in text layout,
+ * typography, paint, and transform attribute traits.
  *
- * The `<text>` element is used to define text in SVG graphics. It supports advanced typography features including text
- * positioning (`x`, `y`, `dx`, `dy`, `rotate`), text rendering adjustments (`textLength`, `lengthAdjust`), alignment
- * (`textAnchor`, `dominantBaseline`), font properties (`fontFamily`, `fontSize`, `fontWeight`, `fontStyle`), spacing
- * (`letterSpacing`, `wordSpacing`), decoration (`textDecoration`), and writing mode (`writingMode`).
+ * The `<text>` element defines text content with positioning, layout, and typography attributes.
  *
  * Key features.
  * - Container element accepts child elements.
- * - Supports global attribute (`title`) for accessibility.
+ * - Supports global `title` attribute via {@see HasTitle}.
  * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.) and transform attribute
  *   (`transform`).
  * - Supports text layout attributes (`textLength`, `lengthAdjust`, `text-anchor`, `dominant-baseline`).

@@ -7,12 +7,12 @@ namespace UIAwesome\Html\Svg\Values;
 /**
  * Represents standardized attribute names for the SVG `<svg>` element.
  *
- * Provides a type-safe set of attribute tokens and concise documentation aligned with the MDN reference.
+ * Provides literal string values for SVG attribute names.
  *
  * Key features.
  * - Designed for use in helpers and components that need an explicit `<svg>` attribute name.
  * - Suitable for building attribute arrays and rendering SVG markup.
- * - Values follow the `<svg>` attributes listed in the MDN documentation.
+ * - Values map to SVG attribute names.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute
  *

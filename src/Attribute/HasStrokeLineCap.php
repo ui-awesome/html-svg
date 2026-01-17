@@ -11,17 +11,15 @@ use UIAwesome\Html\Svg\Values\{StrokeLineCap, SvgAttribute};
 /**
  * Trait for managing the SVG `stroke-linecap` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `stroke-linecap` attribute on SVG elements, following
- * the SVG 2 specification for controlling the shape of the ends of open subpaths when they are stroked.
+ * Provides a method that delegates to `addAttribute()` to set the `stroke-linecap` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the stroke
- * line cap property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the stroke line cap.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `stroke-linecap` attribute.
+ * - Delegates to `addAttribute()` for the `stroke-linecap` attribute.
  * - Immutable method for setting or overriding the `stroke-linecap` attribute.
- * - Supports `string`, {@see StrokeLineCap} enum, and `null` for flexible cap assignment ('butt', 'round', 'square',
+ * - Supports `string`, {@see StrokeLineCap} enum, and `null` for flexible cap assignment (`butt`, `round`, `square`,
  *   or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
@@ -37,8 +35,7 @@ trait HasStrokeLineCap
     /**
      * Sets the SVG `stroke-linecap` attribute for the element.
      *
-     * Creates a new instance with the specified stroke line cap value, supporting explicit assignment according to the
-     * SVG 2 specification for painting outlines of shapes and text content elements.
+     * Creates a new instance with the specified stroke line cap value for the rendered element.
      *
      * @param string|StrokeLineCap|null $value Stroke line cap style (for example, `'round'`,
      * {@see StrokeLineCap} enum, or `null` to unset).

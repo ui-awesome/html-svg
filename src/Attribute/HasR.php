@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `r` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `r` attribute on SVG elements, following the SVG 2
- * specification for defining the radius of an element.
+ * Provides a method that delegates to `addAttribute()` to set the `r` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the radius
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the radius.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `r` attribute.
+ * - Delegates to `addAttribute()` for the `r` attribute.
  * - Immutable method for setting or overriding the `r` attribute.
  * - Supports `int`, `float`, `string`, and `null` for flexible radius assignment (absolute, relative, or unset).
  *
@@ -34,8 +32,7 @@ trait HasR
     /**
      * Sets the SVG `r` attribute for the element.
      *
-     * Creates a new instance with the specified radius value, supporting explicit assignment according to the SVG 2
-     * specification for defining the radius of an element such as a circle.
+     * Creates a new instance with the specified radius value for the rendered element.
      *
      * @param float|int|string|null $value Radius value (for example, `25`, `'50%'`, or `null` to unset).
      *

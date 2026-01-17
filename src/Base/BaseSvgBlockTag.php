@@ -23,19 +23,18 @@ use UIAwesome\Html\Mixin\{HasAttributes, HasContent};
 use function preg_replace;
 
 /**
- * Base class for constructing block-level SVG tag elements according to the HTML specification.
+ * Base class for constructing block-level SVG tag elements.
  *
- * Provides a standards-compliant, extensible foundation for SVG tag rendering, supporting attribute management,
- * content handling, and output normalization for block elements.
+ * Provides a shared foundation for SVG tag rendering, including attribute handling, content handling, and output
+ * normalization for block elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of SVG block
- * elements, ensuring consistent rendering and API design.
+ * Intended for SVG block tag classes that render block-level SVG elements via {@see Html} helpers.
  *
  * Key features.
  * - Abstract contract for specifying the block tag via `getTag()` method.
  * - Container element accepts child elements.
  * - Integrates attribute, class, data, event, and style management.
- * - Supports `aria-*`, `lang`, `role`, and `tabindex` attributes for accessibility and semantics.
+ * - Supports `aria-*`, `lang`, `role`, and `tabindex` attributes.
  * - Supports content injection and output normalization.
  *
  * {@see BaseTag} for the base tag-level implementation.

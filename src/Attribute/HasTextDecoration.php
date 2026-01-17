@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, TextDecorationLine, TextDecorationS
 /**
  * Trait for managing the SVG `text-decoration` shorthand attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `text-decoration` attribute on SVG text elements,
- * following the SVG 2 specification and CSS Text Decoration Module for text decoration values.
+ * Provides a method that delegates to `addAttribute()` to set the `text-decoration` attribute on SVG text elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the text
- * decoration property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set text decoration values.
  *
  * Key features.
  * - Designed for use in SVG text tag and component classes.
- * - Enforces standards-compliant handling of the SVG `text-decoration` shorthand attribute.
+ * - Delegates to `addAttribute()` for the `text-decoration` attribute.
  * - Immutable method for setting or overriding the `text-decoration` attribute.
  * - Supports `string` (space-separated shorthand), {@see TextDecorationLine} enum, {@see TextDecorationStyle} enum,
  *   and `null` for flexible text decoration assignment (specific value or unset).
@@ -35,8 +33,7 @@ trait HasTextDecoration
     /**
      * Sets the SVG `text-decoration` shorthand attribute for the text element.
      *
-     * Creates a new instance with the specified text decoration value, supporting explicit assignment according to the
-     * SVG 2 specification and CSS Text Decoration Module for defining decorative lines, styles, and colors on text.
+     * Creates a new instance with the specified text decoration value for the rendered element.
      *
      * @param string|TextDecorationLine|TextDecorationStyle|null $value Text decoration shorthand value (for example,
      * `'underline wavy red'`, {@see TextDecorationLine} enum, or `null` to unset).

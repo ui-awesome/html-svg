@@ -14,12 +14,11 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 /**
  * Represents the SVG `<clipPath>` (clipping path) element for defining clipping paths.
  *
- * Provides a standards-compliant, immutable API for rendering the `<clipPath>` container element, following the SVG 2
- * and HTML specifications for defining clipping paths that restrict the visibility of parts of SVG elements.
+ * Provides a concrete `<clipPath>` element implementation that returns `SvgBlock::CLIP_PATH` and mixes in opacity and
+ * transform attribute traits.
  *
- * The `<clipPath>` element is used to define a clipping path that can be applied to other SVG elements using the
- * `clip-path` property. The content within a `<clipPath>` defines the area that will be visible when the clipping path
- * is applied.
+ * The `<clipPath>` element defines a clipping path that can be applied to other SVG elements via the `clip-path`
+ * property.
  *
  * Key features.
  * - Container element accepts child elements.
@@ -41,8 +40,7 @@ final class ClipPath extends Base\BaseSvgBlockTag
     /**
      * Sets the `clipPathUnits` attribute for the `<clipPath>` element.
      *
-     * Creates a new instance with the specified clip path units value, supporting explicit assignment according to the
-     * HTML specification for SVG attributes.
+     * Creates a new instance with the specified clip path units value for the rendered `<clipPath>` element.
      *
      * @param CoordinateUnits|string|null $value Clip path units value (for example, "objectBoundingBox" or
      * "userSpaceOnUse").

@@ -11,15 +11,13 @@ use UIAwesome\Html\Svg\Values\{DominantBaseline, SvgAttribute};
 /**
  * Trait for managing SVG `dominant-baseline` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting `dominant-baseline` attribute on SVG elements, following
- * the SVG 2 specification for baseline alignment properties.
+ * Provides a method that delegates to `addAttribute()` to set the `dominant-baseline` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of dominant
- * baseline property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set dominant baseline values.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of SVG `dominant-baseline` attribute.
+ * - Delegates to `addAttribute()` for the `dominant-baseline` attribute.
  * - Immutable method for setting or overriding the `dominant-baseline` attribute.
  * - Supports `string`, {@see DominantBaseline} enum, and `null` for flexible baseline alignment assignment (specific
  *   value or unset).
@@ -37,8 +35,7 @@ trait HasDominantBaseline
     /**
      * Sets SVG `dominant-baseline` attribute for the element.
      *
-     * Creates a new instance with the specified dominant baseline value, supporting explicit assignment according to
-     * the SVG 2 specification for baseline alignment properties.
+     * Creates a new instance with the specified dominant baseline value for the rendered element.
      *
      * @param DominantBaseline|string|null $value Dominant baseline value to set for the element. Accepts `auto`,
      * `alphabetic`, `middle`, `central`, `hanging`, `mathematical`, `ideographic`, `text-top`, `text-bottom`,

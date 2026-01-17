@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `rx` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `rx` attribute on SVG elements, following the SVG 2
- * specification for defining the x-axis radius of an ellipse or the x-axis radius of rounded corners of a rectangle.
+ * Provides a method that delegates to `addAttribute()` to set the `rx` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the x-axis
- * radius property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the x-axis radius.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `rx` attribute.
+ * - Delegates to `addAttribute()` for the `rx` attribute.
  * - Immutable method for setting or overriding the `rx` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible radius assignment (absolute, relative, or unset).
  *
@@ -34,9 +32,7 @@ trait HasRx
     /**
      * Sets the SVG `rx` attribute for the element.
      *
-     * Creates a new instance with the specified x-axis radius value, supporting explicit assignment according to the
-     * SVG 2 specification for defining the horizontal radius of an ellipse or the horizontal radius of rounded corners
-     * of a rectangle.
+     * Creates a new instance with the specified x-axis radius value for the rendered element.
      *
      * @param float|int|string|null $value X-axis radius value (for example, `50`, `'10px'`, `'50%'`, or `null` to unset).
      *

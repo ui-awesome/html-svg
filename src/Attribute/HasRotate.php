@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `rotate` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `rotate` attribute on SVG elements, following the SVG 2
- * specification for defining rotation values for individual glyphs.
+ * Provides a method that delegates to `addAttribute()` to set the `rotate` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the rotate
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set rotation values.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `rotate` attribute.
+ * - Delegates to `addAttribute()` for the `rotate` attribute.
  * - Immutable method for setting or overriding the `rotate` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible rotation assignment (single value, list, or unset).
  *
@@ -34,8 +32,7 @@ trait HasRotate
     /**
      * Sets the SVG `rotate` attribute for the element.
      *
-     * Creates a new instance with the specified rotation value, supporting explicit assignment according to the SVG 2
-     * specification for defining rotation values for each glyph.
+     * Creates a new instance with the specified rotation value for the rendered element.
      *
      * @param float|int|string|null $value Rotate value (for example, `45`, `'10 20 30 40'`, or `null` to unset).
      *

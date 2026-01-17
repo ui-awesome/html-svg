@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `word-spacing` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `word-spacing` attribute on SVG elements, following the
- * SVG 2 specification for defining spacing between words in text.
+ * Provides a method that delegates to `addAttribute()` to set the `word-spacing` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the word
- * spacing property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set word spacing.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `word-spacing` attribute.
+ * - Delegates to `addAttribute()` for the `word-spacing` attribute.
  * - Immutable method for setting or overriding the `word-spacing` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible word spacing assignment (absolute, relative, or unset).
  *
@@ -34,8 +32,7 @@ trait HasWordSpacing
     /**
      * Sets the SVG `word-spacing` attribute for the element.
      *
-     * Creates a new instance with the specified word spacing value, supporting explicit assignment according to the SVG
-     * 2 specification for controlling spacing between words in text.
+     * Creates a new instance with the specified word spacing value for the rendered element.
      *
      * @param float|int|string|null $value Word spacing value (for example, `5`, `'0.5em'`, `'normal'`, or `null` to
      * unset).

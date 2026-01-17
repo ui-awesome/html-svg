@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `markerWidth` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `markerWidth` attribute on SVG marker elements,
- * following the SVG 2 specification for defining the width of the marker viewport.
+ * Provides a method that delegates to `addAttribute()` to set the `markerWidth` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the marker
- * width property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set marker width.
  *
  * Key features.
  * - Designed for use in SVG marker tag and component classes.
- * - Enforces standards-compliant handling of the SVG `markerWidth` attribute.
+ * - Delegates to `addAttribute()` for the `markerWidth` attribute.
  * - Immutable method for setting or overriding the `markerWidth` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible width assignment (absolute, relative, or unset).
  *
@@ -34,8 +32,7 @@ trait HasMarkerWidth
     /**
      * Sets the SVG `markerWidth` attribute for the marker element.
      *
-     * Creates a new instance with the specified marker width value, supporting explicit assignment according to the SVG
-     * 2 specification for defining the width of the marker viewport.
+     * Creates a new instance with the specified marker width value for the rendered element.
      *
      * @param float|int|string|null $value Marker width value (for example, `3`, `'10%'`, or `null` to unset).
      *

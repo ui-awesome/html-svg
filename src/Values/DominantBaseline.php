@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Values;
 
 /**
- * Represents standardized values for the SVG 2 `dominant-baseline` attribute.
+ * Represents literal string values for the SVG `dominant-baseline` attribute.
  *
- * Provides a type-safe, standards-compliant set of dominant baseline values for use in SVG text element rendering,
- * attributes, and view helpers, ensuring technical consistency with the SVG 2 specification and modern web standards.
+ * Provides the keyword values used by the `dominant-baseline` attribute.
  *
  * Key features.
  * - Designed for use in text elements, components, and helpers requiring baseline alignment assignment.
- * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of `dominant-baseline` values for semantic markup generation and accessibility.
- * - Values follow the SVG 2 specification for `dominant-baseline` attribute.
+ * - Can be used as an enum value in attribute assignment.
+ * - Values map to `dominant-baseline` keyword values.
+ * - Useful for attribute assignment where a literal value is required.
  *
  * @see \UIAwesome\Html\Svg\Text::dominantBaseline()
  *

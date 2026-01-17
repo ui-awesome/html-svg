@@ -11,15 +11,13 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, TextAnchor};
 /**
  * Trait for managing SVG `text-anchor` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting `text-anchor` attribute on SVG elements, following the SVG
- * 2 specification for text anchor positioning properties.
+ * Provides a method that delegates to `addAttribute()` to set the `text-anchor` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of text anchor
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set text anchor values.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of SVG `text-anchor` attribute.
+ * - Delegates to `addAttribute()` for the `text-anchor` attribute.
  * - Immutable method for setting or overriding the `text-anchor` attribute.
  * - Supports `string`, {@see TextAnchor} enum, and `null` for flexible text anchor assignment (specific value or unset).
  *
@@ -36,8 +34,7 @@ trait HasTextAnchor
     /**
      * Sets SVG `text-anchor` attribute for the element.
      *
-     * Creates a new instance with the specified text anchor value, supporting explicit assignment according to the SVG
-     * 2 specification for text anchor positioning properties.
+     * Creates a new instance with the specified text anchor value for the rendered element.
      *
      * @param string|TextAnchor|null $value Text anchor value to set for the element. Accepts `start`, `middle`, `end`,
      * {@see TextAnchor} enum, or `null` to unset.

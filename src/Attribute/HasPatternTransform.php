@@ -9,15 +9,14 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `patternTransform` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `patternTransform` attribute on SVG `<pattern>`
- * elements, following the SVG 2 specification for pattern transformations.
+ * Provides a method that delegates to `addAttribute()` to set the `patternTransform` attribute on SVG `<pattern>`
+ * elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the pattern
- * transform property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the pattern transform.
  *
  * Key features.
  * - Designed for use in SVG `<pattern>` tag and component classes.
- * - Enforces standards-compliant handling of the SVG `patternTransform` attribute.
+ * - Delegates to `addAttribute()` for the `patternTransform` attribute.
  * - Immutable method for setting or overriding the `patternTransform` attribute.
  * - Supports `string` and `null` for flexible transform assignment (`matrix`, `translate`, `scale`, `rotate`, `skew`,
  *   or unset).
@@ -35,8 +34,7 @@ trait HasPatternTransform
     /**
      * Sets the SVG `patternTransform` attribute for the `<pattern>` element.
      *
-     * Creates a new instance with the specified pattern transform value, supporting explicit assignment according to
-     * the SVG 2 specification for transforming pattern tiles.
+     * Creates a new instance with the specified pattern transform value for the rendered element.
      *
      * @param string|null $value Transform value (for example, `'rotate(45)'`, `'scale(2)'`, or `null` to unset).
      *

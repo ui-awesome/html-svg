@@ -11,18 +11,16 @@ use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgAttribute};
 /**
  * Trait for managing the SVG `stroke-linejoin` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `stroke-linejoin` attribute on SVG elements, following
- * the SVG 2 specification for controlling the shape of the corners where two lines meet in a stroked path or shape.
+ * Provides a method that delegates to `addAttribute()` to set the `stroke-linejoin` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the stroke
- * line join property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the stroke line join.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `stroke-linejoin` attribute.
+ * - Delegates to `addAttribute()` for the `stroke-linejoin` attribute.
  * - Immutable method for setting or overriding the `stroke-linejoin` attribute.
- * - Supports `string`, {@see StrokeLineJoin} enum, and `null` for flexible join assignment ('miter', 'round',
- *   'bevel', 'miter-clip', 'arcs', or unset).
+ * - Supports `string`, {@see StrokeLineJoin} enum, and `null` for flexible join assignment (`miter`, `round`,
+ *   `bevel`, `miter-clip`, `arcs`, or unset).
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.

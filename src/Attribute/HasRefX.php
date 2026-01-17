@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `refX` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `refX` attribute on SVG marker elements, following the
- * SVG 2 specification for defining the x coordinate for the reference point of the marker.
+ * Provides a method that delegates to `addAttribute()` to set the `refX` attribute on SVG marker elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the reference
- * x coordinate property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the reference x coordinate.
  *
  * Key features.
  * - Designed for use in SVG marker tag and component classes.
- * - Enforces standards-compliant handling of the SVG `refX` attribute.
+ * - Delegates to `addAttribute()` for the `refX` attribute.
  * - Immutable method for setting or overriding the `refX` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible coordinate assignment (absolute, relative, or unset).
  *
@@ -34,8 +32,7 @@ trait HasRefX
     /**
      * Sets the SVG `refX` attribute for the marker element.
      *
-     * Creates a new instance with the specified reference x coordinate value, supporting explicit assignment according
-     * to the SVG 2 specification for defining the horizontal position of the marker's reference point.
+     * Creates a new instance with the specified reference x coordinate value for the rendered element.
      *
      * @param float|int|string|null $value Reference x coordinate value (for example, `0`, `'50%'`, or `null` to unset).
      *

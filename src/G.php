@@ -24,12 +24,10 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 /**
  * Represents the SVG `<g>` (group) element for grouping and transforming SVG content.
  *
- * Provides a standards-compliant, immutable API for rendering the `<g>` container element, following the SVG 2 and HTML
- * specifications for grouping, inheriting attributes, and applying transformations to child elements.
+ * Provides a concrete `<g>` element implementation that returns `SvgBlock::G` and mixes in paint and transform
+ * attribute traits.
  *
- * The `<g>` element is used to group SVG shapes and other elements, allowing collective transformations, attribute
- * inheritance, and referencing via the `<use>` element. Attributes set on `<g>` are inherited by its children, and any
- * transformation applied to the group affects all contained elements.
+ * The `<g>` element groups SVG shapes and other elements, allowing shared attributes and transforms.
  *
  * Key features.
  * - Container element accepts child elements.

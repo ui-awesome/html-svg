@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Values;
 
 /**
- * Represents standardized values for the SVG `decoding` attribute.
+ * Represents literal string values for the SVG `decoding` attribute.
  *
- * Provides a type-safe, standards-compliant set of decoding hint identifiers for use in element rendering, attributes,
- * and view helpers, ensuring technical consistency with the HTML specification and modern web standards.
+ * Provides the keyword values used by the `decoding` attribute.
  *
  * Key features.
  * - Designed for use in image elements (img, SVG image) requiring decoding hint assignment.
- * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of decoding values for semantic markup generation and performance optimization.
- * - Values follow the HTML specification for decoding: `async`, `sync`, and `auto`.
+ * - Can be used as an enum value in attribute assignment.
+ * - Values map to `decoding` keyword values (`async`, `sync`, `auto`).
+ * - Useful for attribute assignment where a literal value is required.
  *
  * @see \UIAwesome\Html\Svg\Image::decoding()
  *

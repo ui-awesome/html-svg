@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `x` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `x` attribute on SVG elements, following the SVG 2
- * specification for defining the x-axis coordinate of an element.
+ * Provides a method that delegates to `addAttribute()` to set the `x` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the x-coordinate
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the x coordinate.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `x` attribute.
+ * - Delegates to `addAttribute()` for the `x` attribute.
  * - Immutable method for setting or overriding the `x` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible coordinate assignment (absolute, relative, or unset).
  *
@@ -34,8 +32,7 @@ trait HasX
     /**
      * Sets the SVG `x` attribute for the element.
      *
-     * Creates a new instance with the specified x-coordinate value, supporting explicit assignment according to the
-     * SVG 2 specification for defining the horizontal position of an element.
+     * Creates a new instance with the specified x-coordinate value for the rendered element.
      *
      * @param float|int|string|null $value X coordinate value (for example, `10`, `10.3`, `'50%'`, or `null` to unset).
      *

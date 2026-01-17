@@ -142,6 +142,7 @@
 - Bug #143: Improve PHPdoc descriptions for tests in related provider test classes (@terabytesoftw)
 - Bug #144: Update PHPdoc descriptions for `DefaultProvider` and `DefaultThemeProvider` classes for clarity (@terabytesoftw)
 - Bug #145: Standardize PHPUnit PHPDoc headers in SVG-related test classes (@terabytesoftw)
+- Bug #146: Standardize PHPDoc headers in SVG-related classes (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

@@ -10,8 +10,8 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 /**
  * Represents the SVG `<defs>` (defs) element for defining graphical object definitions.
  *
- * Provides a concrete, type-safe implementation of the SVG `<defs>` container element, designed to store graphical
- * objects that will be referenced and used at a later time without direct rendering.
+ * Provides a concrete `<defs>` element implementation that returns `SvgBlock::DEFS` and renders child definitions
+ * without direct output.
  *
  * The `<defs>` element is used to store graphical objects that will be used at a later time. Objects created inside a
  * `<defs>` element are not rendered directly.

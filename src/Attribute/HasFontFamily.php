@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `font-family` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `font-family` attribute on SVG elements, following the
- * SVG 2 specification for defining the font family for text content.
+ * Provides a method that delegates to `addAttribute()` to set the `font-family` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the font
- * family property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the font family.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `font-family` attribute.
+ * - Delegates to `addAttribute()` for the `font-family` attribute.
  * - Immutable method for setting or overriding the `font-family` attribute.
  * - Supports `string` and `null` for flexible font family assignment (specific font(s) or unset).
  *
@@ -34,8 +32,7 @@ trait HasFontFamily
     /**
      * Sets the SVG `font-family` attribute for the element.
      *
-     * Creates a new instance with the specified font family value, supporting explicit assignment according to the SVG
-     * 2 specification for defining the font family to be used for rendering text.
+     * Creates a new instance with the specified font family value for the rendered element.
      *
      * @param string|null $value Font family value (for example, `'Arial'`, `'Arial, sans-serif'`, or `null` to unset).
      *

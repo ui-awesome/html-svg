@@ -11,15 +11,14 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 /**
  * Trait for managing the SVG `maskContentUnits` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `maskContentUnits` attribute on SVG `<mask>` elements,
- * following the CSS Masking Module Level 1 specification for defining the coordinate system used by the mask contents.
+ * Provides a method that delegates to `addAttribute()` to set the `maskContentUnits` attribute on SVG `<mask>`
+ * elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the mask
- * content coordinate system, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set mask content units.
  *
  * Key features.
  * - Designed for use in SVG `<mask>` tag and component classes.
- * - Enforces standards-compliant handling of the SVG `maskContentUnits` attribute.
+ * - Delegates to `addAttribute()` for the `maskContentUnits` attribute.
  * - Immutable method for setting or overriding the `maskContentUnits` attribute.
  * - Supports `string`, {@see CoordinateUnits} enum, and `null` for flexible coordinate system assignment (specific
  *   value or unset).
@@ -37,8 +36,7 @@ trait HasMaskContentUnits
     /**
      * Sets the SVG `maskContentUnits` attribute for the `<mask>` element.
      *
-     * Creates a new instance with the specified mask content units value, supporting explicit assignment according to
-     * the CSS Masking Module Level 1 specification.
+     * Creates a new instance with the specified mask content units value for the rendered element.
      *
      * @param CoordinateUnits|string|null $value Mask content units value (for example, `'userSpaceOnUse'`,
      * {@see CoordinateUnits} enum, or `null` to unset).

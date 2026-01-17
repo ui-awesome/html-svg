@@ -12,15 +12,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `pathLength` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `pathLength` attribute on SVG elements, following the
- * SVG 2 specification for defining the total length for the path in user units.
+ * Provides a method that delegates to `addAttribute()` to set the `pathLength` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the path length
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set path length values.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `pathLength` attribute.
+ * - Delegates to `addAttribute()` for the `pathLength` attribute.
  * - Immutable method for setting or overriding the `pathLength` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible path length assignment (specific length or unset).
  *
@@ -36,6 +34,8 @@ trait HasPathLength
 {
     /**
      * Sets the SVG `pathLength` attribute for the element.
+     *
+     * Creates a new instance with the specified path length value for the rendered element.
      *
      * @param float|int|string|null $value Path length value (for example, `100`, `50.5`, or `null` to unset).
      *

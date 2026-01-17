@@ -22,8 +22,8 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
 /**
  * Represents the SVG `<marker>` element for defining arrowheads and other markers.
  *
- * Provides a standards-compliant, immutable API for rendering the `<marker>` container element, following SVG 2 and
- * HTML specifications for defining markers.
+ * Provides a concrete `<marker>` element implementation that returns `SvgBlock::MARKER` and mixes in marker, view, and
+ * presentation attribute traits.
  *
  * The `<marker>` element defines a marker that can be attached to lines, polylines, and polygons.
  *

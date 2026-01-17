@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `font-size` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `font-size` attribute on SVG elements, following the
- * SVG 2 specification for defining the font size for text content.
+ * Provides a method that delegates to `addAttribute()` to set the `font-size` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the font size
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the font size.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `font-size` attribute.
+ * - Delegates to `addAttribute()` for the `font-size` attribute.
  * - Immutable method for setting or overriding the `font-size` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible font size assignment (absolute, relative, percentage,
  *   or unset).
@@ -35,8 +33,7 @@ trait HasFontSize
     /**
      * Sets the SVG `font-size` attribute for the element.
      *
-     * Creates a new instance with the specified font size value, supporting explicit assignment according to the SVG 2
-     * specification for defining the size of the font from baseline to baseline.
+     * Creates a new instance with the specified font size value for the rendered element.
      *
      * @param float|int|string|null $value Font size value (for example, `16`, `'1.2em'`, `'120%'`, or `null` to unset).
      *

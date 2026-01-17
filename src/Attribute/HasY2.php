@@ -9,15 +9,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
 /**
  * Trait for managing the SVG `y2` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `y2` attribute on SVG elements, following the SVG 2
- * specification for defining the second y-axis coordinate of an element.
+ * Provides a method that delegates to `addAttribute()` to set the `y2` attribute on SVG elements.
  *
- * Intended for use in SVG tag and component classes that require dynamic or programmatic manipulation of the second y-coordinate
- * property, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in SVG tag and component classes that set the second y coordinate.
  *
  * Key features.
  * - Designed for use in SVG tag and component classes.
- * - Enforces standards-compliant handling of the SVG `y2` attribute.
+ * - Delegates to `addAttribute()` for the `y2` attribute.
  * - Immutable method for setting or overriding the `y2` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible coordinate assignment (absolute, relative, or unset).
  *
@@ -34,8 +32,7 @@ trait HasY2
     /**
      * Sets the SVG `y2` attribute for the element.
      *
-     * Creates a new instance with the specified second y-coordinate value, supporting explicit assignment according to
-     * the SVG 2 specification for defining the second vertical position of an element.
+     * Creates a new instance with the specified second y-coordinate value for the rendered element.
      *
      * @param float|int|string|null $value Second y coordinate value (for example, `10`, `'50%'`, or `null` to unset).
      *
