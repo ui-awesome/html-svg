@@ -74,9 +74,10 @@ echo Svg::tag()
         $baseCircle->fill('none')->opacity(0.25)->transform('translate(6 6)'),
         $baseCircle->fill('url(#accent)'),
     )
+    ->height(120)
     ->title('Gradient badge example')
     ->viewBox('0 0 120 120')
-    ->width(120)->height(120)
+    ->width(120)
     ->xmlns('http://www.w3.org/2000/svg')
     ->render();
 ```
