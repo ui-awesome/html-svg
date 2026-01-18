@@ -10,16 +10,16 @@ use UIAwesome\Html\Svg\Attribute\{HasOffset, HasStopColor, HasStopOpacity};
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 
 /**
- * Represents the SVG `<stop>` element for gradient color stops.
+ * Represents the SVG `<stop>` element used for gradient color stops.
  *
- * Provides a standards-compliant, immutable API for rendering the `<stop>` container element, following SVG 2 and HTML
- * specifications for defining gradient stops.
+ * Provides an API for rendering the `<stop>` element, following SVG 2 and HTML specifications for defining gradient
+ * stops.
  *
- * The `<stop>` element defines a color stop in a gradient.
+ * The `<stop>` element specifies a color stop within a gradient.
  *
  * Key features.
- * - Designed for use in SVG tag/component classes requiring gradient stop rendering.
- * - Standards-compliant implementation of the SVG `<stop>` element.
+ * - Supports gradient stop attributes (`offset`, `stop-color`, `stop-opacity`).
+ * - Void element does not accept child elements.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/stop
  *
