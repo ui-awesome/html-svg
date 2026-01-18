@@ -56,7 +56,6 @@ $defs = Defs::tag()
         LinearGradient::tag()
             ->html(
                 Stop::tag()->offset('0%')->stopColor('#16a34a')->stopOpacity(1),
-                PHP_EOL,
                 Stop::tag()->offset('100%')->stopColor('#22c55e')->stopOpacity(1),
             )
             ->id('accent')
@@ -72,9 +71,7 @@ $baseCircle = Circle::tag()->cx(60)->cy(60)->r(46)->stroke('#064e3b')->strokeWid
 echo Svg::tag()
     ->html(
         $defs,
-        PHP_EOL,
         $baseCircle->fill('none')->opacity(0.25)->transform('translate(6 6)'),
-        PHP_EOL,
         $baseCircle->fill('url(#accent)'),
     )
     ->title('Gradient badge example')
