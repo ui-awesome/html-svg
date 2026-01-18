@@ -25,6 +25,15 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * - Supports filter-specific attributes (`filterUnits`, `primitiveUnits`).
  * - Supports geometry attributes (`x`, `y`, `width`, `height`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Filter;
+ *
+ * $primitive = '<feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.25" />';
+ *
+ * echo Filter::tag()->id('shadow')->content($primitive)->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

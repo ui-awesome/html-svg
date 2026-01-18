@@ -57,6 +57,18 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports typography attributes (`font-family`, `font-size`, `font-weight`, `font-style`, `letter-spacing`,
  *   `word-spacing`, `text-decoration`, `writing-mode`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Text;
+ *
+ * echo Text::tag()
+ *     ->x(12)->y(24)
+ *     ->fontSize(16)
+ *     ->fill('currentColor')
+ *     ->content('Hello SVG')
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

@@ -20,6 +20,17 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports stop attributes (`offset`, `stop-color`, `stop-opacity`).
  * - Void element. Does not accept child elements.
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Stop;
+ *
+ * echo Stop::tag()
+ *     ->offset('50%')
+ *     ->stopColor('currentColor')
+ *     ->stopOpacity(0.75)
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop
  * {@see BaseVoid} for the base implementation.
  *

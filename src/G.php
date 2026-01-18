@@ -34,6 +34,19 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
  * - Supports transform attribute (`transform`) for collective transformations.
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\{Circle, G};
+ *
+ * $dot = Circle::tag()->cx(10)->cy(10)->r(4)->fill('currentColor')->render();
+ *
+ * echo G::tag()
+ *     ->transform('translate(20 20)')
+ *     ->opacity(0.8)
+ *     ->content($dot)
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

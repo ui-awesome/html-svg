@@ -26,6 +26,15 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * - Supports presentation attributes (`opacity`).
  * - Supports transform attribute (`transform`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\{ClipPath, Circle};
+ *
+ * $shape = Circle::tag()->cx(50)->cy(50)->r(40)->fill('currentColor')->render();
+ *
+ * echo ClipPath::tag()->id('clip')->content($shape)->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

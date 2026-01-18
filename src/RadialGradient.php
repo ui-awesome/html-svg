@@ -35,6 +35,17 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports opacity attribute.
  * - Supports radial gradient geometry attributes (`cx`, `cy`, `r`, `fx`, `fy`, `fr`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\{RadialGradient, Stop};
+ *
+ * $stops = Stop::tag()->offset('0%')->stopColor('#ffffff')->stopOpacity(1)->render()
+ *     . PHP_EOL
+ *     . Stop::tag()->offset('100%')->stopColor('#000000')->stopOpacity(1)->render();
+ *
+ * echo RadialGradient::tag()->id('spot')->cx('50%')->cy('50%')->r('50%')->content($stops)->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/radialGradient
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

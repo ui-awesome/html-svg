@@ -32,6 +32,15 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports pattern-specific attributes (`patternUnits`, `patternContentUnits`, `patternTransform`).
  * - Supports view attributes (`viewBox`, `preserveAspectRatio`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\{Pattern, Rect};
+ *
+ * $tile = Rect::tag()->x(0)->y(0)->width(4)->height(4)->fill('currentColor')->render();
+ *
+ * echo Pattern::tag()->id('tile')->x(0)->y(0)->width(4)->height(4)->content($tile)->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/pattern
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.

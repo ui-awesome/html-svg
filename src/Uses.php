@@ -25,6 +25,16 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports transform attribute (`transform`).
  * - Void element does not accept child elements.
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\{Svg, Symbol, Uses};
+ *
+ * $symbol = Symbol::tag()->id('icon-check')->viewBox('0 0 16 16')->content('<path d="M2 8l4 4 8-8" />')->render();
+ * $use = Uses::tag()->href('#icon-check')->x(0)->y(0)->width(16)->height(16)->render();
+ *
+ * echo Svg::tag()->viewBox('0 0 16 16')->content($symbol . PHP_EOL . $use)->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
  * {@see BaseVoid} for the base implementation.
  *

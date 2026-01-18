@@ -34,6 +34,17 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports transform attribute (`transform`).
  * - Supports view attributes (`viewBox`, `preserveAspectRatio`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Symbol;
+ *
+ * echo Symbol::tag()
+ *     ->id('icon-check')
+ *     ->viewBox('0 0 16 16')
+ *     ->content('<path d="M2 8l4 4 8-8" />')
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

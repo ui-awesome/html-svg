@@ -21,6 +21,21 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports gradient attributes (`gradientUnits`, `gradientTransform`, `spreadMethod`).
  * - Supports gradient geometry attributes (`x1`, `y1`, `x2`, `y2`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\{LinearGradient, Stop};
+ *
+ * $stops = Stop::tag()->offset('0%')->stopColor('#0ea5e9')->stopOpacity(1)->render()
+ *     . PHP_EOL
+ *     . Stop::tag()->offset('100%')->stopColor('#1d4ed8')->stopOpacity(1)->render();
+ *
+ * echo LinearGradient::tag()
+ *     ->id('accent')
+ *     ->x1('0%')->y1('0%')->x2('100%')->y2('0%')
+ *     ->content($stops)
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

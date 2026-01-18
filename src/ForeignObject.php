@@ -23,6 +23,15 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports presentation attributes (`opacity`).
  * - Supports transform attribute (`transform`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\ForeignObject;
+ *
+ * $html = '<div xmlns="http://www.w3.org/1999/xhtml">Embedded HTML</div>';
+ *
+ * echo ForeignObject::tag()->x(0)->y(0)->width(200)->height(60)->content($html)->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

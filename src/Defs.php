@@ -21,6 +21,19 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Content is not rendered directly.
  * - Defines reusable graphical objects (gradients, patterns, masks, etc.).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\{Defs, LinearGradient, Stop};
+ *
+ * $stops = Stop::tag()->offset('0%')->stopColor('#0ea5e9')->render()
+ *     . PHP_EOL
+ *     . Stop::tag()->offset('100%')->stopColor('#22c55e')->render();
+ *
+ * $gradient = LinearGradient::tag()->id('accent')->x1('0%')->y1('0%')->x2('100%')->y2('0%')->content($stops);
+ *
+ * echo Defs::tag()->content($gradient->render())->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

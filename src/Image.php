@@ -26,6 +26,17 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports transform and aspect ratio attributes (`transform`, `preserveAspectRatio`).
  * - Void element does not accept child elements.
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Image;
+ *
+ * echo Image::tag()
+ *     ->href('https://example.com/image.png')
+ *     ->x(0)->y(0)->width(200)->height(200)
+ *     ->opacity(0.9)
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
  * {@see BaseVoid} for the base implementation.
  *
