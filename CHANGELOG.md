@@ -151,6 +151,7 @@
 - Bug #152: Update documentation in providers for clarity and consistency (@terabytesoftw)
 - Enh #153: Add `HasOffset` trait and corresponding tests for managing SVG `offset` attribute (@terabytesoftw)
 - Enh #154: Add `HasStopColor` trait and corresponding tests for managing SVG `stop-color` attribute (@terabytesoftw)
+- Enh #155: Add `HasStopOpacity` trait and corresponding tests for managing SVG `stop-opacity` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 
