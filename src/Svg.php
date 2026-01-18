@@ -24,6 +24,22 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
  * - Supports transform and aspect ratio attributes (`transform`, `preserveAspectRatio`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\{Circle, Svg};
+ *
+ * $circle = Circle::tag()
+ *     ->cx(50)->cy(50)->r(40)
+ *     ->fill('currentColor');
+ *
+ * echo Svg::tag()
+ *     ->xmlns('http://www.w3.org/2000/svg')
+ *     ->viewBox('0 0 100 100')
+ *     ->title('Circle example')
+ *     ->content($circle->render())
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
  * {@see Base\BaseSvg} for the base implementation.
  *

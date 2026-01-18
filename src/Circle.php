@@ -39,6 +39,17 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports transform attribute (`transform`).
  * - Void element does not accept child elements.
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Circle;
+ *
+ * echo Circle::tag()
+ *     ->cx(60)->cy(60)->r(50)
+ *     ->fill('currentColor')
+ *     ->opacity(0.9)
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle
  * {@see BaseVoid} for the base implementation.
  *

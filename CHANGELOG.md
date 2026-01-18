@@ -154,6 +154,7 @@
 - Enh #155: Add `HasStopOpacity` trait and corresponding tests for managing SVG `stop-opacity` attribute (@terabytesoftw)
 - Enh #156: Add `Stop` class and corresponding tests for SVG `<stop>` element functionality (@terabytesoftw)
 - Enh #157: Add `Symbol` class and corresponding tests for SVG `<symbol>` element functionality (@terabytesoftw)
+- Enh #158: Update `README.md` and testing documentation with usage examples for SVG elements (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

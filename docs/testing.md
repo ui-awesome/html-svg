@@ -1,56 +1,72 @@
 # Testing
 
-## Checking dependencies
+This package provides a consistent set of [Composer](https://getcomposer.org/) scripts for local validation.
 
-This package uses
-[composer-require-checker](https://github.com/maglnet/ComposerRequireChecker) to
-check if all dependencies are correctly defined in `composer.json`.
+Tool references:
+- [Composer Require Checker](https://github.com/maglnet/ComposerRequireChecker) for dependency definition checks.
+- [Easy Coding Standard (ECS)](https://github.com/easy-coding-standard/easy-coding-standard) for coding standards.
+- [Infection](https://infection.github.io/) for mutation testing.
+- [PHPStan](https://phpstan.org/) for static analysis.
+- [PHPUnit](https://phpunit.de/) for unit tests.
 
-To run the checker, execute the following command.
+## Unit tests (PHPUnit)
 
-```shell
-composer run check-dependencies
+Run the full test suite:
+
+```bash
+composer run tests
 ```
 
-## Easy coding standard
+## Static analysis (PHPStan)
 
-The code is checked with
-[Easy Coding Standard](https://github.com/easy-coding-standard/easy-coding-standard)
-and [PHP CS Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer). To run it.
+Run static analysis:
 
-```shell
-composer run ecs
-```
-
-## Mutation testing
-
-Mutation testing is checked with [Infection](https://infection.github.io/). To
-run it.
-
-```shell
-composer run mutation
-```
-
-With PHPStan analysis, it will also check for static analysis issues during
-mutation testing.
-
-```shell
-composer run mutation-static
-```
-
-## Static analysis
-
-The code is statically analyzed with [PHPStan](https://phpstan.org/). To run
-static analysis.
-
-```shell
+```bash
 composer run static
 ```
 
-## Unit Tests
+## Coding standards (ECS)
 
-The code is tested with [PHPUnit](https://phpunit.de/). To run tests.
+Run Easy Coding Standard (ECS) and apply fixes:
 
-```shell
-composer run test
+```bash
+composer run ecs
+```
+
+## Mutation testing (Infection)
+
+Run mutation testing:
+
+```bash
+composer run mutation
+```
+
+Run mutation testing with static analysis enabled:
+
+```bash
+composer run mutation-static
+```
+
+## Dependency definition check
+
+Verify that runtime dependencies are correctly declared in `composer.json`:
+
+```bash
+composer run check-dependencies
+```
+
+## Passing extra arguments
+
+Composer scripts support forwarding additional arguments using `--`.
+
+Example: run a specific PHPUnit test or filter by name:
+
+```bash
+composer run tests -- --filter SvgTest
+```
+
+Example: run PHPStan with a different memory limit:
+
+```bash
+composer run static -- --memory-limit=512M
 ```

@@ -39,6 +39,17 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports transform attribute (`transform`).
  * - Void element does not accept child elements.
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Rect;
+ *
+ * echo Rect::tag()
+ *     ->x(10)->y(10)->width(80)->height(50)
+ *     ->rx(8)->ry(8)
+ *     ->fill('currentColor')
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect
  * {@see BaseVoid} for the base implementation.
  *

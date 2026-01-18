@@ -38,6 +38,18 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports transform attribute (`transform`).
  * - Void element does not accept child elements.
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Path;
+ *
+ * $d = 'M10 10H90V90H10z';
+ *
+ * echo Path::tag()
+ *     ->d($d)
+ *     ->fill('currentColor')
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.

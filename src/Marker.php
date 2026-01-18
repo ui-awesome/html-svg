@@ -34,6 +34,22 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports transform attribute (`transform`).
  * - Supports view attributes (`viewBox`, `preserveAspectRatio`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\{Marker, Path};
+ *
+ * $arrow = Path::tag()->d('M0 0 L10 5 L0 10 z')->fill('currentColor')->render();
+ *
+ * echo Marker::tag()
+ *     ->id('arrow')
+ *     ->viewBox('0 0 10 10')
+ *     ->refX(10)->refY(5)
+ *     ->markerWidth(6)->markerHeight(6)
+ *     ->orient('auto')
+ *     ->content($arrow)
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

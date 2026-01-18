@@ -41,6 +41,16 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports transform attribute (`transform`).
  * - Void element does not accept child elements.
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Ellipse;
+ *
+ * echo Ellipse::tag()
+ *     ->cx(60)->cy(40)->rx(50)->ry(25)
+ *     ->fill('currentColor')
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse
  * {@see BaseVoid} for the base implementation.
  *

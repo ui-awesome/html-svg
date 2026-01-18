@@ -38,6 +38,17 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports transform attribute (`transform`).
  * - Void element does not accept child elements.
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Polyline;
+ *
+ * echo Polyline::tag()
+ *     ->points('10 80 40 20 70 80')
+ *     ->fill('none')
+ *     ->stroke('currentColor')->strokeWidth(3)
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline
  * {@see BaseVoid} for the base implementation.
  *

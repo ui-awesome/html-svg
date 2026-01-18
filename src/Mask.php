@@ -22,6 +22,20 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * - Supports geometry attributes (`x`, `y`, `width`, `height`).
  * - Supports mask-specific attributes (`maskUnits`, `maskContentUnits`, `mask-type`).
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\{Mask, Rect};
+ * use UIAwesome\Html\Svg\Values\MaskType;
+ *
+ * $content = Rect::tag()->x(0)->y(0)->width(100)->height(100)->fill('currentColor')->render();
+ *
+ * echo Mask::tag()
+ *     ->id('fade')
+ *     ->maskType(MaskType::LUMINANCE)
+ *     ->content($content)
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask
  * {@see Base\BaseSvgBlockTag} for the base implementation.
  *

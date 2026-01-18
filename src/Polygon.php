@@ -38,6 +38,16 @@ use UIAwesome\Html\Svg\Tag\SvgVoid;
  * - Supports transform attribute (`transform`).
  * - Void element does not accept child elements.
  *
+ * Usage example:
+ * ```php
+ * use UIAwesome\Html\Svg\Polygon;
+ *
+ * echo Polygon::tag()
+ *     ->points('60 10 90 90 10 90')
+ *     ->fill('currentColor')
+ *     ->render();
+ * ```
+ *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon
  * {@see BaseVoid} for the base implementation.
  *
