@@ -7,7 +7,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 /**
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasRefXTest}.
  *
- * Supplies test data for validating the SVG `refX` attribute in tag rendering.
+ * Provides representative input/output pairs for testing the `refX` attribute functionality.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

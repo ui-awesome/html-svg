@@ -7,7 +7,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 /**
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasFillOpacityTest}.
  *
- * Supplies test data for validating the SVG `fill-opacity` attribute in tag rendering.
+ * Provides representative input/output pairs for testing the `fill-opacity` attribute functionality.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
