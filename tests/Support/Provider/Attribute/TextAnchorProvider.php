@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasTextAnchorTest}.
  *
- * Supplies test data for validating the SVG `text-anchor` attribute in tag rendering.
+ * Provides representative input/output pairs for testing the `text-anchor` attribute functionality.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
