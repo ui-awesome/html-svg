@@ -7,7 +7,7 @@ namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 /**
  * Data provider for {@see \UIAwesome\Html\Svg\Tests\Attribute\HasMarkerWidthTest}.
  *
- * Provides representative input/output pairs for testing the `d` attribute functionality.
+ * Provides representative input/output pairs for testing the `markerWidth` attribute functionality.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
