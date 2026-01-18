@@ -18,7 +18,8 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
 /**
  * Unit tests for {@see LinearGradient} element rendering, content, and attribute handling.
  *
- * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see LinearGradient::tag()}.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for
+ * {@see LinearGradient::tag()}.
  *
  * Test coverage.
  * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.

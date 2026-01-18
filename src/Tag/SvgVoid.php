@@ -82,6 +82,13 @@ enum SvgVoid: string implements VoidInterface
     case RECT = 'rect';
 
     /**
+     * `<stop>` - Gradient stop element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop
+     */
+    case STOP = 'stop';
+
+    /**
      * `<use>` - Reuses an existing SVG element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
