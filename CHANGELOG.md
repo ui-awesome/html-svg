@@ -149,6 +149,7 @@
 - Enh #150: Add `RadialGradient` class and corresponding tests for SVG `<radialGradient>` element functionality (@terabytesoftw)
 - Bug #151: Ordered key features in PHPdoc for better readability in related SVG attribute traits (@terabytesoftw)
 - Bug #152: Update documentation in providers for clarity and consistency (@terabytesoftw)
+- Enh #153: Add `HasOffset` trait and corresponding tests for managing SVG `offset` attribute (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

@@ -259,6 +259,15 @@ enum SvgAttribute: string
     case MASK_UNITS = 'maskUnits';
 
     /**
+     * `offset` - Defines the location of a gradient stop along a gradient vector.
+     *
+     * The value is typically a number in the `0`-`1` range or a percentage.
+     *
+     * @link https://www.w3.org/TR/SVG2/pservers.html#StopElementOffsetAttribute
+     */
+    case OFFSET = 'offset';
+
+    /**
      * `opacity` - Opacity attribute specifies the transparency of an element.
      *
      * @link https://www.w3.org/TR/SVG2/render.html#ObjectAndGroupOpacityProperties
