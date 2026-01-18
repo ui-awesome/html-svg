@@ -103,6 +103,13 @@ enum SvgBlock: string implements BlockInterface
     case SVG = 'svg';
 
     /**
+     * `<symbol>` - Reusable symbol definition.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol
+     */
+    case SYMBOL = 'symbol';
+
+    /**
      * `<text>` - SVG text content element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
