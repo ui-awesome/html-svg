@@ -411,6 +411,15 @@ enum SvgAttribute: string
     case STOP_COLOR = 'stop-color';
 
     /**
+     * `stop-opacity` - Defines the opacity of a gradient stop.
+     *
+     * The value is in the `0`-`1` range.
+     *
+     * @link https://www.w3.org/TR/SVG2/pservers.html#StopOpacityProperty
+     */
+    case STOP_OPACITY = 'stop-opacity';
+
+    /**
      * `stroke` - Stroke attribute is a presentation attribute defining the color (or any SVG paint servers like
      * gradients or patterns) used to paint the outline of the shape.
      *
