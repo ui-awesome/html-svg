@@ -404,6 +404,13 @@ enum SvgAttribute: string
     case SPREAD_METHOD = 'spreadMethod';
 
     /**
+     * `stop-color` - Defines the color of a gradient stop.
+     *
+     * @link https://www.w3.org/TR/SVG2/pservers.html#StopColorProperty
+     */
+    case STOP_COLOR = 'stop-color';
+
+    /**
      * `stroke` - Stroke attribute is a presentation attribute defining the color (or any SVG paint servers like
      * gradients or patterns) used to paint the outline of the shape.
      *
