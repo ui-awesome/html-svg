@@ -46,7 +46,7 @@ This library provides an immutable, fluent API for generating SVG markup in PHP.
 
 It supports composing SVG elements using wrapper classes, secure SVG loading from the filesystem, and accessibility-first rendering.
 
-#### Power example: Gradients + composition + immutability
+#### Gradients + composition + immutability
 
 ```php
 use UIAwesome\Html\Svg\{Circle, Defs, LinearGradient, Stop, Svg};
@@ -66,7 +66,7 @@ $baseCircle = Circle::tag()
     ->cx(60)->cy(60)->r(46)
     ->stroke('#064e3b')->strokeWidth(3);
 
-// Immutable: each setter returns a new instance.
+// immutable: each setter returns a new instance.
 $primary = $baseCircle->fill('url(#accent)');
 $ghost = $baseCircle->fill('none')->opacity(0.25)->transform('translate(6 6)');
 
@@ -85,7 +85,7 @@ echo Svg::tag()
     ->render();
 ```
 
-#### Real-world example: Yii icon (inline)
+#### Yii icon (inline)
 
 ```php
 use UIAwesome\Html\Svg\{Path, Svg};
