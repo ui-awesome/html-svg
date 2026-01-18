@@ -17,7 +17,8 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 /**
  * Unit tests for {@see ForeignObject} element rendering, content, and attribute handling.
  *
- * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see ForeignObject::tag()}.
+ * Verifies rendered output, configuration precedence, immutability, and validation behavior for
+ * {@see ForeignObject::tag()}.
  *
  * Test coverage.
  * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
