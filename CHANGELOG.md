@@ -155,6 +155,8 @@
 - Enh #156: Add `Stop` class and corresponding tests for SVG `<stop>` element functionality (@terabytesoftw)
 - Enh #157: Add `Symbol` class and corresponding tests for SVG `<symbol>` element functionality (@terabytesoftw)
 - Enh #158: Update `README.md` and testing documentation with usage examples for SVG elements (@terabytesoftw)
+- Bug #159: Update `README.md` with new links and add `development.md` for workflow documentation (@terabytesoftw)
+- Enh #160: Add `php-forge/support` as a development dependency and update related test classes (@terabytesoftw)
 
 ## 0.2.0 March 31, 2024
 

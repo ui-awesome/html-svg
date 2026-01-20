@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\{SvgAttribute, TextAnchor};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class TextAnchorProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(TextAnchor::class, SvgAttribute::TEXT_ANCHOR);
+        $enumCases = EnumDataProvider::attributeCases(TextAnchor::class, SvgAttribute::TEXT_ANCHOR);
 
         $staticCases = [
             'empty string' => [

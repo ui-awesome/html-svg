@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Tests;
 
 use InvalidArgumentException;
+use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
@@ -12,7 +13,6 @@ use UIAwesome\Html\Core\Factory\SimpleFactory;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Image;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
-use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
 
 /**
@@ -29,7 +29,6 @@ use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
  *
  * {@see Image} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -37,166 +36,192 @@ use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
 #[Group('svg')]
 final class ImageTest extends TestCase
 {
-    use TestSupport;
-
     public function testRenderWithAccesskey(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image accesskey="k">
             HTML,
-            Image::tag()->accesskey('k')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->accesskey('k')->render(),
+            ),
             "Failed asserting that element renders correctly with 'accesskey' attribute.",
         );
     }
 
     public function testRenderWithAddAriaAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image aria-pressed="true">
             HTML,
-            Image::tag()->addAriaAttribute('pressed', true)->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->addAriaAttribute('pressed', true)->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddAriaAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image aria-pressed="true">
             HTML,
-            Image::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image data-value="value">
             HTML,
-            Image::tag()->addDataAttribute('value', 'value')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->addDataAttribute('value', 'value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image data-value="value">
             HTML,
-            Image::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAriaAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image aria-controls="modal-1" aria-hidden="false" aria-label="Close">
             HTML,
-            Image::tag()
-                ->ariaAttributes(
-                    [
-                        'controls' => static fn(): string => 'modal-1',
-                        'hidden' => false,
-                        'label' => 'Close',
-                    ],
-                )
-                ->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()
+                                ->ariaAttributes(
+                                    [
+                                        'controls' => static fn(): string => 'modal-1',
+                                        'hidden' => false,
+                                        'label' => 'Close',
+                                    ],
+                                )
+                                ->render(),
+            ),
             "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
         );
     }
 
     public function testRenderWithAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image class="value">
             HTML,
-            Image::tag()->attributes(['class' => 'value'])->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->attributes(['class' => 'value'])->render(),
+            ),
             "Failed asserting that element renders correctly with 'attributes()' method.",
         );
     }
 
     public function testRenderWithClass(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image class="value">
             HTML,
-            Image::tag()->class('value')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->class('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'class' attribute.",
         );
     }
 
     public function testRenderWithDataAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image data-value="test-value">
             HTML,
-            Image::tag()->dataAttributes(['value' => 'test-value'])->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->dataAttributes(['value' => 'test-value'])->render(),
+            ),
             "Failed asserting that element renders correctly with 'dataAttributes()' method.",
         );
     }
 
     public function testRenderWithDecoding(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image decoding="async">
             HTML,
-            Image::tag()->decoding('async')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->decoding('async')->render(),
+            ),
             "Failed asserting that element renders correctly with 'decoding' attribute.",
         );
     }
 
     public function testRenderWithDefaultConfigurationValues(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image class="default-class">
             HTML,
-            Image::tag(['class' => 'default-class'])->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag(['class' => 'default-class'])->render(),
+            ),
             'Failed asserting that default configuration values are applied correctly.',
         );
     }
 
     public function testRenderWithDefaultProvider(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image class="default-class" title="default-title">
             HTML,
-            Image::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+            ),
             'Failed asserting that default provider is applied correctly.',
         );
     }
 
     public function testRenderWithDir(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image dir="rtl">
             HTML,
-            Image::tag()->dir('rtl')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->dir('rtl')->render(),
+            ),
             "Failed asserting that element renders correctly with 'dir' attribute.",
         );
     }
 
     public function testRenderWithFetchpriority(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image fetchpriority="high">
             HTML,
-            Image::tag()->fetchpriority('high')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->fetchpriority('high')->render(),
+            ),
             "Failed asserting that element renders correctly with 'fetchpriority' attribute.",
         );
     }
@@ -205,11 +230,13 @@ final class ImageTest extends TestCase
     {
         SimpleFactory::setDefaults(Image::class, ['class' => 'default-class']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image class="default-class">
             HTML,
-            Image::tag()->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->render(),
+            ),
             'Failed asserting that global defaults are applied correctly.',
         );
 
@@ -218,165 +245,195 @@ final class ImageTest extends TestCase
 
     public function testRenderWithHeight(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image height="200">
             HTML,
-            Image::tag()->height('200')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->height('200')->render(),
+            ),
             "Failed asserting that element renders correctly with 'height' attribute.",
         );
     }
 
     public function testRenderWithHidden(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image hidden>
             HTML,
-            Image::tag()->hidden(true)->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->hidden(true)->render(),
+            ),
             "Failed asserting that element renders correctly with 'hidden' attribute.",
         );
     }
 
     public function testRenderWithHref(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image href="image.png">
             HTML,
-            Image::tag()->href('image.png')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->href('image.png')->render(),
+            ),
             "Failed asserting that element renders correctly with 'href' attribute.",
         );
     }
 
     public function testRenderWithId(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image id="test-id">
             HTML,
-            Image::tag()->id('test-id')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->id('test-id')->render(),
+            ),
             "Failed asserting that element renders correctly with 'id' attribute.",
         );
     }
 
     public function testRenderWithLangUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image lang="es">
             HTML,
-            Image::tag()->lang(Language::SPANISH)->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->lang(Language::SPANISH)->render(),
+            ),
             "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
 
     public function testRenderWithOpacity(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image opacity="0.5">
             HTML,
-            Image::tag()->opacity('0.5')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->opacity('0.5')->render(),
+            ),
             "Failed asserting that element renders correctly with 'opacity' attribute.",
         );
     }
 
     public function testRenderWithPreserveAspectRatio(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image preserveAspectRatio="xMidYMid meet">
             HTML,
-            Image::tag()->preserveAspectRatio('xMidYMid meet')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->preserveAspectRatio('xMidYMid meet')->render(),
+            ),
             "Failed asserting that element renders correctly with 'preserveAspectRatio' attribute.",
         );
     }
 
     public function testRenderWithPreserveAspectRatioUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image preserveAspectRatio="xMinYMin slice">
             HTML,
-            Image::tag()->preserveAspectRatio(PreserveAspectRatio::X_MIN_Y_MIN_SLICE)->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->preserveAspectRatio(PreserveAspectRatio::X_MIN_Y_MIN_SLICE)->render(),
+            ),
             "Failed asserting that element renders correctly with 'preserveAspectRatio' attribute.",
         );
     }
 
     public function testRenderWithRole(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image role="banner">
             HTML,
-            Image::tag()->role('banner')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->role('banner')->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithRoleUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image role="banner">
             HTML,
-            Image::tag()->role(Role::BANNER)->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->role(Role::BANNER)->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithStyle(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image style='test-value'>
             HTML,
-            Image::tag()->style('test-value')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->style('test-value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'style' attribute.",
         );
     }
 
     public function testRenderWithTitle(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image title="test-value">
             HTML,
-            Image::tag()->title('test-value')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->title('test-value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'title' attribute.",
         );
     }
 
     public function testRenderWithToString(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image>
             HTML,
-            (string) Image::tag(),
+            LineEndingNormalizer::normalize(
+                (string) Image::tag(),
+            ),
             "Failed asserting that '__toString()' method renders correctly.",
         );
     }
 
     public function testRenderWithTransform(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image transform="rotate(45)">
             HTML,
-            Image::tag()->transform('rotate(45)')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->transform('rotate(45)')->render(),
+            ),
             "Failed asserting that element renders correctly with 'transform' attribute.",
         );
     }
 
     public function testRenderWithTranslate(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image translate="no">
             HTML,
-            Image::tag()->translate(false)->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->translate(false)->render(),
+            ),
             "Failed asserting that element renders correctly with 'translate' attribute.",
         );
     }
@@ -385,11 +442,13 @@ final class ImageTest extends TestCase
     {
         SimpleFactory::setDefaults(Image::class, ['class' => 'from-global', 'id' => 'id-global']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image class="from-global" id="id-user">
             HTML,
-            Image::tag(['id' => 'id-user'])->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag(['id' => 'id-user'])->render(),
+            ),
             'Failed asserting that user-defined attributes override global defaults correctly.',
         );
 
@@ -398,33 +457,39 @@ final class ImageTest extends TestCase
 
     public function testRenderWithWidth(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image width="300">
             HTML,
-            Image::tag()->width('300')->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->width('300')->render(),
+            ),
             "Failed asserting that element renders correctly with 'width' attribute.",
         );
     }
 
     public function testRenderWithX(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image x="10">
             HTML,
-            Image::tag()->x(10)->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->x(10)->render(),
+            ),
             "Failed asserting that element renders correctly with 'x' attribute.",
         );
     }
 
     public function testRenderWithY(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <image y="20">
             HTML,
-            Image::tag()->y(20)->render(),
+            LineEndingNormalizer::normalize(
+                Image::tag()->y(20)->render(),
+            ),
             "Failed asserting that element renders correctly with 'y' attribute.",
         );
     }

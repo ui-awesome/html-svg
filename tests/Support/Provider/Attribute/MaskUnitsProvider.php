@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\CoordinateUnits;
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class MaskUnitsProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(CoordinateUnits::class, 'maskUnits');
+        $enumCases = EnumDataProvider::attributeCases(CoordinateUnits::class, 'maskUnits');
 
         $staticCases = [
             'empty string' => [

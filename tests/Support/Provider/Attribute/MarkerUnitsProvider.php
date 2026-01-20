@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\MarkerUnits;
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class MarkerUnitsProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(MarkerUnits::class, 'markerUnits');
+        $enumCases = EnumDataProvider::attributeCases(MarkerUnits::class, 'markerUnits');
 
         $staticCases = [
             'empty string' => [

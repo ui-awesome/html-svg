@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Tests;
 
 use InvalidArgumentException;
+use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
@@ -13,7 +14,6 @@ use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Line;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
-use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
@@ -30,7 +30,6 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  *
  * {@see Line} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -38,188 +37,218 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
 #[Group('svg')]
 final class LineTest extends TestCase
 {
-    use TestSupport;
-
     public function testRenderWithAccesskey(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line accesskey="k">
             HTML,
-            Line::tag()->accesskey('k')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->accesskey('k')->render(),
+            ),
             "Failed asserting that element renders correctly with 'accesskey' attribute.",
         );
     }
 
     public function testRenderWithAddAriaAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line aria-pressed="true">
             HTML,
-            Line::tag()->addAriaAttribute('pressed', true)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->addAriaAttribute('pressed', true)->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddAriaAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line aria-pressed="true">
             HTML,
-            Line::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line data-value="value">
             HTML,
-            Line::tag()->addDataAttribute('value', 'value')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->addDataAttribute('value', 'value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line data-value="value">
             HTML,
-            Line::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAriaAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line aria-controls="modal-1" aria-hidden="false" aria-label="Close">
             HTML,
-            Line::tag()
-                ->ariaAttributes(
-                    [
-                        'controls' => static fn(): string => 'modal-1',
-                        'hidden' => false,
-                        'label' => 'Close',
-                    ],
-                )
-                ->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()
+                                ->ariaAttributes(
+                                    [
+                                        'controls' => static fn(): string => 'modal-1',
+                                        'hidden' => false,
+                                        'label' => 'Close',
+                                    ],
+                                )
+                                ->render(),
+            ),
             "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
         );
     }
 
     public function testRenderWithAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line class="value">
             HTML,
-            Line::tag()->attributes(['class' => 'value'])->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->attributes(['class' => 'value'])->render(),
+            ),
             "Failed asserting that element renders correctly with 'attributes()' method.",
         );
     }
 
     public function testRenderWithClass(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line class="value">
             HTML,
-            Line::tag()->class('value')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->class('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'class' attribute.",
         );
     }
 
     public function testRenderWithDataAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line data-value="test-value">
             HTML,
-            Line::tag()->dataAttributes(['value' => 'test-value'])->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->dataAttributes(['value' => 'test-value'])->render(),
+            ),
             "Failed asserting that element renders correctly with 'dataAttributes()' method.",
         );
     }
 
     public function testRenderWithDefaultConfigurationValues(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line class="default-class">
             HTML,
-            Line::tag(['class' => 'default-class'])->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag(['class' => 'default-class'])->render(),
+            ),
             'Failed asserting that default configuration values are applied correctly.',
         );
     }
 
     public function testRenderWithDefaultProvider(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line class="default-class" title="default-title">
             HTML,
-            Line::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+            ),
             'Failed asserting that default provider is applied correctly.',
         );
     }
 
     public function testRenderWithDir(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line dir="rtl">
             HTML,
-            Line::tag()->dir('rtl')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->dir('rtl')->render(),
+            ),
             "Failed asserting that element renders correctly with 'dir' attribute.",
         );
     }
 
     public function testRenderWithFill(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line fill="#ff0000">
             HTML,
-            Line::tag()->fill('#ff0000')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->fill('#ff0000')->render(),
+            ),
             "Failed asserting that element renders correctly with 'fill' attribute.",
         );
     }
 
     public function testRenderWithFillOpacity(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line fill-opacity="0.7">
             HTML,
-            Line::tag()->fillOpacity('0.7')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->fillOpacity('0.7')->render(),
+            ),
             "Failed asserting that element renders correctly with 'fill-opacity' attribute.",
         );
     }
 
     public function testRenderWithFillRule(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line fill-rule="evenodd">
             HTML,
-            Line::tag()->fillRule('evenodd')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->fillRule('evenodd')->render(),
+            ),
             "Failed asserting that element renders correctly with 'fill-rule' attribute.",
         );
     }
 
     public function testRenderWithFillRuleUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line fill-rule="nonzero">
             HTML,
-            Line::tag()->fillRule(FillRule::NONZERO)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->fillRule(FillRule::NONZERO)->render(),
+            ),
             "Failed asserting that element renders correctly with 'fill-rule' attribute.",
         );
     }
@@ -228,11 +257,13 @@ final class LineTest extends TestCase
     {
         SimpleFactory::setDefaults(Line::class, ['class' => 'default-class']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line class="default-class">
             HTML,
-            Line::tag()->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->render(),
+            ),
             'Failed asserting that global defaults are applied correctly.',
         );
 
@@ -241,231 +272,273 @@ final class LineTest extends TestCase
 
     public function testRenderWithHidden(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line hidden>
             HTML,
-            Line::tag()->hidden(true)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->hidden(true)->render(),
+            ),
             "Failed asserting that element renders correctly with 'hidden' attribute.",
         );
     }
 
     public function testRenderWithId(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line id="test-id">
             HTML,
-            Line::tag()->id('test-id')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->id('test-id')->render(),
+            ),
             "Failed asserting that element renders correctly with 'id' attribute.",
         );
     }
 
     public function testRenderWithLangUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line lang="es">
             HTML,
-            Line::tag()->lang(Language::SPANISH)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->lang(Language::SPANISH)->render(),
+            ),
             "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
 
     public function testRenderWithOpacity(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line opacity="0.5">
             HTML,
-            Line::tag()->opacity('0.5')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->opacity('0.5')->render(),
+            ),
             "Failed asserting that element renders correctly with 'opacity' attribute.",
         );
     }
 
     public function testRenderWithPathLength(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line pathLength="200">
             HTML,
-            Line::tag()->pathLength(200)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->pathLength(200)->render(),
+            ),
             "Failed asserting that element renders correctly with 'pathLength' attribute.",
         );
     }
 
     public function testRenderWithRole(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line role="banner">
             HTML,
-            Line::tag()->role('banner')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->role('banner')->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithRoleUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line role="banner">
             HTML,
-            Line::tag()->role(Role::BANNER)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->role(Role::BANNER)->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithStroke(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line stroke="#00ff00">
             HTML,
-            Line::tag()->stroke('#00ff00')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->stroke('#00ff00')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke' attribute.",
         );
     }
 
     public function testRenderWithStrokeDashArray(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line stroke-dasharray="5,5">
             HTML,
-            Line::tag()->strokeDashArray('5,5')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->strokeDashArray('5,5')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-dasharray' attribute.",
         );
     }
 
     public function testRenderWithStrokeLineCap(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line stroke-linecap="round">
             HTML,
-            Line::tag()->strokeLineCap('round')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->strokeLineCap('round')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-linecap' attribute.",
         );
     }
 
     public function testRenderWithStrokeLineCapUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line stroke-linecap="square">
             HTML,
-            Line::tag()->strokeLineCap(StrokeLineCap::SQUARE)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->strokeLineCap(StrokeLineCap::SQUARE)->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-linecap' attribute.",
         );
     }
 
     public function testRenderWithStrokeLineJoin(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line stroke-linejoin="round">
             HTML,
-            Line::tag()->strokeLineJoin('round')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->strokeLineJoin('round')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-linejoin' attribute.",
         );
     }
 
     public function testRenderWithStrokeLineJoinUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line stroke-linejoin="round">
             HTML,
-            Line::tag()->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-linejoin' attribute.",
         );
     }
 
     public function testRenderWithStrokeMiterlimit(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line stroke-miterlimit="10">
             HTML,
-            Line::tag()->strokeMiterlimit(10)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->strokeMiterlimit(10)->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-miterlimit' attribute.",
         );
     }
 
     public function testRenderWithStrokeOpacity(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line stroke-opacity="0.8">
             HTML,
-            Line::tag()->strokeOpacity(0.8)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->strokeOpacity(0.8)->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-opacity' attribute.",
         );
     }
 
     public function testRenderWithStrokeWidth(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line stroke-width="2">
             HTML,
-            Line::tag()->strokeWidth('2')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->strokeWidth('2')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-width' attribute.",
         );
     }
 
     public function testRenderWithStyle(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line style='test-value'>
             HTML,
-            Line::tag()->style('test-value')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->style('test-value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'style' attribute.",
         );
     }
 
     public function testRenderWithTitle(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line title="test-value">
             HTML,
-            Line::tag()->title('test-value')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->title('test-value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'title' attribute.",
         );
     }
 
     public function testRenderWithToString(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line>
             HTML,
-            (string) Line::tag(),
+            LineEndingNormalizer::normalize(
+                (string) Line::tag(),
+            ),
             "Failed asserting that '__toString()' method renders correctly.",
         );
     }
 
     public function testRenderWithTransform(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line transform="rotate(45)">
             HTML,
-            Line::tag()->transform('rotate(45)')->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->transform('rotate(45)')->render(),
+            ),
             "Failed asserting that element renders correctly with 'transform' attribute.",
         );
     }
 
     public function testRenderWithTranslate(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line translate="no">
             HTML,
-            Line::tag()->translate(false)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->translate(false)->render(),
+            ),
             "Failed asserting that element renders correctly with 'translate' attribute.",
         );
     }
@@ -474,11 +547,13 @@ final class LineTest extends TestCase
     {
         SimpleFactory::setDefaults(Line::class, ['class' => 'from-global', 'id' => 'id-global']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line class="from-global" id="id-user">
             HTML,
-            Line::tag(['id' => 'id-user'])->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag(['id' => 'id-user'])->render(),
+            ),
             'Failed asserting that user-defined attributes override global defaults correctly.',
         );
 
@@ -487,44 +562,52 @@ final class LineTest extends TestCase
 
     public function testRenderWithX1(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line x1="10">
             HTML,
-            Line::tag()->x1(10)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->x1(10)->render(),
+            ),
             "Failed asserting that element renders correctly with 'x1' attribute.",
         );
     }
 
     public function testRenderWithX2(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line x2="100">
             HTML,
-            Line::tag()->x2(100)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->x2(100)->render(),
+            ),
             "Failed asserting that element renders correctly with 'x2' attribute.",
         );
     }
 
     public function testRenderWithY1(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line y1="20">
             HTML,
-            Line::tag()->y1(20)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->y1(20)->render(),
+            ),
             "Failed asserting that element renders correctly with 'y1' attribute.",
         );
     }
 
     public function testRenderWithY2(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <line y2="200">
             HTML,
-            Line::tag()->y2(200)->render(),
+            LineEndingNormalizer::normalize(
+                Line::tag()->y2(200)->render(),
+            ),
             "Failed asserting that element renders correctly with 'y2' attribute.",
         );
     }

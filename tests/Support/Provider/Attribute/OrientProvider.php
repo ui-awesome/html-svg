@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\Orient;
 use UnitEnum;
 
@@ -26,7 +26,7 @@ final class OrientProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Orient::class, 'orient');
+        $enumCases = EnumDataProvider::attributeCases(Orient::class, 'orient');
 
         $staticCases = [
             'empty string' => [

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Tests;
 
 use InvalidArgumentException;
+use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
@@ -13,7 +14,6 @@ use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\G;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
-use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
@@ -31,7 +31,6 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  *
  * {@see G} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -39,221 +38,251 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
 #[Group('svg')]
 final class GTest extends TestCase
 {
-    use TestSupport;
-
     public function testRenderWithAddAriaAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g aria-pressed="true">
             value
             </g>
             HTML,
-            G::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddAriaAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g aria-pressed="true">
             value
             </g>
             HTML,
-            G::tag()->addAriaAttribute(Aria::PRESSED, true)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->addAriaAttribute(Aria::PRESSED, true)->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g data-value="value">
             value
             </g>
             HTML,
-            G::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g data-value="value">
             value
             </g>
             HTML,
-            G::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAriaAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g aria-controls="modal-1" aria-hidden="false" aria-label="Close">
             value
             </g>
             HTML,
-            G::tag()
-                ->ariaAttributes(
-                    [
-                        'controls' => static fn(): string => 'modal-1',
-                        'hidden' => false,
-                        'label' => 'Close',
-                    ],
-                )
-                ->content('value')
-                ->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()
+                                ->ariaAttributes(
+                                    [
+                                        'controls' => static fn(): string => 'modal-1',
+                                        'hidden' => false,
+                                        'label' => 'Close',
+                                    ],
+                                )
+                                ->content('value')
+                                ->render(),
+            ),
             "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
         );
     }
 
     public function testRenderWithAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g class="value">
             value
             </g>
             HTML,
-            G::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'attributes()' method.",
         );
     }
 
     public function testRenderWithBeginEnd(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g>
             Content
             </g>
             HTML,
-            G::tag()->begin() . 'Content' . G::end(),
+            LineEndingNormalizer::normalize(
+                G::tag()->begin() . 'Content' . G::end(),
+            ),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }
 
     public function testRenderWithClass(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g class="value">
             value
             </g>
             HTML,
-            G::tag()->class('value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->class('value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'class' attribute.",
         );
     }
 
     public function testRenderWithContent(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g>
             value
             </g>
             HTML,
-            G::tag()->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->render(),
+            ),
             'Failed asserting that element renders correctly with default values.',
         );
     }
 
     public function testRenderWithDataAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g data-value="test-value">
             value
             </g>
             HTML,
-            G::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            ),
             "Failed asserting that element renders correctly with 'dataAttributes()' method.",
         );
     }
 
     public function testRenderWithDefaultConfigurationValues(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g class="default-class">
             value
             </g>
             HTML,
-            G::tag(['class' => 'default-class'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag(['class' => 'default-class'])->content('value')->render(),
+            ),
             'Failed asserting that default configuration values are applied correctly.',
         );
     }
 
     public function testRenderWithDefaultProvider(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g class="default-class">
             value
             </g>
             HTML,
-            G::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+            ),
             'Failed asserting that default provider is applied correctly.',
         );
     }
 
     public function testRenderWithFill(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g fill="#ff0000">
             value
             </g>
             HTML,
-            G::tag()->fill('#ff0000')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->fill('#ff0000')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'fill' attribute.",
         );
     }
 
     public function testRenderWithFillOpacity(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g fill-opacity="0.7">
             value
             </g>
             HTML,
-            G::tag()->content('value')->fillOpacity('0.7')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->fillOpacity('0.7')->render(),
+            ),
             "Failed asserting that element renders correctly with 'fill-opacity' attribute.",
         );
     }
 
     public function testRenderWithFillRule(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g fill-rule="evenodd">
             value
             </g>
             HTML,
-            G::tag()->content('value')->fillRule('evenodd')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->fillRule('evenodd')->render(),
+            ),
             "Failed asserting that element renders correctly with 'fill-rule' attribute.",
         );
     }
 
     public function testRenderWithFillRuleUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g fill-rule="nonzero">
             value
             </g>
             HTML,
-            G::tag()->content('value')->fillRule(FillRule::NONZERO)->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->fillRule(FillRule::NONZERO)->render(),
+            ),
             "Failed asserting that element renders correctly with 'fill-rule' attribute.",
         );
     }
@@ -262,13 +291,15 @@ final class GTest extends TestCase
     {
         SimpleFactory::setDefaults(G::class, ['class' => 'default-class']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g class="default-class">
             value
             </g>
             HTML,
-            G::tag()->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->render(),
+            ),
             'Failed asserting that global defaults are applied correctly.',
         );
 
@@ -277,234 +308,270 @@ final class GTest extends TestCase
 
     public function testRenderWithId(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g id="test-id">
             value
             </g>
             HTML,
-            G::tag()->content('value')->id('test-id')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->id('test-id')->render(),
+            ),
             "Failed asserting that element renders correctly with 'id' attribute.",
         );
     }
 
     public function testRenderWithLangUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g lang="es">
             value
             </g>
             HTML,
-            G::tag()->content('value')->lang(Language::SPANISH)->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->lang(Language::SPANISH)->render(),
+            ),
             "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
 
     public function testRenderWithOpacity(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g opacity="0.5">
             value
             </g>
             HTML,
-            G::tag()->content('value')->opacity('0.5')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->opacity('0.5')->render(),
+            ),
             "Failed asserting that element renders correctly with 'opacity' attribute.",
         );
     }
 
     public function testRenderWithRole(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g role="banner">
             value
             </g>
             HTML,
-            G::tag()->content('value')->role('banner')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->role('banner')->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithRoleUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g role="banner">
             value
             </g>
             HTML,
-            G::tag()->content('value')->role(Role::BANNER)->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->role(Role::BANNER)->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithStroke(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g stroke="#00ff00">
             value
             </g>
             HTML,
-            G::tag()->content('value')->stroke('#00ff00')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->stroke('#00ff00')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke' attribute.",
         );
     }
 
     public function testRenderWithStrokeDashArray(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g stroke-dasharray="5,5">
             value
             </g>
             HTML,
-            G::tag()->content('value')->strokeDashArray('5,5')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->strokeDashArray('5,5')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-dasharray' attribute.",
         );
     }
 
     public function testRenderWithStrokeLineCap(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g stroke-linecap="round">
             value
             </g>
             HTML,
-            G::tag()->content('value')->strokeLineCap('round')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->strokeLineCap('round')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-linecap' attribute.",
         );
     }
 
     public function testRenderWithStrokeLineCapUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g stroke-linecap="square">
             value
             </g>
             HTML,
-            G::tag()->content('value')->strokeLineCap(StrokeLineCap::SQUARE)->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->strokeLineCap(StrokeLineCap::SQUARE)->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-linecap' attribute.",
         );
     }
 
     public function testRenderWithStrokeLineJoin(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g stroke-linejoin="round">
             value
             </g>
             HTML,
-            G::tag()->content('value')->strokeLineJoin('round')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->strokeLineJoin('round')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-linejoin' attribute.",
         );
     }
 
     public function testRenderWithStrokeLineJoinUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g stroke-linejoin="round">
             value
             </g>
             HTML,
-            G::tag()->content('value')->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-linejoin' attribute.",
         );
     }
 
     public function testRenderWithStrokeMiterlimit(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g stroke-miterlimit="10">
             value
             </g>
             HTML,
-            G::tag()->content('value')->strokeMiterlimit(10)->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->strokeMiterlimit(10)->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-miterlimit' attribute.",
         );
     }
 
     public function testRenderWithStrokeOpacity(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g stroke-opacity="0.8">
             value
             </g>
             HTML,
-            G::tag()->content('value')->strokeOpacity(0.8)->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->strokeOpacity(0.8)->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-opacity' attribute.",
         );
     }
 
     public function testRenderWithStrokeWidth(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g stroke-width="2">
             value
             </g>
             HTML,
-            G::tag()->content('value')->strokeWidth('2')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->strokeWidth('2')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stroke-width' attribute.",
         );
     }
 
     public function testRenderWithStyle(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g style='test-value'>
             value
             </g>
             HTML,
-            G::tag()->content('value')->style('test-value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->style('test-value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'style' attribute.",
         );
     }
 
     public function testRenderWithTabindex(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g tabindex="3">
             value
             </g>
             HTML,
-            G::tag()->content('value')->tabIndex(3)->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->tabIndex(3)->render(),
+            ),
             "Failed asserting that element renders correctly with 'tabindex' attribute.",
         );
     }
 
     public function testRenderWithToString(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g>
             value
             </g>
             HTML,
-            (string) G::tag()->content('value'),
+            LineEndingNormalizer::normalize(
+                (string) G::tag()->content('value'),
+            ),
             "Failed asserting that '__toString()' method renders correctly.",
         );
     }
 
     public function testRenderWithTransform(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g transform="rotate(45)">
             value
             </g>
             HTML,
-            G::tag()->content('value')->transform('rotate(45)')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag()->content('value')->transform('rotate(45)')->render(),
+            ),
             "Failed asserting that element renders correctly with 'transform' attribute.",
         );
     }
@@ -513,13 +580,15 @@ final class GTest extends TestCase
     {
         SimpleFactory::setDefaults(G::class, ['class' => 'from-global', 'id' => 'id-global']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <g class="from-global" id="id-user">
             value
             </g>
             HTML,
-            G::tag(['id' => 'id-user'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                G::tag(['id' => 'id-user'])->content('value')->render(),
+            ),
             'Failed asserting that user-defined attributes override global defaults correctly.',
         );
 
