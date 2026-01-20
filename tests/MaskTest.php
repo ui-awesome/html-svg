@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Tests;
 
 use InvalidArgumentException;
+use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
@@ -13,7 +14,6 @@ use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Mask;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
-use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, MaskType, SvgAttribute};
 
 /**
@@ -31,7 +31,6 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, MaskType, SvgAttribute};
  *
  * {@see Mask} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -39,169 +38,191 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, MaskType, SvgAttribute};
 #[Group('svg')]
 final class MaskTest extends TestCase
 {
-    use TestSupport;
-
     public function testRenderWithAddAriaAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask aria-pressed="true">
             value
             </mask>
             HTML,
-            Mask::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddAriaAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask aria-pressed="true">
             value
             </mask>
             HTML,
-            Mask::tag()->addAriaAttribute(Aria::PRESSED, true)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->addAriaAttribute(Aria::PRESSED, true)->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask data-value="value">
             value
             </mask>
             HTML,
-            Mask::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask data-value="value">
             value
             </mask>
             HTML,
-            Mask::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAriaAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask aria-controls="modal-1" aria-hidden="false" aria-label="Close">
             value
             </mask>
             HTML,
-            Mask::tag()
-                ->ariaAttributes(
-                    [
-                        'controls' => static fn(): string => 'modal-1',
-                        'hidden' => false,
-                        'label' => 'Close',
-                    ],
-                )
-                ->content('value')
-                ->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()
+                                ->ariaAttributes(
+                                    [
+                                        'controls' => static fn(): string => 'modal-1',
+                                        'hidden' => false,
+                                        'label' => 'Close',
+                                    ],
+                                )
+                                ->content('value')
+                                ->render(),
+            ),
             "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
         );
     }
 
     public function testRenderWithAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask class="value">
             value
             </mask>
             HTML,
-            Mask::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'attributes()' method.",
         );
     }
 
     public function testRenderWithBeginEnd(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask>
             Content
             </mask>
             HTML,
-            Mask::tag()->begin() . 'Content' . Mask::end(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->begin() . 'Content' . Mask::end(),
+            ),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }
 
     public function testRenderWithClass(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask class="value">
             value
             </mask>
             HTML,
-            Mask::tag()->class('value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->class('value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'class' attribute.",
         );
     }
 
     public function testRenderWithContent(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask>
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->render(),
+            ),
             'Failed asserting that element renders correctly with default values.',
         );
     }
 
     public function testRenderWithDataAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask data-value="test-value">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            ),
             "Failed asserting that element renders correctly with 'dataAttributes()' method.",
         );
     }
 
     public function testRenderWithDefaultConfigurationValues(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask class="default-class">
             value
             </mask>
             HTML,
-            Mask::tag(['class' => 'default-class'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag(['class' => 'default-class'])->content('value')->render(),
+            ),
             'Failed asserting that default configuration values are applied correctly.',
         );
     }
 
     public function testRenderWithDefaultProvider(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask class="default-class">
             value
             </mask>
             HTML,
-            Mask::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+            ),
             'Failed asserting that default provider is applied correctly.',
         );
     }
@@ -210,13 +231,15 @@ final class MaskTest extends TestCase
     {
         SimpleFactory::setDefaults(Mask::class, ['class' => 'default-class']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask class="default-class">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->render(),
+            ),
             'Failed asserting that global defaults are applied correctly.',
         );
 
@@ -225,182 +248,210 @@ final class MaskTest extends TestCase
 
     public function testRenderWithHeight(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask height="120%">
             value
             </mask>
             HTML,
-            Mask::tag()->height('120%')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->height('120%')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'height' attribute.",
         );
     }
 
     public function testRenderWithId(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask id="test-id">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->id('test-id')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->id('test-id')->render(),
+            ),
             "Failed asserting that element renders correctly with 'id' attribute.",
         );
     }
 
     public function testRenderWithLangUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask lang="es">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->lang(Language::SPANISH)->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->lang(Language::SPANISH)->render(),
+            ),
             "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
 
     public function testRenderWithMaskContentUnits(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask maskContentUnits="userSpaceOnUse">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->maskContentUnits('userSpaceOnUse')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->maskContentUnits('userSpaceOnUse')->render(),
+            ),
             "Failed asserting that element renders correctly with 'maskContentUnits' attribute.",
         );
     }
 
     public function testRenderWithMaskContentUnitsUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask maskContentUnits="objectBoundingBox">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->maskContentUnits(CoordinateUnits::OBJECT_BOUNDING_BOX)->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->maskContentUnits(CoordinateUnits::OBJECT_BOUNDING_BOX)->render(),
+            ),
             "Failed asserting that element renders correctly with 'maskContentUnits' attribute using enum.",
         );
     }
 
     public function testRenderWithMaskType(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask mask-type="luminance">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->maskType('luminance')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->maskType('luminance')->render(),
+            ),
             "Failed asserting that element renders correctly with 'mask-type' attribute.",
         );
     }
 
     public function testRenderWithMaskTypeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask mask-type="alpha">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->maskType(MaskType::ALPHA)->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->maskType(MaskType::ALPHA)->render(),
+            ),
             "Failed asserting that element renders correctly with 'mask-type' attribute using enum.",
         );
     }
 
     public function testRenderWithMaskUnits(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask maskUnits="objectBoundingBox">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->maskUnits('objectBoundingBox')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->maskUnits('objectBoundingBox')->render(),
+            ),
             "Failed asserting that element renders correctly with 'maskUnits' attribute.",
         );
     }
 
     public function testRenderWithMaskUnitsUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask maskUnits="userSpaceOnUse">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->maskUnits(CoordinateUnits::USER_SPACE_ON_USE)->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->maskUnits(CoordinateUnits::USER_SPACE_ON_USE)->render(),
+            ),
             "Failed asserting that element renders correctly with 'maskUnits' attribute using enum.",
         );
     }
 
     public function testRenderWithRole(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask role="banner">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->role('banner')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->role('banner')->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithRoleUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask role="banner">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->role(Role::BANNER)->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->role(Role::BANNER)->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithStyle(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask style='test-value'>
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->style('test-value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->style('test-value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'style' attribute.",
         );
     }
 
     public function testRenderWithTabindex(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask tabindex="3">
             value
             </mask>
             HTML,
-            Mask::tag()->content('value')->tabIndex(3)->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->content('value')->tabIndex(3)->render(),
+            ),
             "Failed asserting that element renders correctly with 'tabindex' attribute.",
         );
     }
 
     public function testRenderWithToString(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask>
             value
             </mask>
             HTML,
-            (string) Mask::tag()->content('value'),
+            LineEndingNormalizer::normalize(
+                (string) Mask::tag()->content('value'),
+            ),
             "Failed asserting that '__toString()' method renders correctly.",
         );
     }
@@ -409,13 +460,15 @@ final class MaskTest extends TestCase
     {
         SimpleFactory::setDefaults(Mask::class, ['class' => 'from-global', 'id' => 'id-global']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask class="from-global" id="id-user">
             value
             </mask>
             HTML,
-            Mask::tag(['id' => 'id-user'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag(['id' => 'id-user'])->content('value')->render(),
+            ),
             'Failed asserting that user-defined attributes override global defaults correctly.',
         );
 
@@ -424,39 +477,45 @@ final class MaskTest extends TestCase
 
     public function testRenderWithWidth(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask width="120%">
             value
             </mask>
             HTML,
-            Mask::tag()->width('120%')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->width('120%')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'width' attribute.",
         );
     }
 
     public function testRenderWithX(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask x="-10%">
             value
             </mask>
             HTML,
-            Mask::tag()->x('-10%')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->x('-10%')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'x' attribute.",
         );
     }
 
     public function testRenderWithY(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <mask y="-10%">
             value
             </mask>
             HTML,
-            Mask::tag()->y('-10%')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Mask::tag()->y('-10%')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'y' attribute.",
         );
     }

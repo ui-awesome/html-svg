@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\StrokeLineJoin;
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class StrokeLineJoinProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(StrokeLineJoin::class, 'stroke-linejoin');
+        $enumCases = EnumDataProvider::attributeCases(StrokeLineJoin::class, 'stroke-linejoin');
 
         $staticCases = [
             'empty string' => [

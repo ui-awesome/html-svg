@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\FillRule;
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class FillRuleProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(FillRule::class, 'fill-rule');
+        $enumCases = EnumDataProvider::attributeCases(FillRule::class, 'fill-rule');
 
         $staticCases = [
             'empty string' => [

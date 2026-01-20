@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class PreserveAspectRatioProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(PreserveAspectRatio::class, 'preserveAspectRatio');
+        $enumCases = EnumDataProvider::attributeCases(PreserveAspectRatio::class, 'preserveAspectRatio');
 
         $staticCases = [
             'empty string' => [

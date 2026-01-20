@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Tests;
 
 use InvalidArgumentException;
+use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Core\Factory\SimpleFactory;
@@ -12,7 +13,6 @@ use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\LinearGradient;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
-use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
 
 /**
@@ -31,7 +31,6 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
  *
  * {@see LinearGradient} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -39,167 +38,189 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
 #[Group('linearGradient')]
 final class LinearGradientTest extends TestCase
 {
-    use TestSupport;
-
     public function testRenderWithAddAriaAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient aria-pressed="true">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddAriaAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient aria-pressed="true">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->addAriaAttribute(\UIAwesome\Html\Attribute\Values\Aria::PRESSED, true)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->addAriaAttribute(\UIAwesome\Html\Attribute\Values\Aria::PRESSED, true)->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient data-value="value">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient data-value="value">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->addDataAttribute(\UIAwesome\Html\Attribute\Values\Data::VALUE, 'value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->addDataAttribute(\UIAwesome\Html\Attribute\Values\Data::VALUE, 'value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAriaAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient aria-controls="modal-1" aria-hidden="false" aria-label="Close">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()
-                ->ariaAttributes(
-                    [
-                        'controls' => static fn(): string => 'modal-1',
-                        'hidden' => false,
-                        'label' => 'Close',
-                    ],
-                )
-                ->content('value')
-                ->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()
+                                ->ariaAttributes(
+                                    [
+                                        'controls' => static fn(): string => 'modal-1',
+                                        'hidden' => false,
+                                        'label' => 'Close',
+                                    ],
+                                )
+                                ->content('value')
+                                ->render(),
+            ),
             "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
         );
     }
 
     public function testRenderWithAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient class="value">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'attributes()' method.",
         );
     }
 
     public function testRenderWithBeginEnd(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient>
             Content
             </linearGradient>
             HTML,
-            LinearGradient::tag()->begin() . 'Content' . LinearGradient::end(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->begin() . 'Content' . LinearGradient::end(),
+            ),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }
 
     public function testRenderWithClass(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient class="gradient-style">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->class('gradient-style')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->class('gradient-style')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'class' attribute.",
         );
     }
 
     public function testRenderWithContent(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient>
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->render(),
+            ),
             'Failed asserting that element renders correctly with default values.',
         );
     }
 
     public function testRenderWithDataAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient data-value="test-value">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            ),
             "Failed asserting that element renders correctly with 'dataAttributes()' method.",
         );
     }
 
     public function testRenderWithDefaultConfigurationValues(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient class="default-class">
             </linearGradient>
             HTML,
-            LinearGradient::tag(['class' => 'default-class'])->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag(['class' => 'default-class'])->render(),
+            ),
             'Failed asserting that default configuration values are applied correctly.',
         );
     }
 
     public function testRenderWithDefaultProvider(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient class="default-class">
             </linearGradient>
             HTML,
-            LinearGradient::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+            ),
             'Failed asserting that default provider is applied correctly.',
         );
     }
@@ -208,12 +229,14 @@ final class LinearGradientTest extends TestCase
     {
         SimpleFactory::setDefaults(LinearGradient::class, ['class' => 'default-class']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient class="default-class">
             </linearGradient>
             HTML,
-            LinearGradient::tag()->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->render(),
+            ),
             'Failed asserting that global defaults are applied correctly.',
         );
 
@@ -222,143 +245,165 @@ final class LinearGradientTest extends TestCase
 
     public function testRenderWithGradientTransform(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient gradientTransform="rotate(90)">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->gradientTransform('rotate(90)')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->gradientTransform('rotate(90)')->render(),
+            ),
             "Failed asserting that element renders correctly with 'gradientTransform' attribute.",
         );
     }
 
     public function testRenderWithGradientUnits(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient gradientUnits="userSpaceOnUse">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->gradientUnits('userSpaceOnUse')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->gradientUnits('userSpaceOnUse')->render(),
+            ),
             "Failed asserting that element renders correctly with 'gradientUnits' attribute.",
         );
     }
 
     public function testRenderWithGradientUnitsUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient gradientUnits="objectBoundingBox">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->gradientUnits(CoordinateUnits::OBJECT_BOUNDING_BOX)->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->gradientUnits(CoordinateUnits::OBJECT_BOUNDING_BOX)->render(),
+            ),
             "Failed asserting that element renders correctly with 'gradientUnits' attribute using enum.",
         );
     }
 
     public function testRenderWithId(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient id="gradient1">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->id('gradient1')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->id('gradient1')->render(),
+            ),
             "Failed asserting that element renders correctly with 'id' attribute.",
         );
     }
 
     public function testRenderWithLang(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient lang="es">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->lang('es')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->lang('es')->render(),
+            ),
             "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
 
     public function testRenderWithRole(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient role="banner">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->role('banner')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->role('banner')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithSpreadMethod(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient spreadMethod="reflect">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->spreadMethod('reflect')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->spreadMethod('reflect')->render(),
+            ),
             "Failed asserting that element renders correctly with 'spreadMethod' attribute.",
         );
     }
 
     public function testRenderWithSpreadMethodUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient spreadMethod="repeat">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->spreadMethod(SpreadMethod::REPEAT)->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->spreadMethod(SpreadMethod::REPEAT)->render(),
+            ),
             "Failed asserting that element renders correctly with 'spreadMethod' attribute using enum.",
         );
     }
 
     public function testRenderWithStyle(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient style='test-value'>
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->style('test-value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->style('test-value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'style' attribute.",
         );
     }
 
     public function testRenderWithTabindex(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient tabindex="3">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->tabIndex(3)->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->tabIndex(3)->render(),
+            ),
             "Failed asserting that element renders correctly with 'tabindex' attribute.",
         );
     }
 
     public function testRenderWithToString(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient>
             value
             </linearGradient>
             HTML,
-            (string) LinearGradient::tag()->content('value'),
+            LineEndingNormalizer::normalize(
+                (string) LinearGradient::tag()->content('value'),
+            ),
             "Failed asserting that '__toString()' method renders correctly.",
         );
     }
@@ -367,12 +412,14 @@ final class LinearGradientTest extends TestCase
     {
         SimpleFactory::setDefaults(LinearGradient::class, ['class' => 'from-global', 'id' => 'id-global']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient class="from-global" id="id-user">
             </linearGradient>
             HTML,
-            LinearGradient::tag(['id' => 'id-user'])->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag(['id' => 'id-user'])->render(),
+            ),
             'Failed asserting that user-defined attributes override global defaults correctly.',
         );
 
@@ -381,52 +428,60 @@ final class LinearGradientTest extends TestCase
 
     public function testRenderWithX1(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient x1="0">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->x1('0')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->x1('0')->render(),
+            ),
             "Failed asserting that element renders correctly with 'x1' attribute.",
         );
     }
 
     public function testRenderWithX2(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient x2="100%">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->x2('100%')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->x2('100%')->render(),
+            ),
             "Failed asserting that element renders correctly with 'x2' attribute.",
         );
     }
 
     public function testRenderWithY1(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient y1="0">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->y1('0')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->y1('0')->render(),
+            ),
             "Failed asserting that element renders correctly with 'y1' attribute.",
         );
     }
 
     public function testRenderWithY2(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <linearGradient y2="100%">
             value
             </linearGradient>
             HTML,
-            LinearGradient::tag()->content('value')->y2('100%')->render(),
+            LineEndingNormalizer::normalize(
+                LinearGradient::tag()->content('value')->y2('100%')->render(),
+            ),
             "Failed asserting that element renders correctly with 'y2' attribute.",
         );
     }

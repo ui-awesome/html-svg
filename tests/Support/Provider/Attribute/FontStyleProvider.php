@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\{FontStyle, SvgAttribute};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class FontStyleProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(FontStyle::class, SvgAttribute::FONT_STYLE);
+        $enumCases = EnumDataProvider::attributeCases(FontStyle::class, SvgAttribute::FONT_STYLE);
 
         $staticCases = [
             'empty string' => [

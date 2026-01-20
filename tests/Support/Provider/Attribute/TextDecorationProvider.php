@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\{SvgAttribute, TextDecorationLine, TextDecorationStyle};
 use UnitEnum;
 
@@ -24,8 +24,8 @@ final class TextDecorationProvider
     public static function values(): array
     {
         $enumCases = [
-            ...EnumDataGenerator::cases(TextDecorationLine::class, SvgAttribute::TEXT_DECORATION),
-            ...EnumDataGenerator::cases(TextDecorationStyle::class, SvgAttribute::TEXT_DECORATION),
+            ...EnumDataProvider::attributeCases(TextDecorationLine::class, SvgAttribute::TEXT_DECORATION),
+            ...EnumDataProvider::attributeCases(TextDecorationStyle::class, SvgAttribute::TEXT_DECORATION),
         ];
 
         $staticCases = [

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\StrokeLineCap;
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class StrokeLineCapProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(StrokeLineCap::class, 'stroke-linecap');
+        $enumCases = EnumDataProvider::attributeCases(StrokeLineCap::class, 'stroke-linecap');
 
         $staticCases = [
             'empty string' => [

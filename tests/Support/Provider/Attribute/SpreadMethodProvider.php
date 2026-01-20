@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\SpreadMethod;
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class SpreadMethodProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(SpreadMethod::class, 'spreadMethod');
+        $enumCases = EnumDataProvider::attributeCases(SpreadMethod::class, 'spreadMethod');
 
         $staticCases = [
             'empty string' => [

@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests;
 
+use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Core\Factory\SimpleFactory;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Stop;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
-use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 
 /**
  * Unit tests for {@see Stop} element rendering and attribute handling.
@@ -24,7 +24,6 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
  *
  * {@see Stop} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -32,37 +31,41 @@ use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 #[Group('svg')]
 final class StopTest extends TestCase
 {
-    use TestSupport;
-
     public function testRenderWithContentAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <stop>
             HTML,
-            Stop::tag()->render(),
+            LineEndingNormalizer::normalize(
+                Stop::tag()->render(),
+            ),
             'Failed asserting that element renders correctly with default values.',
         );
     }
 
     public function testRenderWithDefaultConfigurationValues(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <stop stop-color="#000">
             HTML,
-            Stop::tag(['stopColor' => '#000'])->render(),
+            LineEndingNormalizer::normalize(
+                Stop::tag(['stopColor' => '#000'])->render(),
+            ),
             'Failed asserting that default configuration values are applied correctly.',
         );
     }
 
     public function testRenderWithDefaultProvider(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <stop class="default-class" title="default-title">
             HTML,
-            Stop::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+            LineEndingNormalizer::normalize(
+                Stop::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+            ),
             'Failed asserting that default provider is applied correctly.',
         );
     }
@@ -71,11 +74,13 @@ final class StopTest extends TestCase
     {
         SimpleFactory::setDefaults(Stop::class, ['stopColor' => '#fff']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <stop stop-color="#fff">
             HTML,
-            Stop::tag()->render(),
+            LineEndingNormalizer::normalize(
+                Stop::tag()->render(),
+            ),
             'Failed asserting that global defaults are applied correctly.',
         );
 
@@ -84,33 +89,39 @@ final class StopTest extends TestCase
 
     public function testRenderWithOffset(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <stop offset="50%">
             HTML,
-            Stop::tag()->offset('50%')->render(),
+            LineEndingNormalizer::normalize(
+                Stop::tag()->offset('50%')->render(),
+            ),
             "Failed asserting that element renders correctly with 'offset' attribute.",
         );
     }
 
     public function testRenderWithStopColor(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <stop stop-color="#ff0000">
             HTML,
-            Stop::tag()->stopColor('#ff0000')->render(),
+            LineEndingNormalizer::normalize(
+                Stop::tag()->stopColor('#ff0000')->render(),
+            ),
             "Failed asserting that element renders correctly with 'stop-color' attribute.",
         );
     }
 
     public function testRenderWithStopOpacity(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <stop stop-opacity="0.5">
             HTML,
-            Stop::tag()->stopOpacity(0.5)->render(),
+            LineEndingNormalizer::normalize(
+                Stop::tag()->stopOpacity(0.5)->render(),
+            ),
             "Failed asserting that element renders correctly with 'stop-opacity' attribute.",
         );
     }

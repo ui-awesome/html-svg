@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Tests;
 
 use InvalidArgumentException;
+use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language};
@@ -12,7 +13,6 @@ use UIAwesome\Html\Core\Factory\SimpleFactory;
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
-use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Text;
 use UIAwesome\Html\Svg\Values\{
     DominantBaseline,
@@ -40,7 +40,6 @@ use UIAwesome\Html\Svg\Values\{
  *
  * {@see Text} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -48,104 +47,116 @@ use UIAwesome\Html\Svg\Values\{
 #[Group('svg')]
 final class TextTest extends TestCase
 {
-    use TestSupport;
-
     public function testRenderWithAddAriaAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text aria-pressed="true">
             value
             </text>
             HTML,
-            Text::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddAriaAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text aria-pressed="true">
             value
             </text>
             HTML,
-            Text::tag()->addAriaAttribute(Aria::PRESSED, true)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->addAriaAttribute(Aria::PRESSED, true)->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text data-value="value">
             value
             </text>
             HTML,
-            Text::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text data-value="value">
             value
             </text>
             HTML,
-            Text::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAriaAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text aria-controls="modal-1" aria-hidden="false" aria-label="Close">
             value
             </text>
             HTML,
-            Text::tag()
-                ->ariaAttributes(
-                    [
-                        'controls' => static fn(): string => 'modal-1',
-                        'hidden' => false,
-                        'label' => 'Close',
-                    ],
-                )
-                ->content('value')
-                ->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()
+                                ->ariaAttributes(
+                                    [
+                                        'controls' => static fn(): string => 'modal-1',
+                                        'hidden' => false,
+                                        'label' => 'Close',
+                                    ],
+                                )
+                                ->content('value')
+                                ->render(),
+            ),
             "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
         );
     }
 
     public function testRenderWithAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text class="value">
             value
             </text>
             HTML,
-            Text::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'attributes()' method.",
         );
     }
 
     public function testRenderWithBeginEnd(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text>
             Content
             </text>
             HTML,
-            Text::tag()->begin() . 'Content' . Text::end(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->begin() . 'Content' . Text::end(),
+            ),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }
@@ -175,39 +186,45 @@ final class TextTest extends TestCase
 
     public function testRenderWithDataAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text data-value="test-value">
             value
             </text>
             HTML,
-            Text::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            ),
             "Failed asserting that element renders correctly with 'dataAttributes()' method.",
         );
     }
 
     public function testRenderWithDefaultConfigurationValues(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text class="default-class">
             value
             </text>
             HTML,
-            Text::tag(['class' => 'default-class'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag(['class' => 'default-class'])->content('value')->render(),
+            ),
             'Failed asserting that default configuration values are applied correctly.',
         );
     }
 
     public function testRenderWithDefaultProvider(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text class="default-class" title="default-title">
             value
             </text>
             HTML,
-            Text::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+            ),
             'Failed asserting that default provider is applied correctly.',
         );
     }
@@ -326,13 +343,15 @@ final class TextTest extends TestCase
     {
         SimpleFactory::setDefaults(Text::class, ['class' => 'default-class']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text class="default-class">
             value
             </text>
             HTML,
-            Text::tag()->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->content('value')->render(),
+            ),
             'Failed asserting that global defaults are applied correctly.',
         );
 
@@ -352,26 +371,30 @@ final class TextTest extends TestCase
 
     public function testRenderWithLang(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text lang="es">
             value
             </text>
             HTML,
-            Text::tag()->content('value')->lang('es')->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->content('value')->lang('es')->render(),
+            ),
             "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
 
     public function testRenderWithLangUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text lang="es">
             value
             </text>
             HTML,
-            Text::tag()->content('value')->lang(Language::SPANISH)->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->content('value')->lang(Language::SPANISH)->render(),
+            ),
             "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
@@ -466,13 +489,15 @@ final class TextTest extends TestCase
 
     public function testRenderWithTabIndex(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text tabindex="3">
             value
             </text>
             HTML,
-            Text::tag()->content('value')->tabIndex(3)->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag()->content('value')->tabIndex(3)->render(),
+            ),
             "Failed asserting that element renders correctly with 'tabindex' attribute.",
         );
     }
@@ -565,12 +590,14 @@ final class TextTest extends TestCase
     {
         SimpleFactory::setDefaults(Text::class, ['class' => 'from-global', 'id' => 'id-global']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <text class="from-global" id="id-user">
             </text>
             HTML,
-            Text::tag(['id' => 'id-user'])->render(),
+            LineEndingNormalizer::normalize(
+                Text::tag(['id' => 'id-user'])->render(),
+            ),
             'Failed asserting that user-defined attributes override global defaults correctly.',
         );
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\{DominantBaseline, SvgAttribute};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class DominantBaselineProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(DominantBaseline::class, SvgAttribute::DOMINANT_BASELINE);
+        $enumCases = EnumDataProvider::attributeCases(DominantBaseline::class, SvgAttribute::DOMINANT_BASELINE);
 
         $staticCases = [
             'empty string' => [

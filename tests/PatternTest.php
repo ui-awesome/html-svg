@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Tests;
 
 use InvalidArgumentException;
+use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
@@ -13,7 +14,6 @@ use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Pattern;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
-use UIAwesome\Html\Svg\Tests\Support\TestSupport;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, PreserveAspectRatio, SvgAttribute};
 
 /**
@@ -31,7 +31,6 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, PreserveAspectRatio, SvgAttribut
  *
  * {@see Pattern} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- * {@see TestSupport} for assertion utilities.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -39,169 +38,191 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, PreserveAspectRatio, SvgAttribut
 #[Group('svg')]
 final class PatternTest extends TestCase
 {
-    use TestSupport;
-
     public function testRenderWithAddAriaAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern aria-pressed="true">
             value
             </pattern>
             HTML,
-            Pattern::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->addAriaAttribute('pressed', true)->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddAriaAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern aria-pressed="true">
             value
             </pattern>
             HTML,
-            Pattern::tag()->addAriaAttribute(Aria::PRESSED, true)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->addAriaAttribute(Aria::PRESSED, true)->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttribute(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern data-value="value">
             value
             </pattern>
             HTML,
-            Pattern::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->addDataAttribute('value', 'value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAddDataAttributeUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern data-value="value">
             value
             </pattern>
             HTML,
-            Pattern::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
     }
 
     public function testRenderWithAriaAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern aria-controls="modal-1" aria-hidden="false" aria-label="Close">
             value
             </pattern>
             HTML,
-            Pattern::tag()
-                ->ariaAttributes(
-                    [
-                        'controls' => static fn(): string => 'modal-1',
-                        'hidden' => false,
-                        'label' => 'Close',
-                    ],
-                )
-                ->content('value')
-                ->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()
+                                ->ariaAttributes(
+                                    [
+                                        'controls' => static fn(): string => 'modal-1',
+                                        'hidden' => false,
+                                        'label' => 'Close',
+                                    ],
+                                )
+                                ->content('value')
+                                ->render(),
+            ),
             "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
         );
     }
 
     public function testRenderWithAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern class="value">
             value
             </pattern>
             HTML,
-            Pattern::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->attributes(['class' => 'value'])->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'attributes()' method.",
         );
     }
 
     public function testRenderWithBeginEnd(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern>
             Content
             </pattern>
             HTML,
-            Pattern::tag()->begin() . 'Content' . Pattern::end(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->begin() . 'Content' . Pattern::end(),
+            ),
             "Failed asserting that element renders correctly with 'begin()' and 'end()' methods.",
         );
     }
 
     public function testRenderWithClass(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern class="value">
             value
             </pattern>
             HTML,
-            Pattern::tag()->class('value')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->class('value')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'class' attribute.",
         );
     }
 
     public function testRenderWithContent(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern>
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->render(),
+            ),
             'Failed asserting that element renders correctly with default values.',
         );
     }
 
     public function testRenderWithDataAttributes(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern data-value="test-value">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->dataAttributes(['value' => 'test-value'])->render(),
+            ),
             "Failed asserting that element renders correctly with 'dataAttributes()' method.",
         );
     }
 
     public function testRenderWithDefaultConfigurationValues(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern class="default-class">
             value
             </pattern>
             HTML,
-            Pattern::tag(['class' => 'default-class'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag(['class' => 'default-class'])->content('value')->render(),
+            ),
             'Failed asserting that default configuration values are applied correctly.',
         );
     }
 
     public function testRenderWithDefaultProvider(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern class="default-class">
             value
             </pattern>
             HTML,
-            Pattern::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+            ),
             'Failed asserting that default provider is applied correctly.',
         );
     }
@@ -210,13 +231,15 @@ final class PatternTest extends TestCase
     {
         SimpleFactory::setDefaults(Pattern::class, ['class' => 'default-class']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern class="default-class">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->render(),
+            ),
             'Failed asserting that global defaults are applied correctly.',
         );
 
@@ -225,214 +248,246 @@ final class PatternTest extends TestCase
 
     public function testRenderWithHeight(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern height="120%">
             value
             </pattern>
             HTML,
-            Pattern::tag()->height('120%')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->height('120%')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'height' attribute.",
         );
     }
 
     public function testRenderWithHref(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern href="#myPattern">
             value
             </pattern>
             HTML,
-            Pattern::tag()->href('#myPattern')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->href('#myPattern')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'href' attribute.",
         );
     }
 
     public function testRenderWithId(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern id="test-id">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->id('test-id')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->id('test-id')->render(),
+            ),
             "Failed asserting that element renders correctly with 'id' attribute.",
         );
     }
 
     public function testRenderWithLangUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern lang="es">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->lang(Language::SPANISH)->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->lang(Language::SPANISH)->render(),
+            ),
             "Failed asserting that element renders correctly with 'lang' attribute.",
         );
     }
 
     public function testRenderWithPatternContentUnits(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern patternContentUnits="userSpaceOnUse">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->patternContentUnits('userSpaceOnUse')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->patternContentUnits('userSpaceOnUse')->render(),
+            ),
             "Failed asserting that element renders correctly with 'patternContentUnits' attribute.",
         );
     }
 
     public function testRenderWithPatternContentUnitsUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern patternContentUnits="objectBoundingBox">
             value
             </pattern>
             HTML,
-            Pattern::tag()
-                ->content('value')
-                ->patternContentUnits(CoordinateUnits::OBJECT_BOUNDING_BOX)
-                ->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()
+                                ->content('value')
+                                ->patternContentUnits(CoordinateUnits::OBJECT_BOUNDING_BOX)
+                                ->render(),
+            ),
             "Failed asserting that element renders correctly with 'patternContentUnits' attribute using enum.",
         );
     }
 
     public function testRenderWithPatternTransform(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern patternTransform="rotate(90)">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->patternTransform('rotate(90)')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->patternTransform('rotate(90)')->render(),
+            ),
             "Failed asserting that element renders correctly with 'patternTransform' attribute.",
         );
     }
 
     public function testRenderWithPatternUnits(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern patternUnits="objectBoundingBox">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->patternUnits('objectBoundingBox')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->patternUnits('objectBoundingBox')->render(),
+            ),
             "Failed asserting that element renders correctly with 'patternUnits' attribute.",
         );
     }
 
     public function testRenderWithPatternUnitsUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern patternUnits="userSpaceOnUse">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->patternUnits(CoordinateUnits::USER_SPACE_ON_USE)->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->patternUnits(CoordinateUnits::USER_SPACE_ON_USE)->render(),
+            ),
             "Failed asserting that element renders correctly with 'patternUnits' attribute using enum.",
         );
     }
 
     public function testRenderWithPreserveAspectRatio(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern preserveAspectRatio="xMidYMid meet">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->preserveAspectRatio('xMidYMid meet')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->preserveAspectRatio('xMidYMid meet')->render(),
+            ),
             "Failed asserting that element renders correctly with 'preserveAspectRatio' attribute.",
         );
     }
 
     public function testRenderWithPreserveAspectRatioUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern preserveAspectRatio="xMinYMin slice">
             value
             </pattern>
             HTML,
-            Pattern::tag()
-                ->content('value')
-                ->preserveAspectRatio(PreserveAspectRatio::X_MIN_Y_MIN_SLICE)
-                ->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()
+                                ->content('value')
+                                ->preserveAspectRatio(PreserveAspectRatio::X_MIN_Y_MIN_SLICE)
+                                ->render(),
+            ),
             "Failed asserting that element renders correctly with 'preserveAspectRatio' attribute using enum.",
         );
     }
 
     public function testRenderWithRole(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern role="banner">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->role('banner')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->role('banner')->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithRoleUsingEnum(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern role="banner">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->role(Role::BANNER)->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->role(Role::BANNER)->render(),
+            ),
             "Failed asserting that element renders correctly with 'role' attribute.",
         );
     }
 
     public function testRenderWithStyle(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern style='test-value'>
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->style('test-value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->style('test-value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'style' attribute.",
         );
     }
 
     public function testRenderWithTabindex(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern tabindex="3">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->tabIndex(3)->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->tabIndex(3)->render(),
+            ),
             "Failed asserting that element renders correctly with 'tabindex' attribute.",
         );
     }
 
     public function testRenderWithToString(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern>
             value
             </pattern>
             HTML,
-            (string) Pattern::tag()->content('value'),
+            LineEndingNormalizer::normalize(
+                (string) Pattern::tag()->content('value'),
+            ),
             "Failed asserting that '__toString()' method renders correctly.",
         );
     }
@@ -441,13 +496,15 @@ final class PatternTest extends TestCase
     {
         SimpleFactory::setDefaults(Pattern::class, ['class' => 'from-global', 'id' => 'id-global']);
 
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern class="from-global" id="id-user">
             value
             </pattern>
             HTML,
-            Pattern::tag(['id' => 'id-user'])->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag(['id' => 'id-user'])->content('value')->render(),
+            ),
             'Failed asserting that user-defined attributes override global defaults correctly.',
         );
 
@@ -456,52 +513,60 @@ final class PatternTest extends TestCase
 
     public function testRenderWithViewBox(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern viewBox="0 0 100 100">
             value
             </pattern>
             HTML,
-            Pattern::tag()->content('value')->viewBox('0 0 100 100')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->content('value')->viewBox('0 0 100 100')->render(),
+            ),
             "Failed asserting that element renders correctly with 'viewBox' attribute.",
         );
     }
 
     public function testRenderWithWidth(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern width="120%">
             value
             </pattern>
             HTML,
-            Pattern::tag()->width('120%')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->width('120%')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'width' attribute.",
         );
     }
 
     public function testRenderWithX(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern x="-10%">
             value
             </pattern>
             HTML,
-            Pattern::tag()->x('-10%')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->x('-10%')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'x' attribute.",
         );
     }
 
     public function testRenderWithY(): void
     {
-        self::equalsWithoutLE(
+        self::assertEquals(
             <<<HTML
             <pattern y="-10%">
             value
             </pattern>
             HTML,
-            Pattern::tag()->y('-10%')->content('value')->render(),
+            LineEndingNormalizer::normalize(
+                Pattern::tag()->y('-10%')->content('value')->render(),
+            ),
             "Failed asserting that element renders correctly with 'y' attribute.",
         );
     }

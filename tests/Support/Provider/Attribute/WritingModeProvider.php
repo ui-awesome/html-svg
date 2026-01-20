@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests\Support\Provider\Attribute;
 
-use UIAwesome\Html\Svg\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Svg\Values\{SvgAttribute, WritingMode};
 use UnitEnum;
 
@@ -24,7 +24,7 @@ final class WritingModeProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(WritingMode::class, SvgAttribute::WRITING_MODE);
+        $enumCases = EnumDataProvider::attributeCases(WritingMode::class, SvgAttribute::WRITING_MODE);
 
         $staticCases = [
             'empty string' => [
