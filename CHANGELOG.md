@@ -1,6 +1,6 @@
 # ChangeLog
 
-## 0.3.0 Under development
+## 0.3.0 January 20, 2026
 
 - Enh #5: Refactor codebase to improve performance (@terabytesoftw)
 - Enh #6: Add `SvgBlock` enum for HTML SVG tag representation and implement `BlockInterface` class (@terabytesoftw)
