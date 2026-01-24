@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Attribute;
 
 use UIAwesome\Html\Svg\Values\SvgAttribute;
+use UnitEnum;
 
 /**
  * Trait for managing the SVG `rx` attribute in tag rendering.
@@ -19,7 +20,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * - Immutable method for setting or overriding the `rx` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible radius assignment (absolute, relative, or unset).
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rx

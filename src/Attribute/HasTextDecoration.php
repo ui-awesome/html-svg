@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Attribute;
 
 use UIAwesome\Html\Svg\Values\{SvgAttribute, TextDecorationLine, TextDecorationStyle};
+use UnitEnum;
 
 /**
  * Trait for managing the SVG `text-decoration` shorthand attribute in tag rendering.
@@ -20,7 +21,7 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, TextDecorationLine, TextDecorationS
  * - Supports `string` (space-separated shorthand), {@see TextDecorationLine} enum, {@see TextDecorationStyle} enum,
  *   and `null` for flexible text decoration assignment (specific value or unset).
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-decoration

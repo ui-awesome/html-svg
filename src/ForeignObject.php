@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Svg;
 use UIAwesome\Html\Attribute\Element\{HasHeight, HasWidth};
 use UIAwesome\Html\Interop\BlockInterface;
 use UIAwesome\Html\Svg\Attribute\{HasOpacity, HasTransform, HasX, HasY};
+use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
@@ -38,7 +39,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class ForeignObject extends Base\BaseSvgBlockTag
+final class ForeignObject extends BaseSvgBlockTag
 {
     use HasHeight;
     use HasOpacity;

@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{SvgAttribute, WritingMode};
+use UnitEnum;
 
 /**
  * Trait for managing SVG `writing-mode` attribute in tag rendering.
@@ -21,7 +22,7 @@ use UIAwesome\Html\Svg\Values\{SvgAttribute, WritingMode};
  * - Immutable method for setting or overriding the `writing-mode` attribute.
  * - Supports `string`, {@see WritingMode} enum, and `null` for flexible writing mode assignment.
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode

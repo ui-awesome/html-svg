@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
+use UnitEnum;
 
 /**
  * Trait for managing the SVG `maskContentUnits` attribute in tag rendering.
@@ -23,7 +24,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * - Supports `string`, {@see CoordinateUnits} enum, and `null` for flexible coordinate system assignment (specific
  *   value or unset).
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/maskContentUnits

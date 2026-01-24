@@ -2,6 +2,8 @@
 
 ## 0.3.1 Under development
 
+- Enh #161: Add `php-forge/coding-standard` to development dependencies for code quality checks (@terabytesoftw)
+
 ## 0.3.0 January 20, 2026
 
 - Enh #5: Refactor codebase to improve performance (@terabytesoftw)

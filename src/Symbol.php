@@ -16,6 +16,7 @@ use UIAwesome\Html\Svg\Attribute\{
     HasX,
     HasY,
 };
+use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
@@ -51,7 +52,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class Symbol extends Base\BaseSvgBlockTag
+final class Symbol extends BaseSvgBlockTag
 {
     use HasHeight;
     use HasOpacity;

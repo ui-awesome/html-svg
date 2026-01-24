@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg;
 
 use UIAwesome\Html\Interop\BlockInterface;
+use UIAwesome\Html\Svg\Base\BaseSvg;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
@@ -46,7 +47,7 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class Svg extends Base\BaseSvg
+final class Svg extends BaseSvg
 {
     /**
      * Returns the tag enumeration for the `<svg>` element.

@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgAttribute};
+use UnitEnum;
 
 /**
  * Trait for managing the SVG `stroke-linejoin` attribute in tag rendering.
@@ -22,7 +23,7 @@ use UIAwesome\Html\Svg\Values\{StrokeLineJoin, SvgAttribute};
  * - Supports `string`, {@see StrokeLineJoin} enum, and `null` for flexible join assignment (`miter`, `round`,
  *   `bevel`, `miter-clip`, `arcs`, or unset).
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
