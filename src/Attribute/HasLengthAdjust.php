@@ -23,7 +23,7 @@ use UnitEnum;
  * - Supports `string`, {@see LengthAdjust} enum, and `null` for flexible length adjust assignment (specific value or
  *   unset).
  *
- * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lengthAdjust

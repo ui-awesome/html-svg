@@ -20,7 +20,7 @@ use UnitEnum;
  * - Immutable method for setting or overriding the `font-weight` attribute.
  * - Supports `int`, `string`, and `null` for flexible font weight assignment (numeric or keyword).
  *
- * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-weight

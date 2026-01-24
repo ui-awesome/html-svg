@@ -21,7 +21,7 @@ use UnitEnum;
  * - Supports `string` (space-separated shorthand), {@see TextDecorationLine} enum, {@see TextDecorationStyle} enum,
  *   and `null` for flexible text decoration assignment (specific value or unset).
  *
- * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-decoration

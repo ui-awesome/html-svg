@@ -3,6 +3,7 @@
 ## 0.3.1 Under development
 
 - Enh #161: Add `php-forge/coding-standard` to development dependencies for code quality checks (@terabytesoftw)
+- Bug #162: Remove references to `ecs.php` and `rector.php` from development documentation (@terabytesoftw)
 
 ## 0.3.0 January 20, 2026
 
