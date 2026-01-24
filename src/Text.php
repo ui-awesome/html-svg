@@ -37,6 +37,7 @@ use UIAwesome\Html\Svg\Attribute\{
     HasX,
     HasY,
 };
+use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
@@ -70,12 +71,12 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * ```
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
- * {@see Base\BaseSvgBlockTag} for the base implementation.
+ * {@see BaseSvgBlockTag} for the base implementation.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class Text extends Base\BaseSvgBlockTag
+final class Text extends BaseSvgBlockTag
 {
     use HasDominantBaseline;
     use HasDx;

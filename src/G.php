@@ -19,6 +19,7 @@ use UIAwesome\Html\Svg\Attribute\{
     HasStrokeWidth,
     HasTransform,
 };
+use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
@@ -48,12 +49,12 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * ```
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
- * {@see Base\BaseSvgBlockTag} for the base implementation.
+ * {@see BaseSvgBlockTag} for the base implementation.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class G extends Base\BaseSvgBlockTag
+final class G extends BaseSvgBlockTag
 {
     use HasFill;
     use HasFillOpacity;

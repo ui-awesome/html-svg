@@ -8,6 +8,7 @@ use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
+use UnitEnum;
 
 /**
  * Trait for managing the SVG `pathLength` attribute in tag rendering.
@@ -22,7 +23,7 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * - Immutable method for setting or overriding the `pathLength` attribute.
  * - Supports `float`, `int`, `string`, and `null` for flexible path length assignment (specific length or unset).
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pathLength

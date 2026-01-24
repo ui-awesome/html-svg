@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{MarkerUnits, SvgAttribute};
+use UnitEnum;
 
 /**
  * Trait for managing the SVG `markerUnits` attribute in tag rendering.
@@ -22,7 +23,7 @@ use UIAwesome\Html\Svg\Values\{MarkerUnits, SvgAttribute};
  * - Supports `string`, {@see MarkerUnits} enum, and `null` for flexible marker coordinate system assignment (specific
  *   value or unset).
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/markerUnits

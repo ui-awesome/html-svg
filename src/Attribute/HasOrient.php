@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg\Attribute;
 
 use UIAwesome\Html\Svg\Values\{Orient, SvgAttribute};
+use UnitEnum;
 
 /**
  * Trait for managing the SVG `orient` attribute in tag rendering.
@@ -20,7 +21,7 @@ use UIAwesome\Html\Svg\Values\{Orient, SvgAttribute};
  * - Supports `float`, `int`, `string`, {@see Orient} enum, and `null` for flexible orientation assignment (angle,
  *   keyword, or unset).
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/orient

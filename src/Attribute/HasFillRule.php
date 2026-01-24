@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Svg\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Values\{FillRule, SvgAttribute};
+use UnitEnum;
 
 /**
  * Trait for managing SVG `fill-rule` attribute in tag rendering.
@@ -21,7 +22,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, SvgAttribute};
  * - Immutable method for setting or overriding the `fill-rule` attribute.
  * - Supports `string`, {@see FillRule} enum, and `null` for flexible fill rule assignment (specific value or unset).
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
