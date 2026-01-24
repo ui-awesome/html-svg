@@ -27,7 +27,7 @@ use function str_ends_with;
  * - Supports `float`, `int`, `string`, and `null` for flexible offset assignment (number in the `0`-`1` range, a
  *   percentage in the `0`-`100` range, or unset).
  *
- * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing attributes.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/offset
