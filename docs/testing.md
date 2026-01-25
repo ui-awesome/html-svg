@@ -9,6 +9,15 @@ Tool references:
 - [Infection](https://infection.github.io/) for mutation testing.
 - [PHPStan](https://phpstan.org/) for static analysis.
 - [PHPUnit](https://phpunit.de/) for unit tests.
+- [Rector](https://github.com/rectorphp/rector) for automated refactoring.
+
+## Automated refactoring (Rector)
+
+Run Rector to apply automated code refactoring.
+
+```bash
+composer run rector
+```
 
 ## Coding standards (ECS)
 
