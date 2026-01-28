@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests;
 
+use InvalidArgumentException;
 use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
@@ -149,7 +150,7 @@ final class StopTest extends TestCase
 
     public function testThrowInvalidArgumentExceptionForSettingOffsetValue(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
             Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
         );
@@ -159,7 +160,7 @@ final class StopTest extends TestCase
 
     public function testThrowInvalidArgumentExceptionForSettingStopOpacityValue(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
             Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
         );

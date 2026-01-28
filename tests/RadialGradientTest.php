@@ -8,6 +8,7 @@ use InvalidArgumentException;
 use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Attribute\Values\{Aria, Data};
 use UIAwesome\Html\Core\Factory\SimpleFactory;
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
@@ -62,7 +63,7 @@ final class RadialGradientTest extends TestCase
             </radialGradient>
             HTML,
             LineEndingNormalizer::normalize(
-                RadialGradient::tag()->addAriaAttribute(\UIAwesome\Html\Attribute\Values\Aria::PRESSED, true)->content('value')->render(),
+                RadialGradient::tag()->addAriaAttribute(Aria::PRESSED, true)->content('value')->render(),
             ),
             "Failed asserting that element renders correctly with 'addAriaAttribute()' method.",
         );
@@ -92,7 +93,7 @@ final class RadialGradientTest extends TestCase
             </radialGradient>
             HTML,
             LineEndingNormalizer::normalize(
-                RadialGradient::tag()->addDataAttribute(\UIAwesome\Html\Attribute\Values\Data::VALUE, 'value')->content('value')->render(),
+                RadialGradient::tag()->addDataAttribute(Data::VALUE, 'value')->content('value')->render(),
             ),
             "Failed asserting that element renders correctly with 'addDataAttribute()' method.",
         );
