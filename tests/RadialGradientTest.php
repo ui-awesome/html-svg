@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tests;
 
-use UIAwesome\Html\Attribute\Values\{Aria, Data};
 use InvalidArgumentException;
 use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
+use UIAwesome\Html\Attribute\Values\{Aria, Data};
 use UIAwesome\Html\Core\Factory\SimpleFactory;
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
