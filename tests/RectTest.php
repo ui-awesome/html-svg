@@ -110,14 +110,14 @@ final class RectTest extends TestCase
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()
-                                ->ariaAttributes(
-                                    [
-                                        'controls' => static fn(): string => 'modal-1',
-                                        'hidden' => false,
-                                        'label' => 'Close',
-                                    ],
-                                )
-                                ->render(),
+                    ->ariaAttributes(
+                        [
+                            'controls' => static fn(): string => 'modal-1',
+                            'hidden' => false,
+                            'label' => 'Close',
+                        ],
+                    )
+                    ->render(),
             ),
             "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
         );

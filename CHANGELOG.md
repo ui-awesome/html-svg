@@ -2,6 +2,8 @@
 
 ## 0.3.3 Under development
 
+- Bug #167: Fix code style issue in `tests` directory (@terabytesoftw)
+
 ## 0.3.2 January 28, 2026
 
 - Bug #163: Add section for automated refactoring using `Rector` in testing documentation (@terabytesoftw)
