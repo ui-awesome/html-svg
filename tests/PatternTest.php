@@ -108,15 +108,15 @@ final class PatternTest extends TestCase
             HTML,
             LineEndingNormalizer::normalize(
                 Pattern::tag()
-                                ->ariaAttributes(
-                                    [
-                                        'controls' => static fn(): string => 'modal-1',
-                                        'hidden' => false,
-                                        'label' => 'Close',
-                                    ],
-                                )
-                                ->content('value')
-                                ->render(),
+                    ->ariaAttributes(
+                        [
+                            'controls' => static fn(): string => 'modal-1',
+                            'hidden' => false,
+                            'label' => 'Close',
+                        ],
+                    )
+                    ->content('value')
+                    ->render(),
             ),
             "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
         );

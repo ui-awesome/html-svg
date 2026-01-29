@@ -117,15 +117,15 @@ final class TextTest extends TestCase
             HTML,
             LineEndingNormalizer::normalize(
                 Text::tag()
-                                ->ariaAttributes(
-                                    [
-                                        'controls' => static fn(): string => 'modal-1',
-                                        'hidden' => false,
-                                        'label' => 'Close',
-                                    ],
-                                )
-                                ->content('value')
-                                ->render(),
+                    ->ariaAttributes(
+                        [
+                            'controls' => static fn(): string => 'modal-1',
+                            'hidden' => false,
+                            'label' => 'Close',
+                        ],
+                    )
+                    ->content('value')
+                    ->render(),
             ),
             "Failed asserting that element renders correctly with 'ariaAttributes()' method.",
         );
