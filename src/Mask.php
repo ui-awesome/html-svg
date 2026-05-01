@@ -173,6 +173,7 @@ final class Mask extends BaseSvgBlockTag
     {
         return $this->addAttribute(SvgAttribute::WIDTH, $value);
     }
+
     /**
      * Sets the SVG `x` attribute for the element.
      *

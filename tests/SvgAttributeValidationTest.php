@@ -248,6 +248,7 @@ final class SvgAttributeValidationTest extends TestCase
 
         self::callAttributeMethod($className::tag(), 'pathLength', -5);
     }
+
     /**
      * @phpstan-param class-string<BaseTag> $className
      */
@@ -263,7 +264,6 @@ final class SvgAttributeValidationTest extends TestCase
 
         self::callAttributeMethod($className::tag(), $method, 1.1);
     }
-
 
     /**
      * @phpstan-param class-string<BaseTag> $className

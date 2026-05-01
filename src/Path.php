@@ -67,6 +67,7 @@ final class Path extends BaseVoid
     {
         return $this->addAttribute(SvgAttribute::D, $value);
     }
+
     /**
      * Sets the SVG `fill` attribute for the element.
      *

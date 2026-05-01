@@ -87,6 +87,7 @@ final class Uses extends BaseVoid
     {
         return $this->addAttribute(SvgAttribute::HREF, $value);
     }
+
     /**
      * Sets the SVG `opacity` attribute for the element.
      *

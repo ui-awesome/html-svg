@@ -140,6 +140,7 @@ final class Text extends BaseSvgBlockTag
     {
         return $this->addAttribute(SvgAttribute::DY, $value);
     }
+
     /**
      * Sets the SVG `fill` attribute for the element.
      *

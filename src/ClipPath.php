@@ -79,6 +79,7 @@ final class ClipPath extends BaseSvgBlockTag
 
         return $this->addAttribute(SvgAttribute::CLIP_PATH_UNITS, $value);
     }
+
     /**
      * Sets the SVG `opacity` attribute for the element.
      *

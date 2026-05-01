@@ -124,6 +124,7 @@ final class Marker extends BaseSvgBlockTag
     {
         return $this->addAttribute(SvgAttribute::MARKER_WIDTH, $value);
     }
+
     /**
      * Sets the SVG `opacity` attribute for the element.
      *

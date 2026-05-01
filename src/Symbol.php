@@ -69,6 +69,7 @@ final class Symbol extends BaseSvgBlockTag
     {
         return $this->addAttribute(SvgAttribute::HEIGHT, $value);
     }
+
     /**
      * Sets the SVG `opacity` attribute for the element.
      *

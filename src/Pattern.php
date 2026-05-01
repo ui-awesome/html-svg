@@ -169,6 +169,7 @@ final class Pattern extends BaseSvgBlockTag
 
         return $this->addAttribute(SvgAttribute::PATTERN_UNITS, $value);
     }
+
     /**
      * Sets the SVG `preserveAspectRatio` attribute for the element.
      *
