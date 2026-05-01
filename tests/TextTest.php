@@ -476,6 +476,28 @@ final class TextTest extends TestCase
         );
     }
 
+    public function testRenderWithStrokeDashArray(): void
+    {
+        self::assertSame(
+            <<<HTML
+            <text stroke-dasharray="5.3">
+            </text>
+            HTML,
+            Text::tag()->strokeDashArray(5.3)->render(),
+        );
+    }
+
+    public function testRenderWithStrokeWidth(): void
+    {
+        self::assertSame(
+            <<<HTML
+            <text stroke-width="2">
+            </text>
+            HTML,
+            Text::tag()->strokeWidth(2)->render(),
+        );
+    }
+
     public function testRenderWithStyle(): void
     {
         self::assertSame(

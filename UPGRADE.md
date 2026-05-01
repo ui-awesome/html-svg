@@ -6,12 +6,12 @@
 
 - The minimum PHP version is now `^8.3`.
 - Runtime dependencies were updated to the current UI Awesome package line:
-    - `ui-awesome/html-attribute:^0.6`
-    - `ui-awesome/html-contracts:^0.1`
-    - `ui-awesome/html-core:^0.6`
-    - `ui-awesome/html-helper:^0.7`
-    - `ui-awesome/html-interop:^0.4`
-    - `ui-awesome/html-mixin:^0.6`
+  - `ui-awesome/html-attribute:^0.6`
+  - `ui-awesome/html-contracts:^0.1`
+  - `ui-awesome/html-core:^0.6`
+  - `ui-awesome/html-helper:^0.7`
+  - `ui-awesome/html-interop:^0.4`
+  - `ui-awesome/html-mixin:^0.6`
 
 ### Removed SVG attribute traits
 

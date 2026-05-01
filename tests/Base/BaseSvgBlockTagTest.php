@@ -10,6 +10,8 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use ReflectionProperty;
+use RuntimeException;
+use UIAwesome\Html\Core\Exception\Message;
 use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Defs;
 use UIAwesome\Html\Svg\Tests\Support\Stub\InspectableSvgBlockTag;
@@ -42,6 +44,39 @@ final class BaseSvgBlockTagTest extends TestCase
         );
 
         InspectableSvgBlockTag::end();
+    }
+
+    public function testEndPreservesPreviousMatchingBeginWhenStackIsNotEmpty(): void
+    {
+        $this->resetBeginEndState();
+
+        $firstTag = Defs::tag()->content('first');
+        $secondTag = Defs::tag()->content('second');
+        $firstBegin = $firstTag->begin();
+        $secondBegin = $secondTag->begin();
+
+        try {
+            self::assertEquals(
+                <<<HTML
+                <defs>
+                second
+                </defs>
+                HTML,
+                LineEndingNormalizer::normalize("{$secondBegin}second" . Defs::end()),
+                'Should render the most recent matching begin/end block first.',
+            );
+            self::assertEquals(
+                <<<HTML
+                <defs>
+                first
+                </defs>
+                HTML,
+                LineEndingNormalizer::normalize("{$firstBegin}first" . Defs::end()),
+                'Should keep the previous matching begin/end block available after popping the most recent block.',
+            );
+        } finally {
+            $this->resetBeginEndState();
+        }
     }
 
     public function testEndRemovesCurrentExecutionContextAfterLastMatchingBegin(): void
@@ -126,6 +161,20 @@ final class BaseSvgBlockTagTest extends TestCase
             $exception,
             'Should keep begin/end stacks isolated between the main thread and fibers.',
         );
+    }
+
+    public function testThrowRuntimeExceptionWhenEndingDifferentTagClass(): void
+    {
+        $this->resetBeginEndState();
+
+        Defs::tag()->begin();
+
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage(
+            Message::TAG_CLASS_MISMATCH_ON_END->getMessage(Defs::class, InspectableSvgBlockTag::class),
+        );
+
+        InspectableSvgBlockTag::end();
     }
 
     protected function tearDown(): void
