@@ -666,7 +666,7 @@ final class PolygonTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::FILL_RULE->value,
-                implode("', '", Enum::normalizeArray(FillRule::cases())),
+                implode("', '", Enum::normalizeStringArray(FillRule::cases())),
             ),
         );
 
@@ -700,7 +700,7 @@ final class PolygonTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::STROKE_LINECAP->value,
-                implode("', '", Enum::normalizeArray(StrokeLineCap::cases())),
+                implode("', '", Enum::normalizeStringArray(StrokeLineCap::cases())),
             ),
         );
 
@@ -714,7 +714,7 @@ final class PolygonTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::STROKE_LINEJOIN->value,
-                implode("', '", Enum::normalizeArray(StrokeLineJoin::cases())),
+                implode("', '", Enum::normalizeStringArray(StrokeLineJoin::cases())),
             ),
         );
 

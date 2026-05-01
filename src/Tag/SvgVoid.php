@@ -4,26 +4,23 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tag;
 
-use UIAwesome\Html\Interop\VoidInterface;
-
 /**
  * Represents SVG void (self-closing) element names as enum cases.
  *
- * Provides the literal tag names for SVG void elements that implement {@see VoidInterface}.
+ * Provides the literal tag names for SVG void elements as backed string enum cases.
  *
  * Key features.
- * - Implements {@see VoidInterface} for contract adherence.
  * - Suitable for SVG markup generation and element validation.
  * - Values map to SVG element tag names.
  * - Void element does not accept child elements.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element
- * {@see VoidInterface} for contract details.
+ * {@see \BackedEnum} for backed enum behavior.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-enum SvgVoid: string implements VoidInterface
+enum SvgVoid: string
 {
     /**
      * `<circle>` - Draws a circle based on a center point and radius.

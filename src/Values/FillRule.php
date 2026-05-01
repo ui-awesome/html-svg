@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `fill-rule` attribute.
  *
  * Key features.
- * - Designed for use in tags, components, and helpers requiring fill rule assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `fill-rule` keyword values.
+ * - Designed for use in tags, components, and helpers requiring fill rule assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `fill-rule` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Circle::fillRule()
  * @see \UIAwesome\Html\Svg\Ellipse::fillRule()

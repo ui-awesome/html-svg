@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by attributes that define coordinate systems.
  *
  * Key features.
- * - Designed for use in tags, components, and helpers requiring coordinate units assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to coordinate unit keyword values.
+ * - Designed for use in tags, components, and helpers requiring coordinate units assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to coordinate unit keyword values.
  *
  * @see \UIAwesome\Html\Svg\ClipPath::clipPathUnits()
  * @see \UIAwesome\Html\Svg\Filter::filterUnits()

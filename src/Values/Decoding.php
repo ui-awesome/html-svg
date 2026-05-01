@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `decoding` attribute.
  *
  * Key features.
- * - Designed for use in image elements (img, SVG image) requiring decoding hint assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `decoding` keyword values (`async`, `sync`, `auto`).
+ * - Designed for use in image elements (img, SVG image) requiring decoding hint assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `decoding` keyword values (`async`, `sync`, `auto`).
  *
  * @see \UIAwesome\Html\Svg\Image::decoding()
  *

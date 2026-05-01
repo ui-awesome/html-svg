@@ -56,6 +56,13 @@ enum SvgAttribute: string
     case D = 'd';
 
     /**
+     * `decoding` - Provides an image decoding hint for `<image>` elements.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding
+     */
+    case DECODING = 'decoding';
+
+    /**
      * `dominant-baseline` - Dominant baseline positioning attribute.
      *
      * Specifies the baseline used to align the text content of an element with respect to its parent.
@@ -81,6 +88,13 @@ enum SvgAttribute: string
      * @link https://www.w3.org/TR/SVG2/text.html#TextElementDYAttribute
      */
     case DY = 'dy';
+
+    /**
+     * `fetchpriority` - Hints the browser about the fetch priority for the resource.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
+     */
+    case FETCHPRIORITY = 'fetchpriority';
 
     /**
      * `fill` - Fill attribute has two different meanings.
@@ -194,6 +208,20 @@ enum SvgAttribute: string
      * @link https://www.w3.org/TR/SVG2/pservers.html#LinearGradientElementGradientUnitsAttribute
      */
     case GRADIENT_UNITS = 'gradientUnits';
+
+    /**
+     * `height` — Specifies the height of certain elements.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/height
+     */
+    case HEIGHT = 'height';
+
+    /**
+     * `href` - Defines a reference to an external resource or SVG fragment.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href
+     */
+    case HREF = 'href';
 
     /**
      * `lengthAdjust` - Controls how text is stretched or compressed to fit the width defined by textLength.
@@ -505,6 +533,13 @@ enum SvgAttribute: string
     case TEXT_LENGTH = 'textLength';
 
     /**
+     * `title` - Advisory title text for elements that expose the global title attribute.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title
+     */
+    case TITLE = 'title';
+
+    /**
      * `transform` - Transform attribute defines a list of transform definitions that are applied to an element and the
      * element's children.
      *
@@ -518,6 +553,13 @@ enum SvgAttribute: string
      * @link https://www.w3.org/TR/SVG2/coords.html#ViewBoxAttribute
      */
     case VIEW_BOX = 'viewBox';
+
+    /**
+     * `width` — Specifies the width of certain elements.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/width
+     */
+    case WIDTH = 'width';
 
     /**
      * `word-spacing` - Controls spacing between words in text.

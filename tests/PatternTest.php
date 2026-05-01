@@ -634,7 +634,7 @@ final class PatternTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::PATTERN_CONTENT_UNITS->value,
-                implode("', '", Enum::normalizeArray(CoordinateUnits::cases())),
+                implode("', '", Enum::normalizeStringArray(CoordinateUnits::cases())),
             ),
         );
 
@@ -648,7 +648,7 @@ final class PatternTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::PATTERN_UNITS->value,
-                implode("', '", Enum::normalizeArray(CoordinateUnits::cases())),
+                implode("', '", Enum::normalizeStringArray(CoordinateUnits::cases())),
             ),
         );
 
@@ -662,7 +662,7 @@ final class PatternTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::PRESERVE_ASPECT_RATIO->value,
-                implode("', '", Enum::normalizeArray(PreserveAspectRatio::cases())),
+                implode("', '", Enum::normalizeStringArray(PreserveAspectRatio::cases())),
             ),
         );
 

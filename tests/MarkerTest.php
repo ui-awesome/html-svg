@@ -628,7 +628,7 @@ final class MarkerTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::MARKER_UNITS->value,
-                implode("', '", Enum::normalizeArray(MarkerUnits::cases())),
+                implode("', '", Enum::normalizeStringArray(MarkerUnits::cases())),
             ),
         );
 

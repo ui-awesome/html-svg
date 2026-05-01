@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `spreadMethod` attribute.
  *
  * Key features.
- * - Designed for use in gradient elements, components, and helpers requiring spread method assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `spreadMethod` keyword values.
+ * - Designed for use in gradient elements, components, and helpers requiring spread method assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `spreadMethod` keyword values.
  *
  * @see \UIAwesome\Html\Svg\LinearGradient::spreadMethod()
  *

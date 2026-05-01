@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg;
 
-use UIAwesome\Html\Interop\BlockInterface;
+use BackedEnum;
 use UIAwesome\Html\Svg\Base\BaseSvg;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
  * Represents the SVG `<svg>` (svg) element for scalable vector graphics containers.
  *
- * Provides a concrete implementation of the SVG `<svg>` container element that returns `SvgBlock::SVG` and
- * inherits attribute traits from {@see Base\BaseSvg} for viewport, paint, and transform attributes.
+ * Provides a concrete implementation of the SVG `<svg>` container element that returns {@see SvgBlock::SVG} and
+ * inherits attribute methods from {@see Base\BaseSvg} for viewport, paint, and transform attributes.
  *
  * The `<svg>` element defines a new coordinate system and viewport for SVG graphics. It is used as the outermost
  * element of SVG documents, or to embed SVG fragments within HTML or SVG documents.
@@ -29,15 +29,11 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * ```php
  * use UIAwesome\Html\Svg\{Circle, Svg};
  *
- * $circle = Circle::tag()
- *     ->cx(50)->cy(50)->r(40)
- *     ->fill('currentColor');
- *
  * echo Svg::tag()
  *     ->xmlns('http://www.w3.org/2000/svg')
  *     ->viewBox('0 0 100 100')
  *     ->title('Circle example')
- *     ->content($circle->render())
+ *     ->content(Circle::tag()->cx(50)->cy(50)->r(40)->fill('currentColor'))
  *     ->render();
  * ```
  *
@@ -52,11 +48,11 @@ final class Svg extends BaseSvg
     /**
      * Returns the tag enumeration for the `<svg>` element.
      *
-     * @return BlockInterface Tag enumeration instance for `<svg>`.
+     * @return BackedEnum Tag enumeration instance for `<svg>`.
      *
      * {@see SvgBlock} for valid SVG block-level tags.
      */
-    protected function getTag(): BlockInterface
+    protected function getTag(): BackedEnum
     {
         return SvgBlock::SVG;
     }

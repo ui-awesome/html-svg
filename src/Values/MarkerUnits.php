@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `markerUnits` attribute.
  *
  * Key features.
- * - Designed for use in tags, components, and helpers requiring marker units assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `markerUnits` keyword values.
+ * - Designed for use in tags, components, and helpers requiring marker units assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `markerUnits` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Marker::markerUnits()
  *

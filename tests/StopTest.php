@@ -21,6 +21,7 @@ use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
  * Test coverage.
  * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
  * - Ensures fluent setters return new instances (immutability).
+ * - Handles invalid attribute values by throwing exceptions with expected messages.
  * - Renders `<stop>` with representative gradient stop attributes.
  *
  * {@see Stop} for element implementation details.
@@ -148,6 +149,16 @@ final class StopTest extends TestCase
         );
     }
 
+    public function testThrowInvalidArgumentExceptionForSettingOffsetPercentageAboveMaximumValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 100),
+        );
+
+        Stop::tag()->offset('101%');
+    }
+
     public function testThrowInvalidArgumentExceptionForSettingOffsetValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -156,6 +167,16 @@ final class StopTest extends TestCase
         );
 
         Stop::tag()->offset('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingStopOpacityAboveMaximumValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_OUT_OF_RANGE_OR_NULL->getMessage(0, 1),
+        );
+
+        Stop::tag()->stopOpacity(1.5);
     }
 
     public function testThrowInvalidArgumentExceptionForSettingStopOpacityValue(): void

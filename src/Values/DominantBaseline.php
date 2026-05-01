@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `dominant-baseline` attribute.
  *
  * Key features.
- * - Designed for use in text elements, components, and helpers requiring baseline alignment assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `dominant-baseline` keyword values.
+ * - Designed for use in text elements, components, and helpers requiring baseline alignment assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `dominant-baseline` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Text::dominantBaseline()
  *

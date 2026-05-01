@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `font-style` attribute.
  *
  * Key features.
- * - Designed for use in text elements, components, and helpers requiring font style assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `font-style` keyword values.
+ * - Designed for use in text elements, components, and helpers requiring font style assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `font-style` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Text::fontStyle()
  *
