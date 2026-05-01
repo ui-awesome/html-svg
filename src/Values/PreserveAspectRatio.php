@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword and combined values used by the `preserveAspectRatio` attribute.
  *
  * Key features.
- * - Designed for use in tags, components, and helpers requiring preserve aspect ratio assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `preserveAspectRatio` values.
+ * - Designed for use in tags, components, and helpers requiring preserve aspect ratio assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `preserveAspectRatio` values.
  *
  * @see \UIAwesome\Html\Svg\Image::preserveAspectRatio()
  * @see \UIAwesome\Html\Svg\Marker::preserveAspectRatio()

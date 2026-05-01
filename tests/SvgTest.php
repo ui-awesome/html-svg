@@ -520,6 +520,21 @@ final class SvgTest extends TestCase
         SimpleFactory::setDefaults(Svg::class, []);
     }
 
+    public function testRenderWithHeight(): void
+    {
+        self::assertEquals(
+            <<<HTML
+            <svg height="100">
+            value
+            </svg>
+            HTML,
+            LineEndingNormalizer::normalize(
+                Svg::tag()->content('value')->height('100')->render(),
+            ),
+            "Failed asserting that element renders correctly with 'height' attribute.",
+        );
+    }
+
     public function testRenderWithHidden(): void
     {
         self::assertEquals(
@@ -1037,6 +1052,21 @@ final class SvgTest extends TestCase
         );
     }
 
+    public function testRenderWithWidth(): void
+    {
+        self::assertEquals(
+            <<<HTML
+            <svg width="100">
+            value
+            </svg>
+            HTML,
+            LineEndingNormalizer::normalize(
+                Svg::tag()->content('value')->width('100')->render(),
+            ),
+            "Failed asserting that element renders correctly with 'width' attribute.",
+        );
+    }
+
     public function testRenderWithX(): void
     {
         self::assertEquals(
@@ -1215,7 +1245,7 @@ final class SvgTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::FILL_RULE->value,
-                implode("', '", Enum::normalizeArray(FillRule::cases())),
+                implode("', '", Enum::normalizeStringArray(FillRule::cases())),
             ),
         );
 
@@ -1239,7 +1269,7 @@ final class SvgTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::PRESERVE_ASPECT_RATIO->value,
-                implode("', '", Enum::normalizeArray(PreserveAspectRatio::cases())),
+                implode("', '", Enum::normalizeStringArray(PreserveAspectRatio::cases())),
             ),
         );
 
@@ -1253,7 +1283,7 @@ final class SvgTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::STROKE_LINECAP->value,
-                implode("', '", Enum::normalizeArray(StrokeLineCap::cases())),
+                implode("', '", Enum::normalizeStringArray(StrokeLineCap::cases())),
             ),
         );
 
@@ -1267,7 +1297,7 @@ final class SvgTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::STROKE_LINEJOIN->value,
-                implode("', '", Enum::normalizeArray(StrokeLineJoin::cases())),
+                implode("', '", Enum::normalizeStringArray(StrokeLineJoin::cases())),
             ),
         );
 

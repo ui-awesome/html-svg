@@ -10,10 +10,12 @@ use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
 use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Helper\Enum;
+use UIAwesome\Html\Helper\Exception\Message as HelperMessage;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Image;
 use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
-use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
+use UIAwesome\Html\Svg\Values\{Decoding, Fetchpriority, PreserveAspectRatio, SvgAttribute};
 
 /**
  * Unit tests for {@see Image} element rendering and attribute handling.
@@ -543,6 +545,34 @@ final class ImageTest extends TestCase
             $image->y(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingDecodingValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            HelperMessage::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                SvgAttribute::DECODING->value,
+                implode("', '", Enum::normalizeStringArray(Decoding::cases())),
+            ),
+        );
+
+        Image::tag()->decoding('invalid-value');
+    }
+
+    public function testThrowInvalidArgumentExceptionForSettingFetchpriorityValue(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            HelperMessage::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                SvgAttribute::FETCHPRIORITY->value,
+                implode("', '", Enum::normalizeStringArray(Fetchpriority::cases())),
+            ),
+        );
+
+        Image::tag()->fetchpriority('invalid-value');
     }
 
     public function testThrowInvalidArgumentExceptionForSettingOpacityValue(): void

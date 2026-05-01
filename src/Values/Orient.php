@@ -9,14 +9,14 @@ namespace UIAwesome\Html\Svg\Values;
  *
  * Provides the keyword values used by the `orient` attribute.
  *
- * Note: The `orient` attribute also accepts numeric angle values (for example, `45`, `'90deg'`). This enum covers
- * only the keyword values. Use `string`, `int`, or `float` for angle values.
+ * Note: The `orient` attribute also accepts numeric angle values (for example, '45', '90deg'). This enum covers only
+ * the keyword values. Use `string`, `int`, or `float` for angle values.
  *
  * Key features.
- * - Designed for use in tags, components, and helpers requiring marker orientation assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `orient` keyword values.
+ * - Designed for use in tags, components, and helpers requiring marker orientation assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `orient` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Marker::orient()
  *

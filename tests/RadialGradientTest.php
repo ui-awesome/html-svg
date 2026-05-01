@@ -615,7 +615,7 @@ final class RadialGradientTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::GRADIENT_UNITS->value,
-                implode("', '", Enum::normalizeArray(CoordinateUnits::cases())),
+                implode("', '", Enum::normalizeStringArray(CoordinateUnits::cases())),
             ),
         );
 
@@ -639,7 +639,7 @@ final class RadialGradientTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 SvgAttribute::SPREAD_METHOD->value,
-                implode("', '", Enum::normalizeArray(SpreadMethod::cases())),
+                implode("', '", Enum::normalizeStringArray(SpreadMethod::cases())),
             ),
         );
 

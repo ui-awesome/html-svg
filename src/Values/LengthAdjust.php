@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `lengthAdjust` attribute.
  *
  * Key features.
- * - Designed for use in text elements, components, and helpers requiring length adjustment assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `lengthAdjust` keyword values.
+ * - Designed for use in text elements, components, and helpers requiring length adjustment assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `lengthAdjust` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Text::lengthAdjust()
  *

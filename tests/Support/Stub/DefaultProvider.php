@@ -6,7 +6,6 @@ namespace UIAwesome\Html\Svg\Tests\Support\Stub;
 
 use UIAwesome\Html\Core\Base\BaseTag;
 use UIAwesome\Html\Core\Provider\DefaultsProviderInterface;
-use UIAwesome\Html\Interop\BlockInterface;
 
 /**
  * Stub defaults provider for tests.
@@ -23,14 +22,9 @@ final class DefaultProvider implements DefaultsProviderInterface
      */
     public function getDefaults(BaseTag $tag): array
     {
-        return match (true) {
-            $tag instanceof BlockInterface => [
-                'class' => 'default-class',
-            ],
-            default => [
-                'class' => 'default-class',
-                'title' => 'default-title',
-            ],
-        };
+        return [
+            'class' => 'default-class',
+            'title' => 'default-title',
+        ];
     }
 }

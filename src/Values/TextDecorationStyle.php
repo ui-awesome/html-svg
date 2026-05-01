@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides literal string values for the `text-decoration-style` keyword options.
  *
  * Key features.
- * - Designed for use in text elements, components, and helpers requiring text decoration style assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `text-decoration-style` keyword values.
+ * - Designed for use in text elements, components, and helpers requiring text decoration style assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `text-decoration-style` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Text::textDecoration()
  *

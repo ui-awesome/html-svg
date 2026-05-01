@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `text-anchor` attribute.
  *
  * Key features.
- * - Designed for use in text elements, components, and helpers requiring text anchor assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `text-anchor` keyword values.
+ * - Designed for use in text elements, components, and helpers requiring text anchor assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `text-anchor` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Text::textAnchor()
  *

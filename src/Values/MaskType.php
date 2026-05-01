@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `mask-type` attribute.
  *
  * Key features.
- * - Designed for use in `<mask>` elements, components, and helpers requiring mask mode assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `mask-type` keyword values.
+ * - Designed for use in `<mask>` elements, components, and helpers requiring mask mode assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `mask-type` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Mask::maskType()
  *

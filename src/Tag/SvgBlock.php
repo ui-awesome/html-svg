@@ -4,26 +4,23 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Svg\Tag;
 
-use UIAwesome\Html\Interop\BlockInterface;
-
 /**
  * Represents SVG block-level element names as enum cases.
  *
- * Provides the literal tag names for block-level SVG elements that implement {@see BlockInterface}.
+ * Provides the literal tag names for block-level SVG elements as backed string enum cases.
  *
  * Key features.
  * - Container element accepts child elements.
- * - Implements {@see BlockInterface} for contract adherence.
  * - Suitable for building SVG markup and element validation.
  * - Values map to SVG element tag names.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element
- * {@see BlockInterface} for contract details.
+ * {@see \BackedEnum} for backed enum behavior.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-enum SvgBlock: string implements BlockInterface
+enum SvgBlock: string
 {
     /**
      * `<clipPath>` - Defines a clipping path.

@@ -1,183 +1,47 @@
-# ChangeLog
+# Changelog
 
-## 0.3.3 Under development
+All notable changes to this project will be documented in this file.
 
-- Bug #167: Fix code style issue in `tests` directory (@terabytesoftw)
+The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
+
+## 0.4.0 Under development
+
+- refactor: prepare the 0.4.0 release with concrete SVG attribute APIs, dependency updates, docs, and tests.
 
 ## 0.3.2 January 28, 2026
 
-- Bug #163: Add section for automated refactoring using `Rector` in testing documentation (@terabytesoftw)
-- Bug #164: Update examples in `testing.md` for running Composer script with arguments and update `.styleci.yml` accordingly (@terabytesoftw)
-- Bug #165: Update command syntax in `development.md` and `testing.md` for clarity and consistency (@terabytesoftw)
-- Bug #166: Remove redundant ignore rule in `actionlint.yml` configuration and update Rector command in `composer.json` to remove unnecessary 'src' argument (@terabytesoftw)
+- docs: add an automated refactoring section to the testing documentation.
+- docs: update testing examples for running Composer scripts with arguments.
+- docs: update command syntax in `development.md` and `testing.md` for clarity and consistency.
+- chore: remove the redundant ignore rule in `actionlint.yml` and update the Rector command.
 
 ## 0.3.1 January 24, 2026
 
-- Enh #161: Add `php-forge/coding-standard` to development dependencies for code quality checks (@terabytesoftw)
-- Bug #162: Remove references to `ecs.php` and `rector.php` from development documentation (@terabytesoftw)
+- chore: add `php-forge/coding-standard` to development dependencies for code quality checks.
+- docs: remove references to `ecs.php` and `rector.php` from development documentation.
 
 ## 0.3.0 January 20, 2026
 
-- Enh #5: Refactor codebase to improve performance (@terabytesoftw)
-- Enh #6: Add `SvgBlock` enum for HTML SVG tag representation and implement `BlockInterface` class (@terabytesoftw)
-- Enh #7: Add `BaseSvgTag` and `Defs` classes for SVG block-level elements and related tests (@terabytesoftw)
-- Enh #8: Add `HasFill` trait and corresponding tests for managing SVG `fill` attribute (@terabytesoftw)
-- Bug #9: Correct SVG specification reference in `HasFill` trait documentation (@terabytesoftw)
-- Enh #10: Add `HasStroke` trait and corresponding tests for managing SVG `stroke` attribute (@terabytesoftw)
-- Bug #11: Update documentation to specify SVG 2 specification for `HasFillTest` class (@terabytesoftw)
-- Bug #12: Clarify fill and stroke attribute documentation for SVG 2 compliance (@terabytesoftw)
-- Enh #13: Add `HasStrokeLineCap` trait and corresponding tests for managing SVG `stroke-linecap` attribute (@terabytesoftw)
-- Enh #14: Add `HasStrokeLineJoin` trait and corresponding tests for managing SVG `stroke-linejoin` attribute (@terabytesoftw)
-- Enh #15: Add `HasStrokeWidth` trait and corresponding tests for managing SVG `stroke-width` attribute (@terabytesoftw)
-- Bug #16: Update links and references to SVG 2 specification across multiple attributes and tests (@terabytesoftw)
-- Bug #17: Add references to predefined enum values in `HasStrokeLineCap` and `HasStrokeLineJoin` traits (@terabytesoftw)
-- Bug #18: Update assertion message for integer setting in `StrokeWidthProvider` class (@terabytesoftw)
-- Enh #19: Add `HasStrokeDashArray` trait and corresponding tests for managing SVG `stroke-dasharray` attribute (@terabytesoftw)
-- Bug #20: Update `HasStrokeDashArray` trait and tests to support float values for `stroke-dasharray` attribute (@terabytesoftw)
-- Enh #21: Add `HasOpacity` trait and corresponding tests for managing SVG `opacity` attribute (@terabytesoftw)
-- Bug #22: Add float type support to `stroke-dasharray` attribute and update documentation (@terabytesoftw)
-- Enh #23: Add `HasTransform` trait and corresponding tests for managing SVG `transform` attribute (@terabytesoftw)
-- Enh #24: Add `G` class and corresponding tests for SVG `<g>` element functionality (@terabytesoftw)
-- Bug #25: Add tests for rendering SVG with `stroke-dasharray`, `stroke-linecap`, and `stroke-linejoin` attributes (@terabytesoftw)
-- Enh #26: Add `HasFillOpacity` trait and corresponding tests for managing SVG `fill-opacity` attribute (@terabytesoftw)
-- Bug #27: Add `addAttribute` method to multiple SVG attribute traits for enhanced attribute management and minor correction in phpdoc (@terabytesoftw)
-- Enh #28: Add `HasFillRule` trait and corresponding tests for managing SVG `fill-rule` attribute (@terabytesoftw)
-- Enh #29: Add `HasStrokeMiterlimit` trait and corresponding tests for managing SVG `stroke-miterlimit` attribute (@terabytesoftw)
-- Bug #30: Update expected type for attribute value parameters in multiple test cases (@terabytesoftw)
-- Enh #31: Add `HasStrokeOpacity` trait and corresponding tests for managing SVG `stroke-opacity` attribute (@terabytesoftw)
-- Bug #32: Update validation for `stroke-miterlimit` to require a minimum value of `1` (@terabytesoftw)
-- Bug #33: Refactor `fill-opacity` and `opacity` handling with type validation and new tests for SVG attributes (@terabytesoftw)
-- Enh #34: Enhance `G` element with `fill-opacity`, `fill-rule`, `stroke-miterlimit`, and `stroke-opacity` attributes, including new tests for rendering (@terabytesoftw)
-- Bug #35: Refactor `G` and `Defs` class to extend `BaseSvgBlockTag` for improved SVG grouping functionality and enhance documentation (@terabytesoftw)
-- Enh #36: Add `Circle` class and corresponding tests for SVG `<circle>` element functionality (@terabytesoftw)
-- Enh #37: Add `HasCx` trait and corresponding tests for managing SVG `cx` attribute (@terabytesoftw)
-- Enh #38: Add `HasCy` trait and corresponding tests for managing SVG `cy` attribute (@terabytesoftw)
-- Enh #39: Add `HasR` trait and corresponding tests for managing SVG `r` attribute (@terabytesoftw)
-- Bug #40: Update validation for `fill-opacity`, `opacity`, and `stroke-opacity` attributes to use max parameter in `Validator` (@terabytesoftw)
-- Bug #41: Add additional SVG block cases and enhance test assertions for rendering attributes (@terabytesoftw)
-- Enh #42: Add `HasX` trait and corresponding tests for managing SVG `x` attribute (@terabytesoftw)
-- Enh #43: Add `HasY` trait and corresponding tests for managing SVG `y` attribute (@terabytesoftw)
-- Bug #44: Update validation descriptions for SVG attributes to include float, int, string, and `null` types in providers classes (@terabytesoftw)
-- Bug #45: Improve `HasX` and `HasY` traits to support float values for SVG coordinate attributes (@terabytesoftw)
-- Bug #47: Add `HasX` and `HasY` traits into `BaseSvg` for enhanced SVG coordinate management (@terabytesoftw)
-- Enh #48: Add `ClipPath` and `Uses` classes and corresponding tests for SVG `<clipPath>` and `<use>` element functionality (@terabytesoftw)
-- Bug #49: Add phpdoc in `CircleTest` class (@terabytesoftw)
-- Bug #50: Add exception documentation for `fill-opacity`, `opacity`, `stroke-opacity`, and `stroke-linecap` attributes (@terabytesoftw)
-- Bug #51: Update documentation links for SVG elements in `Circle`, `ClipPath`, `Defs`, `G`, `Svg`, and `Uses` classes (@terabytesoftw)
-- Enh #52: Add `HasRx` trait and corresponding tests for managing SVG `rx` attribute (@terabytesoftw)
-- Enh #53: Add `HasRy` trait and corresponding tests for managing SVG `ry` attribute (@terabytesoftw)
-- Enh #54: Add `HasPathLength` trait and corresponding tests for managing SVG `pathLength` attribute (@terabytesoftw)
-- Enh #55: Add `Ellipse` class and corresponding tests for SVG `<ellipse>` element functionality (@terabytesoftw)
-- Bug #56: Better naming `ClipPathUnits` with `CoordinateUnits` for SVG `<clipPath>` element and update related functionality and tests (@terabytesoftw)
-- Bug #57: Update documentation to use angle brackets for `<circle>` and `<g>` element references (@terabytesoftw)
-- Enh #58: Add `Filter` class and corresponding tests for SVG `<filter>` element functionality (@terabytesoftw)
-- Bug #59: Add exception for invalid `clipPathUnits` value in `clipPathUnits` method of `ClipPath` class (@terabytesoftw)
-- Enh #60: Add `ForeignObject` class and corresponding tests for SVG `<foreignObject>` element functionality (@terabytesoftw)
-- Bug #61: Add tests for invalid attribute values in `CircleTest`, `EllipseTest`, `GTest`, `SvgTest`, and `UsesTest` classes (@terabytesoftw)
-- Enh #62: Add `HasPreserveAspectRatio` trait and corresponding tests for managing SVG `preserveAspectRatio` attribute (@terabytesoftw)
-- Bug #63: Improve phpdocs and error handling for invalid attributes in related classes and tests (@terabytesoftw)
-- Bug #64: Update exception messages to use `SvgProperty` constants in attribute tests (@terabytesoftw)
-- Enh #65: Add `ui-awesome/html-mixin` package for reusable HTML attribute, mixins traits and update related imports accordingly (@terabytesoftw)
-- Bug #66: Better naming `SvgProperty` with `SvgAttribute` for SVG attribute constants and update related functionality and tests (@terabytesoftw)
-- Enh #67: Add `Image` class and corresponding tests for SVG `<image>` element functionality (@terabytesoftw)
-- Enh #68: Add `HasX1` trait and corresponding tests for managing SVG `x1` attribute (@terabytesoftw)
-- Enh #69: Add `HasX2` trait and corresponding tests for managing SVG `x2` attribute (@terabytesoftw)
-- Enh #70: Add `HasY1` trait and corresponding tests for managing SVG `y1` attribute (@terabytesoftw)
-- Bug #71: Update memory limit options for `mutation-static` and `static` scripts in `composer.json` (@terabytesoftw)
-- Enh #72: Add `HasY2` trait and corresponding tests for managing SVG `y2` attribute (@terabytesoftw)
-- Bug #73: Refactor SVG attribute providers to standardize type validation and improve documentation, and remove redundant excessive tests cases (@terabytesoftw)
-- Bug #74: Update attribute retrieval in tests to use `getAttribute()` method for consistency (@terabytesoftw)
-- Enh #75: Add `Line` class and corresponding tests for SVG `<line>` element functionality (@terabytesoftw)
-- Bug #76: Update documentation for `Circle`, `Ellipse`, and `Image` class to correct terminology from container element to element (@terabytesoftw)
-- Enh #77: Add `HasGradientTransform` trait and corresponding tests for managing SVG `gradientTransform` attribute (@terabytesoftw)
-- Enh #78: Add `HasGradientUnits` trait and corresponding tests for managing SVG `gradientUnits` attribute (@terabytesoftw)
-- Enh #79: Add `HasSpreadMethod` trait and corresponding tests for managing SVG `spreadMethod` attribute (@terabytesoftw)
-- Enh #80: Add `LinearGradient` class and corresponding tests for SVG `<linearGradient>` element functionality (@terabytesoftw)
-- Bug #81: Update documentation references to `Base\BaseSvgBlockTag` and `Base\BaseSvg` in multiple SVG classes (@terabytesoftw)
-- Enh #82: Add `HasDominantBaseline` trait and corresponding tests for managing SVG `dominant-baseline` attribute (@terabytesoftw)
-- Enh #83: Add `HasDx` trait and corresponding tests for managing SVG `dx` attribute (@terabytesoftw)
-- Enh #84: Add `HasDy` trait and corresponding tests for managing SVG `dy` attribute (@terabytesoftw)
-- Enh #85: Add `HasFontFamily` trait and corresponding tests for managing SVG `font-family` attribute (@terabytesoftw)
-- Bug #86: Standardize all documentation in related classes (@terabytesoftw)
-- Enh #87: Add `HasFontSize` trait and corresponding tests for managing SVG `font-size` attribute (@terabytesoftw)
-- Enh #88: Add `HasFontStyle` trait and corresponding tests for managing SVG `font-style` attribute (@terabytesoftw)
-- Bug #89: Update SVG attribute links to point to the latest SVG2 specifications (@terabytesoftw)
-- Enh #90: Add `HasFontWeight` trait and corresponding tests for managing SVG `font-weight` attribute (@terabytesoftw)
-- Enh #91: Add `HasLengthAdjust` trait and corresponding tests for managing SVG `lengthAdjust` attribute (@terabytesoftw)
-- Enh #92: Add `HasLetterSpacing` trait and corresponding tests for managing SVG `letter-spacing` attribute (@terabytesoftw)
-- Enh #93: Add `HasRotate` trait and corresponding tests for managing SVG `rotate` attribute (@terabytesoftw)
-- Bug #94: Update `RotateProvider` to support string space-separated list for `rotate` attribute and enhance related tests (@terabytesoftw)
-- Enh #95: Add `HasTextAnchor` trait and corresponding tests for managing SVG `text-anchor` attribute (@terabytesoftw)
-- Enh #96: Add `HasTextDecoration` trait and corresponding tests for managing SVG `text-decoration` attribute (@terabytesoftw)
-- Enh #97: Add `HasTextLength` trait and corresponding tests for managing SVG `textLength` attribute (@terabytesoftw)
-- Enh #98: Add `HasWordSpacing` trait and corresponding tests for managing SVG `word-spacing` attribute (@terabytesoftw)
-- Bug #99: Update support descriptions for various SVG attributes to clarify assignment options (@terabytesoftw)
-- Enh #100: Add `HasWritingMode` trait and corresponding tests for managing SVG `writing-mode` attribute (@terabytesoftw)
-- Enh #101: Add `Text` class and corresponding tests for SVG `<text>` element functionality (@terabytesoftw)
-- Bug #102: Improve exception test method names for clarity and consistency across SVG attribute tests (@terabytesoftw)
-- Enh #103: Add `Rect` class and corresponding tests for SVG `<rect>` element functionality (@terabytesoftw)
-- Bug #104: Update class docblocks to include element names for clarity in SVG implementations (@terabytesoftw)
-- Bug #105: Update docblocks to format paint attributes in related classes (@terabytesoftw)
-- Enh #106: Add `HasPoints` trait and corresponding tests for managing SVG `points` attribute (@terabytesoftw)
-- Enh #107: Add `Polyline` class and corresponding tests for SVG `<polyline>` element functionality (@terabytesoftw)
-- Bug #108: Improve docblock descriptions for SVG elements in `Defs`, `LinearGradient`, `Rect`, and `Text` classes (@terabytesoftw)
-- Enh #109: Add `Polygon` class and corresponding tests for SVG `<polygon>` element functionality (@terabytesoftw)
-- Bug #110: Update docblock descriptions for various SVG elements to clarify content handling (@terabytesoftw)
-- Bug #111: Update copyright year to `2026` in `Polygon`, `Polyline`, `Rect` classes and `RectTest` (@terabytesoftw)
-- Enh #112: Add `HasMarkerHeight` trait and corresponding tests for managing SVG `markerHeight` attribute (@terabytesoftw)
-- Enh #113: Add `HasMarkerUnits` trait and corresponding tests for managing SVG `markerUnits` attribute (@terabytesoftw)
-- Enh #114: Add `HasMarkerWidth` trait and corresponding tests for managing SVG `markerWidth` attribute (@terabytesoftw)
-- Enh #115: Add `HasOrient` trait and corresponding tests for managing SVG `orient` attribute (@terabytesoftw)
-- Enh #116: Add `HasRefX` trait and corresponding tests for managing SVG `refX` attribute (@terabytesoftw)
-- Enh #117: Add `HasRefY` trait and corresponding tests for managing SVG `refY` attribute (@terabytesoftw)
-- Enh #118: Add `HasViewBox` trait and corresponding tests for managing SVG `viewBox` attribute (@terabytesoftw)
-- Enh #119: Add `Marker` class and corresponding tests for SVG `<marker>` element functionality (@terabytesoftw)
-- Bug #120: Update test cases to remove unnecessary `content()` calls for SVG elements (@terabytesoftw)
-- Bug #121: Use enum for method parameter in related SVG attribute traits (@terabytesoftw)
-- Bug #122: Update configuration files and improve code structure for better maintainability (@terabytesoftw)
-- Bug #123: fix(docs): Update PHPdoc in `Marker` and `Rect` classes (@terabytesoftw)
-- Enh #124: Add `HasMaskContentUnits` trait and corresponding tests for managing SVG `maskContentUnits` attribute (@terabytesoftw)
-- Bug #125: Update documentation to reflect CSS Masking Module Level 1 specification for `maskContentUnits` trait (@terabytesoftw)
-- Enh #126: Add `HasMaskType` trait and corresponding tests for managing SVG `mask-type` attribute (@terabytesoftw)
-- Enh #127: Add `HasMaskUnits` trait and corresponding tests for managing SVG `maskUnits` attribute (@terabytesoftw)
-- Enh #128: Add `Mask` class and corresponding tests for SVG `<mask>` element functionality (@terabytesoftw)
-- Bug #129: Update tests for rendering SVG elements with `accesskey`, `dir`, `hidden`, `title`, and `translate` attributes (@terabytesoftw)
-- Enh #130: Add `HasD` trait and corresponding tests for managing SVG `d` attribute (@terabytesoftw)
-- Enh #131: Add `Path` class and corresponding tests for SVG `<path>` element functionality (@terabytesoftw)
-- Bug #132: Update related tests classes to ensure immutability and add missing tests (@terabytesoftw)
-- Enh #133: Add `HasPatternContentUnits` trait and corresponding tests for managing SVG `patternContentUnits` attribute (@terabytesoftw)
-- Enh #134: Add `HasPatternTransform` trait and corresponding tests for managing SVG `patternTransform` attribute (@terabytesoftw)
-- Enh #135: Add `HasPatternUnits` trait and corresponding tests for managing SVG `patternUnits` attribute (@terabytesoftw)
-- Enh #136: Add `Pattern` class and corresponding tests for SVG `<pattern>` element functionality (@terabytesoftw)
-- Bug #137: Correct string formatting in error messages for SVG attribute validation tests (@terabytesoftw)
-- Bug #138: Refactor PHPdocs in SVG attribute handling for improved clarity and consistency (@terabytesoftw)
-- Bug #139: Update PHPdoc references for SVG value enums to improve clarity and consistency (@terabytesoftw)
-- Bug #140: Update PHPdoc descriptions for SVG elements to enhance clarity and consistency (@terabytesoftw)
-- Bug #141: Improve PHPdoc descriptions for related SVG classes to improve clarity and consistency (@terabytesoftw)
-- Bug #142: Improve PHPdoc descriptions for tests in related SVG attribute test classes (@terabytesoftw)
-- Bug #143: Improve PHPdoc descriptions for tests in related provider test classes (@terabytesoftw)
-- Bug #144: Update PHPdoc descriptions for `DefaultProvider` and `DefaultThemeProvider` classes for clarity (@terabytesoftw)
-- Bug #145: Standardize PHPUnit PHPDoc headers in SVG-related test classes (@terabytesoftw)
-- Bug #146: Standardize PHPDoc headers in SVG-related classes (@terabytesoftw)
-- Enh #147: Add `HasFr` trait and corresponding tests for managing SVG `fr` attribute (@terabytesoftw)
-- Enh #148: Add `HasFx` trait and corresponding tests for managing SVG `fx` attribute (@terabytesoftw)
-- Enh #149: Add `HasFy` trait and corresponding tests for managing SVG `fy` attribute (@terabytesoftw)
-- Enh #150: Add `RadialGradient` class and corresponding tests for SVG `<radialGradient>` element functionality (@terabytesoftw)
-- Bug #151: Ordered key features in PHPdoc for better readability in related SVG attribute traits (@terabytesoftw)
-- Bug #152: Update documentation in providers for clarity and consistency (@terabytesoftw)
-- Enh #153: Add `HasOffset` trait and corresponding tests for managing SVG `offset` attribute (@terabytesoftw)
-- Enh #154: Add `HasStopColor` trait and corresponding tests for managing SVG `stop-color` attribute (@terabytesoftw)
-- Enh #155: Add `HasStopOpacity` trait and corresponding tests for managing SVG `stop-opacity` attribute (@terabytesoftw)
-- Enh #156: Add `Stop` class and corresponding tests for SVG `<stop>` element functionality (@terabytesoftw)
-- Enh #157: Add `Symbol` class and corresponding tests for SVG `<symbol>` element functionality (@terabytesoftw)
-- Enh #158: Update `README.md` and testing documentation with usage examples for SVG elements (@terabytesoftw)
-- Bug #159: Update `README.md` with new links and add `development.md` for workflow documentation (@terabytesoftw)
-- Enh #160: Add `php-forge/support` as a development dependency and update related test classes (@terabytesoftw)
+- refactor: improve codebase performance.
+- feat: add the `SvgBlock` enum for SVG tag representation.
+- feat: add base SVG tag classes and initial SVG element classes.
+- feat: add SVG attribute APIs for paint, geometry, text, gradient, marker, mask, path, pattern, and stop attributes.
+- feat: add SVG element classes including `Circle`, `ClipPath`, `Defs`, `Ellipse`, `Filter`, `ForeignObject`, `G`, `Image`, `Line`, `LinearGradient`, `Marker`, `Mask`, `Path`, `Pattern`, `Polygon`, `Polyline`, `RadialGradient`, `Rect`, `Stop`, `Svg`, `Symbol`, `Text`, and `Uses`.
+- feat: add enum-backed value validation for supported SVG attribute values.
+- feat: add `ui-awesome/html-mixin` integration for shared attribute and mixin behavior.
+- fix: standardize SVG attribute validation, exception messages, and supported scalar value handling.
+- fix: update SVG attribute and element documentation links to current specifications.
+- fix: improve rendering tests for SVG elements and global attributes.
+- refactor: rename SVG attribute constants from `SvgProperty` to `SvgAttribute`.
+- refactor: standardize provider and test structures for SVG attribute coverage.
+- docs: standardize PHPDoc headers and descriptions across SVG source, tests, and providers.
+- docs: update `README.md`, testing documentation, and workflow documentation with SVG usage examples.
+- chore: update configuration, memory limits, and development dependencies for release tooling.
 
 ## 0.2.0 March 31, 2024
 
-- Enh #2: Add `ui-awesome/html-core` package and remove `ui-awesome/html-helper` package (@terabytesoftw)
+- feat: add `ui-awesome/html-core` as the rendering foundation and remove direct `ui-awesome/html-helper` usage.
 
 ## 0.1.0 March 22, 2024
 
-- Enh #1: Initial release (@terabytesoftw)
+- feat: initial `ui-awesome/html-svg` package structure.

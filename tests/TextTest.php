@@ -476,6 +476,28 @@ final class TextTest extends TestCase
         );
     }
 
+    public function testRenderWithStrokeDashArray(): void
+    {
+        self::assertSame(
+            <<<HTML
+            <text stroke-dasharray="5.3">
+            </text>
+            HTML,
+            Text::tag()->strokeDashArray(5.3)->render(),
+        );
+    }
+
+    public function testRenderWithStrokeWidth(): void
+    {
+        self::assertSame(
+            <<<HTML
+            <text stroke-width="2">
+            </text>
+            HTML,
+            Text::tag()->strokeWidth(2)->render(),
+        );
+    }
+
     public function testRenderWithStyle(): void
     {
         self::assertSame(
@@ -757,7 +779,7 @@ final class TextTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid',
                 SvgAttribute::DOMINANT_BASELINE->value,
-                implode("', '", Enum::normalizeArray(DominantBaseline::cases())),
+                implode("', '", Enum::normalizeStringArray(DominantBaseline::cases())),
             ),
         );
 
@@ -771,7 +793,7 @@ final class TextTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid',
                 SvgAttribute::FONT_STYLE->value,
-                implode("', '", Enum::normalizeArray(FontStyle::cases())),
+                implode("', '", Enum::normalizeStringArray(FontStyle::cases())),
             ),
         );
 
@@ -785,7 +807,7 @@ final class TextTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid',
                 SvgAttribute::LENGTH_ADJUST->value,
-                implode("', '", Enum::normalizeArray(LengthAdjust::cases())),
+                implode("', '", Enum::normalizeStringArray(LengthAdjust::cases())),
             ),
         );
 
@@ -799,7 +821,7 @@ final class TextTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid',
                 SvgAttribute::TEXT_ANCHOR->value,
-                implode("', '", Enum::normalizeArray(TextAnchor::cases())),
+                implode("', '", Enum::normalizeStringArray(TextAnchor::cases())),
             ),
         );
 
@@ -813,7 +835,7 @@ final class TextTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid',
                 SvgAttribute::WRITING_MODE->value,
-                implode("', '", Enum::normalizeArray(WritingMode::cases())),
+                implode("', '", Enum::normalizeStringArray(WritingMode::cases())),
             ),
         );
 

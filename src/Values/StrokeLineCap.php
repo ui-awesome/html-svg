@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `stroke-linecap` attribute.
  *
  * Key features.
- * - Designed for use in tags, components, and helpers requiring stroke line cap assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `stroke-linecap` keyword values.
+ * - Designed for use in tags, components, and helpers requiring stroke line cap assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `stroke-linecap` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Circle::strokeLineCap()
  * @see \UIAwesome\Html\Svg\Ellipse::strokeLineCap()

@@ -10,10 +10,10 @@ namespace UIAwesome\Html\Svg\Values;
  * Provides the keyword values used by the `stroke-linejoin` attribute.
  *
  * Key features.
- * - Designed for use in tags, components, and helpers requiring stroke line join assignment.
  * - Can be used as an enum value in attribute assignment.
- * - Values map to `stroke-linejoin` keyword values.
+ * - Designed for use in tags, components, and helpers requiring stroke line join assignment.
  * - Useful for attribute assignment where a literal value is required.
+ * - Values map to `stroke-linejoin` keyword values.
  *
  * @see \UIAwesome\Html\Svg\Circle::strokeLineJoin()
  * @see \UIAwesome\Html\Svg\Ellipse::strokeLineJoin()
