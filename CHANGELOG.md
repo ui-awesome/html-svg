@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
-## 0.4.0 Under development
+## 0.4.0 May 2, 2026
 
 - refactor: prepare the 0.4.0 release with concrete SVG attribute APIs, dependency updates, docs, and tests.
 
