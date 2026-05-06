@@ -1,3 +1,9 @@
+# AI agents (if present)
+.codex
+.claude
+!src/assets/package-lock.json
+phpunit.xml
+
 # codecoverage (if present)
 code_coverage
 
@@ -27,6 +33,9 @@ package-lock.json
 
 # phpstorm project (if present)
 .idea
+
+# phpactor (if present)
+.phpactor.*
 
 # phpunit (if present)
 .phpunit.cache

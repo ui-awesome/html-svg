@@ -6,7 +6,10 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## 0.4.1 Under development
 
-## 0.4.0 May 2, 2026
+- chore: migrate to `yii2-extensions/scaffold` consumer model with `php-forge/baseline^0.1` and `php-forge/coding-standard^0.3`.
+- chore: skip `HeredocIndentationFixer` in `php-forge/coding-standard` to preserve heredoc alignment in tests.
+
+## 0.4.0 May 02, 2026
 
 - refactor: prepare the 0.4.0 release with concrete SVG attribute APIs, dependency updates, docs, and tests.
 
