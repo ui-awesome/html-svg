@@ -1,3 +1,7 @@
+# AI agents (if present)
+.codex
+.claude
+
 # codecoverage (if present)
 code_coverage
 
@@ -24,14 +28,18 @@ nbproject
 # node_modules (if present)
 node_modules
 package-lock.json
+!src/assets/package-lock.json
 
 # phpstorm project (if present)
 .idea
 
+# phpactor (if present)
+.phpactor.*
+
 # phpunit (if present)
 .phpunit.cache
 .phpunit.result.cache
-phpunit.xml*
+phpunit.xml
 
 # vagrant (if present)
 .vagrant

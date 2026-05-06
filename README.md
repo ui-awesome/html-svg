@@ -125,7 +125,6 @@ Note: If both the internal `content` and `filePath()` are empty, an exception is
 For detailed configuration options and advanced usage.
 
 - 🧪 [Testing Guide](docs/testing.md)
-- 🛠️ [Development Guide](docs/development.md)
 
 ## Package information
 
