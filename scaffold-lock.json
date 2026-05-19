@@ -1,7 +1,7 @@
 {
     "providers": {
         "php-forge/baseline": {
-            "version": "0.1.1",
+            "version": "0.1.2",
             "path": "vendor/php-forge/baseline"
         },
         "php-forge/coding-standard": {
@@ -53,7 +53,7 @@
             "mode": "replace"
         },
         "composer-require-checker.json": {
-            "hash": "sha256:f4fbbc7876fa3f695b69dd7dc7ad4637d33dfab97fe445b476de26480f85055d",
+            "hash": "sha256:0cc82e1bb44b9b090ea8ff2f5c6ee51605d031eb8ac6ae8042a8584c2f14c91a",
             "provider": "php-forge/baseline",
             "source": "metadata/composer-require-checker.json",
             "mode": "preserve"
