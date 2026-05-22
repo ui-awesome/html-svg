@@ -1240,6 +1240,48 @@ final class SvgTest extends TestCase
         Svg::iconPath('Bootstrap5-globe');
     }
 
+    public function testThrowInvalidArgumentExceptionForIconReferenceWithEmptyCollection(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::ICON_REFERENCE_MUST_BE_COLLECTION_NAME->getMessage(':globe'),
+        );
+
+        Svg::iconPath(':globe');
+    }
+
+    public function testThrowInvalidArgumentExceptionForIconReferenceWithEmptyName(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::ICON_REFERENCE_MUST_BE_COLLECTION_NAME->getMessage('Bootstrap5:'),
+        );
+
+        Svg::iconPath('Bootstrap5:');
+    }
+
+    public function testThrowInvalidArgumentExceptionForIconReferenceWithPathTraversalInCollection(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::ICON_REFERENCE_MUST_BE_COLLECTION_NAME->getMessage('../Admin:globe'),
+        );
+
+        Svg::iconPath('../Admin:globe');
+    }
+
+    public function testThrowInvalidArgumentExceptionForIconReferenceWithPathTraversalInName(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::ICON_REFERENCE_MUST_BE_COLLECTION_NAME->getMessage(
+                'Bootstrap5:../../etc/passwd',
+            ),
+        );
+
+        Svg::iconPath('Bootstrap5:../../etc/passwd');
+    }
+
     public function testThrowInvalidArgumentExceptionForSettingContent(): void
     {
         $this->expectException(InvalidArgumentException::class);
