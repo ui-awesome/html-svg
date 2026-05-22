@@ -1230,6 +1230,18 @@ final class SvgTest extends TestCase
         );
     }
 
+    public function testThrowInvalidArgumentExceptionForIconReferenceFileNotFound(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::ICON_REFERENCE_FILE_NOT_FOUND->getMessage(
+                'Bootstrap5:not-a-real-icon',
+            ),
+        );
+
+        Svg::iconPath('Bootstrap5:not-a-real-icon');
+    }
+
     public function testThrowInvalidArgumentExceptionForIconReferenceMissingSeparator(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -1280,6 +1292,16 @@ final class SvgTest extends TestCase
         );
 
         Svg::iconPath('Bootstrap5:../../etc/passwd');
+    }
+
+    public function testThrowInvalidArgumentExceptionForIconReferenceWithTrailingCharacters(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::ICON_REFERENCE_MUST_BE_COLLECTION_NAME->getMessage('Bootstrap5:globe.svg'),
+        );
+
+        Svg::iconPath('Bootstrap5:globe.svg');
     }
 
     public function testThrowInvalidArgumentExceptionForSettingContent(): void

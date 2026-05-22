@@ -11,6 +11,7 @@ use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 use function dirname;
+use function is_file;
 use function preg_match;
 
 /**
@@ -68,7 +69,8 @@ final class Svg extends BaseSvg
      *
      * @param string $reference Icon reference in the form `Collection:name`. Each segment must match `[A-Za-z0-9_-]+`.
      *
-     * @throws InvalidArgumentException if {@see $reference} does not match the `Collection:name` format.
+     * @throws InvalidArgumentException if {@see $reference} does not match the `Collection:name` format, or if the
+     * resolved path is not a bundled SVG file.
      *
      * @return self New instance with the resolved SVG file path configured.
      */
@@ -93,7 +95,8 @@ final class Svg extends BaseSvg
      * references containing path separators, `..`, or empty segments are rejected to keep the resolved path inside the
      * bundled `assets/icons` directory.
      *
-     * @throws InvalidArgumentException if `$reference` does not match the `Collection:name` format.
+     * @throws InvalidArgumentException if `$reference` does not match the `Collection:name` format, or if the resolved
+     * path is not a bundled SVG file.
      *
      * @return string Absolute path to the resolved SVG file.
      */
@@ -105,7 +108,15 @@ final class Svg extends BaseSvg
             );
         }
 
-        return dirname(__DIR__) . '/assets/icons/' . $matches['collection'] . '/' . $matches['name'] . '.svg';
+        $path = dirname(__DIR__) . '/assets/icons/' . $matches['collection'] . '/' . $matches['name'] . '.svg';
+
+        if (is_file($path) === false) {
+            throw new InvalidArgumentException(
+                Message::ICON_REFERENCE_FILE_NOT_FOUND->getMessage($reference),
+            );
+        }
+
+        return $path;
     }
 
     /**
