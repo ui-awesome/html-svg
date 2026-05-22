@@ -120,6 +120,29 @@ echo Svg::tag()
 
 Note: If both the internal `content` and `filePath()` are empty, an exception is thrown.
 
+#### Bundled icon reference
+
+```php
+use UIAwesome\Html\Svg\Svg;
+
+// Resolves a bundled icon by reference (`Collection:name`) and renders it inline.
+echo Svg::icon('Bootstrap5:globe')
+    ->fill('currentColor')
+    ->height(32)
+    ->width(32)
+    ->render();
+```
+
+Need only the resolved file path (for example to configure another component)?
+
+```php
+use UIAwesome\Html\Svg\Svg;
+
+$component->iconFilePath(Svg::iconPath('Bootstrap5:globe'));
+```
+
+Note: References must match `Collection:name` where each segment is `[A-Za-z0-9_-]+`. Invalid formats, path separators, `..`, or references that do not resolve to a bundled SVG file throw an `InvalidArgumentException`.
+
 ## Documentation
 
 For detailed configuration options and advanced usage.

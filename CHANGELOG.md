@@ -10,6 +10,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - chore: skip `HeredocIndentationFixer` in `php-forge/coding-standard` to preserve heredoc alignment in tests.
 - chore: update dependencies and configuration files.
 - feat: add `Svg::icon()` and `Svg::iconPath()` to resolve bundled icon references in the form `Collection:name`.
+- feat: add bundled icon reference functionality with `Svg::icon()` and `Svg::iconPath()` in `README.md` usage examples.
 
 ## 0.4.0 May 02, 2026
 
