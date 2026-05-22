@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
-## 0.4.1 Under development
+## 0.4.1 May 21, 2026
 
 - chore: migrate to `yii2-extensions/scaffold` consumer model with `php-forge/baseline^0.1` and `php-forge/coding-standard^0.3`.
 - chore: skip `HeredocIndentationFixer` in `php-forge/coding-standard` to preserve heredoc alignment in tests.
