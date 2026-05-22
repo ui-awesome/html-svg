@@ -5,8 +5,14 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg;
 
 use BackedEnum;
+use InvalidArgumentException;
 use UIAwesome\Html\Svg\Base\BaseSvg;
+use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
+
+use function dirname;
+use function strpos;
+use function substr;
 
 /**
  * Represents the SVG `<svg>` (svg) element for scalable vector graphics containers.
@@ -45,6 +51,66 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  */
 final class Svg extends BaseSvg
 {
+    /**
+     * Returns a new {@see Svg} instance configured to render an icon bundled with the package.
+     *
+     * Accepts a reference of the form `Collection:name` (e.g. `Bootstrap5:globe`). Icons resolve against the path
+     * `assets/icons/{Collection}/{name}.svg` shipped with this package. Chain additional fluent methods (width,
+     * height, fill, ...) before rendering.
+     *
+     * Usage example:
+     * ```php
+     * echo \UIAwesome\Html\Svg\Svg::icon('Bootstrap5:globe')
+     *     ->width(32)
+     *     ->height(32)
+     *     ->fill('currentColor')
+     *     ->render();
+     * ```
+     *
+     * @param string $reference Icon reference in the form `Collection:name`.
+     *
+     * @throws InvalidArgumentException if `$reference` does not contain the `Collection:name` separator.
+     *
+     * @return self New instance with the resolved SVG file path configured.
+     */
+    public static function icon(string $reference): self
+    {
+        return self::tag()->filePath(self::iconPath($reference));
+    }
+
+    /**
+     * Resolves an icon reference to the absolute file path of the SVG asset shipped with this package.
+     *
+     * Accepts a reference of the form `Collection:name` (e.g. `Bootstrap5:globe`). Useful when the file path is needed
+     * without instantiating a {@see Svg} (for example, when configuring `iconFilePath()` on another component).
+     *
+     * Usage example:
+     * ```php
+     * $component->iconFilePath(\UIAwesome\Html\Svg\Svg::iconPath('Bootstrap5:globe'));
+     * ```
+     *
+     * @param string $reference Icon reference in the form `Collection:name`.
+     *
+     * @throws InvalidArgumentException if `$reference` does not contain the `Collection:name` separator.
+     *
+     * @return string Absolute path to the resolved SVG file.
+     */
+    public static function iconPath(string $reference): string
+    {
+        $pos = strpos($reference, ':');
+
+        if ($pos === false) {
+            throw new InvalidArgumentException(
+                Message::ICON_REFERENCE_MUST_BE_COLLECTION_NAME->getMessage($reference),
+            );
+        }
+
+        $collection = substr($reference, 0, $pos);
+        $name = substr($reference, $pos + 1);
+
+        return dirname(__DIR__) . '/assets/icons/' . $collection . '/' . $name . '.svg';
+    }
+
     /**
      * Returns the tag enumeration for the `<svg>` element.
      *

@@ -53,6 +53,13 @@ enum Message: string
     case FAILED_TO_SANITIZE_SVG = "Failed to sanitize SVG content from file: '%s'.";
 
     /**
+     * Error when the icon reference does not follow the `Collection:name` format.
+     *
+     * Format: "Icon reference '%s' must be in the form 'Collection:name'."
+     */
+    case ICON_REFERENCE_MUST_BE_COLLECTION_NAME = "Icon reference '%s' must be in the form 'Collection:name'.";
+
+    /**
      * Error when the title attribute is not a `string` or `null`.
      *
      * Message: "Title attribute must be a `string` or `null`."
