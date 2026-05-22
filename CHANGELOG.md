@@ -9,6 +9,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - chore: migrate to `yii2-extensions/scaffold` consumer model with `php-forge/baseline^0.1` and `php-forge/coding-standard^0.3`.
 - chore: skip `HeredocIndentationFixer` in `php-forge/coding-standard` to preserve heredoc alignment in tests.
 - chore: update dependencies and configuration files.
+- feat: add `Svg::icon()` and `Svg::iconPath()` to resolve bundled icon references in the form `Collection:name`.
 
 ## 0.4.0 May 02, 2026
 
