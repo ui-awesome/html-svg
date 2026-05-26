@@ -28,8 +28,8 @@
 ## Features
 
 <picture>
-    <source media="(min-width: 768px)" srcset="./docs/svgs/features.svg">
-    <img src="./docs/svgs/features-mobile.svg" alt="Feature Overview" style="width: 100%;">
+    <source media="(max-width: 767px)" srcset="./docs/svgs/features-mobile.svg">
+    <img src="./docs/svgs/features.svg" alt="Feature Overview" style="width: 100%;">
 </picture>
 
 ### Installation
