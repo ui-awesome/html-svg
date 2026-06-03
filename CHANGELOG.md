@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.4.2 Under development
 
 - docs: Correct image source order in `README.md` for feature overview.
+- docs: add Facebook follow badge, and update logo link in `README.md` to use an anchor tag.
 
 ## 0.4.1 May 21, 2026
 

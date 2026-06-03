@@ -1,8 +1,8 @@
 <!-- markdownlint-disable MD041 -->
 <p align="center">
-    <picture>
+    <a href="https://github.com/ui-awesome/html-svg" target="_blank">
         <img src="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome.png" alt="UI Awesome" width="25%">
-    </picture>
+    </a>
     <h1 align="center">Html SVG</h1>
     <br>
 </p>
@@ -165,6 +165,7 @@ For detailed configuration options and advanced usage.
 ## Our social networks
 
 [![Follow on X](https://img.shields.io/badge/-Follow%20on%20X-1DA1F2.svg?style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/Terabytesoftw)
+[![Follow on Facebook](https://img.shields.io/badge/-Follow%20on%20Facebook-1877F2.svg?style=for-the-badge&logo=facebook&logoColor=white&labelColor=000000)](https://www.facebook.com/wilmer.arambula.9)
 
 ## License
 
