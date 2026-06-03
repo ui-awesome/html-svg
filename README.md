@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 <p align="center">
-    <a href="https://github.com/ui-awesome/html-core" target="_blank">
+    <a href="https://github.com/ui-awesome/html-svg" target="_blank">
         <img src="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome.png" alt="UI Awesome" width="25%">
     </a>
     <h1 align="center">Html SVG</h1>
