@@ -21,19 +21,8 @@ use UIAwesome\Html\Svg\Values\{MarkerUnits, Orient, PreserveAspectRatio, SvgAttr
  *
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Marker::tag()}.
  *
- * Test coverage.
- * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
- * - Ensures fluent setters return new instances (immutability).
- * - Handles invalid attribute values by throwing exceptions with expected messages.
- * - Renders `<marker>` with inline content.
- * - Renders `<marker>` with representative marker and presentation attributes.
- * - Supports nested rendering via `begin()` and `end()`.
- *
  * {@see Marker} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('svg')]
 final class MarkerTest extends TestCase

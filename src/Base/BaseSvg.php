@@ -29,20 +29,9 @@ use function is_string;
  *
  * Intended for SVG classes that need SVG container behavior with file-backed rendering and attribute processing.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Extensible for custom SVG element implementations.
- * - Immutable API for attribute and content assignment.
- * - Integrates SVG attribute management.
- * - Moves the global `title` attribute into a `<title>` child when present.
- * - Supports file-based SVG injection.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
  * {@see BaseBlock} for the base block-level implementation.
  * {@see SvgAttribute} for supported SVG attributes.
- *
- * @copyright Copyright (C) 2025 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 abstract class BaseSvg extends BaseBlock implements Stringable
 {
@@ -316,7 +305,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * @return static New instance with the updated `stroke-dasharray` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
+     * @see https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
      *
      * Usage example:
      * ```php
@@ -400,7 +389,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * @return static New instance with the updated `stroke-miterlimit` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
+     * @see https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
      *
      * Usage example:
      * ```php
@@ -574,7 +563,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * @return static New instance with the updated `xmlns` attribute.
      *
-     * @link https://svgwg.org/svg2-draft/struct.html#Namespace
+     * @see https://svgwg.org/svg2-draft/struct.html#Namespace
      *
      * Usage example:
      * ```php

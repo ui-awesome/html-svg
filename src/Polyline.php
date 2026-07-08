@@ -23,12 +23,6 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * The `<polyline>` element is an SVG basic shape used to create a series of connected line segments.
  *
- * Key features.
- * - Supports geometry attributes (`points`, `pathLength`).
- * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
- * - Supports transform attribute (`transform`).
- * - Void element does not accept child elements.
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\Polyline;
@@ -41,11 +35,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline
  * {@see BaseVoid} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class Polyline extends BaseVoid
 {
@@ -173,7 +164,7 @@ final class Polyline extends BaseVoid
      *
      * @return static New instance with the updated `pathLength` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/paths.html#PathLengthAttribute
+     * @see https://www.w3.org/TR/SVG2/paths.html#PathLengthAttribute
      *
      * Usage example:
      * ```php
@@ -247,7 +238,7 @@ final class Polyline extends BaseVoid
      *
      * @return static New instance with the updated `stroke-dasharray` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
+     * @see https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
      *
      * Usage example:
      * ```php
@@ -331,7 +322,7 @@ final class Polyline extends BaseVoid
      *
      * @return static New instance with the updated `stroke-miterlimit` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
+     * @see https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
      *
      * Usage example:
      * ```php

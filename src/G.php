@@ -23,11 +23,6 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * The `<g>` element groups SVG shapes and other elements, allowing shared attributes and transforms.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
- * - Supports transform attribute (`transform`) for collective transformations.
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\{Circle, G};
@@ -39,11 +34,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
  * {@see BaseSvgBlockTag} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class G extends BaseSvgBlockTag
 {
@@ -192,7 +184,7 @@ final class G extends BaseSvgBlockTag
      *
      * @return static New instance with the updated `stroke-dasharray` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
+     * @see https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
      *
      * Usage example:
      * ```php
@@ -276,7 +268,7 @@ final class G extends BaseSvgBlockTag
      *
      * @return static New instance with the updated `stroke-miterlimit` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
+     * @see https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
      *
      * Usage example:
      * ```php

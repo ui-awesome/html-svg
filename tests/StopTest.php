@@ -18,17 +18,8 @@ use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
  *
  * Verifies rendered output, configuration precedence, and immutability for {@see Stop::tag()}.
  *
- * Test coverage.
- * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
- * - Ensures fluent setters return new instances (immutability).
- * - Handles invalid attribute values by throwing exceptions with expected messages.
- * - Renders `<stop>` with representative gradient stop attributes.
- *
  * {@see Stop} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('svg')]
 final class StopTest extends TestCase

@@ -19,18 +19,8 @@ use UIAwesome\Html\Svg\Uses;
  *
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Uses::tag()}.
  *
- * Test coverage.
- * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
- * - Ensures fluent setters return new instances (immutability).
- * - Handles invalid attribute values by throwing exceptions with expected messages.
- * - Renders `<use>` with representative global HTML attributes.
- * - Renders `<use>` with representative SVG attributes.
- *
  * {@see Uses} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- *
- * @copyright Copyright (C) 2025 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('svg')]
 final class UsesTest extends TestCase

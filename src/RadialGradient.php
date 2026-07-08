@@ -24,12 +24,6 @@ use UnitEnum;
  *
  * The `<radialGradient>` element defines a radial gradient that can be referenced by `fill` and `stroke`.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Supports gradient attributes (`gradientUnits`, `gradientTransform`, `spreadMethod`, `href`).
- * - Supports opacity attribute.
- * - Supports radial gradient geometry attributes (`cx`, `cy`, `r`, `fx`, `fy`, `fr`).
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\{RadialGradient, Stop};
@@ -46,11 +40,8 @@ use UnitEnum;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/radialGradient
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/radialGradient
  * {@see BaseSvgBlockTag} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class RadialGradient extends BaseSvgBlockTag
 {

@@ -9,16 +9,7 @@ namespace UIAwesome\Html\Svg\Values;
  *
  * Provides the keyword values used by the `decoding` attribute.
  *
- * Key features.
- * - Can be used as an enum value in attribute assignment.
- * - Designed for use in image elements (img, SVG image) requiring decoding hint assignment.
- * - Useful for attribute assignment where a literal value is required.
- * - Values map to `decoding` keyword values (`async`, `sync`, `auto`).
- *
  * @see \UIAwesome\Html\Svg\Image::decoding()
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 enum Decoding: string
 {
@@ -27,7 +18,7 @@ enum Decoding: string
      *
      * The browser will render and present other content first, then decode the image and present it later.
      *
-     * @link https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decoding
+     * @see https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decoding
      */
     case ASYNC = 'async';
 
@@ -36,7 +27,7 @@ enum Decoding: string
      *
      * The browser decides what is best for the user. This is the default value.
      *
-     * @link https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decoding
+     * @see https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decoding
      */
     case AUTO = 'auto';
 
@@ -45,7 +36,7 @@ enum Decoding: string
      *
      * The browser will decode the image along with rendering other content and present everything together.
      *
-     * @link https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decoding
+     * @see https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decoding
      */
     case SYNC = 'sync';
 }

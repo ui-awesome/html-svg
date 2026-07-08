@@ -21,19 +21,8 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  *
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see G::tag()}.
  *
- * Test coverage.
- * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
- * - Ensures fluent setters return new instances (immutability).
- * - Handles invalid attribute values by throwing exceptions with expected messages.
- * - Renders `<g>` with inline content.
- * - Renders `<g>` with representative global HTML and SVG attributes.
- * - Supports nested rendering via `begin()` and `end()`.
- *
  * {@see G} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- *
- * @copyright Copyright (C) 2025 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('svg')]
 final class GTest extends TestCase

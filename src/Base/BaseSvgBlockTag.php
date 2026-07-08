@@ -38,17 +38,7 @@ use function preg_replace;
  *
  * Intended for SVG block tag classes that render block-level SVG elements via {@see Html} helpers.
  *
- * Key features.
- * - Abstract contract for specifying the block tag via {@see getTag()} method.
- * - Container element accepts child elements.
- * - Integrates attribute, class, data, event, and style management.
- * - Supports `aria-*`, `lang`, `role`, and `tabindex` attributes.
- * - Supports content injection and output normalization.
- *
  * {@see BaseTag} for the base tag-level implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 abstract class BaseSvgBlockTag extends BaseTag
 {

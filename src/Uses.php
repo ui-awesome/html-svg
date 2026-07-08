@@ -22,13 +22,6 @@ use UnitEnum;
  *
  * The `<use>` element references an existing element and renders it at the specified location.
  *
- * Key features.
- * - Enables referencing of internal and external SVG fragments.
- * - Supports linking and geometry attributes (`href`, `x`, `y`, `width`, `height`).
- * - Supports presentation attributes (`opacity`).
- * - Supports transform attribute (`transform`).
- * - Void element does not accept child elements.
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\{Svg, Symbol, Uses};
@@ -42,11 +35,8 @@ use UnitEnum;
  *     )->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
  * {@see BaseVoid} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class Uses extends BaseVoid
 {

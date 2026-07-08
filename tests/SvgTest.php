@@ -23,20 +23,8 @@ use UIAwesome\Html\Svg\Values\{FillRule, PreserveAspectRatio, StrokeLineCap, Str
  * Verifies rendered output, file loading behavior, configuration precedence, immutability, and validation behavior for
  * {@see Svg::tag()}.
  *
- * Test coverage.
- * - Applies defaults via {@see SimpleFactory}, preserving user overrides.
- * - Ensures fluent setters return new instances (immutability).
- * - Handles invalid input by throwing exceptions with expected messages.
- * - Renders `<svg>` content loaded from files via `filePath()`.
- * - Renders `<svg>` with inline content and representative global HTML and SVG attributes.
- * - Supports nested rendering via `begin()` and `end()`.
- * - Supports theme configuration via {@see DefaultThemeProvider}.
- *
  * {@see Svg} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- *
- * @copyright Copyright (C) 2025 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('svg')]
 final class SvgTest extends TestCase

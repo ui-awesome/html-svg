@@ -21,11 +21,6 @@ use UnitEnum;
  *
  * The `<filter>` element defines a filter that can be applied to other elements.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Supports filter-specific attributes (`filterUnits`, `primitiveUnits`).
- * - Supports geometry attributes (`x`, `y`, `width`, `height`).
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\Filter;
@@ -36,11 +31,8 @@ use UnitEnum;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter
  * {@see BaseSvgBlockTag} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class Filter extends BaseSvgBlockTag
 {

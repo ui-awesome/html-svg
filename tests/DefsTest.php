@@ -17,17 +17,8 @@ use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
  *
  * Verifies rendered output, configuration precedence, and nested rendering behavior for {@see Defs::tag()}.
  *
- * Test coverage.
- * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
- * - Renders `<defs>` with inline content.
- * - Renders `<defs>` with representative global HTML attributes.
- * - Supports nested rendering via `begin()` and `end()`.
- *
  * {@see Defs} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- *
- * @copyright Copyright (C) 2025 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('svg')]
 final class DefsTest extends TestCase
