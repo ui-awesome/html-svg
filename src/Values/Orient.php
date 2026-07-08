@@ -12,16 +12,7 @@ namespace UIAwesome\Html\Svg\Values;
  * Note: The `orient` attribute also accepts numeric angle values (for example, '45', '90deg'). This enum covers only
  * the keyword values. Use `string`, `int`, or `float` for angle values.
  *
- * Key features.
- * - Can be used as an enum value in attribute assignment.
- * - Designed for use in tags, components, and helpers requiring marker orientation assignment.
- * - Useful for attribute assignment where a literal value is required.
- * - Values map to `orient` keyword values.
- *
  * @see \UIAwesome\Html\Svg\Marker::orient()
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 enum Orient: string
 {
@@ -29,7 +20,7 @@ enum Orient: string
      * `auto` - The marker is oriented such that its positive x-axis is pointing in the direction of the path at the
      * point it is placed.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#MarkerElementOrientAttribute
+     * @see https://www.w3.org/TR/SVG2/painting.html#MarkerElementOrientAttribute
      */
     case AUTO = 'auto';
 
@@ -38,7 +29,7 @@ enum Orient: string
      * that would be used if `auto` were specified. For all other markers, `auto-start-reverse` means the same as
      * `auto`.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#MarkerElementOrientAttribute
+     * @see https://www.w3.org/TR/SVG2/painting.html#MarkerElementOrientAttribute
      */
     case AUTO_START_REVERSE = 'auto-start-reverse';
 }

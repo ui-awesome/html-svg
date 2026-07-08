@@ -21,12 +21,6 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * The `<clipPath>` element defines a clipping path that can be applied to other SVG elements via the `clip-path`
  * property.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Supports coordinate system attribute (`clipPathUnits`).
- * - Supports presentation attributes (`opacity`).
- * - Supports transform attribute (`transform`).
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\{ClipPath, Circle};
@@ -41,11 +35,8 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * echo ClipPath::tag()->id('clip')->content($shape)->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath
  * {@see BaseSvgBlockTag} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class ClipPath extends BaseSvgBlockTag
 {

@@ -21,11 +21,6 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * The `<linearGradient>` element defines a linear gradient with coordinates and gradient attributes.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Supports gradient attributes (`gradientUnits`, `gradientTransform`, `spreadMethod`).
- * - Supports gradient geometry attributes (`x1`, `y1`, `x2`, `y2`).
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\{LinearGradient, Stop};
@@ -43,11 +38,8 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  * {@see BaseSvgBlockTag} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class LinearGradient extends BaseSvgBlockTag
 {

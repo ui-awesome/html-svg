@@ -17,11 +17,6 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * The `<defs>` element is used to store graphical objects that will be used at a later time. Objects created inside a
  * `<defs>` element are not rendered directly.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Content is not rendered directly.
- * - Defines reusable graphical objects (gradients, patterns, masks, etc.).
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\{Defs, LinearGradient, Stop};
@@ -42,11 +37,8 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
  * {@see BaseSvgBlockTag} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class Defs extends BaseSvgBlockTag
 {

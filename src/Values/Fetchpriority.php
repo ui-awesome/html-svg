@@ -9,17 +9,9 @@ namespace UIAwesome\Html\Svg\Values;
  *
  * Provides the keyword values used by the `fetchpriority` attribute.
  *
- * Key features.
- * - Can be used as an enum value in attribute assignment.
- * - Designed for elements that can hint resource fetch priority.
- * - Values map to `fetchpriority` keyword values (`high`, `low`, `auto`).
- *
  * @see \UIAwesome\Html\Svg\Image::fetchpriority()
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
  */
 enum Fetchpriority: string
 {

@@ -23,14 +23,6 @@ use UnitEnum;
  *
  * The `<symbol>` element defines graphical template objects that can be instantiated with the `<use>` element.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Supports geometry attributes (`x`, `y`, `width`, `height`).
- * - Supports presentation attributes (`opacity`).
- * - Supports reference point attributes (`refX`, `refY`).
- * - Supports transform attribute (`transform`).
- * - Supports view attributes (`viewBox`, `preserveAspectRatio`).
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\Symbol;
@@ -42,11 +34,8 @@ use UnitEnum;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol
  * {@see BaseSvgBlockTag} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class Symbol extends BaseSvgBlockTag
 {

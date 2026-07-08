@@ -20,12 +20,6 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  *
  * The `<circle>` element is an SVG basic shape used to create circles based on a center point and a radius.
  *
- * Key features.
- * - Supports geometry attributes (`cx`, `cy`, `r`).
- * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.).
- * - Supports transform attribute (`transform`).
- * - Void element does not accept child elements.
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\Circle;
@@ -37,11 +31,8 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle
  * {@see BaseVoid} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class Circle extends BaseVoid
 {
@@ -156,7 +147,7 @@ final class Circle extends BaseVoid
      *
      * @return static New instance with the updated `fill-rule` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#WindingRule
+     * @see https://www.w3.org/TR/SVG2/painting.html#WindingRule
      * {@see FillRule} for predefined enum values.
      *
      * Usage example:
@@ -259,7 +250,7 @@ final class Circle extends BaseVoid
      *
      * @return static New instance with the updated `stroke-dasharray` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
+     * @see https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
      *
      * Usage example:
      * ```php
@@ -343,7 +334,7 @@ final class Circle extends BaseVoid
      *
      * @return static New instance with the updated `stroke-miterlimit` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
+     * @see https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
      *
      * Usage example:
      * ```php

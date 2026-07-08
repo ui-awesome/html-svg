@@ -22,19 +22,8 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for
  * {@see RadialGradient::tag()}.
  *
- * Test coverage.
- * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
- * - Ensures fluent setters return new instances (immutability).
- * - Handles invalid attribute values by throwing exceptions with expected messages.
- * - Renders `<radialGradient>` with inline content.
- * - Renders `<radialGradient>` with representative gradient and geometry attributes.
- * - Supports nested rendering via `begin()` and `end()`.
- *
  * {@see RadialGradient} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('radialGradient')]
 final class RadialGradientTest extends TestCase

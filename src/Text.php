@@ -34,16 +34,6 @@ use UnitEnum;
  *
  * The `<text>` element defines text content with positioning, layout, and typography attributes.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Supports global `title` attribute.
- * - Supports paint and presentation attributes (`fill`, `stroke`, `opacity`, etc.) and transform attribute
- *   (`transform`).
- * - Supports text layout attributes (`textLength`, `lengthAdjust`, `text-anchor`, `dominant-baseline`).
- * - Supports text positioning attributes (`x`, `y`, `dx`, `dy`, `rotate`).
- * - Supports typography attributes (`font-family`, `font-size`, `font-weight`, `font-style`, `letter-spacing`,
- *   `word-spacing`, `text-decoration`, `writing-mode`).
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\Text;
@@ -57,11 +47,8 @@ use UnitEnum;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
  * {@see BaseSvgBlockTag} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class Text extends BaseSvgBlockTag
 {
@@ -460,7 +447,7 @@ final class Text extends BaseSvgBlockTag
      *
      * @return static New instance with the updated `stroke-dasharray` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
+     * @see https://www.w3.org/TR/SVG2/painting.html#StrokeDashing
      *
      * Usage example:
      * ```php
@@ -544,7 +531,7 @@ final class Text extends BaseSvgBlockTag
      *
      * @return static New instance with the updated `stroke-miterlimit` attribute.
      *
-     * @link https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
+     * @see https://www.w3.org/TR/SVG2/painting.html#StrokeMiterlimitProperty
      *
      * Usage example:
      * ```php

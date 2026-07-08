@@ -48,15 +48,6 @@ use UnitEnum;
  * Unit tests for SVG fluent attribute validation boundaries.
  *
  * Verifies exception behavior migrated from the removed SVG attribute trait tests against concrete SVG elements.
- *
- * Test coverage.
- * - Rejects opacity-like values greater than `1`.
- * - Rejects `stroke-miterlimit` values below `1` and accepts the lower boundary.
- * - Rejects invalid path length values.
- * - Rejects invalid enum-backed SVG attribute values.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('svg')]
 final class SvgAttributeValidationTest extends TestCase

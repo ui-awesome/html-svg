@@ -18,16 +18,6 @@ use function sprintf;
  * using the {@see Message::getMessage()} method.
  *
  * Each message template can be formatted with arguments.
- *
- * Key features.
- * - Can be used by exception call sites that need formatted messages.
- * - Defines message templates as enum cases.
- * - Formats templates with `sprintf()` via {@see Message::getMessage()}.
- * - Supports message formatting with dynamic parameters.
- * - Uses the enum case `value` as the template string.
- *
- * @copyright Copyright (C) 2025 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 enum Message: string
 {

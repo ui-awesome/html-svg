@@ -21,19 +21,8 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, MaskType, SvgAttribute};
  *
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Mask::tag()}.
  *
- * Test coverage.
- * - Applies defaults via {@see SimpleFactory} and {@see DefaultProvider}, preserving user overrides.
- * - Ensures fluent setters return new instances (immutability).
- * - Handles invalid attribute values by throwing exceptions with expected messages.
- * - Renders `<mask>` with inline content.
- * - Renders `<mask>` with representative mask and presentation attributes.
- * - Supports nested rendering via `begin()` and `end()`.
- *
  * {@see Mask} for element implementation details.
  * {@see SimpleFactory} for default configuration management.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('svg')]
 final class MaskTest extends TestCase

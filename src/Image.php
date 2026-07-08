@@ -22,13 +22,6 @@ use UnitEnum;
  *
  * The `<image>` element embeds an external image into the SVG.
  *
- * Key features.
- * - Supports image-specific attributes (`decoding`, `fetchpriority`).
- * - Supports linking and geometry attributes (`href`, `x`, `y`, `width`, `height`).
- * - Supports presentation attributes (`opacity`).
- * - Supports transform and aspect ratio attributes (`transform`, `preserveAspectRatio`).
- * - Void element does not accept child elements.
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\Image;
@@ -43,11 +36,8 @@ use UnitEnum;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
  * {@see BaseVoid} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class Image extends BaseVoid
 {

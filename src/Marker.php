@@ -21,13 +21,6 @@ use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
  *
  * The `<marker>` element defines a marker that can be attached to lines, polylines, and polygons.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Supports marker attributes (`markerWidth`, `markerHeight`, `markerUnits`, `orient`, `refX`, `refY`).
- * - Supports presentation attributes (`opacity`).
- * - Supports transform attribute (`transform`).
- * - Supports view attributes (`viewBox`, `preserveAspectRatio`).
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\{Marker, Path};
@@ -42,11 +35,8 @@ use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker
  * {@see BaseSvgBlockTag} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class Marker extends BaseSvgBlockTag
 {

@@ -12,9 +12,6 @@ use UIAwesome\Html\Svg\Svg;
  * Stub theme provider for tests.
  *
  * Returns deterministic theme attributes for tag instances to verify theme application behavior.
- *
- * @copyright Copyright (C) 2025 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class DefaultThemeProvider implements ThemeProviderInterface
 {

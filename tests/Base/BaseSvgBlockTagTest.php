@@ -20,15 +20,7 @@ use WeakMap;
 /**
  * Unit tests for {@see BaseSvgBlockTag} begin/end stack behavior.
  *
- * Test coverage.
- * - Dispatches protected hooks from concrete subclasses.
- * - Removes the current execution context after the last matching {@see BaseSvgBlockTag::end() end()} call.
- * - Resets the instance begin state after rendering through {@see BaseSvgBlockTag::end() end()}.
- *
  * {@see BaseSvgBlockTag} for the base implementation details.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('svg')]
 final class BaseSvgBlockTagTest extends TestCase

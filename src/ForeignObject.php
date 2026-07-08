@@ -22,12 +22,6 @@ use UnitEnum;
  *
  * The `<foreignObject>` element allows embedding external content within SVG.
  *
- * Key features.
- * - Container element accepts child elements.
- * - Supports geometry attributes (`x`, `y`, `width`, `height`).
- * - Supports presentation attributes (`opacity`).
- * - Supports transform attribute (`transform`).
- *
  * Usage example:
  * ```php
  * use UIAwesome\Html\Svg\ForeignObject;
@@ -41,11 +35,8 @@ use UnitEnum;
  *     ->render();
  * ```
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject
  * {@see BaseSvgBlockTag} for the base implementation.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class ForeignObject extends BaseSvgBlockTag
 {
