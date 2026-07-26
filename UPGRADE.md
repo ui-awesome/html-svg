@@ -2,12 +2,6 @@
 
 ## 0.5.0
 
-### PHP and package requirements
-
-- Runtime dependencies were updated to the current UI Awesome package line:
-  - `ui-awesome/html-contracts:^0.3`
-  - `ui-awesome/html-core:^0.7`
-
 ### `BaseSvgBlockTag` removed
 
 `UIAwesome\Html\Svg\Base\BaseSvgBlockTag` was removed. It duplicated the begin/end stack, lifecycle hooks, and output
@@ -85,17 +79,6 @@ echo Defs::tag()
 Calls made after `config()` remain local overrides, because recipes are applied immediately.
 
 ## 0.4.0
-
-### PHP and package requirements
-
-- The minimum PHP version is now `^8.3`.
-- Runtime dependencies were updated to the current UI Awesome package line:
-  - `ui-awesome/html-attribute:^0.6`
-  - `ui-awesome/html-contracts:^0.1`
-  - `ui-awesome/html-core:^0.6`
-  - `ui-awesome/html-helper:^0.7`
-  - `ui-awesome/html-interop:^0.4`
-  - `ui-awesome/html-mixin:^0.6`
 
 ### Removed SVG attribute traits
 
