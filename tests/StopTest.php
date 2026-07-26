@@ -8,10 +8,10 @@ use InvalidArgumentException;
 use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Stop;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 
 /**
  * Unit tests for {@see Stop} element rendering and attribute handling.
@@ -19,7 +19,7 @@ use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
  * Verifies rendered output, configuration precedence, and immutability for {@see Stop::tag()}.
  *
  * {@see Stop} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class StopTest extends TestCase
@@ -50,34 +50,29 @@ final class StopTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.stop',
+                    new Cookbook(new Call('class', 'default-class'), new Call('title', 'default-title')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <stop class="default-class" title="default-title">
             HTML,
             LineEndingNormalizer::normalize(
-                Stop::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+                Stop::tag()
+                    ->config($config, new ComponentContext('stop'))
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(Stop::class, ['stopColor' => '#fff']);
-
-        self::assertEquals(
-            <<<HTML
-            <stop stop-color="#fff">
-            HTML,
-            LineEndingNormalizer::normalize(
-                Stop::tag()->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(Stop::class, []);
     }
 
     public function testRenderWithOffset(): void

@@ -10,11 +10,12 @@ use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use UIAwesome\Html\Attribute\Values\{Aria, ContentEditable, Data, Direction, Draggable, Language, Role, Translate};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
+use UIAwesome\Html\Core\Theme\ThemeInterface;
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Svg;
-use UIAwesome\Html\Svg\Tests\Support\Stub\{DefaultProvider, DefaultThemeProvider};
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{FillRule, PreserveAspectRatio, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
@@ -24,7 +25,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, PreserveAspectRatio, StrokeLineCap, Str
  * {@see Svg::tag()}.
  *
  * {@see Svg} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class SvgTest extends TestCase
@@ -288,8 +289,18 @@ final class SvgTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.svg',
+                    new Cookbook(new Call('class', 'default-class'), new Call('title', 'default-title')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <svg class="default-class">
@@ -300,9 +311,12 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             LineEndingNormalizer::normalize(
-                Svg::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+                Svg::tag()
+                    ->config($config, new ComponentContext('svg'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
     }
 
@@ -506,28 +520,6 @@ final class SvgTest extends TestCase
             ),
             "Failed asserting that element renders correctly with 'fill-rule' attribute.",
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(Svg::class, ['title' => 'default-title']);
-
-        self::assertEquals(
-            <<<HTML
-            <svg>
-            <title>
-            default-title
-            </title>
-            value
-            </svg>
-            HTML,
-            LineEndingNormalizer::normalize(
-                Svg::tag()->content('value')->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(Svg::class, []);
     }
 
     public function testRenderWithHeight(): void
@@ -935,8 +927,23 @@ final class SvgTest extends TestCase
         );
     }
 
-    public function testRenderWithThemeProvider(): void
+    public function testRenderWithThemeVariant(): void
     {
+        $theme = new class implements ThemeInterface {
+            public function getName(): string
+            {
+                return 'svg';
+            }
+
+            public function getRecipes(ComponentContext $context): iterable
+            {
+                yield new Recipe(
+                    "svg.{$context->component}",
+                    new Cookbook(new Call('class', "tag-{$context->variant}")),
+                );
+            }
+        };
+
         self::assertEquals(
             <<<HTML
             <svg class="tag-primary">
@@ -944,9 +951,12 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             LineEndingNormalizer::normalize(
-                Svg::tag()->addThemeProvider('primary', DefaultThemeProvider::class)->content('value')->render(),
+                Svg::tag()
+                    ->config(new Config($theme), new ComponentContext('svg', variant: 'primary'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that theme provider is applied correctly.',
+            'Failed asserting that variant-scoped theme recipes are applied correctly.',
         );
     }
 
@@ -1028,9 +1038,17 @@ final class SvgTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(Svg::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.svg',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -1039,12 +1057,14 @@ final class SvgTest extends TestCase
             </svg>
             HTML,
             LineEndingNormalizer::normalize(
-                Svg::tag(['id' => 'id-user'])->content('value')->render(),
+                Svg::tag()
+                    ->config($config, new ComponentContext('svg'))
+                    ->id('id-user')
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(Svg::class, []);
     }
 
     public function testRenderWithViewBox(): void

@@ -9,11 +9,11 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\RadialGradient;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
 
 /**
@@ -23,7 +23,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
  * {@see RadialGradient::tag()}.
  *
  * {@see RadialGradient} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('radialGradient')]
 final class RadialGradientTest extends TestCase
@@ -231,17 +231,29 @@ final class RadialGradientTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.radialGradient',
+                    new Cookbook(new Call('class', 'default-class')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <radialGradient class="default-class">
             </radialGradient>
             HTML,
             LineEndingNormalizer::normalize(
-                RadialGradient::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+                RadialGradient::tag()
+                    ->config($config, new ComponentContext('radialGradient'))
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
     }
 
@@ -288,24 +300,6 @@ final class RadialGradientTest extends TestCase
             ),
             "Failed asserting that element renders correctly with 'fy' attribute.",
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(RadialGradient::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <radialGradient class="default-class">
-            </radialGradient>
-            HTML,
-            LineEndingNormalizer::normalize(
-                RadialGradient::tag()->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(RadialGradient::class, []);
     }
 
     public function testRenderWithGradientTransform(): void
@@ -518,9 +512,17 @@ final class RadialGradientTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(RadialGradient::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.radialGradient',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -528,12 +530,13 @@ final class RadialGradientTest extends TestCase
             </radialGradient>
             HTML,
             LineEndingNormalizer::normalize(
-                RadialGradient::tag(['id' => 'id-user'])->render(),
+                RadialGradient::tag()
+                    ->config($config, new ComponentContext('radialGradient'))
+                    ->id('id-user')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(RadialGradient::class, []);
     }
 
     public function testReturnNewInstanceWhenSettingAttribute(): void

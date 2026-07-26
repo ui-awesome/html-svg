@@ -8,9 +8,9 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Svg\Defs;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 
 /**
  * Unit tests for {@see Defs} element rendering, content, and attribute handling.
@@ -18,7 +18,7 @@ use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
  * Verifies rendered output, configuration precedence, and nested rendering behavior for {@see Defs::tag()}.
  *
  * {@see Defs} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class DefsTest extends TestCase
@@ -197,8 +197,18 @@ final class DefsTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.defs',
+                    new Cookbook(new Call('class', 'default-class')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <defs class="default-class">
@@ -206,29 +216,13 @@ final class DefsTest extends TestCase
             </defs>
             HTML,
             LineEndingNormalizer::normalize(
-                Defs::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+                Defs::tag()
+                    ->config($config, new ComponentContext('defs'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(Defs::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <defs class="default-class">
-            value
-            </defs>
-            HTML,
-            LineEndingNormalizer::normalize(
-                Defs::tag()->content('value')->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(Defs::class, []);
     }
 
     public function testRenderWithId(): void
@@ -336,9 +330,17 @@ final class DefsTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(Defs::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.defs',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -347,11 +349,13 @@ final class DefsTest extends TestCase
             </defs>
             HTML,
             LineEndingNormalizer::normalize(
-                Defs::tag(['id' => 'id-user'])->content('value')->render(),
+                Defs::tag()
+                    ->config($config, new ComponentContext('defs'))
+                    ->id('id-user')
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(Defs::class, []);
     }
 }

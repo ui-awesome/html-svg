@@ -7,8 +7,8 @@ namespace UIAwesome\Html\Svg;
 use BackedEnum;
 use InvalidArgumentException;
 use Stringable;
+use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Helper\Validator;
-use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 use UIAwesome\Html\Svg\Values\{
@@ -21,9 +21,7 @@ use UIAwesome\Html\Svg\Values\{
     TextDecorationStyle,
     WritingMode,
 };
-use UIAwesome\Html\Svg\Values\FillRule;
-use UIAwesome\Html\Svg\Values\StrokeLineCap;
-use UIAwesome\Html\Svg\Values\StrokeLineJoin;
+use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin};
 use UnitEnum;
 
 /**
@@ -48,9 +46,9 @@ use UnitEnum;
  * ```
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
- * {@see BaseSvgBlockTag} for the base implementation.
+ * {@see BaseBlock} for the base block-level implementation.
  */
-final class Text extends BaseSvgBlockTag
+final class Text extends BaseBlock
 {
     /**
      * Sets SVG `dominant-baseline` attribute for the element.

@@ -9,11 +9,11 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Line;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Line::tag()}.
  *
  * {@see Line} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class LineTest extends TestCase
@@ -165,16 +165,28 @@ final class LineTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.line',
+                    new Cookbook(new Call('class', 'default-class'), new Call('title', 'default-title')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <line class="default-class" title="default-title">
             HTML,
             LineEndingNormalizer::normalize(
-                Line::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+                Line::tag()
+                    ->config($config, new ComponentContext('line'))
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
     }
 
@@ -241,23 +253,6 @@ final class LineTest extends TestCase
             ),
             "Failed asserting that element renders correctly with 'fill-rule' attribute.",
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(Line::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <line class="default-class">
-            HTML,
-            LineEndingNormalizer::normalize(
-                Line::tag()->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(Line::class, []);
     }
 
     public function testRenderWithHidden(): void
@@ -533,21 +528,30 @@ final class LineTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(Line::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.line',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
             <line class="from-global" id="id-user">
             HTML,
             LineEndingNormalizer::normalize(
-                Line::tag(['id' => 'id-user'])->render(),
+                Line::tag()
+                    ->config($config, new ComponentContext('line'))
+                    ->id('id-user')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(Line::class, []);
     }
 
     public function testRenderWithX1(): void

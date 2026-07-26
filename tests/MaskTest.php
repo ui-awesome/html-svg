@@ -9,11 +9,11 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Mask;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, MaskType, SvgAttribute};
 
 /**
@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, MaskType, SvgAttribute};
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Mask::tag()}.
  *
  * {@see Mask} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class MaskTest extends TestCase
@@ -201,8 +201,18 @@ final class MaskTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.mask',
+                    new Cookbook(new Call('class', 'default-class')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <mask class="default-class">
@@ -210,29 +220,13 @@ final class MaskTest extends TestCase
             </mask>
             HTML,
             LineEndingNormalizer::normalize(
-                Mask::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+                Mask::tag()
+                    ->config($config, new ComponentContext('mask'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(Mask::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <mask class="default-class">
-            value
-            </mask>
-            HTML,
-            LineEndingNormalizer::normalize(
-                Mask::tag()->content('value')->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(Mask::class, []);
     }
 
     public function testRenderWithHeight(): void
@@ -445,9 +439,17 @@ final class MaskTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(Mask::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.mask',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -456,12 +458,14 @@ final class MaskTest extends TestCase
             </mask>
             HTML,
             LineEndingNormalizer::normalize(
-                Mask::tag(['id' => 'id-user'])->content('value')->render(),
+                Mask::tag()
+                    ->config($config, new ComponentContext('mask'))
+                    ->id('id-user')
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(Mask::class, []);
     }
 
     public function testRenderWithWidth(): void

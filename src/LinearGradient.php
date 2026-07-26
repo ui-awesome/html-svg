@@ -6,12 +6,10 @@ namespace UIAwesome\Html\Svg;
 
 use BackedEnum;
 use InvalidArgumentException;
+use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Helper\Validator;
-use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
-use UIAwesome\Html\Svg\Values\CoordinateUnits;
-use UIAwesome\Html\Svg\Values\SpreadMethod;
-use UIAwesome\Html\Svg\Values\SvgAttribute;
+use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
 
 /**
  * Represents the SVG `<linearGradient>` (linearGradient) element for defining linear gradients.
@@ -39,9 +37,9 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * ```
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
- * {@see BaseSvgBlockTag} for the base implementation.
+ * {@see BaseBlock} for the base block-level implementation.
  */
-final class LinearGradient extends BaseSvgBlockTag
+final class LinearGradient extends BaseBlock
 {
     /**
      * Sets the SVG `gradientTransform` attribute for the gradient element.

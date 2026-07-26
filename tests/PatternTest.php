@@ -9,11 +9,11 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Pattern;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, PreserveAspectRatio, SvgAttribute};
 
 /**
@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, PreserveAspectRatio, SvgAttribut
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Pattern::tag()}.
  *
  * {@see Pattern} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class PatternTest extends TestCase
@@ -201,8 +201,18 @@ final class PatternTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.pattern',
+                    new Cookbook(new Call('class', 'default-class')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <pattern class="default-class">
@@ -210,29 +220,13 @@ final class PatternTest extends TestCase
             </pattern>
             HTML,
             LineEndingNormalizer::normalize(
-                Pattern::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+                Pattern::tag()
+                    ->config($config, new ComponentContext('pattern'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(Pattern::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <pattern class="default-class">
-            value
-            </pattern>
-            HTML,
-            LineEndingNormalizer::normalize(
-                Pattern::tag()->content('value')->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(Pattern::class, []);
     }
 
     public function testRenderWithHeight(): void
@@ -481,9 +475,17 @@ final class PatternTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(Pattern::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.pattern',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -492,12 +494,14 @@ final class PatternTest extends TestCase
             </pattern>
             HTML,
             LineEndingNormalizer::normalize(
-                Pattern::tag(['id' => 'id-user'])->content('value')->render(),
+                Pattern::tag()
+                    ->config($config, new ComponentContext('pattern'))
+                    ->id('id-user')
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(Pattern::class, []);
     }
 
     public function testRenderWithViewBox(): void

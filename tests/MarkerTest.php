@@ -9,11 +9,11 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Marker;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{MarkerUnits, Orient, PreserveAspectRatio, SvgAttribute};
 
 /**
@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Values\{MarkerUnits, Orient, PreserveAspectRatio, SvgAttr
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Marker::tag()}.
  *
  * {@see Marker} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class MarkerTest extends TestCase
@@ -201,8 +201,18 @@ final class MarkerTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.marker',
+                    new Cookbook(new Call('class', 'default-class')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <marker class="default-class">
@@ -210,29 +220,13 @@ final class MarkerTest extends TestCase
             </marker>
             HTML,
             LineEndingNormalizer::normalize(
-                Marker::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+                Marker::tag()
+                    ->config($config, new ComponentContext('marker'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(Marker::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <marker class="default-class">
-            value
-            </marker>
-            HTML,
-            LineEndingNormalizer::normalize(
-                Marker::tag()->content('value')->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(Marker::class, []);
     }
 
     public function testRenderWithId(): void
@@ -520,9 +514,17 @@ final class MarkerTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(Marker::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.marker',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -531,12 +533,14 @@ final class MarkerTest extends TestCase
             </marker>
             HTML,
             LineEndingNormalizer::normalize(
-                Marker::tag(['id' => 'id-user'])->content('value')->render(),
+                Marker::tag()
+                    ->config($config, new ComponentContext('marker'))
+                    ->id('id-user')
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(Marker::class, []);
     }
 
     public function testRenderWithViewBox(): void

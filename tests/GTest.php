@@ -9,11 +9,11 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\G;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see G::tag()}.
  *
  * {@see G} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class GTest extends TestCase
@@ -201,8 +201,18 @@ final class GTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.g',
+                    new Cookbook(new Call('class', 'default-class')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <g class="default-class">
@@ -210,9 +220,12 @@ final class GTest extends TestCase
             </g>
             HTML,
             LineEndingNormalizer::normalize(
-                G::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+                G::tag()
+                    ->config($config, new ComponentContext('g'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
     }
 
@@ -274,25 +287,6 @@ final class GTest extends TestCase
             ),
             "Failed asserting that element renders correctly with 'fill-rule' attribute.",
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(G::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <g class="default-class">
-            value
-            </g>
-            HTML,
-            LineEndingNormalizer::normalize(
-                G::tag()->content('value')->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(G::class, []);
     }
 
     public function testRenderWithId(): void
@@ -565,9 +559,17 @@ final class GTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(G::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.g',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -576,12 +578,14 @@ final class GTest extends TestCase
             </g>
             HTML,
             LineEndingNormalizer::normalize(
-                G::tag(['id' => 'id-user'])->content('value')->render(),
+                G::tag()
+                    ->config($config, new ComponentContext('g'))
+                    ->id('id-user')
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(G::class, []);
     }
 
     public function testReturnNewInstanceWhenSettingAttribute(): void

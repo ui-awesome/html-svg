@@ -7,12 +7,11 @@ namespace UIAwesome\Html\Svg;
 use BackedEnum;
 use InvalidArgumentException;
 use Stringable;
+use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Helper\Validator;
-use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
-use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
-use UIAwesome\Html\Svg\Values\SvgAttribute;
+use UIAwesome\Html\Svg\Values\{PreserveAspectRatio, SvgAttribute};
 use UnitEnum;
 
 /**
@@ -35,9 +34,9 @@ use UnitEnum;
  * ```
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol
- * {@see BaseSvgBlockTag} for the base implementation.
+ * {@see BaseBlock} for the base block-level implementation.
  */
-final class Symbol extends BaseSvgBlockTag
+final class Symbol extends BaseBlock
 {
     /**
      * Sets the `height` attribute.

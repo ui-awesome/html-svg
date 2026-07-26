@@ -9,11 +9,11 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Filter;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 
 /**
@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Filter::tag()}.
  *
  * {@see Filter} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class FilterTest extends TestCase
@@ -201,8 +201,18 @@ final class FilterTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.filter',
+                    new Cookbook(new Call('class', 'default-class')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <filter class="default-class">
@@ -210,9 +220,12 @@ final class FilterTest extends TestCase
             </filter>
             HTML,
             LineEndingNormalizer::normalize(
-                Filter::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+                Filter::tag()
+                    ->config($config, new ComponentContext('filter'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
     }
 
@@ -244,25 +257,6 @@ final class FilterTest extends TestCase
             ),
             "Failed asserting that element renders correctly with 'filterUnits' attribute.",
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(Filter::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <filter class="default-class">
-            value
-            </filter>
-            HTML,
-            LineEndingNormalizer::normalize(
-                Filter::tag()->content('value')->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(Filter::class, []);
     }
 
     public function testRenderWithHeight(): void
@@ -415,9 +409,17 @@ final class FilterTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(Filter::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.filter',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -426,12 +428,14 @@ final class FilterTest extends TestCase
             </filter>
             HTML,
             LineEndingNormalizer::normalize(
-                Filter::tag(['id' => 'id-user'])->content('value')->render(),
+                Filter::tag()
+                    ->config($config, new ComponentContext('filter'))
+                    ->id('id-user')
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(Filter::class, []);
     }
 
     public function testRenderWithWidth(): void

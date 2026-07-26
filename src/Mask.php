@@ -7,8 +7,8 @@ namespace UIAwesome\Html\Svg;
 use BackedEnum;
 use InvalidArgumentException;
 use Stringable;
+use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Helper\Validator;
-use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, MaskType, SvgAttribute};
 use UnitEnum;
@@ -34,9 +34,9 @@ use UnitEnum;
  * ```
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask
- * {@see BaseSvgBlockTag} for the base implementation.
+ * {@see BaseBlock} for the base block-level implementation.
  */
-final class Mask extends BaseSvgBlockTag
+final class Mask extends BaseBlock
 {
     /**
      * Sets the `height` attribute.

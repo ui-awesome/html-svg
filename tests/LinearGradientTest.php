@@ -9,11 +9,11 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\LinearGradient;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
 
 /**
@@ -23,7 +23,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SpreadMethod, SvgAttribute};
  * {@see LinearGradient::tag()}.
  *
  * {@see LinearGradient} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('linearGradient')]
 final class LinearGradientTest extends TestCase
@@ -201,36 +201,30 @@ final class LinearGradientTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.linearGradient',
+                    new Cookbook(new Call('class', 'default-class')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <linearGradient class="default-class">
             </linearGradient>
             HTML,
             LineEndingNormalizer::normalize(
-                LinearGradient::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+                LinearGradient::tag()
+                    ->config($config, new ComponentContext('linearGradient'))
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(LinearGradient::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <linearGradient class="default-class">
-            </linearGradient>
-            HTML,
-            LineEndingNormalizer::normalize(
-                LinearGradient::tag()->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(LinearGradient::class, []);
     }
 
     public function testRenderWithGradientTransform(): void
@@ -398,9 +392,17 @@ final class LinearGradientTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(LinearGradient::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.linearGradient',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -408,12 +410,13 @@ final class LinearGradientTest extends TestCase
             </linearGradient>
             HTML,
             LineEndingNormalizer::normalize(
-                LinearGradient::tag(['id' => 'id-user'])->render(),
+                LinearGradient::tag()
+                    ->config($config, new ComponentContext('linearGradient'))
+                    ->id('id-user')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(LinearGradient::class, []);
     }
 
     public function testRenderWithX1(): void
