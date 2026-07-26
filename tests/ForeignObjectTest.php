@@ -9,10 +9,10 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\ForeignObject;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 
 /**
  * Unit tests for {@see ForeignObject} element rendering, content, and attribute handling.
@@ -21,7 +21,7 @@ use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
  * {@see ForeignObject::tag()}.
  *
  * {@see ForeignObject} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class ForeignObjectTest extends TestCase
@@ -200,8 +200,18 @@ final class ForeignObjectTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.foreignObject',
+                    new Cookbook(new Call('class', 'default-class')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <foreignObject class="default-class">
@@ -209,29 +219,13 @@ final class ForeignObjectTest extends TestCase
             </foreignObject>
             HTML,
             LineEndingNormalizer::normalize(
-                ForeignObject::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+                ForeignObject::tag()
+                    ->config($config, new ComponentContext('foreignObject'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(ForeignObject::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <foreignObject class="default-class">
-            value
-            </foreignObject>
-            HTML,
-            LineEndingNormalizer::normalize(
-                ForeignObject::tag()->content('value')->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(ForeignObject::class, []);
     }
 
     public function testRenderWithHeight(): void
@@ -384,9 +378,17 @@ final class ForeignObjectTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(ForeignObject::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.foreignObject',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -395,12 +397,14 @@ final class ForeignObjectTest extends TestCase
             </foreignObject>
             HTML,
             LineEndingNormalizer::normalize(
-                ForeignObject::tag(['id' => 'id-user'])->content('value')->render(),
+                ForeignObject::tag()
+                    ->config($config, new ComponentContext('foreignObject'))
+                    ->id('id-user')
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(ForeignObject::class, []);
     }
 
     public function testRenderWithWidth(): void

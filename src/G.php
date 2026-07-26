@@ -6,14 +6,11 @@ namespace UIAwesome\Html\Svg;
 
 use BackedEnum;
 use InvalidArgumentException;
+use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Helper\Validator;
-use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
-use UIAwesome\Html\Svg\Values\FillRule;
-use UIAwesome\Html\Svg\Values\StrokeLineCap;
-use UIAwesome\Html\Svg\Values\StrokeLineJoin;
-use UIAwesome\Html\Svg\Values\SvgAttribute;
+use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
  * Represents the SVG `<g>` (group) element for grouping and transforming SVG content.
@@ -35,9 +32,9 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  * ```
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
- * {@see BaseSvgBlockTag} for the base implementation.
+ * {@see BaseBlock} for the base block-level implementation.
  */
-final class G extends BaseSvgBlockTag
+final class G extends BaseBlock
 {
     /**
      * Sets the SVG `fill` attribute for the element.

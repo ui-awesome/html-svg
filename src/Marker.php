@@ -6,12 +6,11 @@ namespace UIAwesome\Html\Svg;
 
 use BackedEnum;
 use InvalidArgumentException;
+use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Helper\Validator;
-use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
-use UIAwesome\Html\Svg\Values\{MarkerUnits, Orient, SvgAttribute};
-use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
+use UIAwesome\Html\Svg\Values\{MarkerUnits, Orient, PreserveAspectRatio, SvgAttribute};
 
 /**
  * Represents the SVG `<marker>` element for defining arrowheads and other markers.
@@ -36,9 +35,9 @@ use UIAwesome\Html\Svg\Values\PreserveAspectRatio;
  * ```
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker
- * {@see BaseSvgBlockTag} for the base implementation.
+ * {@see BaseBlock} for the base block-level implementation.
  */
-final class Marker extends BaseSvgBlockTag
+final class Marker extends BaseBlock
 {
     /**
      * Sets the SVG `markerHeight` attribute for the marker element.

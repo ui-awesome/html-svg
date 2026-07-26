@@ -9,11 +9,11 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\Polygon;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
 /**
@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Polygon::tag()}.
  *
  * {@see Polygon} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class PolygonTest extends TestCase
@@ -165,16 +165,28 @@ final class PolygonTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.polygon',
+                    new Cookbook(new Call('class', 'default-class'), new Call('title', 'default-title')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <polygon class="default-class" title="default-title">
             HTML,
             LineEndingNormalizer::normalize(
-                Polygon::tag()->addDefaultProvider(DefaultProvider::class)->render(),
+                Polygon::tag()
+                    ->config($config, new ComponentContext('polygon'))
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
     }
 
@@ -241,23 +253,6 @@ final class PolygonTest extends TestCase
             ),
             "Failed asserting that element renders correctly with 'fill-rule' attribute.",
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(Polygon::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <polygon class="default-class">
-            HTML,
-            LineEndingNormalizer::normalize(
-                Polygon::tag()->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(Polygon::class, []);
     }
 
     public function testRenderWithHidden(): void
@@ -546,21 +541,30 @@ final class PolygonTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(Polygon::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.polygon',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
             <polygon class="from-global" id="id-user">
             HTML,
             LineEndingNormalizer::normalize(
-                Polygon::tag(['id' => 'id-user'])->render(),
+                Polygon::tag()
+                    ->config($config, new ComponentContext('polygon'))
+                    ->id('id-user')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(Polygon::class, []);
     }
 
     public function testReturnNewInstanceWhenSettingAttribute(): void

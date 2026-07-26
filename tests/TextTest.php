@@ -9,10 +9,10 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Text;
 use UIAwesome\Html\Svg\Values\{
     DominantBaseline,
@@ -31,7 +31,7 @@ use UIAwesome\Html\Svg\Values\{
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see Text::tag()}.
  *
  * {@see Text} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class TextTest extends TestCase
@@ -203,8 +203,18 @@ final class TextTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.text',
+                    new Cookbook(new Call('class', 'default-class'), new Call('title', 'default-title')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <text class="default-class" title="default-title">
@@ -212,9 +222,12 @@ final class TextTest extends TestCase
             </text>
             HTML,
             LineEndingNormalizer::normalize(
-                Text::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+                Text::tag()
+                    ->config($config, new ComponentContext('text'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
     }
 
@@ -326,25 +339,6 @@ final class TextTest extends TestCase
             HTML,
             Text::tag()->fontWeight('bold')->render(),
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(Text::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <text class="default-class">
-            value
-            </text>
-            HTML,
-            LineEndingNormalizer::normalize(
-                Text::tag()->content('value')->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(Text::class, []);
     }
 
     public function testRenderWithId(): void
@@ -597,9 +591,17 @@ final class TextTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(Text::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.text',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -607,12 +609,13 @@ final class TextTest extends TestCase
             </text>
             HTML,
             LineEndingNormalizer::normalize(
-                Text::tag(['id' => 'id-user'])->render(),
+                Text::tag()
+                    ->config($config, new ComponentContext('text'))
+                    ->id('id-user')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(Text::class, []);
     }
 
     public function testRenderWithWordSpacing(): void

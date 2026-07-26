@@ -9,11 +9,11 @@ use PHPForge\Support\LineEndingNormalizer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Values\{Aria, Data, Language, Role};
-use UIAwesome\Html\Core\Factory\SimpleFactory;
+use UIAwesome\Html\Core\Config\{Call, ComponentContext, Config, Cookbook, Recipe};
 use UIAwesome\Html\Helper\Enum;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Svg\ClipPath;
-use UIAwesome\Html\Svg\Tests\Support\Stub\DefaultProvider;
+use UIAwesome\Html\Svg\Tests\Support\Stub\Theme;
 use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
 
 /**
@@ -22,7 +22,7 @@ use UIAwesome\Html\Svg\Values\{CoordinateUnits, SvgAttribute};
  * Verifies rendered output, configuration precedence, immutability, and validation behavior for {@see ClipPath::tag()}.
  *
  * {@see ClipPath} for element implementation details.
- * {@see SimpleFactory} for default configuration management.
+ * {@see Config} for application-scoped configuration.
  */
 #[Group('svg')]
 final class ClipPathTest extends TestCase
@@ -231,8 +231,18 @@ final class ClipPathTest extends TestCase
         );
     }
 
-    public function testRenderWithDefaultProvider(): void
+    public function testRenderWithDefaultsFromConfig(): void
     {
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.clipPath',
+                    new Cookbook(new Call('class', 'default-class')),
+                ),
+            ),
+        );
+
         self::assertEquals(
             <<<HTML
             <clipPath class="default-class">
@@ -240,29 +250,13 @@ final class ClipPathTest extends TestCase
             </clipPath>
             HTML,
             LineEndingNormalizer::normalize(
-                ClipPath::tag()->addDefaultProvider(DefaultProvider::class)->content('value')->render(),
+                ClipPath::tag()
+                    ->config($config, new ComponentContext('clipPath'))
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that default provider is applied correctly.',
+            'Failed asserting that config recipes are applied correctly.',
         );
-    }
-
-    public function testRenderWithGlobalDefaultsAreApplied(): void
-    {
-        SimpleFactory::setDefaults(ClipPath::class, ['class' => 'default-class']);
-
-        self::assertEquals(
-            <<<HTML
-            <clipPath class="default-class">
-            value
-            </clipPath>
-            HTML,
-            LineEndingNormalizer::normalize(
-                ClipPath::tag()->content('value')->render(),
-            ),
-            'Failed asserting that global defaults are applied correctly.',
-        );
-
-        SimpleFactory::setDefaults(ClipPath::class, []);
     }
 
     public function testRenderWithId(): void
@@ -400,9 +394,17 @@ final class ClipPathTest extends TestCase
         );
     }
 
-    public function testRenderWithUserOverridesGlobalDefaults(): void
+    public function testRenderWithUserOverridesConfigDefaults(): void
     {
-        SimpleFactory::setDefaults(ClipPath::class, ['class' => 'from-global', 'id' => 'id-global']);
+        $config = new Config(
+            new Theme(
+                'svg',
+                new Recipe(
+                    'svg.clipPath',
+                    new Cookbook(new Call('class', 'from-global'), new Call('id', 'id-global')),
+                ),
+            ),
+        );
 
         self::assertEquals(
             <<<HTML
@@ -411,12 +413,14 @@ final class ClipPathTest extends TestCase
             </clipPath>
             HTML,
             LineEndingNormalizer::normalize(
-                ClipPath::tag(['id' => 'id-user'])->content('value')->render(),
+                ClipPath::tag()
+                    ->config($config, new ComponentContext('clipPath'))
+                    ->id('id-user')
+                    ->content('value')
+                    ->render(),
             ),
-            'Failed asserting that user-defined attributes override global defaults correctly.',
+            'Failed asserting that local calls override config defaults correctly.',
         );
-
-        SimpleFactory::setDefaults(ClipPath::class, []);
     }
 
     public function testReturnNewInstanceWhenSettingAttribute(): void

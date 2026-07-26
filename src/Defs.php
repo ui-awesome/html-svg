@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Svg;
 
 use BackedEnum;
-use UIAwesome\Html\Svg\Base\BaseSvgBlockTag;
+use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Svg\Tag\SvgBlock;
 
 /**
@@ -38,9 +38,9 @@ use UIAwesome\Html\Svg\Tag\SvgBlock;
  * ```
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
- * {@see BaseSvgBlockTag} for the base implementation.
+ * {@see BaseBlock} for the base block-level implementation.
  */
-final class Defs extends BaseSvgBlockTag
+final class Defs extends BaseBlock
 {
     /**
      * Returns the tag enumeration for the `<defs>` element.
