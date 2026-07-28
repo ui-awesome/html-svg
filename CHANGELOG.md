@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - test: add `EnumContractTest` and `EnumContractProvider` freezing the case name and backed value of every package enum.
 - test: replace `SimpleFactory::setDefaults()`, `addDefaultProvider()`, and `addThemeProvider()` usage with `Config`, `ComponentContext`, and factory arguments.
 - test: remove `BaseSvgBlockTagTest` and the `InspectableSvgBlockTag`, `DefaultProvider`, and `DefaultThemeProvider` stubs.
+- fix: remove hardcoded Tailwind CSS classes from the `Bootstrap5` bundled icons (`globe`, `moon`, `sun`).
 
 ## 0.4.1 May 21, 2026
 
