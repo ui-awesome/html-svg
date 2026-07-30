@@ -38,7 +38,7 @@
 ### Installation
 
 ```bash
-composer require ui-awesome/html-svg:^0.4
+composer require ui-awesome/html-svg:^0.5
 ```
 
 ### Quick start
