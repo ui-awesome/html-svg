@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.5.1 Under development
 
+- docs: simplify upgrade guidance around SVG base classes and configuration.
+
 ## 0.5.0 July 30, 2026
 
 - docs: Correct image source order in `README.md` for feature overview.
