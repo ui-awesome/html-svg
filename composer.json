@@ -29,12 +29,12 @@
         "ext-dom": "*",
         "ext-libxml": "*",
         "enshrined/svg-sanitize": "^0.22",
-        "ui-awesome/html-attribute": "^0.7",
+        "ui-awesome/html-attribute": "^0.8",
         "ui-awesome/html-contracts": "^0.2",
-        "ui-awesome/html-core": "^0.7",
+        "ui-awesome/html-core": "^0.8",
         "ui-awesome/html-helper": "^0.7",
         "ui-awesome/html-interop": "^0.4",
-        "ui-awesome/html-mixin": "^0.7"
+        "ui-awesome/html-mixin": "^0.8"
     },
     "require-dev": {
         "infection/infection": "^0.34",
@@ -60,7 +60,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "0.6.x-dev"
+            "dev-main": "0.7.x-dev"
         },
         "scaffold": {
             "allowed-packages": [
