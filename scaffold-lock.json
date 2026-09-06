@@ -34,24 +34,6 @@
             "source": "metadata/.styleci.yml",
             "mode": "replace"
         },
-        ".prettierignore": {
-            "hash": "sha256:f9190dda61229a5daf8df6113600eb8183bbf98d2a89d7b4944a889ddca0ac0d",
-            "provider": "php-forge/baseline",
-            "source": "metadata/.prettierignore",
-            "mode": "replace"
-        },
-        ".prettierrc.json": {
-            "hash": "sha256:a03ca958c95e39bbfd12af061402d0caab14bb4db2997e2b5279f1cd801c71e0",
-            "provider": "php-forge/baseline",
-            "source": "metadata/.prettierrc.json",
-            "mode": "replace"
-        },
-        ".stylelintignore": {
-            "hash": "sha256:12186f0a5c42b4f894f7bdda1b1ca5ebc69f92d906aa9075a459d4d08fe4edc1",
-            "provider": "php-forge/baseline",
-            "source": "metadata/.stylelintignore",
-            "mode": "replace"
-        },
         "composer-require-checker.json": {
             "hash": "sha256:0cc82e1bb44b9b090ea8ff2f5c6ee51605d031eb8ac6ae8042a8584c2f14c91a",
             "provider": "php-forge/baseline",
