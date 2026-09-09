@@ -28,7 +28,7 @@
         "php": "^8.3",
         "ext-dom": "*",
         "ext-libxml": "*",
-        "enshrined/svg-sanitize": "^0.22",
+        "enshrined/svg-sanitize": "^1.0",
         "ui-awesome/html-attribute": "^0.8",
         "ui-awesome/html-contracts": "^0.2",
         "ui-awesome/html-core": "^0.8",
