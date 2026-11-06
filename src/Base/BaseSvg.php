@@ -13,7 +13,7 @@ use RuntimeException;
 use Stringable;
 use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Core\Html;
-use UIAwesome\Html\Helper\{Attributes, Enum, Validator};
+use UIAwesome\Html\Helper\{Attributes, Encode, Enum, Validator};
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\{FillRule, PreserveAspectRatio, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 use UnitEnum;
@@ -187,7 +187,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
         $titleAttribute = $this->getTitleAttribute();
 
         if ($titleAttribute !== '') {
-            $content = Html::element(SvgAttribute::TITLE, $this->getTitleAttribute(), []) . PHP_EOL;
+            $content = Html::element(SvgAttribute::TITLE, Encode::content($titleAttribute), []) . PHP_EOL;
         }
 
         return $content . parent::getContent();
@@ -714,12 +714,14 @@ abstract class BaseSvg extends BaseBlock implements Stringable
             return false;
         }
 
-        $normalizedAttributes = Attributes::normalizeAttributes($this->attributes, false);
+        $normalizedAttributes = Attributes::normalizeAttributes($this->getAttributes(), false);
 
         $titleAttribute = $this->getTitleAttribute();
 
         if ($titleAttribute !== '') {
-            $titleNode = $svg->createElement('title', $titleAttribute);
+            $titleNode = $svg->createElement('title');
+
+            $titleNode->appendChild($svg->createTextNode($titleAttribute));
 
             if ($renderedSvg->firstChild !== null) {
                 $renderedSvg->insertBefore($titleNode, $renderedSvg->firstChild);

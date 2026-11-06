@@ -396,14 +396,6 @@ final class SvgTest extends TestCase
         );
     }
 
-    public function testRenderWithFileContainingXmlButNoSvgTag(): void
-    {
-        self::assertEmpty(
-            Svg::tag()->filePath(__DIR__ . '/Support/Stub/no-svg-tag.svg')->render(),
-            'Failed asserting that render returns empty string when SVG tag is missing.',
-        );
-    }
-
     public function testRenderWithFilePath(): void
     {
         self::assertEquals(
@@ -1436,6 +1428,18 @@ final class SvgTest extends TestCase
         );
 
         Svg::tag()->attributes(['title' => []])->content('value')->render();
+    }
+
+    public function testThrowRuntimeExceptionForSettingFileContainingXmlButNoSvgTag(): void
+    {
+        $filePath = __DIR__ . '/Support/Stub/no-svg-tag.svg';
+
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage(
+            \UIAwesome\Html\Svg\Exception\Message::FAILED_TO_SANITIZE_SVG->getMessage($filePath),
+        );
+
+        Svg::tag()->filePath($filePath)->render();
     }
 
     public function testThrowRuntimeExceptionForSettingFilePath(): void

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.6.2 Under development
 
+- fix: preserve SVG title text and require html-helper `^0.7.3` and svg-sanitize `^1.1.1` for explicit non-SVG rejection.
+
 ## 0.6.1 October 12, 2026
 
 - refactor: remove prettier and stylelint templates now provided by `php-forge/baseline`.
