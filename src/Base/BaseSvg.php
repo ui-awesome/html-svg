@@ -7,17 +7,17 @@ namespace UIAwesome\Html\Svg\Base;
 use DOMDocument;
 use DOMElement;
 use enshrined\svgSanitize\Sanitizer;
-use Exception;
 use InvalidArgumentException;
 use RuntimeException;
 use Stringable;
 use UIAwesome\Html\Core\Element\BaseBlock;
 use UIAwesome\Html\Core\Html;
-use UIAwesome\Html\Helper\{Attributes, Enum, Validator};
+use UIAwesome\Html\Helper\{Attributes, Encode, Enum, Validator};
 use UIAwesome\Html\Svg\Exception\Message;
 use UIAwesome\Html\Svg\Values\{FillRule, PreserveAspectRatio, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 use UnitEnum;
 
+use function assert;
 use function file_get_contents;
 use function is_string;
 
@@ -187,7 +187,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
         $titleAttribute = $this->getTitleAttribute();
 
         if ($titleAttribute !== '') {
-            $content = Html::element(SvgAttribute::TITLE, $this->getTitleAttribute(), []) . PHP_EOL;
+            $content = Html::element(SvgAttribute::TITLE, Encode::content($titleAttribute), []) . PHP_EOL;
         }
 
         return $content . parent::getContent();
@@ -668,9 +668,9 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      *
      * @throws RuntimeException if the file cannot be read or sanitized.
      *
-     * @return DOMElement|null Root SVG element, or `null` on failure.
+     * @return DOMElement Root element of the sanitized SVG document.
      */
-    private function loadSvgFile(DOMDocument $svg): DOMElement|null
+    private function loadSvgFile(DOMDocument $svg): DOMElement
     {
         $sanitizer = new Sanitizer();
 
@@ -682,11 +682,7 @@ abstract class BaseSvg extends BaseBlock implements Stringable
             );
         }
 
-        try {
-            $cleanedSvg = $sanitizer->sanitize($fileSvg);
-        } catch (Exception) {
-            return null;
-        }
+        $cleanedSvg = $sanitizer->sanitize($fileSvg);
 
         if ($cleanedSvg === false || $cleanedSvg === '') {
             throw new RuntimeException(
@@ -696,7 +692,12 @@ abstract class BaseSvg extends BaseBlock implements Stringable
 
         $svg->loadXML($cleanedSvg, LIBXML_NOBLANKS);
 
-        return $svg->getElementsByTagName((string) $this->getTag()->value)->item(0);
+        $root = $svg->documentElement;
+
+        // The sanitizer accepts only documents with a single SVG root.
+        assert($root instanceof DOMElement);
+
+        return $root;
     }
 
     /**
@@ -710,16 +711,14 @@ abstract class BaseSvg extends BaseBlock implements Stringable
 
         $renderedSvg = $this->loadSvgFile($svg);
 
-        if ($renderedSvg === null) {
-            return false;
-        }
-
-        $normalizedAttributes = Attributes::normalizeAttributes($this->attributes, false);
+        $normalizedAttributes = Attributes::normalizeAttributes($this->getAttributes(), false);
 
         $titleAttribute = $this->getTitleAttribute();
 
         if ($titleAttribute !== '') {
-            $titleNode = $svg->createElement('title', $titleAttribute);
+            $titleNode = $svg->createElement('title');
+
+            $titleNode->appendChild($svg->createTextNode($titleAttribute));
 
             if ($renderedSvg->firstChild !== null) {
                 $renderedSvg->insertBefore($titleNode, $renderedSvg->firstChild);
