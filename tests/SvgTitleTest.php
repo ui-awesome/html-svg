@@ -217,7 +217,8 @@ final class SvgTitleTest extends TestCase
             'An SVG root must exist.',
         );
         self::assertSame(
-            'svg', $document->documentElement->localName,
+            'svg',
+            $document->documentElement->localName,
             'Root element must remain SVG.',
         );
 

@@ -70,6 +70,7 @@ final class SvgTitleProvider
             'SVG file with path' => ['php.svg'],
         ];
     }
+
     /**
      * @return array<string, array{string|null, string, string}>
      */
