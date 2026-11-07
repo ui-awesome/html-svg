@@ -26,10 +26,6 @@ composer.lock
 # netbeans project (if present)
 nbproject
 
-# node_modules (if present)
-node_modules
-package-lock.json
-
 # phpstorm project (if present)
 .idea
 
@@ -39,6 +35,9 @@ package-lock.json
 # phpunit (if present)
 .phpunit.cache
 .phpunit.result.cache
+
+# Private maintainer files (if present)
+/internal/
 
 # vagrant (if present)
 .vagrant
