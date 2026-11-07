@@ -1,7 +1,5 @@
 {
     "Exclude": [
-        "\\.min\\.css$",
-        "\\.min\\.js$",
         "^\\.claude/",
         "^\\.codex/",
         "^\\.config/gh/",
@@ -17,7 +15,7 @@
         "^runtime/",
         "^tests/runtime/",
         "^vendor/",
-        "phpstan-baseline\\.neon$",
-        "scaffold-lock\\.json$"
+        "^internal/",
+        "phpstan-baseline\\.neon$"
     ]
 }
