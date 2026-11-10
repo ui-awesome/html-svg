@@ -31,7 +31,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect accesskey="k">
+            <rect accesskey="k"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->accesskey('k')->render(),
@@ -44,7 +44,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect aria-pressed="true">
+            <rect aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->addAriaAttribute('pressed', true)->render(),
@@ -57,7 +57,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect aria-pressed="true">
+            <rect aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
@@ -70,7 +70,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect data-value="value">
+            <rect data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->addDataAttribute('value', 'value')->render(),
@@ -83,7 +83,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect data-value="value">
+            <rect data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
@@ -96,7 +96,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            <rect aria-controls="modal-1" aria-hidden="false" aria-label="Close"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()
@@ -117,7 +117,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect class="value">
+            <rect class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->attributes(['class' => 'value'])->render(),
@@ -130,7 +130,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect class="value">
+            <rect class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->class('value')->render(),
@@ -143,7 +143,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect data-value="test-value">
+            <rect data-value="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->dataAttributes(['value' => 'test-value'])->render(),
@@ -156,7 +156,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect class="default-class">
+            <rect class="default-class"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag(['class' => 'default-class'])->render(),
@@ -179,7 +179,7 @@ final class RectTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <rect class="default-class" title="default-title">
+            <rect class="default-class" title="default-title"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()
@@ -194,7 +194,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect dir="rtl">
+            <rect dir="rtl"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->dir('rtl')->render(),
@@ -207,7 +207,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect fill="#ff0000">
+            <rect fill="#ff0000"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->fill('#ff0000')->render(),
@@ -220,7 +220,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect fill-opacity="0.7">
+            <rect fill-opacity="0.7"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->fillOpacity('0.7')->render(),
@@ -233,7 +233,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect fill-rule="evenodd">
+            <rect fill-rule="evenodd"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->fillRule('evenodd')->render(),
@@ -246,7 +246,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect fill-rule="nonzero">
+            <rect fill-rule="nonzero"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->fillRule(FillRule::NONZERO)->render(),
@@ -259,7 +259,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect height="150">
+            <rect height="150"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->height(150)->render(),
@@ -272,7 +272,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect hidden>
+            <rect hidden="hidden"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->hidden(true)->render(),
@@ -285,7 +285,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect id="test-id">
+            <rect id="test-id"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->id('test-id')->render(),
@@ -298,7 +298,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect lang="es">
+            <rect lang="es"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->lang(Language::SPANISH)->render(),
@@ -311,7 +311,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect opacity="0.5">
+            <rect opacity="0.5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->opacity('0.5')->render(),
@@ -324,7 +324,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect pathLength="400">
+            <rect pathLength="400"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->pathLength(400)->render(),
@@ -337,7 +337,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect role="banner">
+            <rect role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->role('banner')->render(),
@@ -350,7 +350,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect role="banner">
+            <rect role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->role(Role::BANNER)->render(),
@@ -363,7 +363,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect rx="10">
+            <rect rx="10"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->rx(10)->render(),
@@ -376,7 +376,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect ry="5">
+            <rect ry="5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->ry(5)->render(),
@@ -389,7 +389,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect stroke="#00ff00">
+            <rect stroke="#00ff00"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->stroke('#00ff00')->render(),
@@ -402,7 +402,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect stroke-dasharray="5,5">
+            <rect stroke-dasharray="5,5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->strokeDashArray('5,5')->render(),
@@ -415,7 +415,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect stroke-linecap="round">
+            <rect stroke-linecap="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->strokeLineCap('round')->render(),
@@ -428,7 +428,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect stroke-linecap="square">
+            <rect stroke-linecap="square"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->strokeLineCap(StrokeLineCap::SQUARE)->render(),
@@ -441,7 +441,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect stroke-linejoin="round">
+            <rect stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->strokeLineJoin('round')->render(),
@@ -454,7 +454,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect stroke-linejoin="round">
+            <rect stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
@@ -467,7 +467,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect stroke-miterlimit="10">
+            <rect stroke-miterlimit="10"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->strokeMiterlimit(10)->render(),
@@ -480,7 +480,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect stroke-opacity="0.8">
+            <rect stroke-opacity="0.8"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->strokeOpacity(0.8)->render(),
@@ -493,7 +493,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect stroke-width="2">
+            <rect stroke-width="2"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->strokeWidth('2')->render(),
@@ -506,7 +506,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect style='test-value'>
+            <rect style='test-value'/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->style('test-value')->render(),
@@ -519,7 +519,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect title="test-value">
+            <rect title="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->title('test-value')->render(),
@@ -532,7 +532,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect>
+            <rect/>
             HTML,
             LineEndingNormalizer::normalize(
                 (string) Rect::tag(),
@@ -545,7 +545,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect transform="rotate(45)">
+            <rect transform="rotate(45)"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->transform('rotate(45)')->render(),
@@ -558,7 +558,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect translate="no">
+            <rect translate="no"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->translate(false)->render(),
@@ -581,7 +581,7 @@ final class RectTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <rect class="from-global" id="id-user">
+            <rect class="from-global" id="id-user"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()
@@ -597,7 +597,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect width="200">
+            <rect width="200"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->width(200)->render(),
@@ -610,7 +610,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect x="50">
+            <rect x="50"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->x(50)->render(),
@@ -623,7 +623,7 @@ final class RectTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <rect y="75">
+            <rect y="75"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Rect::tag()->y(75)->render(),

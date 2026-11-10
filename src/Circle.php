@@ -9,6 +9,7 @@ use InvalidArgumentException;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Internal\RendersEmptySvg;
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
@@ -20,22 +21,13 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  *
  * The `<circle>` element is an SVG basic shape used to create circles based on a center point and a radius.
  *
- * Usage example:
- * ```php
- * use UIAwesome\Html\Svg\Circle;
- *
- * echo Circle::tag()
- *     ->cx(60)->cy(60)->r(50)
- *     ->fill('currentColor')
- *     ->opacity(0.9)
- *     ->render();
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle
  * {@see BaseVoid} for the base implementation.
  */
 final class Circle extends BaseVoid
 {
+    use RendersEmptySvg;
+
     /**
      * Sets the SVG `cx` attribute for the element.
      *

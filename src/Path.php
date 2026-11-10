@@ -9,6 +9,7 @@ use InvalidArgumentException;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Internal\RendersEmptySvg;
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 use UIAwesome\Html\Svg\Values\FillRule;
 use UIAwesome\Html\Svg\Values\StrokeLineCap;
@@ -23,20 +24,12 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * The `<path>` element draws arbitrary shapes defined by a path data string.
  *
- * Usage example:
- * ```php
- * use UIAwesome\Html\Svg\Path;
- *
- * echo Path::tag()
- *     ->d('M10 10H90V90H10z')
- *     ->fill('currentColor')
- *     ->render();
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path
  */
 final class Path extends BaseVoid
 {
+    use RendersEmptySvg;
+
     /**
      * Sets the SVG `d` attribute for the element.
      *

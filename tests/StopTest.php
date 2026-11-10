@@ -28,7 +28,7 @@ final class StopTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <stop>
+            <stop/>
             HTML,
             LineEndingNormalizer::normalize(
                 Stop::tag()->render(),
@@ -41,7 +41,7 @@ final class StopTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <stop stop-color="#000">
+            <stop stop-color="#000"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Stop::tag(['stopColor' => '#000'])->render(),
@@ -64,7 +64,7 @@ final class StopTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <stop class="default-class" title="default-title">
+            <stop class="default-class" title="default-title"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Stop::tag()
@@ -79,7 +79,7 @@ final class StopTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <stop offset="50%">
+            <stop offset="50%"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Stop::tag()->offset('50%')->render(),
@@ -92,7 +92,7 @@ final class StopTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <stop stop-color="#ff0000">
+            <stop stop-color="#ff0000"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Stop::tag()->stopColor('#ff0000')->render(),
@@ -105,7 +105,7 @@ final class StopTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <stop stop-opacity="0.5">
+            <stop stop-opacity="0.5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Stop::tag()->stopOpacity(0.5)->render(),

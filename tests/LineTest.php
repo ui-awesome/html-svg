@@ -31,7 +31,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line accesskey="k">
+            <line accesskey="k"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->accesskey('k')->render(),
@@ -44,7 +44,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line aria-pressed="true">
+            <line aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->addAriaAttribute('pressed', true)->render(),
@@ -57,7 +57,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line aria-pressed="true">
+            <line aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
@@ -70,7 +70,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line data-value="value">
+            <line data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->addDataAttribute('value', 'value')->render(),
@@ -83,7 +83,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line data-value="value">
+            <line data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
@@ -96,7 +96,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            <line aria-controls="modal-1" aria-hidden="false" aria-label="Close"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()
@@ -117,7 +117,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line class="value">
+            <line class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->attributes(['class' => 'value'])->render(),
@@ -130,7 +130,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line class="value">
+            <line class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->class('value')->render(),
@@ -143,7 +143,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line data-value="test-value">
+            <line data-value="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->dataAttributes(['value' => 'test-value'])->render(),
@@ -156,7 +156,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line class="default-class">
+            <line class="default-class"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag(['class' => 'default-class'])->render(),
@@ -179,7 +179,7 @@ final class LineTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <line class="default-class" title="default-title">
+            <line class="default-class" title="default-title"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()
@@ -194,7 +194,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line dir="rtl">
+            <line dir="rtl"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->dir('rtl')->render(),
@@ -207,7 +207,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line fill="#ff0000">
+            <line fill="#ff0000"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->fill('#ff0000')->render(),
@@ -220,7 +220,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line fill-opacity="0.7">
+            <line fill-opacity="0.7"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->fillOpacity('0.7')->render(),
@@ -233,7 +233,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line fill-rule="evenodd">
+            <line fill-rule="evenodd"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->fillRule('evenodd')->render(),
@@ -246,7 +246,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line fill-rule="nonzero">
+            <line fill-rule="nonzero"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->fillRule(FillRule::NONZERO)->render(),
@@ -259,7 +259,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line hidden>
+            <line hidden="hidden"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->hidden(true)->render(),
@@ -272,7 +272,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line id="test-id">
+            <line id="test-id"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->id('test-id')->render(),
@@ -285,7 +285,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line lang="es">
+            <line lang="es"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->lang(Language::SPANISH)->render(),
@@ -298,7 +298,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line opacity="0.5">
+            <line opacity="0.5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->opacity('0.5')->render(),
@@ -311,7 +311,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line pathLength="200">
+            <line pathLength="200"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->pathLength(200)->render(),
@@ -324,7 +324,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line role="banner">
+            <line role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->role('banner')->render(),
@@ -337,7 +337,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line role="banner">
+            <line role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->role(Role::BANNER)->render(),
@@ -350,7 +350,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line stroke="#00ff00">
+            <line stroke="#00ff00"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->stroke('#00ff00')->render(),
@@ -363,7 +363,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line stroke-dasharray="5,5">
+            <line stroke-dasharray="5,5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->strokeDashArray('5,5')->render(),
@@ -376,7 +376,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line stroke-linecap="round">
+            <line stroke-linecap="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->strokeLineCap('round')->render(),
@@ -389,7 +389,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line stroke-linecap="square">
+            <line stroke-linecap="square"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->strokeLineCap(StrokeLineCap::SQUARE)->render(),
@@ -402,7 +402,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line stroke-linejoin="round">
+            <line stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->strokeLineJoin('round')->render(),
@@ -415,7 +415,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line stroke-linejoin="round">
+            <line stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
@@ -428,7 +428,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line stroke-miterlimit="10">
+            <line stroke-miterlimit="10"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->strokeMiterlimit(10)->render(),
@@ -441,7 +441,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line stroke-opacity="0.8">
+            <line stroke-opacity="0.8"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->strokeOpacity(0.8)->render(),
@@ -454,7 +454,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line stroke-width="2">
+            <line stroke-width="2"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->strokeWidth('2')->render(),
@@ -467,7 +467,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line style='test-value'>
+            <line style='test-value'/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->style('test-value')->render(),
@@ -480,7 +480,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line title="test-value">
+            <line title="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->title('test-value')->render(),
@@ -493,7 +493,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line>
+            <line/>
             HTML,
             LineEndingNormalizer::normalize(
                 (string) Line::tag(),
@@ -506,7 +506,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line transform="rotate(45)">
+            <line transform="rotate(45)"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->transform('rotate(45)')->render(),
@@ -519,7 +519,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line translate="no">
+            <line translate="no"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->translate(false)->render(),
@@ -542,7 +542,7 @@ final class LineTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <line class="from-global" id="id-user">
+            <line class="from-global" id="id-user"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()
@@ -558,7 +558,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line x1="10">
+            <line x1="10"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->x1(10)->render(),
@@ -571,7 +571,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line x2="100">
+            <line x2="100"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->x2(100)->render(),
@@ -584,7 +584,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line y1="20">
+            <line y1="20"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->y1(20)->render(),
@@ -597,7 +597,7 @@ final class LineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <line y2="200">
+            <line y2="200"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Line::tag()->y2(200)->render(),

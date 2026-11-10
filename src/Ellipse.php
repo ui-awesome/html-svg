@@ -9,6 +9,7 @@ use InvalidArgumentException;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Internal\RendersEmptySvg;
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 use UIAwesome\Html\Svg\Values\FillRule;
 use UIAwesome\Html\Svg\Values\StrokeLineCap;
@@ -23,24 +24,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * The `<ellipse>` element is an SVG basic shape used to create ellipses based on a center point and two radii.
  *
- * Usage example:
- * ```php
- * use UIAwesome\Html\Svg\Ellipse;
- *
- * echo Ellipse::tag()
- *     ->cx(60)
- *     ->cy(40)
- *     ->rx(50)
- *     ->ry(25)
- *     ->fill('currentColor')
- *     ->render();
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse
  * {@see BaseVoid} for the base implementation.
  */
 final class Ellipse extends BaseVoid
 {
+    use RendersEmptySvg;
+
     /**
      * Sets the SVG `cx` attribute for the element.
      *

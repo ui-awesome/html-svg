@@ -31,7 +31,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse accesskey="k">
+            <ellipse accesskey="k"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->accesskey('k')->render(),
@@ -44,7 +44,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse aria-pressed="true">
+            <ellipse aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->addAriaAttribute('pressed', true)->render(),
@@ -57,7 +57,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse aria-pressed="true">
+            <ellipse aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
@@ -70,7 +70,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse data-value="value">
+            <ellipse data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->addDataAttribute('value', 'value')->render(),
@@ -83,7 +83,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse data-value="value">
+            <ellipse data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
@@ -96,7 +96,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            <ellipse aria-controls="modal-1" aria-hidden="false" aria-label="Close"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()
@@ -117,7 +117,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse class="value">
+            <ellipse class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->attributes(['class' => 'value'])->render(),
@@ -130,7 +130,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse class="value">
+            <ellipse class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->class('value')->render(),
@@ -143,7 +143,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse cx="100">
+            <ellipse cx="100"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->cx(100)->render(),
@@ -156,7 +156,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse cy="150">
+            <ellipse cy="150"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->cy(150)->render(),
@@ -169,7 +169,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse data-value="test-value">
+            <ellipse data-value="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->dataAttributes(['value' => 'test-value'])->render(),
@@ -182,7 +182,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse class="default-class">
+            <ellipse class="default-class"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag(['class' => 'default-class'])->render(),
@@ -205,7 +205,7 @@ final class EllipseTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <ellipse class="default-class" title="default-title">
+            <ellipse class="default-class" title="default-title"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()
@@ -220,7 +220,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse dir="rtl">
+            <ellipse dir="rtl"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->dir('rtl')->render(),
@@ -233,7 +233,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse fill="#ff0000">
+            <ellipse fill="#ff0000"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->fill('#ff0000')->render(),
@@ -246,7 +246,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse fill-opacity="0.7">
+            <ellipse fill-opacity="0.7"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->fillOpacity('0.7')->render(),
@@ -259,7 +259,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse fill-rule="evenodd">
+            <ellipse fill-rule="evenodd"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->fillRule('evenodd')->render(),
@@ -272,7 +272,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse fill-rule="nonzero">
+            <ellipse fill-rule="nonzero"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->fillRule(FillRule::NONZERO)->render(),
@@ -285,7 +285,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse hidden>
+            <ellipse hidden="hidden"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->hidden(true)->render(),
@@ -298,7 +298,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse id="test-id">
+            <ellipse id="test-id"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->id('test-id')->render(),
@@ -311,7 +311,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse lang="es">
+            <ellipse lang="es"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->lang(Language::SPANISH)->render(),
@@ -324,7 +324,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse opacity="0.5">
+            <ellipse opacity="0.5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->opacity('0.5')->render(),
@@ -337,7 +337,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse pathLength="200">
+            <ellipse pathLength="200"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->pathLength(200)->render(),
@@ -350,7 +350,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse role="banner">
+            <ellipse role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->role('banner')->render(),
@@ -363,7 +363,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse role="banner">
+            <ellipse role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->role(Role::BANNER)->render(),
@@ -376,7 +376,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse rx="80">
+            <ellipse rx="80"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->rx(80)->render(),
@@ -389,7 +389,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse ry="40">
+            <ellipse ry="40"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->ry(40)->render(),
@@ -402,7 +402,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse stroke="#00ff00">
+            <ellipse stroke="#00ff00"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->stroke('#00ff00')->render(),
@@ -415,7 +415,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse stroke-dasharray="5,5">
+            <ellipse stroke-dasharray="5,5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->strokeDashArray('5,5')->render(),
@@ -428,7 +428,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse stroke-linecap="round">
+            <ellipse stroke-linecap="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->strokeLineCap('round')->render(),
@@ -441,7 +441,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse stroke-linecap="square">
+            <ellipse stroke-linecap="square"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->strokeLineCap(StrokeLineCap::SQUARE)->render(),
@@ -454,7 +454,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse stroke-linejoin="round">
+            <ellipse stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->strokeLineJoin('round')->render(),
@@ -467,7 +467,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse stroke-linejoin="round">
+            <ellipse stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
@@ -480,7 +480,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse stroke-miterlimit="10">
+            <ellipse stroke-miterlimit="10"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->strokeMiterlimit(10)->render(),
@@ -493,7 +493,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse stroke-opacity="0.8">
+            <ellipse stroke-opacity="0.8"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->strokeOpacity(0.8)->render(),
@@ -506,7 +506,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse stroke-width="2">
+            <ellipse stroke-width="2"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->strokeWidth('2')->render(),
@@ -519,7 +519,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse style='test-value'>
+            <ellipse style='test-value'/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->style('test-value')->render(),
@@ -532,7 +532,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse title="test-value">
+            <ellipse title="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->title('test-value')->render(),
@@ -545,7 +545,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse>
+            <ellipse/>
             HTML,
             LineEndingNormalizer::normalize(
                 (string) Ellipse::tag(),
@@ -558,7 +558,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse transform="rotate(45)">
+            <ellipse transform="rotate(45)"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->transform('rotate(45)')->render(),
@@ -571,7 +571,7 @@ final class EllipseTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <ellipse translate="no">
+            <ellipse translate="no"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()->translate(false)->render(),
@@ -594,7 +594,7 @@ final class EllipseTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <ellipse class="from-global" id="id-user">
+            <ellipse class="from-global" id="id-user"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Ellipse::tag()

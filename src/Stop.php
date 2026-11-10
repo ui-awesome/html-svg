@@ -9,6 +9,7 @@ use InvalidArgumentException;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Internal\RendersEmptySvg;
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 
@@ -23,22 +24,13 @@ use function str_ends_with;
  *
  * The `<stop>` element defines a color stop for gradients such as `<linearGradient>` and `<radialGradient>`.
  *
- * Usage example:
- * ```php
- * use UIAwesome\Html\Svg\Stop;
- *
- * echo Stop::tag()
- *     ->offset('50%')
- *     ->stopColor('currentColor')
- *     ->stopOpacity(0.75)
- *     ->render();
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop
  * {@see BaseVoid} for the base implementation.
  */
 final class Stop extends BaseVoid
 {
+    use RendersEmptySvg;
+
     /**
      * Sets the SVG `offset` attribute for the element.
      *

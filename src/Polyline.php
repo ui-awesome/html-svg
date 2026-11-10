@@ -9,6 +9,7 @@ use InvalidArgumentException;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Internal\RendersEmptySvg;
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 use UIAwesome\Html\Svg\Values\FillRule;
 use UIAwesome\Html\Svg\Values\StrokeLineCap;
@@ -23,23 +24,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * The `<polyline>` element is an SVG basic shape used to create a series of connected line segments.
  *
- * Usage example:
- * ```php
- * use UIAwesome\Html\Svg\Polyline;
- *
- * echo Polyline::tag()
- *     ->points('10 80 40 20 70 80')
- *     ->fill('none')
- *     ->stroke('currentColor')
- *     ->strokeWidth(3)
- *     ->render();
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline
  * {@see BaseVoid} for the base implementation.
  */
 final class Polyline extends BaseVoid
 {
+    use RendersEmptySvg;
+
     /**
      * Sets the SVG `fill` attribute for the element.
      *

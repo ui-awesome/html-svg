@@ -10,6 +10,7 @@ use Stringable;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Internal\RendersEmptySvg;
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 use UIAwesome\Html\Svg\Values\FillRule;
 use UIAwesome\Html\Svg\Values\StrokeLineCap;
@@ -25,26 +26,13 @@ use UnitEnum;
  *
  * The `<rect>` element is an SVG basic shape used to create rectangles based on position and size attributes.
  *
- * Usage example:
- * ```php
- * use UIAwesome\Html\Svg\Rect;
- *
- * echo Rect::tag()
- *     ->x(10)
- *     ->y(10)
- *     ->width(80)
- *     ->height(50)
- *     ->rx(8)
- *     ->ry(8)
- *     ->fill('currentColor')
- *     ->render();
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect
  * {@see BaseVoid} for the base implementation.
  */
 final class Rect extends BaseVoid
 {
+    use RendersEmptySvg;
+
     /**
      * Sets the SVG `fill` attribute for the element.
      *

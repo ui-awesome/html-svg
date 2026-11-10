@@ -10,6 +10,7 @@ use Stringable;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Internal\RendersEmptySvg;
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 use UIAwesome\Html\Svg\Values\SvgAttribute;
 use UnitEnum;
@@ -22,24 +23,13 @@ use UnitEnum;
  *
  * The `<use>` element references an existing element and renders it at the specified location.
  *
- * Usage example:
- * ```php
- * use UIAwesome\Html\Svg\{Svg, Symbol, Uses};
- *
- * echo Svg::tag()
- *     ->viewBox('0 0 16 16')
- *     ->content(
- *         Symbol::tag()->id('icon-check')->viewBox('0 0 16 16')->content('<path d="M2 8l4 4 8-8" />').
- *         PHP_EOL,
- *         Uses::tag()->href('#icon-check')->x(0)->y(0)->width(16)->height(16),
- *     )->render();
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
  * {@see BaseVoid} for the base implementation.
  */
 final class Uses extends BaseVoid
 {
+    use RendersEmptySvg;
+
     /**
      * Sets the `height` attribute.
      *
