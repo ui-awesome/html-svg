@@ -31,7 +31,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle accesskey="k">
+            <circle accesskey="k"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->accesskey('k')->render(),
@@ -44,7 +44,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle aria-pressed="true">
+            <circle aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->addAriaAttribute('pressed', true)->render(),
@@ -57,7 +57,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle aria-pressed="true">
+            <circle aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
@@ -70,7 +70,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle data-value="value">
+            <circle data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->addDataAttribute('value', 'value')->render(),
@@ -83,7 +83,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle data-value="value">
+            <circle data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
@@ -96,7 +96,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            <circle aria-controls="modal-1" aria-hidden="false" aria-label="Close"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()
@@ -117,7 +117,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle class="value">
+            <circle class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->attributes(['class' => 'value'])->render(),
@@ -130,7 +130,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle class="value">
+            <circle class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->class('value')->render(),
@@ -143,7 +143,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle cx="100">
+            <circle cx="100"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->cx(100)->render(),
@@ -156,7 +156,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle cy="150">
+            <circle cy="150"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->cy(150)->render(),
@@ -169,7 +169,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle data-value="test-value">
+            <circle data-value="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->dataAttributes(['value' => 'test-value'])->render(),
@@ -182,7 +182,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle class="default-class">
+            <circle class="default-class"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag(['class' => 'default-class'])->render(),
@@ -205,7 +205,7 @@ final class CircleTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <circle class="default-class" title="default-title">
+            <circle class="default-class" title="default-title"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()
@@ -220,7 +220,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle dir="rtl">
+            <circle dir="rtl"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->dir('rtl')->render(),
@@ -233,7 +233,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle fill="#ff0000">
+            <circle fill="#ff0000"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->fill('#ff0000')->render(),
@@ -246,7 +246,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle fill-opacity="0.7">
+            <circle fill-opacity="0.7"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->fillOpacity('0.7')->render(),
@@ -259,7 +259,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle fill-rule="evenodd">
+            <circle fill-rule="evenodd"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->fillRule('evenodd')->render(),
@@ -272,7 +272,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle fill-rule="nonzero">
+            <circle fill-rule="nonzero"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->fillRule(FillRule::NONZERO)->render(),
@@ -285,7 +285,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle hidden>
+            <circle hidden="hidden"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->hidden(true)->render(),
@@ -298,7 +298,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle id="test-id">
+            <circle id="test-id"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->id('test-id')->render(),
@@ -311,7 +311,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle lang="es">
+            <circle lang="es"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->lang(Language::SPANISH)->render(),
@@ -324,7 +324,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle opacity="0.5">
+            <circle opacity="0.5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->opacity('0.5')->render(),
@@ -337,7 +337,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle r="50">
+            <circle r="50"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->r(50)->render(),
@@ -350,7 +350,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle role="banner">
+            <circle role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->role('banner')->render(),
@@ -363,7 +363,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle role="banner">
+            <circle role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->role(Role::BANNER)->render(),
@@ -376,7 +376,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle stroke="#00ff00">
+            <circle stroke="#00ff00"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->stroke('#00ff00')->render(),
@@ -389,7 +389,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle stroke-dasharray="5,5">
+            <circle stroke-dasharray="5,5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->strokeDashArray('5,5')->render(),
@@ -402,7 +402,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle stroke-linecap="round">
+            <circle stroke-linecap="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->strokeLineCap('round')->render(),
@@ -415,7 +415,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle stroke-linecap="square">
+            <circle stroke-linecap="square"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->strokeLineCap(StrokeLineCap::SQUARE)->render(),
@@ -428,7 +428,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle stroke-linejoin="round">
+            <circle stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->strokeLineJoin('round')->render(),
@@ -441,7 +441,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle stroke-linejoin="round">
+            <circle stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
@@ -454,7 +454,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle stroke-miterlimit="10">
+            <circle stroke-miterlimit="10"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->strokeMiterlimit(10)->render(),
@@ -467,7 +467,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle stroke-opacity="0.8">
+            <circle stroke-opacity="0.8"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->strokeOpacity(0.8)->render(),
@@ -480,7 +480,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle stroke-width="2">
+            <circle stroke-width="2"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->strokeWidth('2')->render(),
@@ -493,7 +493,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle style='test-value'>
+            <circle style='test-value'/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->style('test-value')->render(),
@@ -506,7 +506,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle title="test-value">
+            <circle title="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->title('test-value')->render(),
@@ -519,7 +519,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle>
+            <circle/>
             HTML,
             LineEndingNormalizer::normalize(
                 (string) Circle::tag(),
@@ -532,7 +532,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle transform="rotate(45)">
+            <circle transform="rotate(45)"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->transform('rotate(45)')->render(),
@@ -545,7 +545,7 @@ final class CircleTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <circle translate="no">
+            <circle translate="no"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()->translate(false)->render(),
@@ -568,7 +568,7 @@ final class CircleTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <circle class="from-global" id="id-user">
+            <circle class="from-global" id="id-user"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Circle::tag()

@@ -9,6 +9,7 @@ use InvalidArgumentException;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Internal\RendersEmptySvg;
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 use UIAwesome\Html\Svg\Values\FillRule;
 use UIAwesome\Html\Svg\Values\StrokeLineCap;
@@ -23,21 +24,13 @@ use UIAwesome\Html\Svg\Values\SvgAttribute;
  *
  * The `<polygon>` element is an SVG basic shape used to create closed shapes defined by a list of points.
  *
- * Usage example:
- * ```php
- * use UIAwesome\Html\Svg\Polygon;
- *
- * echo Polygon::tag()
- *     ->points('60 10 90 90 10 90')
- *     ->fill('currentColor')
- *     ->render();
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon
  * {@see BaseVoid} for the base implementation.
  */
 final class Polygon extends BaseVoid
 {
+    use RendersEmptySvg;
+
     /**
      * Sets the SVG `fill` attribute for the element.
      *

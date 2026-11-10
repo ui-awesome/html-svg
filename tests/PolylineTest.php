@@ -31,7 +31,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline accesskey="k">
+            <polyline accesskey="k"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->accesskey('k')->render(),
@@ -44,7 +44,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline aria-pressed="true">
+            <polyline aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->addAriaAttribute('pressed', true)->render(),
@@ -57,7 +57,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline aria-pressed="true">
+            <polyline aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
@@ -70,7 +70,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline data-value="value">
+            <polyline data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->addDataAttribute('value', 'value')->render(),
@@ -83,7 +83,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline data-value="value">
+            <polyline data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
@@ -96,7 +96,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            <polyline aria-controls="modal-1" aria-hidden="false" aria-label="Close"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()
@@ -117,7 +117,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline class="value">
+            <polyline class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->attributes(['class' => 'value'])->render(),
@@ -130,7 +130,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline class="value">
+            <polyline class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->class('value')->render(),
@@ -143,7 +143,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline data-value="test-value">
+            <polyline data-value="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->dataAttributes(['value' => 'test-value'])->render(),
@@ -156,7 +156,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline class="default-class">
+            <polyline class="default-class"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag(['class' => 'default-class'])->render(),
@@ -179,7 +179,7 @@ final class PolylineTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <polyline class="default-class" title="default-title">
+            <polyline class="default-class" title="default-title"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()
@@ -194,7 +194,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline dir="rtl">
+            <polyline dir="rtl"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->dir('rtl')->render(),
@@ -207,7 +207,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline fill="#ff0000">
+            <polyline fill="#ff0000"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->fill('#ff0000')->render(),
@@ -220,7 +220,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline fill-opacity="0.7">
+            <polyline fill-opacity="0.7"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->fillOpacity('0.7')->render(),
@@ -233,7 +233,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline fill-rule="evenodd">
+            <polyline fill-rule="evenodd"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->fillRule('evenodd')->render(),
@@ -246,7 +246,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline fill-rule="nonzero">
+            <polyline fill-rule="nonzero"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->fillRule(FillRule::NONZERO)->render(),
@@ -259,7 +259,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline hidden>
+            <polyline hidden="hidden"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->hidden(true)->render(),
@@ -272,7 +272,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline id="test-id">
+            <polyline id="test-id"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->id('test-id')->render(),
@@ -285,7 +285,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline lang="es">
+            <polyline lang="es"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->lang(Language::SPANISH)->render(),
@@ -298,7 +298,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline opacity="0.5">
+            <polyline opacity="0.5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->opacity('0.5')->render(),
@@ -311,7 +311,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline pathLength="200">
+            <polyline pathLength="200"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->pathLength(200)->render(),
@@ -324,7 +324,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline points="0,100 50,25 50,75 100,0">
+            <polyline points="0,100 50,25 50,75 100,0"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->points('0,100 50,25 50,75 100,0')->render(),
@@ -337,7 +337,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline role="banner">
+            <polyline role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->role('banner')->render(),
@@ -350,7 +350,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline role="banner">
+            <polyline role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->role(Role::BANNER)->render(),
@@ -363,7 +363,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline stroke="#00ff00">
+            <polyline stroke="#00ff00"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->stroke('#00ff00')->render(),
@@ -376,7 +376,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline stroke-dasharray="5,5">
+            <polyline stroke-dasharray="5,5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->strokeDashArray('5,5')->render(),
@@ -389,7 +389,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline stroke-linecap="round">
+            <polyline stroke-linecap="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->strokeLineCap('round')->render(),
@@ -402,7 +402,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline stroke-linecap="square">
+            <polyline stroke-linecap="square"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->strokeLineCap(StrokeLineCap::SQUARE)->render(),
@@ -415,7 +415,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline stroke-linejoin="round">
+            <polyline stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->strokeLineJoin('round')->render(),
@@ -428,7 +428,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline stroke-linejoin="round">
+            <polyline stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
@@ -441,7 +441,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline stroke-miterlimit="10">
+            <polyline stroke-miterlimit="10"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->strokeMiterlimit(10)->render(),
@@ -454,7 +454,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline stroke-opacity="0.8">
+            <polyline stroke-opacity="0.8"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->strokeOpacity(0.8)->render(),
@@ -467,7 +467,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline stroke-width="2">
+            <polyline stroke-width="2"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->strokeWidth('2')->render(),
@@ -480,7 +480,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline style='test-value'>
+            <polyline style='test-value'/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->style('test-value')->render(),
@@ -493,7 +493,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline title="test-value">
+            <polyline title="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->title('test-value')->render(),
@@ -506,7 +506,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline>
+            <polyline/>
             HTML,
             LineEndingNormalizer::normalize(
                 (string) Polyline::tag(),
@@ -519,7 +519,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline transform="rotate(45)">
+            <polyline transform="rotate(45)"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->transform('rotate(45)')->render(),
@@ -532,7 +532,7 @@ final class PolylineTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polyline translate="no">
+            <polyline translate="no"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()->translate(false)->render(),
@@ -555,7 +555,7 @@ final class PolylineTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <polyline class="from-global" id="id-user">
+            <polyline class="from-global" id="id-user"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polyline::tag()

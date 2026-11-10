@@ -31,7 +31,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon accesskey="k">
+            <polygon accesskey="k"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->accesskey('k')->render(),
@@ -44,7 +44,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon aria-pressed="true">
+            <polygon aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->addAriaAttribute('pressed', true)->render(),
@@ -57,7 +57,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon aria-pressed="true">
+            <polygon aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
@@ -70,7 +70,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon data-value="value">
+            <polygon data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->addDataAttribute('value', 'value')->render(),
@@ -83,7 +83,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon data-value="value">
+            <polygon data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
@@ -96,7 +96,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            <polygon aria-controls="modal-1" aria-hidden="false" aria-label="Close"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()
@@ -117,7 +117,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon class="value">
+            <polygon class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->attributes(['class' => 'value'])->render(),
@@ -130,7 +130,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon class="value">
+            <polygon class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->class('value')->render(),
@@ -143,7 +143,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon data-value="test-value">
+            <polygon data-value="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->dataAttributes(['value' => 'test-value'])->render(),
@@ -156,7 +156,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon class="default-class">
+            <polygon class="default-class"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag(['class' => 'default-class'])->render(),
@@ -179,7 +179,7 @@ final class PolygonTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <polygon class="default-class" title="default-title">
+            <polygon class="default-class" title="default-title"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()
@@ -194,7 +194,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon dir="rtl">
+            <polygon dir="rtl"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->dir('rtl')->render(),
@@ -207,7 +207,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon fill="#ff0000">
+            <polygon fill="#ff0000"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->fill('#ff0000')->render(),
@@ -220,7 +220,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon fill-opacity="0.7">
+            <polygon fill-opacity="0.7"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->fillOpacity('0.7')->render(),
@@ -233,7 +233,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon fill-rule="evenodd">
+            <polygon fill-rule="evenodd"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->fillRule('evenodd')->render(),
@@ -246,7 +246,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon fill-rule="nonzero">
+            <polygon fill-rule="nonzero"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->fillRule(FillRule::NONZERO)->render(),
@@ -259,7 +259,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon hidden>
+            <polygon hidden="hidden"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->hidden(true)->render(),
@@ -272,7 +272,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon id="test-id">
+            <polygon id="test-id"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->id('test-id')->render(),
@@ -285,7 +285,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon lang="es">
+            <polygon lang="es"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->lang(Language::SPANISH)->render(),
@@ -298,7 +298,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon opacity="0.5">
+            <polygon opacity="0.5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->opacity('0.5')->render(),
@@ -311,7 +311,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon pathLength="200">
+            <polygon pathLength="200"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->pathLength(200)->render(),
@@ -324,7 +324,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon points="0,100 50,25 50,75 100,0">
+            <polygon points="0,100 50,25 50,75 100,0"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->points('0,100 50,25 50,75 100,0')->render(),
@@ -337,7 +337,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon role="banner">
+            <polygon role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->role('banner')->render(),
@@ -350,7 +350,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon role="banner">
+            <polygon role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->role(Role::BANNER)->render(),
@@ -363,7 +363,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon stroke="#00ff00">
+            <polygon stroke="#00ff00"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->stroke('#00ff00')->render(),
@@ -376,7 +376,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon stroke-dasharray="5,5">
+            <polygon stroke-dasharray="5,5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->strokeDashArray('5,5')->render(),
@@ -389,7 +389,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon stroke-linecap="round">
+            <polygon stroke-linecap="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->strokeLineCap('round')->render(),
@@ -402,7 +402,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon stroke-linecap="square">
+            <polygon stroke-linecap="square"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->strokeLineCap(StrokeLineCap::SQUARE)->render(),
@@ -415,7 +415,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon stroke-linejoin="round">
+            <polygon stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->strokeLineJoin('round')->render(),
@@ -428,7 +428,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon stroke-linejoin="round">
+            <polygon stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
@@ -441,7 +441,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon stroke-miterlimit="10">
+            <polygon stroke-miterlimit="10"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->strokeMiterlimit(10)->render(),
@@ -454,7 +454,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon stroke-opacity="0.8">
+            <polygon stroke-opacity="0.8"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->strokeOpacity(0.8)->render(),
@@ -467,7 +467,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon stroke-width="2">
+            <polygon stroke-width="2"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->strokeWidth('2')->render(),
@@ -480,7 +480,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon style='test-value'>
+            <polygon style='test-value'/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->style('test-value')->render(),
@@ -493,7 +493,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon title="test-value">
+            <polygon title="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->title('test-value')->render(),
@@ -506,7 +506,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon>
+            <polygon/>
             HTML,
             LineEndingNormalizer::normalize(
                 (string) Polygon::tag(),
@@ -519,7 +519,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon transform="rotate(45)">
+            <polygon transform="rotate(45)"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->transform('rotate(45)')->render(),
@@ -532,7 +532,7 @@ final class PolygonTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <polygon translate="no">
+            <polygon translate="no"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()->translate(false)->render(),
@@ -555,7 +555,7 @@ final class PolygonTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <polygon class="from-global" id="id-user">
+            <polygon class="from-global" id="id-user"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Polygon::tag()

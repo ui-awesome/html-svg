@@ -31,7 +31,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path accesskey="k">
+            <path accesskey="k"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->accesskey('k')->render(),
@@ -44,7 +44,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path aria-pressed="true">
+            <path aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->addAriaAttribute('pressed', true)->render(),
@@ -57,7 +57,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path aria-pressed="true">
+            <path aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
@@ -70,7 +70,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path data-value="value">
+            <path data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->addDataAttribute('value', 'value')->render(),
@@ -83,7 +83,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path data-value="value">
+            <path data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
@@ -96,7 +96,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            <path aria-controls="modal-1" aria-hidden="false" aria-label="Close"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()
@@ -117,7 +117,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path class="value">
+            <path class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->attributes(['class' => 'value'])->render(),
@@ -130,7 +130,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path class="value">
+            <path class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->class('value')->render(),
@@ -143,7 +143,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path d="M10 10 H 90 V 90 H 10 Z">
+            <path d="M10 10 H 90 V 90 H 10 Z"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->d('M10 10 H 90 V 90 H 10 Z')->render(),
@@ -156,7 +156,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path data-value="test-value">
+            <path data-value="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->dataAttributes(['value' => 'test-value'])->render(),
@@ -169,7 +169,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path class="default-class">
+            <path class="default-class"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag(['class' => 'default-class'])->render(),
@@ -192,7 +192,7 @@ final class PathTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <path class="default-class" title="default-title">
+            <path class="default-class" title="default-title"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()
@@ -207,7 +207,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path dir="rtl">
+            <path dir="rtl"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->dir('rtl')->render(),
@@ -220,7 +220,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path fill="#ff0000">
+            <path fill="#ff0000"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->fill('#ff0000')->render(),
@@ -233,7 +233,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path fill-opacity="0.7">
+            <path fill-opacity="0.7"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->fillOpacity('0.7')->render(),
@@ -246,7 +246,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path fill-rule="evenodd">
+            <path fill-rule="evenodd"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->fillRule('evenodd')->render(),
@@ -259,7 +259,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path fill-rule="nonzero">
+            <path fill-rule="nonzero"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->fillRule(FillRule::NONZERO)->render(),
@@ -272,7 +272,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path hidden>
+            <path hidden="hidden"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->hidden(true)->render(),
@@ -285,7 +285,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path id="test-id">
+            <path id="test-id"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->id('test-id')->render(),
@@ -298,7 +298,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path lang="es">
+            <path lang="es"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->lang(Language::SPANISH)->render(),
@@ -311,7 +311,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path opacity="0.5">
+            <path opacity="0.5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->opacity('0.5')->render(),
@@ -324,7 +324,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path pathLength="200">
+            <path pathLength="200"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->pathLength(200)->render(),
@@ -337,7 +337,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path role="banner">
+            <path role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->role('banner')->render(),
@@ -350,7 +350,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path role="banner">
+            <path role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->role(Role::BANNER)->render(),
@@ -363,7 +363,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path stroke="#00ff00">
+            <path stroke="#00ff00"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->stroke('#00ff00')->render(),
@@ -376,7 +376,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path stroke-dasharray="5,5">
+            <path stroke-dasharray="5,5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->strokeDashArray('5,5')->render(),
@@ -389,7 +389,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path stroke-linecap="round">
+            <path stroke-linecap="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->strokeLineCap('round')->render(),
@@ -402,7 +402,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path stroke-linecap="square">
+            <path stroke-linecap="square"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->strokeLineCap(StrokeLineCap::SQUARE)->render(),
@@ -415,7 +415,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path stroke-linejoin="round">
+            <path stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->strokeLineJoin('round')->render(),
@@ -428,7 +428,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path stroke-linejoin="round">
+            <path stroke-linejoin="round"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->strokeLineJoin(StrokeLineJoin::ROUND)->render(),
@@ -441,7 +441,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path stroke-miterlimit="10">
+            <path stroke-miterlimit="10"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->strokeMiterlimit(10)->render(),
@@ -454,7 +454,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path stroke-opacity="0.8">
+            <path stroke-opacity="0.8"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->strokeOpacity(0.8)->render(),
@@ -467,7 +467,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path stroke-width="2">
+            <path stroke-width="2"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->strokeWidth('2')->render(),
@@ -480,7 +480,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path style='test-value'>
+            <path style='test-value'/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->style('test-value')->render(),
@@ -493,7 +493,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path title="test-value">
+            <path title="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->title('test-value')->render(),
@@ -506,7 +506,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path>
+            <path/>
             HTML,
             LineEndingNormalizer::normalize(
                 (string) Path::tag(),
@@ -519,7 +519,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path transform="rotate(45)">
+            <path transform="rotate(45)"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->transform('rotate(45)')->render(),
@@ -532,7 +532,7 @@ final class PathTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <path translate="no">
+            <path translate="no"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()->translate(false)->render(),
@@ -555,7 +555,7 @@ final class PathTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <path class="from-global" id="id-user">
+            <path class="from-global" id="id-user"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Path::tag()

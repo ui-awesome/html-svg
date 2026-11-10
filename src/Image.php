@@ -10,6 +10,7 @@ use Stringable;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Internal\RendersEmptySvg;
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 use UIAwesome\Html\Svg\Values\{Decoding, Fetchpriority, PreserveAspectRatio, SvgAttribute};
 use UnitEnum;
@@ -22,25 +23,13 @@ use UnitEnum;
  *
  * The `<image>` element embeds an external image into the SVG.
  *
- * Usage example:
- * ```php
- * use UIAwesome\Html\Svg\Image;
- *
- * echo Image::tag()
- *     ->href('https://example.com/image.png')
- *     ->x(0)
- *     ->y(0)
- *     ->width(200)
- *     ->height(200)
- *     ->opacity(0.9)
- *     ->render();
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
  * {@see BaseVoid} for the base implementation.
  */
 final class Image extends BaseVoid
 {
+    use RendersEmptySvg;
+
     /**
      * Sets the `decoding` attribute.
      *

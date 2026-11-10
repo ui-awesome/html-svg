@@ -9,6 +9,7 @@ use InvalidArgumentException;
 use UIAwesome\Html\Core\Element\BaseVoid;
 use UIAwesome\Html\Helper\Validator;
 use UIAwesome\Html\Svg\Exception\Message;
+use UIAwesome\Html\Svg\Internal\RendersEmptySvg;
 use UIAwesome\Html\Svg\Tag\SvgVoid;
 use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttribute};
 
@@ -20,25 +21,13 @@ use UIAwesome\Html\Svg\Values\{FillRule, StrokeLineCap, StrokeLineJoin, SvgAttri
  *
  * The `<line>` element is an SVG basic shape used to draw a straight line between two points.
  *
- * Usage example:
- * ```php
- * use UIAwesome\Html\Svg\Line;
- *
- * echo Line::tag()
- *     ->x1(10)
- *     ->y1(10)
- *     ->x2(90)
- *     ->y2(90)
- *     ->stroke('currentColor')
- *     ->strokeWidth(2)
- *     ->render();
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line
  * {@see BaseVoid} for the base implementation.
  */
 final class Line extends BaseVoid
 {
+    use RendersEmptySvg;
+
     /**
      * Sets the SVG `fill` attribute for the element.
      *

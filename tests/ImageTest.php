@@ -32,7 +32,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image accesskey="k">
+            <image accesskey="k"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->accesskey('k')->render(),
@@ -45,7 +45,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image aria-pressed="true">
+            <image aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->addAriaAttribute('pressed', true)->render(),
@@ -58,7 +58,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image aria-pressed="true">
+            <image aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
@@ -71,7 +71,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image data-value="value">
+            <image data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->addDataAttribute('value', 'value')->render(),
@@ -84,7 +84,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image data-value="value">
+            <image data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
@@ -97,7 +97,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            <image aria-controls="modal-1" aria-hidden="false" aria-label="Close"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()
@@ -118,7 +118,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image class="value">
+            <image class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->attributes(['class' => 'value'])->render(),
@@ -131,7 +131,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image class="value">
+            <image class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->class('value')->render(),
@@ -144,7 +144,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image data-value="test-value">
+            <image data-value="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->dataAttributes(['value' => 'test-value'])->render(),
@@ -157,7 +157,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image decoding="async">
+            <image decoding="async"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->decoding('async')->render(),
@@ -170,7 +170,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image class="default-class">
+            <image class="default-class"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag(['class' => 'default-class'])->render(),
@@ -193,7 +193,7 @@ final class ImageTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <image class="default-class" title="default-title">
+            <image class="default-class" title="default-title"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()
@@ -208,7 +208,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image dir="rtl">
+            <image dir="rtl"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->dir('rtl')->render(),
@@ -221,7 +221,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image fetchpriority="high">
+            <image fetchpriority="high"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->fetchpriority('high')->render(),
@@ -234,7 +234,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image height="200">
+            <image height="200"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->height('200')->render(),
@@ -247,7 +247,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image hidden>
+            <image hidden="hidden"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->hidden(true)->render(),
@@ -260,7 +260,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image href="image.png">
+            <image href="image.png"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->href('image.png')->render(),
@@ -273,7 +273,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image id="test-id">
+            <image id="test-id"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->id('test-id')->render(),
@@ -286,7 +286,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image lang="es">
+            <image lang="es"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->lang(Language::SPANISH)->render(),
@@ -299,7 +299,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image opacity="0.5">
+            <image opacity="0.5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->opacity('0.5')->render(),
@@ -312,7 +312,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image preserveAspectRatio="xMidYMid meet">
+            <image preserveAspectRatio="xMidYMid meet"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->preserveAspectRatio('xMidYMid meet')->render(),
@@ -325,7 +325,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image preserveAspectRatio="xMinYMin slice">
+            <image preserveAspectRatio="xMinYMin slice"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->preserveAspectRatio(PreserveAspectRatio::X_MIN_Y_MIN_SLICE)->render(),
@@ -338,7 +338,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image role="banner">
+            <image role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->role('banner')->render(),
@@ -351,7 +351,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image role="banner">
+            <image role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->role(Role::BANNER)->render(),
@@ -364,7 +364,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image style='test-value'>
+            <image style='test-value'/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->style('test-value')->render(),
@@ -377,7 +377,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image title="test-value">
+            <image title="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->title('test-value')->render(),
@@ -390,7 +390,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image>
+            <image/>
             HTML,
             LineEndingNormalizer::normalize(
                 (string) Image::tag(),
@@ -403,7 +403,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image transform="rotate(45)">
+            <image transform="rotate(45)"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->transform('rotate(45)')->render(),
@@ -416,7 +416,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image translate="no">
+            <image translate="no"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->translate(false)->render(),
@@ -439,7 +439,7 @@ final class ImageTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <image class="from-global" id="id-user">
+            <image class="from-global" id="id-user"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()
@@ -455,7 +455,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image width="300">
+            <image width="300"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->width('300')->render(),
@@ -468,7 +468,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image x="10">
+            <image x="10"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->x(10)->render(),
@@ -481,7 +481,7 @@ final class ImageTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <image y="20">
+            <image y="20"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Image::tag()->y(20)->render(),

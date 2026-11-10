@@ -29,7 +29,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use accesskey="k">
+            <use accesskey="k"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->accesskey('k')->render(),
@@ -42,7 +42,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use aria-pressed="true">
+            <use aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->addAriaAttribute('pressed', true)->render(),
@@ -55,7 +55,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use aria-pressed="true">
+            <use aria-pressed="true"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->addAriaAttribute(Aria::PRESSED, true)->render(),
@@ -68,7 +68,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use data-value="value">
+            <use data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->addDataAttribute('value', 'value')->render(),
@@ -81,7 +81,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use data-value="value">
+            <use data-value="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->addDataAttribute(Data::VALUE, 'value')->render(),
@@ -94,7 +94,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use aria-controls="modal-1" aria-hidden="false" aria-label="Close">
+            <use aria-controls="modal-1" aria-hidden="false" aria-label="Close"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()
@@ -115,7 +115,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use class="value">
+            <use class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->attributes(['class' => 'value'])->render(),
@@ -128,7 +128,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use class="value">
+            <use class="value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->class('value')->render(),
@@ -141,7 +141,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use data-value="test-value">
+            <use data-value="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->dataAttributes(['value' => 'test-value'])->render(),
@@ -154,7 +154,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use class="default-class">
+            <use class="default-class"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag(['class' => 'default-class'])->render(),
@@ -177,7 +177,7 @@ final class UsesTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <use class="default-class" title="default-title">
+            <use class="default-class" title="default-title"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()
@@ -192,7 +192,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use dir="rtl">
+            <use dir="rtl"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->dir('rtl')->render(),
@@ -205,7 +205,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use height="100">
+            <use height="100"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->height(100)->render(),
@@ -218,7 +218,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use hidden>
+            <use hidden="hidden"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->hidden(true)->render(),
@@ -231,7 +231,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use href="#mySymbol">
+            <use href="#mySymbol"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->href('#mySymbol')->render(),
@@ -244,7 +244,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use id="test-id">
+            <use id="test-id"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->id('test-id')->render(),
@@ -257,7 +257,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use lang="es">
+            <use lang="es"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->lang(Language::SPANISH)->render(),
@@ -270,7 +270,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use opacity="0.5">
+            <use opacity="0.5"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->opacity('0.5')->render(),
@@ -283,7 +283,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use role="banner">
+            <use role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->role('banner')->render(),
@@ -296,7 +296,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use role="banner">
+            <use role="banner"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->role(Role::BANNER)->render(),
@@ -309,7 +309,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use style='test-value'>
+            <use style='test-value'/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->style('test-value')->render(),
@@ -322,7 +322,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use title="test-value">
+            <use title="test-value"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->title('test-value')->render(),
@@ -335,7 +335,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use>
+            <use/>
             HTML,
             LineEndingNormalizer::normalize(
                 (string) Uses::tag(),
@@ -348,7 +348,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use transform="rotate(45)">
+            <use transform="rotate(45)"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->transform('rotate(45)')->render(),
@@ -361,7 +361,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use translate="no">
+            <use translate="no"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->translate(false)->render(),
@@ -384,7 +384,7 @@ final class UsesTest extends TestCase
 
         self::assertEquals(
             <<<HTML
-            <use class="from-global" id="id-user">
+            <use class="from-global" id="id-user"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()
@@ -400,7 +400,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use width="200">
+            <use width="200"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->width(200)->render(),
@@ -413,7 +413,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use x="50">
+            <use x="50"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->x(50)->render(),
@@ -426,7 +426,7 @@ final class UsesTest extends TestCase
     {
         self::assertEquals(
             <<<HTML
-            <use y="75">
+            <use y="75"/>
             HTML,
             LineEndingNormalizer::normalize(
                 Uses::tag()->y(75)->render(),
