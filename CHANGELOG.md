@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix: preserve SVG title text and require html-helper `^0.7.3` and svg-sanitize `^1.1.1` for explicit non-SVG rejection.
 - chore: remove obsolete scaffold tooling and align package maintenance checks with PHP Forge conventions.
 - fix: serialize empty SVG primitives as self-closing elements with XML-compatible attributes, preserving HTML void output.
+- chore(deps): update HTML-related dependencies to their latest development versions.
 
 ## 0.6.1 October 12, 2026
 
