@@ -31,7 +31,7 @@
         "enshrined/svg-sanitize": "^1.1.1",
         "ui-awesome/html-attribute": "^0.9@dev",
         "ui-awesome/html-contracts": "^0.3@dev",
-        "ui-awesome/html-core": "^0.9@dev",
+        "ui-awesome/html-core": "^0.10@dev",
         "ui-awesome/html-helper": "^0.8@dev",
         "ui-awesome/html-interop": "^0.4",
         "ui-awesome/html-mixin": "^0.9@dev"
