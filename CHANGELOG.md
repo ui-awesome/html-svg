@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore: remove obsolete scaffold tooling and align package maintenance checks with PHP Forge conventions.
 - fix: serialize empty SVG primitives as self-closing elements with XML-compatible attributes, preserving HTML void output.
 - chore(deps): update HTML-related dependencies to their latest development versions.
+- fix: quote exception message values with single quotes, reuse one SVG sanitizer across renders, and remove enum value-pinning tests.
 
 ## 0.6.1 October 12, 2026
 

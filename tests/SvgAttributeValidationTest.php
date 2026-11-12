@@ -178,12 +178,12 @@ final class SvgAttributeValidationTest extends TestCase
         self::assertInstanceOf(
             $className,
             $result,
-            'Should accept the lower `stroke-miterlimit` boundary value.',
+            "Should accept the lower 'stroke-miterlimit' boundary value.",
         );
         self::assertNotSame(
             $instance,
             $result,
-            'Should preserve immutable fluent updates for the `stroke-miterlimit` boundary value.',
+            "Should preserve immutable fluent updates for the 'stroke-miterlimit' boundary value.",
         );
     }
 
@@ -290,14 +290,14 @@ final class SvgAttributeValidationTest extends TestCase
     {
         self::assertTrue(
             method_exists($element, $method),
-            "Should expose the `$method()` SVG fluent attribute method.",
+            "Should expose the '$method()' SVG fluent attribute method.",
         );
 
         $result = (new ReflectionMethod($element, $method))->invoke($element, $value);
 
         self::assertIsObject(
             $result,
-            "Should return an object from the `$method()` SVG fluent attribute method.",
+            "Should return an object from the '$method()' SVG fluent attribute method.",
         );
 
         return $result;

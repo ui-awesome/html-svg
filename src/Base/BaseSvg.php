@@ -672,8 +672,6 @@ abstract class BaseSvg extends BaseBlock implements Stringable
      */
     private function loadSvgFile(DOMDocument $svg): DOMElement
     {
-        $sanitizer = new Sanitizer();
-
         $fileSvg = @file_get_contents($this->filePath);
 
         if ($fileSvg === false) {
@@ -681,6 +679,8 @@ abstract class BaseSvg extends BaseBlock implements Stringable
                 Message::FAILED_TO_READ_FILE->getMessage($this->filePath),
             );
         }
+
+        static $sanitizer = new Sanitizer();
 
         $cleanedSvg = $sanitizer->sanitize($fileSvg);
 

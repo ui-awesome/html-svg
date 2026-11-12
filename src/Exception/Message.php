@@ -59,30 +59,30 @@ enum Message: string
     /**
      * Error when the title attribute is not a `string` or `null`.
      *
-     * Message: "Title attribute must be a `string` or `null`."
+     * Message: "Title attribute must be a 'string' or 'null'."
      */
-    case TITLE_ATTRIBUTE_MUST_BE_STRING_OR_NULL = 'Title attribute must be a `string` or `null`.';
+    case TITLE_ATTRIBUTE_MUST_BE_STRING_OR_NULL = "Title attribute must be a 'string' or 'null'.";
 
     /**
      * Error when the value is not a number `>= 1` or `null`.
      *
-     * Message: "Value must be a number greater than or equal to `1` or `null` to unset."
+     * Message: "Value must be a number greater than or equal to '1' or 'null' to unset."
      */
-    case VALUE_MUST_BE_GTE_ONE_OR_NULL = 'Value must be a number greater than or equal to `1` or `null` to unset.';
+    case VALUE_MUST_BE_GTE_ONE_OR_NULL = "Value must be a number greater than or equal to '1' or 'null' to unset.";
 
     /**
      * Error when the value is not a positive number or `null`.
      *
-     * Message: "Value must be a positive number or `null` to unset."
+     * Message: "Value must be a positive number or 'null' to unset."
      */
-    case VALUE_MUST_BE_POSITIVE_NUMBER_OR_NULL = 'Value must be a positive number or `null` to unset.';
+    case VALUE_MUST_BE_POSITIVE_NUMBER_OR_NULL = "Value must be a positive number or 'null' to unset.";
 
     /**
      * Error when the value is out of range or not `null`.
      *
-     * Message: "Value must be a number between '%s' and '%s' inclusive or `null` to unset."
+     * Message: "Value must be a number between '%s' and '%s' inclusive or 'null' to unset."
      */
-    case VALUE_OUT_OF_RANGE_OR_NULL = "Value must be a number between '%s' and '%s' inclusive or `null` to unset.";
+    case VALUE_OUT_OF_RANGE_OR_NULL = "Value must be a number between '%s' and '%s' inclusive or 'null' to unset.";
 
     /**
      * Returns the formatted message string for the error case.
