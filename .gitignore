@@ -1,5 +1,4 @@
 # Local AI agent, editor, and GitHub CLI config (if present)
-.claude
 .codex
 .config/gh
 
@@ -55,3 +54,8 @@ Thumbs.db
 .buildpath
 .project
 .settings
+
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/ui-awesome-html-svg

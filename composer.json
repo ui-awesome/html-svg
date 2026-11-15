@@ -29,12 +29,12 @@
         "ext-dom": "*",
         "ext-libxml": "*",
         "enshrined/svg-sanitize": "^1.1.1",
-        "ui-awesome/html-attribute": "^0.9@dev",
-        "ui-awesome/html-contracts": "^0.3@dev",
-        "ui-awesome/html-core": "^0.10@dev",
-        "ui-awesome/html-helper": "^0.8@dev",
+        "ui-awesome/html-attribute": "^0.8.1",
+        "ui-awesome/html-contracts": "^0.2.3",
+        "ui-awesome/html-core": "^0.9.0",
+        "ui-awesome/html-helper": "^0.7.6",
         "ui-awesome/html-interop": "^0.4",
-        "ui-awesome/html-mixin": "^0.9@dev"
+        "ui-awesome/html-mixin": "^0.8.3"
     },
     "require-dev": {
         "infection/infection": "^0.35",
@@ -59,6 +59,9 @@
     "extra": {
         "branch-alias": {
             "dev-main": "0.7.x-dev"
+        },
+        "skills": {
+            "source": "skills"
         }
     },
     "config": {

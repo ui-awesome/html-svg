@@ -58,7 +58,7 @@ final class Svg extends BaseSvg
      *
      * @param string $reference Icon reference in the form `Collection:name`. Each segment must match `[A-Za-z0-9_-]+`.
      *
-     * @throws InvalidArgumentException if {@see $reference} does not match the `Collection:name` format, or if the
+     * @throws InvalidArgumentException if `$reference` does not match the `Collection:name` format, or if the
      * resolved path is not a bundled SVG file.
      *
      * @return self New instance with the resolved SVG file path configured.
@@ -72,7 +72,7 @@ final class Svg extends BaseSvg
      * Resolves an icon reference to the absolute file path of the SVG asset shipped with this package.
      *
      * Accepts a reference of the form `Collection:name` (for example, `Bootstrap5:globe`). Useful when the file path is
-     * needed without instantiating a {@see Svg} (for example, when configuring {@see iconFilePath()} on another
+     * needed without instantiating a {@see Svg} (for example, when configuring `iconFilePath()` on another
      * component).
      *
      * Usage example:

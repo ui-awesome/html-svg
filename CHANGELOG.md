@@ -5,13 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.6.2 Under development
+## 0.7.0 Under development
 
 - fix: preserve SVG title text and require html-helper `^0.7.3` and svg-sanitize `^1.1.1` for explicit non-SVG rejection.
 - chore: remove obsolete scaffold tooling and align package maintenance checks with PHP Forge conventions.
 - fix: serialize empty SVG primitives as self-closing elements with XML-compatible attributes, preserving HTML void output.
-- chore(deps): update HTML-related dependencies to their latest development versions.
+- chore(deps)!: require html-core 0.9, which throws `ConfigException` for unknown tag configuration keys.
 - fix: quote exception message values with single quotes, reuse one SVG sanitizer across renders, and remove enum value-pinning tests.
+- docs: add the package AI skill and guide, Security and Built with AI sections, Scorecard workflow and header Coverage badge.
 
 ## 0.6.1 October 12, 2026
 
