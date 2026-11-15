@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Awesome HTML SVG"
+  short_description: "Compose SVG, load sanitized files and bundled icons"
+  default_prompt: "Use $ui-awesome-html-svg to compose SVG markup or load a sanitized SVG file with ui-awesome/html-svg."
