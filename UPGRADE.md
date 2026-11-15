@@ -57,8 +57,9 @@ interpreting it as markup. Pass the original text and update output comparisons 
 
 ### File loading and exception messages
 
-`filePath()` rejects non-SVG input with `RuntimeException`. SVG 0.6.1 could already reject the same input when resolved
-with `svg-sanitize` 1.1.1; with 1.0.0, the tested non-SVG input returned an empty string. Handle the exception rather
+`filePath()` stores the path; rendering or converting to a string loads and sanitizes the file and rejects non-SVG
+input with `RuntimeException`. SVG 0.6.1 could already reject the same input when resolved with `svg-sanitize` 1.1.1;
+with 1.0.0, the tested non-SVG input returned an empty string. Handle the exception around rendering or conversion rather
 than relying on an empty result.
 
 Some backed values in `UIAwesome\Html\Svg\Exception\Message` and the corresponding exception messages now use single
