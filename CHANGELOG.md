@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.7.1 Under development
 
+- chore: update `.gitattributes` and `.gitignore` for improved file handling and exclusions.
+
 ## 0.7.0 November 15, 2026
 
 - fix: preserve SVG title text and require html-helper `^0.7.3` and svg-sanitize `^1.1.1` for explicit non-SVG rejection.
