@@ -1,6 +1,8 @@
-# Local AI agent, editor, and GitHub CLI config (if present)
-.codex
-.config/gh
+# agents (if present)
+.agents
+
+# artifacts (if present)
+artifacts
 
 # codecoverage (if present)
 code_coverage
@@ -19,11 +21,24 @@ composer.lock
 .github/prompts/**
 .github/skills/**
 
+# Local AI agent, editor, and GitHub CLI config (if present)
+.claude
+.codex
+.config/gh
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
 # mac ds_store (if present)
 .DS_Store
 
 # netbeans project (if present)
 nbproject
+
+# node_modules (if present)
+node_modules
 
 # phpstorm project (if present)
 .idea
@@ -35,8 +50,14 @@ nbproject
 .phpunit.cache
 .phpunit.result.cache
 
-# Private maintainer files (if present)
+# private maintainer files (if present)
 /internal/
+
+# report (if present)
+reports
+
+# stryker (if present)
+.stryker-tmp
 
 # vagrant (if present)
 .vagrant
@@ -54,8 +75,3 @@ Thumbs.db
 .buildpath
 .project
 .settings
-
-.claude/*
-!.claude/skills/
-.claude/skills/*
-!.claude/skills/ui-awesome-html-svg
